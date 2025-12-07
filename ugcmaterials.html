@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UGC NET Test Series — Materials</title>
+  <meta name="description" content="UGC NET Paper 2 (Population Studies) — PYQs, Mock Tests, Important Questions, Books & PDFs." />
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Page-specific */
+    :root {
+      --gap: 16px;
+      --card-radius: 12px;
+      --muted: #6b7a83;
+      --accent1: #0e9ea4;
+      --accent2: #39b893;
+      --shadow: 0 10px 24px rgba(14,165,164,0.06);
+      --card: #ffffff;
+    }
+
+    .wrap { max-width:1100px; margin:0 auto; padding:28px; }
+    .hero { padding:26px; border-radius:14px; background:linear-gradient(180deg, rgba(14,165,164,0.04), rgba(140,214,95,0.02)); margin-bottom:18px; }
+    h1{ margin:0 0 6px 0; font-size:28px; color:#073b4c; }
+    .lead { color:var(--muted); margin-bottom:10px; }
+
+    .controls { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin:14px 0 18px; }
+    .search { flex:1; min-width:220px; display:flex; gap:8px; align-items:center; }
+    .search input { width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(10,40,50,0.06); }
+    .filters { display:flex; gap:8px; flex-wrap:wrap; }
+
+    .filter-btn { padding:10px 12px; border-radius:999px; background:transparent; border:1px solid rgba(10,40,50,0.06); cursor:pointer; font-weight:700; }
+    .filter-btn.active { background:linear-gradient(90deg,var(--accent1),var(--accent2)); color:#fff; box-shadow: 0 8px 18px rgba(14,165,164,0.12); border:0; }
+
+    .meta { color:var(--muted); font-size:14px; }
+
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:var(--gap); margin-top:12px; }
+    .card { background:var(--card); border-radius:var(--card-radius); padding:14px; box-shadow:var(--shadow); display:flex; flex-direction:column; justify-content:space-between; min-height:140px; }
+    .card h3 { margin:0 0 8px 0; font-size:18px; color:#0b3b47; }
+    .card .small { color:var(--muted); font-size:13px; margin-bottom:8px; }
+    .tags { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+    .tag { background:#f3faf8; padding:6px 8px; border-radius:999px; font-size:12px; color:#036b66; }
+
+    .card-actions { display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
+    .btn { padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer; border:0; }
+    .btn.primary { background:linear-gradient(90deg,var(--accent1),var(--accent2)); color:#fff; box-shadow:0 8px 20px rgba(14,165,164,0.10); }
+    .btn.ghost { background:#fff; border:1px solid rgba(10,40,50,0.06); color:#0b3b47; }
+
+    /* modal */
+    .modal-backdrop { position:fixed; inset:0; background:rgba(4,20,20,0.45); display:none; align-items:center; justify-content:center; z-index:9999; padding:20px;}
+    .modal { background:white; max-width:720px; width:100%; border-radius:12px; padding:18px; box-shadow:0 20px 60px rgba(0,0,0,0.25); }
+    .modal h3{ margin:0 0 8px 0 }
+    .modal .meta{ margin-bottom:12px }
+
+    .counts { margin-top:12px; color:var(--muted); font-size:14px; }
+
+    /* small helpers */
+    .muted { color:var(--muted); font-size:13px; }
+    .inline { display:inline-block; }
+
+    @media (max-width:700px){
+      .controls { flex-direction:column; align-items:stretch; }
+      .search input{ padding:12px }
+    }
+  </style>
+</head>
+<body>
+  <header style="background:#f6fbfb;padding:10px 0;">
+    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;">
+      <div style="display:flex;gap:12px;align-items:center;">
+        <img src="logo.png" alt="STATUP" style="height:44px" onerror="this.style.display='none'">
+        <div>
+          <strong>STATUP</strong><br><span class="muted">UGC NET — Paper 2 Materials</span>
+        </div>
+      </div>
+      <nav style="display:flex;gap:14px;">
+        <a href="index.html">Home</a>
+        <a href="materials.html">All Materials</a>
+        <a href="services.html">Services</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero" aria-labelledby="ugcTitle">
+        <h1 id="ugcTitle">UGC NET — Paper 2 (Population Studies)</h1>
+        <p class="lead">Centralised hub for past year questions, mocks, important questions and public resources. Use search and filters to find the item quickly.</p>
+
+        <div class="controls" aria-hidden="false">
+          <div class="search">
+            <input id="searchInput" placeholder="Search by title, year, tag (e.g., '2019', 'sampling', 'demography')">
+            <button class="btn ghost" id="clearSearch">Clear</button>
+          </div>
+
+          <div class="filters" role="toolbar" aria-label="Filter categories">
+            <button class="filter-btn active" data-cat="all">All</button>
+            <button class="filter-btn" data-cat="pyq">PYQ</button>
+            <button class="filter-btn" data-cat="mock">Mock Tests</button>
+            <button class="filter-btn" data-cat="imp">Important Qns</button>
+            <button class="filter-btn" data-cat="book">Books / PDFs</button>
+          </div>
+        </div>
+
+        <div class="counts" id="counts">Loading items…</div>
+      </section>
+
+      <section>
+        <div id="listGrid" class="grid" aria-live="polite"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Details modal -->
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <button id="modalClose" class="btn ghost" style="float:right">Close</button>
+      <h3 id="modalTitle"></h3>
+      <div class="meta" id="modalMeta"></div>
+      <p id="modalDesc" class="muted"></p>
+      <div id="modalLinks" style="margin-top:12px"></div>
+    </div>
+  </div>
+
+  <script>
+    /*************************************************************************
+     * Replace or extend the arrays below with your real links.
+     * Each item: { id, title, year, tags:[], type:'pyq'|'mock'|'imp'|'book', link, extra (optional), desc (optional) }
+     *************************************************************************/
+    const items = [
+      // --- PYQs (past-year questions)
+      { id: 'pyq-2023', title: 'UGC NET Paper 2 — PYQ 2023', year: 2023, tags:['pyq','2019-2023'], type: 'pyq', link: 'files/pyq-2023.pdf', desc: 'Complete paper for 2023 (Population Studies).' },
+      { id: 'pyq-2022', title: 'UGC NET Paper 2 — PYQ 2022', year: 2022, tags:['pyq'], type: 'pyq', link: 'files/pyq-2022.pdf' },
+      { id: 'pyq-2019', title: 'UGC NET Paper 2 — PYQ 2019', year: 2019, tags:['pyq'], type: 'pyq', link: 'files/pyq-2019.pdf' },
+
+      // --- Mock tests
+      { id: 'mock-01', title: 'Mock Test 01 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/example-mock-1', desc: '50 MCQs; 90 minutes. Solutions published after window.' },
+      { id: 'mock-02', title: 'Mock Test 02 — Population Studies', year: 2025, tags:['mcq'], type: 'mock', link: 'https://forms.gle/example-mock-2' },
+      { id: 'mock-03', title: 'Mock Test 03 — Population Studies', year: 2024, tags:['mcq'], type: 'mock', link: 'https://forms.gle/example-mock-3' },
+
+      // --- Important Questions
+      { id: 'imp-01', title: 'Important Questions — Sampling', year: null, tags:['sampling','important'], type: 'imp', link: 'files/imp-sampling.pdf', desc: 'High-yield sampling questions and hints.' },
+      { id: 'imp-02', title: 'Important Questions — Demography', year: null, tags:['demography'], type: 'imp', link: 'files/imp-demography.pdf' },
+      { id: 'imp-03', title: 'Important Questions — Measures', year: null, tags:['measures'], type: 'imp', link: 'files/imp-measures.pdf' },
+
+      // --- Books & Public Materials
+      { id: 'book-1', title: 'Population Studies — Intro (Public PDF)', year: 2017, tags:['book','pdf'], type: 'book', link: 'https://example.com/book-population.pdf', desc:'A public-domain book covering basic demographic methods.' },
+      { id: 'book-2', title: 'Solved Papers Collection (ZIP)', year: null, tags:['book','zip'], type: 'book', link: 'files/solved-collection.zip' },
+      { id: 'book-3', title: 'Reference Notes — Population Dynamics', year: 2019, tags:['notes','pdf'], type: 'book', link: 'files/ref-population-dynamics.pdf' }
+    ];
+
+    /*************************************************************************
+     * DO NOT CHANGE BELOW unless you know JS.
+     * This will render the UI, filter, search and do modal operations.
+     *************************************************************************/
+    const listGrid = document.getElementById('listGrid');
+    const countsEl = document.getElementById('counts');
+    const searchInput = document.getElementById('searchInput');
+    const clearSearchBtn = document.getElementById('clearSearch');
+    const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
+    const modal = document.getElementById('modalBackdrop');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalMeta = document.getElementById('modalMeta');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalLinks = document.getElementById('modalLinks');
+    const modalClose = document.getElementById('modalClose');
+
+    let activeCategory = 'all';
+    let query = '';
+
+    // helper: create link element with open + copy
+    function createActionButtons(item) {
+      const container = document.createElement('div');
+      container.className = 'card-actions';
+
+      const openBtn = document.createElement('a');
+      openBtn.className = 'btn primary';
+      openBtn.textContent = item.type === 'mock' ? 'Open Test' : 'Open';
+      openBtn.href = item.link;
+      openBtn.target = '_blank';
+      openBtn.rel = 'noopener';
+
+      const copyBtn = document.createElement('button');
+      copyBtn.className = 'btn ghost';
+      copyBtn.textContent = 'Copy link';
+      copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(item.link).then(() => {
+          copyBtn.textContent = 'Copied ✓';
+          setTimeout(()=> copyBtn.textContent = 'Copy link', 2000);
+        }).catch(()=> {
+          alert('Copy failed. Use your browser to copy the link.');
+        });
+      });
+
+      const detailsBtn = document.createElement('button');
+      detailsBtn.className = 'btn ghost';
+      detailsBtn.textContent = 'Details';
+      detailsBtn.addEventListener('click', () => openModal(item));
+
+      container.appendChild(openBtn);
+      container.appendChild(copyBtn);
+      container.appendChild(detailsBtn);
+      return container;
+    }
+
+    function renderCards(list) {
+      listGrid.innerHTML = '';
+      if (!list.length) {
+        listGrid.innerHTML = '<div class="muted">No items found.</div>';
+        countsEl.textContent = `0 items`;
+        return;
+      }
+
+      list.forEach(item => {
+        const c = document.createElement('article');
+        c.className = 'card';
+        c.id = item.id;
+
+        const h = document.createElement('h3');
+        h.textContent = item.title;
+
+        const small = document.createElement('div');
+        small.className = 'small';
+        small.textContent = (item.year ? item.year + ' · ' : '') + (item.tags ? item.tags.join(', ') : '');
+
+        const desc = document.createElement('p');
+        desc.className = 'muted';
+        desc.textContent = item.desc || '';
+
+        const tags = document.createElement('div');
+        tags.className = 'tags';
+        (item.tags || []).slice(0,5).forEach(t => {
+          const tk = document.createElement('span');
+          tk.className = 'tag';
+          tk.textContent = t;
+          tags.appendChild(tk);
+        });
+
+        c.appendChild(h);
+        c.appendChild(small);
+        if (item.desc) c.appendChild(desc);
+        c.appendChild(tags);
+        c.appendChild(createActionButtons(item));
+
+        listGrid.appendChild(c);
+      });
+
+      countsEl.textContent = `${list.length} item(s) — showing ${activeCategory === 'all' ? 'all categories' : activeCategory.toUpperCase()}.`;
+    }
+
+    // filter & search
+    function applyFilters() {
+      query = searchInput.value.trim().toLowerCase();
+      let filtered = items.slice();
+
+      if (activeCategory !== 'all') {
+        filtered = filtered.filter(i => i.type === activeCategory);
+      }
+      if (query) {
+        filtered = filtered.filter(i => {
+          return (i.title && i.title.toLowerCase().includes(query)) ||
+                 (i.desc && i.desc.toLowerCase().includes(query)) ||
+                 (i.tags && i.tags.join(' ').toLowerCase().includes(query)) ||
+                 (i.year && String(i.year).includes(query));
+        });
+      }
+      renderCards(filtered);
+    }
+
+    // activate filter buttons
+    filterBtns.forEach(b => {
+      b.addEventListener('click', () => {
+        filterBtns.forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        activeCategory = b.dataset.cat;
+        // update hash for deep links
+        if (activeCategory === 'all') history.replaceState(null, '', location.pathname);
+        else location.hash = activeCategory;
+        applyFilters();
+      });
+    });
+
+    // search events
+    searchInput.addEventListener('input', () => applyFilters());
+    clearSearchBtn.addEventListener('click', () => { searchInput.value=''; applyFilters(); });
+
+    // modal handling
+    function openModal(item) {
+      modalTitle.textContent = item.title;
+      modalMeta.textContent = (item.year ? item.year + ' · ' : '') + item.type.toUpperCase();
+      modalDesc.textContent = item.desc || '';
+      modalLinks.innerHTML = '';
+
+      const open = document.createElement('a');
+      open.href = item.link;
+      open.target = '_blank';
+      open.rel = 'noopener';
+      open.className = 'btn primary';
+      open.textContent = 'Open Resource';
+      modalLinks.appendChild(open);
+
+      const copy = document.createElement('button');
+      copy.className = 'btn ghost';
+      copy.textContent = 'Copy link';
+      copy.style.marginLeft = '8px';
+      copy.addEventListener('click', ()=>{
+        navigator.clipboard.writeText(item.link).then(()=> {
+          copy.textContent = 'Copied ✓';
+          setTimeout(()=> copy.textContent = 'Copy link', 1800);
+        });
+      });
+      modalLinks.appendChild(copy);
+
+      // optional: show tags & extra data
+      if (item.tags && item.tags.length) {
+        const p = document.createElement('p');
+        p.className = 'muted';
+        p.style.marginTop = '12px';
+        p.textContent = 'Tags: ' + item.tags.join(', ');
+        modalLinks.appendChild(p);
+      }
+
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden','false');
+    }
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    function closeModal() {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden','true');
+    }
+
+    // deep linking: read hash on load
+    function handleHashOnLoad() {
+      const h = location.hash ? location.hash.slice(1) : '';
+      if (!h) return;
+      // if matches category
+      if (['pyq','mock','imp','book'].includes(h)) {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.toggle('active', b.dataset.cat === h);
+          if (b.dataset.cat === h) activeCategory = h;
+        });
+      }
+      // if matches an item id, open modal after rendering
+    }
+
+    // init
+    (function init(){
+      // apply initial hash category if present
+      const h = location.hash ? location.hash.slice(1) : '';
+      if (['pyq','mock','imp','book'].includes(h)) {
+        activeCategory = h;
+        filterBtns.forEach(b => b.classList.toggle('active', b.dataset.cat === h));
+      }
+      applyFilters();
+
+      // if hash points to item id after a dash, open it
+      const hash = location.hash ? location.hash.slice(1) : '';
+      if (hash && items.some(it => it.id === hash)) {
+        // open modal for that id
+        const it = items.find(x => x.id === hash);
+        setTimeout(()=> openModal(it), 300);
+      }
+
+      // clickable item anchors: if someone uses materials.html#mocks etc.
+      // handled above
+    })();
+  </script>
+</body>
+</html>
