@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Software Training — STATUP</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .wrap{max-width:1100px;margin:0 auto;padding:28px}
+    .hero{padding:20px;border-radius:12px;background:linear-gradient(180deg,#f6fbfb,#f2fbf9);margin-bottom:18px}
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    .tab-btn{padding:10px 14px;border-radius:10px;border:1px solid rgba(10,40,50,0.06);background:transparent;font-weight:700;cursor:pointer}
+    .tab-btn.active{background:linear-gradient(90deg,#0e9ea4,#39b893);color:#fff}
+    .panel{display:none;background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow)}
+    .panel.active{display:block}
+    .grid-2{display:grid;grid-template-columns:1fr 360px;gap:18px}
+    .subtabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .subbtn{padding:8px 12px;border-radius:8px;border:1px solid rgba(10,40,50,0.06);background:transparent;cursor:pointer}
+    .subbtn.active{background:#0e9ea4;color:white;border:0}
+    .subpanel{display:none;margin-top:12px}
+    .subpanel.active{display:block}
+    @media (max-width:900px){.grid-2{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;">
+      <a class="logo" href="index.html"><img src="logo.png" alt="STATUP" onerror="this.style.display='none'"><div class="logo-text"><strong>STATUP</strong><small>Software Training</small></div></a>
+      <nav class="main-nav"><a href="index.html">Home</a> · <a href="services.html">Services</a> · <a href="workshops.html">Workshops</a></nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="wrap">
+      <section class="hero">
+        <h1 style="margin:0 0 8px 0">Software Training</h1>
+        <p class="muted" style="margin:0">Project-focused training in SPSS, R, Python, Excel, Jamovi & JASP. Each course includes curriculum, materials and registration link.</p>
+      </section>
+
+      <div class="tabs" role="tablist" aria-label="Software courses">
+        <button class="tab-btn" data-target="spss">SPSS</button>
+        <button class="tab-btn" data-target="python">Python</button>
+        <button class="tab-btn" data-target="r">R</button>
+        <button class="tab-btn" data-target="excel">Excel</button>
+        <!-- Add more software tabs as needed -->
+      </div>
+
+      <!-- SPSS Panel -->
+      <div id="spss" class="panel" role="tabpanel">
+        <div class="grid-2">
+          <div>
+            <h2>SPSS Course — Beginner → Advanced</h2>
+            <p class="muted">Practical training: import, cleaning, tests, regression, syntax and reporting.</p>
+
+            <div class="subtabs" role="tablist" aria-label="SPSS tabs">
+              <button class="subbtn" data-target="spss-curr">Curriculum</button>
+              <button class="subbtn" data-target="spss-materials">Materials</button>
+              <button class="subbtn" data-target="spss-register">Register</button>
+              <button class="subbtn" data-target="spss-examples">Example files</button>
+            </div>
+
+            <div id="spss-curr" class="subpanel">
+              <h4 style="margin-top:12px;">Curriculum</h4>
+              <ul class="muted">
+                <li>Data import & cleaning</li>
+                <li>Descriptive & inferential tests</li>
+                <li>Regression & reporting</li>
+                <li>Syntax & automation</li>
+              </ul>
+            </div>
+
+            <div id="spss-materials" class="subpanel">
+              <h4 style="margin-top:12px;">Materials</h4>
+              <ul class="muted">
+                <li><a href="files/spss-notes.pdf">SPSS Notes (PDF)</a></li>
+                <li><a href="files/spss-dataset.sav">Sample dataset</a></li>
+              </ul>
+            </div>
+
+            <div id="spss-register" class="subpanel">
+              <a class="btn primary" href="#FORM_LINK" target="_blank">Register (Google Form)</a>
+            </div>
+
+            <div id="spss-examples" class="subpanel">
+              <p class="muted">Download example syntaxes and demonstration files.</p>
+              <a class="link" href="files/spss-syntax.zip">Download examples (zip)</a>
+            </div>
+          </div>
+
+          <aside class="card">
+            <h4>Quick info</h4>
+            <p class="muted">Duration: Variable • Mode: Project-based</p>
+            <div style="margin-top:10px;"><a class="btn primary" href="#FORM_LINK">Enroll</a></div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Python Panel -->
+      <div id="python" class="panel" role="tabpanel">
+        <div class="grid-2">
+          <div>
+            <h2>Python for Statistics</h2>
+            <p class="muted">Pandas, statsmodels, visualization, reproducible notebooks and deployment basics.</p>
+
+            <div class="subtabs" role="tablist" aria-label="Python tabs">
+              <button class="subbtn" data-target="py-curr">Curriculum</button>
+              <button class="subbtn" data-target="py-materials">Materials</button>
+              <button class="subbtn" data-target="py-register">Register</button>
+              <button class="subbtn" data-target="py-notebooks">Notebooks</button>
+            </div>
+
+            <div id="py-curr" class="subpanel">
+              <ul class="muted">
+                <li>Pandas & data wrangling</li>
+                <li>Hypothesis testing & regression (statsmodels)</li>
+                <li>Plots with matplotlib & seaborn</li>
+              </ul>
+            </div>
+
+            <div id="py-materials" class="subpanel">
+              <ul class="muted">
+                <li><a href="files/py-notes.pdf">Python course notes</a></li>
+                <li><a href="files/py-requirements.txt">requirements.txt</a></li>
+              </ul>
+            </div>
+
+            <div id="py-register" class="subpanel">
+              <a class="btn primary" href="#FORM_LINK" target="_blank">Register</a>
+            </div>
+
+            <div id="py-notebooks" class="subpanel">
+              <a class="link" href="files/py-notebooks.zip">Download notebooks (zip)</a>
+            </div>
+          </div>
+
+          <aside class="card">
+            <h4>Quick info</h4>
+            <p class="muted">Prerequisite: Basic programming knowledge recommended</p>
+            <div style="margin-top:10px;"><a class="btn primary" href="#FORM_LINK">Enroll</a></div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- R Panel -->
+      <div id="r" class="panel" role="tabpanel">
+        <div class="grid-2">
+          <div>
+            <h2>R for Statistics</h2>
+            <p class="muted">Tidyverse, modeling, hypothesis testing and reproducible workflows with R Markdown.</p>
+
+            <div class="subtabs" role="tablist">
+              <button class="subbtn" data-target="r-curr">Curriculum</button>
+              <button class="subbtn" data-target="r-materials">Materials</button>
+              <button class="subbtn" data-target="r-register">Register</button>
+            </div>
+
+            <div id="r-curr" class="subpanel">
+              <ul class="muted">
+                <li>Data wrangling (dplyr)</li>
+                <li>Visualization (ggplot2)</li>
+                <li>Modeling & reporting</li>
+              </ul>
+            </div>
+
+            <div id="r-materials" class="subpanel">
+              <a class="link" href="files/r-resources.zip">Download resources</a>
+            </div>
+
+            <div id="r-register" class="subpanel">
+              <a class="btn primary" href="#FORM_LINK" target="_blank">Register</a>
+            </div>
+          </div>
+
+          <aside class="card">
+            <h4>Quick info</h4>
+            <p class="muted">Great for reproducible research and reporting</p>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Excel Panel -->
+      <div id="excel" class="panel" role="tabpanel">
+        <div class="grid-2">
+          <div>
+            <h2>Excel for Data Analysis</h2>
+            <p class="muted">Data cleaning, pivot tables, charts, and basic statistical functions for quick analysis.</p>
+
+            <div class="subtabs">
+              <button class="subbtn" data-target="ex-curr">Curriculum</button>
+              <button class="subbtn" data-target="ex-materials">Materials</button>
+              <button class="subbtn" data-target="ex-register">Register</button>
+            </div>
+
+            <div id="ex-curr" class="subpanel">
+              <ul class="muted">
+                <li>Cleaning with formulas</li>
+                <li>Pivot tables & dashboards</li>
+                <li>Basic statistical testing</li>
+              </ul>
+            </div>
+
+            <div id="ex-materials" class="subpanel">
+              <a class="link" href="files/excel-sheets.zip">Download example sheets</a>
+            </div>
+
+            <div id="ex-register" class="subpanel">
+              <a class="btn primary" href="#FORM_LINK" target="_blank">Register</a>
+            </div>
+          </div>
+
+          <aside class="card">
+            <h4>Quick info</h4>
+            <p class="muted">Suitable for non-programmers and analysts</p>
+          </aside>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // main tabs & subtabs logic (same behavior as workshops)
+    (function(){
+      const tabBtns = Array.from(document.querySelectorAll('.tab-btn'));
+      const panels = Array.from(document.querySelectorAll('.panel'));
+      const setActive = (id, push=true) => {
+        tabBtns.forEach(b => b.classList.toggle('active', b.dataset.target === id));
+        panels.forEach(p => p.classList.toggle('active', p.id === id));
+        if (push) location.hash = id;
+        // activate first subbtn
+        const panel = document.getElementById(id);
+        if (panel) {
+          const first = panel.querySelector('.subbtn');
+          if (first) activateSub(first.dataset.target, panel);
+        }
+      };
+      tabBtns.forEach(b => b.addEventListener('click', ()=> setActive(b.dataset.target)));
+      document.addEventListener('click', (e)=>{
+        const s = e.target.closest('.subbtn');
+        if (!s) return;
+        const p = e.target.closest('.panel');
+        activateSub(s.dataset.target, p);
+      });
+      function activateSub(subId, panel){
+        if (!panel) return;
+        const btns = Array.from(panel.querySelectorAll('.subbtn'));
+        const subs = Array.from(panel.querySelectorAll('.subpanel'));
+        btns.forEach(b => b.classList.toggle('active', b.dataset.target === subId));
+        subs.forEach(s => s.classList.toggle('active', s.id === subId));
+        // update hash like #python-notebooks
+        location.hash = panel.id + (subId ? '-' + subId.split('-').slice(-1)[0] : '');
+      }
+      // deep link initial
+      const h = location.hash ? location.hash.slice(1) : '';
+      if (h) {
+        const [main, sub] = h.split('-',2);
+        if (document.getElementById(main)) {
+          setActive(main, false);
+          if (sub) {
+            const p = document.getElementById(main);
+            const btn = Array.from(p.querySelectorAll('.subbtn')).find(b => b.dataset.target.includes(sub));
+            if (btn) activateSub(btn.dataset.target, p);
+          }
+        } else {
+          // default show spss
+          setActive('spss', false);
+        }
+      } else setActive('spss', false);
+    })();
+  </script>
+</body>
+</html>
