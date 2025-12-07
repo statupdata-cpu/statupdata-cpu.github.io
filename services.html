@@ -3,11 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Services — STATUP</title>
-  <meta name="description" content="STATUP services — UGC Test Series, Workshops, Software Training, Project Support and more." />
+  <title>Our Services — STATUP</title>
+  <meta name="description" content="STATUP services: UGC test series, workshops, software training, dissertation & tuition support." />
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Page-specific polish */
+    .services-hero{
+      background: linear-gradient(180deg, rgba(140,214,95,0.06), rgba(14,165,164,0.02));
+      border-radius:12px;
+      padding:28px;
+      margin-bottom:18px;
+    }
+    .service-intro{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+    .service-left{flex:1;min-width:260px}
+    .service-right{width:360px;min-width:260px}
+    .service-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+    .chip {display:inline-block;padding:8px 12px;border-radius:999px;background:rgba(15,60,85,0.06);font-weight:700}
+    .tests-list li{margin-bottom:12px}
+    .materials-list li{margin-bottom:8px}
+    .video-embed{aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow)}
+    .small-meta{font-size:13px;color:var(--muted)}
+    .badge{display:inline-block;padding:6px 8px;border-radius:8px;background:linear-gradient(90deg,var(--accent-3),var(--accent-2));color:#fff;font-weight:700;font-size:12px}
+    .section-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .accordion .acc-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    @media (max-width:900px){
+      .service-right{width:100%}
+    }
+  </style>
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
     <div class="wrap">
       <a class="logo" href="index.html">
@@ -15,176 +40,276 @@
         <div class="logo-text"><strong>STATUP</strong><small>Streamline Your Analysis</small></div>
       </a>
 
-      <button class="nav-toggle" id="navToggle3" aria-label="Toggle menu">☰</button>
+      <button class="nav-toggle" id="navToggleServices" aria-label="Toggle menu">☰</button>
 
-      <nav class="main-nav" id="mainNav3" aria-label="Main navigation">
+      <nav class="main-nav" id="mainNavServices" aria-label="Main navigation">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About Us</a>
+        <a href="about.html" class="nav-link">About</a>
         <a href="services.html" class="nav-link active">Our Services</a>
-        <a href="contact.html" class="nav-link">Contact Us</a>
-        <a href="register.html" class="nav-link cta">Register</a>
+        <a href="register.html" class="nav-link">Register</a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="main">
+    <!-- Hero / intro -->
+    <section class="wrap services-hero" aria-labelledby="servicesTitle">
+      <div class="service-intro">
+        <div class="service-left">
+          <h1 id="servicesTitle" style="margin:0 0 8px 0;">Services at STATUP</h1>
+          <p class="lead" style="margin-bottom:12px;">Practical training, exam preparation and research-grade analytical support. Choose a program below to view details and register.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn primary" href="register.html#ugc">Register for UGC Test Series</a>
+            <a class="btn ghost" href="register.html#workshops">Register for Workshops</a>
+          </div>
+        </div>
+
+        <aside class="service-right card">
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div><strong class="small-meta">Quick facts</strong></div>
+            <div class="small-meta">• Both free & paid workshops</div>
+            <div class="small-meta">• Google Forms used for registrations</div>
+            <div class="small-meta">• Payment flow supported (Razorpay / PayPal)</div>
+            <div style="margin-top:8px;"><a class="btn ghost" href="contact.html">Request a Consultation</a></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Featured services -->
     <section class="wrap">
-      <h1>Our Services</h1>
-      <p class="lead">Comprehensive programs & services built for learners and researchers — from fundamentals to advanced analytics.</p>
+      <div class="section-head">
+        <h2 style="margin:0;">Featured offerings</h2>
+        <div>
+          <span class="chip">UGC</span>
+          <span class="chip">Workshops</span>
+          <span class="chip">Software</span>
+          <span class="chip">Projects</span>
+        </div>
+      </div>
+
+      <div class="service-grid" style="margin-top:12px;">
+        <article class="feature-card">
+          <h3>UGC Test Series & Study Materials</h3>
+          <p class="small-meta">Mock tests, past year questions, curated notes and video explanations tailored for UGC NET Paper 2 (Population Studies).</p>
+          <div style="margin-top:10px;">
+            <a class="btn primary" href="register.html#ugc">Register</a>
+            <a class="btn ghost" href="#ugc-full">Details</a>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <h3>Workshops & Masterclasses</h3>
+          <p class="small-meta">Hands-on short courses — research methods, SPSS, Python for analysis, and visualization.</p>
+          <div style="margin-top:10px;">
+            <a class="btn primary" href="register.html#workshops">See schedule</a>
+            <a class="btn ghost" href="#workshops-full">Details</a>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <h3>Software Training</h3>
+          <p class="small-meta">SPSS, R, Python, Excel, Jamovi & JASP: practical projects, example datasets and code files.</p>
+          <div style="margin-top:10px;">
+            <a class="btn primary" href="register.html#software">Enroll</a>
+            <a class="btn ghost" href="#software-full">Curriculum</a>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <h3>Project & Dissertation Support</h3>
+          <p class="small-meta">End-to-end mentoring: topic selection, sampling, analysis, interpretation and report writing.</p>
+          <div style="margin-top:10px;">
+            <a class="btn primary" href="register.html#project">Request Support</a>
+            <a class="btn ghost" href="#misc-full">Details</a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- Featured blocks -->
-    <section class="wrap grid cards-4">
-      <div class="feature-card" id="ugc">
-        <h3>UGC Study Materials & Test Series</h3>
-        <p>Mock tests, PYQs, curated notes, and video explanations to strengthen your UGC NET preparation.</p>
-        <a class="btn ghost" href="register.html#ugc">Register for Test Series</a>
+    <!-- UGC section -->
+    <section id="ugc-full" class="wrap section-card" aria-labelledby="ugcHeading" style="margin-top:18px;">
+      <div class="section-head">
+        <h2 id="ugcHeading" style="margin:0;">UGC — Test Series & Study Materials</h2>
+        <div class="small-meta">Practice • Analyze • Improve</div>
       </div>
 
-      <div class="feature-card" id="workshops">
-        <h3>Workshops & Masterclasses</h3>
-        <p>Short, focused workshops on research methods, software tools and exam strategies.</p>
-        <a class="btn ghost" href="register.html#workshops">View Workshops</a>
-      </div>
-
-      <div class="feature-card" id="software">
-        <h3>Software Training</h3>
-        <p>Hands-on courses for SPSS, R, Python, Excel, JASP & Jamovi — practical and project-focused.</p>
-        <a class="btn ghost" href="register.html#software">View Courses</a>
-      </div>
-
-      <div class="feature-card" id="misc">
-        <h3>Project & Dissertation Support</h3>
-        <p>Proposal help, data collection and cleaning, analysis, interpretation and report writing.</p>
-        <a class="btn ghost" href="register.html#project">Request Support</a>
-      </div>
-    </section>
-
-    <!-- Full sections (UGC) -->
-    <section class="wrap content section-card" id="ugc-full">
-      <h2>UGC NET — Test Series & Study Materials</h2>
-      <p>Structured practice with performance tracking, answer keys and curated study resources.</p>
-
-      <div class="grid two-cols">
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:12px">
         <div>
           <h4>Test Series</h4>
+          <p class="small-meta">Structured mock tests with performance feedback and model solutions.</p>
+
           <ol class="tests-list">
             <li>
-              <strong>Mock Test 1</strong> — 50 questions • 90 minutes • Objective  
-              <div class="muted">Status: Active</div>
-              <div class="actions">
-                <a class="link" href="#" target="_blank" rel="noopener">Take Test (Google Form)</a>
+              <strong>Mock Test 01 — Population Studies</strong>
+              <div class="small-meta">50 MCQs • 90 minutes • Objective</div>
+              <div style="margin-top:6px;">
+                <a class="link" href="#FORM_LINK" target="_blank">Register / Take Test (Google Form)</a> ·
                 <a class="link" href="#">Solutions (PDF)</a>
+                <span style="margin-left:8px" class="badge">Active</span>
               </div>
             </li>
+
             <li>
-              <strong>Mock Test 2</strong> — 50 questions • 90 minutes  
-              <div class="muted">Status: Upcoming</div>
-              <div class="actions">
-                <a class="link" href="#">Register</a>
+              <strong>Mock Test 02 — Population Studies</strong>
+              <div class="small-meta">Status: Upcoming</div>
+              <div style="margin-top:6px;">
+                <a class="link" href="#FORM_LINK" target="_blank">Register</a>
+              </div>
+            </li>
+
+            <li>
+              <strong>Full Test Series (All)</strong>
+              <div class="small-meta">Complete series registration & performance report</div>
+              <div style="margin-top:6px;">
+                <a class="btn primary" href="#FORM_LINK" target="_blank">Register for Series</a>
               </div>
             </li>
           </ol>
 
-          <p class="muted">Join our WhatsApp group for test updates and announcements.</p>
-          <a class="btn primary" href="https://chat.whatsapp.com/J6pgWYeiFouJCM91KUVOg3?mode=hqrt1" target="_blank" rel="noopener">Join WhatsApp Group</a>
-        </div>
-
-        <div>
-          <h4>Study Materials</h4>
-          <ul class="materials-list">
-            <li><a href="#" class="link">UGC Paper 2 — PYQ compilation (PDF)</a></li>
-            <li><a href="#" class="link">Population Studies — Notes (PDF)</a></li>
-            <li><a href="#" class="link">Model Answers & Solutions</a></li>
-          </ul>
-
-          <h4 class="mt">UGC Videos</h4>
-          <div class="video-grid">
-            <div class="video-thumb">Video 1</div>
-            <div class="video-thumb">Video 2</div>
+          <div style="margin-top:12px;">
+            <strong>Notes:</strong>
+            <ul class="small-meta" style="margin-top:6px;">
+              <li>Test links are provided via Google Forms; answers are collected into Google Sheets for review.</li>
+              <li>Solutions are published after each test window.</li>
+              <li>Join our WhatsApp group for real-time updates: <a href="https://chat.whatsapp.com/J6pgWYeiFouJCM91KUVOg3?mode=hqrt1" target="_blank">Join Group</a></li>
+            </ul>
           </div>
         </div>
+
+        <aside>
+          <div class="card">
+            <h4>Study Materials</h4>
+            <ul class="materials-list">
+              <li><a href="#">UGC PYQ compilation (PDF)</a></li>
+              <li><a href="#">Population Studies — concise notes</a></li>
+              <li><a href="#">Model answers & explanation PDFs</a></li>
+              <li><a href="#">Practice question packs</a></li>
+            </ul>
+
+            <h4 style="margin-top:12px;">UGC Videos</h4>
+            <div class="video-embed" style="margin-top:8px;">
+              <div class="small-meta">YouTube playlist / video embeds go here</div>
+            </div>
+
+            <div style="margin-top:12px;">
+              <a class="btn ghost" href="#materials">View All Materials</a>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
     <!-- Workshops -->
-    <section class="wrap section-card" id="workshops-full">
-      <h2>Workshops & Masterclasses</h2>
-      <p>We run both free and paid workshops. Seats are limited for hands-on sessions.</p>
+    <section id="workshops-full" class="wrap section-card" style="margin-top:18px;">
+      <div class="section-head">
+        <h2 style="margin:0;">Workshops & Masterclasses</h2>
+        <div class="small-meta">Short focused sessions — both free & paid</div>
+      </div>
 
-      <div class="accordion">
-        <!-- Default (created) workshop examples -->
+      <p class="small-meta" style="margin-top:8px;">Below are sample workshops (default titles). We'll update titles & schedules as you confirm them.</p>
+
+      <div class="accordion" style="margin-top:12px;">
+        <!-- Workshop 1 -->
         <article class="accordion-item">
-          <button class="acc-head">Research Methods & Thesis Design <span class="muted">• 2 days • Online</span></button>
+          <button class="acc-head">Research Methods & Thesis Design <span class="small-meta">• 2 days • Free</span></button>
           <div class="acc-body">
-            <h4>About</h4>
-            <p>Design proposals, research questions, sampling and planning your thesis.</p>
+            <h4>Overview</h4>
+            <p class="small-meta">Design robust research questions, sampling methods and a clear analysis plan.</p>
             <h4>Modules</h4>
-            <ul>
-              <li>Topic selection & research design</li>
+            <ul class="small-meta">
+              <li>Topic selection & literature mapping</li>
               <li>Sampling & measurement</li>
-              <li>Data collection strategies</li>
-              <li>Analysis plan & reporting</li>
+              <li>Analysis plan & interpretation</li>
             </ul>
-            <div class="flex gap">
-              <a class="btn ghost" href="register.html#workshops">Register (Google Form)</a>
-              <a class="btn primary" href="https://chat.whatsapp.com/J6pgWYeiFouJCM91KUVOg3?mode=hqrt1" target="_blank">Join Group</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="accordion-item">
-          <button class="acc-head">SPSS Hands-on: Basics to Advanced <span class="muted">• 3 days • Paid</span></button>
-          <div class="acc-body">
-            <h4>About</h4>
-            <p>Practical SPSS workflows for data cleaning, tests, regression, and reporting.</p>
             <h4>Materials</h4>
-            <p>PPTs, practice datasets and code snippets will be supplied to all participants.</p>
-            <div class="flex gap">
-              <a class="btn ghost" href="register.html#workshops">Register</a>
+            <p class="small-meta">PPT, sample datasets, checklists</p>
+            <div style="margin-top:10px;">
+              <a class="btn primary" href="#FORM_LINK" target="_blank">Register (Google Form)</a>
+              <a class="btn ghost" href="https://chat.whatsapp.com/J6pgWYeiFouJCM91KUVOg3?mode=hqrt1" target="_blank">Join Group</a>
             </div>
           </div>
         </article>
 
-        <!-- add more items similarly -->
+        <!-- Workshop 2 -->
+        <article class="accordion-item">
+          <button class="acc-head">SPSS Hands-on: Basics → Advanced <span class="small-meta">• 3 days • Paid</span></button>
+          <div class="acc-body">
+            <h4>Overview</h4>
+            <p class="small-meta">Data import, cleaning, hypothesis testing, regression and reporting in SPSS.</p>
+            <h4>Materials</h4>
+            <p class="small-meta">Practice datasets, SPSS syntax, PPTs</p>
+            <div style="margin-top:10px;">
+              <a class="btn primary" href="#FORM_LINK" target="_blank">Register (Paid)</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Workshop 3 -->
+        <article class="accordion-item">
+          <button class="acc-head">Python for Statistical Analysis <span class="small-meta">• 4 sessions • Paid</span></button>
+          <div class="acc-body">
+            <h4>Overview</h4>
+            <p class="small-meta">Pandas, statsmodels, visualizations and reproducible scripts for statistical workflows.</p>
+            <h4>Materials</h4>
+            <p class="small-meta">Notebooks, datasets and code snippets</p>
+            <div style="margin-top:10px;">
+              <a class="btn primary" href="#FORM_LINK" target="_blank">Register</a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- Software -->
-    <section class="wrap section-card" id="software-full">
-      <h2>Software Training</h2>
-      <p>Hands-on software courses that take you from data import to reporting.</p>
+    <!-- Software training -->
+    <section id="software-full" class="wrap section-card" style="margin-top:18px;">
+      <div class="section-head">
+        <h2 style="margin:0;">Software Training</h2>
+        <div class="small-meta">Project-focused, hands-on learning</div>
+      </div>
 
-      <div class="grid two-cols">
+      <div class="grid two-cols" style="margin-top:12px;">
         <div class="card">
-          <h4>SPSS</h4>
-          <p>Intro to advanced SPSS features — import, transform, tests, regression and output reporting.</p>
-          <a class="link" href="register.html#software">Register</a>
+          <h4>SPSS Course (Beginner → Advanced)</h4>
+          <p class="small-meta">Data import, cleaning, descriptive & inferential tests, regression and report export.</p>
+          <p class="small-meta" style="margin-top:8px;">Materials: PPTs, datasets, syntax files.</p>
+          <div style="margin-top:8px;"><a class="btn primary" href="#FORM_LINK">Register</a></div>
         </div>
 
         <div class="card">
           <h4>Python for Statistics</h4>
-          <p>Pandas, statsmodels, visualizations and building reproducible workflows.</p>
-          <a class="link" href="register.html#software">Register</a>
+          <p class="small-meta">Pandas, visualization, hypothesis testing, regression & reproducible notebooks.</p>
+          <p class="small-meta" style="margin-top:8px;">Materials: Jupyter notebooks, sample data & solutions.</p>
+          <div style="margin-top:8px;"><a class="btn primary" href="#FORM_LINK">Register</a></div>
         </div>
       </div>
     </section>
 
-    <!-- Misc -->
-    <section class="wrap section-card" id="misc-full">
-      <h2>Miscellaneous Services</h2>
-      <ul>
-        <li><strong>Project / Dissertation Support</strong> — topic selection, analysis, report writing.</li>
-        <li><strong>Individual / Group Tuition</strong> — 8th → PG levels.</li>
-        <li><strong>Statistics Tutorials</strong> — concept clarity & problem solving.</li>
-        <li><strong>Data Analysis (A to Z)</strong> — for research & professional projects.</li>
-        <li><strong>Proposal review & editing</strong> — improve publishability & presentation.</li>
-      </ul>
+    <!-- Misc services -->
+    <section id="misc-full" class="wrap section-card" style="margin-top:18px;">
+      <div class="section-head">
+        <h2 style="margin:0;">Project & Misc Services</h2>
+        <div class="small-meta">Dedicated researcher support & tutoring</div>
+      </div>
 
-      <p class="muted">Each service includes a Register button that opens the specific registration form on the Register page.</p>
+      <div style="margin-top:12px;">
+        <ul class="small-meta">
+          <li><strong>Project/Dissertation Support:</strong> Topic selection, research design, data analysis and report writing. <a href="#FORM_LINK">Register</a></li>
+          <li><strong>Individual / Group Tuition:</strong> Classes for 8th → PG level. <a href="#FORM_LINK">Register</a></li>
+          <li><strong>Statistics Tutorials:</strong> Concept clarity + problem solving. <a href="#FORM_LINK">Register</a></li>
+          <li><strong>Data Analysis (A→Z):</strong> For papers, reports and professional projects. <a href="#FORM_LINK">Request support</a></li>
+        </ul>
+
+        <div style="margin-top:14px;">
+          <a class="btn ghost" href="register.html">All registration forms</a>
+        </div>
+      </div>
     </section>
+
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div>
@@ -210,10 +335,15 @@
     </div>
 
     <div class="wrap copyright">
-      <small>© <span id="year3"></span> STATUP — Streamline Your Analysis, Elevate Your Decision.</small>
+      <small>© <span id="yearServices"></span> STATUP — Streamline Your Analysis, Elevate Your Decision.</small>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // set footer year
+    const y = document.getElementById('yearServices');
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
