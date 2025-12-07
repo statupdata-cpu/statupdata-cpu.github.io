@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Materials — STATUP</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* small page-specific styles */
+    .materials-hero { padding:36px 20px; border-radius:12px; background:linear-gradient(180deg,#f6fbfb,#f2fbf9); margin-bottom:18px;}
+    .tabs { display:flex; gap:8px; flex-wrap:wrap; margin:10px 0 18px;}
+    .tab-btn { padding:10px 14px; border-radius:10px; background:transparent; border:1px solid rgba(15,60,85,0.06); font-weight:700; cursor:pointer; }
+    .tab-btn.active { background:linear-gradient(90deg,var(--accent-1),var(--accent-2)); color:white; box-shadow:0 8px 20px rgba(14,165,164,0.10); border:0; }
+    .tab-panel { display:none; padding:18px; background:var(--card); border-radius:12px; box-shadow:var(--shadow); margin-top:12px; }
+    .tab-panel.active { display:block; }
+    .materials-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:12px; }
+    .material-card { background:linear-gradient(180deg,#fff,#fbfffe); padding:14px; border-radius:12px; box-shadow:var(--shadow); min-height:120px; }
+    .material-card h4{margin:0 0 8px 0}
+    .material-list{list-style:disc;margin-left:18px;color:var(--muted)}
+    .back-links { margin-top:10px; font-size:14px; }
+    @media (max-width:700px){ .tabs { overflow-x:auto; padding-bottom:8px; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html">
+        <img src="logo.png" alt="STATUP logo" class="logo-img" onerror="this.style.display='none'">
+        <div class="logo-text"><strong>STATUP</strong><small>Streamline Your Analysis</small></div>
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link">Our Services</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="register.html" class="nav-link cta">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="wrap materials-hero">
+      <h1 style="margin:0 0 8px 0;">Materials & Test Resources</h1>
+      <p class="lead" style="margin:0;">All study packs, past year questions, mock tests and video lessons — organised for easy access. Click a tab or use the links from Services page to jump to a specific subject.</p>
+      <div class="back-links">
+        <a href="services.html">← Back to Services</a>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <!-- Tab buttons -->
+      <div class="tabs" role="tablist" aria-label="Materials tabs">
+        <button class="tab-btn" role="tab" data-target="ugc" id="tab-ugc">UGC NET — Paper 2 (Population Studies)</button>
+        <button class="tab-btn" role="tab" data-target="mocks" id="tab-mocks">Mock Tests</button>
+        <button class="tab-btn" role="tab" data-target="pyq" id="tab-pyq">Past Year Questions (PYQ)</button>
+        <button class="tab-btn" role="tab" data-target="videos" id="tab-videos">Videos & Lectures</button>
+        <button class="tab-btn" role="tab" data-target="files" id="tab-files">Files & Resources</button>
+      </div>
+
+      <!-- Panels -->
+      <div id="ugc" class="tab-panel" role="tabpanel" aria-labelledby="tab-ugc">
+        <h2>UGC NET — Paper 2 (Population Studies)</h2>
+        <p class="small">Comprehensive hub for UGC NET Paper 2 — practice tests, PYQs, notes and video explanations.</p>
+
+        <div class="materials-grid">
+          <div class="material-card">
+            <h4>All Mock Tests</h4>
+            <p class="small">Timed mock tests with auto-collection and answer upload.</p>
+            <ul class="material-list">
+              <li><a href="#mock1" class="link">Mock Test 01 — Population Studies (Link to form)</a></li>
+              <li><a href="#mock2" class="link">Mock Test 02 — Population Studies</a></li>
+              <li><a href="#form_all" class="link">Register for full Test Series</a></li>
+            </ul>
+          </div>
+
+          <div class="material-card">
+            <h4>Past Year Questions (PYQ)</h4>
+            <p class="small">Consolidated PYQs and solved papers.</p>
+            <ul class="material-list">
+              <li><a href="files/ugc-pyq.pdf" target="_blank">UGC NET PYQ compilation (PDF)</a></li>
+              <li><a href="files/ugc-solved.zip" target="_blank">Solved answers (ZIP)</a></li>
+            </ul>
+          </div>
+
+          <div class="material-card">
+            <h4>Important Questions & Topics</h4>
+            <p class="small">Shortlist of high-yield topics and repeated questions.</p>
+            <ul class="material-list">
+              <li><a href="files/important-topics.pdf" target="_blank">UGC — Important topics (PDF)</a></li>
+              <li><a href="#" class="link">Common formulae & tables</a></li>
+            </ul>
+          </div>
+
+          <div class="material-card">
+            <h4>Video Playlists</h4>
+            <p class="small">Selected video lessons and playlists for Paper 2 topics.</p>
+            <ul class="material-list">
+              <li><a href="https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID" target="_blank">Population Studies – Playlist</a></li>
+              <li><a href="#" class="link">Recorded solution walkthroughs</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="mocks" class="tab-panel" role="tabpanel" aria-labelledby="tab-mocks">
+        <h2>Mock Tests</h2>
+        <p class="small">All mock tests organised by subject & date. Click a mock to take it or view solutions.</p>
+
+        <div class="materials-grid">
+          <div class="material-card">
+            <h4>Mock Test 01</h4>
+            <p class="small">Date: <strong>DD MMM YYYY</strong> • 50 MCQs • 90 minutes</p>
+            <a class="btn primary" href="#FORM_LINK" target="_blank">Take Test</a>
+            <div style="margin-top:8px;"><a class="link" href="files/mock1-solutions.pdf">View Solutions (PDF)</a></div>
+          </div>
+
+          <div class="material-card">
+            <h4>Mock Test 02</h4>
+            <p class="small">Status: Upcoming</p>
+            <a class="btn ghost" href="#register">Register</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="pyq" class="tab-panel" role="tabpanel" aria-labelledby="tab-pyq">
+        <h2>Past Year Questions (PYQ)</h2>
+        <p class="small">Download consolidated PYQs or view individual year PDFs.</p>
+
+        <ul class="material-list" style="margin-top:12px;">
+          <li><a href="files/pyq-2023.pdf" target="_blank">UGC NET 2023 — Paper 2 (PDF)</a></li>
+          <li><a href="files/pyq-2022.pdf" target="_blank">UGC NET 2022 — Paper 2 (PDF)</a></li>
+          <li><a href="files/pyq-all.zip" target="_blank">All PYQs (ZIP)</a></li>
+        </ul>
+      </div>
+
+      <div id="videos" class="tab-panel" role="tabpanel" aria-labelledby="tab-videos">
+        <h2>Videos & Lectures</h2>
+        <p class="small">Playlist links, recorded lectures and explanation videos.</p>
+
+        <div class="materials-grid">
+          <div class="material-card">
+            <h4>Playlist — Population Studies</h4>
+            <div style="margin-top:8px;">
+              <!-- You can embed single video; many sites block embedding Google Forms/YouTube in iframes — replace with link -->
+              <a class="link" href="https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID" target="_blank">Open Playlist on YouTube</a>
+            </div>
+          </div>
+
+          <div class="material-card">
+            <h4>Recorded workshops</h4>
+            <p class="small">Workshop recordings (for registered participants)</p>
+            <a class="link" href="files/workshop-recordings.zip" target="_blank">Download recordings (zip)</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="files" class="tab-panel" role="tabpanel" aria-labelledby="tab-files">
+        <h2>Files & Resources</h2>
+        <p class="small">Slides, code notebooks, datasets and reading material for study & practice.</p>
+
+        <div class="materials-grid">
+          <div class="material-card">
+            <h4>Slides & Notes</h4>
+            <ul class="material-list">
+              <li><a href="files/lecture1.pdf" target="_blank">Lecture 1 — Sampling & Survey Design</a></li>
+              <li><a href="files/lecture2.pdf" target="_blank">Lecture 2 — Demographic Measures</a></li>
+            </ul>
+          </div>
+
+          <div class="material-card">
+            <h4>Datasets & Notebooks</h4>
+            <ul class="material-list">
+              <li><a href="files/dataset1.csv" target="_blank">Dataset — Sample survey</a></li>
+              <li><a href="files/notebook1.ipynb" target="_blank">Analysis notebook (Jupyter)</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="logo" href="index.html"><img src="logo.png" alt="STATUP" class="logo-img" onerror="this.style.display='none'"><div class="logo-text"><strong>STATUP</strong><small>Streamline Your Analysis</small></div></a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>statup.data@gmail.com</p>
+        <p><a href="https://wa.me/919385362051">+91 93853 62051</a></p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="services.html">Services</a><br>
+        <a href="register.html">Register</a>
+      </div>
+    </div>
+    <div class="wrap copyright">
+      <small>© <span id="yearMaterials"></span> STATUP</small>
+    </div>
+  </footer>
+
+  <script>
+    // Tab logic + deep linking by hash
+    (function(){
+      const tabButtons = Array.from(document.querySelectorAll('.tab-btn'));
+      const panels = Array.from(document.querySelectorAll('.tab-panel'));
+
+      function setActive(targetId, pushState = true) {
+        tabButtons.forEach(b => b.classList.toggle('active', b.dataset.target === targetId));
+        panels.forEach(p => p.classList.toggle('active', p.id === targetId));
+        // update hash (simple friendly hash)
+        if (pushState) location.hash = targetId;
+      }
+
+      // click handlers
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => setActive(btn.dataset.target));
+        // keyboard support
+        btn.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            const idx = tabButtons.indexOf(btn);
+            tabButtons[(idx+1) % tabButtons.length].focus();
+          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            const idx = tabButtons.indexOf(btn);
+            tabButtons[(idx-1 + tabButtons.length) % tabButtons.length].focus();
+          }
+        });
+      });
+
+      // on load, open panel from hash or default 'ugc'
+      const initial = (location.hash && location.hash.slice(1)) || 'ugc';
+      // small delay for DOM
+      setActive(initial, false);
+
+      // support links like materials.html#ugc-mock1 to scroll to anchor
+      window.addEventListener('hashchange', () => {
+        const h = location.hash.slice(1);
+        if (!h) return;
+        // if hash matches panel id, open it
+        const panel = document.getElementById(h);
+        if (panel) setActive(h, false);
+        // if hash has dash (e.g., ugc-mock1) try to open base panel eg 'ugc'
+        const base = h.split('-')[0];
+        if (!panel && document.getElementById(base)) setActive(base, false);
+      });
+
+      // set year in footer
+      const y = document.getElementById('yearMaterials');
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
