@@ -179,18 +179,7 @@
       openBtn.target = '_blank';
       openBtn.rel = 'noopener';
 
-      const copyBtn = document.createElement('button');
-      copyBtn.className = 'btn ghost';
-      copyBtn.textContent = 'Copy link';
-      copyBtn.addEventListener('click', () => {
-        navigator.clipboard.writeText(item.link).then(() => {
-          copyBtn.textContent = 'Copied ✓';
-          setTimeout(()=> copyBtn.textContent = 'Copy link', 2000);
-        }).catch(()=> {
-          alert('Copy failed. Use your browser to copy the link.');
-        });
-      });
-
+      
       const detailsBtn = document.createElement('button');
       detailsBtn.className = 'btn ghost';
       detailsBtn.textContent = 'Details';
