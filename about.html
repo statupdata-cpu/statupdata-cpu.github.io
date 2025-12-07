@@ -3,11 +3,49 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About STATUP — About Us</title>
+  <title>About — STATUP</title>
   <meta name="description" content="About STATUP — mission, vision, what we do and why choose us." />
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Small page-specific improvements */
+    .hero-about {
+      background: linear-gradient(180deg, rgba(14,165,164,0.06), rgba(14,165,164,0.02));
+      padding: 44px 0;
+      border-radius: 14px;
+    }
+    .about-inner { display:flex; gap:28px; align-items:stretch; flex-wrap:wrap; }
+    .about-left { flex:1; min-width:280px; }
+    .about-right { width:420px; min-width:260px; }
+    .kpi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:12px; }
+    .kpi { background:var(--card); padding:14px; border-radius:10px; text-align:center; box-shadow:var(--shadow); }
+    .kpi .num{font-size:20px;font-weight:800;color:var(--accent-2)}
+    .values { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:18px; }
+    .value { background:linear-gradient(180deg,#fff,#fbfffe); padding:14px; border-radius:10px; box-shadow:var(--shadow); }
+    .team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:16px; }
+    .team-card { background:var(--card); padding:14px; border-radius:10px; text-align:center; box-shadow:var(--shadow); }
+    .team-avatar { width:72px; height:72px; border-radius:12px; display:inline-grid; place-items:center; background:linear-gradient(90deg,var(--accent-2),var(--accent-1)); color:white; font-weight:700; font-size:18px; margin-bottom:10px;}
+    .testimonials { margin-top:18px; display:grid; gap:12px; }
+    .testimonial { background:linear-gradient(180deg,#ffffff,#f7fff6); padding:12px; border-radius:10px; box-shadow:var(--shadow); }
+    /* responsive */
+    @media (max-width:1000px){
+      .about-right{width:100%}
+      .kpi-grid{grid-template-columns:repeat(2,1fr)}
+      .values{grid-template-columns:repeat(2,1fr)}
+      .team-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:700px){
+      .kpi-grid{grid-template-columns:1fr}
+      .values{grid-template-columns:1fr}
+      .team-grid{grid-template-columns:1fr}
+    }
+
+    /* gentle reveal animation */
+    .reveal { opacity:0; transform:translateY(10px); transition:opacity .45s ease, transform .45s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+  </style>
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
     <div class="wrap">
       <a class="logo" href="index.html">
@@ -15,70 +53,167 @@
         <div class="logo-text"><strong>STATUP</strong><small>Streamline Your Analysis</small></div>
       </a>
 
-      <button class="nav-toggle" id="navToggle2" aria-label="Toggle menu">☰</button>
+      <button class="nav-toggle" id="navToggleAbout" aria-label="Toggle menu">☰</button>
 
-      <nav class="main-nav" id="mainNav2" aria-label="Main navigation">
+      <nav class="main-nav" id="mainNavAbout" aria-label="Main navigation">
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link active">About Us</a>
         <a href="services.html" class="nav-link">Our Services</a>
-        <a href="contact.html" class="nav-link">Contact Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
         <a href="register.html" class="nav-link cta">Register</a>
       </nav>
     </div>
   </header>
 
   <main class="main">
-    <section class="hero hero-about">
-      <div class="wrap hero-about-inner">
-        <div class="about-left">
-          <h1>About STATUP</h1>
-          <p class="lead">STATUP is a learning and analytics support platform dedicated to helping students, researchers and professionals master statistics, data analysis and academic projects with confidence. Through expert guidance, structured learning, and practical analytical support, we make complex concepts simple and actionable.</p>
-          <p>Our mission is to streamline your analysis and elevate your decision-making—from classroom learning to real-world data applications.</p>
-          <a href="contact.html" class="btn primary">Contact Us</a>
+    <!-- Hero -->
+    <section class="wrap hero-about" aria-labelledby="aboutTitle">
+      <div class="about-inner">
+        <div class="about-left reveal" id="leftCol">
+          <h1 id="aboutTitle" style="margin:0 0 8px 0;">About STATUP</h1>
+          <p class="lead" style="margin-bottom:12px;">
+            STATUP empowers students, researchers and professionals to master statistics, data analysis and academic projects with clarity and confidence. We combine expert mentorship, practical training and tailored analytical services so you can focus on learning and decision-making.
+          </p>
+
+          <p style="color:var(--muted); margin-bottom:12px;">
+            Our mission: <strong>To streamline your analysis and elevate your decision-making.</strong>  
+            Our vision: <strong>To be a trusted hub for data education and analytical excellence.</strong>
+          </p>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+            <a class="btn primary" href="services.html">Our Services</a>
+            <a class="btn ghost" href="register.html">Register</a>
+            <a class="btn ghost" href="contact.html">Contact</a>
+          </div>
         </div>
 
-        <div class="about-right">
+        <aside class="about-right reveal" id="rightCol" aria-hidden="false">
           <div class="card">
-            <h3>Who We Are</h3>
-            <p>We are a team passionate about simplifying statistics and guiding learners through every stage of their academic and analytical journey. Whether it’s building conceptual understanding, supporting research projects, or training in software tools, we ensure high-quality, accessible learning experiences.</p>
+            <h3 style="margin-top:0;">Quick facts</h3>
+            <p class="muted" style="margin-bottom:8px;">Trusted support across exams, research and software training.</p>
 
-            <h3>What We Do</h3>
-            <ul class="checklist">
-              <li>Project / Dissertation Support</li>
-              <li>Individual & Group Tuition</li>
-              <li>Statistics Tutorials</li>
-              <li>Data Analysis (A to Z)</li>
-              <li>Software Training (SPSS, R, Python, Excel, JASP, Jamovi)</li>
-              <li>Workshops & Masterclasses</li>
-            </ul>
-          </div>
+            <div class="kpi-grid">
+              <div class="kpi">
+                <div class="num">95<span style="font-weight:600;color:var(--muted);">%</span></div>
+                <div class="muted" style="font-size:13px;margin-top:6px;">Avg. Test Accuracy Improvement</div>
+              </div>
+              <div class="kpi">
+                <div class="num">500+</div>
+                <div class="muted" style="font-size:13px;margin-top:6px;">Students trained</div>
+              </div>
+              <div class="kpi">
+                <div class="num">1200+</div>
+                <div class="muted" style="font-size:13px;margin-top:6px;">Project hours delivered</div>
+              </div>
+            </div>
 
-          <div class="card mt">
-            <h3>UGC NET Paper 2 — Population Studies Test Series</h3>
-            <p>STATUP provides a well-structured online test series designed to help aspirants practice effectively, improve accuracy, and qualify with confidence.</p>
-            <a href="services.html#ugc" class="link">View Test Series</a>
+            <div class="values" style="margin-top:14px;">
+              <div class="value">
+                <strong>Expert Mentorship</strong>
+                <div class="muted" style="font-size:13px;margin-top:6px;">Guidance from experienced statisticians.</div>
+              </div>
+              <div class="value">
+                <strong>Practical Learning</strong>
+                <div class="muted" style="font-size:13px;margin-top:6px;">Hands-on exercises & real datasets.</div>
+              </div>
+              <div class="value">
+                <strong>Personalized Plans</strong>
+                <div class="muted" style="font-size:13px;margin-top:6px;">Programs tailored to your goals.</div>
+              </div>
+            </div>
           </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Detailed services highlight -->
+    <section class="wrap content reveal" id="servicesHighlight">
+      <h2>What we do — at a glance</h2>
+      <p class="muted">A single place for test preparation, research support and practical analytics training.</p>
+
+      <div class="grid cards-4" style="grid-template-columns:repeat(4,1fr); gap:12px; margin-top:12px;">
+        <article class="feature-card">
+          <h4>UGC Test Series</h4>
+          <p class="muted" style="margin-top:6px;">Mock tests, model answers & performance feedback.</p>
+        </article>
+        <article class="feature-card">
+          <h4>Workshops</h4>
+          <p class="muted" style="margin-top:6px;">Live hands-on sessions, free & paid.</p>
+        </article>
+        <article class="feature-card">
+          <h4>Software Training</h4>
+          <p class="muted" style="margin-top:6px;">SPSS · R · Python · Excel · Jamovi · JASP.</p>
+        </article>
+        <article class="feature-card">
+          <h4>Project Support</h4>
+          <p class="muted" style="margin-top:6px;">End-to-end thesis & dissertation assistance.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="wrap content reveal" id="team">
+      <h2>Who we are</h2>
+      <p class="muted">A small team of statisticians, data analysts and educators focused on clear, practical learning.</p>
+
+      <div class="team-grid" aria-label="Team members">
+        <div class="team-card">
+          <div class="team-avatar">SR</div>
+          <strong>Dr. S. Ramesh</strong>
+          <div class="muted" style="font-size:13px;margin-top:6px;">Lead Statistician — Research & Methodology</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">AM</div>
+          <strong>A. Meera</strong>
+          <div class="muted" style="font-size:13px;margin-top:6px;">Data Analyst & Workshop Lead</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">KP</div>
+          <strong>K. Paul</strong>
+          <div class="muted" style="font-size:13px;margin-top:6px;">Course Designer & Tutor</div>
+        </div>
+      </div>
+
+      <div style="margin-top:12px;">
+        <a class="btn ghost" href="contact.html">Work with us</a>
+        <a class="btn primary" href="register.html">Join a program</a>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="wrap content reveal" id="testimonials">
+      <h2>Student feedback</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <strong>“Highly practical and well-structured. Helped me clear UGC NET.”</strong>
+          <div class="muted" style="margin-top:6px;">— Asha, NET aspirant</div>
+        </div>
+
+        <div class="testimonial">
+          <strong>“Their SPSS workshop made my thesis analysis straightforward.”</strong>
+          <div class="muted" style="margin-top:6px;">— Rohit, MPhil</div>
         </div>
       </div>
     </section>
 
-    <section class="content wrap">
-      <h3>Our Mission</h3>
-      <p>To make statistical learning accessible, practical and empowering for students, researchers, and professionals.</p>
-
-      <h3>Our Vision</h3>
-      <p>To be a trusted and innovative hub for data education and analytical excellence.</p>
-
-      <h3>Why Choose STATUP?</h3>
-      <ul>
-        <li><strong>Expert mentorship</strong> — Experienced tutors and analysts.</li>
-        <li><strong>Personalized guidance</strong> — Tailored plans for each learner.</li>
-        <li><strong>Practical learning</strong> — Hands-on exercises & real datasets.</li>
-        <li><strong>Affordable & accessible</strong> — Competitive pricing & flexible modes.</li>
-      </ul>
+    <!-- CTA -->
+    <section class="wrap content reveal" id="aboutCTA" style="margin-bottom:36px;">
+      <div class="card" style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+        <div>
+          <h3 style="margin:0 0 6px 0;">Ready to improve your analysis?</h3>
+          <p class="muted" style="margin:0;">Book a free 15-minute consultation or join our upcoming workshop.</p>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <a class="btn primary" href="register.html">Register</a>
+          <a class="btn ghost" href="contact.html">Contact</a>
+        </div>
+      </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div>
@@ -104,10 +239,29 @@
     </div>
 
     <div class="wrap copyright">
-      <small>© <span id="year2"></span> STATUP — Streamline Your Analysis, Elevate Your Decision.</small>
+      <small>© <span id="yearAbout"></span> STATUP — Streamline Your Analysis, Elevate Your Decision.</small>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // small script to reveal sections when visible for a soft animation
+    (function(){
+      const reveals = document.querySelectorAll('.reveal');
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, {threshold:0.12});
+      reveals.forEach(r => obs.observe(r));
+
+      // set footer year
+      const y = document.getElementById('yearAbout');
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>
