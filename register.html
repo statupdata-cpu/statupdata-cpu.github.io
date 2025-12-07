@@ -6,82 +6,221 @@
   <title>Register — STATUP</title>
   <meta name="description" content="Register for STATUP programs: UGC Test Series, Workshops, Software Training, Projects & Tuition." />
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Page-specific styles for registration hub */
+    .reg-hero{
+      padding:48px 20px;
+      border-radius:14px;
+      background:linear-gradient(180deg, rgba(14,165,164,0.04), rgba(140,214,95,0.02));
+      margin-bottom:22px;
+    }
+    .reg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .reg-card{
+      background:var(--card);
+      padding:20px;
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:180px;
+    }
+    .reg-card h3{margin:0 0 8px 0}
+    .reg-card p{margin:0 0 14px 0;color:var(--muted)}
+    .reg-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .reg-note{background:linear-gradient(180deg,#fff,#fbfffe);padding:14px;border-radius:10px;box-shadow:var(--shadow);margin-top:18px}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(15,60,85,0.06);font-weight:700;font-size:13px}
+    .small{font-size:13px;color:var(--muted)}
+    .meta-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .info-box{padding:12px;background:rgba(15,60,85,0.03);border-radius:10px}
+    .faq{margin-top:18px;display:grid;gap:10px}
+    @media (max-width:700px){
+      .reg-hero{padding:28px}
+    }
+  </style>
 </head>
 <body>
+  <!-- Header (reuse existing header style) -->
   <header class="site-header">
-    <div class="wrap">
+    <div class="wrap" style="align-items:center;">
       <a class="logo" href="index.html">
-        <img src="logo.png" alt="STATUP logo" class="logo-img" onerror="this.style.display='none'">
+        <img src="logo.png" alt="STATUP logo" class="logo-img" style="height:44px" onerror="this.style.display='none'">
         <div class="logo-text"><strong>STATUP</strong><small>Streamline Your Analysis</small></div>
       </a>
 
-      <button class="nav-toggle" id="navToggle5" aria-label="Toggle menu">☰</button>
+      <button class="nav-toggle" id="navToggleReg" aria-label="Toggle menu">☰</button>
 
-      <nav class="main-nav" id="mainNav5" aria-label="Main navigation">
+      <nav class="main-nav" id="mainNavReg" aria-label="Main navigation">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About Us</a>
-        <a href="services.html" class="nav-link">Our Services</a>
-        <a href="contact.html" class="nav-link">Contact Us</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
         <a href="register.html" class="nav-link active cta">Register</a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="main">
-    <section class="wrap">
-      <h1>Registration Hub</h1>
-      <p class="lead">Choose a program and register using the Google Form. Paid programs direct you to payment instructions before registration.</p>
-    </section>
-
-    <section class="wrap grid cards-3">
-      <article class="reg-card" id="ugc">
-        <h3>UGC NET Test Series</h3>
-        <p>Structured mock tests, solutions and performance feedback.</p>
-        <div class="reg-actions">
-          <!-- Replace #FORM_LINK with the actual Google Form URLs -->
-          <a class="btn primary" href="#FORM_LINK" target="_blank" rel="noopener">Register (Google Form)</a>
-          <a class="btn ghost" href="https://chat.whatsapp.com/J6pgWYeiFouJCM91KUVOg3?mode=hqrt1" target="_blank">Join WhatsApp Group</a>
+    <!-- Hero -->
+    <section class="wrap reg-hero" aria-labelledby="registerTitle">
+      <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;">
+        <div style="flex:1;min-width:240px;">
+          <h1 id="registerTitle" style="margin:0 0 8px 0;">Registration Hub</h1>
+          <p class="lead" style="margin-bottom:12px;">Choose a program and register using the Google Form. Paid programs include payment steps — see notes below.</p>
+          <div class="meta-row">
+            <div class="pill">Google Forms for registration</div>
+            <div class="pill">WhatsApp group for announcements</div>
+          </div>
         </div>
-      </article>
 
-      <article class="reg-card" id="workshops">
-        <h3>Workshops & Masterclasses</h3>
-        <p>Both free and paid short courses. View schedule & register per workshop.</p>
-        <div class="reg-actions">
-          <a class="btn primary" href="#FORM_LINK" target="_blank">Register for Workshop</a>
-          <a class="btn ghost" href="contact.html">Ask a Question</a>
+        <div style="width:300px;min-width:220px;">
+          <div class="info-box">
+            <strong>Need help?</strong>
+            <div class="small" style="margin-top:6px;">Email: <a href="mailto:statup.data@gmail.com">statup.data@gmail.com</a><br>
+            WhatsApp: <a href="https://wa.me/919385362051">+91 93853 62051</a></div>
+          </div>
         </div>
-      </article>
-
-      <article class="reg-card" id="software">
-        <h3>Software Training</h3>
-        <p>SPSS, R, Python, Excel, JASP, Jamovi — project focused training.</p>
-        <div class="reg-actions">
-          <a class="btn primary" href="#FORM_LINK" target="_blank">Register (Google Form)</a>
-          <a class="btn ghost" href="contact.html">Request Course Info</a>
-        </div>
-      </article>
-    </section>
-
-    <section class="wrap">
-      <h2>Other Registrations</h2>
-      <div class="grid cards-2">
-        <article class="card">
-          <h4>Project / Dissertation Support</h4>
-          <p>Full-service research support — register to receive a consultation.</p>
-          <a class="btn ghost" href="#FORM_LINK">Register</a>
-        </article>
-
-        <article class="card">
-          <h4>Tuition & Mentoring</h4>
-          <p>Individual & group tuition for school, UG and PG students.</p>
-          <a class="btn ghost" href="#FORM_LINK">Register</a>
-        </article>
       </div>
     </section>
 
-    <section class="wrap note">
-      <p class="muted"><strong>Note:</strong> Replace each <code>#FORM_LINK</code> with the specific Google Form link for that program. For paid programs, consider using a payment gateway (Razorpay/PayPal) and then redirect the participant to the Google Form with a prefilled payment reference.</p>
+    <!-- Registration cards -->
+    <section class="wrap">
+      <h2 style="margin-top:6px;">Programs</h2>
+      <p class="small" style="margin-top:6px;">Click a program to view the registration form or join the announcement group.</p>
+
+      <div class="reg-grid" style="margin-top:14px;">
+        <!-- UGC Test Series -->
+        <article class="reg-card" aria-labelledby="ugcCard">
+          <div>
+            <h3 id="ugcCard">UGC NET Test Series</h3>
+            <p>Structured mock tests, detailed answer explanations, and performance feedback for Population Studies (Paper 2).</p>
+            <div class="small" style="margin-top:6px;">Format: Online • Mode: Timed • Materials supplied after each test</div>
+          </div>
+
+          <div class="reg-actions" style="margin-top:12px;">
+            <a class="btn primary" href="#FORM_LINK" target="_blank" rel="noopener">Register (Google Form)</a>
+            <a class="btn ghost" href="https://chat.whatsapp.com/J6pgWYeiFouJCM91KUVOg3?mode=hqrt1" target="_blank">Join WhatsApp Group</a>
+            <a class="btn ghost" href="#ugc-details" style="align-self:center">Details</a>
+          </div>
+        </article>
+
+        <!-- Workshops -->
+        <article class="reg-card" aria-labelledby="workshopCard">
+          <div>
+            <h3 id="workshopCard">Workshops & Masterclasses</h3>
+            <p>Short, focused workshops on research methods, SPSS, Python and visualization. Both free & paid sessions available.</p>
+            <div class="small" style="margin-top:6px;">Mode: Online / Offline • Certificates available (for paid events)</div>
+          </div>
+
+          <div class="reg-actions" style="margin-top:12px;">
+            <a class="btn primary" href="#FORM_LINK" target="_blank">Register for Workshop</a>
+            <a class="btn ghost" href="contact.html">Ask a Question</a>
+            <a class="btn ghost" href="#workshops-details">Schedule</a>
+          </div>
+        </article>
+
+        <!-- Software training -->
+        <article class="reg-card" aria-labelledby="softwareCard">
+          <div>
+            <h3 id="softwareCard">Software Training</h3>
+            <p>Practical courses in SPSS, R, Python, Excel, JASP & Jamovi. Hands-on projects, notebooks and datasets provided.</p>
+            <div class="small" style="margin-top:6px;">Duration: Variable • Mode: Online / Hybrid</div>
+          </div>
+
+          <div class="reg-actions" style="margin-top:12px;">
+            <a class="btn primary" href="#FORM_LINK" target="_blank">Register (Google Form)</a>
+            <a class="btn ghost" href="#software-details">Curriculum</a>
+            <a class="btn ghost" href="contact.html">Request Info</a>
+          </div>
+        </article>
+
+        <!-- Project support -->
+        <article class="reg-card" aria-labelledby="projectCard">
+          <div>
+            <h3 id="projectCard">Project / Dissertation Support</h3>
+            <p>End-to-end academic support: topic selection, data management, analysis and report writing for UG/PG/PhD students.</p>
+            <div class="small" style="margin-top:6px;">Delivery: Customized • Mode: Online / One-to-one</div>
+          </div>
+
+          <div class="reg-actions" style="margin-top:12px;">
+            <a class="btn primary" href="#FORM_LINK" target="_blank">Request Support</a>
+            <a class="btn ghost" href="contact.html">Consultation</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Other registrations -->
+      <h3 style="margin-top:22px;">Other registrations</h3>
+      <div class="reg-grid" style="margin-top:12px;">
+        <article class="reg-card">
+          <div>
+            <h4>Individual / Group Tuition</h4>
+            <p class="small">Classes for school, UG and PG students — flexible schedules.</p>
+          </div>
+          <div class="reg-actions">
+            <a class="btn primary" href="#FORM_LINK" target="_blank">Register</a>
+            <a class="btn ghost" href="contact.html">Discuss Schedule</a>
+          </div>
+        </article>
+
+        <article class="reg-card">
+          <div>
+            <h4>Statistics Tutorials</h4>
+            <p class="small">Focused concept sessions to clear fundamentals and problem solving.</p>
+          </div>
+          <div class="reg-actions">
+            <a class="btn primary" href="#FORM_LINK" target="_blank">Register</a>
+            <a class="btn ghost" href="contact.html">Ask a Question</a>
+          </div>
+        </article>
+
+        <article class="reg-card">
+          <div>
+            <h4>Tuition / Mentoring (Short)</h4>
+            <p class="small">One-to-one mentoring and improvement plans.</p>
+          </div>
+          <div class="reg-actions">
+            <a class="btn primary" href="#FORM_LINK" target="_blank">Register</a>
+            <a class="btn ghost" href="contact.html">Request Info</a>
+          </div>
+        </article>
+
+        <article class="reg-card">
+          <div>
+            <h4>Custom Corporate Training</h4>
+            <p class="small">Workshops and upskilling programs for teams and organizations.</p>
+          </div>
+          <div class="reg-actions">
+            <a class="btn primary" href="mailto:statup.data@gmail.com">Contact Sales</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Payment / note -->
+      <div class="reg-note">
+        <strong>Payment & confirmation</strong>
+        <p class="small" style="margin-top:8px;">
+          For paid programs we accept online payment (Razorpay / PayPal). After successful payment you will be redirected to the Google Form to complete registration — please save the payment reference and upload it in the form where requested.
+        </p>
+      </div>
+
+      <!-- Helpful FAQs -->
+      <div class="wrap faq" style="margin-top:18px;">
+        <div class="card">
+          <h4 style="margin:0 0 8px 0;">Frequently asked questions</h4>
+          <div style="margin-top:8px;">
+            <strong>Q: Where are the forms stored?</strong>
+            <p class="small" style="margin:6px 0 12px 0;">A: We use Google Forms and responses go into Google Sheets for management. You will receive confirmation via email or WhatsApp.</p>
+
+            <strong>Q: How do I join the WhatsApp group?</strong>
+            <p class="small" style="margin:6px 0 12px 0;">A: Click the Join WhatsApp Group button on UGC or Workshops cards. Group is used only for announcements and schedules.</p>
+
+            <strong>Q: Can I pay later?</strong>
+            <p class="small" style="margin:6px 0 0 0;">A: For some paid workshops we allow seat reservation with partial advance — please contact us to confirm.</p>
+          </div>
+        </div>
+      </div>
+
     </section>
   </main>
 
@@ -109,10 +248,15 @@
     </div>
 
     <div class="wrap copyright">
-      <small>© <span id="year5"></span> STATUP — Streamline Your Analysis, Elevate Your Decision.</small>
+      <small>© <span id="yearRegister"></span> STATUP — Streamline Your Analysis, Elevate Your Decision.</small>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // set footer year
+    const y = document.getElementById('yearRegister');
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
