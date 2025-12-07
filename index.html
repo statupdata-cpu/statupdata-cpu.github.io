@@ -3,121 +3,107 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>STATUP — Streamline Your Analysis, Elevate Your Decision.</title>
+  <title>STATUP — Streamline Your Analysis</title>
   <meta name="description" content="STATUP — learning & analytics support: statistics, data analysis, projects, workshops, test series and software training." />
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='4' fill='%238CD65F'/%3E%3Ctext x='50%' y='50%' font-size='12' font-family='Arial' fill='%23000' dominant-baseline='middle' text-anchor='middle'%3EUP%3C/text%3E%3C/svg%3E">
 </head>
 <body>
   <header class="site-header">
-    <div class="wrap">
-      <a class="logo" href="index.html">
-        <img src="logo.png" alt="STATUP logo" class="logo-img" onerror="this.style.display='none'">
-        <div class="logo-text">
-          <strong>STATUP</strong>
-          <small>Streamline Your Analysis</small>
+    <div class="wrap" style="align-items:center;">
+      <a class="logo" href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+        <img src="logo.png" alt="STATUP logo" class="logo-img" style="height:48px;" onerror="this.style.display='none'">
+        <div class="logo-text" style="line-height:1;">
+          <strong style="font-size:18px;">STATUP</strong>
+          <small style="display:block;color:var(--muted);">Streamline Your Analysis</small>
         </div>
       </a>
 
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
 
       <nav class="main-nav" id="mainNav" aria-label="Main navigation">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About Us</a>
-        <a href="services.html" class="nav-link">Our Services</a>
-        <a href="contact.html" class="nav-link">Contact Us</a>
-        <a href="register.html" class="nav-link cta">Register</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="register.html" class="nav-link">Register</a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="main">
-    <section class="hero">
-      <div class="hero-left">
-        <h1>STATUP</h1>
-        <h2 class="hero-sub">Streamline Your Analysis, Elevate Your Decision.</h2>
-        <p class="lead">Master statistics, data analysis and academic projects with expert guidance, structured learning and practical support.</p>
+    <!-- Minimal Hero -->
+    <section class="wrap" style="padding:48px 20px; display:flex; gap:36px; align-items:center; justify-content:space-between;">
+      <div style="flex:1;min-width:260px;">
+        <h1 style="font-size:36px; margin:0 0 8px 0;">Streamline your analysis.<br><span style="color:var(--accent-3);">Elevate your decision.</span></h1>
+        <p class="lead" style="margin-top:14px; color:var(--muted); max-width:620px;">
+          STATUP provides clear, practical learning and trusted analytical support — from UGC NET preparation to research projects and software training.
+        </p>
 
-        <div class="hero-ctas">
-          <a href="services.html#ugc" class="btn primary">UGC Test Series & Materials</a>
-          <a href="register.html" class="btn ghost">Register</a>
+        <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn primary" href="services.html#ugc">UGC Test Series</a>
+          <a class="btn ghost" href="register.html">Register</a>
         </div>
 
-        <div class="quick-contacts">
+        <div style="margin-top:16px; display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
           <a class="contact-pill" href="mailto:statup.data@gmail.com">✉ statup.data@gmail.com</a>
           <a class="contact-pill" href="https://wa.me/919385362051" target="_blank" rel="noopener">💬 WhatsApp</a>
-          <a class="contact-pill" href="https://www.instagram.com/statupdata" target="_blank" rel="noopener">📸 Instagram</a>
         </div>
       </div>
 
-      <div class="hero-right">
-        <div class="card card-stats">
-          <div class="stat">
-            <div class="stat-value">UGC Test Series</div>
-            <div class="stat-label">Practice · Accuracy · Confidence</div>
-          </div>
+      <div style="width:360px;">
+        <div class="card" style="padding:22px; text-align:center;">
+          <div style="font-weight:700; color:var(--accent-1); font-size:16px;">What we focus on</div>
+          <p class="muted" style="margin:8px 0 12px 0;">Practical skills, exam success, and research-grade analysis.</p>
 
-          <div class="stat mt">
-            <div class="stat-value">Software Training</div>
-            <div class="stat-label">SPSS · R · Python · Excel</div>
-          </div>
-        </div>
-
-        <div class="card card-visual">
-          <!-- Placeholder illustration; replace with image as needed -->
-          <svg viewBox="0 0 380 240" aria-hidden="true">
-            <defs>
-              <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#0f3c55"/><stop offset="1" stop-color="#0ea5a4"/></linearGradient>
-            </defs>
-            <rect rx="18" width="380" height="240" fill="url(#g1)"></rect>
-            <text x="50%" y="50%" fill="#fff" font-size="20" text-anchor="middle" dominant-baseline="middle">Data • Analysis • Learning</text>
-          </svg>
+          <ul style="list-style:none;padding:0;margin:0;text-align:left;line-height:1.6;color:var(--muted)">
+            <li>• UGC NET test series & study materials</li>
+            <li>• Workshops & masterclasses</li>
+            <li>• Software training (SPSS, R, Python)</li>
+            <li>• Project & dissertation support</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="features">
-      <div class="wrap">
-        <h3>What we offer</h3>
-        <div class="grid cards-4">
-          <article class="feature-card">
-            <h4>UGC Test Series & Materials</h4>
-            <p>Structured mock tests, past papers, solutions and curated study materials for UGC NET Paper 2 — Population Studies.</p>
-            <a href="services.html#ugc" class="link">Explore UGC</a>
-          </article>
+    <!-- Simple Features -->
+    <section class="wrap" style="padding:28px 20px;">
+      <h2 style="margin-bottom:10px;">Our services — at a glance</h2>
+      <div class="grid cards-4" style="grid-template-columns:repeat(4,1fr); gap:14px;">
+        <article class="feature-card" style="padding:16px;">
+          <h4 style="margin:0 0 8px 0;">UGC Test Series</h4>
+          <p class="muted" style="margin:0 0 8px 0;">Mock tests, PYQs & solutions to improve speed and accuracy.</p>
+          <a class="link" href="services.html#ugc">Learn more</a>
+        </article>
 
-          <article class="feature-card">
-            <h4>Workshops & Masterclasses</h4>
-            <p>Short interactive workshops (online/offline) on research methods, software and exam prep.</p>
-            <a href="services.html#workshops" class="link">View Workshops</a>
-          </article>
+        <article class="feature-card" style="padding:16px;">
+          <h4 style="margin:0 0 8px 0;">Workshops</h4>
+          <p class="muted" style="margin:0 0 8px 0;">Short practical sessions — free & paid options.</p>
+          <a class="link" href="services.html#workshops">Learn more</a>
+        </article>
 
-          <article class="feature-card">
-            <h4>Software Training</h4>
-            <p>Hands-on training in SPSS, R, Python, Excel, Jamovi and JASP — beginner to advanced.</p>
-            <a href="services.html#software" class="link">Software Courses</a>
-          </article>
+        <article class="feature-card" style="padding:16px;">
+          <h4 style="margin:0 0 8px 0;">Software Training</h4>
+          <p class="muted" style="margin:0 0 8px 0;">SPSS, R, Python, Excel, Jamovi & JASP.</p>
+          <a class="link" href="services.html#software">Learn more</a>
+        </article>
 
-          <article class="feature-card">
-            <h4>Project & Dissertation Support</h4>
-            <p>End-to-end assistance from topic selection to report writing and defense support.</p>
-            <a href="services.html#misc" class="link">Project Support</a>
-          </article>
-        </div>
+        <article class="feature-card" style="padding:16px;">
+          <h4 style="margin:0 0 8px 0;">Project Support</h4>
+          <p class="muted" style="margin:0 0 8px 0;">Proposal, analysis, interpretation and report writing.</p>
+          <a class="link" href="services.html#misc">Learn more</a>
+        </article>
       </div>
     </section>
 
-    <section class="cta-strip">
-      <div class="wrap">
-        <div class="cta-inner">
-          <div>
-            <h3>Ready to begin?</h3>
-            <p>Join our next cohort or get a free consultation — limited seats.</p>
-          </div>
-          <div>
-            <a class="btn primary" href="register.html">Register Now</a>
-            <a class="btn ghost" href="contact.html">Contact Us</a>
-          </div>
+    <!-- Simple CTA -->
+    <section class="wrap" style="padding:24px 20px;">
+      <div class="card" style="display:flex;justify-content:space-between;align-items:center;padding:18px;">
+        <div>
+          <strong>Want a consultation?</strong>
+          <div class="muted" style="margin-top:6px;">Book a short free call to discuss your project or preparation plan.</div>
+        </div>
+        <div>
+          <a class="btn primary" href="contact.html">Contact Us</a>
         </div>
       </div>
     </section>
@@ -126,38 +112,29 @@
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div class="f-left">
-        <a class="logo" href="index.html">
-          <img src="logo.png" alt="STATUP logo" class="logo-img" onerror="this.style.display='none'">
+        <a class="logo" href="index.html" style="display:flex;align-items:center;gap:12px;">
+          <img src="logo.png" alt="STATUP logo" class="logo-img" style="height:38px;" onerror="this.style.display='none'">
           <div class="logo-text"><strong>STATUP</strong><small>Streamline Your Analysis</small></div>
         </a>
-        <p class="muted">Streamline Your Analysis, Elevate Your Decision.</p>
+        <p class="muted" style="margin-top:8px;">Streamline Your Analysis, Elevate Your Decision.</p>
       </div>
 
       <div class="f-middle">
-        <h4>Quick Links</h4>
+        <h4 style="margin-bottom:6px;">Quick Links</h4>
         <nav class="f-nav">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="register.html">Register</a>
-          <a href="contact.html">Contact</a>
+          <a href="about.html">About</a> · <a href="services.html">Services</a> · <a href="register.html">Register</a>
         </nav>
       </div>
 
       <div class="f-right">
-        <h4>Contact</h4>
-        <p>Statup, Calicut, Kerala, India</p>
-        <p>📧 <a href="mailto:statup.data@gmail.com">statup.data@gmail.com</a></p>
-        <p>📞 <a href="https://wa.me/919385362051">+91 93853 62051</a></p>
-        <div class="socials">
-          <a href="https://chat.whatsapp.com/J6pgWYeiFouJCM91KUVOg3?mode=hqrt1" target="_blank" rel="noopener">WhatsApp Group</a>
-          <a href="https://whatsapp.com/channel/0029VbBAltU29755yuDpou1U/102" target="_blank" rel="noopener">WhatsApp Channel</a>
-          <a href="https://www.instagram.com/statupdata" target="_blank" rel="noopener">Instagram</a>
-        </div>
+        <h4 style="margin-bottom:6px;">Contact</h4>
+        <p class="muted" style="margin:0 0 6px 0;">Statup, Calicut, Kerala, India</p>
+        <p style="margin:0;"><a href="mailto:statup.data@gmail.com">statup.data@gmail.com</a></p>
+        <p style="margin:6px 0 0 0;"><a href="https://wa.me/919385362051">+91 93853 62051</a></p>
       </div>
     </div>
 
-    <div class="wrap copyright">
+    <div class="wrap copyright" style="text-align:center;padding:18px 0;">
       <small>© <span id="year"></span> STATUP. All rights reserved.</small>
     </div>
   </footer>
