@@ -1,70 +1,56 @@
-// Basic SPA behaviour: show/hide sections when menu clicked.
-// Also supports in-page links and a hamburger on small screens.
+// Basic shared JS for menu toggle, accordion, and footer years
 
 document.addEventListener('DOMContentLoaded', function () {
-  const links = document.querySelectorAll('.nav-link, .btn[data-target]');
-  const sections = document.querySelectorAll('.page-section');
-  const year = document.getElementById('year');
-  const navToggle = document.getElementById('navToggle');
-  const navList = document.getElementById('navList');
-  year.textContent = new Date().getFullYear();
-
-  function showSection(id) {
-    // hide all
-    sections.forEach(s => s.classList.remove('active'));
-    // show chosen
-    const target = document.getElementById(id);
-    if (target) {
-      target.classList.add('active');
-      target.focus({preventScroll:true});
-      // update nav active state
-      document.querySelectorAll('.nav-link').forEach(a => a.classList.toggle('active', a.dataset.target === id));
-      // close mobile nav
-      navList.classList.remove('show');
-      navToggle.setAttribute('aria-expanded','false');
-      history.replaceState(null,'', '#' + id);
-    }
-  }
-
-  // hook nav links
-  links.forEach(a => {
-    a.addEventListener('click', function (e) {
-      e.preventDefault();
-      const t = this.dataset.target;
-      if (t) showSection(t);
-      else if (this.getAttribute('href') && this.getAttribute('href').startsWith('#')) {
-        showSection(this.getAttribute('href').substring(1));
-      }
+  // header nav toggles (works for all navToggle ids used)
+  ['navToggle','navToggle2','navToggle3','navToggle4','navToggle5'].forEach(id => {
+    const btn = document.getElementById(id);
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      // try find sibling nav by id pattern
+      const nav = this.nextElementSibling || document.querySelector('.main-nav');
+      if (nav) nav.classList.toggle('show');
     });
   });
 
-  // nav toggle for small screens
-  navToggle.addEventListener('click', function () {
-    const shown = navList.classList.toggle('show');
-    this.setAttribute('aria-expanded', String(shown));
-  });
-
-  // on load, check hash or default to home
-  const start = (location.hash && location.hash.substring(1)) || 'home';
-  showSection(start);
-
-  // simple form handler demo
-  const form = document.getElementById('signupForm');
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const fd = new FormData(form);
-      alert(`Thanks ${fd.get('name') || ''}! We'll contact you at ${fd.get('email')}.`);
-      form.reset();
-      showSection('home');
+  // accordion behavior
+  document.querySelectorAll('.accordion .accordion-item').forEach(item => {
+    const head = item.querySelector('.acc-head');
+    const body = item.querySelector('.acc-body');
+    if (!head || !body) return;
+    head.addEventListener('click', function () {
+      const open = body.style.display === 'block';
+      // close all
+      document.querySelectorAll('.accordion .acc-body').forEach(b => b.style.display = 'none');
+      if (!open) body.style.display = 'block';
+      else body.style.display = 'none';
+      // smooth scroll to opened item on mobile
+      if (!open) setTimeout(()=> head.scrollIntoView({behavior:'smooth', block:'center'}), 120);
     });
-  }
-
-  // Connect button scroll to register
-  const connectBtn = document.getElementById('connectBtn');
-  if (connectBtn) connectBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-    showSection('register');
   });
 
+  // footer year
+  const years = ['year','year2','year3','year4','year5'];
+  years.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = new Date().getFullYear();
+  });
+
+  // simple enhancement: open target _blank safely
+  document.querySelectorAll('a[target="_blank"]').forEach(a => {
+    a.setAttribute('rel', 'noopener noreferrer');
+  });
+
+  // enable clickable .link elements that are anchors
+  document.querySelectorAll('.link').forEach(l => {
+    // nothing additional required
+  });
+
+  // Accessible keyboard nav for accordion
+  document.querySelectorAll('.acc-head').forEach(h => {
+    h.setAttribute('tabindex', '0');
+    h.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') h.click();
+    });
+  });
 });
+
