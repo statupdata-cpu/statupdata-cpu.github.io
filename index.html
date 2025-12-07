@@ -3,169 +3,162 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Streamline Analysis — Home</title>
+  <title>STATUP — Streamline Your Analysis</title>
+  <meta name="description" content="STATUP — learning & analytics support: statistics, data analysis, projects, workshops, test series and software training." />
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='4' fill='%238CD65F'/%3E%3Ctext x='50%' y='50%' font-size='12' font-family='Arial' fill='%23000' dominant-baseline='middle' text-anchor='middle'%3EUP%3C/text%3E%3C/svg%3E">
 </head>
 <body>
   <header class="site-header">
-    <div class="logo"> <!-- simple text logo, replace with image if you have one -->
-      <span class="logo-mark">◐</span>
-      <span class="logo-text">Streamline</span>
-    </div>
+    <div class="wrap">
+      <a class="logo" href="index.html">
+        <img src="logo.png" alt="STATUP logo" class="logo-img" onerror="this.style.display='none'">
+        <div class="logo-text">
+          <strong>STATUP</strong>
+          <small>Streamline Your Analysis</small>
+        </div>
+      </a>
 
-    <nav class="main-nav" aria-label="Primary">
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList">
-        ☰
-      </button>
-      <ul class="nav-list" id="navList">
-        <li><a href="#" data-target="home" class="nav-link active">Home</a></li>
-        <li><a href="#" data-target="about" class="nav-link">About Us</a></li>
-        <li><a href="#" data-target="services" class="nav-link">Our Services</a></li>
-        <li><a href="#" data-target="tests" class="nav-link">Test Scores</a></li>
-        <li><a href="#" data-target="videos" class="nav-link">Videos</a></li>
-        <li><a href="#" data-target="register" class="nav-link">Register</a></li>
-        <li><a href="#" data-target="contact" class="nav-link">Contact Us</a></li>
-      </ul>
-    </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link">Our Services</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+        <a href="register.html" class="nav-link cta">Register</a>
+      </nav>
+    </div>
   </header>
 
-  <main id="mainContent" class="main">
-    <!-- HERO / HOME -->
-    <section id="home" class="page-section active" tabindex="-1" aria-labelledby="homeTitle">
-      <div class="hero">
-        <div class="hero-copy">
-          <h1 id="homeTitle">STREAMLINE YOUR ANALYSIS</h1>
-          <h2 class="sub">ELEVATE YOUR DECISION</h2>
-          <p class="tagline">Learn with clarity. Analyze with confidence. Elevate with data-driven mastery.</p>
+  <main class="main">
+    <section class="hero">
+      <div class="hero-left">
+        <h1>STATUP</h1>
+        <h2 class="hero-sub">Streamline Your Analysis, Elevate Your Decision.</h2>
+        <p class="lead">Master statistics, data analysis and academic projects with expert guidance, structured learning and practical support.</p>
 
-          <div class="cta-row">
-            <a class="btn primary" href="#" id="connectBtn">Connect with us</a>
-            <a class="btn ghost" href="#" data-target="about">Learn more</a>
-          </div>
+        <div class="hero-ctas">
+          <a href="services.html#ugc" class="btn primary">UGC Test Series & Materials</a>
+          <a href="register.html" class="btn ghost">Register</a>
         </div>
 
-        <div class="hero-card">
-          <!-- stylized card to match sketch -->
+        <div class="quick-contacts">
+          <a class="contact-pill" href="mailto:statup.data@gmail.com">✉ statup.data@gmail.com</a>
+          <a class="contact-pill" href="https://wa.me/919385362051" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a class="contact-pill" href="https://www.instagram.com/statupdata" target="_blank" rel="noopener">📸 Instagram</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="card card-stats">
           <div class="stat">
-            <div class="stat-number">+95%</div>
-            <div class="stat-label">Decision Confidence</div>
+            <div class="stat-value">UGC Test Series</div>
+            <div class="stat-label">Practice · Accuracy · Confidence</div>
           </div>
-          <div class="hero-illustration" aria-hidden="true">
-            <!-- Use SVG or image here; placeholder geometric -->
-            <svg viewBox="0 0 200 120" class="blob" preserveAspectRatio="xMidYMid meet">
-              <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#0f3c55"/><stop offset="1" stop-color="#0ea5a4"/></linearGradient></defs>
-              <rect rx="14" width="200" height="120" fill="url(#g)"></rect>
-            </svg>
+
+          <div class="stat mt">
+            <div class="stat-value">Software Training</div>
+            <div class="stat-label">SPSS · R · Python · Excel</div>
           </div>
         </div>
+
+        <div class="card card-visual">
+          <!-- Placeholder illustration; replace with image as needed -->
+          <svg viewBox="0 0 380 240" aria-hidden="true">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#0f3c55"/><stop offset="1" stop-color="#0ea5a4"/></linearGradient>
+            </defs>
+            <rect rx="18" width="380" height="240" fill="url(#g1)"></rect>
+            <text x="50%" y="50%" fill="#fff" font-size="20" text-anchor="middle" dominant-baseline="middle">Data • Analysis • Learning</text>
+          </svg>
+        </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="page-section" tabindex="-1" aria-labelledby="aboutTitle">
-      <div class="container">
-        <h3 id="aboutTitle">About Us</h3>
-        <p>We help organizations streamline analytics workflows so leaders can make faster, more accurate decisions. Our approach combines data engineering, analytics, and expert coaching to build repeatable outcomes.</p>
-        <ul class="features">
-          <li><strong>Data strategy:</strong> Align metrics to business outcomes.</li>
-          <li><strong>Analytics:</strong> Actionable dashboards & models.</li>
-          <li><strong>Training:</strong> Build in-house capability and confidence.</li>
-        </ul>
-      </div>
-    </section>
+    <section class="features">
+      <div class="wrap">
+        <h3>What we offer</h3>
+        <div class="grid cards-4">
+          <article class="feature-card">
+            <h4>UGC Test Series & Materials</h4>
+            <p>Structured mock tests, past papers, solutions and curated study materials for UGC NET Paper 2 — Population Studies.</p>
+            <a href="services.html#ugc" class="link">Explore UGC</a>
+          </article>
 
-    <!-- SERVICES -->
-    <section id="services" class="page-section" tabindex="-1" aria-labelledby="servicesTitle">
-      <div class="container">
-        <h3 id="servicesTitle">Our Services</h3>
-        <div class="cards">
-          <article class="card">
-            <h4>Data Integration</h4>
-            <p>Collect, clean and stream data for reliable analysis.</p>
+          <article class="feature-card">
+            <h4>Workshops & Masterclasses</h4>
+            <p>Short interactive workshops (online/offline) on research methods, software and exam prep.</p>
+            <a href="services.html#workshops" class="link">View Workshops</a>
           </article>
-          <article class="card">
-            <h4>Analytics & BI</h4>
-            <p>Dashboards and models that highlight what matters.</p>
+
+          <article class="feature-card">
+            <h4>Software Training</h4>
+            <p>Hands-on training in SPSS, R, Python, Excel, Jamovi and JASP — beginner to advanced.</p>
+            <a href="services.html#software" class="link">Software Courses</a>
           </article>
-          <article class="card">
-            <h4>Advisory & Training</h4>
-            <p>Hands-on coaching to embed data-driven decision making.</p>
+
+          <article class="feature-card">
+            <h4>Project & Dissertation Support</h4>
+            <p>End-to-end assistance from topic selection to report writing and defense support.</p>
+            <a href="services.html#misc" class="link">Project Support</a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- TEST SCORES -->
-    <section id="tests" class="page-section" tabindex="-1" aria-labelledby="testsTitle">
-      <div class="container">
-        <h3 id="testsTitle">Test Scores</h3>
-        <p>Example performance metrics and sample reports. (Replace with real data visualizations.)</p>
-        <div class="metrics">
-          <div class="metric">Accuracy <span>92%</span></div>
-          <div class="metric">Latency <span>120ms</span></div>
-          <div class="metric">Uptime <span>99.9%</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- VIDEOS -->
-    <section id="videos" class="page-section" tabindex="-1" aria-labelledby="videosTitle">
-      <div class="container">
-        <h3 id="videosTitle">Videos</h3>
-        <p>Short tutorials and case studies.</p>
-        <div class="video-grid">
-          <div class="video-placeholder">Video 1</div>
-          <div class="video-placeholder">Video 2</div>
-          <div class="video-placeholder">Video 3</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- REGISTER -->
-    <section id="register" class="page-section" tabindex="-1" aria-labelledby="registerTitle">
-      <div class="container narrow">
-        <h3 id="registerTitle">Register</h3>
-        <p>Sign up to get a demo or start a trial.</p>
-        <form id="signupForm" class="form">
-          <label>
-            Full name
-            <input type="text" name="name" required>
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" required>
-          </label>
-          <label>
-            Company (optional)
-            <input type="text" name="company">
-          </label>
-          <div class="form-actions">
-            <button class="btn primary" type="submit">Request Demo</button>
-            <button class="btn ghost" type="button" data-target="contact">Contact Sales</button>
+    <section class="cta-strip">
+      <div class="wrap">
+        <div class="cta-inner">
+          <div>
+            <h3>Ready to begin?</h3>
+            <p>Join our next cohort or get a free consultation — limited seats.</p>
           </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="page-section" tabindex="-1" aria-labelledby="contactTitle">
-      <div class="container">
-        <h3 id="contactTitle">Contact Us</h3>
-        <p>Prefer email? hello@example.com · Phone: +1 (555) 123-4567</p>
-        <address class="address">
-          123 Data Drive<br>Analytics City, AC 12345
-        </address>
-        <div class="social-row">
-          <a class="chip" href="#" aria-label="LinkedIn">LinkedIn</a>
-          <a class="chip" href="#" aria-label="Twitter">Twitter</a>
+          <div>
+            <a class="btn primary" href="register.html">Register Now</a>
+            <a class="btn ghost" href="contact.html">Contact Us</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container small">
-      <small>© <span id="year"></span> Streamline — Elevate your decision. All rights reserved.</small>
+    <div class="wrap footer-grid">
+      <div class="f-left">
+        <a class="logo" href="index.html">
+          <img src="logo.png" alt="STATUP logo" class="logo-img" onerror="this.style.display='none'">
+          <div class="logo-text"><strong>STATUP</strong><small>Streamline Your Analysis</small></div>
+        </a>
+        <p class="muted">Streamline Your Analysis, Elevate Your Decision.</p>
+      </div>
+
+      <div class="f-middle">
+        <h4>Quick Links</h4>
+        <nav class="f-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="register.html">Register</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="f-right">
+        <h4>Contact</h4>
+        <p>Statup, Calicut, Kerala, India</p>
+        <p>📧 <a href="mailto:statup.data@gmail.com">statup.data@gmail.com</a></p>
+        <p>📞 <a href="https://wa.me/919385362051">+91 93853 62051</a></p>
+        <div class="socials">
+          <a href="https://chat.whatsapp.com/J6pgWYeiFouJCM91KUVOg3?mode=hqrt1" target="_blank" rel="noopener">WhatsApp Group</a>
+          <a href="https://whatsapp.com/channel/0029VbBAltU29755yuDpou1U/102" target="_blank" rel="noopener">WhatsApp Channel</a>
+          <a href="https://www.instagram.com/statupdata" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap copyright">
+      <small>© <span id="year"></span> STATUP. All rights reserved.</small>
     </div>
   </footer>
 
