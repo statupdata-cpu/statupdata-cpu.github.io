@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Streamline Analysis — Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo"> <!-- simple text logo, replace with image if you have one -->
+      <span class="logo-mark">◐</span>
+      <span class="logo-text">Streamline</span>
+    </div>
+
+    <nav class="main-nav" aria-label="Primary">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList">
+        ☰
+      </button>
+      <ul class="nav-list" id="navList">
+        <li><a href="#" data-target="home" class="nav-link active">Home</a></li>
+        <li><a href="#" data-target="about" class="nav-link">About Us</a></li>
+        <li><a href="#" data-target="services" class="nav-link">Our Services</a></li>
+        <li><a href="#" data-target="tests" class="nav-link">Test Scores</a></li>
+        <li><a href="#" data-target="videos" class="nav-link">Videos</a></li>
+        <li><a href="#" data-target="register" class="nav-link">Register</a></li>
+        <li><a href="#" data-target="contact" class="nav-link">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="mainContent" class="main">
+    <!-- HERO / HOME -->
+    <section id="home" class="page-section active" tabindex="-1" aria-labelledby="homeTitle">
+      <div class="hero">
+        <div class="hero-copy">
+          <h1 id="homeTitle">STREAMLINE YOUR ANALYSIS</h1>
+          <h2 class="sub">ELEVATE YOUR DECISION</h2>
+          <p class="tagline">Learn with clarity. Analyze with confidence. Elevate with data-driven mastery.</p>
+
+          <div class="cta-row">
+            <a class="btn primary" href="#" id="connectBtn">Connect with us</a>
+            <a class="btn ghost" href="#" data-target="about">Learn more</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <!-- stylized card to match sketch -->
+          <div class="stat">
+            <div class="stat-number">+95%</div>
+            <div class="stat-label">Decision Confidence</div>
+          </div>
+          <div class="hero-illustration" aria-hidden="true">
+            <!-- Use SVG or image here; placeholder geometric -->
+            <svg viewBox="0 0 200 120" class="blob" preserveAspectRatio="xMidYMid meet">
+              <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#0f3c55"/><stop offset="1" stop-color="#0ea5a4"/></linearGradient></defs>
+              <rect rx="14" width="200" height="120" fill="url(#g)"></rect>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="page-section" tabindex="-1" aria-labelledby="aboutTitle">
+      <div class="container">
+        <h3 id="aboutTitle">About Us</h3>
+        <p>We help organizations streamline analytics workflows so leaders can make faster, more accurate decisions. Our approach combines data engineering, analytics, and expert coaching to build repeatable outcomes.</p>
+        <ul class="features">
+          <li><strong>Data strategy:</strong> Align metrics to business outcomes.</li>
+          <li><strong>Analytics:</strong> Actionable dashboards & models.</li>
+          <li><strong>Training:</strong> Build in-house capability and confidence.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="page-section" tabindex="-1" aria-labelledby="servicesTitle">
+      <div class="container">
+        <h3 id="servicesTitle">Our Services</h3>
+        <div class="cards">
+          <article class="card">
+            <h4>Data Integration</h4>
+            <p>Collect, clean and stream data for reliable analysis.</p>
+          </article>
+          <article class="card">
+            <h4>Analytics & BI</h4>
+            <p>Dashboards and models that highlight what matters.</p>
+          </article>
+          <article class="card">
+            <h4>Advisory & Training</h4>
+            <p>Hands-on coaching to embed data-driven decision making.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEST SCORES -->
+    <section id="tests" class="page-section" tabindex="-1" aria-labelledby="testsTitle">
+      <div class="container">
+        <h3 id="testsTitle">Test Scores</h3>
+        <p>Example performance metrics and sample reports. (Replace with real data visualizations.)</p>
+        <div class="metrics">
+          <div class="metric">Accuracy <span>92%</span></div>
+          <div class="metric">Latency <span>120ms</span></div>
+          <div class="metric">Uptime <span>99.9%</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section id="videos" class="page-section" tabindex="-1" aria-labelledby="videosTitle">
+      <div class="container">
+        <h3 id="videosTitle">Videos</h3>
+        <p>Short tutorials and case studies.</p>
+        <div class="video-grid">
+          <div class="video-placeholder">Video 1</div>
+          <div class="video-placeholder">Video 2</div>
+          <div class="video-placeholder">Video 3</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGISTER -->
+    <section id="register" class="page-section" tabindex="-1" aria-labelledby="registerTitle">
+      <div class="container narrow">
+        <h3 id="registerTitle">Register</h3>
+        <p>Sign up to get a demo or start a trial.</p>
+        <form id="signupForm" class="form">
+          <label>
+            Full name
+            <input type="text" name="name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required>
+          </label>
+          <label>
+            Company (optional)
+            <input type="text" name="company">
+          </label>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Request Demo</button>
+            <button class="btn ghost" type="button" data-target="contact">Contact Sales</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="page-section" tabindex="-1" aria-labelledby="contactTitle">
+      <div class="container">
+        <h3 id="contactTitle">Contact Us</h3>
+        <p>Prefer email? hello@example.com · Phone: +1 (555) 123-4567</p>
+        <address class="address">
+          123 Data Drive<br>Analytics City, AC 12345
+        </address>
+        <div class="social-row">
+          <a class="chip" href="#" aria-label="LinkedIn">LinkedIn</a>
+          <a class="chip" href="#" aria-label="Twitter">Twitter</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container small">
+      <small>© <span id="year"></span> Streamline — Elevate your decision. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
