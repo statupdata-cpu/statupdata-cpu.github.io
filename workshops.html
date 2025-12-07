@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Workshops & Masterclasses — STATUP</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Page-specific */
+    .wrap { max-width:1100px; margin:0 auto; padding:28px; }
+    .hero { padding:20px; border-radius:12px; background:linear-gradient(180deg,#f6fbfb,#f2fbf9); margin-bottom:18px; }
+    .tabs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+    .tab-btn { padding:10px 14px; border-radius:10px; border:1px solid rgba(10,40,50,0.06); background:transparent; cursor:pointer; font-weight:700;}
+    .tab-btn.active { background:linear-gradient(90deg,#0e9ea4,#39b893); color:white; box-shadow:0 8px 20px rgba(14,165,164,0.10); border:0;}
+    .panel { display:none; background:var(--card); padding:14px; border-radius:12px; box-shadow:var(--shadow); }
+    .panel.active { display:block; }
+    .subtabs { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+    .subbtn { padding:8px 12px; border-radius:8px; border:1px solid rgba(10,40,50,0.06); background:transparent; cursor:pointer; font-weight:600; }
+    .subbtn.active { background:#0e9ea4; color:white; border:0; box-shadow:0 8px 20px rgba(14,165,164,0.08); }
+    .subpanel { display:none; margin-top:12px; }
+    .subpanel.active { display:block; }
+    .grid-2 { display:grid; grid-template-columns:1fr 360px; gap:18px; align-items:start; }
+    .card { background:linear-gradient(180deg,#fff,#fbfffe); padding:14px; border-radius:10px; box-shadow:var(--shadow); }
+    .muted { color: #6b7a83; }
+    @media (max-width:900px){ .grid-2{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap" style="align-items:center;display:flex;justify-content:space-between;">
+      <a class="logo" href="index.html"><img src="logo.png" alt="STATUP" class="logo-img" onerror="this.style.display='none'"><div class="logo-text"><strong>STATUP</strong><small>Streamline Your Analysis</small></div></a>
+      <nav class="main-nav"><a href="index.html">Home</a> · <a href="services.html">Services</a> · <a href="materials.html">Materials</a> · <a href="register.html">Register</a></nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="wrap">
+      <section class="hero">
+        <h1 style="margin:0 0 8px 0;">Workshops & Masterclasses</h1>
+        <p class="muted" style="margin:0;">Short, practical sessions — both free and paid. Click a workshop to see details, register, join meeting links, and access materials.</p>
+      </section>
+
+      <!-- Workshop tabs -->
+      <div class="tabs" role="tablist" aria-label="Workshops list">
+        <!-- Give each workshop a short id like ws1, ws2 -->
+        <button class="tab-btn" data-target="ws1" role="tab" id="ws1-tab">Workshop 1</button>
+        <button class="tab-btn" data-target="ws2" role="tab" id="ws2-tab">Workshop 2</button>
+        <button class="tab-btn" data-target="ws3" role="tab" id="ws3-tab">Workshop 3</button>
+        <!-- Add more workshops as needed -->
+      </div>
+
+      <!-- Panels -->
+      <div id="ws1" class="panel" role="tabpanel" aria-labelledby="ws1-tab">
+        <div class="grid-2">
+          <div>
+            <h2>Workshop 1 — Research Methods & Thesis Design</h2>
+            <p class="muted">Overview: Design research questions, sampling, and analysis plan. Ideal for thesis/dissertation beginners.</p>
+
+            <!-- inner subtabs -->
+            <div class="subtabs" role="tablist" aria-label="Workshop 1 tabs">
+              <button class="subbtn" data-target="ws1-overview">Overview</button>
+              <button class="subbtn" data-target="ws1-register">Register</button>
+              <button class="subbtn" data-target="ws1-meet">Meeting Link</button>
+              <button class="subbtn" data-target="ws1-materials">Materials</button>
+              <button class="subbtn" data-target="ws1-instructions">Instructions</button>
+            </div>
+
+            <div id="ws1-overview" class="subpanel">
+              <h4 style="margin-top:12px;">What you will learn</h4>
+              <ul class="muted">
+                <li>Topic selection & literature mapping</li>
+                <li>Sampling and measurement</li>
+                <li>Analysis plan & interpretation</li>
+              </ul>
+            </div>
+
+            <div id="ws1-register" class="subpanel">
+              <h4 style="margin-top:12px;">Register</h4>
+              <p class="muted">Click to complete a short registration form.</p>
+              <a class="btn primary" href="#FORM_LINK" target="_blank" rel="noopener">Register (Google Form)</a>
+            </div>
+
+            <div id="ws1-meet" class="subpanel">
+              <h4 style="margin-top:12px;">Meeting Link</h4>
+              <p class="muted">Join on the scheduled date via the meeting link below.</p>
+              <a class="btn ghost" href="#MEET_LINK" target="_blank" rel="noopener">Open Meeting Link</a>
+            </div>
+
+            <div id="ws1-materials" class="subpanel">
+              <h4 style="margin-top:12px;">Materials provided</h4>
+              <ul class="muted">
+                <li><a href="files/ws1-slide.pdf" target="_blank">Slides — Research design (PDF)</a></li>
+                <li><a href="files/ws1-dataset.csv" target="_blank">Practice dataset</a></li>
+                <li><a href="files/ws1-checklist.pdf" target="_blank">Proposal checklist (PDF)</a></li>
+              </ul>
+            </div>
+
+            <div id="ws1-instructions" class="subpanel">
+              <h4 style="margin-top:12px;">Instructions for participants</h4>
+              <ol class="muted">
+                <li>Join 5–10 minutes early. Keep a stable internet connection.</li>
+                <li>Download materials before the session (links above).</li>
+                <li>For hands-on tasks, have SPSS/R/Python ready if requested by the module.</li>
+              </ol>
+            </div>
+          </div>
+
+          <aside class="card">
+            <h4 style="margin-top:0;">Quick info</h4>
+            <p class="muted">Duration: 2 days • Mode: Online • Certificate: Yes (selected workshops)</p>
+            <p class="muted" style="margin-top:10px;"><strong>Contact:</strong> <a href="mailto:statup.data@gmail.com">statup.data@gmail.com</a></p>
+            <div style="margin-top:12px;">
+              <a class="btn primary" href="#FORM_LINK" target="_blank">Register</a>
+              <a class="btn ghost" href="contact.html">Ask a question</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Workshop 2 -->
+      <div id="ws2" class="panel" role="tabpanel" aria-labelledby="ws2-tab">
+        <div class="grid-2">
+          <div>
+            <h2>Workshop 2 — SPSS Hands-on: Basics → Advanced</h2>
+            <p class="muted">Overview: Data import, cleaning, hypothesis testing, regression and reporting in SPSS.</p>
+
+            <div class="subtabs" role="tablist" aria-label="Workshop 2 tabs">
+              <button class="subbtn" data-target="ws2-overview">Overview</button>
+              <button class="subbtn" data-target="ws2-register">Register</button>
+              <button class="subbtn" data-target="ws2-meet">Meeting Link</button>
+              <button class="subbtn" data-target="ws2-materials">Materials</button>
+              <button class="subbtn" data-target="ws2-instructions">Instructions</button>
+            </div>
+
+            <div id="ws2-overview" class="subpanel">
+              <h4 style="margin-top:12px;">Course structure</h4>
+              <ul class="muted">
+                <li>Day 1: Data handling, descriptives</li>
+                <li>Day 2: Tests & inference</li>
+                <li>Day 3: Regression & reporting</li>
+              </ul>
+            </div>
+
+            <div id="ws2-register" class="subpanel">
+              <h4 style="margin-top:12px;">Register</h4>
+              <a class="btn primary" href="#FORM_LINK" target="_blank">Register (Google Form)</a>
+            </div>
+
+            <div id="ws2-meet" class="subpanel">
+              <h4 style="margin-top:12px;">Meeting Link</h4>
+              <a class="btn ghost" href="#MEET_LINK" target="_blank">Open Meeting Link</a>
+            </div>
+
+            <div id="ws2-materials" class="subpanel">
+              <h4 style="margin-top:12px;">Materials</h4>
+              <ul class="muted">
+                <li><a href="files/ws2-notes.pdf">SPSS Notes (PDF)</a></li>
+                <li><a href="files/ws2-dataset.sav">Sample SAV file</a></li>
+                <li><a href="files/ws2-syntax.sps">SPSS Syntax</a></li>
+              </ul>
+            </div>
+
+            <div id="ws2-instructions" class="subpanel">
+              <h4 style="margin-top:12px;">Before the workshop</h4>
+              <ul class="muted">
+                <li>Install SPSS or use the provided sample file in Jamovi (if preferred).</li>
+                <li>Download the dataset and open it before the session.</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="card">
+            <h4 style="margin-top:0;">Quick info</h4>
+            <p class="muted">Duration: 3 days • Mode: Online (Live) • Level: Beginner to Advanced</p>
+            <div style="margin-top:12px;">
+              <a class="btn primary" href="#FORM_LINK" target="_blank">Register</a>
+              <a class="btn ghost" href="contact.html">Contact</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Workshop 3 -->
+      <div id="ws3" class="panel" role="tabpanel" aria-labelledby="ws3-tab">
+        <div class="grid-2">
+          <div>
+            <h2>Workshop 3 — Python for Statistical Analysis</h2>
+            <p class="muted">Overview: Pandas, statsmodels, visualisations and reproducible scripts for statistical workflows.</p>
+
+            <div class="subtabs" role="tablist" aria-label="Workshop 3 tabs">
+              <button class="subbtn" data-target="ws3-overview">Overview</button>
+              <button class="subbtn" data-target="ws3-register">Register</button>
+              <button class="subbtn" data-target="ws3-meet">Meeting Link</button>
+              <button class="subbtn" data-target="ws3-materials">Materials</button>
+              <button class="subbtn" data-target="ws3-instructions">Instructions</button>
+            </div>
+
+            <div id="ws3-overview" class="subpanel">
+              <h4 style="margin-top:12px;">Modules</h4>
+              <ul class="muted">
+                <li>Pandas: import & manipulation</li>
+                <li>statsmodels & hypothesis testing</li>
+                <li>Visualization with matplotlib & seaborn</li>
+              </ul>
+            </div>
+
+            <div id="ws3-register" class="subpanel">
+              <a class="btn primary" href="#FORM_LINK" target="_blank">Register (Google Form)</a>
+            </div>
+
+            <div id="ws3-meet" class="subpanel">
+              <a class="btn ghost" href="#MEET_LINK" target="_blank">Open Meeting Link</a>
+            </div>
+
+            <div id="ws3-materials" class="subpanel">
+              <ul class="muted">
+                <li><a href="files/ws3-notebooks.zip">Jupyter notebooks (zip)</a></li>
+                <li><a href="files/ws3-datasets.zip">Datasets (zip)</a></li>
+              </ul>
+            </div>
+
+            <div id="ws3-instructions" class="subpanel">
+              <ol class="muted">
+                <li>Install Python 3.8+ and create a virtual environment.</li>
+                <li>Install required packages from `requirements.txt` (provided in materials).</li>
+              </ol>
+            </div>
+          </div>
+
+          <aside class="card">
+            <h4 style="margin-top:0;">Quick info</h4>
+            <p class="muted">Duration: 4 sessions • Level: Beginner → Intermediate</p>
+            <div style="margin-top:12px;">
+              <a class="btn primary" href="#FORM_LINK" target="_blank">Register</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- add more panels as needed -->
+    </div>
+  </main>
+
+  <script>
+    // Tab & subtab logic + deep linking
+    (function(){
+      const tabBtns = Array.from(document.querySelectorAll('.tab-btn'));
+      const panels = Array.from(document.querySelectorAll('.panel'));
+
+      const setActiveTab = (id, pushState=true) => {
+        tabBtns.forEach(b => b.classList.toggle('active', b.dataset.target === id));
+        panels.forEach(p => p.classList.toggle('active', p.id === id));
+        if (pushState) location.hash = id;
+        // activate first subtab by default
+        const panel = document.getElementById(id);
+        if (panel) {
+          const firstSub = panel.querySelector('.subbtn');
+          if (firstSub) activateSubtab(firstSub.dataset.target, panel);
+        }
+      };
+
+      tabBtns.forEach(b => {
+        b.addEventListener('click', () => setActiveTab(b.dataset.target));
+      });
+
+      // subtab handling (delegated)
+      document.addEventListener('click', (e) => {
+        const sb = e.target.closest('.subbtn');
+        if (!sb) return;
+        const panel = e.target.closest('.panel');
+        activateSubtab(sb.dataset.target, panel);
+      });
+
+      function activateSubtab(subId, panelEl){
+        if (!panelEl) return;
+        const btns = Array.from(panelEl.querySelectorAll('.subbtn'));
+        const subs = Array.from(panelEl.querySelectorAll('.subpanel'));
+        btns.forEach(b => b.classList.toggle('active', b.dataset.target === subId));
+        subs.forEach(s => s.classList.toggle('active', s.id === subId));
+        // update hash so deep link like #ws1-materials works
+        const parentId = panelEl.id;
+        location.hash = parentId + (subId ? '-' + subId.split('-').slice(-1)[0] : '');
+      }
+
+      // deep linking: handle initial hash
+      const h = location.hash ? location.hash.slice(1) : '';
+      if (h) {
+        // if hash is like ws2-materials -> split
+        const [main, sub] = h.split('-',2);
+        if (document.getElementById(main)) {
+          setActiveTab(main, false);
+          const panel = document.getElementById(main);
+          if (sub) {
+            // try find a subpanel id that ends with sub
+            const subTarget = Array.from(panel.querySelectorAll('.subpanel')).find(sp => sp.id.endsWith(sub));
+            if (subTarget) {
+              const btn = Array.from(panel.querySelectorAll('.subbtn')).find(b => b.dataset.target.includes(sub));
+              if (btn) activateSubtab(btn.dataset.target, panel);
+            }
+          }
+        }
+      } else {
+        // default open ws1
+        setActiveTab('ws1', false);
+      }
+
+      // keyboard navigation for main tabs
+      tabBtns.forEach((btn,i) => {
+        btn.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowRight') tabBtns[(i+1)%tabBtns.length].focus();
+          if (e.key === 'ArrowLeft') tabBtns[(i-1+tabBtns.length)%tabBtns.length].focus();
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
