@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Material — Viewer</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  :root{--muted:#6b7a83;--accent1:#0e9ea4;--accent2:#39b893;--card:#fff;--shadow:0 12px 30px rgba(14,165,164,0.06)}
+  .wrap{max-width:1100px;margin:0 auto;padding:28px}
+  .breadcrumb{font-size:13px;color:var(--muted); margin-bottom:12px}
+  .viewer-hero{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;padding:18px;border-radius:12px;background:linear-gradient(180deg,#fbfffe,#f6fbfb)}
+  .cover {width:320px;min-width:220px;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);background:#f7faf9}
+  .cover img{width:100%;height:100%;object-fit:cover;display:block}
+  .meta {flex:1;min-width:240px}
+  .meta h1{margin:0 0 6px 0;font-size:22px;color:#073b4c}
+  .meta .muted{color:var(--muted);margin-bottom:12px}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+  .btn.primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff;box-shadow:0 8px 20px rgba(14,165,164,0.08)}
+  .btn.ghost{background:#fff;border:1px solid rgba(10,40,50,0.06)}
+  .gallery{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .item-card{background:var(--card);padding:12px;border-radius:10px;box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:220px}
+  .item-thumb{height:130px;border-radius:8px;overflow:hidden;background:#eef7f5}
+  .item-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .item-title{font-weight:700;margin:8px 0 4px 0;color:#0b3b47}
+  .item-desc{color:var(--muted);font-size:13px;flex:1}
+  .small{font-size:13px;color:var(--muted)}
+  /* modal */
+  .modal-backdrop{position:fixed;inset:0;background:rgba(3,12,12,0.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:999}
+  .modal{background:white;width:min(980px,96%);border-radius:10px;padding:12px}
+  .modal iframe{width:100%;height:520px;border:0;border-radius:8px}
+  @media(max-width:900px){ .viewer-hero{flex-direction:column} .cover{width:100%} .modal iframe{height:360px} }
+</style>
+</head>
+<body>
+  <header style="background:#fbfffe;padding:10px 0;border-bottom:1px solid rgba(10,40,50,0.02)">
+    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between">
+      <div style="display:flex;gap:12px;align-items:center">
+        <img src="logo.png" alt="STATUP" style="height:44px" onerror="this.style.display='none'">
+        <div><strong>STATUP</strong><br><span class="small">Materials Viewer</span></div>
+      </div>
+      <nav style="font-size:14px">
+        <a href="materials.html">All materials</a> · <a href="services.html">Services</a> · <a href="index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap" id="main">
+    <div id="breadcrumb" class="breadcrumb"><a href="materials.html">Materials</a> › <span id="bcTitle">Loading…</span></div>
+
+    <section class="viewer-hero" aria-labelledby="title">
+      <div class="cover" id="coverWrap">
+        <!-- cover inserted by JS -->
+        <img id="coverImg" src="" alt="">
+      </div>
+
+      <div class="meta">
+        <h1 id="title">Loading…</h1>
+        <div class="muted" id="yearAndType"></div>
+        <p id="desc" class="muted"> </p>
+
+        <div class="actions">
+          <a id="openLink" class="btn primary" target="_blank" rel="noopener">Open (Drive / File)</a>
+          <button id="previewBtn" class="btn ghost" style="display:none">Preview</button>
+          <a id="downloadBtn" class="btn ghost" style="display:none" download>Download</a>
+          <a href="materials.html" class="btn ghost">Back to materials</a>
+        </div>
+        <div style="margin-top:10px" id="extraMeta" class="small"></div>
+      </div>
+    </section>
+
+    <section>
+      <h3 id="sectionTitle" style="margin-top:18px">Related items</h3>
+      <div id="gallery" class="gallery" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <!-- preview modal (PDF or video) -->
+  <div id="modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button id="modalClose" class="btn ghost" style="float:right">Close</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+<script>
+/* ========== copy your items array here OR include a shared JS file ==========
+
+   EITHER:
+   - Copy the same items[] from your ugc-materials page into this file (recommended)
+   OR:
+   - Create a shared file ugc-data.js that contains `window.ugcItems = [...];` and include it in both pages
+
+   For demo I include a small sample list. Replace or extend with your real list.
+*/
+const items = [
+  { id: 'book-1', title: 'Population Studies — Intro', year: 2017, tags:['book','pdf'], type: 'book', link: 'files/book-population.pdf', desc:'A public-domain book covering basic demographic methods.', free:true },
+  { id: 'book-2', title: 'PyQ Papers Collection', year: null, tags:['book','zip'], type: 'book', link: 'files/solved-collection.zip', desc:'Collection of solved PYQs (zip).', free:true },
+  { id: 'pyq-2019', title: 'UGC NET Paper 2 — PYQ 2019 June', year: 2019, tags:['pyq','2019'], type: 'pyq', link: 'files/pyq-2019.pdf', desc: 'Complete paper for 2019 June (Population Studies).', free:true },
+  { id: 'yt-populations', title: 'Population Studies — YouTube Playlist', year: null, tags:['video','playlist'], type:'video', link:'https://www.youtube.com/playlist?list=PLxyz123456', desc:'Public playlist covering important topics.'}
+];
+
+// utility: find item by id in location.hash
+function idFromHash() {
+  return location.hash ? location.hash.slice(1) : null;
+}
+
+// build viewer
+(function initViewer(){
+  const id = idFromHash();
+  if (!id) {
+    document.getElementById('title').textContent = 'No material selected';
+    document.getElementById('desc').textContent = 'Use the materials page to open a specific resource.';
+    return;
+  }
+
+  const item = items.find(it => it.id === id);
+  if (!item) {
+    document.getElementById('title').textContent = 'Material not found';
+    document.getElementById('desc').textContent = 'Please go back to the materials list.';
+    return;
+  }
+
+  // set breadcrumb & meta
+  document.getElementById('bcTitle').textContent = item.title;
+  document.getElementById('title').textContent = item.title;
+  document.getElementById('yearAndType').textContent = (item.year ? item.year + ' · ' : '') + item.type.toUpperCase();
+  document.getElementById('desc').textContent = item.desc || '';
+
+  // cover image: try files/covers/<id>.(jpg|png|webp) or default placeholder
+  const coverImg = document.getElementById('coverImg');
+  const coverCandidates = [
+    'files/covers/' + item.id + '.jpg',
+    'files/covers/' + item.id + '.jpeg',
+    'files/covers/' + item.id + '.png',
+    'files/covers/' + item.id + '.webp'
+  ];
+  function tryCover(list) {
+    if (!list.length) { coverImg.src = 'files/covers/placeholder-cover.png'; coverImg.alt = item.title; return; }
+    const url = list.shift();
+    fetch(url, {method:'HEAD'}).then(res => {
+      if (res.ok) { coverImg.src = url; coverImg.alt = item.title; }
+      else tryCover(list);
+    }).catch(()=> tryCover(list));
+  }
+  tryCover(coverCandidates.slice());
+
+  // Open link button
+  const openLink = document.getElementById('openLink');
+  openLink.href = item.link;
+  openLink.textContent = (item.type==='video' ? 'Open Video / Playlist' : 'Open (Drive / File)');
+
+  // preview or download buttons depending on type / file extension
+  const previewBtn = document.getElementById('previewBtn');
+  const downloadBtn = document.getElementById('downloadBtn');
+  previewBtn.style.display = 'none'; downloadBtn.style.display = 'none';
+
+  // if video (youtube) -> show preview that opens in modal as embed
+  if (item.type === 'video') {
+    previewBtn.style.display = 'inline-block';
+    previewBtn.textContent = 'Preview';
+    previewBtn.addEventListener('click', ()=> openVideoModal(item.link));
+
+    // also show a direct link open
+    openLink.target = '_blank';
+  } else {
+    // file previews: PDF -> can preview; zip -> download only
+    if (item.link && (item.link.endsWith('.pdf') || item.link.includes('.pdf'))) {
+      previewBtn.style.display = 'inline-block';
+      previewBtn.textContent = 'Preview PDF';
+      previewBtn.addEventListener('click', ()=> openPdfModal(item.link));
+      downloadBtn.style.display = 'inline-block';
+      downloadBtn.href = item.link;
+      downloadBtn.textContent = 'Download';
+    } else {
+      // general link -> open in new tab, attempt download if same-origin
+      downloadBtn.style.display = 'none';
+    }
+  }
+
+  // extra meta (tags / free badge)
+  const em = document.getElementById('extraMeta');
+  em.innerHTML = '';
+  if (item.tags && item.tags.length) em.innerHTML += '<div class="small">Tags: ' + item.tags.join(', ') + '</div>';
+  if (item.free) em.innerHTML += '<div style="margin-top:6px"><span style="display:inline-block;background:#16a34a;color:#fff;padding:4px 8px;border-radius:8px;font-weight:700;font-size:13px">FREE</span></div>';
+
+  // populate related items (same type or same tags)
+  const gallery = document.getElementById('gallery');
+  const related = items.filter(it => it.id !== item.id && (it.type === item.type || (it.tags && item.tags && it.tags.some(t=>item.tags.includes(t))))).slice(0,12);
+  if (!related.length) gallery.innerHTML = '<div class="small">No related items.</div>';
+  else {
+    gallery.innerHTML = '';
+    related.forEach(r => {
+      const c = document.createElement('article');
+      c.className = 'item-card';
+      c.innerHTML = `
+        <div class="item-thumb"><img src="files/covers/${r.id}.jpg" alt="${r.title}" onerror="this.src='files/covers/placeholder-thumb.png'"></div>
+        <div class="item-title">${r.title}${r.free? ' <span style="background:#16a34a;color:#fff;padding:4px 8px;border-radius:8px;font-weight:700;font-size:11px;margin-left:8px">FREE</span>':''}</div>
+        <div class="item-desc">${r.desc || ''}</div>
+        <div style="margin-top:10px">
+          <a class="btn primary" href="material-detail.html#${r.id}">Open</a>
+          <a class="btn ghost" href="${r.link}" target="_blank" rel="noopener">Open resource</a>
+        </div>
+      `;
+      gallery.appendChild(c);
+    });
+  }
+
+})(); // initViewer end
+
+/* ========== modal helpers ========== */
+const modal = document.getElementById('modal');
+const modalBody = document.getElementById('modalBody');
+document.getElementById('modalClose').addEventListener('click', closeModal);
+modal.addEventListener('click', (e)=> { if (e.target===modal) closeModal(); });
+
+function openPdfModal(url) {
+  modalBody.innerHTML = `<iframe src="${url}"></iframe>`;
+  modal.style.display = 'flex'; modal.setAttribute('aria-hidden','false');
+}
+function openVideoModal(yurl) {
+  // convert full playlist or video link to embed
+  let embed = '';
+  if (yurl.includes('youtube.com/playlist') || yurl.includes('list=')) {
+    // extract list id
+    const m = yurl.match(/list=([A-Za-z0-9_-]+)/);
+    if (m) embed = `https://www.youtube.com/embed/videoseries?list=${m[1]}`;
+  } else {
+    // extract video id from youtu.be or watch?v=
+    const vid = (yurl.match(/v=([A-Za-z0-9_-]+)/) || yurl.match(/youtu\\.be\\/([A-Za-z0-9_-]+)/) || [])[1];
+    if (vid) embed = `https://www.youtube.com/embed/${vid}`;
+  }
+  if (!embed) {
+    // fallback: open original link in new tab
+    window.open(yurl, '_blank');
+    return;
+  }
+  modalBody.innerHTML = `<iframe src="${embed}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+  modal.style.display = 'flex'; modal.setAttribute('aria-hidden','false');
+}
+function closeModal() { modal.style.display = 'none'; modal.setAttribute('aria-hidden','true'); modalBody.innerHTML=''; }
+
+/* allow deep-linking if user navigates with anchor changes */
+window.addEventListener('hashchange', ()=> {
+  // reload page to show new id; simpler than trying to re-render everything
+  location.reload();
+});
+</script>
+</body>
+</html>
