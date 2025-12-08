@@ -61,6 +61,17 @@
       .controls { flex-direction:column; align-items:stretch; }
       .search input{ padding:12px }
     }
+
+    /* FREE badge (in case you use it later) */
+    .badge-free {
+      background: #16a34a;
+      color: #fff;
+      padding: 4px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 8px;
+      margin-left: 8px;
+    }
   </style>
 </head>
 <body>
@@ -74,7 +85,7 @@
       </div>
       <nav style="display:flex;gap:14px;">
         <a href="index.html">Home</a>
-        <a href="rgister.html">All Materials</a>
+        <a href="materials.html">All Materials</a>
         <a href="services.html">Services</a>
       </nav>
     </div>
@@ -129,58 +140,58 @@
     const items = [
       // --- PYQs (past-year questions)
       { id: 'pyq-2025', title: 'UGC NET Paper 2 — PYQ 2025 June', year: 2025, tags:['pyq','2025'], type: 'pyq', link: 'https://forms.gle/1z3Z1aUfvfBZ9LxN9', desc: 'Complete paper for 2025 June (Population Studies).' },
-      { id: 'pyq-2024', title: 'UGC NET Paper 2 — PYQ 2024 December ', year: 2024, tags:['pyq','2024'], type: 'pyq', link: 'https://forms.gle/7aQD8FCuGMyEDNjaA', desc: 'Complete paper for 2024 December (Population Studies).' },
-      { id: 'pyq-2024', title: 'UGC NET Paper 2 — PYQ 2024 June', year: 2024, tags:['pyq','2024'], type: 'pyq', link: 'https://forms.gle/oydEbTzupSey1hMt5', desc: 'Complete paper for 2024 June (Population Studies).' },
-       { id: 'pyq-2023', title: 'UGC NET Paper 2 — PYQ 2023 December', year: 2023, tags:['pyq','2023'], type: 'pyq', link: 'https://forms.gle/ucEhzk1oYb724hua9', desc: 'Complete paper for 2023 December (Population Studies).' },
-       { id: 'pyq-2023', title: 'UGC NET Paper 2 — PYQ 2023 February', year: 2023, tags:['pyq','2023'], type: 'pyq', link: 'https://forms.gle/rTBJfoAd753on7iS9', desc: 'Complete paper for 2023 February (Population Studies).' },
-       { id: 'pyq-2022', title: 'UGC NET Paper 2 — PYQ 2022 December', year: 2022, tags:['pyq','2022'], type: 'pyq', link: 'https://forms.gle/8kA64w5oEkAMaCr47', desc: 'Complete paper for 2022 December (Population Studies).' },
-       { id: 'pyq-2021', title: 'UGC NET Paper 2 — PYQ 2021 December ', year: 2021, tags:['pyq','2021'], type: 'pyq', link: 'https://forms.gle/SAwKnFHfHVetEAkF6', desc: 'Complete paper for 2021 December (Population Studies).' },
-        { id: 'pyq-2020', title: 'UGC NET Paper 2 — PYQ 2020 December', year: 2020, tags:['pyq','2020'], type: 'pyq', link: 'https://forms.gle/1z3Z1aUfvfBZ9LxN9', desc: 'Complete paper for 2020 December (Population Studies).' },
-        { id: 'pyq-2019', title: 'UGC NET Paper 2 — PYQ 2019 December', year: 2019, tags:['pyq','2019'], type: 'pyq', link: 'https://forms.gle/pH7JGyrRLYUM7cjU8', desc: 'Complete paper for 2019 December (Population Studies).' },
-        { id: 'pyq-2019', title: 'UGC NET Paper 2 — PYQ 2019 June',year: 2019, tags:['pyq','2019'], type: 'pyq', link: 'https://forms.gle/m4ixuuMFbMZxwk9D7', desc: 'Complete paper for 2019 June (Population Studies).' },
-       { id: 'pyq-2018', title: 'UGC NET Paper 2 — PYQ 2018 December ', year: 2018, tags:['pyq','2018'], type: 'pyq', link: 'https://forms.gle/auhitKpDhvLantQr8', desc: 'Complete paper for 2018 December (Population Studies).' },
-        { id: 'pyq-2018', title: 'UGC NET Paper 2 — PYQ 2018 June', year: 2018, tags:['pyq','2018'], type: 'pyq', link: 'https://forms.gle/rMyLyEethg86CmDa9', desc: 'Complete paper for 2018 June (Population Studies).' },
-         { id: 'pyq-2017', title: 'UGC NET Paper 2 — PYQ 2017 November', year: 2017, tags:['pyq','2017'], type: 'pyq', link: 'https://forms.gle/c7iaicLRMhZQaTE88', desc: 'Complete paper for 2017 November (Population Studies).' },
-        { id: 'pyq-2017', title: 'UGC NET Paper 2 — PYQ 2017 January ', year: 2017, tags:['pyq','2017'], type: 'pyq', link: 'https://forms.gle/W69bFEaboSwddgHF8', desc: 'Complete paper for 2017 January (Population Studies).' },
-         { id: 'pyq-2016', title: 'UGC NET Paper 2 — PYQ 2016 June', year: 2025, tags:['pyq','2016'], type: 'pyq', link: 'https://forms.gle/L3xDccEzBPmVYT1a8', desc: 'Complete paper for 2016 June (Population Studies).' },
-         { id: 'pyq-2015', title: 'UGC NET Paper 2 — PYQ 2015 December', year: 2025, tags:['pyq','2015'], type: 'pyq', link: 'https://forms.gle/CyoLwiXUUeLM2zWc8', desc: 'Complete paper for 2015 December (Population Studies).' },
-         { id: 'pyq-2015', title: 'UGC NET Paper 2 — PYQ 2015 June', year: 2025, tags:['pyq','2015'], type: 'pyq', link: 'https://forms.gle/GyBdX8zCALsBdY5s8', desc: 'Complete paper for 2015 June (Population Studies).' },
-         { id: 'pyq-2014', title: 'UGC NET Paper 2 — PYQ 2014 December', year: 2025, tags:['pyq','2014'], type: 'pyq', link: 'https://forms.gle/t9vyxPsZCpQ8YF499', desc: 'Complete paper for 2014 December (Population Studies).' },
-          { id: 'pyq-2014', title: 'UGC NET Paper 2 — PYQ 2014 June', year: 2025, tags:['pyq','2014'], type: 'pyq', link: 'https://forms.gle/eb31KToBaa6mSq9E8', desc: 'Complete paper for 2014 June (Population Studies).' },
+      { id: 'pyq-2024-dec', title: 'UGC NET Paper 2 — PYQ 2024 December', year: 2024, tags:['pyq','2024'], type: 'pyq', link: 'https://forms.gle/7aQD8FCuGMyEDNjaA', desc: 'Complete paper for 2024 December (Population Studies).' },
+      { id: 'pyq-2024-jun', title: 'UGC NET Paper 2 — PYQ 2024 June', year: 2024, tags:['pyq','2024'], type: 'pyq', link: 'https://forms.gle/oydEbTzupSey1hMt5', desc: 'Complete paper for 2024 June (Population Studies).' },
+      { id: 'pyq-2023-dec', title: 'UGC NET Paper 2 — PYQ 2023 December', year: 2023, tags:['pyq','2023'], type: 'pyq', link: 'https://forms.gle/ucEhzk1oYb724hua9', desc: 'Complete paper for 2023 December (Population Studies).' },
+      { id: 'pyq-2023-feb', title: 'UGC NET Paper 2 — PYQ 2023 February', year: 2023, tags:['pyq','2023'], type: 'pyq', link: 'https://forms.gle/rTBJfoAd753on7iS9', desc: 'Complete paper for 2023 February (Population Studies).' },
+      { id: 'pyq-2022', title: 'UGC NET Paper 2 — PYQ 2022 December', year: 2022, tags:['pyq','2022'], type: 'pyq', link: 'https://forms.gle/8kA64w5oEkAMaCr47', desc: 'Complete paper for 2022 December (Population Studies).' },
+      { id: 'pyq-2021', title: 'UGC NET Paper 2 — PYQ 2021 December', year: 2021, tags:['pyq','2021'], type: 'pyq', link: 'https://forms.gle/SAwKnFHfHVetEAkF6', desc: 'Complete paper for 2021 December (Population Studies).' },
+      { id: 'pyq-2020', title: 'UGC NET Paper 2 — PYQ 2020 December', year: 2020, tags:['pyq','2020'], type: 'pyq', link: 'https://forms.gle/1z3Z1aUfvfBZ9LxN9', desc: 'Complete paper for 2020 December (Population Studies).' },
+      { id: 'pyq-2019-dec', title: 'UGC NET Paper 2 — PYQ 2019 December', year: 2019, tags:['pyq','2019'], type: 'pyq', link: 'https://forms.gle/pH7JGyrRLYUM7cjU8', desc: 'Complete paper for 2019 December (Population Studies).' },
+      { id: 'pyq-2019-jun', title: 'UGC NET Paper 2 — PYQ 2019 June', year: 2019, tags:['pyq','2019'], type: 'pyq', link: 'https://forms.gle/m4ixuuMFbMZxwk9D7', desc: 'Complete paper for 2019 June (Population Studies).' },
+      { id: 'pyq-2018-dec', title: 'UGC NET Paper 2 — PYQ 2018 December', year: 2018, tags:['pyq','2018'], type: 'pyq', link: 'https://forms.gle/auhitKpDhvLantQr8', desc: 'Complete paper for 2018 December (Population Studies).' },
+      { id: 'pyq-2018-jun', title: 'UGC NET Paper 2 — PYQ 2018 June', year: 2018, tags:['pyq','2018'], type: 'pyq', link: 'https://forms.gle/rMyLyEethg86CmDa9', desc: 'Complete paper for 2018 June (Population Studies).' },
+      { id: 'pyq-2017-nov', title: 'UGC NET Paper 2 — PYQ 2017 November', year: 2017, tags:['pyq','2017'], type: 'pyq', link: 'https://forms.gle/c7iaicLRMhZQaTE88', desc: 'Complete paper for 2017 November (Population Studies).' },
+      { id: 'pyq-2017-jan', title: 'UGC NET Paper 2 — PYQ 2017 January', year: 2017, tags:['pyq','2017'], type: 'pyq', link: 'https://forms.gle/W69bFEaboSwddgHF8', desc: 'Complete paper for 2017 January (Population Studies).' },
+      { id: 'pyq-2016', title: 'UGC NET Paper 2 — PYQ 2016 June', year: 2016, tags:['pyq','2016'], type: 'pyq', link: 'https://forms.gle/L3xDccEzBPmVYT1a8', desc: 'Complete paper for 2016 June (Population Studies).' },
+      { id: 'pyq-2015-dec', title: 'UGC NET Paper 2 — PYQ 2015 December', year: 2015, tags:['pyq','2015'], type: 'pyq', link: 'https://forms.gle/CyoLwiXUUeLM2zWc8', desc: 'Complete paper for 2015 December (Population Studies).' },
+      { id: 'pyq-2015-jun', title: 'UGC NET Paper 2 — PYQ 2015 June', year: 2015, tags:['pyq','2015'], type: 'pyq', link: 'https://forms.gle/GyBdX8zCALsBdY5s8', desc: 'Complete paper for 2015 June (Population Studies).' },
+      { id: 'pyq-2014-dec', title: 'UGC NET Paper 2 — PYQ 2014 December', year: 2014, tags:['pyq','2014'], type: 'pyq', link: 'https://forms.gle/t9vyxPsZCpQ8YF499', desc: 'Complete paper for 2014 December (Population Studies).' },
+      { id: 'pyq-2014-jun', title: 'UGC NET Paper 2 — PYQ 2014 June', year: 2014, tags:['pyq','2014'], type: 'pyq', link: 'https://forms.gle/eb31KToBaa6mSq9E8', desc: 'Complete paper for 2014 June (Population Studies).' },
 
       // --- Mock tests
       { id: 'mock-01', title: 'Mock Test 01 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/QrXVQ5KkuUKpuRSa6', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
-       { id: 'mock-02', title: 'Mock Test 02 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/GEypWRRqqpt55UHP7', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
-       { id: 'mock-03', title: 'Mock Test 03 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/Qqv2vgRCwUqWoNJr7', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
-       { id: 'mock-04', title: 'Mock Test 04 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/qgmpEKpScWjyNCpP9', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
-       { id: 'mock-05', title: 'Mock Test 05 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/e4FftQdPdQdDCsJ69', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
-       { id: 'mock-06', title: 'Mock Test 06 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/vTMJi7bBGukNgVdD6', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
-       { id: 'mock-07', title: 'Mock Test 07 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/5JtF9uoKAc7LhtS99', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
-       { id: 'mock-08', title: 'Mock Test 08 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/waHm4UKfxaShn9VZ9', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
-       { id: 'mock-09', title: 'Mock Test 09 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/ET4egN9ULpRHu1qw7', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
-       { id: 'mock-10', title: 'Mock Test 10 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/cJKn8JcoRbSLXjod7', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
-       { id: 'mock-11', title: 'Mock Test 11 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/458yzuZyNkVnJTLN8', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
-       { id: 'mock-12', title: 'Mock Test 12 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/Mq5pa6ea7hTneER89', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
-       { id: 'mock-13', title: 'Mock Test 13 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/v63Ew4poKQNMUaG68', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
-       { id: 'mock-14', title: 'Mock Test 14 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/gHjLYzhe7joR4cpe8', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
-       { id: 'mock-15', title: 'Mock Test 15 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/FqVXhorgpBfaPWyW6', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
-       { id: 'mock-16', title: 'Mock Test 16 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/hMQhShftD5fyrZBG6', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-02', title: 'Mock Test 02 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/GEypWRRqqpt55UHP7', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-03', title: 'Mock Test 03 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/Qqv2vgRCwUqWoNJr7', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-04', title: 'Mock Test 04 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/qgmpEKpScWjyNCpP9', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-05', title: 'Mock Test 05 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/e4FftQdPdQdDCsJ69', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-06', title: 'Mock Test 06 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/vTMJi7bBGukNgVdD6', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-07', title: 'Mock Test 07 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/5JtF9uoKAc7LhtS99', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-08', title: 'Mock Test 08 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/waHm4UKfxaShn9VZ9', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-09', title: 'Mock Test 09 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/ET4egN9ULpRHu1qw7', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-10', title: 'Mock Test 10 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/cJKn8JcoRbSLXjod7', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-11', title: 'Mock Test 11 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/458yzuZyNkVnJTLN8', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-12', title: 'Mock Test 12 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/Mq5pa6ea7hTneER89', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-13', title: 'Mock Test 13 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/v63Ew4poKQNMUaG68', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-14', title: 'Mock Test 14 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/gHjLYzhe7joR4cpe8', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-15', title: 'Mock Test 15 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/FqVXhorgpBfaPWyW6', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-16', title: 'Mock Test 16 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/hMQhShftD5fyrZBG6', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
       { id: 'mock-17', title: 'Mock Test 17 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/22F2oY9XJgj6jhLbA', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
       { id: 'mock-18', title: 'Mock Test 18 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/5MLo2qqmf1b2A4tm9', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
       { id: 'mock-19', title: 'Mock Test 19 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/e8oE2vQ8g9cYiJocA', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
       { id: 'mock-20', title: 'Mock Test 20 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/4QGfP9SCSXkfD27m9', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
-      
+
       // --- Important Questions
-      { id: 'imp-01', title: 'Important Questions Set 1', year: null, tags:['imp''repeated'], type: 'imp', link: 'https://forms.gle/LvmiZRg81DRj67gXA', desc: 'Most Important Questions(Learn From Repetition)🔂','(importent+related important QUESTION for learn)' },
-    { id: 'imp-02', title: 'Important Questions Set 2', year: null, tags:['imp''repeated'], type: 'imp', link: 'https://forms.gle/Lw9zcNEQunZUJAwY7', desc: 'Most Important Questions(Learn From Repetition)🔂','(importent+related important QUESTION for learn)' },
-    { id: 'imp-03', title: 'Important Questions Set 3', year: null, tags:['imp''repeated'], type: 'imp', link: 'https://forms.gle/6GLpPziXc4Pkw6R57', desc: 'Most Important Questions(Learn From Repetition)🔂','(importent+related important QUESTION for learn)' },
-   { id: 'imp-04', title: 'Important Questions Set 4', year: null, tags:['imp''repeated'], type: 'imp', link: 'https://forms.gle/1JtKoqBXUN5FpnRZ6', desc: 'Most Important Questions(Learn From Repetition)🔂','(importent+related important QUESTION for learn)' },
-    { id: 'imp-05', title: 'Important Questions Set 5', year: null, tags:['imp''repeated'], type: 'imp', link: 'https://forms.gle/x8aY9Gk5MNpg52GCA', desc: 'Most Important Questions(Learn From Repetition)🔂','(importent+related important QUESTION for learn)' },
-    { id: 'imp-06', title: 'Important Questions Set 6', year: null, tags:['imp''repeated'], type: 'imp', link: 'https://forms.gle/espKuxC4WdvYVP7E6', desc: 'Most Important Questions(Learn From Repetition)🔂','(importent+related important QUESTION for learn)' },
+      { id: 'imp-01', title: 'Important Questions Set 1', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/LvmiZRg81DRj67gXA', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+      { id: 'imp-02', title: 'Important Questions Set 2', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/Lw9zcNEQunZUJAwY7', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+      { id: 'imp-03', title: 'Important Questions Set 3', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/6GLpPziXc4Pkw6R57', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+      { id: 'imp-04', title: 'Important Questions Set 4', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/1JtKoqBXUN5FpnRZ6', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+      { id: 'imp-05', title: 'Important Questions Set 5', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/x8aY9Gk5MNpg52GCA', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+      { id: 'imp-06', title: 'Important Questions Set 6', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/espKuxC4WdvYVP7E6', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
 
       // --- Books & Public Materials
-      { id: 'book-1', title: 'Population Studies — Intro', year: 2017, tags:['book','pdf'], type: 'book', link: 'cdm', desc:'A public-domain book covering basic demographic methods.' },
-         ];
+      { id: 'book-1', title: 'Population Studies — Intro', year: 2017, tags:['book','pdf'], type: 'book', link: 'material-detail.html#book-1', desc:'A public-domain book covering basic demographic methods.' },
+    ];
 
     /*************************************************************************
      * DO NOT CHANGE BELOW unless you know JS.
@@ -363,20 +374,6 @@
       modal.setAttribute('aria-hidden','true');
     }
 
-    // deep linking: read hash on load
-    function handleHashOnLoad() {
-      const h = location.hash ? location.hash.slice(1) : '';
-      if (!h) return;
-      // if matches category
-      if (['pyq','mock','imp','book'].includes(h)) {
-        document.querySelectorAll('.filter-btn').forEach(b => {
-          b.classList.toggle('active', b.dataset.cat === h);
-          if (b.dataset.cat === h) activeCategory = h;
-        });
-      }
-      // if matches an item id, open modal after rendering
-    }
-
     // init
     (function init(){
       // apply initial hash category if present
@@ -387,16 +384,12 @@
       }
       applyFilters();
 
-      // if hash points to item id after a dash, open it
+      // if hash points to item id, open it
       const hash = location.hash ? location.hash.slice(1) : '';
       if (hash && items.some(it => it.id === hash)) {
-        // open modal for that id
         const it = items.find(x => x.id === hash);
         setTimeout(()=> openModal(it), 300);
       }
-
-      // clickable item anchors: if someone uses materials.html#mocks etc.
-      // handled above
     })();
   </script>
 </body>
