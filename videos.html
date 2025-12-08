@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>STATUP — Topic Videos</title>
+<meta name="description" content="Topic-wise video library for STATUP (YouTube playlists & videos) — preview and open in YouTube." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6fbfb; --text:#073b4c; --muted:#60727a;
+    --accent1:#0e9ea4; --accent2:#39b893; --card:#fff;
+    --radius:12px; --shadow:0 10px 30px rgba(6,30,30,0.06); --maxw:1100px;
+  }
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:var(--bg);color:var(--text)}
+  a{color:var(--accent1);text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
+  header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+  header .brand{display:flex;gap:12px;align-items:center}
+  .title{font-size:22px;font-weight:700}
+  .lead{color:var(--muted);margin-top:6px;font-size:14px}
+
+  .controls{display:flex;gap:12px;align-items:center;margin:18px 0;flex-wrap:wrap}
+  .search input{padding:10px 12px;border-radius:10px;border:1px solid rgba(6,30,30,0.06);min-width:220px}
+  .filters{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(6,30,30,0.06);cursor:pointer;font-weight:700}
+  .chip.active{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff;box-shadow:0 8px 20px rgba(14,165,164,0.09)}
+
+  .groups{display:grid;grid-template-columns:1fr;gap:22px}
+  .group-card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow)}
+  .group-title{font-weight:800;margin:0 0 6px 0}
+  .group-desc{color:var(--muted);margin-bottom:12px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .video-card{background:#fbfffe;border-radius:10px;padding:10px;box-shadow:0 8px 26px rgba(6,30,30,0.03);display:flex;flex-direction:column;min-height:170px}
+  .thumb{height:140px;border-radius:8px;overflow:hidden;background:#eef6f5;display:block}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .vtitle{font-weight:700;margin:8px 0 4px 0}
+  .vdesc{color:var(--muted);font-size:13px;flex:1}
+  .btn-row{display:flex;gap:8px;margin-top:10px}
+  .btn{padding:9px 12px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+  .btn.primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff}
+  .btn.ghost{background:#fff;border:1px solid rgba(6,30,30,0.06)}
+
+  .badge-free{background:#16a34a;color:#fff;padding:6px 8px;border-radius:999px;font-weight:800;font-size:12px;margin-left:8px}
+
+  /* modal preview */
+  .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(3,10,12,0.6);z-index:9999;padding:18px}
+  .modal-panel{width:min(1000px,96%);background:var(--card);border-radius:12px;overflow:hidden}
+  .modal-head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid rgba(6,30,30,0.03)}
+  .modal-body{padding:0}
+  .modal-body iframe{width:100%;height:560px;border:0}
+  .close-btn{background:transparent;border:0;font-size:20px;padding:8px;cursor:pointer}
+  @media(max-width:880px){ .modal-body iframe{height:360px} }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <div class="title">STATUP — Topic Videos</div>
+        <div class="lead">Browse topic-wise video playlists and lessons. Click preview to watch on the page.</div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a> · <a href="materials.html">Materials</a> · <a href="services.html">Services</a>
+      </nav>
+    </header>
+
+    <div class="controls" role="toolbar" aria-label="search and filters">
+      <div class="search" role="search">
+        <input id="searchInput" placeholder="Search title, topic or tag (e.g., 'sampling', 'R', 'visualization')" aria-label="Search videos">
+      </div>
+      <div class="filters" id="filterBar" aria-hidden="false"></div>
+    </div>
+
+    <div id="groups" class="groups" aria-live="polite">
+      <!-- groups inserted here -->
+    </div>
+  </div>
+
+  <!-- modal -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-panel" role="document">
+      <div class="modal-head">
+        <div id="modalTitle" style="font-weight:800"></div>
+        <div><button id="modalClose" class="close-btn" aria-label="Close">✕</button></div>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+<script>
+/* === VIDEO ITEMS: edit / extend this array ===
+   Fields:
+    - id: unique id (used for deep link if wanted)
+    - title: display title
+    - topic: grouping name (e.g., "Sampling", "R for Stats")
+    - tags: array of tags (optional)
+    - type: 'video'  (we only support youtube here)
+    - link: any YouTube link (watch?v=ID or youtu.be/ID or playlist)
+    - desc: short description
+    - free: boolean (optional, shows green badge)
+*/
+const items = [
+  { id:'yt-samp-01', title:'Sampling Methods — Overview', topic:'Sampling', tags:['sampling','methods'], type:'video', link:'https://youtu.be/x6NtvsJDc_4', desc:'Basic sampling concepts and examples.', free:true},
+  { id:'yt-samp-02', title:'Probability Sampling', topic:'Sampling', tags:['sampling','probability'], type:'video', link:'https://www.youtube.com/watch?v=abcDEFghi12', desc:'Stratified, cluster and systematic sampling.' },
+  { id:'yt-r-01', title:'R for Data Analysis — Getting started', topic:'R & Python', tags:['R','intro'], type:'video', link:'https://youtu.be/GWdSSIhgF-8', desc:'Install R, RStudio and first steps.' },
+  { id:'yt-vis-01', title:'Data Visualization — ggplot2 basics', topic:'Visualization', tags:['ggplot2','plotting'], type:'video', link:'https://www.youtube.com/playlist?list=PLxyz123456', desc:'Playlist with ggplot2 tutorials.'}
+];
+
+/* ===== build list of unique topics for filter chips ===== */
+const topics = Array.from(new Set(items.map(i => i.topic || 'Other'))).sort();
+const filterBar = document.getElementById('filterBar');
+let activeTopic = 'All';
+
+// add "All" chip
+function makeChip(name, active=false){
+  const b = document.createElement('button');
+  b.className = 'chip' + (active ? ' active' : '');
+  b.textContent = name;
+  b.dataset.topic = name;
+  b.addEventListener('click', ()=> {
+    document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+    b.classList.add('active');
+    activeTopic = name;
+    renderGroups(); // re-render
+  });
+  return b;
+}
+filterBar.appendChild(makeChip('All', true));
+topics.forEach(t => filterBar.appendChild(makeChip(t)));
+
+/* ===== search handling ===== */
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('input', ()=> renderGroups());
+
+/* ===== helper to get YouTube embed link from any youtube URL ===== */
+function youtubeEmbedUrl(url){
+  if(!url) return '';
+  // playlist?
+  if(url.includes('list=')){
+    const m = url.match(/[?&]list=([A-Za-z0-9_-]+)/);
+    if(m && m[1]) return `https://www.youtube.com/embed/videoseries?list=${m[1]}`;
+  }
+  // video id in watch?v=
+  let vid = (url.match(/v=([A-Za-z0-9_-]+)/) || [])[1];
+  if(!vid){
+    vid = (url.match(/youtu\.be\/([A-Za-z0-9_-]+)/) || [])[1];
+  }
+  if(vid) return `https://www.youtube.com/embed/${vid}`;
+  return url; // fallback
+}
+
+/* ===== thumbnail helper: youtube thumbnail standard pattern ===== */
+function ytThumb(url){
+  let vid = (url.match(/v=([A-Za-z0-9_-]+)/) || [])[1];
+  if(!vid) vid = (url.match(/youtu\.be\/([A-Za-z0-9_-]+)/) || [])[1];
+  if(vid) return `https://i.ytimg.com/vi/${vid}/hqdefault.jpg`;
+  // playlist or unknown -> generic placeholder
+  return 'https://i.imgur.com/6oKQ0ZQ.png'; // simple placeholder host (replace if you want)
+}
+
+/* ===== render groups by topic ===== */
+const groupsEl = document.getElementById('groups');
+
+function matchesQuery(it, q){
+  if(!q) return true;
+  q = q.toLowerCase();
+  return (it.title && it.title.toLowerCase().includes(q)) ||
+         (it.topic && it.topic.toLowerCase().includes(q)) ||
+         (it.tags && it.tags.join(' ').toLowerCase().includes(q)) ||
+         (it.desc && it.desc.toLowerCase().includes(q));
+}
+
+function renderGroups(){
+  const q = (searchInput.value || '').trim();
+  groupsEl.innerHTML = '';
+
+  // topics to show: either All or selected topic
+  const showTopics = activeTopic === 'All' ? topics : [activeTopic];
+
+  showTopics.forEach(topic => {
+    // items in this topic & matching query
+    const list = items.filter(i => (i.topic || 'Other') === topic && matchesQuery(i, q));
+    if(!list.length) return; // skip empty groups
+
+    const groupCard = document.createElement('section');
+    groupCard.className = 'group-card';
+    groupCard.innerHTML = `<h3 class="group-title">${topic}</h3><div class="group-desc small">${list.length} video(s)</div>`;
+
+    const grid = document.createElement('div');
+    grid.className = 'grid';
+    list.forEach(it => {
+      const card = document.createElement('div');
+      card.className = 'video-card';
+      const thumbUrl = ytThumb(it.link);
+      card.innerHTML = `
+        <a class="thumb" href="#" data-id="${it.id}" aria-label="Preview ${it.title}"><img loading="lazy" src="${thumbUrl}" alt="${it.title}"></a>
+        <div class="vtitle">${it.title}${it.free ? '<span class="badge-free">FREE</span>' : ''}</div>
+        <div class="vdesc">${it.desc || ''}</div>
+      `;
+      // buttons
+      const br = document.createElement('div');
+      br.className = 'btn-row';
+      br.innerHTML = `<button class="btn primary" data-open="${it.id}">Preview</button> <a class="btn ghost" href="${it.link}" target="_blank" rel="noopener">Open on YouTube</a>`;
+      card.appendChild(br);
+
+      grid.appendChild(card);
+    });
+
+    groupCard.appendChild(grid);
+    groupsEl.appendChild(groupCard);
+  });
+
+  // If no results overall, show note
+  if(groupsEl.children.length === 0){
+    groupsEl.innerHTML = `<div class="group-card"><div class="small">No videos match your search or filter.</div></div>`;
+  }
+
+  // attach click handlers for preview buttons & thumbnails
+  document.querySelectorAll('[data-open]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const id = btn.getAttribute('data-open');
+      const it = items.find(x=>x.id === id);
+      if(it) openPreview(it);
+    });
+  });
+  document.querySelectorAll('.thumb').forEach(t => {
+    t.addEventListener('click', (e)=> {
+      e.preventDefault();
+      const id = t.dataset.id;
+      const it = items.find(x=>x.id === id);
+      if(it) openPreview(it);
+    });
+  });
+}
+
+/* ===== modal preview ===== */
+const modal = document.getElementById('modal');
+const modalBody = document.getElementById('modalBody');
+const modalTitle = document.getElementById('modalTitle');
+const modalClose = document.getElementById('modalClose');
+
+function openPreview(item){
+  modalTitle.textContent = item.title;
+  const embed = youtubeEmbedUrl(item.link);
+  // embed inside iframe
+  modalBody.innerHTML = `<iframe src="${embed}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+  modal.style.display = 'flex';
+  modal.setAttribute('aria-hidden','false');
+}
+function closeModal(){ modal.style.display = 'none'; modal.setAttribute('aria-hidden','true'); modalBody.innerHTML = ''; modalTitle.textContent = ''; }
+document.getElementById('modalClose').addEventListener('click', closeModal);
+modal.addEventListener('click', (e)=> { if(e.target === modal) closeModal(); });
+document.addEventListener('keydown', (e)=> { if(e.key === 'Escape') closeModal(); });
+
+/* initialize render */
+renderGroups();
+</script>
+</body>
+</html>
