@@ -28,7 +28,7 @@
 <body>
   <header class="site-header">
     <div class="wrap" style="align-items:center;display:flex;justify-content:space-between;">
-      <a class="logo" href="index.html"><img src="logo.png" alt="STATUP" class="logo-img" onerror="this.style.display='none'"><div class="logo-text"><strong>STATUP</strong><small>Streamline Your Analysis</small></div></a>
+      <a class="logo" href="index.html"><img src="logo.png" alt="STATUP" class="logo-img" onerror="this.style.display='none'"><div class="logo-text"><strong>STATUP</strong><small>Streamline Your Analysis, Elevate your decision.</small></div></a>
       <nav class="main-nav"><a href="index.html">Home</a> · <a href="services.html">Services</a> · <a href="workshops.html">Materials</a> · <a href="register.html">Register</a></nav>
     </div>
   </header>
@@ -117,87 +117,127 @@
         </div>
       </div>
 
-      <!-- Workshop 2 -->
-      <div id="ws2" class="panel" role="tabpanel" aria-labelledby="ws2-tab">
-        <div class="grid-2">
-          <div>
-            <h2>Workshop 2 — SPSS Hands-on: Basics → Intermediate</h2>
-            <p class="muted">Overview: This 3-day hands-on workshop introduces participants to SPSS for statistical analysis.
-Topics include data import, cleaning, descriptive statistics, hypothesis testing, regression, and reporting.
-The sessions are fully practical, using real datasets and step-by-step demonstrations designed for beginners and intermediate learners.
-By the end of the workshop, participants will be able to confidently prepare data, run essential statistical tests, interpret results, and generate reports for research or professional use.</p>
+      <!-- Workshop 2 — SPSS Hands-on: Basics → Intermediate -->
+<div id="ws2" class="panel" role="tabpanel" aria-labelledby="ws2-tab">
+  <div class="grid-2" style="display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start;">
+    <!-- Main column -->
+    <div>
+      <h2 style="margin-top:0;">Workshop 2 — SPSS Hands-on: Basics → Intermediate</h2>
 
-            <div class="subtabs" role="tablist" aria-label="Workshop 2 tabs">
-              <button class="subbtn" data-target="ws2-overview">Overview</button>
-              <button class="subbtn" data-target="ws2-register">Register</button>
-              <button class="subbtn" data-target="ws2-meet">Meeting Link</button>
-              <button class="subbtn" data-target="ws2-materials">Materials</button>
-              <button class="subbtn" data-target="ws2-instructions">Instructions</button>
-            </div>
+      <p class="muted" style="margin-bottom:18px;line-height:1.55;">
+        <strong>Overview:</strong> A 3-day hands-on workshop introducing SPSS for statistical analysis.
+        Topics include data import, cleaning, descriptive statistics, hypothesis testing, regression, and reporting.
+        Sessions are practical, using real datasets and step-by-step demonstrations for beginners and intermediate learners.
+        By the end, participants will confidently prepare data, run essential tests, interpret results, and generate research-ready reports.
+      </p>
 
-            <div id="ws2-overview" class="subpanel">
-              <h4 style="margin-top:12px;">Course structure</h4>
-              <ul class="muted">
-                <li>Day 1: Data handling, descriptives</li>
-                <li>Day 2: Tests & inference</li>
-                <li>Day 3: Regression & reporting</li>
-              </ul>
-            </div>
+      <!-- subtabs -->
+      <nav class="subtabs" role="tablist" aria-label="Workshop 2 tabs" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;">
+        <button class="subbtn" data-target="ws2-overview" type="button" aria-controls="ws2-overview" aria-selected="true">Overview</button>
+        <button class="subbtn" data-target="ws2-register" type="button" aria-controls="ws2-register">Register</button>
+        <button class="subbtn" data-target="ws2-meet" type="button" aria-controls="ws2-meet">Meeting Link</button>
+        <button class="subbtn" data-target="ws2-materials" type="button" aria-controls="ws2-materials">Materials</button>
+        <button class="subbtn" data-target="ws2-instructions" type="button" aria-controls="ws2-instructions">Instructions</button>
+      </nav>
 
-            <div id="ws2-register" class="subpanel">
-              <h4 style="margin-top:12px;">Register now to secure your seat for the 3-Day Online SPSS Workshop conducted by STATUP.
-After registration, you will receive a confirmation email along with the meeting link and workshop materials.</h4>
-              <a class="btn primary" href="https://forms.gle/BSEpQ4ykPzGcWpHj7" target="_blank">Register</a>
-            </div>
+      <!-- panels (place content in logical order; first panel visible by default) -->
+      <div id="ws2-overview" class="subpanel" role="tabpanel" style="margin-bottom:18px;">
+        <h4 style="margin-top:0;">Course structure</h4>
+        <ul class="muted" style="line-height:1.6;margin-left:1em;">
+          <li><strong>Day 1:</strong> Data handling, import, cleaning, descriptive statistics and basic charts.</li>
+          <li><strong>Day 2:</strong> Hypothesis testing (t-tests, ANOVA), non-parametric tests and interpretation.</li>
+          <li><strong>Day 3:</strong> Regression (linear, logistic basics), reporting outputs and export of results.</li>
+        </ul>
+      </div>
 
-            <div id="ws2-meet" class="subpanel">
-              <h4 style="margin-top:12px;">Your meeting link for attending the online workshop will appear here.
-
-The link will also be shared through:
-✔ Email (to your registered email ID)
-✔ WhatsApp message (to your provided number)
-
-Platform: Google Meet
-The link will be activated 10 minutes before the session begins.
-
-👉 Meeting link will be added closer to the workshop start date.</h4>
-              <a class="btn ghost" href="#MEET_LINK" target="_blank">Open Meeting Link</a>
-            </div>
-
-            <div id="ws2-materials" class="subpanel">
-              <h4 style="margin-top:12px;">All workshop materials will be provided here once the program begins.</h4>
-              <ul class="muted">
-                <li><a href="files/ws2-notes.pdf">Datasets</a></li>
-                <li><a href="files/ws2-dataset.sav">Session Recordings</a></li>
-                <li><a href="files/ws2-syntax.sps">SPSS Syntax</a></li>
-                <li><a href="files/ws2-syntax.sps">Exercises</a></li>
-              </ul>
-            </div>
-
-            <div id="ws2-instructions" class="subpanel">
-              <h4 style="margin-top:12px;">Please read the steps below carefully before attending the workshop:</h4>
-              <ul class="muted">
-                <li>Install SPSS (any version is fine: 20–29).</li>
-                <li>Test your installation by opening a sample dataset.</li>
-                <li>Ensure a stable internet connection for the Google Meet session.</li>
-                <li>Keep a notebook or digital notes app ready for practice work.</li>
-                <li>Join 10 minutes early to avoid delays.</li>
-                <li>All materials will be sent before the session begins.</li>
-                <li>Certificates will be issued only to participants who attend all three days.</li>
-              </ul>
-            </div>
-          </div>
-
-          <aside class="card">
-            <h4 style="margin-top:0;">Quick info</h4>
-            <p class="muted">Duration: 3 days • Mode: Online (Live) • Level: Beginner → Intermediate</p>
-            <div style="margin-top:12px;">
-              <a class="btn primary" href="#FORM_LINK" target="_blank">Register</a>
-              <a class="btn ghost" href="contact.html">Contact</a>
-            </div>
-          </aside>
+      <div id="ws2-register" class="subpanel" role="tabpanel" hidden style="margin-bottom:18px;">
+        <h4 style="margin-top:0;">Registration</h4>
+        <p class="muted" style="line-height:1.55;">
+          Register now to secure your seat for the 3-Day Online SPSS Workshop conducted by STATUP. After registering you will receive a confirmation email with the meeting link and pre-workshop materials.
+        </p>
+        <div style="margin-top:10px;">
+          <a class="btn primary" href="https://forms.gle/BSEpQ4ykPzGcWpHj7" target="_blank" rel="noopener">Register</a>
         </div>
       </div>
+
+      <div id="ws2-meet" class="subpanel" role="tabpanel" hidden style="margin-bottom:18px;">
+        <h4 style="margin-top:0;">Meeting link & platform</h4>
+        <p class="muted" style="line-height:1.55;">
+          The online sessions use <strong>Google Meet</strong>. The meeting link is shared to registered participants via email and WhatsApp, and will become active ≈10 minutes before each session.
+        </p>
+        <p class="muted" style="margin-bottom:8px;"><em>Note:</em> The meeting link will be published here closer to the workshop start date.</p>
+        <a class="btn ghost" href="#MEET_LINK" target="_blank" rel="noopener">Open Meeting Link</a>
+      </div>
+
+      <div id="ws2-materials" class="subpanel" role="tabpanel" hidden style="margin-bottom:18px;">
+        <h4 style="margin-top:0;">Materials (provided)</h4>
+        <p class="muted" style="margin-bottom:8px;">All materials (datasets, slides, syntax & exercises) will be made available here before or during the workshop.</p>
+        <ul class="muted" style="line-height:1.6;margin-left:1em;">
+          <li><a href="files/ws2-notes.pdf" target="_blank" rel="noopener">Workshop notes (PDF)</a></li>
+          <li><a href="files/ws2-dataset.sav" target="_blank" rel="noopener">Example dataset (.sav)</a></li>
+          <li><a href="files/ws2-syntax.sps" target="_blank" rel="noopener">SPSS syntax files (.sps)</a></li>
+          <li><a href="files/ws2-exercises.pdf" target="_blank" rel="noopener">Practice exercises (PDF)</a></li>
+        </ul>
+      </div>
+
+      <div id="ws2-instructions" class="subpanel" role="tabpanel" hidden>
+        <h4 style="margin-top:0;">Pre-workshop instructions</h4>
+        <ul class="muted" style="line-height:1.6;margin-left:1em;">
+          <li>Install SPSS (any recent version, e.g., 20–29). Test by opening a sample dataset.</li>
+          <li>Ensure a stable internet connection; use Chrome or Edge for best Meet performance.</li>
+          <li>Have headphones and a microphone available for Q&A and hands-on practice.</li>
+          <li>Join the meeting 10 minutes early to confirm audio/video and reduce delays.</li>
+          <li>All materials and recordings (if provided) will be shared after the sessions.</li>
+          <li>Certificates are issued to participants who complete the full workshop (attendance may be tracked).</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Aside / quick info -->
+    <aside class="card" style="padding:18px;border-radius:10px;background:#ffffff;box-shadow:0 10px 30px rgba(12,45,47,0.04);">
+      <h4 style="margin-top:0;">Quick info</h4>
+      <p class="muted" style="margin:6px 0 12px 0;line-height:1.45;">
+        <strong>Duration:</strong> 3 days · <strong>Mode:</strong> Online (Live) · <strong>Level:</strong> Beginner → Intermediate
+      </p>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a class="btn primary" href="#FORM_LINK" target="_blank" rel="noopener">Register</a>
+        <a class="btn ghost" href="contact.html">Contact</a>
+      </div>
+
+      <div style="margin-top:14px;font-size:13px;color:#6b7a83;">
+        <strong>What to bring:</strong>
+        <ul style="margin:8px 0 0 18px;padding:0;color:var(--muted);line-height:1.5;">
+          <li>Laptop with SPSS installed</li>
+          <li>Sufficient disk space for practice datasets</li>
+          <li>Notebook / digital notes</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Optional: small script to toggle subpanels when you paste into a page that doesn't already handle subtabs.
+       Remove if your site already manages tab behaviour. -->
+  <script>
+    (function(){
+      const container = document.getElementById('ws2');
+      if(!container) return;
+      const buttons = container.querySelectorAll('.subbtn');
+      const panels = container.querySelectorAll('.subpanel');
+      // show first by default
+      function show(id){
+        panels.forEach(p => p.hidden = (p.id !== id));
+        buttons.forEach(b => b.setAttribute('aria-selected', b.dataset.target === id ? 'true':'false'));
+      }
+      // initial
+      if(buttons.length) show(buttons[0].dataset.target);
+      buttons.forEach(btn=>{
+        btn.addEventListener('click', ()=> show(btn.dataset.target));
+      });
+    })();
+  </script>
+</div>
+
 
       <!-- Workshop 3 -->
       <div id="ws3" class="panel" role="tabpanel" aria-labelledby="ws3-tab">
