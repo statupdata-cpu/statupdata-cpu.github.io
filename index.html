@@ -7,59 +7,10 @@
   <meta name="description" content="STATUP — learning & analytics support: statistics, data analysis, projects, workshops, test series and software training." />
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='4' fill='%238CD65F'/%3E%3Ctext x='50%' y='50%' font-size='12' font-family='Arial' fill='%23000' dominant-baseline='middle' text-anchor='middle'%3EUP%3C/text%3E%3C/svg%3E">
-  <style>
-    /* Notification box styles (keeps separate and minimal) */
-    .notif-wrap { position:relative; display:flex; align-items:center; gap:12px; }
-    .notif-box {
-      width:260px;
-      max-width:40vw;
-      min-width:200px;
-      background:linear-gradient(180deg,#fff,#f8fffb);
-      border-radius:12px;
-      box-shadow:0 10px 30px rgba(7,40,35,0.08);
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      justify-content:stretch;
-      border:1px solid rgba(6,40,36,0.04);
-      font-family:inherit;
-    }
-    .notif-top {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:8px 10px;
-      background:linear-gradient(90deg,rgba(14,158,164,0.06),rgba(57,184,147,0.02));
-      gap:8px;
-    }
-    .notif-title { font-weight:700; font-size:14px; color:var(--text); margin:0; }
-    .notif-controls { display:flex; gap:6px; align-items:center; }
-    .notif-btn {
-      display:inline-flex; align-items:center; justify-content:center;
-      width:34px; height:34px; border-radius:8px; border:0; cursor:pointer;
-      background:#fff; box-shadow:0 6px 14px rgba(6,30,30,0.06); font-weight:700;
-    }
-    .notif-slide {
-      width:100%; height:160px; background:#eef7f5; display:flex; align-items:center; justify-content:center; position:relative;
-    }
-    .notif-slide img { width:100%; height:100%; object-fit:cover; display:block; }
-    .notif-meta { padding:10px; font-size:13px; color:var(--muted); line-height:1.45; }
-    .notif-footer { display:flex; gap:8px; padding:10px; border-top:1px solid rgba(6,30,30,0.03); justify-content:space-between; align-items:center;}
-    .notif-footer a { text-decoration:none; color:var(--accent-3); font-weight:700; }
-    .notif-dotbar { display:flex; gap:6px; align-items:center; }
-    .notif-dot { width:8px; height:8px; border-radius:999px; background:rgba(6,30,30,0.12); cursor:pointer; }
-    .notif-dot.active { background:linear-gradient(90deg,var(--accent-1),var(--accent-2)); box-shadow:0 6px 14px rgba(14,165,164,0.12); }
-
-    /* small responsive tweak for header area */
-    @media (max-width:880px){
-      .notif-box { width:220px; min-width:150px; }
-      .notif-slide { height:120px; }
-    }
-  </style>
 </head>
 <body>
   <header class="site-header">
-    <div class="wrap" style="align-items:center;display:flex;gap:16px;">
+    <div class="wrap" style="align-items:center;">
       <a class="logo" href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
         <img src="logo.png" alt="STATUP logo" class="logo-img" style="height:48px;" onerror="this.style.display='none'">
         <div class="logo-text" style="line-height:1;">
@@ -70,39 +21,12 @@
 
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
 
-      <nav class="main-nav" id="mainNav" aria-label="Main navigation" style="flex:1;">
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
         <a href="about.html" class="nav-link">About</a>
         <a href="services.html" class="nav-link">Services</a>
         <a href="register.html" class="nav-link">Register</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
-
-      <!-- Notification box (new) -->
-      <div class="notif-wrap" aria-live="polite" aria-label="Notifications">
-        <div class="notif-box" id="notifBox" role="region" aria-label="Announcements">
-          <div class="notif-top">
-            <div class="notif-title">Announcements</div>
-            <div class="notif-controls" role="toolbar" aria-label="Notification controls">
-              <button class="notif-btn" id="notifPrev" title="Previous" aria-label="Previous announcement">◀</button>
-              <button class="notif-btn" id="notifNext" title="Next" aria-label="Next announcement">▶</button>
-              <button class="notif-btn" id="notifClose" title="Close" aria-label="Close announcements">✕</button>
-            </div>
-          </div>
-
-          <div class="notif-slide" id="notifSlide" tabindex="0" aria-live="off">
-            <!-- slides inserted by JS -->
-            <img id="notifImg" src="files/notifications/3-DAY ONLINE SPSS WORKSHOP.jpg" alt="Announcement poster" onerror="this.style.objectFit='contain'">
-          </div>
-
-          <div class="notif-meta" id="notifMeta">Latest updates, workshop posters and important announcements from STATUP will appear here.</div>
-
-          <div class="notif-footer">
-            <div class="notif-dotbar" id="notifDots" aria-hidden="false"></div>
-            <a href="register.html" id="notifCTA" class="notif-cta" title="Register">Register</a>
-          </div>
-        </div>
-      </div>
-      <!-- end notification box -->
     </div>
   </header>
 
@@ -214,158 +138,6 @@
       <small>© <span id="year"></span> STATUP. All rights reserved.</small>
     </div>
   </footer>
-
-  <script>
-    // set year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-  <!-- Notification box script -->
-  <script>
-    (function(){
-      // === CONFIG: add your poster filenames here (place them in files/notifications/) ===
-      // Example: 'workshop-spss.jpg', 'ugc-net-poster.png'
-      // If empty array, box will show default placeholder text/image.
-      const notifications = [
-        // Put filenames only (relative to files/notifications/)
-        // e.g. 'workshop-spss.jpg', 'ugc-net-poster.png'
-        // Add your filenames below:
-        // 'workshop-spss.jpg',
-        // 'ugcnet-poster-1.png'
-      ];
-
-      // DOM refs
-      const notifBox = document.getElementById('notifBox');
-      const notifImg = document.getElementById('notifImg');
-      const notifMeta = document.getElementById('notifMeta');
-      const notifDots = document.getElementById('notifDots');
-      const notifPrev = document.getElementById('notifPrev');
-      const notifNext = document.getElementById('notifNext');
-      const notifClose = document.getElementById('notifClose');
-      const notifCTA = document.getElementById('notifCTA');
-
-      // state
-      let current = 0;
-      let timer = null;
-      const AUTOPLAY_MS = 4000;
-
-      // build slides array (each slide: { src, alt, title, meta, cta })
-      const slides = notifications.length ? notifications.map(fn => {
-        return {
-          src: `files/notifications/${fn}`,
-          alt: fn,
-          title: '',        // optional: you can extend slide objects with title/meta fields in the future
-          meta: ''
-        };
-      }) : [
-        // fallback single placeholder slide (keeps UI friendly)
-        { src: 'files/notifications/placeholder-notif.png', alt: 'Announcement', title: '', meta: 'No announcements yet. Upload poster images to files/notifications/ and list them in the page script.' }
-      ];
-
-      // helper: render current slide
-      function render() {
-        const s = slides[current];
-        notifImg.src = s.src;
-        notifImg.alt = s.alt || 'Announcement poster';
-        notifMeta.textContent = s.meta || '';
-        // update dots
-        notifDots.innerHTML = '';
-        slides.forEach((_, i) => {
-          const d = document.createElement('div');
-          d.className = 'notif-dot' + (i === current ? ' active':'');
-          d.title = `Go to announcement ${i+1}`;
-          d.tabIndex = 0;
-          d.addEventListener('click', ()=> go(i));
-          d.addEventListener('keydown', (e)=> { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(i);} });
-          notifDots.appendChild(d);
-        });
-      }
-
-      function go(i) {
-        current = (i + slides.length) % slides.length;
-        render();
-        restartAutoplay();
-      }
-
-      function next() { go(current + 1); }
-      function prev() { go(current - 1); }
-
-      function startAutoplay() {
-        if (timer) clearInterval(timer);
-        if (slides.length > 1) timer = setInterval(next, AUTOPLAY_MS);
-      }
-
-      function stopAutoplay() {
-        if (timer) { clearInterval(timer); timer = null; }
-      }
-
-      function restartAutoplay() { stopAutoplay(); startAutoplay(); }
-
-      // close / dismiss
-      function closeNotif() {
-        if (!notifBox) return;
-        notifBox.style.display = 'none';
-        stopAutoplay();
-        // persist dismiss in localStorage for convenience (30 days)
-        try {
-          localStorage.setItem('statup_notif_dismissed', String(Date.now()));
-        } catch(e){}
-      }
-
-      // check if dismissed recently
-      (function checkDismissed(){
-        try {
-          const val = localStorage.getItem('statup_notif_dismissed');
-          if (val) {
-            const ts = parseInt(val,10);
-            // hide for 30 days (modify as needed)
-            if (!isNaN(ts) && (Date.now() - ts) < (30*24*60*60*1000)) {
-              notifBox.style.display = 'none';
-              return;
-            } else {
-              localStorage.removeItem('statup_notif_dismissed');
-            }
-          }
-        } catch(e){}
-      })();
-
-      // attach events
-      notifNext.addEventListener('click', next);
-      notifPrev.addEventListener('click', prev);
-      notifClose.addEventListener('click', closeNotif);
-
-      notifBox.addEventListener('mouseover', stopAutoplay);
-      notifBox.addEventListener('mouseleave', startAutoplay);
-
-      // keyboard navigation when focus in the slide region
-      const notifSlide = document.getElementById('notifSlide');
-      notifSlide.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') prev();
-        if (e.key === 'ArrowRight') next();
-        if (e.key === 'Escape') closeNotif();
-      });
-
-      // CTA default: goes to register. If you want per-slide CTAs you can extend slides[] objects.
-      notifCTA.addEventListener('click', ()=> {
-        // simply navigate to register page
-        window.location.href = 'register.html';
-      });
-
-      // safe image loading: if an image 404s, mark slide meta to inform admin
-      notifImg.addEventListener('error', () => {
-        notifMeta.textContent = 'Poster image not found — please upload the file to files/notifications/ or check filename in the script.';
-        // fallback to placeholder if exists
-        notifImg.src = 'files/notifications/placeholder-notif.png';
-      });
-
-      // init
-      render();
-      startAutoplay();
-      // expose some functions for console debugging if needed
-      window._STATUP_NOTIF = { go, next, prev, closeNotif, slides };
-
-    })();
-  </script>
 
   <script src="script.js"></script>
 </body>
