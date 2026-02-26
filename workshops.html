@@ -265,63 +265,132 @@
 </div>
 
 
-      <!-- Workshop 3 -->
-      <div id="ws3" class="panel" role="tabpanel" aria-labelledby="ws3-tab">
-        <div class="grid-2">
-          <div>
-            <h2>Workshop 3 — Python for Statistical Analysis</h2>
-            <p class="muted">Overview: Pandas, statsmodels, visualisations and reproducible scripts for statistical workflows.</p>
+     <!-- Workshop 3 — Python for Data Analysis, Visualization & Statistical Modeling -->
+<div id="ws3" class="panel" role="tabpanel" aria-labelledby="ws3-tab">
+  <div class="grid-2" style="display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start;">
+    
+    <!-- Main column -->
+    <div>
+      <h2 style="margin-top:0;">Workshop 3 — Python for Data Analysis, Visualization & Statistical Modeling</h2>
 
-            <div class="subtabs" role="tablist" aria-label="Workshop 3 tabs">
-              <button class="subbtn" data-target="ws3-overview">Overview</button>
-              <button class="subbtn" data-target="ws3-register">Register</button>
-              <button class="subbtn" data-target="ws3-meet">Meeting Link</button>
-              <button class="subbtn" data-target="ws3-materials">Materials</button>
-              <button class="subbtn" data-target="ws3-instructions">Instructions</button>
-            </div>
+      <p class="muted" style="margin-bottom:18px;line-height:1.55;">
+        <strong>Overview:</strong> A 7-day intensive online workshop designed to provide structured, hands-on training in Python for data analysis, statistical inference, visualization, regression modeling, classification, and time series forecasting.
+        Participants will work with real datasets and develop practical analytical skills applicable to research and industry workflows.
+      </p>
 
-            <div id="ws3-overview" class="subpanel">
-              <h4 style="margin-top:12px;">Modules</h4>
-              <ul class="muted">
-                <li>Pandas: import & manipulation</li>
-                <li>statsmodels & hypothesis testing</li>
-                <li>Visualization with matplotlib & seaborn</li>
-              </ul>
-            </div>
+      <!-- subtabs -->
+      <nav class="subtabs" role="tablist" aria-label="Workshop 3 tabs" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;">
+        <button class="subbtn" data-target="ws3-overview" type="button" aria-selected="true">Overview</button>
+        <button class="subbtn" data-target="ws3-register" type="button">Register</button>
+        <button class="subbtn" data-target="ws3-meet" type="button">Meeting Link</button>
+        <button class="subbtn" data-target="ws3-materials" type="button">Materials</button>
+        <button class="subbtn" data-target="ws3-instructions" type="button">Instructions</button>
+      </nav>
 
-            <div id="ws3-register" class="subpanel">
-              <a class="btn primary" href="#FORM_LINK" target="_blank">Register (Google Form)</a>
-            </div>
+      <!-- Overview -->
+      <div id="ws3-overview" class="subpanel" style="margin-bottom:18px;">
+        <h4 style="margin-top:0;">Course structure (27 March – 2 April)</h4>
+        <ul class="muted" style="line-height:1.6;margin-left:1em;">
+          <li><strong>Day 1:</strong> Python basics, NumPy & Pandas fundamentals.</li>
+          <li><strong>Day 2:</strong> Data cleaning, exploratory data analysis & descriptive statistics.</li>
+          <li><strong>Day 3:</strong> Statistical inference — confidence intervals & hypothesis testing.</li>
+          <li><strong>Day 4:</strong> Data visualization using matplotlib & seaborn.</li>
+          <li><strong>Day 5:</strong> Regression modeling (linear & multiple), diagnostics.</li>
+          <li><strong>Day 6:</strong> Classification techniques & model evaluation.</li>
+          <li><strong>Day 7:</strong> Time series analysis & forecasting (ARIMA basics).</li>
+        </ul>
+      </div>
 
-            <div id="ws3-meet" class="subpanel">
-              <a class="btn ghost" href="#MEET_LINK" target="_blank">Open Meeting Link</a>
-            </div>
-
-            <div id="ws3-materials" class="subpanel">
-              <ul class="muted">
-                <li><a href="files/ws3-notebooks.zip">Jupyter notebooks (zip)</a></li>
-                <li><a href="files/ws3-datasets.zip">Datasets (zip)</a></li>
-              </ul>
-            </div>
-
-            <div id="ws3-instructions" class="subpanel">
-              <ol class="muted">
-                <li>Install Python 3.8+ and create a virtual environment.</li>
-                <li>Install required packages from `requirements.txt` (provided in materials).</li>
-              </ol>
-            </div>
-          </div>
-
-          <aside class="card">
-            <h4 style="margin-top:0;">Quick info</h4>
-            <p class="muted">Duration: 4 sessions • Level: Beginner → Intermediate</p>
-            <div style="margin-top:12px;">
-              <a class="btn primary" href="#FORM_LINK" target="_blank">Register</a>
-            </div>
-          </aside>
+      <!-- Register -->
+      <div id="ws3-register" class="subpanel" hidden style="margin-bottom:18px;">
+        <h4 style="margin-top:0;">Registration</h4>
+        <p class="muted" style="line-height:1.55;">
+          Secure your seat for the 7-Day Python Workshop. Fee: <strong>₹1599</strong>.
+          After registration, you will receive confirmation and joining details via email and WhatsApp.
+        </p>
+        <div style="margin-top:10px;">
+          <a class="btn primary" href="https://forms.gle/jSExWyRFpXmQeFTf8" target="_blank" rel="noopener">Register Now</a>
         </div>
       </div>
 
+      <!-- Meeting -->
+      <div id="ws3-meet" class="subpanel" hidden style="margin-bottom:18px;">
+        <h4 style="margin-top:0;">Meeting link & platform</h4>
+        <p class="muted" style="line-height:1.55;">
+          Sessions will be conducted via <strong>Google Meet</strong>. The meeting link will be shared with registered participants before the workshop begins.
+        </p>
+        <p class="muted"><em>Note:</em> Meeting link will be activated 10 minutes before each session.</p>
+      </div>
+
+      <!-- Materials -->
+      <div id="ws3-materials" class="subpanel" hidden style="margin-bottom:18px;">
+        <h4 style="margin-top:0;">Materials & Syllabus</h4>
+        <ul class="muted" style="line-height:1.6;margin-left:1em;">
+          <li>
+            <a href="https://docs.google.com/document/d/1MaTV1nM_r53JF4jsrAVgZZ3QuhFJE9XF_gRXVPLhNM4/edit?usp=sharing" target="_blank" rel="noopener">
+              Detailed Syllabus & Materials
+            </a>
+          </li>
+        </ul>
+        <p class="muted">All notebooks, datasets, and practice exercises will be shared before or during the sessions.</p>
+      </div>
+
+      <!-- Instructions -->
+      <div id="ws3-instructions" class="subpanel" hidden>
+        <h4 style="margin-top:0;">Pre-workshop instructions</h4>
+        <ul class="muted" style="line-height:1.6;margin-left:1em;">
+          <li>Install Python 3.8+ (Anaconda recommended).</li>
+          <li>Install required packages: numpy, pandas, matplotlib, seaborn, statsmodels, scikit-learn.</li>
+          <li>Ensure stable internet connection and working microphone.</li>
+          <li>Join sessions 10 minutes early to avoid delays.</li>
+          <li>Certificates will be issued to participants completing all sessions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Aside -->
+    <aside class="card" style="padding:18px;border-radius:10px;background:#ffffff;box-shadow:0 10px 30px rgba(12,45,47,0.04);">
+      <h4 style="margin-top:0;">Quick info</h4>
+      <p class="muted" style="margin:6px 0 12px 0;line-height:1.45;">
+        <strong>Dates:</strong> 27 March – 2 April<br>
+        <strong>Duration:</strong> 7 Days (Live Online)<br>
+        <strong>Fee:</strong> ₹1599<br>
+        <strong>Level:</strong> Beginner → Intermediate
+      </p>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a class="btn primary" href="https://forms.gle/jSExWyRFpXmQeFTf8" target="_blank" rel="noopener">Register</a>
+        <a class="btn ghost" href="contact.html">Contact</a>
+      </div>
+
+      <div style="margin-top:14px;font-size:13px;color:#6b7a83;">
+        <strong>What to bring:</strong>
+        <ul style="margin:8px 0 0 18px;padding:0;color:var(--muted);line-height:1.5;">
+          <li>Laptop with Python installed</li>
+          <li>Basic knowledge of statistics (helpful)</li>
+          <li>Notebook for notes</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    (function(){
+      const container = document.getElementById('ws3');
+      if(!container) return;
+      const buttons = container.querySelectorAll('.subbtn');
+      const panels = container.querySelectorAll('.subpanel');
+      function show(id){
+        panels.forEach(p => p.hidden = (p.id !== id));
+        buttons.forEach(b => b.setAttribute('aria-selected', b.dataset.target === id ? 'true':'false'));
+      }
+      if(buttons.length) show(buttons[0].dataset.target);
+      buttons.forEach(btn=>{
+        btn.addEventListener('click', ()=> show(btn.dataset.target));
+      });
+    })();
+  </script>
+</div>
       <!-- add more panels as needed -->
     </div>
   </main>
