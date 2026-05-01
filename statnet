@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>UGC NET Statistics — Materials</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+.wrap { max-width:1100px; margin:auto; padding:24px; }
+
+.hero {
+  background: linear-gradient(180deg, rgba(0,255,170,0.08), rgba(10,25,47,0.02));
+  padding:24px;
+  border-radius:12px;
+  margin-bottom:18px;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
+}
+
+.card {
+  background:#fff;
+  padding:16px;
+  border-radius:12px;
+  box-shadow:0 10px 24px rgba(0,0,0,0.08);
+}
+
+.card h3 { margin:0 0 8px 0; }
+.small { font-size:13px; color:#666; }
+
+.btn {
+  padding:10px 14px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+  border:none;
+}
+
+.primary {
+  background:linear-gradient(90deg,#00ffaa,#0ea5a4);
+  color:#fff;
+}
+
+.ghost {
+  background:#fff;
+  border:1px solid #ddd;
+}
+
+.video {
+  aspect-ratio:16/9;
+  border-radius:10px;
+  overflow:hidden;
+  margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<!-- HERO -->
+<div class="hero">
+  <h1>UGC NET Statistics — Study Materials</h1>
+  <p class="small">
+    Unit-wise PDF materials, MCQ sets with explanations, and video discussions.
+    All materials are hosted in Google Drive. Videos are previewed below.
+  </p>
+</div>
+
+<!-- UNIT 1 -->
+<h2>Unit 1: Probability Theory</h2>
+
+<div class="grid">
+
+  <!-- SET 1 -->
+  <div class="card">
+    <h3>Unit 1 — Set 1</h3>
+    <p class="small">MCQs with detailed explanation (PDF)</p>
+
+    <a class="btn primary" href="https://drive.google.com/your-link-set1" target="_blank">Download PDF</a>
+
+    <div class="video">
+      <iframe width="100%" height="100%" 
+        src="https://www.youtube.com/embed/VIDEO_ID_1" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <!-- SET 2 -->
+  <div class="card">
+    <h3>Unit 1 — Set 2</h3>
+    <p class="small">MCQs with explanation (advanced level)</p>
+
+    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
+
+    <div class="video">
+      <iframe width="100%" height="100%" 
+        src="https://www.youtube.com/embed/VIDEO_ID_2" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+</div>
+
+<!-- UNIT 2 -->
+<h2 style="margin-top:24px;">Unit 2: Distribution Theory</h2>
+
+<div class="grid">
+
+  <div class="card">
+    <h3>Unit 2 — Set 1</h3>
+    <p class="small">Important MCQs + solutions</p>
+
+    <a class="btn primary" href="https://drive.google.com/your-link" target="_blank">Download PDF</a>
+
+    <div class="video">
+      <iframe width="100%" height="100%" 
+        src="https://www.youtube.com/embed/VIDEO_ID_3" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+</div>
+
+<!-- ADD MORE UNITS SAME PATTERN -->
+
+</div>
+
+</body>
+</html>
