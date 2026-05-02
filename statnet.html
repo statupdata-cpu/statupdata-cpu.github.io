@@ -14,11 +14,7 @@ body { margin:0; font-family:Arial; background:#eef3f5; }
   padding:15px 30px;
   background:#0f172a;
 }
-.nav a {
-  color:white;
-  text-decoration:none;
-  font-weight:600;
-}
+.nav a { color:white; text-decoration:none; font-weight:600; }
 
 .wrap { max-width:1200px; margin:auto; padding:24px; }
 
@@ -75,10 +71,31 @@ body { margin:0; font-family:Arial; background:#eef3f5; }
   margin:10px 0;
 }
 
-.video {
+/* VIDEO */
+.video-container {
+  position: relative;
   aspect-ratio:16/9;
-  overflow:hidden;
   border-radius:10px;
+  overflow:hidden;
+}
+
+.video-container iframe {
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+/* ZOOM BUTTON */
+.zoom-btn {
+  position:absolute;
+  top:8px;
+  right:8px;
+  background:rgba(0,0,0,0.7);
+  color:#fff;
+  border:none;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
 }
 
 .hidden { display:none; }
@@ -87,7 +104,7 @@ body { margin:0; font-family:Arial; background:#eef3f5; }
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <div class="nav">
   <a href="#">Home</a>
   <a href="#">Materials</a>
@@ -97,7 +114,6 @@ body { margin:0; font-family:Arial; background:#eef3f5; }
 
 <div class="wrap">
 
-<!-- HERO -->
 <div class="hero">
   <h1>UGC NET Statistics — Study Materials</h1>
   <p class="small">Each set contains 50 MCQs with detailed explanation.</p>
@@ -105,100 +121,56 @@ body { margin:0; font-family:Arial; background:#eef3f5; }
 
 <!-- FILTER -->
 <div class="filters">
-  <button onclick="filterUnit('all')" class="active">All</button>
-  <button onclick="filterUnit('unit1')">Unit I</button>
-  <button onclick="filterUnit('unit2')">Unit II</button>
-  <button onclick="filterUnit('unit3')">Unit III</button>
-  <button onclick="filterUnit('unit4')">Unit IV</button>
-  <button onclick="filterUnit('unit5')">Unit V</button>
+  <button onclick="filterUnit(event,'all')" class="active">All</button>
+  <button onclick="filterUnit(event,'unit1')">Unit I</button>
+  <button onclick="filterUnit(event,'unit2')">Unit II</button>
+  <button onclick="filterUnit(event,'unit3')">Unit III</button>
+  <button onclick="filterUnit(event,'unit4')">Unit IV</button>
+  <button onclick="filterUnit(event,'unit5')">Unit V</button>
 </div>
 
-<!-- GRID -->
 <div class="grid">
 
-<!-- TEMPLATE: UNIT 1 (6 SETS) -->
+<!-- GENERATOR -->
 <script>
-for(let i=1;i<=6;i++){
-document.write(`
-<div class="card unit1">
-  <h3>Unit I — Set ${i}</h3>
-  <p class="small">Probability Theory (50 MCQs)</p>
-  <a class="btn" href="#" target="_blank">Download PDF</a>
-  <div class="video">
-    <iframe width="100%" height="100%"
-    src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview"
-    allow="autoplay"></iframe>
-  </div>
-</div>
-`);
-}
-</script>
+function createCard(unitClass, title, desc){
+  return `
+  <div class="card ${unitClass}">
+    <h3>${title}</h3>
+    <p class="small">${desc}</p>
+    <a class="btn" href="#">Download PDF</a>
 
-<!-- UNIT 2 -->
-<script>
-for(let i=1;i<=6;i++){
-document.write(`
-<div class="card unit2 hidden">
-  <h3>Unit II — Set ${i}</h3>
-  <p class="small">Real Analysis & Matrix Algebra</p>
-  <a class="btn" href="#" target="_blank">Download PDF</a>
-  <div class="video">
-    <iframe width="100%" height="100%"
-    src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview"></iframe>
-  </div>
-</div>
-`);
+    <div class="video-container">
+      <iframe src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview"
+      allow="autoplay"></iframe>
+      <button class="zoom-btn" onclick="openFullscreen(this)">⛶</button>
+    </div>
+  </div>`;
 }
-</script>
 
-<!-- UNIT 3 -->
-<script>
+// UNIT 1
 for(let i=1;i<=6;i++){
-document.write(`
-<div class="card unit3 hidden">
-  <h3>Unit III — Set ${i}</h3>
-  <p class="small">Sampling & DOE</p>
-  <a class="btn" href="#">Download PDF</a>
-  <div class="video">
-    <iframe width="100%" height="100%"
-    src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview"></iframe>
-  </div>
-</div>
-`);
+  document.write(createCard("unit1","Unit I — Set "+i,"Probability Theory (50 MCQs)"));
 }
-</script>
 
-<!-- UNIT 4 -->
-<script>
+// UNIT 2
 for(let i=1;i<=6;i++){
-document.write(`
-<div class="card unit4 hidden">
-  <h3>Unit IV — Set ${i}</h3>
-  <p class="small">Estimation Theory</p>
-  <a class="btn" href="#">Download PDF</a>
-  <div class="video">
-    <iframe width="100%" height="100%"
-    src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview"></iframe>
-  </div>
-</div>
-`);
+  document.write(createCard("unit2 hidden","Unit II — Set "+i,"Real Analysis & Matrix Algebra"));
 }
-</script>
 
-<!-- UNIT 5 -->
-<script>
+// UNIT 3
 for(let i=1;i<=6;i++){
-document.write(`
-<div class="card unit5 hidden">
-  <h3>Unit V — Set ${i}</h3>
-  <p class="small">Hypothesis Testing</p>
-  <a class="btn" href="#">Download PDF</a>
-  <div class="video">
-    <iframe width="100%" height="100%"
-    src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview"></iframe>
-  </div>
-</div>
-`);
+  document.write(createCard("unit3 hidden","Unit III — Set "+i,"Sampling & DOE"));
+}
+
+// UNIT 4
+for(let i=1;i<=6;i++){
+  document.write(createCard("unit4 hidden","Unit IV — Set "+i,"Estimation Theory"));
+}
+
+// UNIT 5
+for(let i=1;i<=6;i++){
+  document.write(createCard("unit5 hidden","Unit V — Set "+i,"Hypothesis Testing"));
 }
 </script>
 
@@ -206,9 +178,10 @@ document.write(`
 </div>
 
 <script>
-function filterUnit(unit){
+// FILTER FIX
+function filterUnit(e, unit){
   document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
-  event.target.classList.add('active');
+  e.target.classList.add('active');
 
   document.querySelectorAll('.card').forEach(card=>{
     if(unit==='all'){
@@ -220,6 +193,15 @@ function filterUnit(unit){
       }
     }
   });
+}
+
+// FULLSCREEN ZOOM
+function openFullscreen(btn){
+  const el = btn.parentElement;
+
+  if (el.requestFullscreen) el.requestFullscreen();
+  else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+  else if (el.msRequestFullscreen) el.msRequestFullscreen();
 }
 </script>
 
