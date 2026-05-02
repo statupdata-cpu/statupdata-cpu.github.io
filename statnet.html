@@ -5,996 +5,223 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>UGC NET Statistics — Materials</title>
 
-<link rel="stylesheet" href="styles.css">
-
 <style>
-.wrap { max-width:1100px; margin:auto; padding:24px; }
+body { margin:0; font-family:Arial; background:#eef3f5; }
+
+.nav {
+  display:flex;
+  gap:20px;
+  padding:15px 30px;
+  background:#0f172a;
+}
+.nav a {
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.wrap { max-width:1200px; margin:auto; padding:24px; }
 
 .hero {
-  background: linear-gradient(180deg, rgba(0,255,170,0.08), rgba(10,25,47,0.02));
-  padding:24px;
+  background:#fff;
+  padding:20px;
   border-radius:12px;
-  margin-bottom:18px;
+  margin-bottom:20px;
+}
+
+.filters {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.filters button {
+  padding:8px 12px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  background:#ddd;
+}
+
+.filters button.active {
+  background:#0ea5a4;
+  color:#fff;
 }
 
 .grid {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:16px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:18px;
 }
 
 .card {
   background:#fff;
   padding:16px;
   border-radius:12px;
-  box-shadow:0 10px 24px rgba(0,0,0,0.08);
+  box-shadow:0 10px 20px rgba(0,0,0,0.08);
 }
 
-.card h3 { margin:0 0 8px 0; }
-.small { font-size:13px; color:#666; }
+.small { font-size:13px; color:#555; }
 
 .btn {
+  display:inline-block;
   padding:10px 14px;
   border-radius:8px;
-  font-weight:600;
-  cursor:pointer;
-  border:none;
-}
-
-.primary {
   background:linear-gradient(90deg,#00ffaa,#0ea5a4);
   color:#fff;
-}
-
-.ghost {
-  background:#fff;
-  border:1px solid #ddd;
+  text-decoration:none;
+  font-weight:600;
+  margin:10px 0;
 }
 
 .video {
   aspect-ratio:16/9;
-  border-radius:10px;
   overflow:hidden;
-  margin-top:10px;
+  border-radius:10px;
 }
+
+.hidden { display:none; }
 </style>
 </head>
 
 <body>
+
+<!-- NAVBAR -->
+<div class="nav">
+  <a href="#">Home</a>
+  <a href="#">Materials</a>
+  <a href="#">Tests</a>
+  <a href="#">Contact</a>
+</div>
 
 <div class="wrap">
 
 <!-- HERO -->
 <div class="hero">
   <h1>UGC NET Statistics — Study Materials</h1>
-  <p class="small">
-    Unit-wise PDF materials, MCQ sets with explanations, and video discussions.
-    All materials set included minimum 50 mcqs. Videos are previewed below.
-  </p>
+  <p class="small">Each set contains 50 MCQs with detailed explanation.</p>
 </div>
 
-<!-- UNIT 1 -->
-<h2>Unit 1: Probability Theory</h2>
+<!-- FILTER -->
+<div class="filters">
+  <button onclick="filterUnit('all')" class="active">All</button>
+  <button onclick="filterUnit('unit1')">Unit I</button>
+  <button onclick="filterUnit('unit2')">Unit II</button>
+  <button onclick="filterUnit('unit3')">Unit III</button>
+  <button onclick="filterUnit('unit4')">Unit IV</button>
+  <button onclick="filterUnit('unit5')">Unit V</button>
+</div>
 
+<!-- GRID -->
 <div class="grid">
 
-  <!-- SET 1 -->
-  <div class="card">
-    <h3>Unit 1 — Set 1</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 2</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-<!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-<!-- ================= UNIT II ================= -->
-<h2>UNIT II: Real Analysis and Matrix Algebra</h2>
-<div class="grid">
-
-
-
-  <!-- SET 1 -->
-  <div class="card">
-    <h3>Unit 1 — Set 1</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 2</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-<!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-<!-- ================= UNIT III ================= -->
-<h2>UNIT III: Sampling Methods and Design of Experiments</h2>
-<div class="grid">
-
-
-
-  <!-- SET 1 -->
-  <div class="card">
-    <h3>Unit 1 — Set 1</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 2</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-<!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-<!-- ================= UNIT IV ================= -->
-<h2>UNIT IV: Estimation Theory</h2>
-<div class="grid">
-
-
-
-  <!-- SET 1 -->
-  <div class="card">
-    <h3>Unit 1 — Set 1</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 2</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-<!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-<!-- ================= UNIT V ================= -->
-<h2>UNIT V: Testing of Hypotheses</h2>
-<div class="grid">
-
-
-
-  <!-- SET 1 -->
-  <div class="card">
-    <h3>Unit 1 — Set 1</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 2</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-<!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-<!-- ================= UNIT VI ================= -->
-<h2>UNIT VI: Linear Estimation, Regression Analysis and Econometrics</h2>
-<div class="grid">
-
-
-
-  <!-- SET 1 -->
-  <div class="card">
-    <h3>Unit 1 — Set 1</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 2</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-<!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-<!-- ================= UNIT VII ================= -->
-<h2>UNIT VII: Time Series</h2>
-<div class="grid">
-
-
-  <!-- SET 1 -->
-  <div class="card">
-    <h3>Unit 1 — Set 1</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 2</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-<!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-<!-- ================= UNIT VIII ================= -->
-<h2>UNIT VIII: Multivariate Analysis</h2>
-<div class="grid">
-
-
-  <!-- SET 1 -->
-  <div class="card">
-    <h3>Unit 1 — Set 1</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 2</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-<!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-<!-- ================= UNIT IX ================= -->
-<h2>UNIT IX: Stochastic Processes</h2>
-<div class="grid">
-
-
-  <!-- SET 1 -->
-  <div class="card">
-    <h3>Unit 1 — Set 1</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 2</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-<!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-<!-- ================= UNIT X ================= -->
-<h2>UNIT X: Indian Statistical System and Research Methodology</h2>
-<div class="grid">
-
-
-  <!-- SET 1 -->
-  <div class="card">
-    <h3>Unit 1 — Set 1</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 2</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-<!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <!-- SET 2 -->
-  <div class="card">
-    <h3>Unit 1 — Set 3</h3>
-    <p class="small">MCQs with explanation (advanced level)</p>
-
-    <a class="btn primary" href="https://drive.google.com/your-link-set2" target="_blank">Download PDF</a>
-
-    <div class="video">
-      <iframe width="100%" height="100%" 
-        src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview" 
-        allowfullscreen>
-      </iframe>
-    </div>
+<!-- TEMPLATE: UNIT 1 (6 SETS) -->
+<script>
+for(let i=1;i<=6;i++){
+document.write(`
+<div class="card unit1">
+  <h3>Unit I — Set ${i}</h3>
+  <p class="small">Probability Theory (50 MCQs)</p>
+  <a class="btn" href="#" target="_blank">Download PDF</a>
+  <div class="video">
+    <iframe width="100%" height="100%"
+    src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview"
+    allow="autoplay"></iframe>
   </div>
 </div>
+`);
+}
+</script>
+
+<!-- UNIT 2 -->
+<script>
+for(let i=1;i<=6;i++){
+document.write(`
+<div class="card unit2 hidden">
+  <h3>Unit II — Set ${i}</h3>
+  <p class="small">Real Analysis & Matrix Algebra</p>
+  <a class="btn" href="#" target="_blank">Download PDF</a>
+  <div class="video">
+    <iframe width="100%" height="100%"
+    src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview"></iframe>
+  </div>
+</div>
+`);
+}
+</script>
+
+<!-- UNIT 3 -->
+<script>
+for(let i=1;i<=6;i++){
+document.write(`
+<div class="card unit3 hidden">
+  <h3>Unit III — Set ${i}</h3>
+  <p class="small">Sampling & DOE</p>
+  <a class="btn" href="#">Download PDF</a>
+  <div class="video">
+    <iframe width="100%" height="100%"
+    src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview"></iframe>
+  </div>
+</div>
+`);
+}
+</script>
+
+<!-- UNIT 4 -->
+<script>
+for(let i=1;i<=6;i++){
+document.write(`
+<div class="card unit4 hidden">
+  <h3>Unit IV — Set ${i}</h3>
+  <p class="small">Estimation Theory</p>
+  <a class="btn" href="#">Download PDF</a>
+  <div class="video">
+    <iframe width="100%" height="100%"
+    src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview"></iframe>
+  </div>
+</div>
+`);
+}
+</script>
+
+<!-- UNIT 5 -->
+<script>
+for(let i=1;i<=6;i++){
+document.write(`
+<div class="card unit5 hidden">
+  <h3>Unit V — Set ${i}</h3>
+  <p class="small">Hypothesis Testing</p>
+  <a class="btn" href="#">Download PDF</a>
+  <div class="video">
+    <iframe width="100%" height="100%"
+    src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview"></iframe>
+  </div>
+</div>
+`);
+}
+</script>
+
+</div>
+</div>
+
+<script>
+function filterUnit(unit){
+  document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+
+  document.querySelectorAll('.card').forEach(card=>{
+    if(unit==='all'){
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+      if(card.classList.contains(unit)){
+        card.classList.remove('hidden');
+      }
+    }
+  });
+}
+</script>
 
 </body>
 </html>
