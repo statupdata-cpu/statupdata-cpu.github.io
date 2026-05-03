@@ -1,207 +1,424 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>UGC NET Statistics — Materials</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>UGC NET Statistics — Study Materials | STATUP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 
 <style>
-body { margin:0; font-family:Arial; background:#eef3f5; }
+/* ── RESET ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-height:100vh;}
 
-.nav {
-  display:flex;
-  gap:20px;
-  padding:15px 30px;
-  background:#0f172a;
+/* ── NAV ── */
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;background:#1a3a1a;position:sticky;top:0;z-index:999;
+  box-shadow:0 2px 20px rgba(0,0,0,0.3);height:64px;
 }
-.nav a { color:white; text-decoration:none; font-weight:600; }
+.nav-logo{display:flex;align-items:center;gap:10px;}
+.nav-logo img{height:36px;}
+.nav-logo span{color:#8dc63f;font-weight:800;font-size:20px;letter-spacing:1px;}
+.nav-links{display:flex;gap:28px;}
+.nav-links a{color:#cde8b0;text-decoration:none;font-weight:500;font-size:15px;
+  transition:color .2s;padding:4px 0;border-bottom:2px solid transparent;}
+.nav-links a:hover{color:#8dc63f;border-bottom-color:#8dc63f;}
+.nav-cta{background:#8dc63f;color:#1a3a1a;padding:8px 18px;border-radius:8px;
+  font-weight:700;font-size:14px;text-decoration:none;transition:background .2s;}
+.nav-cta:hover{background:#6aaa1e;}
 
-.wrap { max-width:1200px; margin:auto; padding:24px; }
-
-.hero {
-  background:#fff;
-  padding:20px;
-  border-radius:12px;
-  margin-bottom:20px;
+/* ── HERO BANNER ── */
+.hero{
+  background:linear-gradient(135deg,#1a3a1a 0%,#2d5a2d 60%,#4a8a2a 100%);
+  padding:48px 40px 40px;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238dc63f' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-inner{max-width:1200px;margin:auto;position:relative;z-index:1;}
+.hero h1{font-size:34px;font-weight:800;color:#ffffff;line-height:1.2;margin-bottom:10px;}
+.hero h1 span{color:#8dc63f;}
+.hero p{color:#cde8b0;font-size:15px;max-width:560px;line-height:1.6;}
+.hero-stats{display:flex;gap:32px;margin-top:24px;flex-wrap:wrap;}
+.stat-item{text-align:center;}
+.stat-num{font-size:28px;font-weight:800;color:#8dc63f;display:block;}
+.stat-label{font-size:12px;color:#aad080;text-transform:uppercase;letter-spacing:.06em;}
+.badge{
+  display:inline-block;background:rgba(141,198,63,0.15);border:1px solid rgba(141,198,63,0.3);
+  color:#8dc63f;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;
+  margin-bottom:14px;letter-spacing:.04em;
 }
 
-.filters {
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-bottom:20px;
-}
+/* ── WRAP ── */
+.wrap{max-width:1200px;margin:auto;padding:32px 24px;}
 
-.filters button {
-  padding:8px 12px;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-  background:#ddd;
-}
+/* ── SECTION HEADER ── */
+.section-header{margin-bottom:24px;}
+.section-header h2{font-size:22px;font-weight:700;color:#1a3a1a;margin-bottom:4px;}
+.section-header p{font-size:13px;color:#6b8c6b;}
 
-.filters button.active {
-  background:#0ea5a4;
-  color:#fff;
+/* ── FILTER BAR ── */
+.filter-bar{
+  background:#fff;border-radius:12px;padding:16px 20px;
+  margin-bottom:28px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  box-shadow:0 2px 12px rgba(0,0,0,0.07);
 }
+.filter-label{font-size:13px;font-weight:600;color:#4a6a4a;margin-right:4px;}
+.filter-btn{
+  padding:7px 14px;border:1.5px solid #d4e6d4;border-radius:8px;
+  cursor:pointer;background:#fff;color:#4a6a4a;font-size:13px;font-weight:500;
+  transition:all .2s;font-family:inherit;
+}
+.filter-btn:hover{border-color:#8dc63f;color:#2d5a2d;}
+.filter-btn.active{background:#8dc63f;border-color:#8dc63f;color:#fff;font-weight:700;}
 
-.grid {
+/* ── UNIT SECTION ── */
+.unit-section{margin-bottom:36px;}
+.unit-header{
+  display:flex;align-items:center;gap:12px;margin-bottom:16px;
+  padding:12px 18px;background:#fff;border-radius:10px;
+  border-left:4px solid #8dc63f;box-shadow:0 2px 8px rgba(0,0,0,0.06);
+}
+.unit-badge{
+  background:#8dc63f;color:#fff;font-size:11px;font-weight:700;
+  padding:3px 10px;border-radius:20px;white-space:nowrap;letter-spacing:.04em;
+}
+.unit-title{font-size:16px;font-weight:700;color:#1a3a1a;flex:1;}
+.unit-count{font-size:12px;color:#6b8c6b;font-weight:500;}
+
+/* ── CARD GRID ── */
+.card-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:18px;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:16px;
 }
 
-.card {
-  background:#fff;
-  padding:16px;
-  border-radius:12px;
-  box-shadow:0 10px 20px rgba(0,0,0,0.08);
+/* ── CARD ── */
+.card{
+  background:#fff;border-radius:14px;overflow:hidden;
+  box-shadow:0 4px 16px rgba(0,0,0,0.08);
+  transition:transform .25s,box-shadow .25s;
+  border:1px solid #e8f0e8;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(34,100,10,0.15);}
+
+.card-header{
+  background:linear-gradient(135deg,#1a3a1a,#2d5a2d);
+  padding:14px 16px;display:flex;align-items:center;gap:10px;
+}
+.card-icon{
+  width:36px;height:36px;background:rgba(141,198,63,0.2);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;flex-shrink:0;
+}
+.card-title{color:#fff;font-size:14px;font-weight:700;line-height:1.3;}
+.card-subtitle{color:#aad080;font-size:11px;margin-top:2px;}
+
+.card-body{padding:14px 16px;}
+.card-desc{font-size:12px;color:#6b8c6b;margin-bottom:12px;line-height:1.5;}
+
+.card-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+.meta-tag{
+  font-size:11px;background:#f0f7f0;color:#4a8a2a;
+  padding:3px 8px;border-radius:5px;font-weight:500;
 }
 
-.small { font-size:13px; color:#555; }
-
-.btn {
-  display:inline-block;
-  padding:10px 14px;
-  border-radius:8px;
-  background:linear-gradient(90deg,#00ffaa,#0ea5a4);
-  color:#fff;
-  text-decoration:none;
-  font-weight:600;
-  margin:10px 0;
+.btn-pdf{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  padding:9px 14px;border-radius:8px;
+  background:linear-gradient(90deg,#6aaa1e,#8dc63f);
+  color:#fff;text-decoration:none;font-weight:700;font-size:13px;
+  margin-bottom:12px;transition:opacity .2s;border:none;cursor:pointer;width:100%;
 }
+.btn-pdf:hover{opacity:.88;}
+.btn-pdf svg{width:14px;height:14px;fill:currentColor;}
 
-/* VIDEO */
-.video-container {
-  position: relative;
+/* ── VIDEO ── */
+.video-wrap{
+  position:relative;background:#0d1f0d;border-radius:8px;overflow:hidden;
   aspect-ratio:16/9;
-  border-radius:10px;
-  overflow:hidden;
 }
-
-.video-container iframe {
-  width:100%;
-  height:100%;
-  border:none;
+.video-wrap iframe{width:100%;height:100%;border:none;display:block;}
+.video-overlay{
+  position:absolute;top:6px;right:6px;display:flex;gap:4px;
 }
-
-/* ZOOM BUTTON */
-.zoom-btn {
-  position:absolute;
-  top:8px;
-  right:8px;
-  background:rgba(0,0,0,0.7);
-  color:#fff;
-  border:none;
-  padding:6px 10px;
-  border-radius:6px;
-  cursor:pointer;
+.vid-btn{
+  background:rgba(0,0,0,0.7);color:#fff;border:none;
+  padding:5px 8px;border-radius:5px;cursor:pointer;font-size:11px;
+  transition:background .2s;
 }
+.vid-btn:hover{background:rgba(141,198,63,0.8);}
 
-.hidden { display:none; }
+/* ── PROGRESS BAR ── */
+.progress-section{
+  background:#fff;border-radius:12px;padding:20px;
+  margin-bottom:28px;box-shadow:0 2px 12px rgba(0,0,0,0.07);
+}
+.progress-title{font-size:15px;font-weight:700;color:#1a3a1a;margin-bottom:14px;}
+.progress-item{margin-bottom:10px;}
+.progress-label{display:flex;justify-content:space-between;font-size:12px;
+  color:#4a6a4a;margin-bottom:4px;font-weight:500;}
+.progress-bar{background:#e8f0e8;border-radius:10px;height:8px;overflow:hidden;}
+.progress-fill{background:linear-gradient(90deg,#6aaa1e,#8dc63f);height:100%;
+  border-radius:10px;transition:width 1s ease;}
+
+/* ── FOOTER ── */
+.footer{background:#1a3a1a;color:#aad080;text-align:center;
+  padding:20px;font-size:13px;margin-top:48px;}
+.footer a{color:#8dc63f;text-decoration:none;}
+
+/* ── HIDDEN ── */
+.hidden{display:none!important;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:640px){
+  .nav{padding:0 16px;}
+  .nav-links{gap:14px;}
+  .nav-links a{font-size:13px;}
+  .hero{padding:32px 16px;}
+  .hero h1{font-size:24px;}
+  .wrap{padding:20px 12px;}
+  .filter-bar{padding:12px;}
+  .hero-stats{gap:20px;}
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<div class="nav">
-  <a href="#">Home</a>
-  <a href="#">Materials</a>
-  <a href="#">Tests</a>
-  <a href="#">Contact</a>
+<!-- ══ NAV ══ -->
+<nav class="nav">
+  <div class="nav-logo">
+    <img src="images/logo.png" alt="STATUP" onerror="this.style.display='none'"/>
+    <span>STATUP</span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="statnet.html">Materials</a>
+    <a href="#">Tests</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a class="nav-cta" href="register.html">Register Now</a>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="badge">📚 UGC NET Statistics Coaching</div>
+    <h1>Study Materials — <span>All 10 Units</span></h1>
+    <p>Each set contains 50 MCQs with detailed step-by-step explanations. Complete coverage of the UGC NET Statistics syllabus with video discussions.</p>
+    <div class="hero-stats">
+      <div class="stat-item"><span class="stat-num">10</span><span class="stat-label">Units</span></div>
+      <div class="stat-item"><span class="stat-num">60</span><span class="stat-label">Sets</span></div>
+      <div class="stat-item"><span class="stat-num">3000+</span><span class="stat-label">MCQs</span></div>
+      <div class="stat-item"><span class="stat-num">75%</span><span class="stat-label">Success Rate</span></div>
+    </div>
+  </div>
 </div>
 
 <div class="wrap">
 
-<div class="hero">
-  <h1>UGC NET Statistics — Study Materials</h1>
-  <p class="small">Each set contains 50 MCQs with detailed explanation.</p>
+<!-- ══ PROGRESS ══ -->
+<div class="progress-section">
+  <div class="progress-title">📊 Syllabus Coverage Progress</div>
+  <div id="progress-container"></div>
 </div>
 
-<!-- FILTER -->
-<div class="filters">
-  <button onclick="filterUnit(event,'all')" class="active">All</button>
-  <button onclick="filterUnit(event,'unit1')">Unit I</button>
-  <button onclick="filterUnit(event,'unit2')">Unit II</button>
-  <button onclick="filterUnit(event,'unit3')">Unit III</button>
-  <button onclick="filterUnit(event,'unit4')">Unit IV</button>
-  <button onclick="filterUnit(event,'unit5')">Unit V</button>
+<!-- ══ FILTER BAR ══ -->
+<div class="filter-bar">
+  <span class="filter-label">Filter:</span>
+  <button class="filter-btn active" onclick="filterUnit(event,'all')">All Units</button>
+  <button class="filter-btn" onclick="filterUnit(event,'u1')">Unit I</button>
+  <button class="filter-btn" onclick="filterUnit(event,'u2')">Unit II</button>
+  <button class="filter-btn" onclick="filterUnit(event,'u3')">Unit III</button>
+  <button class="filter-btn" onclick="filterUnit(event,'u4')">Unit IV</button>
+  <button class="filter-btn" onclick="filterUnit(event,'u5')">Unit V</button>
+  <button class="filter-btn" onclick="filterUnit(event,'u6')">Unit VI</button>
+  <button class="filter-btn" onclick="filterUnit(event,'u7')">Unit VII</button>
+  <button class="filter-btn" onclick="filterUnit(event,'u8')">Unit VIII</button>
+  <button class="filter-btn" onclick="filterUnit(event,'u9')">Unit IX</button>
+  <button class="filter-btn" onclick="filterUnit(event,'u10')">Unit X</button>
 </div>
 
-<div class="grid">
+<!-- ══ MATERIAL GRID ══ -->
+<div id="material-grid"></div>
 
-<!-- GENERATOR -->
+</div><!-- /wrap -->
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <p>© 2025 <a href="#">STATUP</a> · Streamline Your Analysis, Elevate Your Decision</p>
+  <p style="margin-top:6px;font-size:11px;color:#6b8c6b;">UGC NET Statistics Coaching · 75% Success Rate · 2+ Years Experience</p>
+</footer>
+
 <script>
-function createCard(unitClass, title, desc){
-  return `
-  <div class="card ${unitClass}">
-    <h3>${title}</h3>
-    <p class="small">${desc}</p>
-    <a class="btn" href="#">Download PDF</a>
+// ══ DATA ══
+const UNITS = [
+  {
+    id:'u1',num:'I',
+    title:'Probability Theory',
+    desc:'Basic probability, conditional probability, Bayes theorem, random variables, MGF, CLT, convergence modes.',
+    icon:'🎲',color:'#2d6a2d',
+    topics:['Basic Probability','Conditional Probability','Bayes Theorem','Random Variables','MGF & CF','CLT & LLN']
+  },
+  {
+    id:'u2',num:'II',
+    title:'Real Analysis & Matrix Algebra',
+    desc:'Sequences, series, continuity, differentiability, integration, vector spaces, eigenvalues, quadratic forms.',
+    icon:'📐',color:'#2d5a4a',
+    topics:['Sequences & Series','Continuity & Differentiability','Integration','Matrix Rank & Inverse','Eigenvalues','Quadratic Forms']
+  },
+  {
+    id:'u3',num:'III',
+    title:'Sampling Methods & Design of Experiments',
+    desc:'SRS, stratified, systematic sampling, ratio/regression estimation, ANOVA, CRD, RBD, Latin square, BIBD.',
+    icon:'🔬',color:'#4a5a2d',
+    topics:['Simple Random Sampling','Stratified Sampling','Ratio Estimation','One-way ANOVA','RBD & LSD','BIBD']
+  },
+  {
+    id:'u4',num:'IV',
+    title:'Estimation Theory',
+    desc:'UMVUE, Rao-Cramer bound, sufficiency, completeness, MLE, method of moments, confidence intervals.',
+    icon:'📊',color:'#5a3a2d',
+    topics:['Unbiasedness & Consistency','UMVUE & Rao-Cramer','Sufficiency & Completeness','MLE','Confidence Intervals','Non-parametric Estimation']
+  },
+  {
+    id:'u5',num:'V',
+    title:'Testing of Hypotheses',
+    desc:'Neyman-Pearson lemma, UMP tests, likelihood ratio tests, SPRT, chi-square tests, non-parametric tests.',
+    icon:'🧪',color:'#3a2d5a',
+    topics:['NP Lemma & UMP','Likelihood Ratio Tests','SPRT','Chi-square Tests','Sign & Wilcoxon Tests','Mann-Whitney U-test']
+  },
+  {
+    id:'u6',num:'VI',
+    title:'Linear Estimation & Regression',
+    desc:'Gauss-Markov model, OLS, multiple regression, multicollinearity, heteroscedasticity, logistic regression, 2SLS.',
+    icon:'📉',color:'#2d3a5a',
+    topics:['Gauss-Markov Theorem','OLS & GLS','Multicollinearity','Heteroscedasticity','Logistic Regression','Simultaneous Equations']
+  },
+  {
+    id:'u7',num:'VII',
+    title:'Time Series Analysis',
+    desc:'Stationarity, ACF, PACF, AR, MA, ARMA, ARIMA models, spectral analysis, forecasting.',
+    icon:'📈',color:'#2d4a3a',
+    topics:['Stationarity & Ergodicity','ACF & PACF','AR & MA Models','ARMA & ARIMA','Spectral Analysis','Forecasting']
+  },
+  {
+    id:'u8',num:'VIII',
+    title:'Multivariate Analysis',
+    desc:'Multivariate normal, Wishart distribution, Hotelling T², PCA, discriminant analysis, canonical correlation.',
+    icon:'🔷',color:'#4a2d5a',
+    topics:['Multivariate Normal','Wishart Distribution','Hotelling T²','PCA','Discriminant Analysis','Canonical Correlation']
+  },
+  {
+    id:'u9',num:'IX',
+    title:'Stochastic Processes',
+    desc:'Markov chains, Poisson process, birth-death processes, M/M/1 queues, gambler\'s ruin.',
+    icon:'🔄',color:'#5a2d3a',
+    topics:['Markov Chains','Classification of States','Poisson Process','Birth-Death Processes','M/M/1 Queues','Gambler\'s Ruin']
+  },
+  {
+    id:'u10',num:'X',
+    title:'Indian Statistical System & R',
+    desc:'MoSPI, NSO, census surveys, contributions of Indian statisticians, R programming basics.',
+    icon:'🇮🇳',color:'#3a5a2d',
+    topics:['Indian Statistical System','MoSPI & NSC','Contributions of Statisticians','R Programming','Data Management in R','Graphics in R']
+  }
+];
 
-    <div class="video-container">
-      <iframe src="https://drive.google.com/file/d/1mhLYwOINP4oht8s40jtfBJum16nbS2zz/preview"
-      allow="autoplay"></iframe>
-      <button class="zoom-btn" onclick="openFullscreen(this)">⛶</button>
+const VIDEO_ID = '1mhLYwOINP4oht8s40jtfBJum16nbS2zz';
+const VIDEO_SRC = `https://drive.google.com/file/d/${VIDEO_ID}/preview`;
+
+// ══ BUILD PROGRESS ══
+const progressHTML = UNITS.map(u=>`
+  <div class="progress-item">
+    <div class="progress-label">
+      <span>Unit ${u.num}: ${u.title}</span>
+      <span>6/6 Sets</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" style="width:100%"></div>
+    </div>
+  </div>
+`).join('');
+document.getElementById('progress-container').innerHTML = progressHTML;
+
+// ══ BUILD GRID ══
+function buildGrid(){
+  let html = '';
+  UNITS.forEach((u,ui)=>{
+    html += `
+    <div class="unit-section" data-unit="${u.id}">
+      <div class="unit-header">
+        <span class="unit-badge">Unit ${u.num}</span>
+        <span class="unit-title">${u.title}</span>
+        <span class="unit-count">6 Sets · 300 MCQs</span>
+      </div>
+      <div class="card-grid">
+        ${[1,2,3,4,5,6].map(s=>createCard(u,s)).join('')}
+      </div>
+    </div>`;
+  });
+  document.getElementById('material-grid').innerHTML = html;
+}
+
+function createCard(unit,setNum){
+  const topic = unit.topics[(setNum-1) % unit.topics.length];
+  return `
+  <div class="card">
+    <div class="card-header" style="background:linear-gradient(135deg,${unit.color},#4a8a4a);">
+      <div class="card-icon">${unit.icon}</div>
+      <div>
+        <div class="card-title">Unit ${unit.num} — Set ${setNum}</div>
+        <div class="card-subtitle">${unit.title}</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="meta-tag">📝 50 MCQs</span>
+        <span class="meta-tag">✅ With Solutions</span>
+      </div>
+      <div class="card-desc">Focus: <strong>${topic}</strong><br/>${unit.desc.split(',')[0]}.</div>
+      <a class="btn-pdf" href="#" onclick="return false;">
+        <svg viewBox="0 0 24 24"><path d="M14,2H6A2,2,0,0,0,4,4V20a2,2,0,0,0,2,2H18a2,2,0,0,0,2-2V8Zm4,18H6V4h7v5h5Zm-5-7H7V11h6Zm2,3H7V16h9Z"/></svg>
+        Download PDF
+      </a>
+      <div class="video-wrap">
+        <iframe src="${VIDEO_SRC}" allow="autoplay" loading="lazy"></iframe>
+        <div class="video-overlay">
+          <button class="vid-btn" onclick="openFS(this)" title="Fullscreen">⛶</button>
+        </div>
+      </div>
     </div>
   </div>`;
 }
 
-// UNIT 1
-for(let i=1;i<=6;i++){
-  document.write(createCard("unit1","Unit I — Set "+i,"Probability Theory (50 MCQs)"));
-}
+buildGrid();
 
-// UNIT 2
-for(let i=1;i<=6;i++){
-  document.write(createCard("unit2 hidden","Unit II — Set "+i,"Real Analysis & Matrix Algebra"));
-}
-
-// UNIT 3
-for(let i=1;i<=6;i++){
-  document.write(createCard("unit3 hidden","Unit III — Set "+i,"Sampling & DOE"));
-}
-
-// UNIT 4
-for(let i=1;i<=6;i++){
-  document.write(createCard("unit4 hidden","Unit IV — Set "+i,"Estimation Theory"));
-}
-
-// UNIT 5
-for(let i=1;i<=6;i++){
-  document.write(createCard("unit5 hidden","Unit V — Set "+i,"Hypothesis Testing"));
-}
-</script>
-
-</div>
-</div>
-
-<script>
-// FILTER FIX
-function filterUnit(e, unit){
-  document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+// ══ FILTER ══
+function filterUnit(e,unit){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
   e.target.classList.add('active');
 
-  document.querySelectorAll('.card').forEach(card=>{
+  document.querySelectorAll('.unit-section').forEach(sec=>{
     if(unit==='all'){
-      card.classList.remove('hidden');
+      sec.classList.remove('hidden');
     } else {
-      card.classList.add('hidden');
-      if(card.classList.contains(unit)){
-        card.classList.remove('hidden');
-      }
+      sec.getAttribute('data-unit')===unit
+        ? sec.classList.remove('hidden')
+        : sec.classList.add('hidden');
     }
   });
 }
 
-// FULLSCREEN ZOOM
-function openFullscreen(btn){
-  const el = btn.parentElement;
-
-  if (el.requestFullscreen) el.requestFullscreen();
-  else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
-  else if (el.msRequestFullscreen) el.msRequestFullscreen();
+// ══ FULLSCREEN ══
+function openFS(btn){
+  const el = btn.closest('.video-wrap');
+  (el.requestFullscreen||el.webkitRequestFullscreen||el.msRequestFullscreen||function(){}).call(el);
 }
 </script>
 
