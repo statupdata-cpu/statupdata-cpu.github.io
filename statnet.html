@@ -172,7 +172,7 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
     <div class="hero-stats">
       <div class="stat-item"><span class="stat-num">10</span><span class="stat-label">Units</span></div>
       <div class="stat-item"><span class="stat-num">60+</span><span class="stat-label">Sets</span></div>
-      <div class="stat-item"><span class="stat-num">5000+</span><span class="stat-label">MCQs</span></div>
+      <div class="stat-item"><span class="stat-num">4000+</span><span class="stat-label">MCQs</span></div>
       <div class="stat-item"><span class="stat-num">75%</span><span class="stat-label">Success Rate</span></div>
     </div>
   </div>
@@ -227,7 +227,7 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
     <span class="imp-banner-icon">🔴</span>
     <div>
       <h2>Important Question Sets</h2>
-      <p>10 special sets containing <strong>100–150 high-priority questions each</strong>, curated from all units. Designed for final revision and exam-focused practice covering the most frequently tested topics across the UGC NET Statistics syllabus.</p>
+      <p>10 special sets containing <strong>100 high-priority questions each</strong>, curated from all units. Designed for final revision and exam-focused practice covering the most frequently tested topics across the UGC NET Statistics syllabus.</p>
     </div>
   </div>
 
@@ -383,7 +383,7 @@ const UNITS = [
 ];
 
 // ════════════════════════════════════════════════════════════════════
-//  IMPORTANT SETS DATA  (10 sets, 100–150 questions each)
+//  IMPORTANT SETS DATA  (10 sets, 100 questions each)
 //  Paste your links below — same format as above.
 // ════════════════════════════════════════════════════════════════════
 const IMPORTANT_SETS = [
@@ -475,7 +475,7 @@ function buildImportant(){
     const pdfBtn = hasPdf
       ? `<a class="btn-imp" href="${s.pdfLink}" target="_blank" rel="noopener">
            <svg style="width:14px;height:14px;fill:currentColor;flex-shrink:0" viewBox="0 0 24 24"><path d="M14,2H6C4.9,2,4,2.9,4,4v16c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V8L14,2z"/></svg>
-           Download PDF (100–150 Qs)
+           Download PDF (100 Qs)
          </a>`
       : `<button class="btn-imp disabled">⏳ Coming Soon</button>`;
 
@@ -502,7 +502,7 @@ function buildImportant(){
       </div>
       <div class="imp-card-body">
         <div class="imp-tags">
-          <span class="imp-tag">🔴 100–150 MCQs</span>
+          <span class="imp-tag">🔴 100 MCQs</span>
           <span class="imp-tag">📋 All Units</span>
           <span class="imp-tag">✅ With Solutions</span>
         </div>
