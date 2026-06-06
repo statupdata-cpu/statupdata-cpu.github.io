@@ -9,8 +9,6 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-height:100vh;}
-
-/* NAV */
 .nav{display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:#1a3a1a;position:sticky;top:0;z-index:999;box-shadow:0 2px 20px rgba(0,0,0,0.3);height:64px;}
 .nav-logo{display:flex;align-items:center;gap:10px;}
 .nav-logo img{height:36px;}
@@ -20,8 +18,6 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
 .nav-links a:hover{color:#8dc63f;border-bottom-color:#8dc63f;}
 .nav-cta{background:#8dc63f;color:#1a3a1a;padding:8px 18px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;transition:background .2s;}
 .nav-cta:hover{background:#6aaa1e;}
-
-/* HERO */
 .hero{background:linear-gradient(135deg,#1a3a1a 0%,#2d5a2d 60%,#4a8a2a 100%);padding:48px 40px 40px;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238dc63f' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
 .hero-inner{max-width:1200px;margin:auto;position:relative;z-index:1;}
@@ -33,63 +29,44 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
 .stat-num{font-size:28px;font-weight:800;color:#8dc63f;display:block;}
 .stat-label{font-size:12px;color:#aad080;text-transform:uppercase;letter-spacing:.06em;}
 .badge{display:inline-block;background:rgba(141,198,63,0.15);border:1px solid rgba(141,198,63,0.3);color:#8dc63f;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;margin-bottom:14px;letter-spacing:.04em;}
-
-/* WRAP */
 .wrap{max-width:1200px;margin:auto;padding:32px 24px;}
-
-/* TABS */
 .tab-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:28px;background:#fff;padding:10px 14px;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.07);}
 .tab-btn{padding:9px 20px;border:1.5px solid #d4e6d4;border-radius:8px;cursor:pointer;background:#fff;color:#4a6a4a;font-size:13px;font-weight:600;transition:all .2s;font-family:inherit;display:flex;align-items:center;gap:6px;}
 .tab-btn:hover{border-color:#8dc63f;color:#2d5a2d;}
 .tab-btn.active{background:#8dc63f;border-color:#8dc63f;color:#fff;}
 .tab-pane{display:none;}
 .tab-pane.active{display:block;}
-
-/* NOTICE */
 .notice-banner{background:linear-gradient(90deg,#f0f9ff,#e8f4ff);border:1px solid #b8d4f0;border-left:4px solid #3b82f6;border-radius:10px;padding:14px 18px;margin-bottom:22px;display:flex;align-items:flex-start;gap:12px;}
 .notice-banner .nb-icon{font-size:20px;flex-shrink:0;margin-top:1px;}
 .notice-banner p{font-size:13px;color:#1e3a5f;line-height:1.65;}
 .notice-banner strong{color:#1e3a5f;}
-
-/* FILTER */
 .filter-bar{background:#fff;border-radius:12px;padding:14px 18px;margin-bottom:24px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;box-shadow:0 2px 12px rgba(0,0,0,0.07);}
 .filter-label{font-size:13px;font-weight:600;color:#4a6a4a;margin-right:4px;}
 .filter-btn{padding:7px 13px;border:1.5px solid #d4e6d4;border-radius:8px;cursor:pointer;background:#fff;color:#4a6a4a;font-size:12px;font-weight:500;transition:all .2s;font-family:inherit;}
 .filter-btn:hover{border-color:#8dc63f;color:#2d5a2d;}
 .filter-btn.active{background:#8dc63f;border-color:#8dc63f;color:#fff;font-weight:700;}
-
-/* UNIT SECTION */
 .unit-section{margin-bottom:36px;}
 .unit-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding:14px 18px;background:#fff;border-radius:10px;border-left:4px solid #8dc63f;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
 .unit-badge{background:#8dc63f;color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;white-space:nowrap;letter-spacing:.04em;}
 .unit-title{font-size:15px;font-weight:700;color:#1a3a1a;flex:1;}
 .unit-count{font-size:12px;color:#6b8c6b;font-weight:500;white-space:nowrap;}
-
-/* CARD GRID */
 .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;}
-
-/* CARD */
 .card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,0.08);transition:transform .25s,box-shadow .25s;border:1px solid #e8f0e8;}
 .card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(34,100,10,0.14);}
-
 .card-header{padding:14px 16px;display:flex;align-items:center;gap:12px;}
 .card-icon{width:40px;height:40px;background:rgba(255,255,255,0.18);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
 .card-set-num{color:#fff;font-size:18px;font-weight:800;line-height:1;}
 .card-set-label{color:rgba(255,255,255,0.8);font-size:11px;margin-top:2px;}
-
 .card-body{padding:14px 16px;}
 .card-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
 .tag{font-size:11px;padding:4px 9px;border-radius:6px;font-weight:500;}
 .tag-green{background:#f0f7f0;color:#3a7a20;}
 .tag-orange{background:#fff4e6;color:#b85c00;}
 .tag-blue{background:#eff6ff;color:#2563eb;}
-
 .btn-pdf{display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 14px;border-radius:9px;background:linear-gradient(90deg,#6aaa1e,#8dc63f);color:#fff;text-decoration:none;font-weight:700;font-size:13px;margin-bottom:10px;transition:opacity .2s;border:none;cursor:pointer;width:100%;}
 .btn-pdf:hover{opacity:.88;}
 .btn-pdf.disabled{background:#e0e0e0;color:#999;cursor:not-allowed;pointer-events:none;}
 .btn-pdf svg{width:14px;height:14px;fill:currentColor;flex-shrink:0;}
-
-/* VIDEO */
 .video-wrap{position:relative;background:#0d1f0d;border-radius:9px;overflow:hidden;aspect-ratio:16/9;}
 .video-wrap iframe{width:100%;height:100%;border:none;display:block;}
 .fs-btn{position:absolute;top:7px;right:7px;background:rgba(0,0,0,0.65);color:#fff;border:none;padding:5px 9px;border-radius:5px;cursor:pointer;font-size:11px;transition:background .2s;}
@@ -99,13 +76,10 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
 .video-placeholder .vp-text{font-size:12px;font-weight:600;color:#6b8c6b;}
 .video-placeholder .vp-sub{font-size:11px;color:#aaa;}
 .video-note{font-size:11px;color:#888;margin-top:7px;font-style:italic;display:flex;align-items:flex-start;gap:4px;line-height:1.5;}
-
-/* IMPORTANT TAB */
 .imp-banner{background:linear-gradient(135deg,#6b1a1a,#9b2c2c);border-radius:12px;padding:22px 26px;margin-bottom:22px;display:flex;align-items:center;gap:18px;}
 .imp-banner-icon{font-size:40px;flex-shrink:0;}
 .imp-banner h2{color:#fff;font-size:20px;font-weight:800;margin-bottom:5px;}
 .imp-banner p{color:#fecaca;font-size:13px;line-height:1.65;}
-
 .imp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;}
 .imp-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,0.08);transition:transform .25s,box-shadow .25s;border:1px solid #fde8e8;}
 .imp-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(155,44,44,0.14);}
@@ -119,21 +93,184 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
 .btn-imp{display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 14px;border-radius:9px;background:linear-gradient(90deg,#9b2c2c,#c0392b);color:#fff;text-decoration:none;font-weight:700;font-size:13px;margin-bottom:10px;transition:opacity .2s;border:none;cursor:pointer;width:100%;}
 .btn-imp:hover{opacity:.88;}
 .btn-imp.disabled{background:#e0e0e0;color:#999;cursor:not-allowed;pointer-events:none;}
-
-/* SCHEDULE */
 .schedule-panel{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.07);}
 .schedule-top{padding:16px 22px;background:#1a3a1a;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
 .schedule-top h3{color:#8dc63f;font-size:16px;font-weight:700;}
 .schedule-top a{color:#aad080;font-size:13px;text-decoration:none;display:flex;align-items:center;gap:5px;transition:color .2s;}
 .schedule-top a:hover{color:#8dc63f;}
 .schedule-panel iframe{width:100%;border:none;display:block;min-height:82vh;}
-
-/* FOOTER */
+/* MISC TAB */
+.misc-banner{background:linear-gradient(135deg,#1a3a4a,#2d5a7a);border-radius:12px;padding:22px 26px;margin-bottom:22px;display:flex;align-items:center;gap:18px;}
+.misc-banner-icon{font-size:40px;flex-shrink:0;}
+.misc-banner h2{color:#fff;font-size:20px;font-weight:800;margin-bottom:5px;}
+.misc-banner p{color:#b8d8f0;font-size:13px;line-height:1.65;}
+.misc-section{margin-bottom:36px;}
+.misc-section-header{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding:14px 18px;background:#fff;border-radius:10px;border-left:4px solid #3b82f6;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+.misc-section-icon{font-size:22px;}
+.misc-section-title{font-size:16px;font-weight:700;color:#1a2e3a;flex:1;}
+.misc-section-count{font-size:12px;color:#6b8caa;font-weight:500;}
+.misc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
+.misc-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,0.08);transition:transform .25s,box-shadow .25s;border:1px solid #e0eaf4;}
+.misc-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(30,80,140,0.14);}
+.misc-card-header{padding:14px 16px;display:flex;align-items:center;gap:12px;}
+.misc-card-cover{width:44px;height:54px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;box-shadow:2px 2px 8px rgba(0,0,0,0.15);}
+.misc-card-title{font-size:13px;font-weight:700;color:#1a2e3a;line-height:1.3;}
+.misc-card-sub{font-size:11px;color:#6b8caa;margin-top:3px;}
+.misc-card-body{padding:0 16px 14px;}
+.misc-card-desc{font-size:12px;color:#5a7a8a;line-height:1.6;margin-bottom:12px;}
+.misc-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.misc-tag-blue{font-size:11px;padding:4px 9px;border-radius:6px;font-weight:500;background:#eff6ff;color:#2563eb;}
+.misc-tag-purple{font-size:11px;padding:4px 9px;border-radius:6px;font-weight:500;background:#f5f0ff;color:#7c3aed;}
+.misc-tag-teal{font-size:11px;padding:4px 9px;border-radius:6px;font-weight:500;background:#f0fafa;color:#0d7490;}
+.btn-misc-dl{display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 14px;border-radius:9px;background:linear-gradient(90deg,#1e4a8a,#3b82f6);color:#fff;text-decoration:none;font-weight:700;font-size:13px;transition:opacity .2s;width:100%;}
+.btn-misc-dl:hover{opacity:.88;}
+.btn-misc-dl.coming{background:#e0e0e0;color:#999;pointer-events:none;}
+.btn-misc-yt{display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 14px;border-radius:9px;background:linear-gradient(90deg,#b91c1c,#ef4444);color:#fff;text-decoration:none;font-weight:700;font-size:13px;transition:opacity .2s;width:100%;}
+.btn-misc-yt:hover{opacity:.88;}
+.btn-misc-yt.coming{background:#e0e0e0;color:#999;pointer-events:none;}
+.yt-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,0.08);border:1px solid #fde8e8;transition:transform .25s,box-shadow .25s;}
+.yt-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(185,28,28,0.12);}
+.yt-card-thumb{background:linear-gradient(135deg,#b91c1c,#ef4444);padding:16px;display:flex;align-items:center;gap:12px;}
+.yt-thumb-icon{width:48px;height:48px;background:rgba(255,255,255,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;}
+.yt-card-title{color:#fff;font-size:14px;font-weight:700;line-height:1.3;}
+.yt-card-sub{color:rgba(255,255,255,0.75);font-size:11px;margin-top:3px;}
+.yt-card-body{padding:14px 16px;}
+.yt-card-desc{font-size:12px;color:#5a5a6a;line-height:1.6;margin-bottom:12px;}
+.pyq-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,0.08);border:1px solid #e8f0e0;transition:transform .25s,box-shadow .25s;}
+.pyq-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(34,100,10,0.12);}
+.pyq-card-header{padding:14px 16px;background:linear-gradient(135deg,#2d5a1a,#4a8a2a);display:flex;align-items:center;gap:12px;}
+.pyq-year{width:50px;height:50px;background:rgba(255,255,255,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:13px;text-align:center;flex-shrink:0;line-height:1.2;white-space:pre;}
+.pyq-title{color:#fff;font-size:14px;font-weight:700;line-height:1.3;}
+.pyq-sub{color:rgba(255,255,255,0.75);font-size:11px;margin-top:3px;}
+.pyq-card-body{padding:14px 16px;}
+.pyq-desc{font-size:12px;color:#4a6a3a;line-height:1.6;margin-bottom:12px;}
+.btn-pyq{display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 14px;border-radius:9px;background:linear-gradient(90deg,#2d5a1a,#4a8a2a);color:#fff;text-decoration:none;font-weight:700;font-size:13px;transition:opacity .2s;width:100%;}
+.btn-pyq:hover{opacity:.88;}
+.btn-pyq.coming{background:#e0e0e0;color:#999;pointer-events:none;}
+/* MOCK TEST */
+.mock-login-screen{max-width:460px;margin:0 auto;padding:20px 0;}
+.mock-login-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.12);border:1px solid #e0eaf0;}
+.mock-login-header{background:linear-gradient(135deg,#1a3a1a,#2d5a2d);padding:32px 28px;text-align:center;}
+.mock-login-header .mlh-icon{font-size:48px;margin-bottom:12px;}
+.mock-login-header h2{color:#fff;font-size:22px;font-weight:800;margin-bottom:6px;}
+.mock-login-header p{color:#aad080;font-size:13px;}
+.mock-login-body{padding:28px;}
+.mock-login-body label{display:block;font-size:13px;font-weight:600;color:#2d5a2d;margin-bottom:6px;margin-top:16px;}
+.mock-login-body label:first-of-type{margin-top:0;}
+.mock-login-body input{width:100%;padding:12px 14px;border:1.5px solid #d4e6d4;border-radius:10px;font-size:14px;font-family:inherit;outline:none;transition:border-color .2s;background:#f8fdf5;}
+.mock-login-body input:focus{border-color:#8dc63f;background:#fff;}
+.btn-mock-login{width:100%;padding:14px;margin-top:22px;background:linear-gradient(90deg,#4a8a2a,#8dc63f);color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;transition:opacity .2s;}
+.btn-mock-login:hover{opacity:.88;}
+.mock-login-error{background:#fff0f0;border:1px solid #fca5a5;border-radius:8px;padding:10px 14px;font-size:13px;color:#b91c1c;margin-top:14px;display:none;text-align:center;}
+.mock-login-info{background:#f0f7f0;border:1px solid #c4e0b0;border-radius:8px;padding:12px 14px;font-size:12px;color:#3a7a20;margin-top:14px;line-height:1.7;}
+.mock-login-info strong{color:#2d5a1a;}
+.mock-list-screen{display:none;}
+.mock-welcome-bar{background:linear-gradient(135deg,#1a3a1a,#2d5a2d);border-radius:12px;padding:18px 24px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.mock-welcome-bar .mwb-left h3{color:#8dc63f;font-size:16px;font-weight:700;}
+.mock-welcome-bar .mwb-left p{color:#cde8b0;font-size:13px;margin-top:3px;}
+.btn-mock-logout{padding:8px 18px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s;}
+.btn-mock-logout:hover{background:rgba(255,255,255,0.25);}
+.mock-tests-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+.mock-test-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,0.08);border:1px solid #e8f0e8;transition:transform .25s,box-shadow .25s;}
+.mock-test-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(34,100,10,0.14);}
+.mock-test-card-header{padding:16px;background:linear-gradient(135deg,#1a4a2a,#2d8a3a);display:flex;align-items:center;gap:12px;}
+.mtc-num{width:44px;height:44px;background:rgba(255,255,255,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;flex-shrink:0;}
+.mtc-title{color:#fff;font-size:15px;font-weight:700;line-height:1.2;}
+.mtc-sub{color:rgba(255,255,255,0.75);font-size:11px;margin-top:3px;}
+.mock-test-card-body{padding:14px 16px;}
+.mtc-info{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+.mtc-badge{font-size:11px;padding:4px 10px;border-radius:6px;font-weight:500;}
+.mtc-badge-green{background:#f0f7f0;color:#3a7a20;}
+.mtc-badge-blue{background:#eff6ff;color:#2563eb;}
+.mtc-badge-orange{background:#fff4e6;color:#b85c00;}
+.mtc-badge-locked{background:#f4f4f4;color:#999;}
+.btn-start-mock{width:100%;padding:11px 14px;background:linear-gradient(90deg,#4a8a2a,#8dc63f);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:opacity .2s;}
+.btn-start-mock:hover{opacity:.88;}
+.btn-start-mock:disabled{background:#e0e0e0;color:#999;cursor:not-allowed;}
+.mock-exam-screen{display:none;}
+.exam-header{background:#1a3a1a;border-radius:12px;padding:16px 20px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.exam-header-left h3{color:#8dc63f;font-size:15px;font-weight:700;}
+.exam-header-left p{color:#aad080;font-size:12px;margin-top:3px;}
+.exam-timer{background:rgba(141,198,63,0.15);border:2px solid #8dc63f;border-radius:10px;padding:8px 16px;text-align:center;}
+.exam-timer-label{font-size:10px;color:#aad080;text-transform:uppercase;letter-spacing:.06em;}
+.exam-timer-val{font-size:22px;font-weight:800;color:#8dc63f;font-variant-numeric:tabular-nums;}
+.exam-timer-val.warning{color:#f87171;}
+.exam-progress-bar-wrap{background:#e8f0e8;border-radius:4px;height:6px;margin-bottom:20px;overflow:hidden;}
+.exam-progress-bar{height:100%;background:linear-gradient(90deg,#6aaa1e,#8dc63f);border-radius:4px;transition:width .3s;}
+.exam-progress-text{font-size:12px;color:#6b8c6b;margin-bottom:6px;font-weight:500;}
+.exam-layout{display:grid;grid-template-columns:1fr 220px;gap:20px;}
+.exam-qpanel{background:#fff;border-radius:14px;padding:22px;box-shadow:0 3px 14px rgba(0,0,0,0.08);}
+.q-number{font-size:12px;font-weight:600;color:#6b8c6b;margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em;}
+.q-text{font-size:15px;font-weight:600;color:#1a2e1a;line-height:1.7;margin-bottom:20px;}
+.q-options{display:flex;flex-direction:column;gap:10px;}
+.q-option{padding:13px 16px;border:1.5px solid #d4e6d4;border-radius:10px;cursor:pointer;font-size:14px;color:#2d5a2d;transition:all .2s;display:flex;align-items:center;gap:12px;background:#fff;font-family:inherit;text-align:left;width:100%;}
+.q-option:hover{border-color:#8dc63f;background:#f8fdf5;}
+.q-option.selected{border-color:#8dc63f;background:#f0fae6;color:#1a3a1a;font-weight:600;}
+.q-option-key{width:28px;height:28px;border-radius:50%;border:1.5px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.q-nav-btns{display:flex;gap:10px;margin-top:20px;justify-content:space-between;flex-wrap:wrap;}
+.btn-q-prev,.btn-q-next,.btn-q-skip,.btn-q-submit{padding:10px 20px;border-radius:9px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;border:none;transition:all .2s;}
+.btn-q-prev{background:#f0f4f0;color:#4a6a4a;border:1.5px solid #d4e6d4;}
+.btn-q-prev:hover{background:#e8f0e8;}
+.btn-q-next{background:linear-gradient(90deg,#4a8a2a,#8dc63f);color:#fff;}
+.btn-q-next:hover{opacity:.88;}
+.btn-q-skip{background:#fff4e6;color:#b85c00;border:1.5px solid #fcd9a0;}
+.btn-q-skip:hover{background:#ffecd0;}
+.btn-q-submit{background:linear-gradient(90deg,#9b2c2c,#c0392b);color:#fff;}
+.btn-q-submit:hover{opacity:.88;}
+.exam-nav-panel{background:#fff;border-radius:14px;padding:16px;box-shadow:0 3px 14px rgba(0,0,0,0.08);height:fit-content;position:sticky;top:80px;}
+.nav-panel-title{font-size:13px;font-weight:700;color:#2d5a2d;margin-bottom:12px;padding-bottom:10px;border-bottom:1.5px solid #e8f0e8;}
+.q-nav-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:14px;}
+.q-nav-btn{width:100%;aspect-ratio:1;border-radius:7px;font-size:11px;font-weight:700;cursor:pointer;border:1.5px solid #d4e6d4;background:#fff;color:#4a6a4a;transition:all .2s;font-family:inherit;}
+.q-nav-btn:hover{border-color:#8dc63f;background:#f0fae6;}
+.q-nav-btn.current{border-color:#8dc63f;background:#8dc63f;color:#fff;}
+.q-nav-btn.answered{border-color:#4a8a2a;background:#f0fae6;color:#2d5a2d;}
+.q-nav-btn.skipped{border-color:#f59e0b;background:#fff9e6;color:#b85c00;}
+.nav-legend{display:flex;flex-direction:column;gap:6px;font-size:11px;color:#6b8c6b;}
+.nav-legend-item{display:flex;align-items:center;gap:7px;}
+.nav-legend-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0;}
+.mock-result-screen{display:none;}
+.result-header{background:linear-gradient(135deg,#1a3a1a,#2d5a2d);border-radius:16px;padding:28px;text-align:center;margin-bottom:24px;}
+.result-header h2{color:#8dc63f;font-size:26px;font-weight:800;margin-bottom:6px;}
+.result-header p{color:#cde8b0;font-size:14px;}
+.result-score-circle{width:120px;height:120px;border-radius:50%;background:rgba(141,198,63,0.15);border:4px solid #8dc63f;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:16px auto;}
+.result-score-num{font-size:32px;font-weight:800;color:#8dc63f;}
+.result-score-label{font-size:11px;color:#aad080;text-transform:uppercase;letter-spacing:.06em;}
+.result-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px;}
+.result-stat-box{background:#fff;border-radius:12px;padding:16px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+.result-stat-box .rsb-num{font-size:24px;font-weight:800;margin-bottom:4px;}
+.result-stat-box .rsb-label{font-size:11px;color:#6b8c6b;text-transform:uppercase;letter-spacing:.06em;}
+.rsb-correct .rsb-num{color:#16a34a;}
+.rsb-wrong .rsb-num{color:#dc2626;}
+.rsb-skipped .rsb-num{color:#d97706;}
+.rsb-pct .rsb-num{color:#2563eb;}
+.result-review-title{font-size:17px;font-weight:700;color:#1a3a1a;margin-bottom:16px;padding:0 0 10px;border-bottom:2px solid #e8f0e8;}
+.solution-card{background:#fff;border-radius:12px;margin-bottom:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+.sc-header{padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #f0f4f0;}
+.sc-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;}
+.sc-num.correct{background:#dcfce7;color:#16a34a;}
+.sc-num.wrong{background:#fee2e2;color:#dc2626;}
+.sc-num.skipped{background:#fef9c3;color:#d97706;}
+.sc-q-text{font-size:13px;font-weight:600;color:#1a2e1a;line-height:1.5;flex:1;}
+.sc-badge{font-size:11px;padding:3px 9px;border-radius:6px;font-weight:600;white-space:nowrap;}
+.sc-badge.correct{background:#dcfce7;color:#16a34a;}
+.sc-badge.wrong{background:#fee2e2;color:#dc2626;}
+.sc-badge.skipped{background:#fef9c3;color:#d97706;}
+.sc-body{padding:14px 16px;}
+.sc-options{display:flex;flex-direction:column;gap:6px;margin-bottom:12px;}
+.sc-opt{padding:9px 13px;border-radius:8px;font-size:13px;display:flex;align-items:center;gap:10px;border:1.5px solid transparent;}
+.sc-opt.correct-ans{background:#dcfce7;border-color:#16a34a;color:#166534;font-weight:600;}
+.sc-opt.user-wrong{background:#fee2e2;border-color:#dc2626;color:#7f1d1d;}
+.sc-opt.normal{background:#f8f8f8;color:#4a5a4a;}
+.sc-explanation{background:#f0f7ff;border-left:3px solid #3b82f6;padding:10px 14px;border-radius:0 8px 8px 0;font-size:12px;color:#1e40af;line-height:1.7;}
+.sc-explanation strong{color:#1e3a8a;}
+.btn-mock-retake{padding:12px 28px;background:linear-gradient(90deg,#4a8a2a,#8dc63f);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:opacity .2s;}
+.btn-mock-retake:hover{opacity:.88;}
+.btn-mock-list{padding:12px 28px;background:#f0f4f0;color:#4a6a4a;border:1.5px solid #d4e6d4;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;margin-left:10px;}
+.btn-mock-list:hover{background:#e8f0e8;}
+.result-actions{text-align:center;margin-bottom:30px;}
 .footer{background:#1a3a1a;color:#aad080;text-align:center;padding:22px;font-size:13px;margin-top:48px;}
 .footer a{color:#8dc63f;text-decoration:none;}
-
 .hidden{display:none!important;}
-
 @media(max-width:768px){
   .nav{padding:0 16px;}
   .nav-links{gap:14px;}
@@ -143,12 +280,12 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
   .wrap{padding:18px 12px;}
   .tab-bar{gap:5px;padding:8px 10px;}
   .tab-btn{padding:8px 13px;font-size:12px;}
+  .exam-layout{grid-template-columns:1fr;}
+  .result-stats{grid-template-columns:repeat(2,1fr);}
 }
 </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav class="nav">
   <div class="nav-logo">
     <img src="images/logo.png" alt="STATUP" onerror="this.style.display='none'"/>
@@ -162,8 +299,6 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
   </div>
   <a class="nav-cta" href="register.html">Register Now</a>
 </nav>
-
-<!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
     <div class="badge">📚 UGC NET Statistics Coaching</div>
@@ -177,29 +312,16 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
     </div>
   </div>
 </div>
-
 <div class="wrap">
-
-<!-- TABS -->
 <div class="tab-bar">
   <button class="tab-btn active" onclick="switchTab(event,'tab-materials')">📖 Unit-wise Sets</button>
   <button class="tab-btn" onclick="switchTab(event,'tab-important')">🔴 Important Sets</button>
   <button class="tab-btn" onclick="switchTab(event,'tab-schedule')">📅 Day-wise Schedule</button>
+  <button class="tab-btn" onclick="switchTab(event,'tab-misc')">📦 Miscellaneous</button>
+  <button class="tab-btn" onclick="switchTab(event,'tab-mocktest')">🧩 Mock Tests</button>
 </div>
-
-<!-- ════════════════════════════════════════
-     TAB 1 — UNIT-WISE MATERIALS
-════════════════════════════════════════ -->
 <div class="tab-pane active" id="tab-materials">
-
-  <div class="notice-banner">
-    <span class="nb-icon">🎥</span>
-    <p>
-      <strong>Video Explanations:</strong> Videos are provided <strong>only for specific doubt clarification</strong> based on requirement — not for every set. If you need a concept or question explained via video, request it in the WhatsApp group.<br/>
-      <strong>PDF:</strong> Click <em>Download PDF</em> on each set to access the question paper with solutions.
-    </p>
-  </div>
-
+  <div class="notice-banner"><span class="nb-icon">🎥</span><p><strong>Video Explanations:</strong> Videos are provided <strong>only for specific doubt clarification</strong> based on requirement — not for every set. If you need a concept or question explained via video, request it in the WhatsApp group.<br/><strong>PDF:</strong> Click <em>Download PDF</em> on each set to access the question paper with solutions.</p></div>
   <div class="filter-bar">
     <span class="filter-label">Filter by Unit:</span>
     <button class="filter-btn active" onclick="filterUnit(event,'all')">All</button>
@@ -214,338 +336,544 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
     <button class="filter-btn" onclick="filterUnit(event,'u9')">Unit IX</button>
     <button class="filter-btn" onclick="filterUnit(event,'u10')">Unit X</button>
   </div>
-
   <div id="material-grid"></div>
 </div>
-
-<!-- ════════════════════════════════════════
-     TAB 2 — IMPORTANT SETS
-════════════════════════════════════════ -->
 <div class="tab-pane" id="tab-important">
-
-  <div class="imp-banner">
-    <span class="imp-banner-icon">🔴</span>
-    <div>
-      <h2>Important Question Sets</h2>
-      <p>10 special sets containing <strong>100 high-priority questions each</strong>, curated from all units. Designed for final revision and exam-focused practice covering the most frequently tested topics across the UGC NET Statistics syllabus.</p>
-    </div>
-  </div>
-
-  <div class="notice-banner">
-    <span class="nb-icon">🎥</span>
-    <p><strong>Video Explanations:</strong> Available <strong>only on request</strong> for specific doubts. Raise your query in the WhatsApp group — a clarification video will be shared if required.</p>
-  </div>
-
+  <div class="imp-banner"><span class="imp-banner-icon">🔴</span><div><h2>Important Question Sets</h2><p>10 special sets containing <strong>100 high-priority questions each</strong>, curated from all units. Designed for final revision and exam-focused practice covering the most frequently tested topics across the UGC NET Statistics syllabus.</p></div></div>
+  <div class="notice-banner"><span class="nb-icon">🎥</span><p><strong>Video Explanations:</strong> Available <strong>only on request</strong> for specific doubts. Raise your query in the WhatsApp group — a clarification video will be shared if required.</p></div>
   <div class="imp-grid" id="important-grid"></div>
 </div>
-
-<!-- ════════════════════════════════════════
-     TAB 3 — DAY-WISE SCHEDULE
-════════════════════════════════════════ -->
 <div class="tab-pane" id="tab-schedule">
   <div class="schedule-panel">
     <div class="schedule-top">
       <h3>📅 Day-wise Study Schedule — UGC NET Statistics</h3>
-      <a href="https://docs.google.com/document/d/1mGfy1JTP3NNe2R605lvJUaPLb91sBaha_xa4RCP7oPY/edit?usp=sharing" target="_blank" rel="noopener">
-        ↗ Open in Google Docs
-      </a>
+      <a href="https://docs.google.com/document/d/1mGfy1JTP3NNe2R605lvJUaPLb91sBaha_xa4RCP7oPY/edit?usp=sharing" target="_blank" rel="noopener">↗ Open in Google Docs</a>
     </div>
-    <iframe src="https://docs.google.com/document/d/1mGfy1JTP3NNe2R605lvJUaPLb91sBaha_xa4RCP7oPY/preview"
-            allowfullscreen loading="lazy"></iframe>
+    <iframe src="https://docs.google.com/document/d/1mGfy1JTP3NNe2R605lvJUaPLb91sBaha_xa4RCP7oPY/preview" allowfullscreen loading="lazy"></iframe>
   </div>
 </div>
-
-</div><!-- /wrap -->
-
+<div class="tab-pane" id="tab-misc">
+  <div class="misc-banner"><span class="misc-banner-icon">📦</span><div><h2>Miscellaneous Resources</h2><p>Reference books, notes, previous year question papers, and YouTube playlists — everything beyond the MCQ sets to power your UGC NET Statistics preparation.</p></div></div>
+  <div class="misc-section">
+    <div class="misc-section-header"><span class="misc-section-icon">📚</span><span class="misc-section-title">Reference Books</span><span class="misc-section-count">Recommended Textbooks</span></div>
+    <div class="misc-grid" id="books-grid"></div>
+  </div>
+  <div class="misc-section">
+    <div class="misc-section-header"><span class="misc-section-icon">📝</span><span class="misc-section-title">Notes &amp; Formula Sheets</span><span class="misc-section-count">Unit-wise Summary Notes</span></div>
+    <div class="misc-grid" id="notes-grid"></div>
+  </div>
+  <div class="misc-section">
+    <div class="misc-section-header"><span class="misc-section-icon">📄</span><span class="misc-section-title">Previous Year Question Papers</span><span class="misc-section-count">UGC NET Past Papers with Answer Keys</span></div>
+    <div class="misc-grid" id="pyq-grid"></div>
+  </div>
+  <div class="misc-section">
+    <div class="misc-section-header"><span class="misc-section-icon">▶️</span><span class="misc-section-title">YouTube Playlists</span><span class="misc-section-count">Video Lecture Series</span></div>
+    <div class="misc-grid" id="yt-grid"></div>
+  </div>
+</div>
+<div class="tab-pane" id="tab-mocktest">
+  <div class="mock-login-screen" id="mock-login-screen">
+    <div class="mock-login-card">
+      <div class="mock-login-header"><div class="mlh-icon">🧩</div><h2>Mock Test Portal</h2><p>Login with your Roll Number and Password to access tests</p></div>
+      <div class="mock-login-body">
+        <label>Roll Number</label>
+        <input type="text" id="login-roll" placeholder="e.g. STAT001" autocomplete="off"/>
+        <label>Password</label>
+        <input type="password" id="login-pass" placeholder="Enter your password"/>
+        <div class="mock-login-error" id="login-error">❌ Invalid Roll Number or Password. Please try again.</div>
+        <button class="btn-mock-login" onclick="doLogin()">Login &amp; View Tests →</button>
+        <div class="mock-login-info"><strong>📌 Note:</strong> Your Roll Number and Password are shared by your instructor via WhatsApp group. Each student has a unique login.<br/><strong>Demo Login:</strong> Roll: <strong>STAT001</strong> · Password: <strong>stat@123</strong></div>
+      </div>
+    </div>
+  </div>
+  <div class="mock-list-screen" id="mock-list-screen">
+    <div class="mock-welcome-bar">
+      <div class="mwb-left"><h3 id="welcome-name">Welcome!</h3><p id="welcome-roll">Roll Number: —</p></div>
+      <div><button class="btn-mock-logout" onclick="doLogout()">Logout</button></div>
+    </div>
+    <div class="mock-tests-grid" id="mock-tests-grid"></div>
+  </div>
+  <div class="mock-exam-screen" id="mock-exam-screen">
+    <div class="exam-header">
+      <div class="exam-header-left"><h3 id="exam-title">Mock Test</h3><p id="exam-subtitle">100 Questions · Full Syllabus · 120 Minutes</p></div>
+      <div class="exam-timer"><div class="exam-timer-label">Time Remaining</div><div class="exam-timer-val" id="exam-timer-val">02:00:00</div></div>
+    </div>
+    <div class="exam-progress-text" id="exam-progress-text">Question 1 of 100</div>
+    <div class="exam-progress-bar-wrap"><div class="exam-progress-bar" id="exam-progress-bar" style="width:1%"></div></div>
+    <div class="exam-layout">
+      <div class="exam-qpanel">
+        <div class="q-number" id="q-number">Question 1</div>
+        <div class="q-text" id="q-text">Loading...</div>
+        <div class="q-options" id="q-options"></div>
+        <div class="q-nav-btns">
+          <button class="btn-q-prev" onclick="prevQ()">◀ Previous</button>
+          <div style="display:flex;gap:8px;"><button class="btn-q-skip" onclick="skipQ()">Skip ▷</button><button class="btn-q-submit" onclick="confirmSubmit()">Submit Test</button></div>
+          <button class="btn-q-next" onclick="nextQ()">Next ▶</button>
+        </div>
+      </div>
+      <div class="exam-nav-panel">
+        <div class="nav-panel-title">Question Navigator</div>
+        <div class="q-nav-grid" id="q-nav-grid"></div>
+        <div class="nav-legend">
+          <div class="nav-legend-item"><div class="nav-legend-dot" style="background:#8dc63f;border:1.5px solid #4a8a2a;"></div> Current</div>
+          <div class="nav-legend-item"><div class="nav-legend-dot" style="background:#f0fae6;border:1.5px solid #4a8a2a;"></div> Answered</div>
+          <div class="nav-legend-item"><div class="nav-legend-dot" style="background:#fff9e6;border:1.5px solid #f59e0b;"></div> Skipped</div>
+          <div class="nav-legend-item"><div class="nav-legend-dot" style="background:#fff;border:1.5px solid #d4e6d4;"></div> Not Visited</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mock-result-screen" id="mock-result-screen">
+    <div class="result-header"><h2>🎉 Test Completed!</h2><p id="result-test-name">Mock Test — Full Syllabus</p><div class="result-score-circle"><div class="result-score-num" id="result-score-num">—</div><div class="result-score-label">Score</div></div></div>
+    <div class="result-stats">
+      <div class="result-stat-box rsb-correct"><div class="rsb-num" id="rs-correct">0</div><div class="rsb-label">Correct</div></div>
+      <div class="result-stat-box rsb-wrong"><div class="rsb-num" id="rs-wrong">0</div><div class="rsb-label">Wrong</div></div>
+      <div class="result-stat-box rsb-skipped"><div class="rsb-num" id="rs-skipped">0</div><div class="rsb-label">Skipped</div></div>
+      <div class="result-stat-box rsb-pct"><div class="rsb-num" id="rs-pct">0%</div><div class="rsb-label">Accuracy</div></div>
+    </div>
+    <div class="result-actions"><button class="btn-mock-retake" onclick="retakeTest()">🔄 Retake Test</button><button class="btn-mock-list" onclick="backToList()">← Back to Tests</button></div>
+    <div class="result-review-title">📋 Detailed Solutions &amp; Review</div>
+    <div id="solutions-list"></div>
+  </div>
+</div>
+</div>
 <footer class="footer">
   <p>© 2025 <a href="#">STATUP</a> · Streamline Your Analysis, Elevate Your Decision</p>
   <p style="margin-top:6px;font-size:11px;color:#6b8c6b;">UGC NET Statistics Coaching · 75% Success Rate · 2+ Years Experience</p>
 </footer>
-
 <script>
-// ════════════════════════════════════════════════════════════════════
-//  UNIT DATA
-//  For each set: paste the PDF link in pdfLink and the Google Drive
-//  file ID (the part between /d/ and /view) in videoId.
-//  Leave "" for sets not yet uploaded — card will show "Coming Soon".
-// ════════════════════════════════════════════════════════════════════
 const UNITS = [
-  {
-    id:'u1', num:'I', title:'Probability Theory', icon:'🎲', color:'#2d6a2d',
-    sets:[
-      { pdfLink:'https://drive.google.com/file/d/1xhFmrfrWldWfe06cWYuQRWt51KhmaZnc/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1yGnIey7nxXSsZM3NYPUMXUq9CfpsXgEI/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/17bvHLPwY0VV7jcONBTOpZCyKMrkr2vWD/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1mER2ICZfekaBFSy8Olqs7vu-XmGkQmAS/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1PNu5d66zsXW2rwAuqLKFDdZWgLhMhTKO/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1aHEwVc0M2zV5g9DeKabPSY7jVF693PjJ/view?usp=sharing', videoId:'' },
-    ]
-  },
-  {
-    id:'u2', num:'II', title:'Real Analysis & Matrix Algebra', icon:'📐', color:'#2d5a4a',
-    sets:[
-      { pdfLink:'https://drive.google.com/file/d/1Y5PLwI8Ctiaw2DwNlCAdCQGA3ijavyFR/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1KXbliHkXw9U44WcD7JtHkNdBm-B19KxY/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1YkrYuLNziG7QIQlAcDt0VpEV8SHYOXn0/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1gyvBmo-Q7k55TAKtzdZrwVmCWwZBX0by/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1Ez8X8GBLwpEJQpaUpr9waouyb_XotWWJ/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1f2R0Q91xgWSawZSClzJQB1p3-eLrY9kP/view?usp=sharing', videoId:'' },
-    ]
-  },
-  {
-    id:'u3', num:'III', title:'Sampling Methods & Design of Experiments', icon:'🔬', color:'#4a5a2d',
-    sets:[
-      { pdfLink:'https://drive.google.com/file/d/1VtAC6w4Q5b0bdvim3pXsIGp_txgoTULz/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1iZYX1G2lsPBWr0kAZhfZ8NrmF1Ld-S3F/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1koSeQupUiT422f4_sSsKEJOfcQS4_hLz/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1I5a8X-W3mGFZcdOJ0BVrtsLPWmjTdCAm/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1ggnxMuS7D3wAOP7A6N4bMdlukgOSFSqV/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1866wjlp1VrBi7L0D4N2t37jhSpGQtiTk/view?usp=sharing', videoId:'' },
-    ]
-  },
-  {
-    id:'u4', num:'IV', title:'Estimation Theory', icon:'📊', color:'#5a3a2d',
-    sets:[
-      { pdfLink:'https://drive.google.com/file/d/1pCJThCmb2NhvY7WIPICOy81sT-3KWPuo/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1xpBQu6qlFNGhU_cysBExxgXqaYGhkAvc/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1jowg46lAlx9Uo4eetgao76oC3bSLfB_i/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1NCmaMIgRur-NJXYo-dhUT5BFxunNasOc/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1Q72u6fstKr1jQAU6gPcyvGR3mPH0-TyY/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/18n44V19dd8iXlh5ocUHVawEBL6L38x8B/view?usp=sharing', videoId:'' },
-    ]
-  },
-  {
-    id:'u5', num:'V', title:'Testing of Hypotheses', icon:'🧪', color:'#3a2d5a',
-    sets:[
-      { pdfLink:'https://drive.google.com/file/d/1jM-jTxRKEi57i2ZU2vT2gWa9chBrOgpB/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1QkbbC0uIFBRaMm3zvevQ3vA3ywceEUcF/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1EGgaQLa4VpYkJCu4miXparLHbxiKxUqp/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/15_I6j6aGeOWZqn8jsIl4wgSf5xTmmmM6/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1hy3Z7g6hzpceAU6RA3YaWFLFujx8cMA9/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1ekBOt-JSLeTsetbNoDBcgIIDleNo6NSE/view?usp=sharing', videoId:'' },
-    ]
-  },
-  {
-    id:'u6', num:'VI', title:'Linear Estimation & Regression', icon:'📉', color:'#2d3a5a',
-    sets:[
-      { pdfLink:'https://drive.google.com/file/d/1Whr7FVa67Tw7B4o5HZWSQxbpeHV6a7CN/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1Pobkep_mr7EwiWYvmlmSp96AfqGQVHTl/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1z5ob8f7xDlJyfiMp77fnAn_7YktzGZJH/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1crHl0xt6v9wW-64Y_I7CXvmG1v-3HFB2/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1w7O87fLWgleh9obBp9Z0b0WC5GW1KgOA/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1fIz1sszxLqCr-bpw8ho9wd3ZP6wXUL1Y/view?usp=sharing', videoId:'' },
-    ]
-  },
-  {
-    id:'u7', num:'VII', title:'Time Series Analysis', icon:'📈', color:'#2d4a3a',
-    sets:[
-      { pdfLink:'https://drive.google.com/file/d/1qx0gL_pFdqz31QHVjYSFamLw0bxzGuoK/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/11CRUguHMNEi9oiJWyqdyNPrv7Ik6RTdV/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1sKM-qWmO_1-TMy2D3T4gImHd3JoUi-u7/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1DepzlWiBTuHCpt53o9Lm1lldB77ry0D5/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1y5CfeQwppNG0du2BEWN9A1o-Jj1VG7im/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/19NKGdzVcXoRsVvNjg9qX-UUTkf8c64pO/view?usp=sharing', videoId:'' },
-    ]
-  },
-  {
-    id:'u8', num:'VIII', title:'Multivariate Analysis', icon:'🔷', color:'#4a2d5a',
-    sets:[
-      { pdfLink:'https://drive.google.com/file/d/1iQk7TqsrOmW_M5UCtanBYQh6WWHldIbn/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1h-Or-09ViNgT19B5k4J8LOP9yev3AaaY/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1pr3x7nMH8vdhNU2nQ1V-KH3WDFQgv_RG/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/17aUHtDClGnrJA3g7JgPZW9L-r5FNFScW/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1TnJ0MZ3OJIzyUZYgOhSpAQTK-tV1rWz0/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1BOox56Zakl31WcFcIT8ReI0lgK6mmeYy/view?usp=sharing', videoId:'' },
-    ]
-  },
-  {
-    id:'u9', num:'IX', title:'Stochastic Processes', icon:'🔄', color:'#5a2d3a',
-    sets:[
-      { pdfLink:'https://drive.google.com/file/d/1vlRClAkHYh_q7f6s3tFgSjildC_3oNEo/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1lfUZw-0ig6QNVDlScap07-refqvVNThd/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1Smws-hunDwCoaXdOvyZ4GzrslFJZT4Wk/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1xlImb_3Hc3YD0WzTGm7iSZ0O8TLeNiGe/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1lk22TePpw-4B2-cL9eTqEVbjGlYZZcbz/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1tbea2wdm3YlFejKwu4CaWxfRwnsy06-R/view?usp=sharing', videoId:'' },
-    ]
-  },
-  {
-    id:'u10', num:'X', title:'Indian Statistical System & R', icon:'🇮🇳', color:'#3a5a2d',
-    sets:[
-      { pdfLink:'https://drive.google.com/file/d/1hKsssz78n0YrH6lVRBGv83kCsyzXBuz2/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1Ywq-Idsdp7r0vWRoqA-1QPRPLG8B_rNK/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1pf6Dpj0jjSZs0IfOtC3Asz0OafRBYnVd/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1CZIy5i6C8ns2wL-q5YIDMraNgcEJp50O/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1EyqT8bXc0CJU1uA9oPguzyMl4JDqmIF5/view?usp=sharing', videoId:'' },
-      { pdfLink:'https://drive.google.com/file/d/1AtxCQ46Pb7eM76X5bcVXeK3A94RNV4Kx/view?usp=sharing', videoId:'' },
-    ]
+  {id:'u1',num:'I',title:'Probability Theory',icon:'🎲',color:'#2d6a2d',sets:[
+    {pdfLink:'https://drive.google.com/file/d/1xhFmrfrWldWfe06cWYuQRWt51KhmaZnc/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1yGnIey7nxXSsZM3NYPUMXUq9CfpsXgEI/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/17bvHLPwY0VV7jcONBTOpZCyKMrkr2vWD/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1mER2ICZfekaBFSy8Olqs7vu-XmGkQmAS/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1PNu5d66zsXW2rwAuqLKFDdZWgLhMhTKO/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1aHEwVc0M2zV5g9DeKabPSY7jVF693PjJ/view?usp=sharing',videoId:''}]},
+  {id:'u2',num:'II',title:'Real Analysis & Matrix Algebra',icon:'📐',color:'#2d5a4a',sets:[
+    {pdfLink:'https://drive.google.com/file/d/1Y5PLwI8Ctiaw2DwNlCAdCQGA3ijavyFR/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1KXbliHkXw9U44WcD7JtHkNdBm-B19KxY/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1YkrYuLNziG7QIQlAcDt0VpEV8SHYOXn0/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1gyvBmo-Q7k55TAKtzdZrwVmCWwZBX0by/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1Ez8X8GBLwpEJQpaUpr9waouyb_XotWWJ/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1f2R0Q91xgWSawZSClzJQB1p3-eLrY9kP/view?usp=sharing',videoId:''}]},
+  {id:'u3',num:'III',title:'Sampling Methods & Design of Experiments',icon:'🔬',color:'#4a5a2d',sets:[
+    {pdfLink:'https://drive.google.com/file/d/1VtAC6w4Q5b0bdvim3pXsIGp_txgoTULz/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1iZYX1G2lsPBWr0kAZhfZ8NrmF1Ld-S3F/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1koSeQupUiT422f4_sSsKEJOfcQS4_hLz/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1I5a8X-W3mGFZcdOJ0BVrtsLPWmjTdCAm/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1ggnxMuS7D3wAOP7A6N4bMdlukgOSFSqV/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1866wjlp1VrBi7L0D4N2t37jhSpGQtiTk/view?usp=sharing',videoId:''}]},
+  {id:'u4',num:'IV',title:'Estimation Theory',icon:'📊',color:'#5a3a2d',sets:[
+    {pdfLink:'https://drive.google.com/file/d/1pCJThCmb2NhvY7WIPICOy81sT-3KWPuo/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1xpBQu6qlFNGhU_cysBExxgXqaYGhkAvc/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1jowg46lAlx9Uo4eetgao76oC3bSLfB_i/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1NCmaMIgRur-NJXYo-dhUT5BFxunNasOc/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1Q72u6fstKr1jQAU6gPcyvGR3mPH0-TyY/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/18n44V19dd8iXlh5ocUHVawEBL6L38x8B/view?usp=sharing',videoId:''}]},
+  {id:'u5',num:'V',title:'Testing of Hypotheses',icon:'🧪',color:'#3a2d5a',sets:[
+    {pdfLink:'https://drive.google.com/file/d/1jM-jTxRKEi57i2ZU2vT2gWa9chBrOgpB/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1QkbbC0uIFBRaMm3zvevQ3vA3ywceEUcF/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1EGgaQLa4VpYkJCu4miXparLHbxiKxUqp/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/15_I6j6aGeOWZqn8jsIl4wgSf5xTmmmM6/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1hy3Z7g6hzpceAU6RA3YaWFLFujx8cMA9/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1ekBOt-JSLeTsetbNoDBcgIIDleNo6NSE/view?usp=sharing',videoId:''}]},
+  {id:'u6',num:'VI',title:'Linear Estimation & Regression',icon:'📉',color:'#2d3a5a',sets:[
+    {pdfLink:'https://drive.google.com/file/d/1Whr7FVa67Tw7B4o5HZWSQxbpeHV6a7CN/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1Pobkep_mr7EwiWYvmlmSp96AfqGQVHTl/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1z5ob8f7xDlJyfiMp77fnAn_7YktzGZJH/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1crHl0xt6v9wW-64Y_I7CXvmG1v-3HFB2/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1w7O87fLWgleh9obBp9Z0b0WC5GW1KgOA/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1fIz1sszxLqCr-bpw8ho9wd3ZP6wXUL1Y/view?usp=sharing',videoId:''}]},
+  {id:'u7',num:'VII',title:'Time Series Analysis',icon:'📈',color:'#2d4a3a',sets:[
+    {pdfLink:'https://drive.google.com/file/d/1qx0gL_pFdqz31QHVjYSFamLw0bxzGuoK/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/11CRUguHMNEi9oiJWyqdyNPrv7Ik6RTdV/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1sKM-qWmO_1-TMy2D3T4gImHd3JoUi-u7/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1DepzlWiBTuHCpt53o9Lm1lldB77ry0D5/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1y5CfeQwppNG0du2BEWN9A1o-Jj1VG7im/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/19NKGdzVcXoRsVvNjg9qX-UUTkf8c64pO/view?usp=sharing',videoId:''}]},
+  {id:'u8',num:'VIII',title:'Multivariate Analysis',icon:'🔷',color:'#4a2d5a',sets:[
+    {pdfLink:'https://drive.google.com/file/d/1iQk7TqsrOmW_M5UCtanBYQh6WWHldIbn/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1h-Or-09ViNgT19B5k4J8LOP9yev3AaaY/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1pr3x7nMH8vdhNU2nQ1V-KH3WDFQgv_RG/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/17aUHtDClGnrJA3g7JgPZW9L-r5FNFScW/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1TnJ0MZ3OJIzyUZYgOhSpAQTK-tV1rWz0/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1BOox56Zakl31WcFcIT8ReI0lgK6mmeYy/view?usp=sharing',videoId:''}]},
+  {id:'u9',num:'IX',title:'Stochastic Processes',icon:'🔄',color:'#5a2d3a',sets:[
+    {pdfLink:'https://drive.google.com/file/d/1vlRClAkHYh_q7f6s3tFgSjildC_3oNEo/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1lfUZw-0ig6QNVDlScap07-refqvVNThd/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1Smws-hunDwCoaXdOvyZ4GzrslFJZT4Wk/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1xlImb_3Hc3YD0WzTGm7iSZ0O8TLeNiGe/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1lk22TePpw-4B2-cL9eTqEVbjGlYZZcbz/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1tbea2wdm3YlFejKwu4CaWxfRwnsy06-R/view?usp=sharing',videoId:''}]},
+  {id:'u10',num:'X',title:'Indian Statistical System & R',icon:'🇮🇳',color:'#3a5a2d',sets:[
+    {pdfLink:'https://drive.google.com/file/d/1hKsssz78n0YrH6lVRBGv83kCsyzXBuz2/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1Ywq-Idsdp7r0vWRoqA-1QPRPLG8B_rNK/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1pf6Dpj0jjSZs0IfOtC3Asz0OafRBYnVd/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1CZIy5i6C8ns2wL-q5YIDMraNgcEJp50O/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1EyqT8bXc0CJU1uA9oPguzyMl4JDqmIF5/view?usp=sharing',videoId:''},
+    {pdfLink:'https://drive.google.com/file/d/1AtxCQ46Pb7eM76X5bcVXeK3A94RNV4Kx/view?usp=sharing',videoId:''}]}
+];
+
+const IMPORTANT_SETS=[
+  {num:1,pdfLink:'https://drive.google.com/file/d/15VpktRBP2FvT1J2Q3l9DMLxzqjKGu8qs/view?usp=sharing',videoId:''},
+  {num:2,pdfLink:'https://drive.google.com/file/d/1MuxGXX__TUCN5KoJGUoeMxlHDH2BgsWd/view?usp=sharing',videoId:''},
+  {num:3,pdfLink:'https://drive.google.com/file/d/1x1sIF3IMj55zb7D5_K-CbWxVApAMw_ju/view?usp=sharing',videoId:''},
+  {num:4,pdfLink:'https://drive.google.com/file/d/1GQeFDTEFc031t8PMy-qiCpahOTYfQ20Q/view?usp=sharing',videoId:''},
+  {num:5,pdfLink:'https://drive.google.com/file/d/145EPyE_QmVGCpw6yZA3TE-jgg7yWLvu7/view?usp=sharing',videoId:''},
+  {num:6,pdfLink:'https://drive.google.com/file/d/1zcmSjfClbvxAm8dFiYZRH29ST5JaGry4/view?usp=sharing',videoId:''},
+  {num:7,pdfLink:'https://drive.google.com/file/d/1RAIFYXjIWZzpjICIGM4E6tpLok3CJVHU/view?usp=sharing',videoId:''},
+  {num:8,pdfLink:'https://drive.google.com/file/d/1mnFzVlPYamKz_zG-TQWxHjGpN_mkrKpa/view?usp=sharing',videoId:''},
+  {num:9,pdfLink:'https://drive.google.com/file/d/1r1CNNwYw1jjHBoVeQIjbseXAJn5TqK4j/view?usp=sharing',videoId:''},
+  {num:10,pdfLink:'https://drive.google.com/file/d/1p-5lmQGR45bZEgfaHaTqKsgRs3W1i0oR/view?usp=sharing',videoId:''}
+];
+
+// ── MISCELLANEOUS DATA ── Replace '#' with actual links when ready ──
+const BOOKS=[
+  {emoji:'📘',color:'#1e40af',title:'Introduction to Mathematical Statistics',author:'Hogg, McKean & Craig',desc:'Classic textbook covering probability, estimation and hypothesis testing. Essential for Units I, IV, V.',tags:['Unit I','Unit IV','Unit V'],link:'#'},
+  {emoji:'📗',color:'#166534',title:'Fundamentals of Statistics',author:'S.C. Gupta & V.K. Kapoor',desc:'Comprehensive Indian reference covering all UGC NET topics with solved examples and exercises.',tags:['All Units'],link:'#'},
+  {emoji:'📙',color:'#92400e',title:'Probability & Statistics for Engineers',author:'Walpole, Myers & Myers',desc:'Best reference for probability distributions, sampling distributions, and regression topics.',tags:['Unit I','Unit III','Unit VI'],link:'#'},
+  {emoji:'📕',color:'#991b1b',title:'Linear Statistical Inference',author:'C.R. Rao',desc:'Advanced reference for linear estimation and Gauss-Markov theorem. Authoritative text for Unit VI.',tags:['Unit VI','Unit VIII'],link:'#'},
+  {emoji:'📓',color:'#4a1d96',title:'Stochastic Processes',author:'S.M. Ross',desc:'Standard reference for Markov chains, Poisson processes, and renewal theory (Unit IX).',tags:['Unit IX'],link:'#'},
+  {emoji:'📒',color:'#065f46',title:'Time Series Analysis',author:'Box, Jenkins & Reinsel',desc:'The definitive reference for ARIMA modelling, ACF, PACF, and forecasting (Unit VII).',tags:['Unit VII'],link:'#'}
+];
+
+const NOTES=[
+  {emoji:'✏️',color:'#1e3a5f',title:'Unit I – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Bayes theorem, standard distributions, MGF, and convergence results.',tags:['Unit I','Formula Sheet'],link:'#'},
+  {emoji:'📐',color:'#2d5a4a',title:'Unit II – Matrix Algebra Cheat Sheet',sub:'Linear Algebra Quick Reference',desc:'Eigenvalues, quadratic forms, rank, generalized inverse, and real analysis theorems in compact format.',tags:['Unit II','Cheat Sheet'],link:'#'},
+  {emoji:'🔬',color:'#4a5a1a',title:'Unit III – Sampling & DOE Summary',sub:'All Designs at a Glance',desc:'SRS, stratified, cluster, systematic sampling + CRD, RBD, LSD, and factorial designs summarized.',tags:['Unit III'],link:'#'},
+  {emoji:'📊',color:'#5a2d1a',title:'Unit IV & V – Estimation & Testing Notes',sub:'MVUE, CR Bound, NP Lemma',desc:'Point & interval estimation, UMPU tests, likelihood ratio, and sequential tests with examples.',tags:['Unit IV','Unit V'],link:'#'},
+  {emoji:'📈',color:'#1a2d5a',title:'Units VI–VIII – Regression & Multivariate',sub:'GLM, PCA, Discriminant Analysis',desc:'Gauss-Markov, ridge regression, Hotelling T², MANOVA, PCA, factor and canonical analysis.',tags:['Unit VI','Unit VII','Unit VIII'],link:'#'},
+  {emoji:'🔄',color:'#5a1a2d',title:'Units IX–X – Stochastic Processes & R',sub:'Markov Chains + R Programming',desc:'Transition matrices, stationary distributions, key R functions, and Indian statistical system.',tags:['Unit IX','Unit X'],link:'#'}
+];
+
+const PYQS=[
+  {year:'DEC\n2023',exam:'UGC NET Dec 2023',sessions:'Both Sessions',desc:'Latest paper with official answer key. Highly relevant — 80%+ pattern match with current syllabus.',link:'#'},
+  {year:'JUN\n2023',exam:'UGC NET Jun 2023',sessions:'Both Sessions',desc:'June 2023 paper. Focus on Units III and V questions — high repetition rate observed in analysis.',link:'#'},
+  {year:'DEC\n2022',exam:'UGC NET Dec 2022',sessions:'Both Sessions',desc:'Post-restructured syllabus paper. Good for Unit VII and IX topic coverage and new format practice.',link:'#'},
+  {year:'JUN\n2022',exam:'UGC NET Jun 2022',sessions:'Both Sessions',desc:'June 2022 paper with solved key. Useful for probability distributions and estimation practice.',link:'#'},
+  {year:'2021',exam:'UGC NET 2021',sessions:'NTA Conducted',desc:'First NTA-era paper. Pattern shift visible — important for understanding the new question format.',link:'#'},
+  {year:'2019',exam:'UGC NET Nov 2019',sessions:'Both Sessions',desc:'Pre-pandemic paper with classic question patterns — highly recommended for thorough revision.',link:'#'}
+];
+
+const YT_PLAYLISTS=[
+  {icon:'🎲',title:'Probability Theory – Full Playlist',channel:'STATUP Official',desc:'Complete video coverage of Unit I — Classical probability, Bayes theorem, standard distributions, and convergence results.',tags:['Unit I','50+ Videos'],link:'#'},
+  {icon:'📊',title:'Estimation Theory Explained',channel:'STATUP Official',desc:'MVUE, Cramer-Rao lower bound, MLE, UMVUE with step-by-step numerical examples for Unit IV.',tags:['Unit IV','35+ Videos'],link:'#'},
+  {icon:'🧪',title:'Testing of Hypotheses',channel:'STATUP Official',desc:'Neyman-Pearson lemma, UMP tests, Likelihood Ratio test, Chi-square, and non-parametric tests.',tags:['Unit V','40+ Videos'],link:'#'},
+  {icon:'📈',title:'Time Series & Regression',channel:'STATUP Official',desc:'ARIMA modelling, trend and seasonality, autocorrelation — full Unit VII + VI playlist with examples.',tags:['Unit VI','Unit VII'],link:'#'}
+];
+
+// ── STUDENTS (100 students) ──
+// Format: 'ROLLNO': { name, password }
+// Demo credentials: STAT001 / stat@123
+// All auto-generated: STAT002-STAT100 have password stat2@ugc ... stat100@ugc
+// TO CUSTOMISE: add or override entries, e.g.:
+//   STUDENTS['STAT005'] = { name:'Priya Sharma', password:'priya2025' };
+const STUDENTS = (function(){
+  const s = {};
+  s['STAT001'] = {name:'Demo Student', password:'stat@123'};
+  s['ADMIN']   = {name:'Administrator', password:'admin@statup'};
+  for(let i=2;i<=100;i++){
+    s['STAT'+String(i).padStart(3,'0')] = {name:'Student '+i, password:'stat'+i+'@ugc'};
   }
+  return s;
+})();
+
+// ── QUESTION BANK (100 UGC NET Statistics sample questions) ──
+const QB = [
+  // UNIT I — PROBABILITY
+  {q:'If A and B are independent events with P(A)=0.4 and P(B)=0.5, then P(A∪B) is:',opts:['A) 0.2','B) 0.7','C) 0.9','D) 0.6'],ans:1,exp:'P(A∪B)=P(A)+P(B)-P(A)P(B)=0.4+0.5-0.2=0.70.'},
+  {q:'Bayes theorem relates which probabilities?',opts:['A) Prior and posterior','B) Mean and variance','C) Sample and population','D) Type I and Type II errors'],ans:0,exp:'Bayes: P(H|E)=P(E|H)P(H)/P(E), connecting prior P(H) to posterior P(H|E).'},
+  {q:'If X~Poisson(λ), then E(X²) equals:',opts:['A) λ','B) λ²','C) λ²+λ','D) λ+λ²'],ans:2,exp:'E(X²)=Var(X)+[E(X)]²=λ+λ². Both options C and D are identical; answer is λ²+λ.'},
+  {q:'MGF of N(μ,σ²) is:',opts:['A) e^(μt)','B) e^(μt+σ²t²/2)','C) e^(σ²t²/2)','D) e^(μ+σ²/2)'],ans:1,exp:'MGF of Normal: M(t)=exp(μt+σ²t²/2).'},
+  {q:'Chebyshev inequality states P(|X-μ|≥kσ) ≤:',opts:['A) 1/k','B) 1/k²','C) k²','D) 1/(k-1)²'],ans:1,exp:'Chebyshev: P(|X-μ|≥kσ)≤1/k² for any k>0.'},
+  {q:'If X and Y are independent, then Cov(X,Y)=',opts:['A) 1','B) -1','C) 0','D) σ_X·σ_Y'],ans:2,exp:'Independence implies Cov(X,Y)=E(XY)-E(X)E(Y)=0.'},
+  {q:'Characteristic function of X is defined as:',opts:['A) E(e^tX)','B) E(e^itX)','C) E(X^t)','D) log E(e^X)'],ans:1,exp:'Characteristic function φ(t)=E(e^{itX}), i=√(-1).'},
+  {q:'CLT states: as n→∞, the sample mean distribution approaches:',opts:['A) t-distribution','B) F-distribution','C) Normal distribution','D) Chi-square distribution'],ans:2,exp:'CLT: √n(X̄-μ)/σ→N(0,1) as n→∞ under regularity conditions.'},
+  {q:'If X~Binomial(n,p), the variance is:',opts:['A) np','B) np(1-p)','C) npq²','D) n²p'],ans:1,exp:'Var[Bin(n,p)]=np(1-p)=npq where q=1-p.'},
+  {q:'Geometric distribution models:',opts:['A) Successes in n trials','B) Trials until first success','C) Defects per unit','D) Continuous waiting time'],ans:1,exp:'Geometric: number of Bernoulli trials needed to get one success.'},
+  // UNIT II — MATRIX ALGEBRA
+  {q:'Rank of matrix A equals number of:',opts:['A) Rows','B) Columns','C) Non-zero eigenvalues','D) Linearly independent rows/columns'],ans:3,exp:'Rank = max number of linearly independent rows = linearly independent columns.'},
+  {q:'A matrix is positive definite if all eigenvalues are:',opts:['A) Zero','B) Negative','C) Positive','D) Real'],ans:2,exp:'Symmetric matrix is PD iff all eigenvalues are strictly positive.'},
+  {q:'Trace of a matrix equals the sum of its:',opts:['A) Columns','B) Rows','C) Eigenvalues','D) Off-diagonal elements'],ans:2,exp:'tr(A)=sum of diagonal elements=sum of eigenvalues.'},
+  {q:'Sequence {aₙ} is Cauchy if:',opts:['A) aₙ→∞','B) |aₙ₊₁-aₙ|→0','C) |aₙ-aₘ|→0 as n,m→∞','D) aₙ is bounded'],ans:2,exp:'Cauchy: ∀ε>0, ∃N: |aₙ-aₘ|<ε for all n,m>N.'},
+  {q:'For 2×2 matrix [[a,b],[c,d]], inverse is:',opts:['A) (1/det)[[d,b],[c,a]]','B) (1/det)[[d,-b],[-c,a]]','C) [[d,c],[b,a]]','D) (1/det)[[a,c],[b,d]]'],ans:1,exp:'A⁻¹=(1/(ad-bc))×[[d,-b],[-c,a]].'},
+  {q:'If A is n×n, det(kA)=',opts:['A) k det(A)','B) kⁿ det(A)','C) n·k det(A)','D) det(A)'],ans:1,exp:'det(kA)=kⁿ det(A) for n×n matrix.'},
+  {q:'Spectral decomposition of symmetric matrix uses:',opts:['A) Jordan form','B) LU decomposition','C) Orthogonal eigenvectors','D) Cholesky'],ans:2,exp:'Spectral theorem: A=PΛPᵀ where P is orthogonal (eigenvectors as columns).'},
+  {q:'Uniform continuity of f:R→R requires:',opts:['A) f is differentiable','B) Single δ works for all x','C) f is bounded','D) Derivative is bounded'],ans:1,exp:'Uniform continuity: single δ works for all x, unlike pointwise continuity.'},
+  {q:'Idempotent matrix A satisfies:',opts:['A) A²=I','B) A²=A','C) Aᵀ=-A','D) A=A⁻¹'],ans:1,exp:'Idempotent: A²=A. Eigenvalues are 0 or 1. Used in projection matrices.'},
+  {q:'Generalized inverse A⁻ satisfies:',opts:['A) AA⁻A=A','B) AA⁻=I','C) A⁻A=I','D) (AA⁻)ᵀ=A'],ans:0,exp:'A⁻ is generalized inverse if AA⁻A=A. Not necessarily unique.'},
+  // UNIT III — SAMPLING
+  {q:'Proportional allocation in stratified sampling sets nₕ proportional to:',opts:['A) Stratum mean','B) Stratum variance','C) Stratum size Nₕ','D) Sampling fraction'],ans:2,exp:'Proportional: nₕ=n×Nₕ/N, proportional to stratum size.'},
+  {q:'Neyman allocation minimizes variance by allocating more to strata with:',opts:['A) Smaller size','B) Larger Nₕσₕ','C) Higher means','D) Lower variance'],ans:1,exp:'Neyman optimal: nₕ∝Nₕσₕ — more allocation to larger, more variable strata.'},
+  {q:'Variance of sample mean in SRSWOR is:',opts:['A) σ²/n','B) (1-f)S²/n','C) σ²/(n-1)','D) fσ²/n'],ans:1,exp:'Var(X̄)=(1-f)S²/n where f=n/N is the finite population correction.'},
+  {q:'Cluster sampling is preferred when clusters are:',opts:['A) Homogeneous within','B) Complete list available','C) Internally heterogeneous','D) Small in size'],ans:2,exp:'Cluster efficient when internally heterogeneous (each cluster is a miniature population).'},
+  {q:'In CRD, treatments are assigned:',opts:['A) Based on blocks','B) Completely at random','C) Latin square pattern','D) Proportional to variance'],ans:1,exp:'CRD: treatments assigned entirely at random to all experimental units.'},
+  {q:'Stratified sampling efficiency over SRS is highest when:',opts:['A) Strata means are equal','B) Strata means differ greatly','C) Strata sizes are equal','D) Sampling fraction is large'],ans:1,exp:'Stratified gains efficiency when between-strata variation is large.'},
+  {q:'In Latin Square Design, rows=columns=treatments=:',opts:['A) Number of blocks','B) Rows×Columns','C) p (equal for all three)','D) Total observations/p'],ans:2,exp:'LSD: p×p square where p=treatments=rows=columns.'},
+  {q:'ANOVA model for RBD is:',opts:['A) Yᵢⱼ=μ+τᵢ+εᵢⱼ','B) Yᵢⱼ=μ+τᵢ+βⱼ+εᵢⱼ','C) Yᵢⱼ=μ+βⱼ+εᵢⱼ','D) Yᵢⱼₖ=μ+τᵢ+βⱼ+γₖ+εᵢⱼₖ'],ans:1,exp:'RBD: Yᵢⱼ=μ+τᵢ+βⱼ+εᵢⱼ where τᵢ=treatment, βⱼ=block effects.'},
+  {q:'Systematic sampling selects every kth unit where k=',opts:['A) n/N','B) N/n','C) √N','D) N-n'],ans:1,exp:'Sampling interval k=N/n. First unit chosen randomly from 1 to k.'},
+  {q:'2ⁿ factorial design studies:',opts:['A) n levels of one factor','B) 2 factors at n levels','C) n factors each at 2 levels','D) 2ⁿ treatments in blocks'],ans:2,exp:'2ⁿ design: n factors each at 2 levels (low/high) giving 2ⁿ treatment combinations.'},
+  // UNIT IV — ESTIMATION
+  {q:'UMVUE is an estimator that is:',opts:['A) Unbiased with min variance among all estimators','B) Unbiased with min variance among unbiased estimators','C) Consistent and sufficient','D) MLE and complete'],ans:1,exp:'UMVUE=Uniformly Minimum Variance Unbiased Estimator — minimum variance in class of unbiased estimators.'},
+  {q:'Cramer-Rao lower bound for variance of unbiased estimator of θ is:',opts:['A) 1/I(θ)','B) I(θ)','C) n/I(θ)','D) I(θ)/n'],ans:0,exp:'CR bound=1/I(θ) where I(θ)=-E[∂²logL/∂θ²] is Fisher information.'},
+  {q:'Sufficient statistic T for θ means:',opts:['A) All info about population','B) All sample info about θ','C) Minimum sample values','D) MLE values'],ans:1,exp:'T sufficient: conditional distribution of X given T does not depend on θ.'},
+  {q:'Rao-Blackwell + Lehmann-Scheffé gives:',opts:['A) Increased variance','B) Biased estimator','C) UMVUE','D) MLE'],ans:2,exp:'E[T|S] where S is complete sufficient statistic gives the UMVUE.'},
+  {q:'MLE is obtained by maximizing:',opts:['A) Posterior distribution','B) Likelihood function L(θ;x)','C) Prior distribution','D) Score function'],ans:1,exp:'MLE: θ̂=argmax L(θ;x)=argmax ℓ(θ;x) where ℓ=log-likelihood.'},
+  {q:'Consistent estimator Tₙ satisfies:',opts:['A) E(Tₙ)=θ','B) Tₙ→θ in probability as n→∞','C) Var(Tₙ)=0','D) Tₙ is sufficient'],ans:1,exp:'Consistency: Tₙ→ᵖθ, i.e., P(|Tₙ-θ|>ε)→0 for every ε>0 as n→∞.'},
+  {q:'In exponential family, the natural sufficient statistic appears:',opts:['A) As sample maximum','B) As sample minimum','C) As T(X) in the exponent of density','D) As sample mean always'],ans:2,exp:'Exponential family f(x;θ)=h(x)c(θ)exp[η(θ)T(x)]: T(X) is natural sufficient statistic.'},
+  {q:'95% CI [L(X),U(X)] means:',opts:['A) P(L≤θ≤U)=0.95 for all θ','B) θ lies in interval with prob 0.95','C) 95% of such intervals in repeated sampling contain true θ','D) Both A and C'],ans:2,exp:'Frequentist CI: in repeated sampling, 95% of constructed intervals contain true θ.'},
+  {q:'Bayes estimator under squared error loss is:',opts:['A) MLE','B) Posterior mean','C) Posterior mode','D) Prior mean'],ans:1,exp:'Under L(θ,a)=(θ-a)², Bayes estimator is E(θ|X), the posterior mean.'},
+  {q:'Fisher information satisfies:',opts:['A) I(θ)=E[∂logf/∂θ]','B) I(θ)=-E[∂²logf/∂θ²]','C) I(θ)=Var(∂logf/∂θ)','D) Both B and C'],ans:3,exp:'I(θ)=E[(∂logL/∂θ)²]=-E[∂²logL/∂θ²] under regularity (B and C are equal).'},
+  // UNIT V — TESTING
+  {q:'Neyman-Pearson lemma gives MP test for:',opts:['A) Composite vs composite','B) Simple vs simple hypothesis','C) One-sided vs two-sided','D) Parametric vs non-parametric'],ans:1,exp:'NP Lemma: for simple H₀:θ=θ₀ vs simple H₁:θ=θ₁, MP test uses likelihood ratio.'},
+  {q:'Type I error is:',opts:['A) Accepting H₀ when H₁ true','B) Rejecting H₀ when H₀ true','C) Accepting H₁ when H₀ true','D) Rejecting H₁ when H₁ true'],ans:1,exp:'Type I=False Positive=Rejecting true null. Its probability is α (significance level).'},
+  {q:'Power of a test is:',opts:['A) 1-α','B) α','C) 1-β','D) β'],ans:2,exp:'Power=1-β=P(Reject H₀|H₁ true)=P(correct rejection).'},
+  {q:'UMP test exists for one-sided hypotheses when distribution has:',opts:['A) Normal distribution','B) Monotone Likelihood Ratio','C) Sufficient statistics','D) Exponential tails'],ans:1,exp:'MLR property guarantees UMP test for one-sided hypotheses (Karlin-Rubin theorem).'},
+  {q:'-2logΛ (LRT statistic) asymptotically follows:',opts:['A) Normal','B) t-distribution','C) Chi-square','D) F-distribution'],ans:2,exp:'By Wilks theorem: -2log(Λ)→χ²(r) where r=difference in number of parameters.'},
+  {q:'In chi-square goodness of fit test, df = k-1 minus:',opts:['A) Number of cells','B) Number of samples','C) Number of estimated parameters','D) Expected frequencies'],ans:2,exp:'df=k-1-m where k=cells, m=parameters estimated from data.'},
+  {q:'p-value is probability of result as or more extreme than observed:',opts:['A) Under H₁','B) Under H₀','C) In the tails only','D) Equal to α'],ans:1,exp:'p-value=P(statistic≥observed|H₀ true). Reject H₀ if p-value<α.'},
+  {q:'Non-parametric test assumes:',opts:['A) Normality','B) Specific distribution family','C) Large sample size','D) No or fewer distributional assumptions'],ans:3,exp:'Non-parametric tests are distribution-free — no specific parametric family assumed.'},
+  {q:'Wilcoxon signed-rank test is used for:',opts:['A) Two independent samples','B) One sample or paired data','C) k>2 groups','D) Categorical data'],ans:1,exp:'Wilcoxon signed-rank: non-parametric alternative to one-sample or paired t-test.'},
+  {q:'SPRT (Sequential Probability Ratio Test) was proposed by:',opts:['A) Fisher','B) Neyman','C) Wald','D) Pearson'],ans:2,exp:'SPRT developed by Abraham Wald in 1947 for sequential hypothesis testing.'},
+  // UNIT VI — REGRESSION
+  {q:'Gauss-Markov theorem: BLUE of Cβ in Y=Xβ+ε is:',opts:['A) (XᵀX)⁻¹XᵀY','B) CXᵀY','C) C(XᵀX)⁻¹XᵀY','D) The OLS estimator'],ans:3,exp:'Gauss-Markov: OLS estimator is BLUE under E(ε)=0, Cov(ε)=σ²I.'},
+  {q:'OLS slope in simple regression Y=α+βX+ε is:',opts:['A) Σ(Xᵢ-X̄)(Yᵢ-Ȳ)/Σ(Xᵢ-X̄)²','B) Σ(Yᵢ-Ȳ)/Σ(Xᵢ-X̄)','C) nΣXY-ΣXΣY','D) Cov(X,Y)/Var(Y)'],ans:0,exp:'β̂=Sxy/Sxx=Σ(Xᵢ-X̄)(Yᵢ-Ȳ)/Σ(Xᵢ-X̄)².'},
+  {q:'R² measures:',opts:['A) Slope of regression','B) Proportion of variance in Y explained by X','C) Residual variance','D) Correlation coefficient'],ans:1,exp:'R²=SSR/SST=proportion of total variation in Y explained by fitted regression.'},
+  {q:'Multicollinearity refers to:',opts:['A) Non-normality of residuals','B) High correlation among predictors','C) Heteroscedasticity','D) Serial correlation of errors'],ans:1,exp:'Multicollinearity: high linear correlation among explanatory variables making β estimates unstable.'},
+  {q:'Hat matrix H in regression is:',opts:['A) XᵀX','B) X(XᵀX)⁻¹Xᵀ','C) (XᵀX)⁻¹','D) Xᵀ(XXᵀ)⁻¹'],ans:1,exp:'H=X(XᵀX)⁻¹Xᵀ projects Y onto column space of X. Ŷ=HY.'},
+  {q:'Ridge regression addresses:',opts:['A) Non-linearity','B) Multicollinearity','C) Non-normality','D) Outliers'],ans:1,exp:'Ridge adds λ‖β‖² penalty to shrink coefficients and reduce multicollinearity effects.'},
+  {q:'WLS weight for observation i with variance σᵢ² is:',opts:['A) σᵢ','B) 1/σᵢ','C) 1/σᵢ²','D) σᵢ²'],ans:2,exp:'WLS weights wᵢ=1/σᵢ² to account for heteroscedastic errors.'},
+  {q:'BLUE stands for:',opts:['A) Best Linear Unbiased Estimator','B) Bounded Linear Unbiased Estimate','C) Bayesian Linear Unbiased Estimator','D) Best Least Unbiased Estimator'],ans:0,exp:'BLUE=Best (min variance) Linear Unbiased Estimator per Gauss-Markov theorem.'},
+  {q:'Logistic regression is used when dependent variable is:',opts:['A) Continuous','B) Count data','C) Binary/categorical','D) Normally distributed'],ans:2,exp:'Logistic regression models P(Y=1|X) for binary response using logit link.'},
+  {q:'VIF>___ indicates serious multicollinearity:',opts:['A) 1','B) 5 or 10','C) 2','D) 100'],ans:1,exp:'VIF>5 (or 10 in strict criteria) indicates serious multicollinearity.'},
+  // UNIT VII — TIME SERIES
+  {q:'Stationary time series has:',opts:['A) A trend','B) Constant mean, variance; covariance depends only on lag','C) Seasonal pattern','D) Zero autocorrelation'],ans:1,exp:'Weak stationarity: constant mean, constant variance, autocovariance depends only on lag h.'},
+  {q:'ACF of MA(q) process cuts off after lag:',opts:['A) p','B) q','C) p+q','D) Infinity'],ans:1,exp:'MA(q): ACF=0 for lags>q. PACF tails off geometrically. Key identification tool.'},
+  {q:'For AR(p) process, the PACF:',opts:['A) Cuts off after lag p','B) Tails off slowly','C) Is always positive','D) Equals ACF'],ans:0,exp:'AR(p): PACF cuts off after lag p. Key Box-Jenkins identification tool.'},
+  {q:'Box-Jenkins steps are:',opts:['A) Identification, Estimation, Diagnostic checking','B) Smoothing, Filtering, Forecasting','C) Differencing, Integration, Smoothing','D) ACF, PACF, MA'],ans:0,exp:'Box-Jenkins: (1)Identification, (2)Estimation, (3)Diagnostic checking, (4)Forecasting.'},
+  {q:'I(1) series becomes stationary after:',opts:['A) Log transformation','B) First differencing','C) Seasonal adjustment','D) Moving average smoothing'],ans:1,exp:'I(d) needs d differences to become stationary. I(1)→stationary after one difference.'},
+  {q:'Seasonal component captured by:',opts:['A) ARIMA(p,d,q)','B) SARIMA(P,D,Q)_s','C) Simple exponential smoothing','D) Linear trend'],ans:1,exp:'SARIMA with seasonal order (P,D,Q)_s handles periodic seasonal patterns.'},
+  {q:'Ljung-Box test tests:',opts:['A) Unit root','B) Normality of residuals','C) No autocorrelation in residuals','D) Stationarity'],ans:2,exp:'Ljung-Box Q test: H₀=no autocorrelation in first m lags of residuals (portmanteau).'},
+  {q:'Exponential smoothing weights past observations with weights:',opts:['A) Equal','B) Increasing with age','C) Decreasing geometrically','D) Random'],ans:2,exp:'Weights=α(1-α)^t, decreasing geometrically as observations get older.'},
+  {q:'ADF test is used for testing:',opts:['A) Autocorrelation','B) Unit root/non-stationarity','C) Seasonality','D) Outliers'],ans:1,exp:'ADF: H₀=unit root (non-stationary), H₁=stationary. Used before ARIMA modelling.'},
+  {q:'ARCH/GARCH models are used for:',opts:['A) Trend','B) Volatility clustering (conditional heteroscedasticity)','C) Seasonal patterns','D) Cointegration'],ans:1,exp:'ARCH/GARCH: time-varying conditional variance — volatility clustering in financial series.'},
+  // UNIT VIII — MULTIVARIATE
+  {q:'Hotelling T² is multivariate generalization of:',opts:['A) F-test','B) Chi-square','C) t-test','D) Z-test'],ans:2,exp:'Hotelling T² is multivariate analogue of univariate t² statistic.'},
+  {q:'PCA finds directions of:',opts:['A) Minimum variance','B) Maximum variance','C) Zero correlation with X','D) Maximum likelihood'],ans:1,exp:'PCA: finds orthogonal directions (principal components) of maximum variance.'},
+  {q:'LDA objective is to find linear combination that:',opts:['A) Maximizes within-group variance','B) Maximizes between-to-within group variance ratio','C) Minimizes total variance','D) Maximizes correlation'],ans:1,exp:'LDA: maximize J=between-group SS/within-group SS to best separate groups.'},
+  {q:'Mahalanobis distance accounts for:',opts:['A) Euclidean distance only','B) Correlations and variance differences','C) Sample size differences','D) Mean difference only'],ans:1,exp:'D²=(x-μ)ᵀΣ⁻¹(x-μ) accounts for correlations and scale differences.'},
+  {q:'Wilks Lambda in MANOVA is:',opts:['A) |W|/|B+W|','B) |B|/|W|','C) |B+W|/|W|','D) tr(W⁻¹B)'],ans:0,exp:'Wilks Λ=|W|/|B+W| — ratio of within-group to total SS matrix determinants.'},
+  {q:'Factor analysis explains p variables using:',opts:['A) p factors','B) Fewer m<p common factors','C) Principal components','D) Canonical variables'],ans:1,exp:'Factor analysis: p observed variables explained by m<p unobserved common factors.'},
+  {q:'Canonical correlation studies relationship between:',opts:['A) Two individual variables','B) Two sets of variables','C) A variable and a factor','D) Principal components'],ans:1,exp:'Canonical correlation: linear combinations of two variable sets with maximum correlation.'},
+  {q:'Sample covariance matrix S follows a:',opts:['A) Normal distribution','B) Wishart distribution','C) t-distribution','D) F-distribution'],ans:1,exp:'(n-1)S~W_p(n-1,Σ) — Wishart distribution with n-1 degrees of freedom.'},
+  {q:'K-means assigns each point to cluster with:',opts:['A) Maximum distance from centroid','B) Nearest centroid','C) Maximum likelihood','D) Minimum Mahalanobis distance'],ans:1,exp:'K-means: each point assigned to cluster with nearest centroid (min Euclidean distance).'},
+  {q:'PCA components retained by Kaiser criterion keeps eigenvalues:',opts:['A) <0','B) >1','C) =1','D) >mean'],ans:1,exp:'Kaiser criterion: retain principal components with eigenvalues>1 (greater than average).'},
+  // UNIT IX — STOCHASTIC PROCESSES
+  {q:'Markov property: future depends on:',opts:['A) All past states','B) Only current state','C) Initial state only','D) Last two states'],ans:1,exp:'Markov: P(Xₙ₊₁|X₀,...,Xₙ)=P(Xₙ₊₁|Xₙ) — only current state matters.'},
+  {q:'State i is recurrent if:',opts:['A) P(return to i)<1','B) P(return to i)=1','C) It is absorbing','D) It communicates with all states'],ans:1,exp:'Recurrent: P(Tᵢ<∞)=1, chain returns to i with probability 1.'},
+  {q:'Poisson process P(N(t)=k)=',opts:['A) e^{-λ}(λt)^k/k!','B) e^{-λt}(λt)^k/k!','C) λ^k e^{-k}/k!','D) (λt)^k/k!'],ans:1,exp:'Poisson process: P(N(t)=k)=e^{-λt}(λt)^k/k! for k=0,1,2,...'},
+  {q:'Stationary distribution π of Markov chain satisfies:',opts:['A) πᵢ=Σⱼπⱼpⱼᵢ','B) πP=π','C) Σᵢπᵢ=1','D) All of the above'],ans:3,exp:'Stationary: π=πP (balance) with Σπᵢ=1. All conditions must hold simultaneously.'},
+  {q:'Brownian motion increment B(t)-B(s) for t>s follows:',opts:['A) N(0,t-s)','B) N(t-s,1)','C) N(0,t)','D) Uniform(0,t)'],ans:0,exp:'Standard Brownian motion: B(t)-B(s)~N(0,t-s) for t>s.'},
+  {q:'Inter-arrival times in Poisson process are:',opts:['A) Normal','B) Uniform','C) Exponential','D) Gamma'],ans:2,exp:'In Poisson(λ), inter-arrival times Tₙ are i.i.d. Exponential(λ).'},
+  {q:'Absorbing state has:',opts:['A) pᵢᵢ=0','B) pᵢᵢ=1','C) pᵢⱼ=1 for all j','D) Chain returns each visit'],ans:1,exp:'Absorbing: once entered stays forever. pᵢᵢ=1, pᵢⱼ=0 for j≠i.'},
+  {q:'Birth-death process has transitions only to:',opts:['A) Any state','B) Adjacent states (n±1)','C) State n+1 only','D) States 0 and ∞'],ans:1,exp:'Birth-death: from state n can go to n+1 (birth) or n-1 (death) only.'},
+  {q:'Chapman-Kolmogorov equation:',opts:['A) p(n+m)=p(n)×p(m)','B) pᵢⱼ^(n+m)=Σₖpᵢₖ^(n)pₖⱼ^(m)','C) π=πP','D) Rates sum to zero'],ans:1,exp:'C-K: pᵢⱼ^(n+m)=Σₖpᵢₖ^(n)pₖⱼ^(m) — probability via intermediate step k.'},
+  {q:'Ergodic Markov chain is:',opts:['A) Reducible and periodic','B) Irreducible and aperiodic','C) Transient and recurrent','D) Absorbing'],ans:1,exp:'Ergodic: irreducible+positive recurrent+aperiodic→unique stationary distribution.'},
+  // UNIT X — INDIAN STATS & R
+  {q:'NSO in India was formed by merging:',opts:['A) CSO and NSSO','B) RBI and CSO','C) MOSPI and CSO','D) NSSO and RBI'],ans:0,exp:'NSO=CSO+NSSO, merged in 2019 under Ministry of Statistics and Programme Implementation.'},
+  {q:'NSS in India is used for:',opts:['A) GDP calculation only','B) Household surveys on employment, consumption, health','C) Industrial production data','D) Monetary policy'],ans:1,exp:'NSS conducts large-scale household surveys on consumption, employment, land holding, health.'},
+  {q:'In R, vector is created using:',opts:['A) vec()','B) array()','C) c()','D) list()'],ans:2,exp:'c() (combine) creates vectors in R: x<-c(1,2,3,4,5).'},
+  {q:'lm() in R fits a:',opts:['A) Logistic model','B) Linear regression','C) Poisson model','D) Survival model'],ans:1,exp:'lm(y~x,data) fits OLS linear regression in R.'},
+  {q:'R package for time series analysis:',opts:['A) ggplot2','B) dplyr','C) forecast/tseries','D) caret'],ans:2,exp:'forecast (Hyndman) and tseries are standard R packages for ARIMA and time series.'},
+  {q:'Index Numbers in India compiled by:',opts:['A) RBI only','B) Labour Bureau and NSO','C) Planning Commission','D) SEBI'],ans:1,exp:'WPI by DPIIT/MoCI; CPI by Labour Bureau and NSO; multiple agencies compile indices.'},
+  {q:'Census in India conducted every:',opts:['A) 5 years','B) 7 years','C) 10 years','D) 15 years'],ans:2,exp:'Indian Census every 10 years. Last census 2011 (2021 delayed due to COVID-19).'},
+  {q:'apply() family in R is used for:',opts:['A) Plotting','B) Applying functions to arrays/lists/data frames','C) Statistical testing','D) Data import'],ans:1,exp:'apply(), lapply(), sapply(), tapply() apply functions over margins of arrays or groups.'},
+  {q:'Indian Statistical Institute (ISI) was founded by:',opts:['A) C.R. Rao','B) P.C. Mahalanobis','C) S.N. Bose','D) Homi Bhabha'],ans:1,exp:'ISI founded by Prasanta Chandra Mahalanobis in Kolkata in 1931.'},
+  {q:'In R, normality is tested using:',opts:['A) t.test()','B) shapiro.test()','C) chisq.test()','D) var.test()'],ans:1,exp:'shapiro.test() performs Shapiro-Wilk normality test in R.'}
 ];
 
-// ════════════════════════════════════════════════════════════════════
-//  IMPORTANT SETS DATA  (10 sets, 100 questions each)
-//  Paste your links below — same format as above.
-// ════════════════════════════════════════════════════════════════════
-const IMPORTANT_SETS = [
-  { num:1,  pdfLink:'https://drive.google.com/file/d/15VpktRBP2FvT1J2Q3l9DMLxzqjKGu8qs/view?usp=sharing', videoId:'' },
-  { num:2,  pdfLink:'https://drive.google.com/file/d/1MuxGXX__TUCN5KoJGUoeMxlHDH2BgsWd/view?usp=sharing', videoId:'' },
-  { num:3,  pdfLink:'https://drive.google.com/file/d/1x1sIF3IMj55zb7D5_K-CbWxVApAMw_ju/view?usp=sharing', videoId:'' },
-  { num:4,  pdfLink:'https://drive.google.com/file/d/1GQeFDTEFc031t8PMy-qiCpahOTYfQ20Q/view?usp=sharing', videoId:'' },
-  { num:5,  pdfLink:'https://drive.google.com/file/d/145EPyE_QmVGCpw6yZA3TE-jgg7yWLvu7/view?usp=sharing', videoId:'' },
-  { num:6,  pdfLink:'https://drive.google.com/file/d/1zcmSjfClbvxAm8dFiYZRH29ST5JaGry4/view?usp=sharing', videoId:'' },
-  { num:7,  pdfLink:'https://drive.google.com/file/d/1RAIFYXjIWZzpjICIGM4E6tpLok3CJVHU/view?usp=sharing', videoId:'' },
-  { num:8,  pdfLink:'https://drive.google.com/file/d/1mnFzVlPYamKz_zG-TQWxHjGpN_mkrKpa/view?usp=sharing', videoId:'' },
-  { num:9,  pdfLink:'https://drive.google.com/file/d/1r1CNNwYw1jjHBoVeQIjbseXAJn5TqK4j/view?usp=sharing', videoId:'' },
-  { num:10, pdfLink:'https://drive.google.com/file/d/1p-5lmQGR45bZEgfaHaTqKsgRs3W1i0oR/view?usp=sharing', videoId:'' },
-];
+// ── MOCK TESTS (10 tests, each uses QB rotated) ──
+const MOCK_TESTS = Array.from({length:10},(_, i)=>{
+  const id = i+1;
+  const qs = [...QB];
+  // Rotate question bank for different test feel
+  for(let r=0;r<i*10;r++) qs.push(qs.shift());
+  return {
+    id, locked: id>2,
+    title:'Mock Test '+id,
+    subtitle:'Full Syllabus – All 10 Units',
+    duration:7200,
+    questions: qs.slice(0,100)
+  };
+});
 
-// ════════════════════════════════════════════════════════════════════
-//  BUILD UNIT CARDS
-// ════════════════════════════════════════════════════════════════════
+// ── BUILD GRIDS ──
 function buildGrid(){
-  let html = '';
-  UNITS.forEach(u => {
-    html += `
-    <div class="unit-section" data-unit="${u.id}">
+  let h='';
+  UNITS.forEach(u=>{
+    h+=`<div class="unit-section" data-unit="${u.id}">
       <div class="unit-header">
         <span class="unit-badge">Unit ${u.num}</span>
         <span class="unit-title">${u.title}</span>
-        <span class="unit-count">6 Sets &nbsp;·&nbsp; 50–100 MCQs each</span>
+        <span class="unit-count">6 Sets · 50–100 MCQs each</span>
       </div>
-      <div class="card-grid">
-        ${u.sets.map((s,i) => makeCard(u, s, i+1)).join('')}
-      </div>
+      <div class="card-grid">${u.sets.map((s,i)=>makeCard(u,s,i+1)).join('')}</div>
     </div>`;
   });
-  document.getElementById('material-grid').innerHTML = html;
+  document.getElementById('material-grid').innerHTML=h;
 }
 
-function makeCard(u, s, n){
-  const hasPdf = s.pdfLink.trim() !== '';
-  const hasVid = s.videoId.trim() !== '';
-
-  const pdfBtn = hasPdf
-    ? `<a class="btn-pdf" href="${s.pdfLink}" target="_blank" rel="noopener">
-         <svg viewBox="0 0 24 24"><path d="M14,2H6C4.9,2,4,2.9,4,4v16c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V8L14,2z M18,20H6V4h7v5h5V20z"/></svg>
-         Download PDF
-       </a>`
-    : `<button class="btn-pdf disabled">Download </button>`;
-
-  const vidBlock = hasVid
-    ? `<div class="video-wrap">
-         <iframe src="https://drive.google.com/file/d/${s.videoId}/preview" allow="autoplay" loading="lazy"></iframe>
-         <button class="fs-btn" onclick="openFS(this)" title="Fullscreen">⛶</button>
-       </div>
-       <p class="video-note">🎥 Doubt clarification video — provided on request only.</p>`
-    : `<div class="video-placeholder">
-         <span class="vp-icon">🎥</span>
-         <span class="vp-text">Video on Request Only</span>
-         <span class="vp-sub">Ask in WhatsApp group if needed</span>
-       </div>`;
-
-  return `
-  <div class="card">
-    <div class="card-header" style="background:linear-gradient(135deg,${u.color},#3a7a3a);">
-      <div class="card-icon">${u.icon}</div>
-      <div>
-        <div class="card-set-num">Set ${n}</div>
-        <div class="card-set-label">Unit ${u.num} · ${u.title}</div>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="card-tags">
-        <span class="tag tag-green">📝 50–100 MCQs</span>
-        <span class="tag tag-green">✅ With Solutions</span>
-        ${!hasPdf ? '<span class="tag tag-orange">⏳ Uploading</span>' : ''}
-      </div>
-      ${pdfBtn}
-      ${vidBlock}
-    </div>
-  </div>`;
+function makeCard(u,s,n){
+  const hp=s.pdfLink.trim()!=='', hv=s.videoId.trim()!=='';
+  const pb=hp?`<a class="btn-pdf" href="${s.pdfLink}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14,2H6C4.9,2,4,2.9,4,4v16c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V8L14,2z M18,20H6V4h7v5h5V20z"/></svg>Download PDF</a>`:`<button class="btn-pdf disabled">⏳ Coming Soon</button>`;
+  const vb=hv?`<div class="video-wrap"><iframe src="https://drive.google.com/file/d/${s.videoId}/preview" allow="autoplay" loading="lazy"></iframe><button class="fs-btn" onclick="openFS(this)">⛶</button></div><p class="video-note">🎥 Doubt clarification video — on request only.</p>`:`<div class="video-placeholder"><span class="vp-icon">🎥</span><span class="vp-text">Video on Request Only</span><span class="vp-sub">Ask in WhatsApp group</span></div>`;
+  return `<div class="card"><div class="card-header" style="background:linear-gradient(135deg,${u.color},#3a7a3a);"><div class="card-icon">${u.icon}</div><div><div class="card-set-num">Set ${n}</div><div class="card-set-label">Unit ${u.num} · ${u.title}</div></div></div><div class="card-body"><div class="card-tags"><span class="tag tag-green">📝 50–100 MCQs</span><span class="tag tag-green">✅ With Solutions</span>${!hp?'<span class="tag tag-orange">⏳ Uploading</span>':''}</div>${pb}${vb}</div></div>`;
 }
 
-// ════════════════════════════════════════════════════════════════════
-//  BUILD IMPORTANT CARDS
-// ════════════════════════════════════════════════════════════════════
 function buildImportant(){
-  const html = IMPORTANT_SETS.map(s => {
-    const hasPdf = s.pdfLink.trim() !== '';
-    const hasVid = s.videoId.trim() !== '';
-
-    const pdfBtn = hasPdf
-      ? `<a class="btn-imp" href="${s.pdfLink}" target="_blank" rel="noopener">
-           <svg style="width:14px;height:14px;fill:currentColor;flex-shrink:0" viewBox="0 0 24 24"><path d="M14,2H6C4.9,2,4,2.9,4,4v16c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V8L14,2z"/></svg>
-           Download PDF (100 Qs)
-         </a>`
-      : `<button class="btn-imp disabled">⏳ Coming Soon</button>`;
-
-    const vidBlock = hasVid
-      ? `<div class="video-wrap">
-           <iframe src="https://drive.google.com/file/d/${s.videoId}/preview" allow="autoplay" loading="lazy"></iframe>
-           <button class="fs-btn" onclick="openFS(this)">⛶</button>
-         </div>
-         <p class="video-note">🎥 Doubt clarification video — on request only.</p>`
-      : `<div class="video-placeholder" style="background:#fff5f5;border:1px dashed #e0a0a0;">
-           <span class="vp-icon">🎥</span>
-           <span class="vp-text" style="color:#9b2c2c;">Video on Request Only</span>
-           <span class="vp-sub">Ask in WhatsApp group</span>
-         </div>`;
-
-    return `
-    <div class="imp-card">
-      <div class="imp-card-header">
-        <div class="imp-num">${s.num}</div>
-        <div>
-          <div class="imp-set-num">Important Set ${s.num}</div>
-          <div class="imp-set-label">All Units · 100 Questions</div>
-        </div>
-      </div>
-      <div class="imp-card-body">
-        <div class="imp-tags">
-          <span class="imp-tag">🔴 100 MCQs</span>
-          <span class="imp-tag">📋 All Units</span>
-          <span class="imp-tag">✅ With Solutions</span>
-        </div>
-        ${pdfBtn}
-        ${vidBlock}
-      </div>
-    </div>`;
+  document.getElementById('important-grid').innerHTML=IMPORTANT_SETS.map(s=>{
+    const hp=s.pdfLink.trim()!=='', hv=s.videoId.trim()!=='';
+    const pb=hp?`<a class="btn-imp" href="${s.pdfLink}" target="_blank" rel="noopener"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M14,2H6C4.9,2,4,2.9,4,4v16c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V8L14,2z"/></svg>Download PDF (100 Qs)</a>`:`<button class="btn-imp disabled">⏳ Coming Soon</button>`;
+    const vb=hv?`<div class="video-wrap"><iframe src="https://drive.google.com/file/d/${s.videoId}/preview" allow="autoplay" loading="lazy"></iframe><button class="fs-btn" onclick="openFS(this)">⛶</button></div><p class="video-note">🎥 On request only.</p>`:`<div class="video-placeholder" style="background:#fff5f5;border:1px dashed #e0a0a0;"><span class="vp-icon">🎥</span><span class="vp-text" style="color:#9b2c2c;">Video on Request Only</span><span class="vp-sub">Ask in WhatsApp group</span></div>`;
+    return `<div class="imp-card"><div class="imp-card-header"><div class="imp-num">${s.num}</div><div><div class="imp-set-num">Important Set ${s.num}</div><div class="imp-set-label">All Units · 100 Questions</div></div></div><div class="imp-card-body"><div class="imp-tags"><span class="imp-tag">🔴 100 MCQs</span><span class="imp-tag">📋 All Units</span><span class="imp-tag">✅ With Solutions</span></div>${pb}${vb}</div></div>`;
   }).join('');
-
-  document.getElementById('important-grid').innerHTML = html;
 }
 
-buildGrid();
-buildImportant();
+function buildMisc(){
+  document.getElementById('books-grid').innerHTML=BOOKS.map(b=>`<div class="misc-card"><div class="misc-card-header"><div class="misc-card-cover" style="background:${b.color};">${b.emoji}</div><div><div class="misc-card-title">${b.title}</div><div class="misc-card-sub">${b.author}</div></div></div><div class="misc-card-body"><div class="misc-card-desc">${b.desc}</div><div class="misc-tags">${b.tags.map(t=>`<span class="misc-tag-blue">${t}</span>`).join('')}</div><a class="btn-misc-dl${b.link==='#'?' coming':''}" href="${b.link}" target="_blank">📥 ${b.link==='#'?'Coming Soon':'Download / View'}</a></div></div>`).join('');
+  document.getElementById('notes-grid').innerHTML=NOTES.map(n=>`<div class="misc-card"><div class="misc-card-header"><div class="misc-card-cover" style="background:${n.color};">${n.emoji}</div><div><div class="misc-card-title">${n.title}</div><div class="misc-card-sub">${n.sub}</div></div></div><div class="misc-card-body"><div class="misc-card-desc">${n.desc}</div><div class="misc-tags">${n.tags.map(t=>`<span class="misc-tag-purple">${t}</span>`).join('')}</div><a class="btn-misc-dl${n.link==='#'?' coming':''}" href="${n.link}" target="_blank">📥 ${n.link==='#'?'Coming Soon':'Download Notes'}</a></div></div>`).join('');
+  document.getElementById('pyq-grid').innerHTML=PYQS.map(p=>`<div class="pyq-card"><div class="pyq-card-header"><div class="pyq-year">${p.year}</div><div><div class="pyq-title">${p.exam}</div><div class="pyq-sub">${p.sessions}</div></div></div><div class="pyq-card-body"><div class="pyq-desc">${p.desc}</div><div class="misc-tags"><span class="misc-tag-teal">📄 PDF + Answer Key</span></div><a class="btn-pyq${p.link==='#'?' coming':''}" href="${p.link}" target="_blank">📥 ${p.link==='#'?'Coming Soon':'Download Paper'}</a></div></div>`).join('');
+  document.getElementById('yt-grid').innerHTML=YT_PLAYLISTS.map(y=>`<div class="yt-card"><div class="yt-card-thumb"><div class="yt-thumb-icon">${y.icon}</div><div><div class="yt-card-title">${y.title}</div><div class="yt-card-sub">📺 ${y.channel}</div></div></div><div class="yt-card-body"><div class="yt-card-desc">${y.desc}</div><div class="misc-tags">${y.tags.map(t=>`<span class="misc-tag-blue">${t}</span>`).join('')}</div><a class="btn-misc-yt${y.link==='#'?' coming':''}" href="${y.link}" target="_blank">▶ ${y.link==='#'?'Coming Soon':'Open Playlist'}</a></div></div>`).join('');
+}
 
-// ════════════════════════════════════════════════════════════════════
-//  FILTER
-// ════════════════════════════════════════════════════════════════════
-function filterUnit(e, unit){
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  e.target.classList.add('active');
-  document.querySelectorAll('.unit-section').forEach(sec => {
-    sec.classList.toggle('hidden', unit !== 'all' && sec.dataset.unit !== unit);
+function buildMockList(){
+  document.getElementById('mock-tests-grid').innerHTML=MOCK_TESTS.map(t=>`<div class="mock-test-card"><div class="mock-test-card-header"><div class="mtc-num">${t.id}</div><div><div class="mtc-title">${t.title}</div><div class="mtc-sub">${t.subtitle}</div></div></div><div class="mock-test-card-body"><div class="mtc-info"><span class="mtc-badge mtc-badge-green">📝 100 Questions</span><span class="mtc-badge mtc-badge-blue">⏱ 120 Min</span>${t.locked?'<span class="mtc-badge mtc-badge-locked">🔒 Locked</span>':'<span class="mtc-badge mtc-badge-orange">🔓 Open</span>'}</div><button class="btn-start-mock" onclick="startMock(${t.id})" ${t.locked?'disabled':''}>${t.locked?'🔒 Coming Soon':'▶ Start Test'}</button></div></div>`).join('');
+}
+
+// ── LOGIN ──
+let currentStudent=null;
+function doLogin(){
+  const roll=document.getElementById('login-roll').value.trim().toUpperCase();
+  const pass=document.getElementById('login-pass').value.trim();
+  const err=document.getElementById('login-error');
+  if(STUDENTS[roll]&&STUDENTS[roll].password===pass){
+    currentStudent={roll,name:STUDENTS[roll].name};
+    err.style.display='none';
+    document.getElementById('mock-login-screen').style.display='none';
+    document.getElementById('welcome-name').textContent='Welcome, '+currentStudent.name+'!';
+    document.getElementById('welcome-roll').textContent='Roll Number: '+currentStudent.roll;
+    document.getElementById('mock-list-screen').style.display='block';
+    buildMockList();
+  } else { err.style.display='block'; }
+}
+function doLogout(){
+  currentStudent=null;
+  clearInterval(timerInterval);
+  ['mock-list-screen','mock-exam-screen','mock-result-screen'].forEach(id=>document.getElementById(id).style.display='none');
+  document.getElementById('mock-login-screen').style.display='block';
+  document.getElementById('login-roll').value='';
+  document.getElementById('login-pass').value='';
+}
+
+// ── EXAM ENGINE ──
+let currentTest=null, currentQIdx=0, answers=[], skipped=[], timerInterval=null, timeLeft=0;
+
+function startMock(testId){
+  currentTest=MOCK_TESTS.find(t=>t.id===testId);
+  currentQIdx=0; answers=Array(currentTest.questions.length).fill(null); skipped=Array(currentTest.questions.length).fill(false); timeLeft=currentTest.duration;
+  document.getElementById('mock-list-screen').style.display='none';
+  document.getElementById('mock-exam-screen').style.display='block';
+  document.getElementById('exam-title').textContent=currentTest.title;
+  document.getElementById('exam-subtitle').textContent=currentTest.subtitle;
+  buildNavGrid(); renderQuestion(); startTimer();
+}
+
+function startTimer(){
+  clearInterval(timerInterval);
+  timerInterval=setInterval(()=>{
+    timeLeft--;
+    const h=Math.floor(timeLeft/3600), m=Math.floor((timeLeft%3600)/60), s=timeLeft%60;
+    const v=document.getElementById('exam-timer-val');
+    v.textContent=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    v.className='exam-timer-val'+(timeLeft<=300?' warning':'');
+    if(timeLeft<=0){clearInterval(timerInterval);submitTest();}
+  },1000);
+}
+
+function renderQuestion(){
+  const qs=currentTest.questions, q=qs[currentQIdx], n=currentQIdx+1, total=qs.length;
+  document.getElementById('q-number').textContent='Question '+n+' of '+total;
+  document.getElementById('q-text').textContent=q.q;
+  document.getElementById('exam-progress-text').textContent='Question '+n+' of '+total;
+  document.getElementById('exam-progress-bar').style.width=(n/total*100)+'%';
+  const keys=['A','B','C','D'];
+  document.getElementById('q-options').innerHTML=q.opts.map((opt,i)=>`<button class="q-option${answers[currentQIdx]===i?' selected':''}" onclick="selectOpt(${i})"><span class="q-option-key">${keys[i]}</span>${opt.replace(/^[A-D]\)\s*/,'')}</button>`).join('');
+  updateNavGrid();
+}
+
+function selectOpt(i){answers[currentQIdx]=i;skipped[currentQIdx]=false;renderQuestion();}
+function nextQ(){if(currentQIdx<currentTest.questions.length-1){currentQIdx++;renderQuestion();}}
+function prevQ(){if(currentQIdx>0){currentQIdx--;renderQuestion();}}
+function skipQ(){skipped[currentQIdx]=true;answers[currentQIdx]=null;nextQ();}
+function goToQ(i){currentQIdx=i;renderQuestion();}
+
+function buildNavGrid(){
+  document.getElementById('q-nav-grid').innerHTML=currentTest.questions.map((_,i)=>`<button class="q-nav-btn" id="qnb-${i}" onclick="goToQ(${i})">${i+1}</button>`).join('');
+}
+function updateNavGrid(){
+  currentTest.questions.forEach((_,i)=>{
+    const b=document.getElementById('qnb-'+i);
+    if(!b)return;
+    b.className='q-nav-btn'+(i===currentQIdx?' current':answers[i]!==null?' answered':skipped[i]?' skipped':'');
   });
 }
 
-// ════════════════════════════════════════════════════════════════════
-//  TABS
-// ════════════════════════════════════════════════════════════════════
-function switchTab(e, id){
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-  e.target.classList.add('active');
-  document.getElementById(id).classList.add('active');
+function confirmSubmit(){
+  const unanswered=answers.filter(a=>a===null).length;
+  if(unanswered>0&&!confirm('⚠️ You have '+unanswered+' unanswered question(s).\n\nAre you sure you want to submit?'))return;
+  submitTest();
 }
 
-// ════════════════════════════════════════════════════════════════════
-//  FULLSCREEN
-// ════════════════════════════════════════════════════════════════════
-function openFS(btn){
-  const el = btn.closest('.video-wrap');
-  (el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen || function(){}).call(el);
+function submitTest(){
+  clearInterval(timerInterval);
+  const qs=currentTest.questions; let correct=0,wrong=0,skippedCount=0;
+  qs.forEach((q,i)=>{if(answers[i]===null)skippedCount++;else if(answers[i]===q.ans)correct++;else wrong++;});
+  const pct=Math.round((correct/qs.length)*100);
+  document.getElementById('result-score-num').textContent=correct+'/'+qs.length;
+  document.getElementById('rs-correct').textContent=correct;
+  document.getElementById('rs-wrong').textContent=wrong;
+  document.getElementById('rs-skipped').textContent=skippedCount;
+  document.getElementById('rs-pct').textContent=pct+'%';
+  document.getElementById('result-test-name').textContent=currentTest.title+' — '+currentTest.subtitle;
+  const keys=['A','B','C','D'];
+  document.getElementById('solutions-list').innerHTML=qs.map((q,i)=>{
+    const ua=answers[i], isSk=ua===null, isOk=ua===q.ans;
+    const st=isSk?'skipped':isOk?'correct':'wrong';
+    const badge=isSk?'⬜ Skipped':isOk?'✅ Correct':'❌ Wrong';
+    const opts=q.opts.map((opt,oi)=>{
+      let cls='normal';
+      if(oi===q.ans)cls='correct-ans';
+      else if(oi===ua&&!isOk)cls='user-wrong';
+      return `<div class="sc-opt ${cls}"><span style="font-weight:700;min-width:20px;">${keys[oi]})</span>${opt.replace(/^[A-D]\)\s*/,'')}${oi===q.ans?' ✓':''}${oi===ua&&!isOk?' ✗':''}</div>`;
+    }).join('');
+    return `<div class="solution-card"><div class="sc-header"><div class="sc-num ${st}">${i+1}</div><div class="sc-q-text">${q.q}</div><span class="sc-badge ${st}">${badge}</span></div><div class="sc-body"><div class="sc-options">${opts}</div><div class="sc-explanation"><strong>💡 Explanation:</strong> ${q.exp}</div></div></div>`;
+  }).join('');
+  document.getElementById('mock-exam-screen').style.display='none';
+  document.getElementById('mock-result-screen').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
 }
+
+function retakeTest(){document.getElementById('mock-result-screen').style.display='none';startMock(currentTest.id);}
+function backToList(){clearInterval(timerInterval);document.getElementById('mock-result-screen').style.display='none';document.getElementById('mock-exam-screen').style.display='none';document.getElementById('mock-list-screen').style.display='block';}
+
+// ── TABS & FILTERS ──
+function switchTab(e,id){document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));e.target.classList.add('active');document.getElementById(id).classList.add('active');}
+function filterUnit(e,unit){document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));e.target.classList.add('active');document.querySelectorAll('.unit-section').forEach(sec=>{sec.classList.toggle('hidden',unit!=='all'&&sec.dataset.unit!==unit);});}
+function openFS(btn){const el=btn.closest('.video-wrap');(el.requestFullscreen||el.webkitRequestFullscreen||el.msRequestFullscreen||function(){}).call(el);}
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&document.getElementById('tab-mocktest').classList.contains('active')&&document.getElementById('mock-login-screen').style.display!=='none')doLogin();});
+
+buildGrid(); buildImportant(); buildMisc();
 </script>
 </body>
 </html>
