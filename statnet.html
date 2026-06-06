@@ -694,13 +694,13 @@ const QB = [
 ];
 
 // ── MOCK TESTS (10 tests, each uses QB rotated) ──
-const MOCK_TESTS = Array.from({length:10},(_, i)=>{
+const MOCK_TESTS = Array.from({length:15},(_, i)=>{
   const id = i+1;
   const qs = [...QB];
   // Rotate question bank for different test feel
-  for(let r=0;r<i*10;r++) qs.push(qs.shift());
+  for(let r=0;r<i*15;r++) qs.push(qs.shift());
   return {
-    id, locked: id>2,
+    id, locked: id>5,
     title:'Mock Test '+id,
     subtitle:'Full Syllabus – All 10 Units',
     duration:7200,
