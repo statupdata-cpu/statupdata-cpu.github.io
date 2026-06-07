@@ -702,6 +702,168 @@ const MASTER_QB = [
   {unit:'u1',q:'CLT: as n→∞, √n(X̄-μ)/σ converges to:',opts:['A) t-distribution','B) F-distribution','C) N(0,1)','D) Chi-square'],ans:2,exp:'CLT: √n(X̄-μ)/σ→N(0,1) as n→∞ under regularity conditions.'},
   {unit:'u1',q:'If X and Y are independent, Cov(X,Y)=',opts:['A) 1','B) -1','C) 0','D) σ_X·σ_Y'],ans:2,exp:'Independence implies Cov(X,Y)=E(XY)-E(X)E(Y)=0.'},
   {unit:'u1',q:'Geometric distribution models:',opts:['A) Successes in n trials','B) Trials until first success','C) Defects per unit','D) Continuous waiting time'],ans:1,exp:'Geometric: number of Bernoulli trials needed to get one success.'},
+  // ════════════════════════════════════════════════════════════════════
+//  UNIT I — PROBABILITY THEORY
+//  50 Questions converted from LaTeX to JS format
+//  Copy these lines and PASTE inside MASTER_QB after the existing
+//  Unit I questions, before the comment:
+//  // ── ADD MORE UNIT I QUESTIONS HERE (keep unit:'u1') ──
+//
+//  FORMAT REMINDER:
+//  unit:'u1'  → always u1 for Unit I
+//  ans:       → 0=A, 1=B, 2=C, 3=D
+//  opts:      → include A) B) C) D) prefix
+// ════════════════════════════════════════════════════════════════════
+
+// ── Q1 ──
+{unit:'u1',q:'If P(A)=0.6, P(B)=0.5 and P(A∩B)=0.3, find P(Aᶜ∩Bᶜ).',opts:['A) 0.20','B) 0.30','C) 0.40','D) 0.50'],ans:0,exp:'De Morgan: Aᶜ∩Bᶜ=(A∪B)ᶜ. Step1: P(A∪B)=0.6+0.5-0.3=0.8. Step2: P(Aᶜ∩Bᶜ)=1-0.8=0.20.'},
+
+// ── Q2 ──
+{unit:'u1',q:'If P(A)=0.4, P(B)=0.5 and P(A|B)=0.3, find P(A∩B).',opts:['A) 0.10','B) 0.12','C) 0.15','D) 0.20'],ans:2,exp:'Conditional probability: P(A|B)=P(A∩B)/P(B). So P(A∩B)=P(A|B)×P(B)=0.3×0.5=0.15.'},
+
+// ── Q3 ──
+{unit:'u1',q:'Given P(B|A)=0.8, P(A)=0.3, P(B)=0.5. Find P(A|B).',opts:['A) 0.24','B) 0.40','C) 0.48','D) 0.60'],ans:2,exp:'Bayes theorem: P(A|B)=P(B|A)×P(A)/P(B)=0.8×0.3/0.5=0.24/0.5=0.48.'},
+
+// ── Q4 ──
+{unit:'u1',q:'Events A and B are independent if and only if:',opts:['A) P(A∩B)=0','B) P(A∩B)=P(A)·P(B)','C) P(A|B)=P(B)','D) P(A∪B)=1'],ans:1,exp:'Independence: P(A|B)=P(A) implies P(A∩B)=P(A)·P(B). Option A means mutually exclusive, not independent.'},
+
+// ── Q5 ──
+{unit:'u1',q:'If MGF of X is Mₓ(t)=(1/3 + 2/3·eᵗ)⁵, find E(X).',opts:['A) 5/3','B) 10/3','C) 5','D) 2/3'],ans:1,exp:'MGF matches Binomial(n=5, p=2/3): (q+peᵗ)ⁿ form. E(X)=np=5×(2/3)=10/3.'},
+
+// ── Q6 ──
+{unit:'u1',q:'If X~Poisson(λ), the MGF Mₓ(t) is:',opts:['A) e^{λ(eᵗ-1)}','B) e^{λ(1-eᵗ)}','C) e^{λt}','D) λ/(λ-t)'],ans:0,exp:'Derivation: Mₓ(t)=Σ eᵗᵏ e^{-λ}λᵏ/k! = e^{-λ}·e^{λeᵗ} = e^{λ(eᵗ-1)}. Option D is MGF of Exponential(λ).'},
+
+// ── Q7 ──
+{unit:'u1',q:'Chebyshev\'s inequality states P(|X-μ|≥kσ) is:',opts:['A) ≤ 1/k²','B) ≥ 1/k²','C) ≤ 1/k','D) ≥ 1/k'],ans:0,exp:'For ANY distribution with finite mean μ and variance σ²: P(|X-μ|≥kσ)≤1/k² for k>0. Works without normality.'},
+
+// ── Q8 ──
+{unit:'u1',q:'The characteristic function of Z~N(0,1) is:',opts:['A) eⁱᵗ','B) e^{-t²/2}','C) e^{t²/2}','D) e^{-|t|}'],ans:1,exp:'For N(μ,σ²): φ(t)=e^{iμt-σ²t²/2}. For N(0,1): μ=0, σ²=1, so φ(t)=e^{-t²/2}. Option D is CF of Cauchy(0,1).'},
+
+// ── Q9 ──
+{unit:'u1',q:'If X~Exp(λ) with F(x)=1-e^{-λx}, x>0. The median of X is:',opts:['A) ln2/λ','B) 1/λ','C) 2/λ','D) λ·ln2'],ans:0,exp:'Solve F(m)=0.5: 1-e^{-λm}=0.5 → e^{-λm}=0.5 → m=ln2/λ ≈ 0.693/λ. Mean=1/λ > Median → right-skewed.'},
+
+// ── Q10 ──
+{unit:'u1',q:'The CLT (i.i.d. case) states √n(X̄ₙ-μ)/σ converges in distribution to:',opts:['A) χ²(1)','B) t(1)','C) N(0,1)','D) F(1,1)'],ans:2,exp:'CLT: If Xᵢ i.i.d. with mean μ and finite σ², then √n(X̄-μ)/σ →ᵈ N(0,1). Works for ANY distribution with finite variance. Practical: use for n≥30.'},
+
+// ── Q11 ──
+{unit:'u1',q:'For independent X₁,...,Xₙ with common variance σ², find Var(Σaᵢxᵢ).',opts:['A) σ²Σaᵢ','B) σ²Σaᵢ²','C) σ²(Σaᵢ)²','D) nσ²'],ans:1,exp:'For independent RVs cross-terms vanish: Var(ΣaᵢXᵢ)=Σaᵢ²Var(Xᵢ)=σ²Σaᵢ². Option C arises when Xᵢ are perfectly correlated. Special case: aᵢ=1/n gives Var(X̄)=σ²/n.'},
+
+// ── Q12 ──
+{unit:'u1',q:'Almost sure (a.s.) convergence implies which mode of convergence?',opts:['A) Convergence in mean square (L²)','B) Convergence in probability','C) Convergence in distribution only','D) Convergence in L⁴'],ans:1,exp:'Hierarchy: a.s. ⟹ in probability ⟹ in distribution. Lʳ ⟹ in probability ⟹ in distribution. No general relation between a.s. and Lʳ. Converse fails.'},
+
+// ── Q13 ──
+{unit:'u1',q:'If X~Gamma(α,β), then E(X) and Var(X) are respectively:',opts:['A) αβ and αβ²','B) α/β and α/β²','C) β/α and β/α²','D) α² and β²'],ans:0,exp:'Gamma(α,β): E(X)=αβ, Var(X)=αβ². Special cases: α=1 gives Exp(β); α=k/2, β=2 gives χ²(k). Note: some books use rate λ=1/β.'},
+
+// ── Q14 ──
+{unit:'u1',q:'The WLLN requires which conditions on i.i.d. X₁,X₂,...?',opts:['A) Finite fourth moment','B) i.i.d. with finite mean μ','C) Normal distribution of Xᵢ','D) Zero variance of Xᵢ'],ans:1,exp:'Khinchin\'s WLLN: only finite mean needed (not finite variance!). X̄ₙ →ᵖ μ. SLLN also requires only finite mean. Normality NOT required.'},
+
+// ── Q15 ──
+{unit:'u1',q:'If X has pdf f(x)=(1/2)e^{-|x|}, -∞<x<∞ (Double Exponential), find Var(X).',opts:['A) 1','B) 2','C) 4','D) 0.5'],ans:1,exp:'By symmetry E(X)=0. E(X²)=2∫₀^∞ x²·(1/2)e^{-x}dx=∫₀^∞ x²e^{-x}dx=Γ(3)=2!=2. Var(X)=E(X²)-[E(X)]²=2-0=2. General Laplace(μ,b): Var=2b².'},
+
+// ── Q16 ──
+{unit:'u1',q:'If X and Y are jointly normal with correlation ρ=0, then:',opts:['A) X and Y are dependent','B) X and Y are independent','C) E(X|Y) is a nonlinear function of Y','D) Cov(X,Y)>0'],ans:1,exp:'Special property of bivariate normal: ρ=0 DOES imply independence (unlike general case). f(x,y)=f_X(x)·f_Y(y) when ρ=0. Counter-example for non-normal: X~N(0,1), Y=X² has Cov=0 but Y determined by X.'},
+
+// ── Q17 ──
+{unit:'u1',q:'The conditional expectation E(X|Y=y) minimises over all functions g(y):',opts:['A) E|X-g(Y)|','B) E(X-g(Y))²','C) E(X²-g(Y)²)','D) Var(g(Y))'],ans:1,exp:'MMSE predictor theorem: E(X|Y) minimises E[X-g(Y)]². Proof: E[X-g(Y)]²=E[Var(X|Y)]+E[E(X|Y)-g(Y)]²≥E[Var(X|Y)]. Option A minimises via conditional median.'},
+
+// ── Q18 ──
+{unit:'u1',q:'The PGF of Geometric(p): P(X=k)=(1-p)^{k-1}·p, k=1,2,... is:',opts:['A) pz/(1-(1-p)z)','B) p/(1-(1-p)z)','C) (1-p)z/p','D) pz(1-p)^{z-1}'],ans:0,exp:'Let q=1-p. G(z)=E(zˣ)=Σ zᵏqᵏ⁻¹p=pz·Σ(qz)ᵏ⁻¹=pz/(1-qz)=pz/(1-(1-p)z). Verify: G\'(1)=E(X)=1/p ✓'},
+
+// ── Q19 ──
+{unit:'u1',q:'If Z~N(0,1), find E(Z⁴).',opts:['A) 1','B) 3','C) 6','D) 15'],ans:1,exp:'Even moments of N(0,1): E(Z²ᵏ)=(2k-1)!!=1·3·5···(2k-1). So E(Z²)=1, E(Z⁴)=3, E(Z⁶)=15, E(Z⁸)=105. Excess kurtosis=E(Z⁴)-3=0 for Normal.'},
+
+// ── Q20 ──
+{unit:'u1',q:'If X~N(μ,σ²), the MGF Mₓ(t) is:',opts:['A) e^{μt+σ²t²/2}','B) e^{μt-σ²t²/2}','C) e^{μ+σt}','D) e^{-σ²t²/2}'],ans:0,exp:'Complete the square in the integral: Mₓ(t)=e^{μt+σ²t²/2}. Verify: M\'(0)=μ, M\'\'(0)=μ²+σ² ✓. CF vs MGF: CF=e^{iμt-σ²t²/2} (replace t→it, signs differ).'},
+
+// ── Q21 ──
+{unit:'u1',q:'If Xᵢ~N(μᵢ,σᵢ²) independently, then ΣXᵢ follows:',opts:['A) N(Πμᵢ, Σσᵢ²)','B) N(Σμᵢ, Σσᵢ²)','C) N(Σμᵢ, Πσᵢ²)','D) N(μ̄, σ̄²)'],ans:1,exp:'Independence → product of MGFs: M(t)=Π e^{μᵢt+σᵢ²t²/2}=e^{(Σμᵢ)t+(Σσᵢ²)t²/2}. This is N(Σμᵢ,Σσᵢ²). Key: means ADD, variances ADD. Never add σᵢ directly.'},
+
+// ── Q22 ──
+{unit:'u1',q:'The r-th cumulant κᵣ of N(μ,σ²) for r≥3 is:',opts:['A) μʳ','B) σ²ʳ','C) 0','D) r!·σ²ʳ'],ans:2,exp:'CGF: K(t)=lnMₓ(t)=μt+σ²t²/2 (only two non-zero terms). Since K(t)=Σκᵣtʳ/r!: κ₁=μ, κ₂=σ², κᵣ=0 for r≥3. Defining property: only Normal has all higher cumulants zero.'},
+
+// ── Q23 ──
+{unit:'u1',q:'A factory has machines producing 50%, 30%, 20% of output with defect rates 2%, 3%, 4%. Find P(defective).',opts:['A) 0.027','B) 0.026','C) 0.030','D) 0.033'],ans:0,exp:'Law of Total Probability: P(D)=0.02×0.50+0.03×0.30+0.04×0.20=0.010+0.009+0.008=0.027. Overall defect rate = weighted average of individual rates.'},
+
+// ── Q24 ──
+{unit:'u1',q:'If X₁,...,Xₙ i.i.d. N(μ,σ²), then X̄ and S² are:',opts:['A) Positively correlated','B) Negatively correlated','C) Uncorrelated but dependent','D) Independent'],ans:3,exp:'Fisher\'s theorem: For normal data, X̄ and S² are independent. X̄ depends on ΣXᵢ; S² depends on deviations Xᵢ-X̄ (orthogonal subspaces). Consequence: t-statistic follows t(n-1). Fails for non-normal distributions.'},
+
+// ── Q25 ──
+{unit:'u1',q:'X~Binomial(4, 0.5). Find P(X≥3).',opts:['A) 3/16','B) 5/16','C) 1/4','D) 7/16'],ans:1,exp:'P(X=3)=C(4,3)(0.5)⁴=4/16. P(X=4)=C(4,4)(0.5)⁴=1/16. P(X≥3)=(4+1)/16=5/16. Symmetry check: P(X≤1)=5/16 ✓ (Binomial(4,0.5) is symmetric).'},
+
+// ── Q26 ──
+{unit:'u1',q:'If X~U(0,1), find the pdf of Y=-ln X.',opts:['A) f_Y(y)=e^{-y}, y>0','B) f_Y(y)=ye^{-y}, y>0','C) f_Y(y)=1/y, 0<y<1','D) f_Y(y)=eʸ, y>0'],ans:0,exp:'CDF method: Y=-lnX, X∈(0,1)→Y∈(0,∞). F_Y(y)=P(Y≤y)=P(X≥e^{-y})=1-e^{-y}. PDF: f_Y(y)=e^{-y}. So Y~Exp(1). Inverse transform: -lnU~Exp(1) when U~U(0,1).'},
+
+// ── Q27 ──
+{unit:'u1',q:'The Cauchy distribution Cauchy(0,1) does NOT have a finite:',opts:['A) Median','B) Mode','C) Mean','D) Characteristic function'],ans:2,exp:'f(x)=1/(π(1+x²)). The mean integral diverges: ∫|x|/(π(1+x²))dx=∞. Median=0, Mode=0 (exist). CF=e^{-|t|} exists. CLT fails: X̄~Cauchy even as n→∞!'},
+
+// ── Q28 ──
+{unit:'u1',q:'Xₙ~Bin(n, λ/n) as n→∞ with λ>0 fixed. Xₙ converges in distribution to:',opts:['A) N(λ,λ)','B) Poisson(λ)','C) Geometric(1/λ)','D) Exponential(λ)'],ans:1,exp:'Poisson approximation to Binomial: C(n,k)(λ/n)ᵏ→λᵏ/k! and (1-λ/n)ⁿ→e^{-λ}. P(Xₙ=k)→e^{-λ}λᵏ/k!. Rule of thumb: use Poisson approx when n≥20 and p≤0.05.'},
+
+// ── Q29 ──
+{unit:'u1',q:'If Xₙ →ᵖ X and g is a continuous function, then:',opts:['A) g(Xₙ)→ᵈ g(X) only if g is monotone','B) g(Xₙ) →ᵖ g(X)','C) g(Xₙ) →ᵃ·ˢ· g(X)','D) g(Xₙ) may not converge at all'],ans:1,exp:'Continuous Mapping Theorem (CMT): Xₙ→ᵖX + g continuous ⟹ g(Xₙ)→ᵖg(X). Also works for a.s. and distributional convergence. Example: σ̂²→ᵖσ² ⟹ σ̂→ᵖσ (since √· is continuous).'},
+
+// ── Q30 ──
+{unit:'u1',q:'The Beta distribution Beta(α,β) has mean E(X)=',opts:['A) α/(α+β)','B) αβ/(α+β)²','C) β/α','D) α+β'],ans:0,exp:'E(X)=B(α+1,β)/B(α,β)=α/(α+β). Variance=αβ/[(α+β)²(α+β+1)] (Option B omits the (α+β+1) term!). Special cases: Beta(1,1)=U(0,1). Beta(α,α) is symmetric about 0.5.'},
+
+// ── Q31 ──
+{unit:'u1',q:'For a sample of size n from continuous cdf F(x), the pdf of the k-th order statistic X₍ₖ₎ is:',opts:['A) [n!/(k-1)!(n-k)!]·[F(x)]^{k-1}·[1-F(x)]^{n-k}·f(x)','B) [n!/k!(n-k)!]·[F(x)]ᵏ·[1-F(x)]^{n-k}','C) n·[F(x)]^{n-1}·f(x)','D) n·[1-F(x)]^{n-1}·f(x)'],ans:0,exp:'X₍ₖ₎=x means k-1 obs below x, one at x, n-k above x. Arrangements=n!/[(k-1)!1!(n-k)!]. Option C is pdf of maximum X₍ₙ₎; Option D is pdf of minimum X₍₁₎.'},
+
+// ── Q32 ──
+{unit:'u1',q:'For X~U[a,b], the variance is:',opts:['A) (b-a)²','B) (b-a)²/12','C) (b-a)/2','D) (b-a)²/6'],ans:1,exp:'Mean=(a+b)/2. E(X²)=(a²+ab+b²)/3. Var(X)=E(X²)-[E(X)]²=(b-a)²/12. For U[0,1]: Var=1/12≈0.083. Memory trick: denominator 12 for Uniform variance.'},
+
+// ── Q33 ──
+{unit:'u1',q:'For Multinomial(n; p₁,...,pₖ), find Cov(Xᵢ,Xⱼ) for i≠j.',opts:['A) npᵢpⱼ','B) -npᵢpⱼ','C) npᵢ(1-pᵢ)','D) 0'],ans:1,exp:'Since ΣXᵢ=n (fixed), increasing Xᵢ must decrease Xⱼ → negative covariance. From Var(n)=0: ΣVar(Xᵢ)+2ΣCov(Xᵢ,Xⱼ)=0 → Cov(Xᵢ,Xⱼ)=-npᵢpⱼ. Fixed total forces competition between categories.'},
+
+// ── Q34 ──
+{unit:'u1',q:'If X~Lognormal(μ,σ²), the mean E(X) equals:',opts:['A) eᵘ','B) e^{μ+σ²/2}','C) e^{μ-σ²/2}','D) e^{μ²}'],ans:1,exp:'If lnX~N(μ,σ²): E(X)=E(e^{lnX})=M_{lnX}(1)=e^{μ+σ²/2}. Median=eᵘ (since P(lnX≤μ)=0.5). Mean>Median → right-skewed. Stock prices and income commonly follow lognormal.'},
+
+// ── Q35 ──
+{unit:'u1',q:'The joint pdf is f(x,y)=2e^{-x-y} for 0<y<x<∞. Find marginal pdf f_X(x).',opts:['A) 2e^{-x}','B) 2e^{-2x}','C) 2(1-e^{-x})e^{-x}','D) e^{-x}'],ans:2,exp:'Integrate over 0<y<x: f_X(x)=∫₀ˣ 2e^{-x-y}dy=2e^{-x}(1-e^{-x})=2e^{-x}-2e^{-2x}. Check: ∫₀^∞(2e^{-x}-2e^{-2x})dx=2-1=1 ✓'},
+
+// ── Q36 ──
+{unit:'u1',q:'Which distribution satisfies P(X>s+t | X>s)=P(X>t)?',opts:['A) Normal','B) Exponential (continuous)','C) Poisson','D) Gamma(α>1)'],ans:1,exp:'Memoryless property verification for Exp(λ): P(X>s+t|X>s)=e^{-λ(s+t)}/e^{-λs}=e^{-λt}=P(X>t). Remaining life has same distribution regardless of age! Exponential is the ONLY continuous memoryless distribution. Discrete counterpart: Geometric.'},
+
+// ── Q37 ──
+{unit:'u1',q:'From N=20 items (M=5 defective), n=4 drawn without replacement. Find E(X).',opts:['A) 0.5','B) 1.0','C) 1.5','D) 2.0'],ans:1,exp:'Hypergeometric(N=20, M=5, n=4): E(X)=nM/N=4×5/20=1.0. Same as Binomial(4,0.25) mean. Variance differs: Hypergeometric has fpc factor (N-n)/(N-1). Mean of Hypergeometric = Mean of Binomial.'},
+
+// ── Q38 ──
+{unit:'u1',q:'If X~U(0,1) and Y=X², find f_Y(y) for 0<y<1.',opts:['A) 2y','B) 1/(2√y)','C) √y','D) 1'],ans:1,exp:'Jacobian method: Y=X²→X=√Y. |dx/dy|=1/(2√y). f_Y(y)=f_X(√y)·1/(2√y)=1/(2√y). This is Beta(1/2,1). Check: ∫₀¹ 1/(2√y)dy=[√y]₀¹=1 ✓'},
+
+// ── Q39 ──
+{unit:'u1',q:'The Negative Binomial(r,p) distribution has variance:',opts:['A) rp/(1-p)²','B) r(1-p)/p²','C) rp(1-p)','D) r/p'],ans:1,exp:'X = trials until r-th success with P(success)=p. E(X)=r/p, Var(X)=r(1-p)/p². NegBin(r,p) = sum of r i.i.d. Geometric(p), so Var=r×(1-p)/p². Compare: Poisson Var=Mean; NegBin Var>Mean (overdispersed).'},
+
+// ── Q40 ──
+{unit:'u1',q:'Boole\'s inequality (Union Bound) for any events A₁,...,Aₙ states:',opts:['A) P(∪Aᵢ)=ΣP(Aᵢ) always','B) P(∪Aᵢ)≤ΣP(Aᵢ)','C) P(∪Aᵢ)≥ΣP(Aᵢ)','D) P(∪Aᵢ)=ΠP(Aᵢ)'],ans:1,exp:'Overlapping events counted multiple times in ΣP(Aᵢ): P(∪Aᵢ)≤ΣP(Aᵢ). Equality iff mutually exclusive. Proof(n=2): P(A∪B)=P(A)+P(B)-P(A∩B). Bonferroni correction: test each hypothesis at level α/n for overall error ≤α.'},
+
+// ── Q41 ──
+{unit:'u1',q:'For χ²(ν) distribution, the mean and variance are respectively:',opts:['A) ν and 2ν','B) ν and ν','C) 2ν and 4ν','D) ν/2 and ν'],ans:0,exp:'χ²(ν)=Gamma(α=ν/2, β=2). E(X)=αβ=ν. Var(X)=αβ²=2ν. Alternative: χ²(ν)=ΣZᵢ² where E(Zᵢ²)=1, Var(Zᵢ²)=2 ⟹ E=ν, Var=2ν. Memory: Var=2×Mean for chi-square.'},
+
+// ── Q42 ──
+{unit:'u1',q:'Which is the Tower Property (Law of Total Expectation)?',opts:['A) E(X)=E(X|Y)·E(Y)','B) E[E(X|Y)]=E(X)','C) E(X|Y)=E(X)·E(Y)','D) E(X|Y)=E(Y|X)'],ans:1,exp:'Tower property: E[E(X|Y)]=E(X). Proof: Σ_y E(X|Y=y)P(Y=y)=E(X). Application: N~Poisson(λ), X|N~Bin(N,p) → E(X)=E[E(X|N)]=E(Np)=λp.'},
+
+// ── Q43 ──
+{unit:'u1',q:'Markov\'s inequality: for non-negative X with finite mean, P(X≥a)≤',opts:['A) E(X)/a','B) E(X²)/a²','C) Var(X)/a²','D) a/E(X)'],ans:0,exp:'For X≥0, a>0: E(X)≥a·P(X≥a) ⟹ P(X≥a)≤E(X)/a. Chebyshev from Markov: apply to (X-μ)²: P(|X-μ|≥kσ)≤1/k². Hierarchy: Markov(uses mean)→Chebyshev(uses variance)→CLT(exact normal limit).'},
+
+// ── Q44 ──
+{unit:'u1',q:'Jensen\'s inequality for a CONVEX function g states:',opts:['A) g(E(X))≥E(g(X))','B) g(E(X))≤E(g(X))','C) g(E(X))=E(g(X))','D) E(g(X))=0'],ans:1,exp:'Convex g: g(E(X))≤E(g(X)). Concave g: g(E(X))≥E(g(X)). Examples: g(x)=x²(convex):[E(X)]²≤E(X²)→Var(X)≥0. g(x)=lnx(concave):lnE(X)≥E(lnX) (AM-GM). g(x)=eˣ(convex):e^{E(X)}≤M_X(1).'},
+
+// ── Q45 ──
+{unit:'u1',q:'If Z~N(0,1), find E(e^{Z/2}).',opts:['A) 1','B) e^{1/8}','C) e^{1/4}','D) e^{1/2}'],ans:1,exp:'For Z~N(0,1): M_Z(t)=e^{t²/2}. Set t=1/2: E(e^{Z/2})=M_Z(1/2)=e^{(1/2)²/2}=e^{1/8}. Note: E(eᶻ)=M_Z(1)=e^{1/2} (option D, t=1). General: E(e^{aX+b})=eᵇ·M_X(a).'},
+
+// ── Q46 ──
+{unit:'u1',q:'According to Kolmogorov\'s axioms, which is NOT required?',opts:['A) P(Ω)=1','B) P(A)≥0 for all A','C) P(∪Aᵢ)=ΣP(Aᵢ) for disjoint Aᵢ','D) P(A)=P(B) whenever |A|=|B|'],ans:3,exp:'Three axioms: (1) P(A)≥0, (2) P(Ω)=1, (3) Countable additivity for disjoint events. Option D is NOT an axiom — cardinality does not determine probability. Derived results: P(Aᶜ)=1-P(A), P(∅)=0, inclusion-exclusion.'},
+
+// ── Q47 ──
+{unit:'u1',q:'The Cauchy-Schwarz inequality for random variables states:',opts:['A) |E(XY)|≤E(X)·E(Y)','B) [E(XY)]²≤E(X²)·E(Y²)','C) [E(XY)]²≥E(X²)·E(Y²)','D) E(X+Y)≤E(X)+E(Y)'],ans:1,exp:'Apply to centred variables: [Cov(X,Y)]²≤Var(X)Var(Y). Therefore |ρ_XY|=|Cov(X,Y)|/√(Var(X)Var(Y))≤1. Equality: |ρ|=1 iff Y=aX+b a.s. (perfect linear relationship).'},
+
+// ── Q48 ──
+{unit:'u1',q:'If X~Gamma(α₁,β) and Y~Gamma(α₂,β) independently, then X+Y follows:',opts:['A) Gamma(α₁α₂,β)','B) Gamma(α₁+α₂,2β)','C) Gamma(α₁+α₂,β)','D) Gamma(α₁-α₂,β)'],ans:2,exp:'Reproductive property via MGFs: M_{X+Y}(t)=(1-βt)^{-α₁}·(1-βt)^{-α₂}=(1-βt)^{-(α₁+α₂)}. Scale β stays same; shape parameters add. Special case: χ²(ν₁)+χ²(ν₂)=χ²(ν₁+ν₂). Requires SAME scale parameter.'},
+
+// ── Q49 ──
+{unit:'u1',q:'A coin toss: Heads → roll 1 die; Tails → roll 2 dice. Find P(sum=6).',opts:['A) 1/12','B) 7/72','C) 5/72','D) 1/6'],ans:1,exp:'P(H)=P(T)=1/2. P(sum=6|H)=1/6. P(sum=6|T)=5/36 (ways to get 6 with 2 dice). Law of Total Probability: P(sum=6)=(1/2)·(1/6)+(1/2)·(5/36)=6/72+5/72=7/72.'},
+
+// ── Q50 ──
+{unit:'u1',q:'Why is S²=(1/(n-1))·Σ(Xᵢ-X̄)² defined with n-1 instead of n?',opts:['A) To make S² consistent for σ²','B) To make S² an unbiased estimator of σ²','C) To make S² the UMVUE of σ² always','D) To ensure S²>0'],ans:1,exp:'Bessel\'s correction: E(Σ(Xᵢ-X̄)²)=(n-1)σ² → E(S²)=σ² (unbiased). Lost 1 degree of freedom because X̄ is estimated. Constraint: Σ(Xᵢ-X̄)=0. Note: S² is UMVUE for normal populations specifically.'},
   // ── ADD MORE UNIT I QUESTIONS HERE (keep unit:'u1') ──────────────
 
   // ════════════ UNIT II: Real Analysis & Matrix Algebra ════════════
@@ -716,6 +878,219 @@ const MASTER_QB = [
   {unit:'u2',q:'Spectral decomposition of symmetric matrix uses:',opts:['A) Jordan form','B) LU decomposition','C) Orthogonal eigenvectors','D) Cholesky'],ans:2,exp:'Spectral theorem: A=PΛPᵀ where P is orthogonal matrix of eigenvectors.'},
   {unit:'u2',q:'A function f is uniformly continuous if:',opts:['A) It is differentiable','B) One δ works for all x','C) It is bounded','D) Derivative is bounded'],ans:1,exp:'Uniform continuity: single δ works for all x simultaneously.'},
   {unit:'u2',q:'For matrices A(m×n) and B(n×p), rank(AB) satisfies:',opts:['A) rank(AB)=rank(A)+rank(B)','B) rank(AB)≤min(rank(A),rank(B))','C) rank(AB)=rank(A)','D) rank(AB)=n'],ans:1,exp:'Sylvester rank inequality: rank(AB)≤min(rank(A),rank(B)).'},
+  
+// ── Q1 ──
+{unit:'u2',q:'Which of the following sets is UNCOUNTABLE?',opts:['A) The set of all integers ℤ','B) The set of all rational numbers ℚ','C) The set of all irrational numbers in (0,1)','D) The set of all finite subsets of ℕ'],ans:2,exp:'ℤ and ℚ are countably infinite. Finite subsets of ℕ are countable. (0,1) is uncountable by Cantor\'s diagonal argument, and since ℚ∩(0,1) is countable, the irrationals in (0,1) must be uncountable (uncountable minus countable = uncountable).'},
+
+// ── Q2 ──
+{unit:'u2',q:'Let aₙ=(3n²+5n-1)/(2n²-n+4). Then lim(n→∞) aₙ equals:',opts:['A) 0','B) 3/2','C) 5/(-1)','D) ∞'],ans:1,exp:'Divide numerator and denominator by n²: aₙ=(3+5/n-1/n²)/(2-1/n+4/n²) → 3/2. Shortcut: same degree in numerator and denominator → limit = ratio of leading coefficients = 3/2.'},
+
+// ── Q3 ──
+{unit:'u2',q:'The sequence a₁=1, aₙ₊₁=√(2+aₙ) satisfies:',opts:['A) It is decreasing and bounded below, hence converges','B) It is increasing and bounded above, hence converges','C) It is unbounded and diverges to +∞','D) It oscillates and does not converge'],ans:1,exp:'Increasing: a₁=1, a₂=√3≈1.73,... verified by induction. Bounded above by 2: if aₙ<2 then aₙ₊₁=√(2+aₙ)<√4=2. By Monotone Convergence Theorem it converges. Setting L=√(2+L) gives L²-L-2=0, so L=2.'},
+
+// ── Q4 ──
+{unit:'u2',q:'Which of the following is NOT a Cauchy sequence in ℝ?',opts:['A) aₙ=(-1)ⁿ/n','B) aₙ=Σ(1/k²) from k=1 to n','C) aₙ=Σ(1/k) from k=1 to n (partial sums of harmonic series)','D) aₙ=(1+1/n)ⁿ'],ans:2,exp:'In ℝ, Cauchy ⟺ convergent. (A)→0 ✓. (B) p-series p=2>1 converges ✓. (C) Harmonic series Hₙ→∞, not convergent, hence NOT Cauchy. Key: |H₂ₙ-Hₙ|≥1/2, Cauchy condition fails. (D)→e ✓.'},
+
+// ── Q5 ──
+{unit:'u2',q:'Which of the following series CONVERGES?',opts:['A) Σ 1/√n','B) Σ 1/(n(log n)²) for n≥2','C) Σ (log n)/n','D) Σ 1/(√n · log n) for n≥2'],ans:1,exp:'(A) p-series p=1/2<1: diverges. (B) Integral test: ∫₂^∞ dx/(x(ln x)²) = [-1/ln x]₂^∞ = 1/ln2 < ∞: CONVERGES. (C) (log n)/n > 1/n for large n, diverges by comparison. (D) Integral diverges. Tip: Σ 1/(n(log n)^p) converges iff p>1.'},
+
+// ── Q6 ──
+{unit:'u2',q:'The series S = Σ(-1)^(n+1)/n = 1-1/2+1/3-1/4+... is:',opts:['A) Absolutely convergent','B) Conditionally convergent but not absolutely convergent','C) Divergent','D) Convergent with sum log 2 and also absolutely convergent'],ans:1,exp:'Convergence: Leibniz test — bₙ=1/n is decreasing and →0, so S converges with sum ln2. Absolute convergence: Σ|(-1)^(n+1)/n|=Σ1/n (harmonic) diverges. Therefore CONDITIONALLY convergent. Option D is wrong since absolute convergence fails.'},
+
+// ── Q7 ──
+{unit:'u2',q:'The radius of convergence of Σ (n! · xⁿ)/nⁿ is:',opts:['A) 0','B) 1','C) e','D) ∞'],ans:2,exp:'Ratio test: |aₙ₊₁/aₙ|=(n/(n+1))ⁿ=1/(1+1/n)ⁿ→1/e. So R=1/(1/e)=e. Alternatively by Stirling: n!/nⁿ ≈ √(2πn)·e^(-n), giving |aₙ|^(1/n)→e⁻¹, hence R=e.'},
+
+// ── Q8 ──
+{unit:'u2',q:'Evaluate lim(x→0) (sin3x - 3sinx)/x³:',opts:['A) 0','B) -4','C) 4','D) -24'],ans:1,exp:'Triple angle identity: sin3x = 3sinx - 4sin³x. So sin3x - 3sinx = -4sin³x. Then -4sin³x/x³ → -4. Alternatively by Taylor: sin3x=3x-27x³/6+..., 3sinx=3x-3x³/6+..., difference=-24x³/6=-4x³.'},
+
+// ── Q9 ──
+{unit:'u2',q:'Which function is UNIFORMLY CONTINUOUS on (0,∞)?',opts:['A) f(x)=x²','B) f(x)=sin(x²)','C) f(x)=√x','D) f(x)=1/x'],ans:2,exp:'(A) f\'(x)=2x unbounded → not UC. (B) Derivative 2x·cos(x²) unbounded → not UC. (C) |√x-√y|≤√|x-y|; take δ=ε² → uniformly continuous. (D) Near 0: |1/x-1/y| can be large for small |x-y| → not UC.'},
+
+// ── Q10 ──
+{unit:'u2',q:'For f(x)=(x-1)(x-2)(x-3), the number of critical points guaranteed by Rolle\'s theorem is:',opts:['A) 1','B) 2','C) 3','D) 0'],ans:1,exp:'Roots are x=1,2,3. Rolle\'s theorem applies on [1,2] (gives c₁∈(1,2)) and on [2,3] (gives c₂∈(2,3)). So exactly 2 critical points guaranteed. Rule: n distinct roots → at least n-1 critical points.'},
+
+// ── Q11 ──
+{unit:'u2',q:'For f(x)=log x on [1,e], the value c given by Lagrange MVT satisfies:',opts:['A) c = e-1','B) c = e/(e-1)','C) c = 1/(e-1)','D) c = (e+1)/2'],ans:0,exp:'LMVT: f\'(c)=(f(e)-f(1))/(e-1). f(e)=1, f(1)=0, f\'(x)=1/x. So 1/c=1/(e-1), giving c=e-1≈1.718∈(1,e) ✓. Answer is (A): c=e-1.'},
+
+// ── Q12 ──
+{unit:'u2',q:'lim(x→0⁺) xˣ equals:',opts:['A) 0','B) 1','C) e','D) ∞'],ans:1,exp:'0⁰ indeterminate form. Take ln: ln(xˣ)=x·lnx. As x→0⁺: x·lnx=lnx/(1/x) →(-∞/∞). L\'Hôpital: (1/x)/(-1/x²)=(-x)→0. Therefore lim xˣ=e⁰=1. Standard limits to memorise: xˣ→1, x^(1/x)→1 as x→0⁺.'},
+
+// ── Q13 ──
+{unit:'u2',q:'The coefficient of x⁴ in the Maclaurin series of e^(x²) is:',opts:['A) 1/4!','B) 1/2! = 1/2','C) 1/2','D) 1'],ans:1,exp:'Substitute u=x² in eᵘ=Σuⁿ/n!: e^(x²)=1+x²+x⁴/2!+x⁶/3!+... Coefficient of x⁴ is 1/2!=1/2. Note options B and C are the same value (1/2), confirming the answer.'},
+
+// ── Q14 ──
+{unit:'u2',q:'∫₀¹ x² dx as a right-endpoint Riemann sum with n subintervals gives:',opts:['A) (n+1)(2n+1)/(6n²) → 1/3','B) (n+1)/(2n) → 1/2','C) (2n+1)/(6n) → 1/3','D) n²/(n+1)² → 1'],ans:0,exp:'Sₙ=Σₖ₌₁ⁿ (k/n)²·(1/n) = (1/n³)·n(n+1)(2n+1)/6 = (n+1)(2n+1)/(6n²) → 2/6 = 1/3. Formula used: Σk²=n(n+1)(2n+1)/6.'},
+
+// ── Q15 ──
+{unit:'u2',q:'∫₀¹ 1/xᵖ dx converges if and only if:',opts:['A) p < 1','B) p ≤ 1','C) p > 1','D) p ≥ 1'],ans:0,exp:'If p<1: (1-p)>0, ε^(1-p)→0, integral=1/(1-p) CONVERGES. If p>1: ε^(1-p)→∞, DIVERGES. If p=1: ∫ε¹ 1/x dx=-lnε→∞, DIVERGES. Two-sided rule: ∫₀¹ x^(-p)dx converges iff p<1; ∫₁^∞ x^(-p)dx converges iff p>1 (OPPOSITE conditions).'},
+
+// ── Q16 ──
+{unit:'u2',q:'A monotone function f:[a,b]→ℝ can have at most how many discontinuities?',opts:['A) Finitely many','B) Countably many (but possibly infinitely many)','C) Uncountably many','D) None — every monotone function on [a,b] is continuous'],ans:1,exp:'A monotone function has only jump discontinuities. Each jump can be associated with a distinct rational in the jump interval. Since rationals are countable, at most countably many discontinuities. Example: staircase functions can have infinitely many (but countable) jumps.'},
+
+// ── Q17 ──
+{unit:'u2',q:'Applying the ratio test to Σ 2ⁿ·n!/nⁿ, the limit L=lim|aₙ₊₁/aₙ| equals:',opts:['A) 2/e','B) 2e','C) 1/e','D) e'],ans:0,exp:'aₙ₊₁/aₙ = 2·(n/(n+1))ⁿ = 2/(1+1/n)ⁿ → 2/e. Since L=2/e≈0.736<1, the series converges. Key limit to memorise: (n/(n+1))ⁿ → 1/e.'},
+
+// ── Q18 ──
+{unit:'u2',q:'Apply the root test to Σ (n/(n+1))^(n²). The result is:',opts:['A) Converges; L=1/e','B) Diverges; L=e','C) Converges; L=e⁻¹<1','D) Root test inconclusive; L=1'],ans:2,exp:'|aₙ|^(1/n) = (n/(n+1))ⁿ = 1/(1+1/n)ⁿ → 1/e. Since L=1/e≈0.368<1, CONVERGES by root test. The n² exponent becomes n after taking the nth root — classic root test structure.'},
+
+// ── Q19 ──
+{unit:'u2',q:'Let f(x,y)=x³y+e^(xy). Then ∂²f/∂x∂y at (0,0) equals:',opts:['A) 0','B) 1','C) 3','D) e'],ans:1,exp:'∂f/∂y = x³+xe^(xy). ∂²f/∂x∂y = 3x²+e^(xy)+xy·e^(xy). At (0,0): 0+e⁰+0=1. Clairaut\'s theorem guarantees fxy=fyx when mixed partials are continuous.'},
+
+// ── Q20 ──
+{unit:'u2',q:'For f(x,y)=x³+y³-3xy, the critical points and their nature are:',opts:['A) (0,0): saddle; (1,1): local minimum','B) (0,0): local minimum; (1,1): saddle','C) (0,0): local maximum; (1,1): local minimum','D) Both (0,0) and (1,1) are saddle points'],ans:0,exp:'Critical points: fₓ=3x²-3y=0, fᵧ=3y²-3x=0 → (0,0) and (1,1). D=fₓₓfᵧᵧ-fₓᵧ². At (0,0): D=(0)(0)-9=-9<0 → SADDLE. At (1,1): D=(6)(6)-9=27>0, fₓₓ=6>0 → LOCAL MINIMUM.'},
+
+// ── Q21 ──
+{unit:'u2',q:'Maximum value of f(x,y)=xy subject to x+y=8, x,y>0 is:',opts:['A) 8','B) 16','C) 64','D) 32'],ans:1,exp:'Lagrange: ∇f=λ∇g gives y=λ, x=λ, so x=y=4. Max=f(4,4)=16. AM-GM shortcut: xy≤((x+y)/2)²=(8/2)²=16, equality when x=y=4.'},
+
+// ── Q22 ──
+{unit:'u2',q:'∫₀¹∫ₓ¹ e^(y²) dy dx, changing order of integration gives:',opts:['A) ∫₀¹∫₀ʸ e^(y²) dx dy = (e-1)/2','B) ∫₀¹ ye^(y²) dy = (e-1)/2','C) ∫₀¹ e^(y²) dy (unchanged)','D) Both (A) and (B) are correct and equal'],ans:3,exp:'Region: 0≤x≤1, x≤y≤1 (triangle below diagonal). Changed order: 0≤y≤1, 0≤x≤y. Integral = ∫₀¹∫₀ʸ e^(y²) dx dy = ∫₀¹ ye^(y²) dy = [e^(y²)/2]₀¹ = (e-1)/2. Both (A) and (B) describe the same result, so answer is (D).'},
+
+// ── Q23 ──
+{unit:'u2',q:'Let z=x²+xy+y², x=t·cos t, y=t·sin t. Then dz/dt at t=0 equals:',opts:['A) 0','B) 1','C) 2','D) -1'],ans:0,exp:'At t=0: x=0, y=0. fₓ=2x+y=0, fᵧ=x+2y=0 at (0,0). dx/dt=cos t-t·sin t, at t=0: dx/dt=1. dy/dt=sin t+t·cos t, at t=0: dy/dt=0. dz/dt=fₓ·(dx/dt)+fᵧ·(dy/dt)=0·1+0·0=0.'},
+
+// ── Q24 ──
+{unit:'u2',q:'Let f(x,y)=xy/(x²+y²) for (x,y)≠(0,0) and f(0,0)=0. At (0,0):',opts:['A) Both partials exist and f is continuous','B) Both partials exist but f is NOT continuous','C) f is continuous but partials do not exist','D) Neither partials exist nor is f continuous'],ans:1,exp:'Partials: fₓ(0,0)=lim(h→0) f(h,0)/h=0. Similarly fᵧ(0,0)=0. Both exist. Continuity: along y=mx, f(x,mx)=m/(1+m²) depends on m → different paths give different limits → NOT continuous at (0,0). Classic example: partial derivatives exist ≠ continuity.'},
+
+// ── Q25 ──
+{unit:'u2',q:'Which subset of ℝ³ is a SUBSPACE?',opts:['A) W₁={(x,y,z): x+y+z=1}','B) W₂={(x,y,z): x²+y²+z²=1} (unit sphere)','C) W₃={(x,y,z): x-2y+3z=0}','D) W₄={(x,y,z): xy=0}'],ans:2,exp:'A subspace must contain 0, be closed under addition and scalar multiplication. (A): 0+0+0=0≠1, does not contain 0. (B): 0 not on unit sphere. (C): Homogeneous linear equation → contains 0, closed under addition and scaling → SUBSPACE. (D): (1,0,0)+(0,1,0)=(1,1,0) has 1·1=1≠0, not closed under addition.'},
+
+// ── Q26 ──
+{unit:'u2',q:'The vectors v₁=(1,2,3), v₂=(4,5,6), v₃=(7,8,9) in ℝ³ are:',opts:['A) Linearly independent, form a basis for ℝ³','B) Linearly dependent; span has dimension 2','C) Linearly dependent; span has dimension 1','D) Linearly independent but do not span ℝ³'],ans:1,exp:'v₃=2v₂-v₁ (arithmetic progression: v₁-2v₂+v₃=0). Linearly dependent. The 3×3 matrix with these rows has det=0. Rank=2, so span is a 2-dimensional subspace of ℝ³. Tip: vectors in AP are always linearly dependent.'},
+
+// ── Q27 ──
+{unit:'u2',q:'Let A be a 5×7 matrix with rank(A)=3. The nullity of A is:',opts:['A) 2','B) 4','C) 3','D) 5'],ans:1,exp:'Rank-Nullity Theorem: rank(A)+nullity(A)=n (number of COLUMNS). Here n=7, rank=3. nullity=7-3=4. Note: rows (m=5) are irrelevant. Dimension of null space = nullity = 4.'},
+
+// ── Q28 ──
+{unit:'u2',q:'If A is a 4×4 matrix with det(A)=3, then det(2A⁻¹) equals:',opts:['A) 6','B) 16/3','C) 2/3','D) 3/16'],ans:1,exp:'det(2A⁻¹)=2⁴·det(A⁻¹)=16·(1/det(A))=16/3. Rules used: det(cA)=cⁿdet(A) for n×n matrix; det(A⁻¹)=1/det(A).'},
+
+// ── Q29 ──
+{unit:'u2',q:'The system Ax=b is consistent if and only if:',opts:['A) rank(A)=rank([A|b]) (augmented matrix)','B) det(A)≠0','C) b is in the null space of A','D) A is a square matrix'],ans:0,exp:'Rouché-Capelli theorem: Ax=b consistent ⟺ b∈col(A) ⟺ rank(A)=rank([A|b]). (B) only sufficient when A is square and invertible. (C) wrong: Ab=0, not Ax=b. (D) not sufficient (e.g., A=0, b≠0).'},
+
+// ── Q30 ──
+{unit:'u2',q:'For 2×2 matrix A with tr(A)=5 and det(A)=6, the eigenvalues are:',opts:['A) 2 and 3','B) 1 and 6','C) 5 and 1','D) 3 and 2'],ans:0,exp:'Char. poly: λ²-tr(A)λ+det(A)=λ²-5λ+6=0. Solving: λ=(5±√(25-24))/2=(5±1)/2. λ₁=3, λ₂=2. Verify: sum=5=tr(A)✓, product=6=det(A)✓. Options A and D list the same pair {2,3}.'},
+
+// ── Q31 ──
+{unit:'u2',q:'The RREF of A=[[1,2,3],[4,5,6],[7,8,9]] is:',opts:['A) [[1,0,-1],[0,1,2],[0,0,0]]','B) [[1,0,0],[0,1,0],[0,0,1]]','C) [[1,2,3],[0,1,2],[0,0,1]]','D) [[1,0,-1],[0,1,2],[0,0,1]]'],ans:0,exp:'R₂←R₂-4R₁=(0,-3,-6); R₃←R₃-7R₁=(0,-6,-12). R₂←R₂/(-3)=(0,1,2); R₃←R₃-2R₂=(0,0,0). R₁←R₁-2R₂=(1,0,-1). RREF=[[1,0,-1],[0,1,2],[0,0,0]], rank=2. Rows in AP → det=0, always gives a zero row.'},
+
+// ── Q32 ──
+{unit:'u2',q:'If A=[[3,1],[0,2]], by Cayley-Hamilton theorem A²-5A+6I equals:',opts:['A) A','B) 0 (zero matrix)','C) I','D) 6I'],ans:1,exp:'Char. poly: (3-λ)(2-λ)=λ²-5λ+6. Cayley-Hamilton: every matrix satisfies its own characteristic equation → A²-5A+6I=0. Verify: A²=[[9,5],[0,4]]; 5A=[[15,5],[0,10]]; A²-5A+6I=[[9-15+6,5-5+0],[0-0+0,4-10+6]]=[[0,0],[0,0]] ✓'},
+
+// ── Q33 ──
+{unit:'u2',q:'Applying Gram-Schmidt to {(1,1,0),(1,0,1)} in ℝ³, the second orthogonal vector v₂ is:',opts:['A) (1/2,-1/2,1)','B) (0,-1,1)','C) (1,0,1)','D) (-1,1,2)'],ans:0,exp:'u₁=(1,1,0), w₂=(1,0,1). v₂=w₂-(<w₂,u₁>/<u₁,u₁>)u₁. <w₂,u₁>=1·1+0·1+1·0=1; <u₁,u₁>=2. v₂=(1,0,1)-(1/2)(1,1,0)=(1/2,-1/2,1). Check: <v₂,u₁>=1/2-1/2+0=0 ✓'},
+
+// ── Q34 ──
+{unit:'u2',q:'Which statement about a real symmetric matrix A is FALSE?',opts:['A) All eigenvalues of A are real','B) Eigenvectors for distinct eigenvalues are orthogonal','C) A is always positive definite','D) A is orthogonally diagonalizable: A=QΛQᵀ'],ans:2,exp:'(A),(B),(D) are all true by the Spectral Theorem. (C) is FALSE: A=-I is symmetric with all eigenvalues=-1<0 (negative definite, not PD). Symmetry alone does not guarantee any sign condition on eigenvalues.'},
+
+// ── Q35 ──
+{unit:'u2',q:'A real symmetric matrix A is positive definite if and only if:',opts:['A) tr(A)>0','B) det(A)>0','C) All leading principal minors of A are positive (Sylvester\'s criterion)','D) All diagonal entries of A are positive'],ans:2,exp:'Sylvester\'s Criterion: A is PD ⟺ all leading principal minors D₁,D₂,...,Dₙ>0. Counter-examples: (A) A=[[3,0],[0,-1]]: tr=2>0 but eigenvalue -1<0. (B) A=[[-2,0],[0,-3]]: det=6>0 but negative definite. (D) A=[[1,2],[2,1]]: diagonal>0 but det=-3<0.'},
+
+// ── Q36 ──
+{unit:'u2',q:'Which of the following has the same cardinality as ℝ?',opts:['A) Set of all sequences of 0s and 1s','B) ℕ×ℕ','C) Set of all polynomials with rational coefficients','D) Power set of ℕ, P(ℕ), only'],ans:0,exp:'|ℝ|=2^ℵ₀ (continuum). (A) {0,1}^ℕ has cardinality 2^ℵ₀=|ℝ| (Cantor\'s diagonal). SAME. (B) ℕ×ℕ is countable. (C) Polynomials over ℚ: countable. (D) |P(ℕ)|=2^ℵ₀=|ℝ| also correct. Both (A) and (D) have cardinality |ℝ|.'},
+
+// ── Q37 ──
+{unit:'u2',q:'lim(n→∞) sin(n)/n equals:',opts:['A) Does not exist (oscillates)','B) 1','C) 0','D) ∞'],ans:2,exp:'Since -1≤sin n≤1: -1/n ≤ sin(n)/n ≤ 1/n. As n→∞, both bounds→0. By Squeeze Theorem: lim sin(n)/n=0. Note: sin n itself oscillates wildly, but dividing by n forces convergence to 0.'},
+
+// ── Q38 ──
+{unit:'u2',q:'Riemann\'s Rearrangement Theorem: if Σaₙ is CONDITIONALLY convergent, then:',opts:['A) There exists a rearrangement converging to any L∈ℝ∪{-∞,+∞}','B) Every rearrangement converges to the same sum','C) No rearrangement can change the sum','D) There exists one divergent rearrangement, all others converge to L'],ans:0,exp:'Riemann\'s theorem: conditionally convergent series can be rearranged to sum to any real number (or diverge). In contrast, ABSOLUTELY convergent series: every rearrangement converges to the SAME sum (options B/C apply there). Example: alternating harmonic series can sum to anything.'},
+
+// ── Q39 ──
+{unit:'u2',q:'f(x)=x·sin(1/x) for x≠0, f(0)=0. At x=0, f is:',opts:['A) Continuous and differentiable','B) Continuous but not differentiable','C) Differentiable but not continuous','D) Neither continuous nor differentiable'],ans:1,exp:'Continuity: |f(x)-f(0)|=|x·sin(1/x)|≤|x|→0 ✓. Differentiability: f\'(0) would require lim(h→0) sin(1/h), which oscillates between -1 and 1 — does not exist. NOT differentiable. Compare: x²·sin(1/x) is differentiable at 0 (limit = 0).'},
+
+// ── Q40 ──
+{unit:'u2',q:'The Lagrange form of the remainder in Taylor\'s theorem after n terms is:',opts:['A) Rₙ=f^(n)(a)/n! · (x-a)ⁿ','B) Rₙ=f^(n+1)(ξ)/(n+1)! · (x-a)^(n+1) for some ξ between a and x','C) Rₙ=f^(n+1)(a)/n! · (x-a)ⁿ','D) Rₙ=∫ₐˣ (x-t)ⁿ/n! · f^(n+1)(t) dt'],ans:1,exp:'Lagrange remainder (B): Rₙ=f^(n+1)(ξ)/(n+1)! · (x-a)^(n+1) for some ξ strictly between a and x. Option D is the integral (Cauchy) form — also correct. (A) is the last included term, not the remainder. (C) uses f^(n+1)(a) instead of f^(n+1)(ξ) — incorrect.'},
+
+// ── Q41 ──
+{unit:'u2',q:'If Q is an n×n orthogonal matrix, which is ALWAYS true?',opts:['A) All eigenvalues of Q are ±1','B) det(Q)=1','C) |det(Q)|=1 and Q⁻¹=Qᵀ','D) All eigenvalues of Q are real'],ans:2,exp:'By definition: QᵀQ=I, so Q⁻¹=Qᵀ. det(Qᵀ)det(Q)=1 → [det(Q)]²=1 → |det(Q)|=1. (A) False: 2D rotation has complex eigenvalues e^(±iθ), modulus 1 but not ±1. (B) det=±1, not necessarily +1 (reflections have det=-1). (D) Eigenvalues can be complex.'},
+
+// ── Q42 ──
+{unit:'u2',q:'The quadratic form Q(x)=2x₁²+4x₁x₂+5x₂² is:',opts:['A) Positive definite','B) Positive semi-definite but not positive definite','C) Indefinite','D) Negative definite'],ans:0,exp:'Associated matrix A=[[2,2],[2,5]]. Sylvester: D₁=2>0; D₂=det(A)=10-4=6>0. Both positive → POSITIVE DEFINITE. Completing the square: Q=2(x₁+x₂)²+3x₂²>0 for (x₁,x₂)≠(0,0). Eigenvalues: tr=7, det=6, λ=(7±5)/2 → 6 and 1, both >0 ✓'},
+
+// ── Q43 ──
+{unit:'u2',q:'For a real skew-symmetric matrix A (Aᵀ=-A) of ODD order n, which is NECESSARILY true?',opts:['A) det(A)=1','B) det(A)=0','C) All eigenvalues are purely imaginary or zero','D) Both (B) and (C)'],ans:3,exp:'Determinant: det(A)=det(Aᵀ)=det(-A)=(-1)ⁿdet(A). For odd n: det(A)=-det(A) → 2det(A)=0 → det(A)=0. Eigenvalues: if Av=λv, then (λ+λ̄)||v||²=0 → Re(λ)=0 (purely imaginary or zero). Since det=0, 0 is always an eigenvalue. Both (B) and (C) hold → answer (D).'},
+
+// ── Q44 ──
+{unit:'u2',q:'For an m×n matrix A, which is ALWAYS true?',opts:['A) Col(A) ⊥ Null(A)','B) Null(A) ⊥ Row(A)','C) Col(A) ⊥ Row(A)','D) Null(A) ⊥ Col(Aᵀ) (same as B stated differently)'],ans:1,exp:'Fundamental Theorem of Linear Algebra: Row(A)⊥Null(A) in ℝⁿ. Proof: if x∈Null(A) then Ax=0, so for any row rᵢ of A: rᵢ·x=0. Thus x⊥every row. Col(A)⊥Null(Aᵀ) in ℝᵐ. (C) is not meaningful as Row and Col spaces live in different ambient spaces.'},
+
+// ── Q45 ──
+{unit:'u2',q:'If λ is an eigenvalue of invertible A, which is an eigenvalue of 3A²-2A+I?',opts:['A) 3λ²-2λ+1','B) 3λ-2+1/λ','C) 9λ²','D) λ²-1'],ans:0,exp:'If Av=λv, then A²v=λ²v. For polynomial p(A): p(A)v=p(λ)v. So B=3A²-2A+I has eigenvalue p(λ)=3λ²-2λ+1 with eigenvector v. General rule: eigenvalues of p(A) are p(λ) for any polynomial p.'},
+
+// ── Q46 ──
+{unit:'u2',q:'The dimension of the space of all 3×3 symmetric matrices over ℝ is:',opts:['A) 9','B) 6','C) 3','D) 4'],ans:1,exp:'A 3×3 symmetric matrix has: 3 free diagonal entries (a₁₁,a₂₂,a₃₃) + 3 free upper-triangular entries (a₁₂,a₁₃,a₂₃) = 6 free parameters. General formula: dim(Symₙ)=n(n+1)/2. For n=3: 3×4/2=6. (Skew-sym: n(n-1)/2=3; check: 6+3=9 ✓)'},
+
+// ── Q47 ──
+{unit:'u2',q:'The power series Σ(-1)^(n+1)xⁿ/n at x=1 gives:',opts:['A) ln 2, by Abel\'s theorem','B) 1','C) Diverges','D) e-1'],ans:0,exp:'At x=1: Σ(-1)^(n+1)/n = 1-1/2+1/3-... = alternating harmonic series, converges to ln2 (Leibniz test, conditionally convergent). Abel\'s theorem: if power series has radius R and converges at endpoint, its sum = function value there. Here ln(1+1)=ln2 ✓.'},
+
+// ── Q48 ──
+{unit:'u2',q:'A=[[2,1],[0,2]] (Jordan block). This matrix is:',opts:['A) Diagonalizable over ℝ with eigenvalues 2,2','B) Not diagonalizable; defective (algebraic multiplicity > geometric multiplicity)','C) Diagonalizable with eigenvalues 2 and 0','D) Not diagonalizable because eigenvalues are complex'],ans:1,exp:'Char. poly: (λ-2)²=0. Eigenvalue λ=2, algebraic multiplicity=2. Eigenspace: (A-2I)v=0 → [[0,1],[0,0]]v=0 → only 1D eigenspace. Geometric multiplicity=1 < algebraic multiplicity=2 → NOT diagonalizable (defective). Classic Jordan block example.'},
+
+// ── Q49 ──
+{unit:'u2',q:'Let f(x)=1 if x∈ℚ, f(x)=0 if x∉ℚ (Dirichlet function). Then:',opts:['A) f is Riemann integrable with ∫₀¹ f=1','B) f is Riemann integrable with ∫₀¹ f=0','C) f is not Riemann integrable','D) f is Riemann integrable but the integral does not exist'],ans:2,exp:'For any partition: every subinterval contains rationals (f=1) and irrationals (f=0). So U(f,P)=1 and L(f,P)=0 for ALL partitions. Upper Riemann integral=1≠0=Lower. Hence NOT Riemann integrable. Note: f IS Lebesgue integrable with integral 0 (rationals have measure zero).'},
+
+// ── Q50 ──
+{unit:'u2',q:'Using MVT, which inequality holds for all x>0?',opts:['A) ln(1+x) < x','B) ln(1+x) > x','C) ln(1+x) = x','D) ln(1+x) ≥ x for x≥1'],ans:0,exp:'Let g(x)=x-ln(1+x). g(0)=0, g\'(x)=1-1/(1+x)=x/(1+x)>0 for x>0. So g is increasing → g(x)>0 for x>0 → ln(1+x)<x. Standard inequality: ln(1+x)≤x with equality iff x=0. Also: x/(1+x)≤ln(1+x)≤x for x>0.'},
+
+// ── Q51 ──
+{unit:'u2',q:'For f(x,y)=x²-y², the origin (0,0) is:',opts:['A) A local minimum','B) A local maximum','C) A saddle point','D) Not a critical point'],ans:2,exp:'fₓ=2x=0, fᵧ=-2y=0 at (0,0) → critical point. fₓₓ=2, fᵧᵧ=-2, fₓᵧ=0. D=fₓₓfᵧᵧ-fₓᵧ²=(2)(-2)-0=-4<0 → SADDLE POINT. Intuitively: f(x,0)=x²>0 (positive), f(0,y)=-y²<0 (negative) → increases in one direction, decreases in another.'},
+
+// ── Q52 ──
+{unit:'u2',q:'For n×n matrix A with eigenvalues λ₁,...,λₙ, which is ALWAYS true?',opts:['A) tr(A)=Πλᵢ','B) det(A)=Σλᵢ','C) tr(A)=Σλᵢ and det(A)=Πλᵢ','D) tr(Aᵏ)=Σλᵢᵏ only for k=1'],ans:2,exp:'From Vieta\'s formulas on char. poly: tr(A)=Σλᵢ (coefficient of λⁿ⁻¹) and det(A)=Πλᵢ (constant term). Both always hold. Also tr(Aᵏ)=Σλᵢᵏ for ALL k≥1 (Newton\'s power-sum identities), not just k=1.'},
+
+// ── Q53 ──
+{unit:'u2',q:'The series Σ 1/(n·ln n) for n≥2:',opts:['A) Converges by integral test','B) Diverges by integral test; ∫₂^∞ dx/(x·ln x)=[ln(ln x)]₂^∞=∞','C) Converges by comparison with Σ 1/n^(3/2)','D) Diverges by ratio test'],ans:1,exp:'f(x)=1/(x·ln x) is positive, continuous, decreasing for x≥2. ∫₂^∞ dx/(x ln x): let u=ln x, du=dx/x: =∫_{ln2}^∞ du/u=[ln u]_{ln2}^∞=∞. Integral diverges → series DIVERGES. Boundary case: Σ1/(n(ln n)^p) converges iff p>1; here p=1: diverges.'},
+
+// ── Q54 ──
+{unit:'u2',q:'Let F(x,y)=x²+y²-1=0 define y as function of x near (0,1). By IFT, dy/dx at (0,1) is:',opts:['A) -1','B) 0','C) 1','D) ∞'],ans:1,exp:'IFT formula: dy/dx=-Fₓ/Fᵧ. Fₓ=2x, Fᵧ=2y. At (0,1): dy/dx=-2(0)/2(1)=0. Geometric interpretation: at (0,1) we are at the top of the unit circle where the tangent is horizontal → slope=0. IFT applies since Fᵧ(0,1)=2≠0.'},
+
+// ── Q55 ──
+{unit:'u2',q:'For A=[[2,3],[1,4]], the inverse A⁻¹ is:',opts:['A) (1/5)[[4,-3],[-1,2]]','B) (1/11)[[4,-3],[-1,2]]','C) [[4,-3],[-1,2]]','D) (1/5)[[4,3],[1,2]]'],ans:0,exp:'det(A)=2·4-3·1=8-3=5. For 2×2 matrix [[a,b],[c,d]]: A⁻¹=(1/(ad-bc))[[d,-b],[-c,a]]. A⁻¹=(1/5)[[4,-3],[-1,2]]. Verify: (1/5)[[2·4+3·(-1),...]]=(1/5)[[5,0],[0,5]]=I ✓'},
+
+// ── Q56 ──
+{unit:'u2',q:'For aₙ=(-1)ⁿ(1+1/n), the values of limsup and liminf are:',opts:['A) limsup=1, liminf=-1','B) limsup=∞, liminf=-∞','C) limsup=2, liminf=-2','D) Both equal 0; sequence converges'],ans:0,exp:'Even n: aₙ=+(1+1/n)→+1. Odd n: aₙ=-(1+1/n)→-1. Subsequential limits: {+1,-1}. limsup=sup{+1,-1}=1; liminf=inf{+1,-1}=-1. Since limsup≠liminf, sequence does NOT converge.'},
+
+// ── Q57 ──
+{unit:'u2',q:'The volume of the unit ball {(x,y,z): x²+y²+z²≤1} is:',opts:['A) π','B) 4π/3','C) 2π','D) π/6'],ans:1,exp:'Spherical coordinates: Jacobian=r²sinφ. V=∫₀^{2π}∫₀^π∫₀¹ r²sinφ dr dφ dθ=2π·2·(1/3)=4π/3. Standard formula: (4/3)πR³ for sphere of radius R. For R=1: 4π/3. Jacobian tip: do not forget the r²sinφ factor.'},
+
+// ── Q58 ──
+{unit:'u2',q:'For any matrix A, which is ALWAYS true?',opts:['A) dim(Row space of A) = dim(Column space of A)','B) dim(Row space) = dim(Null space)','C) dim(Row space) = number of rows','D) dim(Column space) = number of columns'],ans:0,exp:'Fundamental theorem: rank(A)=dim(Row space)=dim(Column space) for ANY matrix. This is deep — row rank equals column rank even though they live in different spaces. (B) only if rank=nullity. (C)(D) rank ≤ min(rows, cols), not equal in general.'},
+
+// ── Q59 ──
+{unit:'u2',q:'For any real matrix B (not necessarily square), BᵀB is:',opts:['A) Always positive definite','B) Always positive semi-definite','C) PSD only if B is square','D) Symmetric but not necessarily PSD'],ans:1,exp:'For any vector x: xᵀ(BᵀB)x=(Bx)ᵀ(Bx)=||Bx||²≥0. So BᵀB is POSITIVE SEMI-DEFINITE for any B. It is PD iff Bx=0⟹x=0 (B has full column rank). Statistical connection: sample covariance matrix has this form → always PSD.'},
+
+// ── Q60 ──
+{unit:'u2',q:'Using limit comparison test, does Σ (n+sin n)/(n³+1) converge?',opts:['A) Diverges; compare with Σ1/n², limit=∞','B) Converges; compare with Σ1/n², limit=1','C) Diverges; compare with Σ1/n, limit=1','D) Converges; compare with Σ1/n³, limit=0'],ans:1,exp:'aₙ=(n+sin n)/(n³+1). Compare bₙ=1/n². aₙ/bₙ=n²(n+sin n)/(n³+1)=(n³+n²sin n)/(n³+1)→1 (since |n²sin n/n³|≤1/n→0). L=1∈(0,∞) and Σ1/n² converges (p=2>1) → Σaₙ CONVERGES by LCT.'},
+
+// ── Q61 ──
+{unit:'u2',q:'Let A be 3×3 real symmetric with eigenvalues λ₁=1,λ₂=2,λ₃=3 and orthonormal eigenvectors q₁,q₂,q₃. Then A=',opts:['A) q₁q₁ᵀ+2q₂q₂ᵀ+3q₃q₃ᵀ','B) q₁ᵀq₁+2q₂ᵀq₂+3q₃ᵀq₃','C) λ₁+λ₂+λ₃=6','D) A=QΛ where Q=(q₁|q₂|q₃)'],ans:0,exp:'Spectral Theorem: A=QΛQᵀ=Σλᵢqᵢqᵢᵀ. Each qᵢqᵢᵀ is a rank-1 orthogonal projection (n×n matrix, outer product). So A=1·q₁q₁ᵀ+2·q₂q₂ᵀ+3·q₃q₃ᵀ. (B) wrong: qᵢᵀqᵢ is a scalar=1. (D) incomplete: A=QΛQᵀ not QΛ.'},
+
+// ── Q62 ──
+{unit:'u2',q:'Let fₙ(x)=xⁿ on [0,1]. This sequence converges:',opts:['A) Uniformly to f(x)=0 on [0,1]','B) Pointwise but not uniformly; f(x)=0 for x∈[0,1), f(1)=1','C) Uniformly to f(x)=1 on [0,1]','D) Does not converge anywhere on [0,1]'],ans:1,exp:'Pointwise: for x∈[0,1), xⁿ→0; for x=1, 1ⁿ=1→1. Limit f is discontinuous. Not uniform: sup|fₙ(x)-f(x)|=sup_{x∈[0,1)} xⁿ → 1 ≠ 0. Classic example: uniform limit of continuous functions is continuous; but limit here is discontinuous → convergence cannot be uniform.'},
+
+// ── Q63 ──
+{unit:'u2',q:'Let Q be an orthogonal matrix with eigenvalue λ. Which is necessarily true?',opts:['A) λ=1 or λ=-1 (always real)','B) |λ|=1 (modulus equals 1)','C) λ>0','D) λ is an integer'],ans:1,exp:'If Qv=λv: ||v||²=||Qv||²=||λv||²=|λ|²||v||² → |λ|²=1 → |λ|=1. Real eigenvalues must be ±1 (since |λ|=1 and λ∈ℝ), but complex eigenvalues like e^(±iθ) also have modulus 1. Example: 2D rotation has eigenvalues e^(±iθ) — not real.'},
+
+// ── Q64 ──
+{unit:'u2',q:'The QR decomposition A=QR (with linearly independent columns) gives:',opts:['A) Q is orthogonal, R is lower triangular','B) Q is symmetric, R is diagonal','C) Q has orthonormal columns, R is upper triangular with positive diagonal entries','D) Q=R⁻¹ always'],ans:2,exp:'QR decomposition: Q has orthonormal columns (via Gram-Schmidt), R is upper triangular with positive diagonal entries (for uniqueness). For square A with independent columns: Q is orthogonal (QᵀQ=I=QQᵀ). Application: least-squares Ax≈b solved via Rx=Qᵀb. Fundamental for numerical linear algebra.'},
+
+// ── Q65 ──
+{unit:'u2',q:'The Cantor set C⊂[0,1] (repeatedly removing middle thirds) has which properties?',opts:['A) Countable and has measure 0','B) Uncountable, Lebesgue measure 0, and perfect (closed, no isolated points)','C) Uncountable and has measure 1','D) Finite and has measure 0'],ans:1,exp:'Measure: total removed=Σ2ⁿ/3^(n+1)=(1/3)/(1-2/3)=1. Measure of C=0. Uncountable: points↔ternary expansions using {0,2}↔{0,1}^ℕ ~ ℝ. Perfect: closed (complement open) and every point is a limit of other points (no isolated points). Paradoxical: uncountable yet measure zero, nowhere dense.'},
+
+// ── Q66 ──
+{unit:'u2',q:'The minimal polynomial of A=diag(2,2,3) is:',opts:['A) (λ-2)²(λ-3)','B) (λ-2)(λ-3)','C) (λ-2)³','D) (λ-6)'],ans:1,exp:'A is diagonal → diagonalizable. Characteristic polynomial: (λ-2)²(λ-3). For diagonalizable matrices, minimal polynomial has NO repeated factors → product of DISTINCT eigenvalue factors: (λ-2)(λ-3). Verify: (A-2I)(A-3I)=0 ✓. Rule: minimal poly divides char poly, same roots, no repetition for diagonalizable matrices.'},
+
+// ── Q67 ──
+{unit:'u2',q:'A function f is Lipschitz on A if ∃K>0: |f(x)-f(y)|≤K|x-y| for all x,y∈A. Which is true?',opts:['A) Lipschitz ⟹ uniformly continuous ⟹ continuous, but not conversely in general','B) Continuous ⟹ Lipschitz on any bounded interval','C) Uniformly continuous ⟹ Lipschitz','D) Lipschitz ⟹ differentiable everywhere'],ans:0,exp:'Hierarchy: Lipschitz ⟹ UC ⟹ C. None reverse generally. (B) False: x^(1/3) is continuous on [-1,1] but not Lipschitz near 0 (f\'(0)=∞). (C) False: √x is UC on [0,1] but not Lipschitz at 0. (D) False: |x| is Lipschitz (K=1) but not differentiable at 0.'},
+
+// ── Q68 ──
+{unit:'u2',q:'Minimum distance from origin to plane x+2y+3z=14 is:',opts:['A) √14','B) 2','C) 7','D) 14/√14=√14'],ans:0,exp:'Direct formula: distance from origin to plane ax+by+cz=d is |d|/√(a²+b²+c²)=14/√(1+4+9)=14/√14=√14. Lagrange confirms: x=1, y=2, z=3 at minimum point, distance=√(1+4+9)=√14. Note: options A and D give the same value √14.'},
+
+// ── Q69 ──
+{unit:'u2',q:'For m×n matrix A and n×p matrix B, which inequality always holds?',opts:['A) rank(AB) ≥ rank(A)+rank(B)','B) rank(AB) ≤ min(rank(A), rank(B))','C) rank(AB) = rank(A)·rank(B)','D) rank(A+B) ≤ |rank(A)-rank(B)|'],ans:1,exp:'(B) Col(AB)⊆Col(A) → rank(AB)≤rank(A). Row(AB)⊆Row(B) → rank(AB)≤rank(B). Combined: rank(AB)≤min(rank(A),rank(B)). Sylvester\'s inequality (sharper): rank(A)+rank(B)-n ≤ rank(AB) ≤ min(rank(A),rank(B)).'},
+
+// ── Q70 ──
+{unit:'u2',q:'Which list of (Result → Condition) is COMPLETELY correct?',opts:['A) Monotone bounded→converges; Leibniz alt series→converges; symmetric A→real eigenvalues; BᵀB→always PD','B) Monotone bounded→converges; Leibniz alt series→converges; symmetric A→real eigenvalues; BᵀB→always PSD (not necessarily PD)','C) Cauchy in ℚ→converges in ℚ; √x Lipschitz on (0,∞); skew-sym odd→det>0; rank(AB)=rank(A)·rank(B)','D) UC preserves discontinuities; |x| not Lipschitz; Cantor set countable; xⁿ→0 uniformly on [0,1]'],ans:1,exp:'(A) Wrong: BᵀB is PSD, not necessarily PD. (B) ALL correct: MCT✓; Leibniz✓; spectral theorem✓; BᵀB PSD✓. (C) ℚ is NOT complete — Cauchy in ℚ may not converge in ℚ. √x is UC but not Lipschitz at 0. Skew-sym odd order has det=0 not >0. All false. (D) UC preserves continuity (not discontinuities). |x| IS Lipschitz. Cantor set is UNCOUNTABLE. xⁿ not uniformly convergent on [0,1]. All false.'},
+
+
+
   // ── ADD MORE UNIT II QUESTIONS HERE (keep unit:'u2') ─────────────
 
   // ════════════ UNIT III: Sampling Methods & DOE ════════════
@@ -866,11 +1241,20 @@ const MOCK_DEFS = [
    title:'Unit I Mock 1 — Probability Theory',
    subtitle:'Unit I Only · 10 Questions · 20 Marks',
    description:'Probability basics: classical, axiomatic, Bayes theorem, standard distributions.'},
-
-  {id:12, type:'unit', unit:'u1',  mockNum:2, locked:true,  qCount:10, duration:3600,
-   title:'Unit I Mock 2 — Probability Theory',
+  {id:11, type:'unit', unit:'u1',  mockNum:2, locked:false, qCount:10, duration:3600,
+   title:'Unit I Mock 1 — Probability Theory',
    subtitle:'Unit I Only · 10 Questions · 20 Marks',
-   description:'Advanced probability: MGF, convergence theorems, limit theorems.'},
+   description:'Probability basics: classical, axiomatic, Bayes theorem, standard distributions.'},
+  {id:11, type:'unit', unit:'u1',  mockNum:3, locked:false, qCount:10, duration:3600,
+   title:'Unit I Mock 1 — Probability Theory',
+   subtitle:'Unit I Only · 10 Questions · 20 Marks',
+   description:'Probability basics: classical, axiomatic, Bayes theorem, standard distributions.'},
+  {id:11, type:'unit', unit:'u1',  mockNum:4, locked:false, qCount:10, duration:3600,
+   title:'Unit I Mock 1 — Probability Theory',
+   subtitle:'Unit I Only · 10 Questions · 20 Marks',
+   description:'Probability basics: classical, axiomatic, Bayes theorem, standard distributions.'},
+
+  
 
   {id:21, type:'unit', unit:'u2',  mockNum:1, locked:false, qCount:10, duration:3600,
    title:'Unit II Mock 1 — Real Analysis & Matrix Algebra',
