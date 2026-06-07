@@ -360,12 +360,16 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
     <div class="mock-login-card">
       <div class="mock-login-header"><div class="mlh-icon">🧩</div><h2>Mock Test Portal</h2><p>Login with your Roll Number and Password</p></div>
       <div class="mock-login-body">
-        <label>Roll Number</label><input type="text" id="login-roll" placeholder="e.g. STA*#T67&528t08" autocomplete="off"/>
-        <label>Password</label><input type="password" id="login-pass" placeholder="e.g. st$at@0@8#"/>
+        <label>Roll Number</label><input type="text" id="login-roll" placeholder="e.g. STAT6708" autocomplete="off"/>
+        <label>Password</label><input type="password" id="login-pass" placeholder="e.g. stat@08"/>
         <div class="mock-login-error" id="login-error">❌ Invalid Roll Number or Password. Please try again.</div>
         <button class="btn-mock-login" onclick="doLogin()">Login &amp; View Tests →</button>
         <div class="mock-login-info">
-         <strong>Contact instructor on WhatsApp if you face any issue.</strong><br/
+          <strong>📌 Your Login Details:</strong><br/>
+          Roll Number = <strong>STAT + last 4 digits of your mobile</strong><br/>
+          Password = <strong>stat@ + last 2 digits of your mobile</strong><br/>
+          Example: Mobile 9847968584 → Roll: <strong>STAT8584</strong> · Password: <strong>stat@84</strong><br/>
+          Contact instructor on WhatsApp if you face any issue.
         </div>
       </div>
     </div>
@@ -429,7 +433,7 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
   <p style="margin-top:6px;font-size:11px;color:#6b8c6b;">UGC NET Statistics Coaching · 75% Success Rate · 2+ Years Experience</p>
 </footer>
 <script>
-// ══ ORIGINAL UNIT DATA — ALL LINKS PRESERVED EXACTLY ══
+// ══ ORIGINAL UNIT DATA — ALL LINKS PRESERVED ══
 const UNITS=[
   {id:'u1',num:'I',title:'Probability Theory',icon:'🎲',color:'#2d6a2d',sets:[
     {pdfLink:'https://drive.google.com/file/d/1xhFmrfrWldWfe06cWYuQRWt51KhmaZnc/view?usp=sharing',videoId:''},
@@ -518,253 +522,79 @@ const BOOKS=[
   {emoji:'📘',color:'#1e40af',title:'Introduction to Mathematical Statistics',author:'Hogg, McKean & Craig',desc:'Classic textbook covering probability, estimation and hypothesis testing. Essential for Units I, IV, V.',tags:['Unit I','Unit IV','Unit V'],link:'#'},
   {emoji:'📗',color:'#166534',title:'Fundamentals of Statistics',author:'S.C. Gupta & V.K. Kapoor',desc:'Comprehensive Indian reference covering all UGC NET topics with solved examples.',tags:['All Units'],link:'#'},
   {emoji:'📙',color:'#92400e',title:'Probability & Statistics for Engineers',author:'Walpole, Myers & Myers',desc:'Best reference for probability distributions, sampling and regression topics.',tags:['Unit I','Unit III','Unit VI'],link:'#'},
-  {emoji:'📕',color:'#991b1b',title:'Linear Statistical Inference',author:'C.R. Rao',desc:'Advanced reference for linear estimation and Gauss-Markov theorem (Unit VI).',tags:['Unit VI','Unit VIII'],link:'#'},
-  {emoji:'📓',color:'#4a1d96',title:'Stochastic Processes',author:'S.M. Ross',desc:'Standard reference for Markov chains, Poisson processes and related topics (Unit IX).',tags:['Unit IX'],link:'#'},
+  {emoji:'📕',color:'#991b1b',title:'Linear Statistical Inference',author:'C.R. Rao',desc:'Advanced reference for linear estimation and Gauss-Markov theorem.',tags:['Unit VI','Unit VIII'],link:'#'},
+  {emoji:'📓',color:'#4a1d96',title:'Stochastic Processes',author:'S.M. Ross',desc:'Standard reference for Markov chains, Poisson processes (Unit IX).',tags:['Unit IX'],link:'#'},
   {emoji:'📒',color:'#065f46',title:'Time Series Analysis',author:'Box, Jenkins & Reinsel',desc:'Definitive reference for ARIMA, ACF, PACF and forecasting (Unit VII).',tags:['Unit VII'],link:'#'}
 ];
 const NOTES=[
-  {emoji:'✏️',color:'#1e3a5f',title:'Unit I.1 – Probability Theory Notes ',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Basic Concepts of Probability',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1Pfy-KzKCuivt1W6f63oAKULdQKaRxusK/view?usp=sharing'},
+  {emoji:'✏️',color:'#1e3a5f',title:'Unit I.1 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Basic Concepts of Probability',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1Pfy-KzKCuivt1W6f63oAKULdQKaRxusK/view?usp=sharing'},
   {emoji:'✏️',color:'#1e3a5f',title:'Unit I.2 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Conditional Probability.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1rX17HtVLhpQoweIJ3ApAVBa_vSOUQK3c/view?usp=sharing'},
-    {emoji:'✏️',color:'#1e3a5f',title:'Unit I.3 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Bayes theorem.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1guFcyfLfKhU8fluEHpMIN_nwKaalW0Ue/view?usp=sharing'},
-    {emoji:'✏️',color:'#1e3a5f',title:'Unit I.4 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Independent Events.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1kHlKpr_N6ALdKPxnJ8TiLZPRwrrzgyNE/view?usp=sharing'},
-    {emoji:'✏️',color:'#1e3a5f',title:'Unit I.5 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Random Variables & Distribution Functions.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1VcPNOpoG2A-Bql6U936fj-wl5q6RDhdV/view?usp=sharing'},
-    {emoji:'✏️',color:'#1e3a5f',title:'Unit I.6 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Expectation & Moments.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/10Jx-JktyFtr8GyL25mnmwNyz2uVF18dQ/view?usp=sharing'},
-    {emoji:'✏️',color:'#1e3a5f',title:'Unit I.7 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Moment Generating Functions.',tags:['Unit I','Formula Sheet'],link:''},
+  {emoji:'✏️',color:'#1e3a5f',title:'Unit I.3 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Bayes theorem.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1guFcyfLfKhU8fluEHpMIN_nwKaalW0Ue/view?usp=sharing'},
+  {emoji:'✏️',color:'#1e3a5f',title:'Unit I.4 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Independent Events.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1kHlKpr_N6ALdKPxnJ8TiLZPRwrrzgyNE/view?usp=sharing'},
+  {emoji:'✏️',color:'#1e3a5f',title:'Unit I.5 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Random Variables & Distribution Functions.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1VcPNOpoG2A-Bql6U936fj-wl5q6RDhdV/view?usp=sharing'},
+  {emoji:'✏️',color:'#1e3a5f',title:'Unit I.6 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Expectation & Moments.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/10Jx-JktyFtr8GyL25mnmwNyz2uVF18dQ/view?usp=sharing'},
+  {emoji:'✏️',color:'#1e3a5f',title:'Unit I.7 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Moment Generating Functions.',tags:['Unit I','Formula Sheet'],link:''},
   {emoji:'✏️',color:'#1e3a5f',title:'Unit I.8 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering STANDARD DISCRETE DISTRIBUTIONS.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1TgH0jP57X4fblic9PZWl5Y8t6OZouCq3/view?usp=sharing'},
-    {emoji:'✏️',color:'#1e3a5f',title:'Unit I.9 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Standard Continuous Distributions.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1EypuctIrGJdEO2k6l57B9IuaemYhOBY-/view?usp=sharing'},
-    {emoji:'✏️',color:'#1e3a5f',title:'Unit I.10 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Jointly Distributed Random Variables.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1QiAhX4sZt4rXSyCmzVp8Uf0hTMq-M4bV/view?usp=sharing'},
-      {emoji:'✏️',color:'#1e3a5f',title:'Unit I.11 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Sampling Distributions.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/112BblUusTa-hZd46SUfVb4gwx69gaiLJ/view?usp=sharing'},
+  {emoji:'✏️',color:'#1e3a5f',title:'Unit I.9 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Standard Continuous Distributions.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1EypuctIrGJdEO2k6l57B9IuaemYhOBY-/view?usp=sharing'},
+  {emoji:'✏️',color:'#1e3a5f',title:'Unit I.10 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Jointly Distributed Random Variables.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1QiAhX4sZt4rXSyCmzVp8Uf0hTMq-M4bV/view?usp=sharing'},
+  {emoji:'✏️',color:'#1e3a5f',title:'Unit I.11 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Sampling Distributions.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/112BblUusTa-hZd46SUfVb4gwx69gaiLJ/view?usp=sharing'},
   {emoji:'✏️',color:'#1e3a5f',title:'Unit I.12 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering TRANSFORMATION OF RANDOM VARIABLES.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/19U-3ae-H_tHmF23GEIBKEqbFILYBoIeN/view?usp=sharing'},
-    {emoji:'✏️',color:'#1e3a5f',title:'Unit I.13 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Characteristic Functions.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1SXJIwTiKCuNHoZ-38ssmPlXMWrbXQD83/view?usp=sharing'},
-    {emoji:'✏️',color:'#1e3a5f',title:'Unit I.14 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Modes of Convergence of Random Variables.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1lLKaPfciDsspYJARhXZk9vKbkipBfgid/view?usp=sharing'},
-    {emoji:'✏️',color:'#1e3a5f',title:'Unit I.15 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Laws of Large Numbers',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1ZmE1MPOttuqnWwW99BHN6YG_NE--TnFL/view?usp=sharing'},
-    {emoji:'✏️',color:'#1e3a5f',title:'Unit I.16 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Central Limit Theorem.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1Wz2tpSTJaCkGt83UhFhUiNvjgfJFZU-h/view?usp=sharing'},
-
+  {emoji:'✏️',color:'#1e3a5f',title:'Unit I.13 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Characteristic Functions.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1SXJIwTiKCuNHoZ-38ssmPlXMWrbXQD83/view?usp=sharing'},
+  {emoji:'✏️',color:'#1e3a5f',title:'Unit I.14 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Modes of Convergence of Random Variables.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1lLKaPfciDsspYJARhXZk9vKbkipBfgid/view?usp=sharing'},
+  {emoji:'✏️',color:'#1e3a5f',title:'Unit I.15 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Laws of Large Numbers',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1ZmE1MPOttuqnWwW99BHN6YG_NE--TnFL/view?usp=sharing'},
+  {emoji:'✏️',color:'#1e3a5f',title:'Unit I.16 – Probability Theory Notes',sub:'Formula Sheet + Key Theorems',desc:'Condensed notes covering Central Limit Theorem.',tags:['Unit I','Formula Sheet'],link:'https://drive.google.com/file/d/1Wz2tpSTJaCkGt83UhFhUiNvjgfJFZU-h/view?usp=sharing'},
   {emoji:'📐',color:'#2d5a4a',title:'Unit II.1 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes Finite, Countable and Uncountable Sets.',tags:['Unit II','Formula Sheet'],link:'https://drive.google.com/file/d/1R3JBez3OaeRfoA8TiFSqQ0dztlWOHNvB/view?usp=sharing'},
-    {emoji:'📐',color:'#2d5a4a',title:'Unit II.2 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering Central Limit Theorem.',tags:['Unit II','Formula Sheet'],link:'#'},
-    {emoji:'📐',color:'#2d5a4a',title:'Unit II.3 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering Central Limit Theorem.',tags:['Unit II','Formula Sheet'],link:'#'},
-    {emoji:'📐',color:'#2d5a4a',title:'Unit II.4 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes Bounded Sequences.',tags:['Unit II','Formula Sheet'],link:''},
-    {emoji:'📐',color:'#2d5a4a',title:'Unit II.5 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering Central Limit Theorem.',tags:['Unit II','Formula Sheet'],link:'#'},
-    {emoji:'📐',color:'#2d5a4a',title:'Unit II.6 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering Central Limit Theorem.',tags:['Unit II','Formula Sheet'],link:'#'},
-    {emoji:'📐',color:'#2d5a4a',title:'Unit II.7 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering Central Limit Theorem.',tags:['Unit II','Formula Sheet'],link:'#'},
-    {emoji:'📐',color:'#2d5a4a',title:'Unit II.8 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering Central Limit Theorem.',tags:['Unit II','Formula Sheet'],link:'#'},
-    {emoji:'📐',color:'#2d5a4a',title:'Unit II.9 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering Central Limit Theorem.',tags:['Unit II','Formula Sheet'],link:'#'},
-    {emoji:'📐',color:'#2d5a4a',title:'Unit II.10 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering Central Limit Theorem.',tags:['Unit II','Formula Sheet'],link:'#'},
-    {emoji:'📐',color:'#2d5a4a',title:'Unit II.11 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering Central Limit Theorem.',tags:['Unit II','Formula Sheet'],link:'#'},
-    {emoji:'📐',color:'#2d5a4a',title:'Unit II.12 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering Central Limit Theorem.',tags:['Unit II','Formula Sheet'],link:'#'},
-  
+  {emoji:'📐',color:'#2d5a4a',title:'Unit II.2 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering Real Analysis concepts.',tags:['Unit II','Formula Sheet'],link:'#'},
+  {emoji:'📐',color:'#2d5a4a',title:'Unit II.3 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering sequences and series.',tags:['Unit II','Formula Sheet'],link:'#'},
+  {emoji:'📐',color:'#2d5a4a',title:'Unit II.4 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes on Bounded Sequences.',tags:['Unit II','Formula Sheet'],link:''},
+  {emoji:'📐',color:'#2d5a4a',title:'Unit II.5 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering continuity and differentiability.',tags:['Unit II','Formula Sheet'],link:'#'},
+  {emoji:'📐',color:'#2d5a4a',title:'Unit II.6 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering Riemann integration.',tags:['Unit II','Formula Sheet'],link:'#'},
+  {emoji:'📐',color:'#2d5a4a',title:'Unit II.7 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering matrices and determinants.',tags:['Unit II','Formula Sheet'],link:'#'},
+  {emoji:'📐',color:'#2d5a4a',title:'Unit II.8 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering eigenvalues and eigenvectors.',tags:['Unit II','Formula Sheet'],link:'#'},
+  {emoji:'📐',color:'#2d5a4a',title:'Unit II.9 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering quadratic forms.',tags:['Unit II','Formula Sheet'],link:'#'},
+  {emoji:'📐',color:'#2d5a4a',title:'Unit II.10 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering generalized inverse.',tags:['Unit II','Formula Sheet'],link:'#'},
+  {emoji:'📐',color:'#2d5a4a',title:'Unit II.11 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering vector spaces.',tags:['Unit II','Formula Sheet'],link:'#'},
+  {emoji:'📐',color:'#2d5a4a',title:'Unit II.12 – Real Analysis & Matrix Algebra',sub:'Formula Sheet + Key Theorems+MCQ',desc:'Condensed notes covering linear transformations.',tags:['Unit II','Formula Sheet'],link:'#'},
   {emoji:'🔬',color:'#4a5a1a',title:'Unit III – Sampling & DOE Summary',sub:'All Designs at a Glance',desc:'SRS, stratified, cluster, systematic + CRD, RBD, LSD, factorial designs.',tags:['Unit III'],link:'#'},
   {emoji:'📊',color:'#5a2d1a',title:'Unit IV & V – Estimation & Testing Notes',sub:'MVUE, CR Bound, NP Lemma',desc:'Point & interval estimation, UMPU tests, LRT, and sequential tests.',tags:['Unit IV','Unit V'],link:'#'},
   {emoji:'📈',color:'#1a2d5a',title:'Units VI–VIII – Regression & Multivariate',sub:'GLM, PCA, Discriminant Analysis',desc:'Gauss-Markov, ridge regression, Hotelling T², MANOVA, PCA, factor analysis.',tags:['Unit VI','Unit VII','Unit VIII'],link:'#'},
   {emoji:'🔄',color:'#5a1a2d',title:'Units IX–X – Stochastic Processes & R',sub:'Markov Chains + R Programming',desc:'Transition matrices, stationary distributions, R syntax, Indian stats system.',tags:['Unit IX','Unit X'],link:'#'}
 ];
 const PYQS = [
-
-// UGC NET
-{
-year:'JUN\n2026',
-exam:'UGC NET Statistics 2026',
-sessions:'June Examination',
-desc:'Latest UGC NET Statistics paper with answer key and detailed solutions based on the current syllabus.',
-link:'#'
-},
-
-
-// CSIR NET
-{
-year:'2026',
-exam:'CSIR NET Mathematical Sciences 2026',
-sessions:'Latest Examination',
-desc:'Probability, stochastic processes and mathematical statistics questions relevant for Statistics students.',
-link:'#'
-},
-
-{
-year:'2025',
-exam:'CSIR NET Mathematical Sciences 2025',
-sessions:'Official Paper',
-desc:'Advanced problem-solving questions from Mathematical Sciences.',
-link:'#'
-},
-
-{
-year:'2024',
-exam:'CSIR NET Mathematical Sciences 2024',
-sessions:'Official Paper',
-desc:'Important probability and analysis-based questions.',
-link:'#'
-},
-
-{
-year:'2023',
-exam:'CSIR NET Mathematical Sciences 2023',
-sessions:'Official Paper',
-desc:'Frequently asked concepts in Statistics and Probability.',
-link:'#'
-},
-
-{
-year:'2022',
-exam:'CSIR NET Mathematical Sciences 2022',
-sessions:'Official Paper',
-desc:'Useful for conceptual strengthening and advanced practice.',
-link:'#'
-},
-
-{
-year:'2021',
-exam:'CSIR NET Mathematical Sciences 2021',
-sessions:'Official Paper',
-desc:'Comprehensive paper with analytical and theoretical questions.',
-link:'#'
-},
-
-// IIT JAM
-{
-year:'2026',
-exam:'IIT JAM Mathematical Statistics 2026',
-sessions:'Official Paper',
-desc:'Latest JAM Mathematical Statistics paper with solutions.',
-link:'#'
-},
-
-{
-year:'2025',
-exam:'IIT JAM Mathematical Statistics 2025',
-sessions:'Official Paper',
-desc:'Important questions on probability distributions and inference.',
-link:'#'
-},
-
-{
-year:'2024',
-exam:'IIT JAM Mathematical Statistics 2024',
-sessions:'Official Paper',
-desc:'Conceptual and computational Statistics questions.',
-link:'#'
-},
-
-{
-year:'2023',
-exam:'IIT JAM Mathematical Statistics 2023',
-sessions:'Official Paper',
-desc:'Strong coverage of Mathematical Statistics fundamentals.',
-link:'#'
-},
-
-{
-year:'2022',
-exam:'IIT JAM Mathematical Statistics 2022',
-sessions:'Official Paper',
-desc:'Important for MSc Statistics entrance preparation.',
-link:'#'
-},
-
-{
-year:'2021',
-exam:'IIT JAM Mathematical Statistics 2021',
-sessions:'Official Paper',
-desc:'Foundation paper covering major Statistics topics.',
-link:'#'
-},
-
-// GATE Statistics
-{
-year:'2026',
-exam:'GATE Statistics 2026',
-sessions:'Official Paper',
-desc:'Latest GATE Statistics paper with answer key and solutions.',
-link:'#'
-},
-
-{
-year:'2025',
-exam:'GATE Statistics 2025',
-sessions:'Official Paper',
-desc:'Comprehensive Statistics and Mathematics paper.',
-link:'#'
-},
-
-{
-year:'2024',
-exam:'GATE Statistics 2024',
-sessions:'Official Paper',
-desc:'Important numerical and theoretical questions.',
-link:'#'
-},
-
-{
-year:'2023',
-exam:'GATE Statistics 2023',
-sessions:'Official Paper',
-desc:'Useful for advanced statistical reasoning and applications.',
-link:'#'
-},
-
-{
-year:'2022',
-exam:'GATE Statistics 2022',
-sessions:'Official Paper',
-desc:'Strong coverage of Linear Algebra and Probability.',
-link:'#'
-},
-
-{
-year:'2021',
-exam:'GATE Statistics 2021',
-sessions:'Official Paper',
-desc:'Conceptual and numerical questions for revision.',
-link:'#'
-}
-
+  {year:'JUN\n2026',exam:'UGC NET Statistics 2026',sessions:'June Examination',desc:'Latest UGC NET Statistics paper with answer key and detailed solutions.',link:'#'},
+  {year:'2026',exam:'CSIR NET Mathematical Sciences 2026',sessions:'Latest Examination',desc:'Probability, stochastic processes and mathematical statistics questions relevant for Statistics students.',link:'#'},
+  {year:'2025',exam:'CSIR NET Mathematical Sciences 2025',sessions:'Official Paper',desc:'Advanced problem-solving questions from Mathematical Sciences.',link:'#'},
+  {year:'2024',exam:'CSIR NET Mathematical Sciences 2024',sessions:'Official Paper',desc:'Important probability and analysis-based questions.',link:'#'},
+  {year:'2023',exam:'CSIR NET Mathematical Sciences 2023',sessions:'Official Paper',desc:'Frequently asked concepts in Statistics and Probability.',link:'#'},
+  {year:'2022',exam:'CSIR NET Mathematical Sciences 2022',sessions:'Official Paper',desc:'Useful for conceptual strengthening and advanced practice.',link:'#'},
+  {year:'2021',exam:'CSIR NET Mathematical Sciences 2021',sessions:'Official Paper',desc:'Comprehensive paper with analytical and theoretical questions.',link:'#'},
+  {year:'2026',exam:'IIT JAM Mathematical Statistics 2026',sessions:'Official Paper',desc:'Latest JAM Mathematical Statistics paper with solutions.',link:'#'},
+  {year:'2025',exam:'IIT JAM Mathematical Statistics 2025',sessions:'Official Paper',desc:'Important questions on probability distributions and inference.',link:'#'},
+  {year:'2024',exam:'IIT JAM Mathematical Statistics 2024',sessions:'Official Paper',desc:'Conceptual and computational Statistics questions.',link:'#'},
+  {year:'2023',exam:'IIT JAM Mathematical Statistics 2023',sessions:'Official Paper',desc:'Strong coverage of Mathematical Statistics fundamentals.',link:'#'},
+  {year:'2022',exam:'IIT JAM Mathematical Statistics 2022',sessions:'Official Paper',desc:'Important for MSc Statistics entrance preparation.',link:'#'},
+  {year:'2021',exam:'IIT JAM Mathematical Statistics 2021',sessions:'Official Paper',desc:'Foundation paper covering major Statistics topics.',link:'#'},
+  {year:'2026',exam:'GATE Statistics 2026',sessions:'Official Paper',desc:'Latest GATE Statistics paper with answer key and solutions.',link:'#'},
+  {year:'2025',exam:'GATE Statistics 2025',sessions:'Official Paper',desc:'Comprehensive Statistics and Mathematics paper.',link:'#'},
+  {year:'2024',exam:'GATE Statistics 2024',sessions:'Official Paper',desc:'Important numerical and theoretical questions.',link:'#'},
+  {year:'2023',exam:'GATE Statistics 2023',sessions:'Official Paper',desc:'Useful for advanced statistical reasoning and applications.',link:'#'},
+  {year:'2022',exam:'GATE Statistics 2022',sessions:'Official Paper',desc:'Strong coverage of Linear Algebra and Probability.',link:'#'},
+  {year:'2021',exam:'GATE Statistics 2021',sessions:'Official Paper',desc:'Conceptual and numerical questions for revision.',link:'#'}
 ];
-
 const YT_PLAYLISTS=[
   {icon:'🎲',title:'Probability Theory – Full Playlist',channel:'STATUP Official',desc:'Unit I — classical probability, Bayes, distributions, convergence results.',tags:['Unit I','50+ Videos'],link:'#'},
   {icon:'📊',title:'Estimation Theory Explained',channel:'STATUP Official',desc:'MVUE, Cramer-Rao bound, MLE, UMVUE with step-by-step examples for Unit IV.',tags:['Unit IV','35+ Videos'],link:'#'},
   {icon:'🧪',title:'Testing of Hypotheses',channel:'STATUP Official',desc:'NP Lemma, UMP tests, LRT, chi-square and non-parametric tests.',tags:['Unit V','40+ Videos'],link:'#'},
   {icon:'📈',title:'Time Series & Regression',channel:'STATUP Official',desc:'ARIMA, trend, seasonality, autocorrelation — Unit VI + VII full playlist.',tags:['Unit VI','Unit VII'],link:'#'}
 ];
-
-// ══ ORIGINAL BUILDERS ══
-function buildGrid(){
-  let h='';
-  UNITS.forEach(u=>{
-    h+=`<div class="unit-section" data-unit="${u.id}"><div class="unit-header"><span class="unit-badge">Unit ${u.num}</span><span class="unit-title">${u.title}</span><span class="unit-count">6 Sets · 50–100 MCQs each</span></div><div class="card-grid">${u.sets.map((s,i)=>makeCard(u,s,i+1)).join('')}</div></div>`;
-  });
-  document.getElementById('material-grid').innerHTML=h;
-}
-function makeCard(u,s,n){
-  const hp=s.pdfLink.trim()!=='',hv=s.videoId.trim()!=='';
-  const pb=hp?`<a class="btn-pdf" href="${s.pdfLink}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14,2H6C4.9,2,4,2.9,4,4v16c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V8L14,2z M18,20H6V4h7v5h5V20z"/></svg>Download PDF</a>`:`<button class="btn-pdf disabled">⏳ Coming Soon</button>`;
-  const vb=hv?`<div class="video-wrap"><iframe src="https://drive.google.com/file/d/${s.videoId}/preview" allow="autoplay" loading="lazy"></iframe><button class="fs-btn" onclick="openFS(this)">⛶</button></div><p class="video-note">🎥 Doubt clarification — on request only.</p>`:`<div class="video-placeholder"><span class="vp-icon">🎥</span><span class="vp-text">Video on Request Only</span><span class="vp-sub">Ask in WhatsApp group</span></div>`;
-  return `<div class="card"><div class="card-header" style="background:linear-gradient(135deg,${u.color},#3a7a3a);"><div class="card-icon">${u.icon}</div><div><div class="card-set-num">Set ${n}</div><div class="card-set-label">Unit ${u.num} · ${u.title}</div></div></div><div class="card-body"><div class="card-tags"><span class="tag tag-green">📝 50–100 MCQs</span><span class="tag tag-green">✅ With Solutions</span>${!hp?'<span class="tag tag-orange">⏳ Uploading</span>':''}</div>${pb}${vb}</div></div>`;
-}
-function buildImportant(){
-  document.getElementById('important-grid').innerHTML=IMPORTANT_SETS.map(s=>{
-    const hp=s.pdfLink.trim()!=='',hv=s.videoId.trim()!=='';
-    const pb=hp?`<a class="btn-imp" href="${s.pdfLink}" target="_blank" rel="noopener"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M14,2H6C4.9,2,4,2.9,4,4v16c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V8L14,2z"/></svg>Download PDF (100 Qs)</a>`:`<button class="btn-imp disabled">⏳ Coming Soon</button>`;
-    const vb=hv?`<div class="video-wrap"><iframe src="https://drive.google.com/file/d/${s.videoId}/preview" allow="autoplay" loading="lazy"></iframe><button class="fs-btn" onclick="openFS(this)">⛶</button></div>`:`<div class="video-placeholder" style="background:#fff5f5;border:1px dashed #e0a0a0;"><span class="vp-icon">🎥</span><span class="vp-text" style="color:#9b2c2c;">Video on Request Only</span><span class="vp-sub">Ask in WhatsApp group</span></div>`;
-    return `<div class="imp-card"><div class="imp-card-header"><div class="imp-num">${s.num}</div><div><div class="imp-set-num">Important Set ${s.num}</div><div class="imp-set-label">All Units · 100 Questions</div></div></div><div class="imp-card-body"><div class="imp-tags"><span class="imp-tag">🔴 100 MCQs</span><span class="imp-tag">📋 All Units</span><span class="imp-tag">✅ With Solutions</span></div>${pb}${vb}</div></div>`;
-  }).join('');
-}
-function buildMisc(){
-  document.getElementById('books-grid').innerHTML=BOOKS.map(b=>`<div class="misc-card"><div class="misc-card-header"><div class="misc-card-cover" style="background:${b.color};">${b.emoji}</div><div><div class="misc-card-title">${b.title}</div><div class="misc-card-sub">${b.author}</div></div></div><div class="misc-card-body"><div class="misc-card-desc">${b.desc}</div><div class="misc-tags">${b.tags.map(t=>`<span class="misc-tag-blue">${t}</span>`).join('')}</div><a class="btn-misc-dl${b.link==='#'?' coming':''}" href="${b.link}" target="_blank">📥 ${b.link==='#'?'Coming Soon':'Download / View'}</a></div></div>`).join('');
-  document.getElementById('notes-grid').innerHTML=NOTES.map(n=>`<div class="misc-card"><div class="misc-card-header"><div class="misc-card-cover" style="background:${n.color};">${n.emoji}</div><div><div class="misc-card-title">${n.title}</div><div class="misc-card-sub">${n.sub}</div></div></div><div class="misc-card-body"><div class="misc-card-desc">${n.desc}</div><div class="misc-tags">${n.tags.map(t=>`<span class="misc-tag-purple">${t}</span>`).join('')}</div><a class="btn-misc-dl${n.link==='#'?' coming':''}" href="${n.link}" target="_blank">📥 ${n.link==='#'?'Coming Soon':'Download Notes'}</a></div></div>`).join('');
-  document.getElementById('pyq-grid').innerHTML=PYQS.map(p=>`<div class="pyq-card"><div class="pyq-card-header"><div class="pyq-year">${p.year}</div><div><div class="pyq-title">${p.exam}</div><div class="pyq-sub">${p.sessions}</div></div></div><div class="pyq-card-body"><div class="pyq-desc">${p.desc}</div><div class="misc-tags"><span class="misc-tag-teal">📄 PDF + Answer Key</span></div><a class="btn-pyq${p.link==='#'?' coming':''}" href="${p.link}" target="_blank">📥 ${p.link==='#'?'Coming Soon':'Download Paper'}</a></div></div>`).join('');
-  document.getElementById('yt-grid').innerHTML=YT_PLAYLISTS.map(y=>`<div class="yt-card"><div class="yt-card-thumb"><div class="yt-thumb-icon">${y.icon}</div><div><div class="yt-card-title">${y.title}</div><div class="yt-card-sub">📺 ${y.channel}</div></div></div><div class="yt-card-body"><div class="yt-card-desc">${y.desc}</div><div class="misc-tags">${y.tags.map(t=>`<span class="misc-tag-blue">${t}</span>`).join('')}</div><a class="btn-misc-yt${y.link==='#'?' coming':''}" href="${y.link}" target="_blank">▶ ${y.link==='#'?'Coming Soon':'Open Playlist'}</a></div></div>`).join('');
-}
+function buildGrid(){let h='';UNITS.forEach(u=>{h+=`<div class="unit-section" data-unit="${u.id}"><div class="unit-header"><span class="unit-badge">Unit ${u.num}</span><span class="unit-title">${u.title}</span><span class="unit-count">6 Sets · 50–100 MCQs each</span></div><div class="card-grid">${u.sets.map((s,i)=>makeCard(u,s,i+1)).join('')}</div></div>`;});document.getElementById('material-grid').innerHTML=h;}
+function makeCard(u,s,n){const hp=s.pdfLink.trim()!=='',hv=s.videoId.trim()!=='';const pb=hp?`<a class="btn-pdf" href="${s.pdfLink}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14,2H6C4.9,2,4,2.9,4,4v16c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V8L14,2z M18,20H6V4h7v5h5V20z"/></svg>Download PDF</a>`:`<button class="btn-pdf disabled">⏳ Coming Soon</button>`;const vb=hv?`<div class="video-wrap"><iframe src="https://drive.google.com/file/d/${s.videoId}/preview" allow="autoplay" loading="lazy"></iframe><button class="fs-btn" onclick="openFS(this)">⛶</button></div><p class="video-note">🎥 On request only.</p>`:`<div class="video-placeholder"><span class="vp-icon">🎥</span><span class="vp-text">Video on Request Only</span><span class="vp-sub">Ask in WhatsApp group</span></div>`;return `<div class="card"><div class="card-header" style="background:linear-gradient(135deg,${u.color},#3a7a3a);"><div class="card-icon">${u.icon}</div><div><div class="card-set-num">Set ${n}</div><div class="card-set-label">Unit ${u.num} · ${u.title}</div></div></div><div class="card-body"><div class="card-tags"><span class="tag tag-green">📝 50–100 MCQs</span><span class="tag tag-green">✅ With Solutions</span>${!hp?'<span class="tag tag-orange">⏳ Uploading</span>':''}</div>${pb}${vb}</div></div>`;}
+function buildImportant(){document.getElementById('important-grid').innerHTML=IMPORTANT_SETS.map(s=>{const hp=s.pdfLink.trim()!=='',hv=s.videoId.trim()!=='';const pb=hp?`<a class="btn-imp" href="${s.pdfLink}" target="_blank" rel="noopener"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M14,2H6C4.9,2,4,2.9,4,4v16c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V8L14,2z"/></svg>Download PDF (100 Qs)</a>`:`<button class="btn-imp disabled">⏳ Coming Soon</button>`;const vb=hv?`<div class="video-wrap"><iframe src="https://drive.google.com/file/d/${s.videoId}/preview" allow="autoplay" loading="lazy"></iframe><button class="fs-btn" onclick="openFS(this)">⛶</button></div>`:`<div class="video-placeholder" style="background:#fff5f5;border:1px dashed #e0a0a0;"><span class="vp-icon">🎥</span><span class="vp-text" style="color:#9b2c2c;">Video on Request Only</span><span class="vp-sub">Ask in WhatsApp group</span></div>`;return `<div class="imp-card"><div class="imp-card-header"><div class="imp-num">${s.num}</div><div><div class="imp-set-num">Important Set ${s.num}</div><div class="imp-set-label">All Units · 100 Questions</div></div></div><div class="imp-card-body"><div class="imp-tags"><span class="imp-tag">🔴 100 MCQs</span><span class="imp-tag">📋 All Units</span><span class="imp-tag">✅ With Solutions</span></div>${pb}${vb}</div></div>`;}).join('');}
+function buildMisc(){document.getElementById('books-grid').innerHTML=BOOKS.map(b=>`<div class="misc-card"><div class="misc-card-header"><div class="misc-card-cover" style="background:${b.color};">${b.emoji}</div><div><div class="misc-card-title">${b.title}</div><div class="misc-card-sub">${b.author}</div></div></div><div class="misc-card-body"><div class="misc-card-desc">${b.desc}</div><div class="misc-tags">${b.tags.map(t=>`<span class="misc-tag-blue">${t}</span>`).join('')}</div><a class="btn-misc-dl${b.link==='#'?' coming':''}" href="${b.link}" target="_blank">📥 ${b.link==='#'?'Coming Soon':'Download / View'}</a></div></div>`).join('');document.getElementById('notes-grid').innerHTML=NOTES.map(n=>`<div class="misc-card"><div class="misc-card-header"><div class="misc-card-cover" style="background:${n.color};">${n.emoji}</div><div><div class="misc-card-title">${n.title}</div><div class="misc-card-sub">${n.sub}</div></div></div><div class="misc-card-body"><div class="misc-card-desc">${n.desc}</div><div class="misc-tags">${n.tags.map(t=>`<span class="misc-tag-purple">${t}</span>`).join('')}</div><a class="btn-misc-dl${n.link===''||n.link==='#'?' coming':''}" href="${n.link||'#'}" target="_blank">📥 ${n.link===''||n.link==='#'?'Coming Soon':'Download Notes'}</a></div></div>`).join('');document.getElementById('pyq-grid').innerHTML=PYQS.map(p=>`<div class="pyq-card"><div class="pyq-card-header"><div class="pyq-year">${p.year}</div><div><div class="pyq-title">${p.exam}</div><div class="pyq-sub">${p.sessions}</div></div></div><div class="pyq-card-body"><div class="pyq-desc">${p.desc}</div><div class="misc-tags"><span class="misc-tag-teal">📄 PDF + Answer Key</span></div><a class="btn-pyq${p.link==='#'?' coming':''}" href="${p.link}" target="_blank">📥 ${p.link==='#'?'Coming Soon':'Download Paper'}</a></div></div>`).join('');document.getElementById('yt-grid').innerHTML=YT_PLAYLISTS.map(y=>`<div class="yt-card"><div class="yt-card-thumb"><div class="yt-thumb-icon">${y.icon}</div><div><div class="yt-card-title">${y.title}</div><div class="yt-card-sub">📺 ${y.channel}</div></div></div><div class="yt-card-body"><div class="yt-card-desc">${y.desc}</div><div class="misc-tags">${y.tags.map(t=>`<span class="misc-tag-blue">${t}</span>`).join('')}</div><a class="btn-misc-yt${y.link==='#'?' coming':''}" href="${y.link}" target="_blank">▶ ${y.link==='#'?'Coming Soon':'Open Playlist'}</a></div></div>`).join('');}
 function filterUnit(e,unit){document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));e.target.classList.add('active');document.querySelectorAll('.unit-section').forEach(sec=>{sec.classList.toggle('hidden',unit!=='all'&&sec.dataset.unit!==unit);});}
 function switchTab(e,id){document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));e.target.classList.add('active');document.getElementById(id).classList.add('active');}
 function openFS(btn){const el=btn.closest('.video-wrap');(el.requestFullscreen||el.webkitRequestFullscreen||el.msRequestFullscreen||function(){}).call(el);}
 buildGrid(); buildImportant(); buildMisc();
-// ════════════════════════════════════════════════════════════════════
-//  STUDENT LIST
-//  ID = STAT + last 4 digits of mobile
-//  PASSWORD = stat@ + last 2 digits of mobile
-//  TO ADD MORE STUDENTS MANUALLY: follow same format below
-//  Example: STUDENTS['STAT1234'] = {name:'Student Name', password:'stat@34'};
-// ════════════════════════════════════════════════════════════════════
 const STUDENTS = {
   'STAT3708': {name:'Student 1',  password:'stat@08'},
   'STAT2033': {name:'Student 2',  password:'stat@33'},
@@ -822,414 +652,393 @@ const STUDENTS = {
   // ───────────────────────────────────────────────────────────────
   'ADMIN':    {name:'Administrator', password:'admin@statup'}
 };
-
 // ════════════════════════════════════════════════════════════════════
-//  FULL SYLLABUS QUESTION BANK  (FULL_QB)
+//  MASTER QUESTION BANK — ONE BANK FOR ALL 3 TEST TYPES
+//
+//  FORMAT FOR EACH QUESTION:
+//  {
+//    unit: 'u1',          ← unit tag: u1 to u10 (REQUIRED for full & unit tests)
+//    q: 'Question text?', ← the question
+//    opts: ['A) ...','B) ...','C) ...','D) ...'],  ← 4 options
+//    ans: 0,              ← correct option index: 0=A, 1=B, 2=C, 3=D
+//    exp: 'Explanation.'  ← shown in solutions after test
+//  }
+//
+//  HOW EACH TEST USES THIS BANK:
+//  ┌─────────────────┬──────────────────────────────────────────────┐
+//  │ Full Syllabus   │ Picks 10 per unit sequentially               │
+//  │                 │ Mock 1 → Q[0-9] of each unit                 │
+//  │                 │ Mock 2 → Q[10-19] of each unit, etc.         │
+//  ├─────────────────┼──────────────────────────────────────────────┤
+//  │ Unit-wise Mock  │ Picks 30 from that unit only, sequentially   │
+//  │                 │ Mock 1 → Q[0-29], Mock 2 → Q[30-59], etc.   │
+//  ├─────────────────┼──────────────────────────────────────────────┤
+//  │ Surprise Test   │ Picks 50 RANDOM from entire bank             │
+//  │                 │ Different every attempt                       │
+//  └─────────────────┴──────────────────────────────────────────────┘
 //
 //  HOW TO ADD QUESTIONS:
-//  1. Keep questions grouped by unit (u1, u2 ... u10)
-//  2. Each mock auto-picks 10 questions per unit (10 units × 10 = 100 Qs)
-//  3. Mock 1 → first 10 of each unit, Mock 2 → next 10, and so on
-//  4. Add new questions at the BOTTOM of each unit's group
-//  5. Format: {unit:'u1', q:'Question text?', opts:['A) ...','B) ...','C) ...','D) ...'], ans:0, exp:'Explanation'}
-//     ans: 0=A, 1=B, 2=C, 3=D
-//  SCORING: 2 marks correct, 0 wrong/skip. Max = 200 marks per test.
+//  - Add Unit I questions where you see // ── ADD UNIT I ──
+//  - Keep same unit tag for all questions of a unit
+//  - More questions = more mocks possible
+//  - SCORING: 2 marks correct, 0 wrong/skip
+//
+//  TO CHANGE TEST SETTINGS (questions, time, lock/unlock):
+//  → Find MOCK_DEFS array below the question bank
+//  → Edit: duration (seconds), qCount, locked, title, description
 // ════════════════════════════════════════════════════════════════════
-const FULL_QB = [
-  // ── UNIT I: Probability Theory ── (add more below, keep unit:'u1')
+
+const MASTER_QB = [
+
+  // ════════════ UNIT I: Probability Theory ════════════
+  // ── 10 sample questions — ADD MORE BELOW KEEPING unit:'u1' ──
   {unit:'u1',q:'If A and B are independent with P(A)=0.4, P(B)=0.5, then P(A∪B)=',opts:['A) 0.20','B) 0.70','C) 0.90','D) 0.60'],ans:1,exp:'P(A∪B)=P(A)+P(B)-P(A)P(B)=0.4+0.5-0.2=0.70.'},
   {unit:'u1',q:'For X~Poisson(λ), E(X²) equals:',opts:['A) λ','B) λ²','C) λ²+λ','D) 2λ'],ans:2,exp:'E(X²)=Var(X)+[E(X)]²=λ+λ².'},
   {unit:'u1',q:'MGF of Normal N(μ,σ²) is:',opts:['A) e^(μt)','B) e^(μt+σ²t²/2)','C) e^(σ²t²/2)','D) e^μ'],ans:1,exp:'MGF of Normal: M(t)=exp(μt+σ²t²/2).'},
-  // ── ADD MORE UNIT I QUESTIONS HERE ──
- 
-  // ── UNIT II: Real Analysis & Matrix Algebra ── (keep unit:'u2')
+  {unit:'u1',q:'Bayes theorem: P(H|E)=',opts:['A) P(E|H)/P(H)','B) P(E|H)P(H)/P(E)','C) P(H)P(E)','D) P(E)/P(H)'],ans:1,exp:'Bayes: P(H|E)=P(E|H)P(H)/P(E), connecting prior P(H) to posterior P(H|E).'},
+  {unit:'u1',q:'Chebyshev: P(|X-μ|≥kσ) ≤',opts:['A) 1/k','B) 1/k²','C) k²','D) 1/(k-1)²'],ans:1,exp:'Chebyshev: P(|X-μ|≥kσ)≤1/k² for k>0.'},
+  {unit:'u1',q:'If X~Binomial(n,p), variance equals:',opts:['A) np','B) np(1-p)','C) npq²','D) n²p'],ans:1,exp:'Var[Bin(n,p)]=np(1-p)=npq.'},
+  {unit:'u1',q:'Characteristic function of X is:',opts:['A) E(e^tX)','B) E(e^itX)','C) E(X^t)','D) log E(e^X)'],ans:1,exp:'φ(t)=E(e^{itX}), i=√(-1).'},
+  {unit:'u1',q:'CLT: as n→∞, √n(X̄-μ)/σ converges to:',opts:['A) t-distribution','B) F-distribution','C) N(0,1)','D) Chi-square'],ans:2,exp:'CLT: √n(X̄-μ)/σ→N(0,1) as n→∞ under regularity conditions.'},
+  {unit:'u1',q:'If X and Y are independent, Cov(X,Y)=',opts:['A) 1','B) -1','C) 0','D) σ_X·σ_Y'],ans:2,exp:'Independence implies Cov(X,Y)=E(XY)-E(X)E(Y)=0.'},
+  {unit:'u1',q:'Geometric distribution models:',opts:['A) Successes in n trials','B) Trials until first success','C) Defects per unit','D) Continuous waiting time'],ans:1,exp:'Geometric: number of Bernoulli trials needed to get one success.'},
+  // ── ADD MORE UNIT I QUESTIONS HERE (keep unit:'u1') ──────────────
+
+  // ════════════ UNIT II: Real Analysis & Matrix Algebra ════════════
+  // ── 10 sample questions — ADD MORE BELOW KEEPING unit:'u2' ──
   {unit:'u2',q:'Rank of matrix A equals number of:',opts:['A) Rows','B) Columns','C) Zero eigenvalues','D) Linearly independent rows/columns'],ans:3,exp:'Rank=max number of linearly independent rows=linearly independent columns.'},
   {unit:'u2',q:'Trace of a matrix equals sum of its:',opts:['A) Columns','B) Rows','C) Eigenvalues','D) Off-diagonal elements'],ans:2,exp:'tr(A)=sum of diagonal elements=sum of eigenvalues.'},
-  {unit:'u2',q:'Idempotent matrix A satisfies:',opts:['A) A²=I','B) A²=A','C) Aᵀ=-A','D) A=A⁻¹'],ans:1,exp:'Idempotent: A²=A. Eigenvalues are 0 or 1.'},
-  // ── ADD MORE UNIT II QUESTIONS HERE ──
- 
-  // ── UNIT III: Sampling Methods & DOE ── (keep unit:'u3')
+  {unit:'u2',q:'Idempotent matrix A satisfies:',opts:['A) A²=I','B) A²=A','C) Aᵀ=-A','D) A=A⁻¹'],ans:1,exp:'Idempotent: A²=A. Eigenvalues are 0 or 1. Used in projection matrices.'},
+  {unit:'u2',q:'Matrix A is positive definite if all eigenvalues are:',opts:['A) Zero','B) Negative','C) Positive','D) Real'],ans:2,exp:'PD matrix: all eigenvalues strictly positive.'},
+  {unit:'u2',q:'det(kA) for n×n matrix equals:',opts:['A) k det(A)','B) kⁿ det(A)','C) n·k det(A)','D) det(A)'],ans:1,exp:'det(kA)=kⁿ det(A).'},
+  {unit:'u2',q:'Generalized inverse A⁻ satisfies:',opts:['A) AA⁻A=A','B) AA⁻=I','C) A⁻A=I','D) A⁻=Aᵀ'],ans:0,exp:'Generalized inverse: AA⁻A=A.'},
+  {unit:'u2',q:'Sequence {aₙ} is Cauchy if:',opts:['A) aₙ→∞','B) |aₙ₊₁-aₙ|→0','C) |aₙ-aₘ|→0 as n,m→∞','D) aₙ bounded'],ans:2,exp:'Cauchy: ∀ε>0, ∃N: |aₙ-aₘ|<ε for n,m>N.'},
+  {unit:'u2',q:'Spectral decomposition of symmetric matrix uses:',opts:['A) Jordan form','B) LU decomposition','C) Orthogonal eigenvectors','D) Cholesky'],ans:2,exp:'Spectral theorem: A=PΛPᵀ where P is orthogonal matrix of eigenvectors.'},
+  {unit:'u2',q:'A function f is uniformly continuous if:',opts:['A) It is differentiable','B) One δ works for all x','C) It is bounded','D) Derivative is bounded'],ans:1,exp:'Uniform continuity: single δ works for all x simultaneously.'},
+  {unit:'u2',q:'For matrices A(m×n) and B(n×p), rank(AB) satisfies:',opts:['A) rank(AB)=rank(A)+rank(B)','B) rank(AB)≤min(rank(A),rank(B))','C) rank(AB)=rank(A)','D) rank(AB)=n'],ans:1,exp:'Sylvester rank inequality: rank(AB)≤min(rank(A),rank(B)).'},
+  // ── ADD MORE UNIT II QUESTIONS HERE (keep unit:'u2') ─────────────
+
+  // ════════════ UNIT III: Sampling Methods & DOE ════════════
   {unit:'u3',q:'Proportional allocation sets nₕ proportional to:',opts:['A) Stratum mean','B) Stratum variance','C) Stratum size Nₕ','D) Sampling fraction'],ans:2,exp:'Proportional: nₕ=n×Nₕ/N.'},
   {unit:'u3',q:'In SRSWOR, variance of sample mean is:',opts:['A) σ²/n','B) (1-f)S²/n','C) σ²/(n-1)','D) fσ²/n'],ans:1,exp:'Var(X̄)=(1-f)S²/n where f=n/N is finite population correction.'},
   {unit:'u3',q:'In CRD, treatments are assigned:',opts:['A) Based on blocks','B) Completely at random','C) Latin square pattern','D) By variance'],ans:1,exp:'CRD: treatments assigned entirely at random to all experimental units.'},
-  // ── ADD MORE UNIT III QUESTIONS HERE ──
- 
-  // ── UNIT IV: Estimation Theory ── (keep unit:'u4')
-  {unit:'u4',q:'UMVUE has minimum variance among:',opts:['A) All estimators','B) Unbiased estimators only','C) Consistent estimators','D) MLE estimators'],ans:1,exp:'UMVUE=min variance in class of unbiased estimators.'},
+  {unit:'u3',q:'Neyman allocation sets nₕ proportional to:',opts:['A) Nₕ only','B) Nₕσₕ','C) σₕ only','D) 1/σₕ'],ans:1,exp:'Neyman optimal: nₕ∝Nₕσₕ — more to larger, more variable strata.'},
+  {unit:'u3',q:'Cluster sampling preferred when clusters are:',opts:['A) Homogeneous within','B) Small','C) Internally heterogeneous','D) Equal size'],ans:2,exp:'Efficient when each cluster is a miniature population.'},
+  {unit:'u3',q:'In LSD, rows=columns=treatments=:',opts:['A) n','B) k','C) p (same for all three)','D) n-1'],ans:2,exp:'LSD: p×p square, p=treatments=rows=columns.'},
+  {unit:'u3',q:'ANOVA model for RBD is:',opts:['A) Yᵢⱼ=μ+τᵢ+εᵢⱼ','B) Yᵢⱼ=μ+τᵢ+βⱼ+εᵢⱼ','C) Yᵢⱼ=μ+βⱼ+εᵢⱼ','D) Yᵢⱼₖ=μ+τᵢ+βⱼ+γₖ+εᵢⱼₖ'],ans:1,exp:'RBD: Yᵢⱼ=μ+τᵢ+βⱼ+εᵢⱼ, τᵢ=treatment effect, βⱼ=block effect.'},
+  {unit:'u3',q:'Systematic sampling: every kth unit where k=',opts:['A) n/N','B) N/n','C) √N','D) N-n'],ans:1,exp:'Sampling interval k=N/n. First unit chosen randomly from 1 to k.'},
+  {unit:'u3',q:'2ⁿ factorial design: n factors each at:',opts:['A) n levels','B) 2 levels','C) n² levels','D) 3 levels'],ans:1,exp:'2ⁿ design: n factors each at 2 levels (low/high).'},
+  {unit:'u3',q:'Stratified efficiency over SRS highest when:',opts:['A) Strata means equal','B) Strata means differ greatly','C) Strata sizes equal','D) Large sampling fraction'],ans:1,exp:'Stratified efficient when between-strata variation is large.'},
+  // ── ADD MORE UNIT III QUESTIONS HERE (keep unit:'u3') ────────────
+
+  // ════════════ UNIT IV: Estimation Theory ════════════
+  {unit:'u4',q:'UMVUE has minimum variance among:',opts:['A) All estimators','B) Unbiased estimators only','C) Consistent estimators','D) MLE estimators'],ans:1,exp:'UMVUE=Uniformly Min Variance Unbiased Estimator.'},
   {unit:'u4',q:'Cramer-Rao lower bound equals:',opts:['A) 1/I(θ)','B) I(θ)','C) n/I(θ)','D) I(θ)/n'],ans:0,exp:'CR bound=1/I(θ) where I(θ) is Fisher information.'},
   {unit:'u4',q:'MLE is obtained by maximizing:',opts:['A) Posterior distribution','B) Likelihood L(θ;x)','C) Prior distribution','D) Score function'],ans:1,exp:'MLE: θ̂=argmax L(θ;x).'},
-  // ── ADD MORE UNIT IV QUESTIONS HERE ──
- 
-  // ── UNIT V: Testing of Hypotheses ── (keep unit:'u5')
+  {unit:'u4',q:'Consistent estimator Tₙ means:',opts:['A) E(Tₙ)=θ','B) Tₙ→θ in probability','C) Var(Tₙ)=0','D) Tₙ is sufficient'],ans:1,exp:'Consistency: Tₙ→ᵖθ as n→∞.'},
+  {unit:'u4',q:'Bayes estimator under squared error loss is:',opts:['A) MLE','B) Posterior mean','C) Posterior mode','D) Prior mean'],ans:1,exp:'Under squared error loss, Bayes estimator=E(θ|X).'},
+  {unit:'u4',q:'Sufficient statistic T for θ means:',opts:['A) All population info','B) All sample info about θ','C) Min sample values','D) MLE values'],ans:1,exp:'T sufficient: conditional distribution of X|T free of θ.'},
+  {unit:'u4',q:'Rao-Blackwell + Lehmann-Scheffé gives:',opts:['A) Increased variance','B) Biased estimator','C) UMVUE','D) MLE'],ans:2,exp:'E[T|S] where S is complete sufficient statistic → UMVUE.'},
+  {unit:'u4',q:'Fisher information I(θ)=',opts:['A) E[∂logf/∂θ]','B) -E[∂²logf/∂θ²]','C) Var(∂logf/∂θ)','D) Both B and C'],ans:3,exp:'I(θ)=E[(∂logL/∂θ)²]=-E[∂²logL/∂θ²] under regularity (B and C equal).'},
+  {unit:'u4',q:'95% confidence interval means:',opts:['A) P(θ in interval)=0.95','B) 95% of such intervals contain true θ','C) θ=0.95','D) α=0.95'],ans:1,exp:'Frequentist CI: 95% of intervals constructed this way contain true θ.'},
+  {unit:'u4',q:'Complete statistic T means:',opts:['A) T is sufficient','B) E[g(T)]=0 ⟹ g(T)=0 a.s.','C) T has min variance','D) T is unbiased'],ans:1,exp:'Completeness: E[g(T)]=0 for all θ implies g(T)=0 almost surely.'},
+  // ── ADD MORE UNIT IV QUESTIONS HERE (keep unit:'u4') ─────────────
+
+  // ════════════ UNIT V: Testing of Hypotheses ════════════
   {unit:'u5',q:'Type I error is:',opts:['A) Accepting H₀ when H₁ true','B) Rejecting H₀ when H₀ true','C) Accepting H₁ when H₀ true','D) Correct decision'],ans:1,exp:'Type I=Rejecting true null. Probability=α (significance level).'},
   {unit:'u5',q:'Power of a test equals:',opts:['A) 1-α','B) α','C) 1-β','D) β'],ans:2,exp:'Power=1-β=P(Reject H₀|H₁ true).'},
-  {unit:'u5',q:'-2logΛ (LRT statistic) asymptotically follows:',opts:['A) Normal','B) t-distribution','C) Chi-square','D) F-distribution'],ans:2,exp:'Wilks theorem: -2log(Λ)→χ²(r) where r=parameter difference.'},
-  // ── ADD MORE UNIT V QUESTIONS HERE ──
- 
-  // ── UNIT VI: Linear Estimation & Regression ── (keep unit:'u6')
+  {unit:'u5',q:'-2logΛ (LRT) asymptotically follows:',opts:['A) Normal','B) t-distribution','C) Chi-square','D) F-distribution'],ans:2,exp:'Wilks theorem: -2log(Λ)→χ²(r) where r=parameter difference.'},
+  {unit:'u5',q:'NP Lemma gives MP test for:',opts:['A) Composite vs composite','B) Simple vs simple hypothesis','C) One-sided vs two-sided','D) Non-parametric tests'],ans:1,exp:'NP Lemma: simple H₀ vs simple H₁, MP test uses likelihood ratio.'},
+  {unit:'u5',q:'UMP test exists when distribution has:',opts:['A) Normal distribution','B) Monotone Likelihood Ratio','C) Sufficient statistic','D) Exponential tails'],ans:1,exp:'MLR property guarantees UMP test for one-sided hypotheses.'},
+  {unit:'u5',q:'p-value is probability of result as extreme under:',opts:['A) H₁','B) H₀','C) Both','D) Neither'],ans:1,exp:'p-value=P(statistic≥observed|H₀ true). Reject H₀ if p<α.'},
+  {unit:'u5',q:'Wilcoxon signed-rank test is for:',opts:['A) Two independent samples','B) One sample or paired data','C) k>2 groups','D) Categorical data'],ans:1,exp:'Non-parametric alternative to one-sample or paired t-test.'},
+  {unit:'u5',q:'SPRT was proposed by:',opts:['A) Fisher','B) Neyman','C) Wald','D) Pearson'],ans:2,exp:'Sequential Probability Ratio Test by Abraham Wald, 1947.'},
+  {unit:'u5',q:'Chi-square GOF test df = k-1 minus:',opts:['A) Number of cells','B) Number of samples','C) Estimated parameters','D) Expected frequencies'],ans:2,exp:'df=k-1-m where k=cells, m=parameters estimated from data.'},
+  {unit:'u5',q:'Non-parametric tests assume:',opts:['A) Normality','B) Specific distribution','C) Large samples','D) No specific distribution'],ans:3,exp:'Non-parametric=distribution-free. No specific parametric family assumed.'},
+  // ── ADD MORE UNIT V QUESTIONS HERE (keep unit:'u5') ──────────────
+
+  // ════════════ UNIT VI: Linear Estimation & Regression ════════════
   {unit:'u6',q:'OLS slope in Y=α+βX+ε is:',opts:['A) Σ(Xᵢ-X̄)(Yᵢ-Ȳ)/Σ(Xᵢ-X̄)²','B) Σ(Yᵢ-Ȳ)/Σ(Xᵢ-X̄)','C) Cov(X,Y)/Var(Y)','D) Var(Y)/Var(X)'],ans:0,exp:'β̂=Sxy/Sxx=Σ(Xᵢ-X̄)(Yᵢ-Ȳ)/Σ(Xᵢ-X̄)².'},
   {unit:'u6',q:'R² measures:',opts:['A) Slope of regression','B) Proportion of variance in Y explained by X','C) Residual variance','D) Correlation coefficient'],ans:1,exp:'R²=SSR/SST=proportion of variation in Y explained by regression.'},
-  {unit:'u6',q:'Ridge regression addresses:',opts:['A) Non-linearity','B) Multicollinearity','C) Non-normality','D) Outliers'],ans:1,exp:'Ridge adds λ‖β‖² penalty to shrink coefficients and reduce multicollinearity.'},
-  // ── ADD MORE UNIT VI QUESTIONS HERE ──
- 
-  // ── UNIT VII: Time Series Analysis ── (keep unit:'u7')
-  {unit:'u7',q:'ACF of MA(q) process cuts off after lag:',opts:['A) p','B) q','C) p+q','D) Infinity'],ans:1,exp:'MA(q): ACF=0 for lags>q.'},
-  {unit:'u7',q:'ADF test is used for testing:',opts:['A) Autocorrelation','B) Unit root/non-stationarity','C) Seasonality','D) Outliers'],ans:1,exp:'ADF: H₀=unit root (non-stationary). Used before ARIMA modelling.'},
-  {unit:'u7',q:'Exponential smoothing weights are:',opts:['A) Equal','B) Increasing with age','C) Decreasing geometrically','D) Random'],ans:2,exp:'Weights=α(1-α)^t, decreasing geometrically as observations age.'},
-  // ── ADD MORE UNIT VII QUESTIONS HERE ──
- 
-  // ── UNIT VIII: Multivariate Analysis ── (keep unit:'u8')
+  {unit:'u6',q:'Ridge regression addresses:',opts:['A) Non-linearity','B) Multicollinearity','C) Non-normality','D) Outliers'],ans:1,exp:'Ridge adds λ‖β‖² penalty to shrink coefficients.'},
+  {unit:'u6',q:'Hat matrix H=X(XᵀX)⁻¹Xᵀ satisfies:',opts:['A) H²=I','B) H²=H (idempotent)','C) H is diagonal','D) Hᵀ=-H'],ans:1,exp:'Hat matrix is idempotent: H²=H and symmetric. Ŷ=HY.'},
+  {unit:'u6',q:'WLS weight for observation with variance σᵢ² is:',opts:['A) σᵢ','B) 1/σᵢ','C) 1/σᵢ²','D) σᵢ²'],ans:2,exp:'WLS weights wᵢ=1/σᵢ² for heteroscedastic errors.'},
+  {unit:'u6',q:'VIF>___ indicates serious multicollinearity:',opts:['A) 1','B) 5 or 10','C) 2','D) 100'],ans:1,exp:'VIF>5 (or 10 strict) indicates serious multicollinearity.'},
+  {unit:'u6',q:'Gauss-Markov theorem: BLUE requires:',opts:['A) Normality of errors','B) E(ε)=0 and Cov(ε)=σ²I','C) Large sample size','D) Fixed X values'],ans:1,exp:'BLUE under E(ε)=0, Var(ε)=σ²I (zero mean, homoscedastic, uncorrelated errors).'},
+  {unit:'u6',q:'Logistic regression models:',opts:['A) Continuous Y','B) Count Y','C) P(Y=1|X) for binary Y','D) Normally distributed Y'],ans:2,exp:'Logistic: log(p/1-p)=Xβ for binary response.'},
+  {unit:'u6',q:'BLUE stands for:',opts:['A) Best Linear Unbiased Estimator','B) Bounded Linear Unbiased Estimate','C) Bayesian Linear Unbiased Estimator','D) Best Least Unbiased Estimator'],ans:0,exp:'BLUE=Best (min variance) Linear Unbiased Estimator per Gauss-Markov.'},
+  {unit:'u6',q:'Multicollinearity refers to:',opts:['A) Non-normality of residuals','B) High correlation among predictors','C) Heteroscedasticity','D) Serial correlation'],ans:1,exp:'Multicollinearity: high linear correlation among explanatory variables.'},
+  // ── ADD MORE UNIT VI QUESTIONS HERE (keep unit:'u6') ─────────────
+
+  // ════════════ UNIT VII: Time Series Analysis ════════════
+  {unit:'u7',q:'ACF of MA(q) process cuts off after lag:',opts:['A) p','B) q','C) p+q','D) Infinity'],ans:1,exp:'MA(q): ACF=0 for lags>q. Key identification tool.'},
+  {unit:'u7',q:'ADF test is used for testing:',opts:['A) Autocorrelation','B) Unit root/non-stationarity','C) Seasonality','D) Outliers'],ans:1,exp:'ADF: H₀=unit root. Used before ARIMA modelling.'},
+  {unit:'u7',q:'Exponential smoothing weights are:',opts:['A) Equal','B) Increasing with age','C) Decreasing geometrically','D) Random'],ans:2,exp:'Weights=α(1-α)^t, decreasing geometrically with age.'},
+  {unit:'u7',q:'Stationary series has:',opts:['A) Trend','B) Constant mean, variance; lag-based covariance','C) Seasonal pattern','D) Zero ACF'],ans:1,exp:'Weak stationarity: constant mean, variance; covariance depends only on lag.'},
+  {unit:'u7',q:'For AR(p), PACF:',opts:['A) Cuts off after lag p','B) Tails off slowly','C) Is always positive','D) Equals ACF'],ans:0,exp:'AR(p): PACF cuts off after lag p. Key Box-Jenkins identification tool.'},
+  {unit:'u7',q:'ARCH/GARCH models used for:',opts:['A) Trend','B) Volatility clustering','C) Seasonal patterns','D) Cointegration'],ans:1,exp:'ARCH/GARCH: time-varying conditional variance — volatility clustering.'},
+  {unit:'u7',q:'Box-Jenkins methodology steps:',opts:['A) Identification, Estimation, Diagnostic checking','B) Smoothing, Filtering, Forecasting','C) Differencing, Integration, Smoothing','D) ACF, PACF, MA'],ans:0,exp:'Box-Jenkins: Identification→Estimation→Diagnostic→Forecast.'},
+  {unit:'u7',q:'I(1) series becomes stationary after:',opts:['A) Log transform','B) First differencing','C) Seasonal adjustment','D) MA smoothing'],ans:1,exp:'I(1) needs one difference to become stationary.'},
+  {unit:'u7',q:'Ljung-Box test tests for:',opts:['A) Unit root','B) Normality','C) No autocorrelation in residuals','D) Stationarity'],ans:2,exp:'Ljung-Box Q: H₀=no autocorrelation in first m lags of residuals.'},
+  {unit:'u7',q:'SARIMA model handles:',opts:['A) Trend only','B) Seasonal patterns','C) Volatility','D) Cointegration'],ans:1,exp:'SARIMA with seasonal order (P,D,Q)_s handles periodic seasonal patterns.'},
+  // ── ADD MORE UNIT VII QUESTIONS HERE (keep unit:'u7') ────────────
+
+  // ════════════ UNIT VIII: Multivariate Analysis ════════════
   {unit:'u8',q:'Hotelling T² is multivariate analogue of:',opts:['A) F-test','B) Chi-square','C) t-test','D) Z-test'],ans:2,exp:'Hotelling T² extends univariate t² to multivariate setting.'},
   {unit:'u8',q:'PCA finds directions of:',opts:['A) Minimum variance','B) Maximum variance','C) Zero correlation','D) Maximum likelihood'],ans:1,exp:'PCA: orthogonal directions of maximum variance.'},
-  {unit:'u8',q:'Wilks Lambda in MANOVA is:',opts:['A) |W|/|B+W|','B) |B|/|W|','C) |B+W|/|W|','D) tr(W⁻¹B)'],ans:0,exp:'Wilks Λ=|W|/|B+W| ratio of within-group to total SS determinants.'},
-  // ── ADD MORE UNIT VIII QUESTIONS HERE ──
- 
-  // ── UNIT IX: Stochastic Processes ── (keep unit:'u9')
+  {unit:'u8',q:'Wilks Lambda in MANOVA is:',opts:['A) |W|/|B+W|','B) |B|/|W|','C) |B+W|/|W|','D) tr(W⁻¹B)'],ans:0,exp:'Wilks Λ=|W|/|B+W| ratio of within to total SS determinants.'},
+  {unit:'u8',q:'Mahalanobis distance D² accounts for:',opts:['A) Euclidean distance only','B) Correlations and variance differences','C) Sample size','D) Mean difference only'],ans:1,exp:'D²=(x-μ)ᵀΣ⁻¹(x-μ) accounts for correlations and scale.'},
+  {unit:'u8',q:'Factor analysis explains p variables using:',opts:['A) p factors','B) m<p common factors','C) Principal components','D) Canonical variables'],ans:1,exp:'Factor analysis: p variables explained by m<p common factors.'},
+  {unit:'u8',q:'K-means assigns each point to:',opts:['A) Farthest centroid','B) Nearest centroid','C) Random cluster','D) Min Mahalanobis centroid'],ans:1,exp:'K-means: min Euclidean distance to centroid.'},
+  {unit:'u8',q:'LDA objective: maximize:',opts:['A) Within-group variance','B) Between-to-within variance ratio','C) Total variance','D) Correlation'],ans:1,exp:'LDA: maximize J=between-group SS/within-group SS.'},
+  {unit:'u8',q:'Sample covariance matrix S follows:',opts:['A) Normal distribution','B) Wishart distribution','C) t-distribution','D) F-distribution'],ans:1,exp:'(n-1)S~W_p(n-1,Σ) — Wishart distribution.'},
+  {unit:'u8',q:'Canonical correlation studies:',opts:['A) Two individual variables','B) Two sets of variables','C) One variable and a factor','D) Principal components'],ans:1,exp:'Canonical correlation: max correlation between linear combinations of two variable sets.'},
+  {unit:'u8',q:'Kaiser criterion in PCA: retain components with eigenvalue:',opts:['A) <0','B) >1','C) =1','D) >mean eigenvalue'],ans:1,exp:'Kaiser: retain PCs with eigenvalue>1.'},
+  // ── ADD MORE UNIT VIII QUESTIONS HERE (keep unit:'u8') ───────────
+
+  // ════════════ UNIT IX: Stochastic Processes ════════════
   {unit:'u9',q:'Markov property: future depends on:',opts:['A) All past states','B) Only current state','C) Initial state only','D) Last two states'],ans:1,exp:'Markov: P(Xₙ₊₁|X₀,...,Xₙ)=P(Xₙ₊₁|Xₙ).'},
   {unit:'u9',q:'Poisson process P(N(t)=k)=',opts:['A) e^{-λ}(λt)^k/k!','B) e^{-λt}(λt)^k/k!','C) λ^k/k!','D) e^{-λt}λ^k'],ans:1,exp:'Poisson: P(N(t)=k)=e^{-λt}(λt)^k/k!'},
-  {unit:'u9',q:'Stationary distribution π satisfies:',opts:['A) πᵢ=Σⱼπⱼpⱼᵢ','B) πP=π','C) Σᵢπᵢ=1','D) All of the above'],ans:3,exp:'Stationary: π=πP with Σπᵢ=1. All three conditions hold.'},
-  // ── ADD MORE UNIT IX QUESTIONS HERE ──
- 
-  // ── UNIT X: Indian Statistical System & R ── (keep unit:'u10')
-  {unit:'u10',q:'NSO formed by merging:',opts:['A) CSO and NSSO','B) RBI and CSO','C) MOSPI and CSO','D) NSSO and RBI'],ans:0,exp:'NSO=CSO+NSSO, merged 2019.'},
+  {unit:'u9',q:'Stationary distribution π satisfies:',opts:['A) πᵢ=Σⱼπⱼpⱼᵢ','B) πP=π','C) Σᵢπᵢ=1','D) All of the above'],ans:3,exp:'Stationary: π=πP with Σπᵢ=1. All conditions hold.'},
+  {unit:'u9',q:'State i is recurrent if:',opts:['A) P(return)<1','B) P(return)=1','C) It is absorbing','D) Communicates with all states'],ans:1,exp:'Recurrent: chain returns to i with probability 1.'},
+  {unit:'u9',q:'Inter-arrival times in Poisson process are:',opts:['A) Normal','B) Uniform','C) Exponential','D) Gamma'],ans:2,exp:'In Poisson(λ), inter-arrival times are i.i.d. Exponential(λ).'},
+  {unit:'u9',q:'Ergodic Markov chain is:',opts:['A) Reducible and periodic','B) Irreducible and aperiodic','C) Transient','D) Absorbing'],ans:1,exp:'Ergodic: irreducible+aperiodic → unique stationary distribution.'},
+  {unit:'u9',q:'Chapman-Kolmogorov equation:',opts:['A) p(n+m)=p(n)×p(m)','B) pᵢⱼ^(n+m)=Σₖpᵢₖ^(n)pₖⱼ^(m)','C) π=πP','D) Rates sum to zero'],ans:1,exp:'C-K: pᵢⱼ^(n+m)=Σₖpᵢₖ^(n)pₖⱼ^(m).'},
+  {unit:'u9',q:'Brownian motion increment B(t)-B(s) follows:',opts:['A) N(0,t-s)','B) N(t-s,1)','C) N(0,t)','D) Uniform(0,t)'],ans:0,exp:'B(t)-B(s)~N(0,t-s) for t>s. Independent increments.'},
+  {unit:'u9',q:'Absorbing state has transition probability:',opts:['A) pᵢᵢ=0','B) pᵢᵢ=1','C) pᵢⱼ=1 for all j','D) Returns each visit'],ans:1,exp:'Absorbing: pᵢᵢ=1 once entered, stays forever.'},
+  {unit:'u9',q:'Birth-death process transitions only to:',opts:['A) Any state','B) Adjacent states n±1','C) State n+1 only','D) States 0 and ∞'],ans:1,exp:'Birth-death: from n can go to n+1 (birth) or n-1 (death).'},
+  // ── ADD MORE UNIT IX QUESTIONS HERE (keep unit:'u9') ─────────────
+
+  // ════════════ UNIT X: Indian Statistical System & R ════════════
+  {unit:'u10',q:'NSO formed by merging:',opts:['A) CSO and NSSO','B) RBI and CSO','C) MOSPI and CSO','D) NSSO and RBI'],ans:0,exp:'NSO=CSO+NSSO, merged 2019 under MoSPI.'},
   {unit:'u10',q:'In R, vector is created using:',opts:['A) vec()','B) array()','C) c()','D) list()'],ans:2,exp:'c() combines elements into a vector in R.'},
   {unit:'u10',q:'ISI was founded by:',opts:['A) C.R. Rao','B) P.C. Mahalanobis','C) S.N. Bose','D) Homi Bhabha'],ans:1,exp:'ISI founded by P.C. Mahalanobis in Kolkata, 1931.'},
-  // ── ADD MORE UNIT X QUESTIONS HERE ──
+  {unit:'u10',q:'NSS in India used for:',opts:['A) GDP only','B) Household surveys on employment, consumption, health','C) Industrial data','D) Monetary policy'],ans:1,exp:'NSS: large-scale household surveys.'},
+  {unit:'u10',q:'lm() in R fits a:',opts:['A) Logistic model','B) Linear regression','C) Poisson model','D) Survival model'],ans:1,exp:'lm(y~x) fits OLS linear regression in R.'},
+  {unit:'u10',q:'Census in India conducted every:',opts:['A) 5 years','B) 7 years','C) 10 years','D) 15 years'],ans:2,exp:'Indian Census every 10 years.'},
+  {unit:'u10',q:'apply() family in R applies functions to:',opts:['A) Plots only','B) Arrays/lists/data frames','C) Tests only','D) Data import'],ans:1,exp:'apply(), lapply(), sapply() apply functions over array margins.'},
+  {unit:'u10',q:'shapiro.test() in R performs:',opts:['A) t-test','B) Shapiro-Wilk normality test','C) Chi-square test','D) ANOVA'],ans:1,exp:'shapiro.test() performs Shapiro-Wilk test for normality.'},
+  {unit:'u10',q:'R package for time series analysis:',opts:['A) ggplot2','B) dplyr','C) forecast / tseries','D) caret'],ans:2,exp:'forecast and tseries are standard R packages for ARIMA.'},
+  {unit:'u10',q:'WPI in India compiled by:',opts:['A) RBI','B) DPIIT/Ministry of Commerce','C) NSO','D) SEBI'],ans:1,exp:'WPI (Wholesale Price Index) compiled by DPIIT under Ministry of Commerce.'},
+  // ── ADD MORE UNIT X QUESTIONS HERE (keep unit:'u10') ─────────────
 ];
 
 // ════════════════════════════════════════════════════════════════════
-//  UNIT-WISE QUESTION BANKS
-//  HOW TO ADD: paste questions inside each unit's array below
-//  Each unit has 10 mock tests, picking questions sequentially
-//  Mock 1 → first 30 (or 50), Mock 2 → next 30 (or 50), etc.
-//  Format: {q:'...', opts:['A)...','B)...','C)...','D)...'], ans:0, exp:'...'}
-//  SCORING: 2 marks correct, 0 wrong/skip
+//  TEST CONFIGURATION
+//  ─────────────────────────────────────────────────────────────────
+//  TO CHANGE QUESTIONS PER UNIT IN FULL MOCK:  change qPerUnit below
+//  TO CHANGE QUESTIONS IN UNIT MOCK:           change qCount in MOCK_DEFS
+//  TO CHANGE TIME:                             change duration (seconds)
+//  TO UNLOCK A TEST:                           change locked:true → locked:false
+//  TO CHANGE TITLE/DESCRIPTION:               edit title, subtitle, description
+//  TO ADD A NEW FULL MOCK:                     copy a {type:'full'} entry, increment id & mockNum
+//  TO ADD A NEW UNIT MOCK:                     copy a {type:'unit'} entry, increment id & mockNum
 // ════════════════════════════════════════════════════════════════════
-const UNIT_QB = {
-  u1: [
-    // ── 3 SAMPLE QUESTIONS — ADD YOUR REMAINING UNIT I QUESTIONS BELOW ──
-    {q:'Bayes theorem relates:',opts:['A) Prior and posterior probabilities','B) Mean and variance','C) Sample and population','D) Type I and II errors'],ans:0,exp:'Bayes: P(H|E)=P(E|H)P(H)/P(E), connecting prior to posterior.'},
-    {q:'Chebyshev inequality: P(|X-μ|≥kσ) ≤',opts:['A) 1/k','B) 1/k²','C) k²','D) 1/(k-1)²'],ans:1,exp:'Chebyshev: P(|X-μ|≥kσ)≤1/k² for k>0.'},
-    {q:'If X~Binomial(n,p), variance is:',opts:['A) np','B) np(1-p)','C) npq²','D) n²p'],ans:1,exp:'Var[Bin(n,p)]=np(1-p)=npq.'},
-    // ── ADD MORE UNIT I QUESTIONS HERE ──────────────────────────────
-  ],
-  u2: [
-    {q:'Matrix A is positive definite if all eigenvalues are:',opts:['A) Zero','B) Negative','C) Positive','D) Real'],ans:2,exp:'PD matrix: all eigenvalues strictly positive.'},
-    {q:'det(kA) for n×n matrix equals:',opts:['A) k det(A)','B) kⁿ det(A)','C) n·k det(A)','D) det(A)'],ans:1,exp:'det(kA)=kⁿ det(A).'},
-    {q:'Generalized inverse A⁻ satisfies:',opts:['A) AA⁻A=A','B) AA⁻=I','C) A⁻A=I','D) A⁻=Aᵀ'],ans:0,exp:'Generalized inverse: AA⁻A=A.'},
-    // ── ADD MORE UNIT II QUESTIONS HERE ─────────────────────────────
-  ],
-  u3: [
-    {q:'Neyman allocation sets nₕ proportional to:',opts:['A) Nₕ only','B) Nₕσₕ','C) σₕ only','D) 1/σₕ'],ans:1,exp:'Neyman optimal: nₕ∝Nₕσₕ.'},
-    {q:'Cluster sampling preferred when clusters are:',opts:['A) Homogeneous within','B) Small','C) Internally heterogeneous','D) Equal size'],ans:2,exp:'Efficient when each cluster is a miniature population.'},
-    {q:'In LSD, rows=columns=treatments=:',opts:['A) n','B) k','C) p (same for all three)','D) n-1'],ans:2,exp:'LSD: p×p square, p=treatments=rows=columns.'},
-    // ── ADD MORE UNIT III QUESTIONS HERE ────────────────────────────
-  ],
-  u4: [
-    {q:'Consistent estimator Tₙ means:',opts:['A) E(Tₙ)=θ','B) Tₙ→θ in probability','C) Var(Tₙ)=0','D) Tₙ is sufficient'],ans:1,exp:'Consistency: Tₙ→ᵖθ as n→∞.'},
-    {q:'Bayes estimator under squared error loss is:',opts:['A) MLE','B) Posterior mean','C) Posterior mode','D) Prior mean'],ans:1,exp:'Under squared error loss, Bayes estimator=E(θ|X).'},
-    {q:'Sufficient statistic T for θ means:',opts:['A) All population info','B) All sample info about θ','C) Min sample values','D) MLE values'],ans:1,exp:'T sufficient: conditional distribution of X|T free of θ.'},
-    // ── ADD MORE UNIT IV QUESTIONS HERE ─────────────────────────────
-  ],
-  u5: [
-    {q:'NP Lemma gives MP test for:',opts:['A) Composite vs composite','B) Simple vs simple hypothesis','C) One-sided vs two-sided','D) Non-parametric tests'],ans:1,exp:'NP Lemma applies to simple H₀ vs simple H₁.'},
-    {q:'UMP test exists when distribution has:',opts:['A) Normal distribution','B) Monotone Likelihood Ratio','C) Sufficient statistic','D) Exponential tails'],ans:1,exp:'MLR guarantees UMP test for one-sided hypotheses.'},
-    {q:'p-value is probability of result as/more extreme under:',opts:['A) H₁','B) H₀','C) Both','D) Neither'],ans:1,exp:'p-value=P(statistic≥observed|H₀ true). Reject if p<α.'},
-    // ── ADD MORE UNIT V QUESTIONS HERE ──────────────────────────────
-  ],
-  u6: [
-    {q:'Hat matrix H=X(XᵀX)⁻¹Xᵀ satisfies:',opts:['A) H²=I','B) H²=H','C) H is diagonal','D) Hᵀ=-H'],ans:1,exp:'Hat matrix is idempotent: H²=H and symmetric.'},
-    {q:'WLS weight for observation i with variance σᵢ² is:',opts:['A) σᵢ','B) 1/σᵢ','C) 1/σᵢ²','D) σᵢ²'],ans:2,exp:'WLS weights wᵢ=1/σᵢ² for heteroscedastic errors.'},
-    {q:'VIF>___ indicates serious multicollinearity:',opts:['A) 1','B) 5 or 10','C) 2','D) 100'],ans:1,exp:'VIF>5 (or 10 strict) indicates serious multicollinearity.'},
-    // ── ADD MORE UNIT VI QUESTIONS HERE ─────────────────────────────
-  ],
-  u7: [
-    {q:'Stationary time series has:',opts:['A) Trend','B) Constant mean, variance; lag-dependent covariance','C) Seasonal pattern','D) Zero ACF'],ans:1,exp:'Weak stationarity: constant mean, variance; covariance depends only on lag.'},
-    {q:'For AR(p), PACF:',opts:['A) Cuts off after lag p','B) Tails off slowly','C) Is always positive','D) Equals ACF'],ans:0,exp:'AR(p): PACF cuts off after lag p. Key identification tool.'},
-    {q:'ARCH models are used for:',opts:['A) Trend','B) Volatility clustering','C) Seasonal patterns','D) Cointegration'],ans:1,exp:'ARCH/GARCH: models time-varying conditional variance.'},
-    // ── ADD MORE UNIT VII QUESTIONS HERE ────────────────────────────
-  ],
-  u8: [
-    {q:'Mahalanobis distance D² accounts for:',opts:['A) Euclidean distance only','B) Correlations and variance differences','C) Sample size','D) Mean difference only'],ans:1,exp:'D²=(x-μ)ᵀΣ⁻¹(x-μ) accounts for correlations and scale.'},
-    {q:'Factor analysis explains p variables using:',opts:['A) p factors','B) m<p common factors','C) Principal components','D) Canonical variables'],ans:1,exp:'Factor analysis: p variables explained by m<p common factors.'},
-    {q:'K-means assigns each point to cluster with:',opts:['A) Max distance from centroid','B) Nearest centroid','C) Max likelihood','D) Min Mahalanobis distance'],ans:1,exp:'K-means: min Euclidean distance to centroid.'},
-    // ── ADD MORE UNIT VIII QUESTIONS HERE ───────────────────────────
-  ],
-  u9: [
-    {q:'State i is recurrent if:',opts:['A) P(return)<1','B) P(return)=1','C) It is absorbing','D) Communicates with all states'],ans:1,exp:'Recurrent: chain returns to i with probability 1.'},
-    {q:'Inter-arrival times in Poisson process are:',opts:['A) Normal','B) Uniform','C) Exponential','D) Gamma'],ans:2,exp:'In Poisson(λ), inter-arrival times are i.i.d. Exponential(λ).'},
-    {q:'Ergodic Markov chain is:',opts:['A) Reducible and periodic','B) Irreducible and aperiodic','C) Transient','D) Absorbing'],ans:1,exp:'Ergodic: irreducible+aperiodic → unique stationary distribution.'},
-    // ── ADD MORE UNIT IX QUESTIONS HERE ─────────────────────────────
-  ],
-  u10: [
-    {q:'NSS in India used for:',opts:['A) GDP only','B) Household surveys on employment, consumption, health','C) Industrial data','D) Monetary policy'],ans:1,exp:'NSS: large-scale household surveys.'},
-    {q:'lm() in R fits a:',opts:['A) Logistic model','B) Linear regression','C) Poisson model','D) Survival model'],ans:1,exp:'lm(y~x) fits OLS linear regression in R.'},
-    {q:'Census in India conducted every:',opts:['A) 5 years','B) 7 years','C) 10 years','D) 15 years'],ans:2,exp:'Indian Census every 10 years.'},
-    // ── ADD MORE UNIT X QUESTIONS HERE ──────────────────────────────
-  ]
-};
 
-// ════════════════════════════════════════════════════════════════════
-//  SURPRISE TEST QUESTION BANK  (SURPRISE_QB)
-//  Random 50 questions picked each time from this pool
-//  Add as many questions as you want — more = less repetition
-//  Same format as FULL_QB but no unit tag needed
-//  SCORING: 2 marks correct, 0 wrong/skip. Max = 100 marks
-// ════════════════════════════════════════════════════════════════════
-const SURPRISE_QB = [
-  {q:'If X and Y are independent, Cov(X,Y)=',opts:['A) 1','B) -1','C) 0','D) σ_X·σ_Y'],ans:2,exp:'Independence implies Cov(X,Y)=0.'},
-  {q:'Characteristic function of X is:',opts:['A) E(e^tX)','B) E(e^itX)','C) E(X^t)','D) log E(e^X)'],ans:1,exp:'φ(t)=E(e^{itX}), i=√(-1).'},
-  {q:'CLT: as n→∞, sample mean approaches:',opts:['A) t-distribution','B) F-distribution','C) Normal','D) Chi-square'],ans:2,exp:'CLT: √n(X̄-μ)/σ→N(0,1) as n→∞.'},
-  {q:'Geometric distribution models:',opts:['A) Successes in n trials','B) Trials until first success','C) Defects per unit','D) Waiting time'],ans:1,exp:'Geometric: trials needed to get one success.'},
-  {q:'Sequence {aₙ} is Cauchy if:',opts:['A) aₙ→∞','B) |aₙ₊₁-aₙ|→0','C) |aₙ-aₘ|→0 as n,m→∞','D) aₙ bounded'],ans:2,exp:'Cauchy: ∀ε>0, ∃N: |aₙ-aₘ|<ε for n,m>N.'},
-  {q:'Stratified efficiency over SRS highest when:',opts:['A) Strata means equal','B) Strata means differ greatly','C) Strata sizes equal','D) Large sampling fraction'],ans:1,exp:'Stratified efficient when between-strata variation is large.'},
-  {q:'2ⁿ factorial: n factors each at:',opts:['A) n levels','B) 2 levels','C) n² levels','D) 3 levels'],ans:1,exp:'2ⁿ design: n factors each at 2 levels (low/high).'},
-  {q:'Rao-Blackwell + Lehmann-Scheffé gives:',opts:['A) Increased variance','B) Biased estimator','C) UMVUE','D) MLE'],ans:2,exp:'E[T|S] where S is complete sufficient → UMVUE.'},
-  {q:'Wilcoxon signed-rank test is for:',opts:['A) Two independent samples','B) One sample or paired data','C) k>2 groups','D) Categorical data'],ans:1,exp:'Non-parametric alternative to one-sample or paired t-test.'},
-  {q:'SPRT was proposed by:',opts:['A) Fisher','B) Neyman','C) Wald','D) Pearson'],ans:2,exp:'Sequential Probability Ratio Test by Abraham Wald, 1947.'},
-  {q:'Logistic regression used when Y is:',opts:['A) Continuous','B) Count','C) Binary/categorical','D) Normal'],ans:2,exp:'Logistic models P(Y=1|X) for binary response.'},
-  {q:'Box-Jenkins steps:',opts:['A) Identification, Estimation, Diagnostic checking','B) Smoothing, Filtering, Forecasting','C) Differencing, Integration, Smoothing','D) ACF, PACF, MA'],ans:0,exp:'Box-Jenkins: Identification→Estimation→Diagnostic→Forecast.'},
-  {q:'I(1) series → stationary after:',opts:['A) Log transform','B) First differencing','C) Seasonal adjustment','D) MA smoothing'],ans:1,exp:'I(1) needs one difference to become stationary.'},
-  {q:'LDA maximizes:',opts:['A) Within-group variance','B) Between-to-within variance ratio','C) Total variance','D) Correlation'],ans:1,exp:'LDA: maximize J=between-group/within-group SS.'},
-  {q:'Chapman-Kolmogorov equation:',opts:['A) p(n+m)=p(n)×p(m)','B) pᵢⱼ^(n+m)=Σₖpᵢₖ^(n)pₖⱼ^(m)','C) π=πP','D) Rates sum to zero'],ans:1,exp:'C-K: pᵢⱼ^(n+m)=Σₖpᵢₖ^(n)pₖⱼ^(m).'},
-  {q:'apply() in R applies functions to:',opts:['A) Plots','B) Arrays/lists/data frames','C) Tests only','D) Data import'],ans:1,exp:'apply(), lapply(), sapply() apply functions over array margins or groups.'},
-  // ── ADD MORE SURPRISE QUESTIONS HERE — any topic, any unit ───────
-];
+// ── How many questions per unit for full syllabus mock ──
+// 10 units × qPerUnit = total questions per test
+// Change this one number to change all full mocks at once
+const FULL_MOCK_Q_PER_UNIT = 10; // ← CHANGE THIS (e.g. 5 = 50 total, 10 = 100 total)
 
-// ════════════════════════════════════════════════════════════════════
-//  MOCK TEST DEFINITIONS
-//
-//  FULL SYLLABUS TESTS:
-//  - Auto-picks 10 questions per unit from FULL_QB
-//  - mockNum determines which block (Mock 1→first 10 each unit, etc.)
-//  - TO ADD NEW MOCK: add entry with type:'full', increment mockNum
-//  - TO UNLOCK: change locked:true → locked:false
-//  - TO EDIT DESCRIPTION: change title/subtitle/description fields
-//
-//  UNIT-WISE TESTS:
-//  - type:'unit', unit:'u1' etc.
-//  - qCount: how many questions (30 or 50)
-//  - mockNum: which block of questions from UNIT_QB
-//  - TO EDIT: change title/description/qCount/locked as needed
-//
-//  SURPRISE TEST: always 1, auto-random from SURPRISE_QB
-// ════════════════════════════════════════════════════════════════════
 const MOCK_DEFS = [
-  // ── FULL SYLLABUS MOCKS ─────────────────────────────────────────
-  // mockNum: which batch (1=Q1-10 per unit, 2=Q11-20 per unit, etc.)
-  // TO ADD MORE: copy a row, increment id and mockNum
+  // ── FULL SYLLABUS MOCKS ──────────────────────────────────────────
+  // mockNum: 1=first batch, 2=second batch, etc.
+  // Add new full mock: copy row, increment id and mockNum
   {id:1,  type:'full', mockNum:1, locked:false, duration:7200,
    title:'Full Syllabus Mock 1',
    subtitle:'All 10 Units · 100 Questions · 200 Marks',
    description:'First full-length mock. Covers all 10 units equally — 10 questions per unit.'},
 
-  {id:2,  type:'full', mockNum:2, locked:true, duration:7200,
+  {id:2,  type:'full', mockNum:2, locked:true,  duration:7200,
    title:'Full Syllabus Mock 2',
    subtitle:'All 10 Units · 100 Questions · 200 Marks',
-   description:'Second batch. Continues where Mock 1 left off — fresh questions from each unit.'},
+   description:'Second batch. Fresh questions continuing from Mock 1.'},
 
-  {id:3,  type:'full', mockNum:3, locked:true, duration:7200,
+  {id:3,  type:'full', mockNum:3, locked:true,  duration:7200,
    title:'Full Syllabus Mock 3',
    subtitle:'All 10 Units · 100 Questions · 200 Marks',
    description:'Third batch covering advanced topics across all units.'},
 
-  // ── UNIT-WISE MOCKS ─────────────────────────────────────────────
-  // qCount: 30 or 50 (you decide per test — edit manually)
-  // mockNum: 1=first qCount questions, 2=next qCount, etc.
-  {id:11, type:'unit', unit:'u1', mockNum:1, locked:false, qCount:30, duration:3600,
+  // ── UNIT-WISE MOCKS ──────────────────────────────────────────────
+  // qCount: questions per test (30 or 50) — change per test as needed
+  // mockNum: 1=Q[0 to qCount-1], 2=Q[qCount to 2*qCount-1], etc.
+  {id:11, type:'unit', unit:'u1',  mockNum:1, locked:false, qCount:10, duration:3600,
    title:'Unit I Mock 1 — Probability Theory',
-   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+   subtitle:'Unit I Only · 10 Questions · 20 Marks',
    description:'Probability basics: classical, axiomatic, Bayes theorem, standard distributions.'},
 
-  {id:12, type:'unit', unit:'u1', mockNum:2, locked:true, qCount:30, duration:3600,
+  {id:12, type:'unit', unit:'u1',  mockNum:2, locked:true,  qCount:10, duration:3600,
    title:'Unit I Mock 2 — Probability Theory',
-   subtitle:'Unit I Only · 30 Questions · 60 Marks',
-   description:'Advanced probability: MGF, CGF, convergence theorems, limit theorems.'},
+   subtitle:'Unit I Only · 10 Questions · 20 Marks',
+   description:'Advanced probability: MGF, convergence theorems, limit theorems.'},
 
-  {id:21, type:'unit', unit:'u2', mockNum:1, locked:true, qCount:30, duration:3600,
+  {id:21, type:'unit', unit:'u2',  mockNum:1, locked:false, qCount:10, duration:3600,
    title:'Unit II Mock 1 — Real Analysis & Matrix Algebra',
-   subtitle:'Unit II Only · 30 Questions · 60 Marks',
-   description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms.'},
+   subtitle:'Unit II Only · 10 Questions · 20 Marks',
+   description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences.'},
 
-  {id:31, type:'unit', unit:'u3', mockNum:1, locked:true, qCount:30, duration:3600,
-   title:'Unit III Mock 1 — Sampling Methods',
-   subtitle:'Unit III Only · 30 Questions · 60 Marks',
-   description:'Sampling designs: SRS, stratified, cluster, systematic. Allocation methods.'},
+  {id:31, type:'unit', unit:'u3',  mockNum:1, locked:false, qCount:10, duration:3600,
+   title:'Unit III Mock 1 — Sampling Methods & DOE',
+   subtitle:'Unit III Only · 10 Questions · 20 Marks',
+   description:'Sampling designs: SRS, stratified, cluster, systematic. CRD, RBD, LSD.'},
 
-  {id:41, type:'unit', unit:'u4', mockNum:1, locked:true, qCount:30, duration:3600,
+  {id:41, type:'unit', unit:'u4',  mockNum:1, locked:false, qCount:10, duration:3600,
    title:'Unit IV Mock 1 — Estimation Theory',
-   subtitle:'Unit IV Only · 30 Questions · 60 Marks',
+   subtitle:'Unit IV Only · 10 Questions · 20 Marks',
    description:'Point estimation: UMVUE, MLE, Cramer-Rao, sufficiency, completeness.'},
 
-  {id:51, type:'unit', unit:'u5', mockNum:1, locked:true, qCount:30, duration:3600,
+  {id:51, type:'unit', unit:'u5',  mockNum:1, locked:false, qCount:10, duration:3600,
    title:'Unit V Mock 1 — Testing of Hypotheses',
-   subtitle:'Unit V Only · 30 Questions · 60 Marks',
+   subtitle:'Unit V Only · 10 Questions · 20 Marks',
    description:'NP Lemma, UMP tests, LRT, chi-square tests, non-parametric tests.'},
 
-  {id:61, type:'unit', unit:'u6', mockNum:1, locked:true, qCount:30, duration:3600,
+  {id:61, type:'unit', unit:'u6',  mockNum:1, locked:false, qCount:10, duration:3600,
    title:'Unit VI Mock 1 — Linear Estimation & Regression',
-   subtitle:'Unit VI Only · 30 Questions · 60 Marks',
-   description:'Gauss-Markov theorem, OLS, ridge regression, logistic regression.'},
+   subtitle:'Unit VI Only · 10 Questions · 20 Marks',
+   description:'Gauss-Markov theorem, OLS, multicollinearity, ridge regression.'},
 
-  {id:71, type:'unit', unit:'u7', mockNum:1, locked:true, qCount:30, duration:3600,
+  {id:71, type:'unit', unit:'u7',  mockNum:1, locked:false, qCount:10, duration:3600,
    title:'Unit VII Mock 1 — Time Series Analysis',
-   subtitle:'Unit VII Only · 30 Questions · 60 Marks',
-   description:'ARIMA, stationarity, ACF, PACF, Box-Jenkins, forecasting.'},
+   subtitle:'Unit VII Only · 10 Questions · 20 Marks',
+   description:'ARIMA, stationarity, ACF, PACF, Box-Jenkins, ADF test, forecasting.'},
 
-  {id:81, type:'unit', unit:'u8', mockNum:1, locked:true, qCount:30, duration:3600,
+  {id:81, type:'unit', unit:'u8',  mockNum:1, locked:false, qCount:10, duration:3600,
    title:'Unit VIII Mock 1 — Multivariate Analysis',
-   subtitle:'Unit VIII Only · 30 Questions · 60 Marks',
+   subtitle:'Unit VIII Only · 10 Questions · 20 Marks',
    description:'Hotelling T², PCA, LDA, MANOVA, factor analysis, cluster analysis.'},
 
-  {id:91, type:'unit', unit:'u9', mockNum:1, locked:true, qCount:30, duration:3600,
+  {id:91, type:'unit', unit:'u9',  mockNum:1, locked:false, qCount:10, duration:3600,
    title:'Unit IX Mock 1 — Stochastic Processes',
-   subtitle:'Unit IX Only · 30 Questions · 60 Marks',
+   subtitle:'Unit IX Only · 10 Questions · 20 Marks',
    description:'Markov chains, Poisson process, Brownian motion, birth-death process.'},
 
-  {id:101,type:'unit', unit:'u10',mockNum:1, locked:true, qCount:30, duration:3600,
+  {id:101,type:'unit', unit:'u10', mockNum:1, locked:false, qCount:10, duration:3600,
    title:'Unit X Mock 1 — Indian Statistical System & R',
-   subtitle:'Unit X Only · 30 Questions · 60 Marks',
+   subtitle:'Unit X Only · 10 Questions · 20 Marks',
    description:'NSO, NSS, census, index numbers, R programming basics.'},
 ];
 
-// ── Surprise test definition (always 1, random 50 Qs)
+// ── Surprise test ──
 const SURPRISE_DEF = {
   id:999, type:'surprise', locked:false, duration:3600,
   title:'⚡ Surprise Test',
   subtitle:'Random 50 Questions · 100 Marks',
-  description:'Fresh random mix every attempt! 50 questions randomly picked from our full question bank. Great for quick revision.'
+  description:'Fresh random mix every attempt! 50 questions randomly picked from the full master question bank across all units.'
 };
 
 // ════════════════════════════════════════════════════════════════════
-//  ENGINE — DO NOT EDIT BELOW THIS LINE UNLESS YOU KNOW JS
+//  ENGINE — getQuestions uses MASTER_QB for all 3 test types
 // ════════════════════════════════════════════════════════════════════
-
 function getQuestions(def) {
+  const unitIds = ['u1','u2','u3','u4','u5','u6','u7','u8','u9','u10'];
+
   if (def.type === 'surprise') {
-    const pool = [...SURPRISE_QB];
-    for (let i = pool.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [pool[i], pool[j]] = [pool[j], pool[i]];
+    // Random 50 from entire MASTER_QB
+    const pool = [...MASTER_QB];
+    for (let i = pool.length-1; i > 0; i--) {
+      const j = Math.floor(Math.random()*(i+1));
+      [pool[i],pool[j]] = [pool[j],pool[i]];
     }
     return pool.slice(0, 50);
   }
+
   if (def.type === 'full') {
-    const unitIds = ['u1','u2','u3','u4','u5','u6','u7','u8','u9','u10'];
+    // 10 per unit from MASTER_QB sequentially by mockNum
     const qs = [];
-    const start = (def.mockNum - 1) * 10;
+    const start = (def.mockNum-1) * FULL_MOCK_Q_PER_UNIT;
     unitIds.forEach(uid => {
-      const pool = FULL_QB.filter(q => q.unit === uid);
-      qs.push(...pool.slice(start, start + 10));
+      const pool = MASTER_QB.filter(q => q.unit === uid);
+      const batch = pool.slice(start, start + FULL_MOCK_Q_PER_UNIT);
+      qs.push(...batch);
     });
     return qs;
   }
+
   if (def.type === 'unit') {
-    const pool = UNIT_QB[def.unit] || [];
-    const start = (def.mockNum - 1) * def.qCount;
+    // qCount questions from that unit only, sequentially by mockNum
+    const pool = MASTER_QB.filter(q => q.unit === def.unit);
+    const start = (def.mockNum-1) * def.qCount;
     return pool.slice(start, start + def.qCount);
   }
+
   return [];
 }
 
-function maxMarks(qs) { return qs.length * 2; }
-
-let currentStudent = null;
-function doLogin() {
-  const roll = document.getElementById('login-roll').value.trim().toUpperCase();
-  const pass = document.getElementById('login-pass').value.trim();
-  const err  = document.getElementById('login-error');
-  if (STUDENTS[roll] && STUDENTS[roll].password === pass) {
-    currentStudent = { roll, name: STUDENTS[roll].name };
-    err.style.display = 'none';
-    document.getElementById('mock-login-screen').style.display = 'none';
-    document.getElementById('welcome-name').textContent = 'Welcome, ' + currentStudent.name + '!';
-    document.getElementById('welcome-roll').textContent = 'Roll Number: ' + currentStudent.roll;
-    document.getElementById('mock-list-screen').style.display = 'block';
+// ── Remaining engine (login, exam, results) ──
+let currentStudent=null;
+function doLogin(){
+  const roll=document.getElementById('login-roll').value.trim().toUpperCase();
+  const pass=document.getElementById('login-pass').value.trim();
+  const err=document.getElementById('login-error');
+  if(STUDENTS[roll]&&STUDENTS[roll].password===pass){
+    currentStudent={roll,name:STUDENTS[roll].name};
+    err.style.display='none';
+    document.getElementById('mock-login-screen').style.display='none';
+    document.getElementById('welcome-name').textContent='Welcome, '+currentStudent.name+'!';
+    document.getElementById('welcome-roll').textContent='Roll Number: '+currentStudent.roll;
+    document.getElementById('mock-list-screen').style.display='block';
     buildMockList();
-  } else { err.style.display = 'block'; }
+  } else { err.style.display='block'; }
 }
-function doLogout() {
-  currentStudent = null; clearInterval(timerInterval);
-  ['mock-list-screen','mock-exam-screen','mock-result-screen'].forEach(id => document.getElementById(id).style.display = 'none');
-  document.getElementById('mock-login-screen').style.display = 'block';
-  document.getElementById('login-roll').value = '';
-  document.getElementById('login-pass').value = '';
+function doLogout(){
+  currentStudent=null; clearInterval(timerInterval);
+  ['mock-list-screen','mock-exam-screen','mock-result-screen'].forEach(id=>document.getElementById(id).style.display='none');
+  document.getElementById('mock-login-screen').style.display='block';
+  document.getElementById('login-roll').value='';
+  document.getElementById('login-pass').value='';
 }
 
-function buildMockList() {
-  const allDefs = [...MOCK_DEFS, SURPRISE_DEF];
-  const fullTests   = allDefs.filter(d => d.type === 'full');
-  const unitTests   = allDefs.filter(d => d.type === 'unit');
-  const surpriseTest= allDefs.filter(d => d.type === 'surprise');
-  const unitLabels  = {u1:'Unit I',u2:'Unit II',u3:'Unit III',u4:'Unit IV',u5:'Unit V',u6:'Unit VI',u7:'Unit VII',u8:'Unit VIII',u9:'Unit IX',u10:'Unit X'};
-  const headerColors= {full:'#1a4a2a',unit:'#2a3a6a',surprise:'#6a1a4a'};
-
-  let html = '';
-  // Surprise first
-  html += `<div class="mock-section-header" style="background:#4a1a4a;">⚡ Surprise Test</div><div class="mock-tests-grid">`;
-  surpriseTest.forEach(t => { html += mockCard(t, '#6a1a4a', '#9a2a9a'); });
-  html += `</div>`;
-  // Full syllabus
-  html += `<div class="mock-section-header" style="background:#1a4a2a;">📋 Full Syllabus Mock Tests</div><div class="mock-tests-grid">`;
-  fullTests.forEach(t => { html += mockCard(t, '#1a4a2a', '#2d8a3a'); });
-  html += `</div>`;
-  // Unit-wise grouped
-  const units = [...new Set(unitTests.map(t => t.unit))];
-  units.forEach(uid => {
-    html += `<div class="mock-section-header" style="background:#2a3a6a;">📘 ${unitLabels[uid]} — Unit-wise Mocks</div><div class="mock-tests-grid">`;
-    unitTests.filter(t => t.unit === uid).forEach(t => { html += mockCard(t, '#2a3a6a', '#3b5bdb'); });
-    html += `</div>`;
+function buildMockList(){
+  const allDefs=[...MOCK_DEFS,SURPRISE_DEF];
+  const fullTests=allDefs.filter(d=>d.type==='full');
+  const unitTests=allDefs.filter(d=>d.type==='unit');
+  const surpriseTest=allDefs.filter(d=>d.type==='surprise');
+  const unitLabels={u1:'Unit I',u2:'Unit II',u3:'Unit III',u4:'Unit IV',u5:'Unit V',u6:'Unit VI',u7:'Unit VII',u8:'Unit VIII',u9:'Unit IX',u10:'Unit X'};
+  let html='';
+  html+=`<div class="mock-section-header" style="background:#4a1a4a;">⚡ Surprise Test</div><div class="mock-tests-grid">`;
+  surpriseTest.forEach(t=>{html+=mockCard(t,'#6a1a4a','#9a2a9a');});
+  html+=`</div>`;
+  html+=`<div class="mock-section-header" style="background:#1a4a2a;">📋 Full Syllabus Mock Tests</div><div class="mock-tests-grid">`;
+  fullTests.forEach(t=>{html+=mockCard(t,'#1a4a2a','#2d8a3a');});
+  html+=`</div>`;
+  const units=[...new Set(unitTests.map(t=>t.unit))];
+  units.forEach(uid=>{
+    html+=`<div class="mock-section-header" style="background:#2a3a6a;">📘 ${unitLabels[uid]} — Unit-wise Mocks</div><div class="mock-tests-grid">`;
+    unitTests.filter(t=>t.unit===uid).forEach(t=>{html+=mockCard(t,'#2a3a6a','#3b5bdb');});
+    html+=`</div>`;
   });
-  document.getElementById('mock-tests-grid').innerHTML = html;
+  document.getElementById('mock-tests-grid').innerHTML=html;
 }
 
-function mockCard(t, c1, c2) {
-  const dur = Math.floor(t.duration/60) + ' Min';
-  const qs  = t.type==='surprise'?'50':t.type==='full'?'100':(t.qCount||30)+'';
-  const marks = parseInt(qs) * 2;
-  const typeBadge = t.type==='surprise'?'⚡ Surprise':t.type==='full'?'📋 Full Syllabus':'📘 Unit-wise';
-  return `<div class="mock-test-card">
-    <div class="mock-test-card-header" style="background:linear-gradient(135deg,${c1},${c2});">
-      <div class="mtc-num">${t.type==='surprise'?'⚡':t.id}</div>
-      <div><div class="mtc-title">${t.title}</div><div class="mtc-sub">${t.subtitle}</div></div>
-    </div>
-    <div class="mock-test-card-body">
-      <div class="mtc-desc">${t.description}</div>
-      <div class="mtc-info">
-        <span class="mtc-badge mtc-badge-green">📝 ${qs} Qs</span>
-        <span class="mtc-badge mtc-badge-blue">⏱ ${dur}</span>
-        <span class="mtc-badge mtc-badge-orange">🏆 ${marks} Marks</span>
-        ${t.locked?'<span class="mtc-badge mtc-badge-locked">🔒 Locked</span>':'<span class="mtc-badge mtc-badge-open">🔓 Open</span>'}
-      </div>
-      <button class="btn-start-mock" onclick="startMock(${t.id})" ${t.locked?'disabled':''}>
-        ${t.locked?'🔒 Coming Soon':'▶ Start Test'}
-      </button>
-    </div>
-  </div>`;
+function mockCard(t,c1,c2){
+  const dur=Math.floor(t.duration/60)+' Min';
+  const qs=t.type==='surprise'?'50':t.type==='full'?(FULL_MOCK_Q_PER_UNIT*10)+'':(t.qCount||10)+'';
+  const marks=parseInt(qs)*2;
+  return `<div class="mock-test-card"><div class="mock-test-card-header" style="background:linear-gradient(135deg,${c1},${c2});"><div class="mtc-num">${t.type==='surprise'?'⚡':t.id}</div><div><div class="mtc-title">${t.title}</div><div class="mtc-sub">${t.subtitle}</div></div></div><div class="mock-test-card-body"><div class="mtc-desc">${t.description}</div><div class="mtc-info"><span class="mtc-badge mtc-badge-green">📝 ${qs} Qs</span><span class="mtc-badge mtc-badge-blue">⏱ ${dur}</span><span class="mtc-badge mtc-badge-orange">🏆 ${marks} Marks</span>${t.locked?'<span class="mtc-badge mtc-badge-locked">🔒 Locked</span>':'<span class="mtc-badge mtc-badge-open">🔓 Open</span>'}</div><button class="btn-start-mock" onclick="startMock(${t.id})" ${t.locked?'disabled':''}>${t.locked?'🔒 Coming Soon':'▶ Start Test'}</button></div></div>`;
 }
 
-let currentTest=null, currentQIdx=0, answers=[], skipped=[], timerInterval=null, timeLeft=0, currentDef=null;
+let currentTest=null,currentQIdx=0,answers=[],skipped=[],timerInterval=null,timeLeft=0,currentDef=null;
 
-function startMock(testId) {
-  const def = testId===999 ? SURPRISE_DEF : MOCK_DEFS.find(t => t.id === testId);
-  if (!def) return;
-  const qs = getQuestions(def);
-  if (!qs.length) { alert('No questions available yet for this test. Please check back later!'); return; }
-  currentDef = def; currentTest = {id:def.id, title:def.title, subtitle:def.subtitle, questions:qs};
+function startMock(testId){
+  const def=testId===999?SURPRISE_DEF:MOCK_DEFS.find(t=>t.id===testId);
+  if(!def)return;
+  const qs=getQuestions(def);
+  if(!qs.length){alert('No questions available for this test yet!\n\nAdd questions to MASTER_QB with the correct unit tag to enable this test.');return;}
+  currentDef=def; currentTest={id:def.id,title:def.title,subtitle:def.subtitle,questions:qs};
   currentQIdx=0; answers=Array(qs.length).fill(null); skipped=Array(qs.length).fill(false); timeLeft=def.duration;
   document.getElementById('mock-list-screen').style.display='none';
   document.getElementById('mock-exam-screen').style.display='block';
   document.getElementById('exam-title').textContent=def.title;
-  document.getElementById('exam-subtitle').textContent=def.subtitle+' · '+Math.floor(def.duration/60)+' Min';
+  document.getElementById('exam-subtitle').textContent=def.subtitle;
   document.getElementById('exam-max-marks').textContent='Max Marks: '+(qs.length*2);
   buildNavGrid(); renderQuestion(); startTimer();
 }
 
-function startTimer() {
+function startTimer(){
   clearInterval(timerInterval);
-  timerInterval = setInterval(() => {
+  timerInterval=setInterval(()=>{
     timeLeft--;
-    const h=Math.floor(timeLeft/3600), m=Math.floor((timeLeft%3600)/60), s=timeLeft%60;
+    const h=Math.floor(timeLeft/3600),m=Math.floor((timeLeft%3600)/60),s=timeLeft%60;
     const v=document.getElementById('exam-timer-val');
     v.textContent=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
     v.className='exam-timer-val'+(timeLeft<=300?' warning':'');
@@ -1237,17 +1046,14 @@ function startTimer() {
   },1000);
 }
 
-function renderQuestion() {
-  const qs=currentTest.questions, q=qs[currentQIdx], n=currentQIdx+1, total=qs.length;
+function renderQuestion(){
+  const qs=currentTest.questions,q=qs[currentQIdx],n=currentQIdx+1,total=qs.length;
   document.getElementById('q-number').textContent='Question '+n+' of '+total;
   document.getElementById('q-text').textContent=q.q;
   document.getElementById('exam-progress-text').textContent='Answered: '+answers.filter(a=>a!==null).length+' / '+total;
   document.getElementById('exam-progress-bar').style.width=(n/total*100)+'%';
   const keys=['A','B','C','D'];
-  document.getElementById('q-options').innerHTML=q.opts.map((opt,i)=>`
-    <button class="q-option${answers[currentQIdx]===i?' selected':''}" onclick="selectOpt(${i})">
-      <span class="q-option-key">${keys[i]}</span>${opt.replace(/^[A-D]\)\s*/,'')}
-    </button>`).join('');
+  document.getElementById('q-options').innerHTML=q.opts.map((opt,i)=>`<button class="q-option${answers[currentQIdx]===i?' selected':''}" onclick="selectOpt(${i})"><span class="q-option-key">${keys[i]}</span>${opt.replace(/^[A-D]\)\s*/,'')}</button>`).join('');
   updateNavGrid();
 }
 
@@ -1278,7 +1084,7 @@ function submitTest(){
   clearInterval(timerInterval);
   const qs=currentTest.questions; let correct=0,wrong=0,skippedCount=0;
   qs.forEach((q,i)=>{if(answers[i]===null)skippedCount++;else if(answers[i]===q.ans)correct++;else wrong++;});
-  const scored=correct*2, total=qs.length*2, pct=Math.round((scored/total)*100);
+  const scored=correct*2,total=qs.length*2,pct=Math.round((scored/total)*100);
   document.getElementById('result-score-num').textContent=scored+'/'+total;
   document.getElementById('result-score-sub').textContent=correct+' correct × 2 marks';
   document.getElementById('rs-correct').textContent=correct;
@@ -1308,6 +1114,7 @@ function submitTest(){
 function retakeTest(){document.getElementById('mock-result-screen').style.display='none';startMock(currentDef.id);}
 function backToList(){clearInterval(timerInterval);document.getElementById('mock-result-screen').style.display='none';document.getElementById('mock-exam-screen').style.display='none';document.getElementById('mock-list-screen').style.display='block';}
 document.addEventListener('keydown',e=>{if(e.key==='Enter'&&document.getElementById('tab-mocktest').classList.contains('active')&&document.getElementById('mock-login-screen').style.display!=='none')doLogin();});
+
 </script>
 </body>
 </html>
