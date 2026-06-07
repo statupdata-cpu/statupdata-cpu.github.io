@@ -835,126 +835,66 @@ const STUDENTS = {
 //     ans: 0=A, 1=B, 2=C, 3=D
 //  SCORING: 2 marks correct, 0 wrong/skip. Max = 200 marks per test.
 // ════════════════════════════════════════════════════════════════════
-const QB = [
-  // ── UNIT I: Probability Theory (10 Qs) ──
-  {unit:'u1',q:'Bayes theorem relates P(A|B) to:',opts:['A) P(B|A)·P(A)/P(B)','B) P(A)·P(B)','C) P(A∩B)/P(A)','D) 1−P(Aᶜ|B)'],ans:0,exp:'Bayes: P(A|B)=P(B|A)P(A)/P(B). Foundation of Bayesian inference.'},
-  {unit:'u1',q:'For X~Binomial(n,p), Var(X) equals:',opts:['A) np','B) np(1−p)','C) np²','D) n²p(1−p)'],ans:1,exp:'Binomial variance = np(1−p); mean=np.'},
-  {unit:'u1',q:'If X~Exponential(λ), the memoryless property states:',opts:['A) P(X>s+t|X>s)=P(X>t)','B) P(X>s+t)=P(X>s)+P(X>t)','C) E(X|X>s)=E(X)','D) P(X<s+t)=P(X<t)'],ans:0,exp:'Exponential is the only continuous memoryless distribution: P(X>s+t|X>s)=P(X>t).'},
-  {unit:'u1',q:'Chebyshev\'s inequality states P(|X−μ|≥kσ) ≤:',opts:['A) 1/k','B) 1/k²','C) e^{−k}','D) 1/(2k²)'],ans:1,exp:'Chebyshev: P(|X−μ|≥kσ)≤1/k² for any k>1, regardless of distribution.'},
-  {unit:'u1',q:'The characteristic function of X is E[e^{itX}]. For N(0,1) it equals:',opts:['A) e^{t²/2}','B) e^{−t²/2}','C) e^{it}','D) 1/(1−it)'],ans:1,exp:'CF of N(0,1): φ(t)=e^{−t²/2}. Compare to MGF=e^{t²/2}.'},
-  {unit:'u1',q:'Central Limit Theorem guarantees that √n(X̄−μ)/σ converges in distribution to:',opts:['A) t(n−1)','B) χ²(1)','C) N(0,1)','D) F(1,n)'],ans:2,exp:'CLT: standardised sample mean → N(0,1) as n→∞ regardless of parent distribution.'},
-  {unit:'u1',q:'If X~Gamma(α,β), then E(X)=',opts:['A) α/β','B) αβ','C) α²β','D) β/α'],ans:1,exp:'Gamma(α,β) with scale β: E(X)=αβ, Var(X)=αβ².'},
-  {unit:'u1',q:'Two events A, B are mutually exclusive if:',opts:['A) P(A∩B)=P(A)P(B)','B) P(A∩B)=0','C) P(A∪B)=1','D) P(A|B)=P(A)'],ans:1,exp:'Mutually exclusive: A∩B=∅, so P(A∩B)=0. Note: ME ≠ independent.'},
-  {unit:'u1',q:'For X~Beta(α,β), E(X) is:',opts:['A) α/(α+β)','B) αβ/(α+β)²','C) (α+β)/α','D) 1/(α+β)'],ans:0,exp:'Beta mean = α/(α+β); variance = αβ/[(α+β)²(α+β+1)].'},
-  {unit:'u1',q:'Jensen\'s inequality states that for convex g: g(E[X]) is:',opts:['A) ≥ E[g(X)]','B) ≤ E[g(X)]','C) = E[g(X)]','D) Undefined'],ans:1,exp:'Jensen: for convex g, g(EX)≤E[g(X)]. E.g. (EX)²≤E(X²).'},
+const FULL_QB = [
+  // ── UNIT I: Probability Theory ── (add more below, keep unit:'u1')
+  {unit:'u1',q:'If A and B are independent with P(A)=0.4, P(B)=0.5, then P(A∪B)=',opts:['A) 0.20','B) 0.70','C) 0.90','D) 0.60'],ans:1,exp:'P(A∪B)=P(A)+P(B)-P(A)P(B)=0.4+0.5-0.2=0.70.'},
+  {unit:'u1',q:'For X~Poisson(λ), E(X²) equals:',opts:['A) λ','B) λ²','C) λ²+λ','D) 2λ'],ans:2,exp:'E(X²)=Var(X)+[E(X)]²=λ+λ².'},
+  {unit:'u1',q:'MGF of Normal N(μ,σ²) is:',opts:['A) e^(μt)','B) e^(μt+σ²t²/2)','C) e^(σ²t²/2)','D) e^μ'],ans:1,exp:'MGF of Normal: M(t)=exp(μt+σ²t²/2).'},
+  // ── ADD MORE UNIT I QUESTIONS HERE ──
  
-  // ── UNIT II: Real Analysis & Matrix Algebra (10 Qs) ──
-  {unit:'u2',q:'A matrix A is positive definite if all eigenvalues are:',opts:['A) Non-negative','B) Strictly positive','C) Zero','D) Real'],ans:1,exp:'Positive definite: all eigenvalues>0, equivalently xᵀAx>0 for all x≠0.'},
-  {unit:'u2',q:'For matrices A (m×n) and B (n×p), rank(AB) satisfies:',opts:['A) rank(AB)=rank(A)+rank(B)','B) rank(AB)≥min(rank A, rank B)','C) rank(AB)≤min(rank A, rank B)','D) rank(AB)=m'],ans:2,exp:'Sylvester inequality: rank(AB)≤min(rank A, rank B).'},
-  {unit:'u2',q:'Spectral decomposition of symmetric A is:',opts:['A) A=LU','B) A=QΛQᵀ','C) A=UΣVᵀ','D) A=LDLᵀ'],ans:1,exp:'Symmetric A=QΛQᵀ where Q orthogonal (eigenvectors), Λ diagonal (eigenvalues).'},
-  {unit:'u2',q:'For a sequence {xₙ}, the Cauchy criterion for convergence requires:',opts:['A) xₙ→∞','B) |xₙ₊₁−xₙ|→0','C) |xₘ−xₙ|→0 for all m,n→∞','D) xₙ is monotone'],ans:2,exp:'Cauchy: for every ε>0, ∃N such that |xₘ−xₙ|<ε for all m,n>N.'},
-  {unit:'u2',q:'The Moore-Penrose generalised inverse A⁺ satisfies how many Penrose conditions?',opts:['A) 1','B) 2','C) 3','D) 4'],ans:3,exp:'Penrose (1955): 4 conditions: AA⁺A=A, A⁺AA⁺=A⁺, (AA⁺)ᵀ=AA⁺, (A⁺A)ᵀ=A⁺A.'},
-  {unit:'u2',q:'Det(AB) for square matrices equals:',opts:['A) det(A)+det(B)','B) det(A)·det(B)','C) det(A)/det(B)','D) det(A)−det(B)'],ans:1,exp:'Multiplicative property: det(AB)=det(A)det(B).'},
-  {unit:'u2',q:'Singular Value Decomposition of A is A=:',opts:['A) QΛQᵀ','B) LU','C) UΣVᵀ','D) LDLᵀ'],ans:2,exp:'SVD: A=UΣVᵀ; U,V orthogonal; Σ diagonal with singular values (≥0).'},
-  {unit:'u2',q:'For series Σaₙ, the ratio test says convergence if lim|aₙ₊₁/aₙ| is:',opts:['A) >1','B) =1','C) <1','D) =0'],ans:2,exp:'D\'Alembert ratio test: L<1 → converges absolutely; L>1 → diverges; L=1 → inconclusive.'},
-  {unit:'u2',q:'Kronecker product A⊗B has order:',opts:['A) (m+p)×(n+q)','B) mp×nq','C) mn×pq','D) max(m,p)×max(n,q)'],ans:1,exp:'If A is m×n and B is p×q, then A⊗B is mp×nq.'},
-  {unit:'u2',q:'A square matrix A is orthogonal if:',opts:['A) A=Aᵀ','B) AᵀA=I','C) A²=I','D) A=A⁻¹'],ans:1,exp:'Orthogonal: AᵀA=AAᵀ=I, so A⁻¹=Aᵀ. Columns/rows form orthonormal sets.'},
+  // ── UNIT II: Real Analysis & Matrix Algebra ── (keep unit:'u2')
+  {unit:'u2',q:'Rank of matrix A equals number of:',opts:['A) Rows','B) Columns','C) Zero eigenvalues','D) Linearly independent rows/columns'],ans:3,exp:'Rank=max number of linearly independent rows=linearly independent columns.'},
+  {unit:'u2',q:'Trace of a matrix equals sum of its:',opts:['A) Columns','B) Rows','C) Eigenvalues','D) Off-diagonal elements'],ans:2,exp:'tr(A)=sum of diagonal elements=sum of eigenvalues.'},
+  {unit:'u2',q:'Idempotent matrix A satisfies:',opts:['A) A²=I','B) A²=A','C) Aᵀ=-A','D) A=A⁻¹'],ans:1,exp:'Idempotent: A²=A. Eigenvalues are 0 or 1.'},
+  // ── ADD MORE UNIT II QUESTIONS HERE ──
  
-  // ── UNIT III: Sampling Methods & DOE (10 Qs) ──
-  {unit:'u3',q:'Neyman optimum allocation sets nₕ proportional to:',opts:['A) Nₕ','B) Nₕσₕ','C) Nₕσₕ/cₕ','D) σₕ only'],ans:1,exp:'Neyman: nₕ∝Nₕσₕ (ignores cost). Cost-optimum: nₕ∝Nₕσₕ/√cₕ.'},
-  {unit:'u3',q:'In systematic sampling with interval k=N/n, variance is smaller than SRSWOR when population has:',opts:['A) Positive serial correlation','B) Negative serial correlation','C) Zero correlation','D) Normal distribution'],ans:1,exp:'Systematic < SRSWOR variance when inter-class variance > intra-class (negative autocorrelation).'},
-  {unit:'u3',q:'In a 2ᵏ factorial design, the number of treatment combinations is:',opts:['A) k²','B) 2k','C) 2ᵏ','D) k!'],ans:2,exp:'2ᵏ design: k factors each at 2 levels → 2ᵏ treatment combinations.'},
-  {unit:'u3',q:'The efficiency of stratified over SRSWOR sampling is due to:',opts:['A) Larger sample size','B) Reduction in between-stratum variance','C) Use of auxiliary information','D) Cluster formation'],ans:1,exp:'Stratification reduces variance by removing between-stratum variation from estimator variance.'},
-  {unit:'u3',q:'Latin Square Design controls for:',opts:['A) One nuisance variable','B) Two nuisance variables','C) Three nuisance variables','D) None'],ans:1,exp:'LSD: rows and columns each control one nuisance variable, so two sources of variation are blocked.'},
-  {unit:'u3',q:'Horvitz-Thompson estimator is used in:',opts:['A) Ratio estimation','B) Unequal probability sampling','C) Cluster sampling only','D) Double sampling'],ans:1,exp:'HT estimator: Ȳ_HT=Σyᵢ/πᵢ where πᵢ is inclusion probability. Valid for any probability sampling.'},
-  {unit:'u3',q:'Confounding in factorial experiments means:',opts:['A) Main effects are ignored','B) High-order interaction is aliased with block effect','C) Replication is absent','D) Factors are dependent'],ans:1,exp:'Confounding: certain interaction(s) cannot be separated from block differences by design.'},
-  {unit:'u3',q:'In Balanced Incomplete Block Design (BIBD), λ(v−1) equals:',opts:['A) b(k−1)','B) r(k−1)','C) bk','D) vr'],ans:1,exp:'BIBD relation: λ(v−1)=r(k−1). Also: bk=vr.'},
-  {unit:'u3',q:'Double sampling (two-phase) is used when:',opts:['A) Strata are known','B) Auxiliary variable is cheap; main variable expensive','C) Cluster sizes are equal','D) Population is small'],ans:1,exp:'Two-phase: large cheap sample estimates auxiliary; small expensive sample estimates main variable.'},
-  {unit:'u3',q:'In cluster sampling, design effect (Deff) >1 when ICC is:',opts:['A) Negative','B) Zero','C) Positive','D) Undefined'],ans:2,exp:'Deff=1+(m−1)ρ; positive ICC (ρ>0) means cluster members are alike → inefficiency.'},
+  // ── UNIT III: Sampling Methods & DOE ── (keep unit:'u3')
+  {unit:'u3',q:'Proportional allocation sets nₕ proportional to:',opts:['A) Stratum mean','B) Stratum variance','C) Stratum size Nₕ','D) Sampling fraction'],ans:2,exp:'Proportional: nₕ=n×Nₕ/N.'},
+  {unit:'u3',q:'In SRSWOR, variance of sample mean is:',opts:['A) σ²/n','B) (1-f)S²/n','C) σ²/(n-1)','D) fσ²/n'],ans:1,exp:'Var(X̄)=(1-f)S²/n where f=n/N is finite population correction.'},
+  {unit:'u3',q:'In CRD, treatments are assigned:',opts:['A) Based on blocks','B) Completely at random','C) Latin square pattern','D) By variance'],ans:1,exp:'CRD: treatments assigned entirely at random to all experimental units.'},
+  // ── ADD MORE UNIT III QUESTIONS HERE ──
  
-  // ── UNIT IV: Estimation Theory (10 Qs) ──
-  {unit:'u4',q:'Sufficiency principle: sufficient statistic T(X) captures all information about:',opts:['A) Sample size','B) Parameter θ','C) Distribution family','D) Nuisance parameters'],ans:1,exp:'T is sufficient for θ if f(x|T,θ)=f(x|T) — data beyond T carries no additional info about θ.'},
-  {unit:'u4',q:'Completeness of family {Pθ}: statistic T is complete if E_θ[g(T)]=0 ∀θ implies:',opts:['A) g(T)=θ a.s.','B) g(T)=0 a.s.','C) Var(T)=0','D) T=X̄'],ans:1,exp:'Complete: only zero function has E_θ[g(T)]=0 for all θ. Key for Lehmann-Scheffé theorem.'},
-  {unit:'u4',q:'Rao-Blackwell theorem states: conditioning an unbiased estimator on a sufficient statistic:',opts:['A) Increases bias','B) Cannot increase variance','C) Increases MSE','D) Has no effect'],ans:1,exp:'R-B: T*=E[T|S] is unbiased with Var(T*)≤Var(T). Conditioning on sufficient statistic never hurts.'},
-  {unit:'u4',q:'Fisher information I(θ) for a single observation equals:',opts:['A) E[∂logf/∂θ]','B) E[(∂logf/∂θ)²]','C) Var(X)','D) −E[∂²logf/∂θ]·n'],ans:1,exp:'I(θ)=E[(∂log f/∂θ)²]=−E[∂²log f/∂θ²] under regularity conditions.'},
-  {unit:'u4',q:'Consistency of an estimator requires:',opts:['A) Unbiasedness for all n','B) θ̂ₙ →p θ as n→∞','C) Minimum variance','D) Normal sampling distribution'],ans:1,exp:'Consistent: θ̂ₙ converges in probability to true θ. MSE→0 is sufficient for consistency.'},
-  {unit:'u4',q:'Method of Moments estimator equates sample moments to:',opts:['A) Maximum likelihood','B) Population moments expressed as functions of θ','C) Posterior moments','D) Order statistics'],ans:1,exp:'MOM: set μ_r(θ)=m_r (sample moments) and solve for θ. Simple but generally less efficient than MLE.'},
-  {unit:'u4',q:'In Bayesian estimation, the posterior mean minimises expected:',opts:['A) Absolute error','B) Squared error loss','C) 0-1 loss','D) Log loss'],ans:1,exp:'Under squared error loss L(θ,d)=(θ−d)², Bayes estimator = E[θ|X] (posterior mean).'},
-  {unit:'u4',q:'An estimator is admissible if:',opts:['A) It is unbiased','B) No other estimator uniformly dominates it in MSE','C) It achieves CR lower bound','D) It is sufficient'],ans:1,exp:'Admissible: there is no θ̂* with MSE(θ̂*,θ)≤MSE(θ̂,θ) for all θ with strict inequality somewhere.'},
-  {unit:'u4',q:'The Cramér-Rao bound for unbiased estimator of g(θ) is:',opts:['A) [g\'(θ)]²/nI(θ)','B) g\'(θ)/I(θ)','C) [g(θ)]²/I(θ)','D) 1/nI(θ)'],ans:0,exp:'CR bound for g(θ): Var(T)≥[g\'(θ)]²/nI(θ). Reduces to 1/nI(θ) when g(θ)=θ.'},
-  {unit:'u4',q:'MLE of σ² in N(μ,σ²) (both unknown) is:',opts:['A) S²=Σ(Xᵢ−X̄)²/(n−1)','B) Σ(Xᵢ−X̄)²/n','C) Σ(Xᵢ−μ)²/n','D) S²/(n+1)'],ans:1,exp:'MLE of σ² = Σ(Xᵢ−X̄)²/n (biased). Unbiased estimator S² divides by n−1.'},
+  // ── UNIT IV: Estimation Theory ── (keep unit:'u4')
+  {unit:'u4',q:'UMVUE has minimum variance among:',opts:['A) All estimators','B) Unbiased estimators only','C) Consistent estimators','D) MLE estimators'],ans:1,exp:'UMVUE=min variance in class of unbiased estimators.'},
+  {unit:'u4',q:'Cramer-Rao lower bound equals:',opts:['A) 1/I(θ)','B) I(θ)','C) n/I(θ)','D) I(θ)/n'],ans:0,exp:'CR bound=1/I(θ) where I(θ) is Fisher information.'},
+  {unit:'u4',q:'MLE is obtained by maximizing:',opts:['A) Posterior distribution','B) Likelihood L(θ;x)','C) Prior distribution','D) Score function'],ans:1,exp:'MLE: θ̂=argmax L(θ;x).'},
+  // ── ADD MORE UNIT IV QUESTIONS HERE ──
  
-  // ── UNIT V: Testing of Hypotheses (10 Qs) ──
-  {unit:'u5',q:'Neyman-Pearson lemma guarantees that the most powerful test rejects H₀ when:',opts:['A) p-value<α','B) Likelihood ratio L(θ₁)/L(θ₀)>c','C) Test statistic>χ²_α','D) Sample mean>μ₀'],ans:1,exp:'NP lemma: MP test of simple H₀ vs H₁ rejects when L(θ₁;x)/L(θ₀;x)>k.'},
-  {unit:'u5',q:'Uniformly Most Powerful (UMP) test exists for one-sided hypotheses in:',opts:['A) All families','B) Exponential family with monotone likelihood ratio','C) Multiparameter families','D) Non-parametric problems'],ans:1,exp:'UMP exists for one-sided H₁ in MLR families (e.g. single-parameter exponential family).'},
-  {unit:'u5',q:'The p-value is the probability, under H₀, of observing:',opts:['A) Type I error','B) A result as extreme or more extreme than observed','C) A result equal to observed','D) Type II error'],ans:1,exp:'p-value=P_H₀(T≥t_obs); small p-values provide evidence against H₀.'},
-  {unit:'u5',q:'In a χ² goodness-of-fit test with k classes and r estimated parameters, degrees of freedom = :',opts:['A) k','B) k−1','C) k−r−1','D) k+r'],ans:2,exp:'df = k−1−r, where r = number of parameters estimated from data.'},
-  {unit:'u5',q:'Sign test is a non-parametric test for the:',opts:['A) Mean','B) Variance','C) Median','D) Correlation'],ans:2,exp:'Sign test tests H₀: median=M₀ using counts of observations above/below M₀. Distribution-free.'},
-  {unit:'u5',q:'Wilcoxon Signed-Rank test is more powerful than the sign test because it uses:',opts:['A) Both sign and magnitude of differences','B) Only ranks','C) Mean differences','D) Bootstrap resampling'],ans:0,exp:'Signed-rank test incorporates both the sign and the rank of |dᵢ|, hence more efficient than sign test.'},
-  {unit:'u5',q:'Sequential Probability Ratio Test (SPRT) due to Wald has two boundaries:',opts:['A) Upper=1/β, Lower=α','B) Upper=B=(1−β)/α, Lower=A=β/(1−α)','C) ±z_{α/2}','D) 0 and 1'],ans:1,exp:'SPRT: continue if A<Λₙ<B; stop if ≤A (accept H₀) or ≥B (accept H₁), B=(1−β)/α, A=β/(1−α).'},
-  {unit:'u5',q:'Bonferroni correction for m simultaneous tests uses individual significance level:',opts:['A) α','B) α/m','C) α·m','D) α²/m'],ans:1,exp:'Bonferroni: use αᵢ=α/m per test to keep family-wise error rate ≤α.'},
-  {unit:'u5',q:'Likelihood Ratio Test statistic −2logΛ has asymptotic distribution χ²(r) where r is:',opts:['A) Sample size n','B) Dimension of θ under H₀','C) Difference in number of free parameters','D) Number of observations'],ans:2,exp:'Wilks: r=dim(Ω)−dim(ω₀), the number of constraints imposed by H₀.'},
-  {unit:'u5',q:'Rao\'s score test (Lagrange multiplier) is evaluated at:',opts:['A) MLE under H₁','B) MLE under H₀','C) True parameter value','D) Method of moments estimate'],ans:1,exp:'Score test uses restricted MLE (under H₀): S(θ̂₀)ᵀI(θ̂₀)⁻¹S(θ̂₀)→χ²(r).'},
+  // ── UNIT V: Testing of Hypotheses ── (keep unit:'u5')
+  {unit:'u5',q:'Type I error is:',opts:['A) Accepting H₀ when H₁ true','B) Rejecting H₀ when H₀ true','C) Accepting H₁ when H₀ true','D) Correct decision'],ans:1,exp:'Type I=Rejecting true null. Probability=α (significance level).'},
+  {unit:'u5',q:'Power of a test equals:',opts:['A) 1-α','B) α','C) 1-β','D) β'],ans:2,exp:'Power=1-β=P(Reject H₀|H₁ true).'},
+  {unit:'u5',q:'-2logΛ (LRT statistic) asymptotically follows:',opts:['A) Normal','B) t-distribution','C) Chi-square','D) F-distribution'],ans:2,exp:'Wilks theorem: -2log(Λ)→χ²(r) where r=parameter difference.'},
+  // ── ADD MORE UNIT V QUESTIONS HERE ──
  
-  // ── UNIT VI: Linear Estimation & Regression (10 Qs) ──
-  {unit:'u6',q:'Gauss-Markov theorem states OLS is BLUE (Best Linear Unbiased Estimator) when:',opts:['A) Errors are normal','B) Errors have constant variance and are uncorrelated','C) Errors are iid N(0,σ²)','D) X is non-stochastic only'],ans:1,exp:'G-M: requires E(ε)=0, Var(ε)=σ²I (homoskedasticity + no autocorrelation). Normality NOT required.'},
-  {unit:'u6',q:'In the normal equations (XᵀX)β̂=Xᵀy, if rank(X)=p, then:',opts:['A) Solution is unique and β̂=(XᵀX)⁻¹Xᵀy','B) Multiple solutions exist','C) β̂=y','D) β̂=Xᵀy/n'],ans:0,exp:'Full column rank: unique OLS solution β̂=(XᵀX)⁻¹Xᵀy.'},
-  {unit:'u6',q:'Variance Inflation Factor (VIF) >10 suggests:',opts:['A) Outlier present','B) Severe multicollinearity','C) Heteroskedasticity','D) Autocorrelation'],ans:1,exp:'VIF=1/(1−R²_j); VIF>10 (or >5 in some texts) indicates problematic multicollinearity.'},
-  {unit:'u6',q:'In logistic regression, the link function is:',opts:['A) Identity','B) Log','C) Logit: log(π/(1−π))','D) Probit: Φ⁻¹(π)'],ans:2,exp:'Logistic regression uses logit link: log(π/(1−π))=Xβ, giving π=eˣᵝ/(1+eˣᵝ).'},
-  {unit:'u6',q:'PRESS statistic in regression is the sum of squared:',opts:['A) Residuals','B) Studentised residuals','C) Leave-one-out prediction errors','D) Standardised residuals'],ans:2,exp:'PRESS=Σ(yᵢ−ŷ_{i,−i})²; leave-one-out cross-validation criterion for model selection.'},
-  {unit:'u6',q:'Durbin-Watson statistic tests for:',opts:['A) Multicollinearity','B) Heteroskedasticity','C) First-order autocorrelation in residuals','D) Non-linearity'],ans:2,exp:'DW≈2(1−ρ̂); values near 2 suggest no autocorrelation; <2 positive; >2 negative autocorrelation.'},
-  {unit:'u6',q:'LASSO regression penalty is:',opts:['A) λΣβ_j²','B) λΣ|β_j|','C) λΣβ_j⁴','D) λmax|β_j|'],ans:1,exp:'LASSO: L1 penalty λΣ|β_j| causes exact zero coefficients (variable selection).'},
-  {unit:'u6',q:'In a GLIM, the deviance is defined as:',opts:['A) Sum of squared residuals','B) 2[logL(saturated)−logL(fitted)]','C) AIC−BIC','D) n·logL(fitted)'],ans:1,exp:'Deviance=2[ℓ(sat)−ℓ(fit)]; measures fit relative to saturated model; analogous to RSS.'},
-  {unit:'u6',q:'Hat matrix H=X(XᵀX)⁻¹Xᵀ satisfies:',opts:['A) H²=Hᵀ only','B) H²=H and H=Hᵀ (idempotent+symmetric)','C) Hᵀ=−H','D) H²=I'],ans:1,exp:'H is the projection matrix onto col(X): idempotent (H²=H) and symmetric.'},
-  {unit:'u6',q:'Aikake Information Criterion AIC = :',opts:['A) 2k − 2logL̂','B) k·logn − 2logL̂','C) 2logL̂ − k','D) logL̂ − 2k'],ans:0,exp:'AIC=2k−2log L̂; penalises model complexity. BIC=k·log(n)−2log L̂.'},
+  // ── UNIT VI: Linear Estimation & Regression ── (keep unit:'u6')
+  {unit:'u6',q:'OLS slope in Y=α+βX+ε is:',opts:['A) Σ(Xᵢ-X̄)(Yᵢ-Ȳ)/Σ(Xᵢ-X̄)²','B) Σ(Yᵢ-Ȳ)/Σ(Xᵢ-X̄)','C) Cov(X,Y)/Var(Y)','D) Var(Y)/Var(X)'],ans:0,exp:'β̂=Sxy/Sxx=Σ(Xᵢ-X̄)(Yᵢ-Ȳ)/Σ(Xᵢ-X̄)².'},
+  {unit:'u6',q:'R² measures:',opts:['A) Slope of regression','B) Proportion of variance in Y explained by X','C) Residual variance','D) Correlation coefficient'],ans:1,exp:'R²=SSR/SST=proportion of variation in Y explained by regression.'},
+  {unit:'u6',q:'Ridge regression addresses:',opts:['A) Non-linearity','B) Multicollinearity','C) Non-normality','D) Outliers'],ans:1,exp:'Ridge adds λ‖β‖² penalty to shrink coefficients and reduce multicollinearity.'},
+  // ── ADD MORE UNIT VI QUESTIONS HERE ──
  
-  // ── UNIT VII: Time Series Analysis (10 Qs) ──
-  {unit:'u7',q:'AR(p) process is stationary if all roots of the characteristic polynomial lie:',opts:['A) Inside unit circle','B) Outside unit circle','C) On unit circle','D) At origin'],ans:1,exp:'AR stationarity: roots of 1−φ₁z−…−φₚzᵖ=0 all outside (or |roots|>1 when expressed in lag operator).'},
-  {unit:'u7',q:'PACF of AR(p) cuts off after lag:',opts:['A) q','B) p','C) p+q','D) Infinity'],ans:1,exp:'PACF is zero for lags>p in AR(p); ACF decays geometrically. Opposite pattern for MA(q).'},
-  {unit:'u7',q:'Box-Pierce Q-statistic tests:',opts:['A) Unit root','B) Joint significance of first m autocorrelations','C) ARCH effects','D) Co-integration'],ans:1,exp:'Box-Pierce: Q=n·Σ_{k=1}^m r_k²→χ²(m) under white noise; Ljung-Box is finite-sample correction.'},
-  {unit:'u7',q:'GARCH(1,1) model specifies conditional variance as:',opts:['A) σ_t²=α₀+α₁ε_{t−1}²','B) σ_t²=α₀+α₁ε_{t−1}²+β₁σ_{t−1}²','C) σ_t²=α₀+β₁σ_{t−1}²','D) σ_t²=constant'],ans:1,exp:'GARCH(1,1): σ_t²=ω+αε_{t−1}²+βσ_{t−1}²; captures volatility clustering.'},
-  {unit:'u7',q:'ARIMA(p,d,q): the parameter d represents:',opts:['A) Number of AR terms','B) Number of MA terms','C) Order of differencing for stationarity','D) Seasonal period'],ans:2,exp:'d = differencing order; ARIMA differenced d times becomes stationary ARMA(p,q).'},
-  {unit:'u7',q:'Granger causality tests whether:',opts:['A) Correlation implies causation','B) Past values of X improve forecast of Y beyond Y\'s own past','C) X and Y are cointegrated','D) Y is stationary'],ans:1,exp:'Granger: X Granger-causes Y if lagged X adds predictive power for Y beyond lagged Y alone.'},
-  {unit:'u7',q:'Holt-Winters method with seasonal component is also called:',opts:['A) Simple exponential smoothing','B) Double exponential smoothing','C) Triple exponential smoothing','D) ARIMA smoothing'],ans:2,exp:'Holt-Winters (triple): smooths level, trend, and seasonal components. Double handles level+trend only.'},
-  {unit:'u7',q:'Cointegration between I(1) series implies existence of:',opts:['A) Spurious regression','B) Unit root','C) Long-run equilibrium relationship','D) White noise residuals in each series'],ans:2,exp:'Engle-Granger: two I(1) series cointegrated if linear combination is I(0) — a long-run equilibrium.'},
-  {unit:'u7',q:'For SARIMA(p,d,q)(P,D,Q)_s, the seasonal difference operator is:',opts:['A) (1−B)','B) (1−Bˢ)','C) (1+Bˢ)','D) Bˢ'],ans:1,exp:'Seasonal differencing: (1−Bˢ)Xₜ=Xₙ−Xₙ₋ₛ removes seasonal non-stationarity.'},
-  {unit:'u7',q:'Wold decomposition theorem states every covariance-stationary process can be written as:',opts:['A) Purely deterministic part','B) MA(∞) plus deterministic part','C) AR(∞) part only','D) GARCH component'],ans:1,exp:'Wold: Xₜ=Σψⱼεₜ₋ⱼ + deterministic, where MA(∞) is the purely non-deterministic part.'},
+  // ── UNIT VII: Time Series Analysis ── (keep unit:'u7')
+  {unit:'u7',q:'ACF of MA(q) process cuts off after lag:',opts:['A) p','B) q','C) p+q','D) Infinity'],ans:1,exp:'MA(q): ACF=0 for lags>q.'},
+  {unit:'u7',q:'ADF test is used for testing:',opts:['A) Autocorrelation','B) Unit root/non-stationarity','C) Seasonality','D) Outliers'],ans:1,exp:'ADF: H₀=unit root (non-stationary). Used before ARIMA modelling.'},
+  {unit:'u7',q:'Exponential smoothing weights are:',opts:['A) Equal','B) Increasing with age','C) Decreasing geometrically','D) Random'],ans:2,exp:'Weights=α(1-α)^t, decreasing geometrically as observations age.'},
+  // ── ADD MORE UNIT VII QUESTIONS HERE ──
  
-  // ── UNIT VIII: Multivariate Analysis (10 Qs) ──
-  {unit:'u8',q:'Mahalanobis distance D²(x) accounts for:',opts:['A) Euclidean distance only','B) Scale and correlation of variables','C) Sample size','D) Only variance, not covariance'],ans:1,exp:'D²=(x−μ)ᵀΣ⁻¹(x−μ); standardises by covariance matrix Σ. Reduces to Euclidean if Σ=I.'},
-  {unit:'u8',q:'Number of principal components retained in PCA is often decided by the Kaiser criterion:',opts:['A) Eigenvalue>0','B) Eigenvalue>1 (for correlation matrix)','C) Variance explained>10%','D) Scree plot elbow always'],ans:1,exp:'Kaiser rule: retain PCs with eigenvalue>1 when PCA is on correlation matrix (standardised data).'},
-  {unit:'u8',q:'Factor Analysis assumes observed X = Λf + ε, where Λ is the:',opts:['A) Score matrix','B) Factor loading matrix','C) Covariance matrix','D) Rotation matrix'],ans:1,exp:'Λ = factor loading matrix (p×m); f = common factors (m×1); ε = specific factors.'},
-  {unit:'u8',q:'In Canonical Correlation Analysis, first canonical pair maximises:',opts:['A) Variance of U₁','B) Correlation between linear combos U₁=aᵀX and V₁=bᵀY','C) Sum of all correlations','D) Mahalanobis distance'],ans:1,exp:'CCA: find a,b to maximise corr(aᵀX, bᵀY); subsequent pairs are orthogonal to previous.'},
-  {unit:'u8',q:'Discriminant Analysis (LDA) assumes groups have:',opts:['A) Different covariance matrices','B) Equal covariance matrices','C) Diagonal covariance matrices','D) Identity covariance matrices'],ans:1,exp:'LDA: assumes Σ₁=Σ₂=Σ (homogeneous). QDA allows different Σₖ per group.'},
-  {unit:'u8',q:'In cluster analysis, Ward\'s method minimises:',opts:['A) Maximum cluster radius','B) Total within-cluster sum of squares','C) Number of clusters','D) Between-cluster distance'],ans:1,exp:'Ward\'s: merge clusters that produce least increase in total within-cluster SSQ (ESS criterion).'},
-  {unit:'u8',q:'Bartlett\'s test for sphericity tests H₀: Σ=:',opts:['A) 0','B) σ²I','C) I','D) Diagonal matrix'],ans:2,exp:'Bartlett: H₀: Σ=I (identity), meaning variables are uncorrelated with unit variance. Used before PCA/FA.'},
-  {unit:'u8',q:'Multivariate normality of n×p data X is written as:',opts:['A) X~N_p(μ,Σ)','B) X~N(0,I_p)','C) X~χ²(p)','D) X~Wₚ(Σ,n)'],ans:0,exp:'X~N_p(μ,Σ): p-variate normal with mean vector μ (p×1) and covariance matrix Σ (p×p).'},
-  {unit:'u8',q:'In MANOVA, Pillai\'s trace statistic is the most robust to violations of:',opts:['A) Linearity','B) Normality and covariance homogeneity','C) Sample size balance','D) Independence'],ans:1,exp:'Pillai\'s trace=tr[H(H+E)⁻¹]; most robust multivariate test statistic to assumption violations.'},
-  {unit:'u8',q:'Path coefficient in path analysis represents the:',opts:['A) Total correlation','B) Standardised regression coefficient on a direct path','C) Indirect effect only','D) Factor loading'],ans:1,exp:'Path coefficient=standardised β for a direct causal path. Total effect=direct+indirect paths.'},
+  // ── UNIT VIII: Multivariate Analysis ── (keep unit:'u8')
+  {unit:'u8',q:'Hotelling T² is multivariate analogue of:',opts:['A) F-test','B) Chi-square','C) t-test','D) Z-test'],ans:2,exp:'Hotelling T² extends univariate t² to multivariate setting.'},
+  {unit:'u8',q:'PCA finds directions of:',opts:['A) Minimum variance','B) Maximum variance','C) Zero correlation','D) Maximum likelihood'],ans:1,exp:'PCA: orthogonal directions of maximum variance.'},
+  {unit:'u8',q:'Wilks Lambda in MANOVA is:',opts:['A) |W|/|B+W|','B) |B|/|W|','C) |B+W|/|W|','D) tr(W⁻¹B)'],ans:0,exp:'Wilks Λ=|W|/|B+W| ratio of within-group to total SS determinants.'},
+  // ── ADD MORE UNIT VIII QUESTIONS HERE ──
  
-  // ── UNIT IX: Stochastic Processes (10 Qs) ──
-  {unit:'u9',q:'A DTMC is irreducible if:',opts:['A) All states are absorbing','B) Every state communicates with every other state','C) The chain is periodic','D) Transition matrix is diagonal'],ans:1,exp:'Irreducible: every pair of states communicate (i↔j). Ensures unique stationary distribution exists.'},
-  {unit:'u9',q:'Expected return time to state i in a positive recurrent Markov chain equals:',opts:['A) 1/πᵢ','B) πᵢ','C) 1−πᵢ','D) πᵢ/(1−πᵢ)'],ans:0,exp:'Mean recurrence time μᵢᵢ=1/πᵢ where πᵢ is stationary probability. Key result in Markov theory.'},
-  {unit:'u9',q:'Brownian Motion B(t) has increments that are:',opts:['A) Dependent and normal','B) Independent and N(0,t−s) for B(t)−B(s)','C) Stationary and Poisson','D) Correlated and Exponential'],ans:1,exp:'BM: B(t)−B(s)~N(0,t−s), independent of ℱₛ. Continuous paths, starts at 0.'},
-  {unit:'u9',q:'For a birth-death chain, detailed balance condition is:',opts:['A) πᵢpᵢⱼ=πⱼpⱼᵢ','B) Σⱼπⱼpⱼᵢ=πᵢ','C) pᵢⱼ=pⱼᵢ','D) πᵢ=1/N'],ans:0,exp:'Detailed balance (reversibility): πᵢpᵢⱼ=πⱼpⱼᵢ for all i,j. Sufficient (not necessary) for stationarity.'},
-  {unit:'u9',q:'M/M/1 queue: condition for stability (queue not exploding) is:',opts:['A) λ>μ','B) λ=μ','C) λ/μ<1 (ρ<1)','D) μ>2λ'],ans:2,exp:'Traffic intensity ρ=λ/μ<1 required for steady state. Mean queue length=ρ/(1−ρ).'},
-  {unit:'u9',q:'Martingale property: E[Xₙ₊₁|X₁,…,Xₙ] equals:',opts:['A) Xₙ₊₁','B) E[Xₙ₊₁]','C) Xₙ','D) 0'],ans:2,exp:'Martingale: E[Xₙ₊₁|ℱₙ]=Xₙ. Fair game — best prediction of future = current value.'},
-  {unit:'u9',q:'Chapman-Kolmogorov equation states pᵢⱼ(m+n) = :',opts:['A) pᵢⱼ(m)·pᵢⱼ(n)','B) Σₖ pᵢₖ(m)pₖⱼ(n)','C) pᵢⱼ(m)+pᵢⱼ(n)','D) pᵢⱼ(m)/pᵢⱼ(n)'],ans:1,exp:'CK: P^{(m+n)}=P^{(m)}·P^{(n)}; element-wise: pᵢⱼ(m+n)=Σₖpᵢₖ(m)pₖⱼ(n).'},
-  {unit:'u9',q:'A renewal process with inter-renewal times X₁,X₂,… has renewal rate asymptotically:',opts:['A) 1/E(Xᵢ)','B) E(Xᵢ)','C) Var(Xᵢ)','D) n/Var(Xᵢ)'],ans:0,exp:'Elementary Renewal Theorem: m(t)/t → 1/μ as t→∞ where μ=E(Xᵢ). Rate = 1/mean inter-renewal.'},
-  {unit:'u9',q:'Ito\'s lemma for f(Bₜ,t) gives df = :',opts:['A) f_t dt + f_x dBₜ','B) f_t dt + f_x dBₜ + ½f_{xx}dt','C) f_x dBₜ + f_xx dt','D) f_t dBₜ + f_x dt'],ans:1,exp:'Ito: df=(f_t+½f_{xx})dt+f_x dBₜ. Extra ½f_{xx}dt term arises from (dBₜ)²=dt.'},
-  {unit:'u9',q:'State i of a DTMC is absorbing if:',opts:['A) pᵢᵢ=0','B) pᵢᵢ=1','C) πᵢ=0','D) pᵢⱼ=1/N for all j'],ans:1,exp:'Absorbing state: pᵢᵢ=1, once entered chain never leaves. All other pᵢⱼ=0 for j≠i.'},
+  // ── UNIT IX: Stochastic Processes ── (keep unit:'u9')
+  {unit:'u9',q:'Markov property: future depends on:',opts:['A) All past states','B) Only current state','C) Initial state only','D) Last two states'],ans:1,exp:'Markov: P(Xₙ₊₁|X₀,...,Xₙ)=P(Xₙ₊₁|Xₙ).'},
+  {unit:'u9',q:'Poisson process P(N(t)=k)=',opts:['A) e^{-λ}(λt)^k/k!','B) e^{-λt}(λt)^k/k!','C) λ^k/k!','D) e^{-λt}λ^k'],ans:1,exp:'Poisson: P(N(t)=k)=e^{-λt}(λt)^k/k!'},
+  {unit:'u9',q:'Stationary distribution π satisfies:',opts:['A) πᵢ=Σⱼπⱼpⱼᵢ','B) πP=π','C) Σᵢπᵢ=1','D) All of the above'],ans:3,exp:'Stationary: π=πP with Σπᵢ=1. All three conditions hold.'},
+  // ── ADD MORE UNIT IX QUESTIONS HERE ──
  
-  // ── UNIT X: Indian Statistical System & R (10 Qs) ──
-  {unit:'u10',q:'National Sample Survey (NSS) was established in:',opts:['A) 1931','B) 1945','C) 1950','D) 1961'],ans:2,exp:'NSS established in 1950 by Government of India on recommendation of P.C. Mahalanobis.'},
-  {unit:'u10',q:'In R, the function to fit a linear model is:',opts:['A) glm()','B) lm()','C) fit()','D) ols()'],ans:1,exp:'lm() fits linear models. glm() fits generalised linear models including logistic and Poisson.'},
-  {unit:'u10',q:'MOSPI stands for:',opts:['A) Ministry of Science and Planning India','B) Ministry of Statistics and Programme Implementation','C) Ministry of Social Policy India','D) Ministry of Sampling and Population Information'],ans:1,exp:'MOSPI: Ministry of Statistics and Programme Implementation. Oversees NSO (=CSO+NSSO).'},
-  {unit:'u10',q:'Apply a function over rows of a matrix in R using:',opts:['A) lapply(X,1,fn)','B) apply(X,1,fn)','C) sapply(X,fn)','D) tapply(X,1,fn)'],ans:1,exp:'apply(X,1,fn) applies fn over rows (MARGIN=1); apply(X,2,fn) over columns.'},
-  {unit:'u10',q:'India\'s first Census after independence was held in:',opts:['A) 1948','B) 1951','C) 1961','D) 1947'],ans:1,exp:'1951 was the first Census of independent India; conducted by Office of the Registrar General of India.'},
-  {unit:'u10',q:'In R, which package provides tidy data manipulation?',opts:['A) ggplot2','B) dplyr','C) lattice','D) MASS'],ans:1,exp:'dplyr (tidyverse): filter, mutate, select, summarise, arrange functions for data manipulation.'},
-  {unit:'u10',q:'The Registrar General of India (RGI) is responsible for:',opts:['A) Price indices only','B) Census operations and vital statistics','C) National accounts','D) Balance of payments'],ans:1,exp:'RGI conducts Census of India and maintains Civil Registration System (CRS) for vital statistics.'},
-  {unit:'u10',q:'In R, ggplot2 uses which philosophy to build plots?',opts:['A) Base graphics piping','B) Grammar of Graphics (layered)','C) Lattice trellis system','D) Procedural rendering'],ans:1,exp:'ggplot2 implements Wilkinson\'s "Grammar of Graphics": data + aesthetics + geometric objects (geoms).'},
-  {unit:'u10',q:'Index of Industrial Production (IIP) is compiled by:',opts:['A) RBI','B) NITI Aayog','C) NSO (formerly CSO)','D) SEBI'],ans:2,exp:'IIP compiled monthly by NSO (National Statistical Office), released with 6-week lag.'},
-  {unit:'u10',q:'In R, set.seed() is used to:',opts:['A) Import a dataset','B) Ensure reproducibility of random number generation','C) Sort a vector','D) Define a function'],ans:1,exp:'set.seed(n) seeds R\'s RNG for reproducible pseudo-random results across runs.'},
+  // ── UNIT X: Indian Statistical System & R ── (keep unit:'u10')
+  {unit:'u10',q:'NSO formed by merging:',opts:['A) CSO and NSSO','B) RBI and CSO','C) MOSPI and CSO','D) NSSO and RBI'],ans:0,exp:'NSO=CSO+NSSO, merged 2019.'},
+  {unit:'u10',q:'In R, vector is created using:',opts:['A) vec()','B) array()','C) c()','D) list()'],ans:2,exp:'c() combines elements into a vector in R.'},
+  {unit:'u10',q:'ISI was founded by:',opts:['A) C.R. Rao','B) P.C. Mahalanobis','C) S.N. Bose','D) Homi Bhabha'],ans:1,exp:'ISI founded by P.C. Mahalanobis in Kolkata, 1931.'},
+  // ── ADD MORE UNIT X QUESTIONS HERE ──
 ];
 
 // ════════════════════════════════════════════════════════════════════
