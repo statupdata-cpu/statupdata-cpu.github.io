@@ -1591,7 +1591,7 @@ const MASTER_QB = [
 {unit:'u2',q:'For (X,Y)~BVN(μ_X,μ_Y,σ_X²,σ_Y²,ρ), which is the UNIQUE distribution where uncorrelated implies independent?',opts:['A) Any elliptically symmetric distribution','B) Only the Bivariate Normal','C) Any distribution with finite fourth moments','D) This property holds for all continuous distributions'],ans:1,exp:'For BVN: ρ=0 ⟺ X⊥Y (joint density factorises). For other distributions: uncorrelated ≠ independent (e.g., X~N(0,1), Y=X²). Only the normal family has this property.'},
 {unit:'u2',q:'In an election, candidate A gets a votes and B gets b votes (a>b). P(A leads throughout the count) is:',opts:['A) a/(a+b)','B) (a−b)/(a+b)','C) C(a+b,a)⁻¹','D) (a−b)²/(a+b)²'],ans:1,exp:'Ballot theorem (Bertrand 1887): P(A strictly ahead throughout)=(a−b)/(a+b). Proof via reflection principle. For a=3,b=1: prob=1/2.'},
 {unit:'u2',q:'{Sₙ} is a simple symmetric random walk, T=min{n:Sₙ=a or Sₙ=−b} for a,b>0. By Optional Stopping Theorem, find P(S_T=a).',opts:['A) a/(a+b)','B) b/(a+b)','C) 1/2','D) (a+1)/(a+b+1)'],ans:1,exp:'Let p=P(S_T=a). By OST: E(S_T)=pa+(−b)(1−p)=0. Solving: p(a+b)=b, so p=b/(a+b). Starting at 0, more likely to reach the nearer boundary.'},
-{unit:'u1',q:'If A and B are independent with P(A)=0.4, P(B)=0.5, then P(A∪B)=',opts:['A) 0.20','B) 0.70','C) 0.90','D) 0.60'],ans:1,exp:'P(A∪B)=P(A)+P(B)-P(A)P(B)=0.4+0.5-0.2=0.70.'},
+
 
 
 
