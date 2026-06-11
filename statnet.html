@@ -1226,6 +1226,8 @@ const MASTER_QB = [
 
 
 
+  //390
+
   // ── ADD MORE UNIT I QUESTIONS HERE (keep unit:'u1') ──────────────
 
   // ════════════ UNIT II: Real Analysis & Matrix Algebra ════════════
@@ -1667,7 +1669,15 @@ const MASTER_QB = [
   {unit:'u2',q:'The minimum distance from the origin to the plane x + 2y + 3z = 14 is:',opts:['A) sqrt(14)','B) 2','C) 7','D) 14/sqrt(14) = sqrt(14)'],ans:0,exp:'Distance from origin to plane ax+by+cz=d is |d|/sqrt(a^2+b^2+c^2) = 14/sqrt(1+4+9) = 14/sqrt(14) = sqrt(14). Options (A) and (D) are the same value.'},
   {unit:'u2',q:'For m x n matrix A and n x p matrix B, which inequality always holds?',opts:['A) rank(AB) >= rank(A) + rank(B)','B) rank(AB) <= min(rank(A), rank(B))','C) rank(AB) = rank(A) * rank(B)','D) rank(A+B) <= |rank(A) - rank(B)|'],ans:1,exp:'Col(AB) subset Col(A): rank(AB) <= rank(A). Row(AB) subset Row(B): rank(AB) <= rank(B). Combined: rank(AB) <= min(rank(A),rank(B)). Sylvester inequality: rank(A)+rank(B)-n <= rank(AB) <= min(rank(A),rank(B)).'},
   {unit:'u2',q:'Which list of (Result -> Condition) is completely correct?',opts:['A) Monotone bounded sequence converges; alternating b_n->0 converges; A symmetric: eigenvalues real; B^T B: always PD','B) Monotone bounded sequence converges; alternating b_n->0 converges; A symmetric: eigenvalues real; B^T B: always PSD (not necessarily PD)','C) Every Cauchy sequence converges in Q; sqrt(x): Lipschitz on (0,inf); skew-sym odd order: det>0; rank(AB)=rank(A)*rank(B)','D) UC sequence preserves discontinuities; |x| is not Lipschitz; Cantor set is countable; x^n->0 uniformly on [0,1]'],ans:1,exp:'(A) Wrong: B^T B is PSD not necessarily PD. (B) All four statements correct: MCT, Leibniz, Spectral theorem, B^T B PSD. (C) Q is not complete (Cauchy sequences need not converge in Q). (D) UC preserves continuity; |x| IS Lipschitz; Cantor set is uncountable; x^n not uniformly convergent on [0,1].'},
+{unit:'u2',q:'The QR decomposition A = QR where A has linearly independent columns means:',opts:['A) Q is orthogonal, R is lower triangular','B) Q is symmetric, R is diagonal','C) Q has orthonormal columns, R is upper triangular with positive diagonal entries','D) Q = R^(-1) always'],ans:2,exp:'QR decomposition (via Gram-Schmidt): Q has orthonormal columns (obtained from columns of A), R is upper triangular with positive diagonal (for uniqueness). Used in least-squares: min||Ax-b||^2 reduces to Rx = Q^T b.'},
+  {unit:'u2',q:'The Cantor set C in [0,1] (obtained by repeatedly removing middle thirds) has which properties?',opts:['A) It is countable and has measure 0','B) It is uncountable, has Lebesgue measure 0, and is a perfect set (closed, no isolated points)','C) It is uncountable and has measure 1','D) It is finite and has measure 0'],ans:1,exp:'Measure: total removed = sum 2^n/3^(n+1) = 1, so measure of C = 0. Uncountable: each point corresponds to a ternary expansion using only {0,2}, in bijection with {0,1}^N ~ R. Perfect: closed, no isolated points.'},
+  {unit:'u2',q:'The minimal polynomial of A = diag(2, 2, 3) is:',opts:['A) (lambda-2)^2(lambda-3)','B) (lambda-2)(lambda-3)','C) (lambda-2)^3','D) (lambda-6)'],ans:1,exp:'A is diagonal (hence diagonalizable). For diagonalizable matrices, the minimal polynomial has no repeated factors: product of distinct eigenvalue factors. Eigenvalues: 2 and 3. Minimal poly = (lambda-2)(lambda-3). Char. poly = (lambda-2)^2(lambda-3).'},
+  {unit:'u2',q:'A function f is Lipschitz on A if |f(x)-f(y)| <= K|x-y| for all x,y. Which is true?',opts:['A) Lipschitz => uniformly continuous => continuous, but not conversely in general','B) Continuous => Lipschitz on any bounded interval','C) Uniformly continuous => Lipschitz','D) Lipschitz => differentiable everywhere'],ans:0,exp:'Lipschitz => UC (take delta=epsilon/K) => C. None reverse in general. (B) False: f(x)=x^(1/3) continuous on [-1,1] but not Lipschitz near 0. (C) False: sqrt(x) on [0,1] is UC but not Lipschitz at 0. (D) False: |x| is Lipschitz but not differentiable at 0.'},
+  {unit:'u2',q:'The minimum distance from the origin to the plane x + 2y + 3z = 14 is:',opts:['A) sqrt(14)','B) 2','C) 7','D) 14/sqrt(14) = sqrt(14)'],ans:0,exp:'Distance from origin to plane ax+by+cz=d is |d|/sqrt(a^2+b^2+c^2) = 14/sqrt(1+4+9) = 14/sqrt(14) = sqrt(14). Options (A) and (D) are the same value.'},
+  {unit:'u2',q:'For m x n matrix A and n x p matrix B, which inequality always holds?',opts:['A) rank(AB) >= rank(A) + rank(B)','B) rank(AB) <= min(rank(A), rank(B))','C) rank(AB) = rank(A) * rank(B)','D) rank(A+B) <= |rank(A) - rank(B)|'],ans:1,exp:'Col(AB) subset Col(A): rank(AB) <= rank(A). Row(AB) subset Row(B): rank(AB) <= rank(B). Combined: rank(AB) <= min(rank(A),rank(B)). Sylvester inequality: rank(A)+rank(B)-n <= rank(AB) <= min(rank(A),rank(B)).'},
+  {unit:'u2',q:'Which list of (Result -> Condition) is completely correct?',opts:['A) Monotone bounded sequence converges; alternating b_n->0 converges; A symmetric: eigenvalues real; B^T B: always PD','B) Monotone bounded sequence converges; alternating b_n->0 converges; A symmetric: eigenvalues real; B^T B: always PSD (not necessarily PD)','C) Every Cauchy sequence converges in Q; sqrt(x): Lipschitz on (0,inf); skew-sym odd order: det>0; rank(AB)=rank(A)*rank(B)','D) UC sequence preserves discontinuities; |x| is not Lipschitz; Cantor set is countable; x^n->0 uniformly on [0,1]'],ans:1,exp:'(A) Wrong: B^T B is PSD not necessarily PD. (B) All four statements correct: MCT, Leibniz, Spectral theorem, B^T B PSD. (C) Q is not complete (Cauchy sequences need not converge in Q). (D) UC preserves continuity; |x| IS Lipschitz; Cantor set is uncountable; x^n not uniformly convergent on [0,1].'},
 
+  //300
 
 
 
@@ -1868,6 +1878,7 @@ const MASTER_QB = [
   {unit:'u3',q:'For a symmetric BIBD(v,b,r,k,lambda) with lambda > 1 (not a Hadamard design), Bose\'s inequality states:',opts:['A) v <= 4*lambda + 3 (Bose-Connor bound)','B) r >= sqrt(v)','C) k <= sqrt(v)','D) v <= k^2'],ans:3,exp:'For a symmetric BIBD with lambda > 1: Bose\'s inequality v <= k^2 follows from v <= r^2 (since b=v and r=k). The inequality restricts which parameter sets can exist for symmetric BIBDs. Necessary conditions (Fisher, Bose, BRC) give necessary but not sufficient conditions for BIBD existence.'},
   {unit:'u3',q:'The variance of the estimated elementary contrast tau-hat_i - tau-hat_j in the intrablock analysis of a BIBD is:',opts:['A) 2*sigma_e^2/r','B) 2*k*sigma_e^2/(lambda*v)','C) (2*sigma_e^2/r) * E^{-1}','D) Both (B) and (C) are equal'],ans:3,exp:'V(tau-hat_i - tau-hat_j) = 2*k*sigma_e^2/(lambda*v) (from the C-matrix). Since E = lambda*v/(r*k): V = (2*sigma_e^2/r)*(r*k/(lambda*v)) = 2*sigma_e^2/(r*E). Compared to RBD (same r): V_RBD = 2*sigma_e^2/r; BIBD variance is 1/E times larger. Both (B) and (C) are equal.'},
 
+  //190
   
   // ── ADD MORE UNIT III QUESTIONS HERE (keep unit:'u3') ────────────
 
@@ -2340,14 +2351,55 @@ const MOCK_DEFS = [
    title:'Unit I Mock 13 — Probability Theory',
    subtitle:'Unit I Only · 30 Questions · 60 Marks',
    description:'Probability basics: classical, axiomatic, Bayes theorem, standard distributions..etc.'},
-  
-  
-  //unit2  
-  {id:21, type:'unit', unit:'u2',  mockNum:1, locked:false, qCount:30, duration:1800,
-   title:'Unit II Mock 1 — Real Analysis & Matrix Algebra',
-   subtitle:'Unit II Only · 30 Questions · 60 Marks',
-   description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
 
+  //unit2  
+  
+  
+  {id:1, type:'unit', unit:'u2',  mockNum:1, locked:false, qCount:30, duration:1800,
+   title:'Unit II Mock1 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+  {id:2, type:'unit', unit:'u2',  mockNum:2, locked:false, qCount:30, duration:3600,
+   title:'Unit II Mock2 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+  {id:3, type:'unit', unit:'u2',  mockNum:3, locked:false, qCount:30, duration:3600,
+   title:'Unit II Mock2 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+  {id:4, type:'unit', unit:'u2',  mockNum:4, locked:false, qCount:30, duration:1800,
+   title:'Unit II Mock4 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+  {id:5, type:'unit', unit:'u2',  mockNum:5, locked:false, qCount:30, duration:1800,
+   title:'Unit II Mock5 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit 1 Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+{id:6, type:'unit', unit:'u2',  mockNum:6, locked:false, qCount:30, duration:1800,
+   title:'Unit II Mock6 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+  {id:7, type:'unit', unit:'u2',  mockNum:7, locked:false, qCount:30, duration:3600,
+   title:'Unit II Mock7 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+{id:8, type:'unit', unit:'u2',  mockNum:8, locked:false, qCount:30, duration:3600,
+   title:'Unit II Mock8 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+{id:9, type:'unit', unit:'u2',  mockNum:9, locked:false, qCount:30, duration:1800,
+   title:'Unit II Mock9 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+{id:10, type:'unit', unit:'u2',  mockNum:10, locked:false, qCount:30, duration:3600,
+   title:'Unit II Mock10 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+  
+
+
+
+  
   {id:31, type:'unit', unit:'u3',  mockNum:1, locked:false, qCount:30, duration:3600,
    title:'Unit III Mock 1 — Sampling Methods & DOE',
    subtitle:'Unit III Only · 30 Questions · 60 Marks',
