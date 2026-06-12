@@ -1751,8 +1751,7 @@ const MASTER_QB = [
   {unit:'u2',q:'For a real symmetric matrix A with spectral decomposition A=sum lambda_i q_i q_i^T, the matrix A^(1/2) (square root) is defined as:',opts:['A) sum sqrt(|lambda_i|) q_i q_i^T for any symmetric A','B) sum sqrt(lambda_i) q_i q_i^T, defined only when A is PSD (all lambda_i >= 0)','C) The matrix B such that B^2=A, which exists for all invertible A','D) A/2 for symmetric matrices'],ans:1,exp:'For a real symmetric PSD matrix A=Q Lambda Q^T with lambda_i>=0: A^(1/2)=Q Lambda^(1/2) Q^T = sum sqrt(lambda_i) q_i q_i^T. This requires lambda_i>=0 so sqrt(lambda_i) is real. Verify (A^(1/2))^2=A. (A) is the absolute-value square root, not the standard definition. (C): not all invertible symmetric matrices have a PSD square root.'},
   {unit:'u2',q:'Which of the following sets of statements is entirely correct?',opts:['A) R is complete; B(m,n)=Gamma(m)Gamma(n)/Gamma(m+n); Fisher information is always PD; A^n->0 iff rho(A)<1','B) R is complete; B(m,n)=Gamma(m)Gamma(n)/Gamma(m+n); Fisher information is always PSD; A^n->0 iff rho(A)<1','C) Q is complete; B(m,n)=Gamma(m+n); Fisher information is PSD; Weierstrass M-test gives pointwise convergence','D) R is complete; A^(1/2) exists for all symmetric matrices; M-test gives uniform convergence; Raabes test always conclusive'],ans:1,exp:'(A) Wrong: Fisher information is PSD, not always PD (PD requires identifiability). (B) Correct: R is complete (Cauchy sequences converge); B(m,n)=Gamma(m)Gamma(n)/Gamma(m+n); Fisher information always PSD (PD iff identifiable); A^n->0 iff rho(A)<1 (spectral radius theorem). (C) Wrong: Q is not complete, B(m,n)!=Gamma(m+n), M-test gives uniform not just pointwise. (D) Wrong: A^(1/2) requires PSD not all symmetric; Raabes test can be inconclusive at R=1.'},
 
-
-//NEXT SET 3
+  //NEXT SET 3
 
   // ── ADD MORE UNIT II QUESTIONS HERE (keep unit:'u2') ─────────────
 
@@ -2675,7 +2674,7 @@ const MASTER_QB = [
 
 {unit:'u10',q:'What is the output of TRUE | NA and FALSE & NA in R?',opts:['A) Both return NA (NA always propagates)','B) TRUE | NA = TRUE; FALSE & NA = FALSE (short-circuit: result deterministic regardless of NA)','C) Both return FALSE','D) TRUE | NA = NA; FALSE & NA = FALSE'],ans:1,exp:'R uses Kleene three-valued logic: TRUE OR anything = TRUE (absorbs NA). FALSE AND anything = FALSE (absorbs NA). But FALSE | NA = NA and TRUE & NA = NA (result unknown). Mnemonic: if the known value alone determines the result (TRUE for OR, FALSE for AND), NA is absorbed; otherwise NA propagates.'},
 
-{unit:'u10',q:'For a vector x <- c(2, 4, 4, 4, 5, 5, 7, 9), what does var(x) compute?',opts:['A) The population variance sigma^2 = (1/n)*sum(x_i - x-bar)^2','B) The sample variance s^2 = (1/(n-1))*sum(x_i - x-bar)^2 (with Bessel\'s correction)','C) The variance of the sampling distribution sigma^2/n','D) A vector of all (x_i - x-bar)^2 values'],ans:1,exp:'R uses n-1 (Bessel\'s correction) throughout: var(), sd(), cov(), cor() all use n-1. For x = c(2,4,4,4,5,5,7,9): n=8, x-bar=5, sum(x_i-5)^2 = 32, s^2 = 32/7 = 4.571. To compute population variance: var(x)*(n-1)/n or mean((x-mean(x))^2).'}
+{unit:'u10',q:'For a vector x <- c(2, 4, 4, 4, 5, 5, 7, 9), what does var(x) compute?',opts:['A) The population variance sigma^2 = (1/n)*sum(x_i - x-bar)^2','B) The sample variance s^2 = (1/(n-1))*sum(x_i - x-bar)^2 (with Bessel\'s correction)','C) The variance of the sampling distribution sigma^2/n','D) A vector of all (x_i - x-bar)^2 values'],ans:1,exp:'R uses n-1 (Bessel\'s correction) throughout: var(), sd(), cov(), cor() all use n-1. For x = c(2,4,4,4,5,5,7,9): n=8, x-bar=5, sum(x_i-5)^2 = 32, s^2 = 32/7 = 4.571. To compute population variance: var(x)*(n-1)/n or mean((x-mean(x))^2).'},
 
   //NEXT SET 2
 
