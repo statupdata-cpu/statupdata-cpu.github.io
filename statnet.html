@@ -311,7 +311,7 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
   <button class="tab-btn" onclick="switchTab(event,'tab-important')">🔴 Important Sets</button>
   <button class="tab-btn" onclick="switchTab(event,'tab-schedule')">📅 Day-wise Schedule</button>
   <button class="tab-btn" onclick="switchTab(event,'tab-misc')">📦 Miscellaneous</button>
-  <a class="tab-btn" href="statnet_mocktest.html" target="_blank">🧩 Mock Tests</a>
+  <button class="tab-btn" onclick="switchTab(event,'tab-mocktest')">🧩 Mock Tests</button>
 </div>
 <!-- TAB 1: UNIT-WISE -->
 <div class="tab-pane active" id="tab-materials">
@@ -352,6 +352,78 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
   <div class="misc-section"><div class="misc-section-header"><span class="misc-section-icon">📝</span><span class="misc-section-title">Notes &amp; Formula Sheets</span><span class="misc-section-count">Unit-wise Summary Notes</span></div><div class="misc-grid" id="notes-grid"></div></div>
   <div class="misc-section"><div class="misc-section-header"><span class="misc-section-icon">📄</span><span class="misc-section-title">Previous Year Question Papers</span><span class="misc-section-count">UGC NET Past Papers with Answer Keys</span></div><div class="misc-grid" id="pyq-grid"></div></div>
   <div class="misc-section"><div class="misc-section-header"><span class="misc-section-icon">▶️</span><span class="misc-section-title">YouTube Playlists</span><span class="misc-section-count">Video Lecture Series</span></div><div class="misc-grid" id="yt-grid"></div></div>
+</div>
+<!-- TAB 5: MOCK TEST -->
+<div class="tab-pane" id="tab-mocktest">
+  <!-- LOGIN -->
+  <div class="mock-login-screen" id="mock-login-screen">
+    <div class="mock-login-card">
+      <div class="mock-login-header"><div class="mlh-icon">🧩</div><h2>Mock Test Portal</h2><p>Login with your Roll Number and Password</p></div>
+      <div class="mock-login-body">
+        <label>Roll Number</label><input type="text" id="login-roll" placeholder="e.g. STAT6708892" autocomplete="off"/>
+        <label>Password</label><input type="password" id="login-pass" placeholder="e.g. stat@04835"/>
+        <div class="mock-login-error" id="login-error">❌ Invalid Roll Number or Password. Please try again.</div>
+        <button class="btn-mock-login" onclick="doLogin()">Login &amp; View Tests →</button>
+        <div class="mock-login-info">
+          <strong>📌 Your Login Details:</strong><br/>
+          Contact instructor on WhatsApp if you face any issue.
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- TEST LIST -->
+  <div class="mock-list-screen" id="mock-list-screen">
+    <div class="mock-welcome-bar"><div class="mwb-left"><h3 id="welcome-name">Welcome!</h3><p id="welcome-roll">Roll Number: —</p></div><button class="btn-mock-logout" onclick="doLogout()">Logout</button></div>
+    <div id="mock-tests-grid"></div>
+  </div>
+  <!-- EXAM -->
+  <div class="mock-exam-screen" id="mock-exam-screen">
+    <div class="exam-header">
+      <div class="exam-header-left"><h3 id="exam-title">Mock Test</h3><p id="exam-subtitle">100 Questions · 120 Min</p><div class="exam-max-marks" id="exam-max-marks">Max Marks: 200</div></div>
+      <div class="exam-timer"><div class="exam-timer-label">Time Remaining</div><div class="exam-timer-val" id="exam-timer-val">02:00:00</div></div>
+    </div>
+    <div class="exam-progress-text" id="exam-progress-text">Answered: 0 / 100</div>
+    <div class="exam-progress-bar-wrap"><div class="exam-progress-bar" id="exam-progress-bar" style="width:1%"></div></div>
+    <div class="exam-layout">
+      <div class="exam-qpanel">
+        <div class="q-number" id="q-number">Question 1</div>
+        <div class="q-text" id="q-text">Loading...</div>
+        <div class="q-options" id="q-options"></div>
+        <div class="q-nav-btns">
+          <button class="btn-q-prev" onclick="prevQ()">◀ Previous</button>
+          <div style="display:flex;gap:8px;"><button class="btn-q-skip" onclick="skipQ()">Skip ▷</button><button class="btn-q-submit" onclick="confirmSubmit()">Submit Test</button></div>
+          <button class="btn-q-next" onclick="nextQ()">Next ▶</button>
+        </div>
+      </div>
+      <div class="exam-nav-panel">
+        <div class="nav-panel-title">Question Navigator</div>
+        <div class="q-nav-grid" id="q-nav-grid"></div>
+        <div class="nav-legend">
+          <div class="nav-legend-item"><div class="nav-legend-dot" style="background:#8dc63f;border:1.5px solid #4a8a2a;"></div> Current</div>
+          <div class="nav-legend-item"><div class="nav-legend-dot" style="background:#f0fae6;border:1.5px solid #4a8a2a;"></div> Answered</div>
+          <div class="nav-legend-item"><div class="nav-legend-dot" style="background:#fff9e6;border:1.5px solid #f59e0b;"></div> Skipped</div>
+          <div class="nav-legend-item"><div class="nav-legend-dot" style="background:#fff;border:1.5px solid #d4e6d4;"></div> Not Visited</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- RESULT -->
+  <div class="mock-result-screen" id="mock-result-screen">
+    <div class="result-header"><h2>🎉 Test Completed!</h2><p id="result-test-name">Mock Test</p>
+      <div class="result-score-circle"><div class="result-score-num" id="result-score-num">—</div><div class="result-score-sub" id="result-score-sub">marks scored</div></div>
+    </div>
+    <div class="result-stats">
+      <div class="result-stat-box rsb-correct"><div class="rsb-num" id="rs-correct">0</div><div class="rsb-label">Correct</div></div>
+      <div class="result-stat-box rsb-wrong"><div class="rsb-num" id="rs-wrong">0</div><div class="rsb-label">Wrong</div></div>
+      <div class="result-stat-box rsb-skipped"><div class="rsb-num" id="rs-skipped">0</div><div class="rsb-label">Skipped</div></div>
+      <div class="result-stat-box rsb-pct"><div class="rsb-num" id="rs-pct">0%</div><div class="rsb-label">Accuracy</div></div>
+      <div class="result-stat-box rsb-scored"><div class="rsb-num" id="rs-scored">0</div><div class="rsb-label">Marks Scored</div></div>
+    </div>
+    <div class="result-actions"><button class="btn-mock-retake" onclick="retakeTest()">🔄 Retake Test</button><button class="btn-mock-list" onclick="backToList()">← Back to Tests</button></div>
+    <div class="result-review-title">📋 Detailed Solutions &amp; Review (2 marks per correct answer)</div>
+    <div id="solutions-list"></div>
+  </div>
+</div>
 </div>
 <footer class="footer">
   <p>© 2025 <a href="#">STATUP</a> · Streamline Your Analysis, Elevate Your Decision</p>
@@ -547,6 +619,528 @@ function filterUnit(e,unit){document.querySelectorAll('.filter-btn').forEach(b=>
 function switchTab(e,id){document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));e.target.classList.add('active');document.getElementById(id).classList.add('active');}
 function openFS(btn){const el=btn.closest('.video-wrap');(el.requestFullscreen||el.webkitRequestFullscreen||el.msRequestFullscreen||function(){}).call(el);}
 buildGrid(); buildImportant(); buildMisc();
+const STUDENTS = {
+  'STAT3708': {name:'Student 1',  password:'stat@08'},
+  'STAT2033': {name:'Student 2',  password:'stat@33'},
+  'STAT2676': {name:'Student 3',  password:'stat@76'},
+  'STAT9140': {name:'Student 4',  password:'stat@40'},
+  'STAT6869': {name:'Student 5',  password:'stat@69'},
+  'STAT3485': {name:'Student 6',  password:'stat@85'},
+  'STAT0172': {name:'Student 7',  password:'stat@72'},
+  'STAT0013': {name:'Student 8',  password:'stat@13'},
+  'STAT8303': {name:'Student 9',  password:'stat@03'},
+  'STAT4258': {name:'Student 10', password:'stat@58'},
+  'STAT3947': {name:'Student 11', password:'stat@47'},
+  'STAT3059': {name:'Student 12', password:'stat@59'},
+  'STAT5277': {name:'Student 13', password:'stat@77'},
+  'STAT5342': {name:'Student 14', password:'stat@42'},
+  'STAT4073': {name:'Student 15', password:'stat@73'},
+  'STAT4692': {name:'Student 16', password:'stat@92'},
+  'STAT3847': {name:'Student 17', password:'stat@47'},
+  'STAT2707': {name:'Student 18', password:'stat@07'},
+  'STAT7562': {name:'Student 19', password:'stat@62'},
+  'STAT1691': {name:'Student 20', password:'stat@91'},
+  'STAT5393': {name:'Student 21', password:'stat@93'},
+  'STAT8089': {name:'Student 22', password:'stat@89'},
+  'STAT8584': {name:'Student 23', password:'stat@84'},
+  'STAT7686': {name:'Student 24', password:'stat@86'},
+  'STAT7061': {name:'Student 25', password:'stat@61'},
+  'STAT2413': {name:'Student 26', password:'stat@13'},
+  'STAT6752': {name:'Student 27', password:'stat@52'},
+  'STAT0772': {name:'Student 28', password:'stat@72'},
+  'STAT9874': {name:'Student 29', password:'stat@74'},
+  'STAT4790': {name:'Student 30', password:'stat@90'},
+  'STAT7582': {name:'Student 31', password:'stat@82'},
+  'STAT1523': {name:'Student 32', password:'stat@23'},
+  'STAT8665': {name:'Student 33', password:'stat@65'},
+  'STAT7421': {name:'Student 34', password:'stat@21'},
+  'STAT5317': {name:'Student 35', password:'stat@17'},
+  'STAT2129': {name:'Student 36', password:'stat@29'},
+  'STAT0947': {name:'Student 37', password:'stat@47'},
+  'STAT9831': {name:'Student 38', password:'stat@31'},
+  'STAT1745': {name:'Student 39', password:'stat@45'},
+  'STAT7509': {name:'Student 40', password:'stat@09'},
+  'STAT2141': {name:'Student 41', password:'stat@41'},
+  'STAT2971': {name:'Student 42', password:'stat@71'},
+  'STAT2353': {name:'Student 43', password:'stat@53'},
+  'STAT7957': {name:'Student 44', password:'stat@57'},
+  'STAT5913': {name:'Student 45', password:'stat@13'},
+  'STAT3982': {name:'Student 46', password:'stat@82'},
+  'STAT6575': {name:'Student 47', password:'stat@75'},
+  'STAT5455': {name:'Student 48', password:'stat@55'},
+  'STAT3995': {name:'Student 49', password:'stat@95'},
+  'STAT3141': {name:'Student 50', password:'stat@41'},
+  // ── ADD MORE STUDENTS BELOW THIS LINE ──────────────────────────
+  // Format: 'STATXXXX': {name:'Student Name', password:'stat@XX'},
+  // Example: 'STAT5678': {name:'Priya Sharma', password:'stat@78'},
+  // ───────────────────────────────────────────────────────────────
+  'ADMIN':    {name:'Administrator', password:'admin@statup'}
+};
+// ════════════════════════════════════════════════════════════════════
+//  MASTER QUESTION BANK — ONE BANK FOR ALL 3 TEST TYPES
+//
+//  FORMAT FOR EACH QUESTION:
+//  {
+//    unit: 'u1',          ← unit tag: u1 to u10 (REQUIRED for full & unit tests)
+//    q: 'Question text?', ← the question
+//    opts: ['A) ...','B) ...','C) ...','D) ...'],  ← 4 options
+//    ans: 0,              ← correct option index: 0=A, 1=B, 2=C, 3=D
+//    exp: 'Explanation.'  ← shown in solutions after test
+//  }
+//
+//  HOW EACH TEST USES THIS BANK:
+//  ┌─────────────────┬──────────────────────────────────────────────┐
+//  │ Full Syllabus   │ Picks 10 per unit sequentially               │
+//  │                 │ Mock 1 → Q[0-9] of each unit                 │
+//  │                 │ Mock 2 → Q[10-19] of each unit, etc.         │
+//  ├─────────────────┼──────────────────────────────────────────────┤
+//  │ Unit-wise Mock  │ Picks 30 from that unit only, sequentially   │
+//  │                 │ Mock 1 → Q[0-29], Mock 2 → Q[30-59], etc.   │
+//  ├─────────────────┼──────────────────────────────────────────────┤
+//  │ Surprise Test   │ Picks 50 RANDOM from entire bank             │
+//  │                 │ Different every attempt                       │
+//  └─────────────────┴──────────────────────────────────────────────┘
+//
+//  HOW TO ADD QUESTIONS:
+//  - Add Unit I questions where you see // ── ADD UNIT I ──
+//  - Keep same unit tag for all questions of a unit
+//  - More questions = more mocks possible
+//  - SCORING: 2 marks correct, 0 wrong/skip
+//
+//  TO CHANGE TEST SETTINGS (questions, time, lock/unlock):
+//  → Find MOCK_DEFS array below the question bank
+//  → Edit: duration (seconds), qCount, locked, title, description
+// ════════════════════════════════════════════════════════════════════
+
+const MASTER_QB = [];
+
+
+// ════════════════════════════════════════════════════════════════════
+//  TEST CONFIGURATION
+//  ─────────────────────────────────────────────────────────────────
+//  TO CHANGE QUESTIONS PER UNIT IN FULL MOCK:  change qPerUnit below
+//  TO CHANGE QUESTIONS IN UNIT MOCK:           change qCount in MOCK_DEFS
+//  TO CHANGE TIME:                             change duration (seconds)
+//  TO UNLOCK A TEST:                           change locked:true → locked:false
+//  TO CHANGE TITLE/DESCRIPTION:               edit title, subtitle, description
+//  TO ADD A NEW FULL MOCK:                     copy a {type:'full'} entry, increment id & mockNum
+//  TO ADD A NEW UNIT MOCK:                     copy a {type:'unit'} entry, increment id & mockNum
+// ════════════════════════════════════════════════════════════════════
+
+// ── How many questions per unit for full syllabus mock ──
+// 10 units × qPerUnit = total questions per test
+// Change this one number to change all full mocks at once
+const FULL_MOCK_Q_PER_UNIT = 10; // ← CHANGE THIS (e.g. 5 = 50 total, 10 = 100 total)
+
+const MOCK_DEFS = [
+  // ── FULL SYLLABUS MOCKS ──────────────────────────────────────────
+  // mockNum: 1=first batch, 2=second batch, etc.
+  // Add new full mock: copy row, increment id and mockNum
+  {id:1,  type:'full', mockNum:1, locked:false, duration:7200,
+   title:'Full Syllabus Mock 1',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'First full-length mock. Covers all 10 units equally — 10 questions per unit.'},
+
+  {id:2,  type:'full', mockNum:2, locked:true,  duration:7200,
+   title:'Full Syllabus Mock 2',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Second batch. Fresh questions continuing from Mock 1.'},
+
+  {id:3,  type:'full', mockNum:3, locked:true,  duration:7200,
+   title:'Full Syllabus Mock 3',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Third batch covering advanced topics across all units.'},
+
+  // ── UNIT-WISE MOCKS ──────────────────────────────────────────────
+  // qCount: questions per test (30 or 50) — change per test as needed
+  // mockNum: 1=Q[0 to qCount-1], 2=Q[qCount to 2*qCount-1], etc.
+  {id:1, type:'unit', unit:'u1',  mockNum:1, locked:false, qCount:30, duration:1800,
+   title:'Unit I Mock 1 — Probability Theory',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+   description:'Probability basics: classical, axiomatic, Bayes theorem, standard distributions..etc.'},
+  {id:2, type:'unit', unit:'u1',  mockNum:2, locked:false, qCount:30, duration:3600,
+   title:'Unit I Mock 2 — Probability Theory',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+   description:'Probability basics: classical, axiomatic, Bayes theorem, standard distributions..etc.'},
+  {id:3, type:'unit', unit:'u1',  mockNum:3, locked:false, qCount:30, duration:3600,
+   title:'Unit I Mock 2 — Probability Theory',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+   description:'Probability basics: classical, axiomatic, Bayes theorem, standard distributions..etc.'},
+  {id:4, type:'unit', unit:'u1',  mockNum:4, locked:false, qCount:30, duration:1800,
+   title:'Unit I Mock 4 — Probability Theory',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+   description:'Probability basics: classical, axiomatic, Bayes theorem, standard distributions..etc.'},
+  {id:5, type:'unit', unit:'u1',  mockNum:5, locked:false, qCount:30, duration:1800,
+   title:'Unit I Mock 5 — Probability Theory',
+   subtitle:'Unit 1 Only · 30 Questions · 60 Marks',
+   description:'Probability basics: classical, axiomatic, Bayes theorem, standard distributions..etc.'},
+{id:6, type:'unit', unit:'u1',  mockNum:6, locked:false, qCount:30, duration:1800,
+   title:'Unit I Mock 6 — Probability Theory',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+   description:'Probability basics: classical, axiomatic, Bayes theorem, standard distributions..etc.'},
+  {id:7, type:'unit', unit:'u1',  mockNum:7, locked:false, qCount:30, duration:3600,
+   title:'Unit I Mock 7 — Probability Theory',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+   description:'Probability basics: classical, axiomatic, Bayes theorem, standard distributions..etc.'},
+{id:8, type:'unit', unit:'u1',  mockNum:8, locked:false, qCount:30, duration:3600,
+   title:'Unit I Mock 8 — Probability Theory',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+   description:'Probability basics: classical, axiomatic, Bayes theorem, standard distributions..etc.'},
+{id:9, type:'unit', unit:'u1',  mockNum:9, locked:false, qCount:30, duration:1800,
+   title:'Unit I Mock 9 — Probability Theory',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+   description:'Probability basics: classical, axiomatic, Bayes theorem, standard distributions..etc.'},
+{id:10, type:'unit', unit:'u1',  mockNum:10, locked:false, qCount:30, duration:3600,
+   title:'Unit I Mock 10 — Probability Theory',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+   description:'Probability basics: classical, axiomatic, Bayes theorem, standard distributions..etc.'},
+  {id:11, type:'unit', unit:'u1',  mockNum:11, locked:false, qCount:30, duration:3600,
+   title:'Unit I Mock 11 — Probability Theory',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+   description:'Probability basics: classical, axiomatic, Bayes theorem, standard distributions..etc.'},
+  {id:12, type:'unit', unit:'u1',  mockNum:12, locked:false, qCount:30, duration:3600,
+   title:'Unit I Mock 12 — Probability Theory',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+   description:'Probability basics: classical, axiomatic, Bayes theorem, standard distributions..etc.'},
+  {id:13, type:'unit', unit:'u1',  mockNum:13, locked:false, qCount:30, duration:3600,
+   title:'Unit I Mock 13 — Probability Theory',
+   subtitle:'Unit I Only · 30 Questions · 60 Marks',
+   description:'Probability basics: classical, axiomatic, Bayes theorem, standard distributions..etc.'},
+
+  
+  
+  
+  {id:1, type:'unit', unit:'u2',  mockNum:1, locked:false, qCount:30, duration:1800,
+   title:'Unit II Mock1 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit II Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+  {id:2, type:'unit', unit:'u2',  mockNum:2, locked:false, qCount:30, duration:3600,
+   title:'Unit II Mock2 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit II Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+  {id:3, type:'unit', unit:'u2',  mockNum:3, locked:false, qCount:30, duration:3600,
+   title:'Unit II Mock2 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit II Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+  {id:4, type:'unit', unit:'u2',  mockNum:4, locked:false, qCount:30, duration:1800,
+   title:'Unit II Mock4 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit II Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+  {id:5, type:'unit', unit:'u2',  mockNum:5, locked:false, qCount:30, duration:1800,
+   title:'Unit II Mock5 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit II Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+{id:6, type:'unit', unit:'u2',  mockNum:6, locked:false, qCount:30, duration:1800,
+   title:'Unit II Mock6 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit II Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+  {id:7, type:'unit', unit:'u2',  mockNum:7, locked:false, qCount:30, duration:3600,
+   title:'Unit II Mock7 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit II Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+{id:8, type:'unit', unit:'u2',  mockNum:8, locked:false, qCount:30, duration:3600,
+   title:'Unit II Mock8 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit II Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+{id:9, type:'unit', unit:'u2',  mockNum:9, locked:false, qCount:30, duration:1800,
+   title:'Unit II Mock9 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit II Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+{id:10, type:'unit', unit:'u2',  mockNum:10, locked:false, qCount:30, duration:3600,
+   title:'Unit II Mock10 — Real Analysis & Matrix Algebra',
+   subtitle:'Unit II Only · 30 Questions · 60 Marks',
+description:'Matrix algebra: rank, eigenvalues, inverse, quadratic forms, sequences...etc'},
+  
+
+
+//unit2
+
+  {id:1, type:'unit', unit:'u3',  mockNum:1, locked:false, qCount:30, duration:1800,
+   title:'Unit III Mock 1 — Sampling Methods & DOE',
+   subtitle:'Unit III Only · 30 Questions · 60 Marks',
+   description:'Sampling designs: SRS, stratified, cluster, systematic. CRD, RBD, LSD.'},
+  {id:2, type:'unit', unit:'u3',  mockNum:2, locked:false, qCount:30, duration:3600,
+   title:'Unit III Mock 2 — Sampling Methods & DOE',
+   subtitle:'Unit III Only · 30 Questions · 60 Marks',
+   description:'Sampling designs: SRS, stratified, cluster, systematic. CRD, RBD, LSD.'},
+  {id:3, type:'unit', unit:'u3',  mockNum:3, locked:false, qCount:30, duration:3600,
+   title:'Unit III Mock 2 — Sampling Methods & DOE',
+   subtitle:'Unit III Only · 30 Questions · 60 Marks',
+   description:'Sampling designs: SRS, stratified, cluster, systematic. CRD, RBD, LSD.'},
+  {id:4, type:'unit', unit:'u3',  mockNum:4, locked:false, qCount:30, duration:1800,
+   title:'Unit III Mock 4 — Sampling Methods & DOE',
+   subtitle:'Unit III Only · 30 Questions · 60 Marks',
+   description:'Sampling designs: SRS, stratified, cluster, systematic. CRD, RBD, LSD.'},
+  {id:5, type:'unit', unit:'u3',  mockNum:5, locked:false, qCount:30, duration:1800,
+   title:'Unit III Mock 5 — Sampling Methods & DOE',
+   subtitle:'Unit 1 Only · 30 Questions · 60 Marks',
+   description:'Sampling designs: SRS, stratified, cluster, systematic. CRD, RBD, LSD.'},
+{id:6, type:'unit', unit:'u3',  mockNum:6, locked:false, qCount:30, duration:1800,
+   title:'Unit III Mock 6 — Sampling Methods & DOE',
+   subtitle:'Unit III Only · 30 Questions · 60 Marks',
+   description:'Sampling designs: SRS, stratified, cluster, systematic. CRD, RBD, LSD.'},
+  
+  {id:31, type:'unit', unit:'u3',  mockNum:1, locked:false, qCount:30, duration:3600,
+   title:'Unit III Mock 1 — Sampling Methods & DOE',
+   subtitle:'Unit III Only · 30 Questions · 60 Marks',
+   description:'Sampling designs: SRS, stratified, cluster, systematic. CRD, RBD, LSD.'},
+
+  {id:41, type:'unit', unit:'u4',  mockNum:1, locked:false, qCount:30, duration:3600,
+   title:'Unit IV Mock 1 — Estimation Theory',
+   subtitle:'Unit IV Only · 30 Questions · 60 Marks',
+   description:'Point estimation: UMVUE, MLE, Cramer-Rao, sufficiency, completeness.'},
+
+  {id:51, type:'unit', unit:'u5',  mockNum:1, locked:false, qCount:30, duration:3600,
+   title:'Unit V Mock 1 — Testing of Hypotheses',
+   subtitle:'Unit V Only · 30 Questions · 60 Marks',
+   description:'NP Lemma, UMP tests, LRT, chi-square tests, non-parametric tests.'},
+
+  {id:61, type:'unit', unit:'u6',  mockNum:1, locked:false, qCount:30, duration:3600,
+   title:'Unit VI Mock 1 — Linear Estimation & Regression',
+   subtitle:'Unit VI Only · 30 Questions · 60 Marks',
+   description:'Gauss-Markov theorem, OLS, multicollinearity, ridge regression.'},
+
+  {id:71, type:'unit', unit:'u7',  mockNum:1, locked:false, qCount:30, duration:3600,
+   title:'Unit VII Mock 1 — Time Series Analysis',
+   subtitle:'Unit VII Only · 30 Questions · 60 Marks',
+   description:'ARIMA, stationarity, ACF, PACF, Box-Jenkins, ADF test, forecasting.'},
+
+  {id:81, type:'unit', unit:'u8',  mockNum:1, locked:false, qCount:30, duration:3600,
+   title:'Unit VIII Mock 1 — Multivariate Analysis',
+   subtitle:'Unit VIII Only · 30 Questions · 60 Marks',
+   description:'Hotelling T², PCA, LDA, MANOVA, factor analysis, cluster analysis.'},
+
+  {id:91, type:'unit', unit:'u9',  mockNum:1, locked:false, qCount:30, duration:3600,
+   title:'Unit IX Mock 1 — Stochastic Processes',
+   subtitle:'Unit IX Only · 30 Questions · 60 Marks',
+   description:'Markov chains, Poisson process, Brownian motion, birth-death process.'},
+
+  {id:101,type:'unit', unit:'u10', mockNum:1, locked:false, qCount:30, duration:3600,
+   title:'Unit X Mock 1 — Indian Statistical System & R',
+   subtitle:'Unit X Only · 30 Questions · 60 Marks',
+   description:'NSO, NSS, census, index numbers, R programming basics.'},
+];
+
+// ── Surprise test ──
+const SURPRISE_DEF = {
+  id:999, type:'surprise', locked:false, duration:3600,
+  title:'⚡ Surprise Test',
+  subtitle:'Random 50 Questions · 100 Marks',
+  description:'Fresh random mix every attempt! 50 questions randomly picked from the full master question bank across all units.'
+};
+
+// ════════════════════════════════════════════════════════════════════
+//  ENGINE — getQuestions uses MASTER_QB for all 3 test types
+// ════════════════════════════════════════════════════════════════════
+function getQuestions(def) {
+  const unitIds = ['u1','u2','u3','u4','u5','u6','u7','u8','u9','u10'];
+
+  if (def.type === 'surprise') {
+    // Random 50 from entire MASTER_QB
+    const pool = [...MASTER_QB];
+    for (let i = pool.length-1; i > 0; i--) {
+      const j = Math.floor(Math.random()*(i+1));
+      [pool[i],pool[j]] = [pool[j],pool[i]];
+    }
+    return pool.slice(0, 50);
+  }
+
+  if (def.type === 'full') {
+    // 10 per unit from MASTER_QB sequentially by mockNum
+    const qs = [];
+    const start = (def.mockNum-1) * FULL_MOCK_Q_PER_UNIT;
+    unitIds.forEach(uid => {
+      const pool = MASTER_QB.filter(q => q.unit === uid);
+      const batch = pool.slice(start, start + FULL_MOCK_Q_PER_UNIT);
+      qs.push(...batch);
+    });
+    return qs;
+  }
+
+  if (def.type === 'unit') {
+    // qCount questions from that unit only, sequentially by mockNum
+    const pool = MASTER_QB.filter(q => q.unit === def.unit);
+    const start = (def.mockNum-1) * def.qCount;
+    return pool.slice(start, start + def.qCount);
+  }
+
+  return [];
+}
+
+// ── Remaining engine (login, exam, results) ──
+let currentStudent=null;
+function doLogin(){
+  const roll=document.getElementById('login-roll').value.trim().toUpperCase();
+  const pass=document.getElementById('login-pass').value.trim();
+  const err=document.getElementById('login-error');
+  if(STUDENTS[roll]&&STUDENTS[roll].password===pass){
+    currentStudent={roll,name:STUDENTS[roll].name};
+    err.style.display='none';
+    document.getElementById('mock-login-screen').style.display='none';
+    document.getElementById('welcome-name').textContent='Welcome, '+currentStudent.name+'!';
+    document.getElementById('welcome-roll').textContent='Roll Number: '+currentStudent.roll;
+    document.getElementById('mock-list-screen').style.display='block';
+    buildMockList();
+  } else { err.style.display='block'; }
+}
+function doLogout(){
+  currentStudent=null; clearInterval(timerInterval);
+  ['mock-list-screen','mock-exam-screen','mock-result-screen'].forEach(id=>document.getElementById(id).style.display='none');
+  document.getElementById('mock-login-screen').style.display='block';
+  document.getElementById('login-roll').value='';
+  document.getElementById('login-pass').value='';
+}
+
+function buildMockList(){
+  const allDefs=[...MOCK_DEFS,SURPRISE_DEF];
+  const fullTests=allDefs.filter(d=>d.type==='full');
+  const unitTests=allDefs.filter(d=>d.type==='unit');
+  const surpriseTest=allDefs.filter(d=>d.type==='surprise');
+  const unitLabels={u1:'Unit I',u2:'Unit II',u3:'Unit III',u4:'Unit IV',u5:'Unit V',u6:'Unit VI',u7:'Unit VII',u8:'Unit VIII',u9:'Unit IX',u10:'Unit X'};
+  let html='';
+  html+=`<div class="mock-section-header" style="background:#4a1a4a;">⚡ Surprise Test</div><div class="mock-tests-grid">`;
+  surpriseTest.forEach(t=>{html+=mockCard(t,'#6a1a4a','#9a2a9a');});
+  html+=`</div>`;
+  html+=`<div class="mock-section-header" style="background:#1a4a2a;">📋 Full Syllabus Mock Tests</div><div class="mock-tests-grid">`;
+  fullTests.forEach(t=>{html+=mockCard(t,'#1a4a2a','#2d8a3a');});
+  html+=`</div>`;
+  const units=[...new Set(unitTests.map(t=>t.unit))];
+  units.forEach(uid=>{
+    html+=`<div class="mock-section-header" style="background:#2a3a6a;">📘 ${unitLabels[uid]} — Unit-wise Mocks</div><div class="mock-tests-grid">`;
+    unitTests.filter(t=>t.unit===uid).forEach(t=>{html+=mockCard(t,'#2a3a6a','#3b5bdb');});
+    html+=`</div>`;
+  });
+  document.getElementById('mock-tests-grid').innerHTML=html;
+}
+
+function mockCard(t,c1,c2){
+  const dur=Math.floor(t.duration/60)+' Min';
+  const qs=t.type==='surprise'?'50':t.type==='full'?(FULL_MOCK_Q_PER_UNIT*10)+'':(t.qCount||10)+'';
+  const marks=parseInt(qs)*2;
+  return `<div class="mock-test-card"><div class="mock-test-card-header" style="background:linear-gradient(135deg,${c1},${c2});"><div class="mtc-num">${t.type==='surprise'?'⚡':t.id}</div><div><div class="mtc-title">${t.title}</div><div class="mtc-sub">${t.subtitle}</div></div></div><div class="mock-test-card-body"><div class="mtc-desc">${t.description}</div><div class="mtc-info"><span class="mtc-badge mtc-badge-green">📝 ${qs} Qs</span><span class="mtc-badge mtc-badge-blue">⏱ ${dur}</span><span class="mtc-badge mtc-badge-orange">🏆 ${marks} Marks</span>${t.locked?'<span class="mtc-badge mtc-badge-locked">🔒 Locked</span>':'<span class="mtc-badge mtc-badge-open">🔓 Open</span>'}</div><button class="btn-start-mock" onclick="startMock(${t.id})" ${t.locked?'disabled':''}>${t.locked?'🔒 Coming Soon':'▶ Start Test'}</button></div></div>`;
+}
+
+let currentTest=null,currentQIdx=0,answers=[],skipped=[],timerInterval=null,timeLeft=0,currentDef=null;
+
+function startMock(testId){
+  const def=testId===999?SURPRISE_DEF:MOCK_DEFS.find(t=>t.id===testId);
+  if(!def)return;
+  const qs=getQuestions(def);
+  if(!qs.length){alert('No questions available for this test yet!\n\nAdd questions to MASTER_QB with the correct unit tag to enable this test.');return;}
+  currentDef=def; currentTest={id:def.id,title:def.title,subtitle:def.subtitle,questions:qs};
+  currentQIdx=0; answers=Array(qs.length).fill(null); skipped=Array(qs.length).fill(false); timeLeft=def.duration;
+  document.getElementById('mock-list-screen').style.display='none';
+  document.getElementById('mock-exam-screen').style.display='block';
+  document.getElementById('exam-title').textContent=def.title;
+  document.getElementById('exam-subtitle').textContent=def.subtitle;
+  document.getElementById('exam-max-marks').textContent='Max Marks: '+(qs.length*2);
+  buildNavGrid(); renderQuestion(); startTimer();
+}
+
+function startTimer(){
+  clearInterval(timerInterval);
+  timerInterval=setInterval(()=>{
+    timeLeft--;
+    const h=Math.floor(timeLeft/3600),m=Math.floor((timeLeft%3600)/60),s=timeLeft%60;
+    const v=document.getElementById('exam-timer-val');
+    v.textContent=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    v.className='exam-timer-val'+(timeLeft<=300?' warning':'');
+    if(timeLeft<=0){clearInterval(timerInterval);submitTest();}
+  },1000);
+}
+
+function renderQuestion(){
+  const qs=currentTest.questions,q=qs[currentQIdx],n=currentQIdx+1,total=qs.length;
+  document.getElementById('q-number').textContent='Question '+n+' of '+total;
+  document.getElementById('q-text').textContent=q.q;
+  document.getElementById('exam-progress-text').textContent='Answered: '+answers.filter(a=>a!==null).length+' / '+total;
+  document.getElementById('exam-progress-bar').style.width=(n/total*100)+'%';
+  const keys=['A','B','C','D'];
+  document.getElementById('q-options').innerHTML=q.opts.map((opt,i)=>`<button class="q-option${answers[currentQIdx]===i?' selected':''}" onclick="selectOpt(${i})"><span class="q-option-key">${keys[i]}</span>${opt.replace(/^[A-D]\)\s*/,'')}</button>`).join('');
+  updateNavGrid();
+}
+
+function selectOpt(i){answers[currentQIdx]=i;skipped[currentQIdx]=false;renderQuestion();}
+function nextQ(){if(currentQIdx<currentTest.questions.length-1){currentQIdx++;renderQuestion();}}
+function prevQ(){if(currentQIdx>0){currentQIdx--;renderQuestion();}}
+function skipQ(){skipped[currentQIdx]=true;answers[currentQIdx]=null;nextQ();}
+function goToQ(i){currentQIdx=i;renderQuestion();}
+
+function buildNavGrid(){
+  document.getElementById('q-nav-grid').innerHTML=currentTest.questions.map((_,i)=>`<button class="q-nav-btn" id="qnb-${i}" onclick="goToQ(${i})">${i+1}</button>`).join('');
+}
+function updateNavGrid(){
+  currentTest.questions.forEach((_,i)=>{
+    const b=document.getElementById('qnb-'+i);
+    if(!b)return;
+    b.className='q-nav-btn'+(i===currentQIdx?' current':answers[i]!==null?' answered':skipped[i]?' skipped':'');
+  });
+}
+
+function confirmSubmit(){
+  const ua=answers.filter(a=>a===null).length;
+  if(ua>0&&!confirm('⚠️ You have '+ua+' unanswered question(s).\n\nSubmit anyway?'))return;
+  submitTest();
+}
+
+function submitTest(){
+  clearInterval(timerInterval);
+  const qs=currentTest.questions; let correct=0,wrong=0,skippedCount=0;
+  qs.forEach((q,i)=>{if(answers[i]===null)skippedCount++;else if(answers[i]===q.ans)correct++;else wrong++;});
+  const scored=correct*2,total=qs.length*2,pct=Math.round((scored/total)*100);
+  document.getElementById('result-score-num').textContent=scored+'/'+total;
+  document.getElementById('result-score-sub').textContent=correct+' correct × 2 marks';
+  document.getElementById('rs-correct').textContent=correct;
+  document.getElementById('rs-wrong').textContent=wrong;
+  document.getElementById('rs-skipped').textContent=skippedCount;
+  document.getElementById('rs-pct').textContent=pct+'%';
+  document.getElementById('rs-scored').textContent=scored;
+  document.getElementById('result-test-name').textContent=currentTest.title;
+  const keys=['A','B','C','D'];
+  document.getElementById('solutions-list').innerHTML=qs.map((q,i)=>{
+    const ua=answers[i],isSk=ua===null,isOk=ua===q.ans;
+    const st=isSk?'skipped':isOk?'correct':'wrong';
+    const badge=isSk?'⬜ Skipped':isOk?'✅ Correct +2':'❌ Wrong';
+    const opts=q.opts.map((opt,oi)=>{
+      let cls='normal';
+      if(oi===q.ans)cls='correct-ans';
+      else if(oi===ua&&!isOk)cls='user-wrong';
+      return `<div class="sc-opt ${cls}"><span style="font-weight:700;min-width:20px;">${keys[oi]})</span>${opt.replace(/^[A-D]\)\s*/,'')}${oi===q.ans?' ✓':''}${oi===ua&&!isOk?' ✗':''}</div>`;
+    }).join('');
+    return `<div class="solution-card"><div class="sc-header"><div class="sc-num ${st}">${i+1}</div><div class="sc-q-text">${q.q}</div><span class="sc-badge ${st}">${badge}</span></div><div class="sc-body"><div class="sc-options">${opts}</div><div class="sc-explanation"><strong>💡 Explanation:</strong> ${q.exp}</div></div></div>`;
+  }).join('');
+  document.getElementById('mock-exam-screen').style.display='none';
+  document.getElementById('mock-result-screen').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function retakeTest(){document.getElementById('mock-result-screen').style.display='none';startMock(currentDef.id);}
+function backToList(){clearInterval(timerInterval);document.getElementById('mock-result-screen').style.display='none';document.getElementById('mock-exam-screen').style.display='none';document.getElementById('mock-list-screen').style.display='block';}
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&document.getElementById('tab-mocktest').classList.contains('active')&&document.getElementById('mock-login-screen').style.display!=='none')doLogin();});
+
+
+// ── External Question Bank Files ──
+</script>
+<script src="questions/qb_u1.js"></script>
+</script>
+<script src="questions/qb_u2.js"></script>
+</script>
+<script src="questions/qb_u3.js"></script>
+</script>
+<script src="questions/qb_u4.js"></script>
+</script>
+<script src="questions/qb_u5.js"></script>
+</script>
+<script src="questions/qb_u6.js"></script>
+</script>
+<script src="questions/qb_u7.js"></script>
+</script>
+<script src="questions/qb_u8.js"></script>
+</script>
+<script src="questions/qb_u9.js"></script>
+</script>
+<script src="questions/qb_u10.js"></script>
+<script>
 </script>
 </body>
 </html>
