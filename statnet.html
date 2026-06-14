@@ -736,25 +736,206 @@ const MOCK_DEFS = [
   // ── FULL SYLLABUS MOCKS ──────────────────────────────────────────
   // mockNum: 1=first batch, 2=second batch, etc.
   // Add new full mock: copy row, increment id and mockNum
-  {id:1,  type:'full', mockNum:1, locked:false, duration:7200,
+  // ── FULL SYLLABUS MOCKS (40 Tests) ──────────────────────────────
+  {id:1,  type:'full', mockNum:1,  locked:false, duration:7200,
    title:'Full Syllabus Mock 1',
    subtitle:'All 10 Units · 100 Questions · 200 Marks',
    description:'First full-length mock. Covers all 10 units equally — 10 questions per unit.'},
 
-  {id:2,  type:'full', mockNum:2, locked:false,  duration:7200,
+  {id:2,  type:'full', mockNum:2,  locked:false, duration:7200,
    title:'Full Syllabus Mock 2',
    subtitle:'All 10 Units · 100 Questions · 200 Marks',
    description:'Second batch. Fresh questions continuing from Mock 1.'},
 
-  {id:3,  type:'full', mockNum:3, locked:false,  duration:7200,
+  {id:3,  type:'full', mockNum:3,  locked:false, duration:7200,
    title:'Full Syllabus Mock 3',
    subtitle:'All 10 Units · 100 Questions · 200 Marks',
    description:'Third batch covering advanced topics across all units.'},
-  {id:4,  type:'full', mockNum:4, locked:false,  duration:7200,
-   title:'Full Syllabus Mock 2',
-   subtitle:'All 10 Units · 100 Questions · 200 Marks',
-   description:'Second batch. Fresh questions continuing from Mock 1.'},
 
+  {id:4,  type:'full', mockNum:4,  locked:false, duration:7200,
+   title:'Full Syllabus Mock 4',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Fourth batch. Mixed difficulty questions from all 10 units.'},
+
+  {id:5,  type:'full', mockNum:5,  locked:false, duration:7200,
+   title:'Full Syllabus Mock 5',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Fifth batch. Focus on application-based questions across all units.'},
+
+  {id:6,  type:'full', mockNum:6,  locked:false, duration:7200,
+   title:'Full Syllabus Mock 6',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Sixth batch. Covers conceptual and numerical questions from all units.'},
+
+  {id:7,  type:'full', mockNum:7,  locked:false, duration:7200,
+   title:'Full Syllabus Mock 7',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Seventh batch. Advanced level questions from all 10 units.'},
+
+  {id:8,  type:'full', mockNum:8,  locked:false, duration:7200,
+   title:'Full Syllabus Mock 8',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Eighth batch. Mixed numerical and theory questions across all units.'},
+
+  {id:9,  type:'full', mockNum:9,  locked:false, duration:7200,
+   title:'Full Syllabus Mock 9',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Ninth batch. High-priority questions curated from all 10 units.'},
+
+  {id:10, type:'full', mockNum:10, locked:false, duration:7200,
+   title:'Full Syllabus Mock 10',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Tenth batch. Comprehensive revision covering all units equally.'},
+
+  {id:11, type:'full', mockNum:11, locked:false, duration:7200,
+   title:'Full Syllabus Mock 11',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Eleventh batch. Fresh questions with focus on weaker areas.'},
+
+  {id:12, type:'full', mockNum:12, locked:false, duration:7200,
+   title:'Full Syllabus Mock 12',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Twelfth batch. Standard difficulty questions across all 10 units.'},
+
+  {id:13, type:'full', mockNum:13, locked:false, duration:7200,
+   title:'Full Syllabus Mock 13',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Thirteenth batch. Application and theory mix from all units.'},
+
+  {id:14, type:'full', mockNum:14, locked:false, duration:7200,
+   title:'Full Syllabus Mock 14',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Fourteenth batch. Important formula-based questions from all units.'},
+
+  {id:15, type:'full', mockNum:15, locked:false, duration:7200,
+   title:'Full Syllabus Mock 15',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Fifteenth batch. Mid-level revision covering all 10 units.'},
+
+  {id:16, type:'full', mockNum:16, locked:false, duration:7200,
+   title:'Full Syllabus Mock 16',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Sixteenth batch. Advanced numerical questions from all units.'},
+
+  {id:17, type:'full', mockNum:17, locked:false, duration:7200,
+   title:'Full Syllabus Mock 17',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Seventeenth batch. Conceptual depth questions across all 10 units.'},
+
+  {id:18, type:'full', mockNum:18, locked:false, duration:7200,
+   title:'Full Syllabus Mock 18',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Eighteenth batch. PYQ-style questions from all units.'},
+
+  {id:19, type:'full', mockNum:19, locked:false, duration:7200,
+   title:'Full Syllabus Mock 19',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Nineteenth batch. Theorem and proof based MCQs from all units.'},
+
+  {id:20, type:'full', mockNum:20, locked:false, duration:7200,
+   title:'Full Syllabus Mock 20',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Twentieth batch. Complete syllabus coverage with fresh questions.'},
+
+  {id:21, type:'full', mockNum:21, locked:false, duration:7200,
+   title:'Full Syllabus Mock 21',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Twenty-first batch. Higher difficulty questions from all 10 units.'},
+
+  {id:22, type:'full', mockNum:22, locked:false, duration:7200,
+   title:'Full Syllabus Mock 22',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Twenty-second batch. Balanced mix of easy, medium and hard questions.'},
+
+  {id:23, type:'full', mockNum:23, locked:false, duration:7200,
+   title:'Full Syllabus Mock 23',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Twenty-third batch. Important topic revision from all units.'},
+
+  {id:24, type:'full', mockNum:24, locked:false, duration:7200,
+   title:'Full Syllabus Mock 24',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Twenty-fourth batch. Numerical problem focused mock from all units.'},
+
+  {id:25, type:'full', mockNum:25, locked:false, duration:7200,
+   title:'Full Syllabus Mock 25',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Twenty-fifth batch. Mid-exam revision set covering all 10 units.'},
+
+  {id:26, type:'full', mockNum:26, locked:false, duration:7200,
+   title:'Full Syllabus Mock 26',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Twenty-sixth batch. Concept clarity questions from all units.'},
+
+  {id:27, type:'full', mockNum:27, locked:false, duration:7200,
+   title:'Full Syllabus Mock 27',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Twenty-seventh batch. Formula and derivation MCQs from all units.'},
+
+  {id:28, type:'full', mockNum:28, locked:false, duration:7200,
+   title:'Full Syllabus Mock 28',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Twenty-eighth batch. Application and case-based questions from all units.'},
+
+  {id:29, type:'full', mockNum:29, locked:false, duration:7200,
+   title:'Full Syllabus Mock 29',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Twenty-ninth batch. Standard UGC NET pattern questions from all units.'},
+
+  {id:30, type:'full', mockNum:30, locked:false, duration:7200,
+   title:'Full Syllabus Mock 30',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Thirtieth batch. Complete revision set from all 10 units.'},
+
+  {id:31, type:'full', mockNum:31, locked:false, duration:7200,
+   title:'Full Syllabus Mock 31',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Thirty-first batch. Advanced and tricky questions from all units.'},
+
+  {id:32, type:'full', mockNum:32, locked:false, duration:7200,
+   title:'Full Syllabus Mock 32',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Thirty-second batch. Speed and accuracy focused mock from all units.'},
+
+  {id:33, type:'full', mockNum:33, locked:false, duration:7200,
+   title:'Full Syllabus Mock 33',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Thirty-third batch. Exam simulation with full syllabus coverage.'},
+
+  {id:34, type:'full', mockNum:34, locked:false, duration:7200,
+   title:'Full Syllabus Mock 34',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Thirty-fourth batch. Final lap revision questions from all units.'},
+
+  {id:35, type:'full', mockNum:35, locked:false, duration:7200,
+   title:'Full Syllabus Mock 35',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Thirty-fifth batch. High-yield important questions from all units.'},
+
+  {id:36, type:'full', mockNum:36, locked:false, duration:7200,
+   title:'Full Syllabus Mock 36',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Thirty-sixth batch. Mixed pattern questions from all 10 units.'},
+
+  {id:37, type:'full', mockNum:37, locked:false, duration:7200,
+   title:'Full Syllabus Mock 37',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Thirty-seventh batch. Theoretical and numerical balance from all units.'},
+
+  {id:38, type:'full', mockNum:38, locked:false, duration:7200,
+   title:'Full Syllabus Mock 38',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Thirty-eighth batch. Pre-exam practice set covering all 10 units.'},
+
+  {id:39, type:'full', mockNum:39, locked:false, duration:7200,
+   title:'Full Syllabus Mock 39',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Thirty-ninth batch. Penultimate revision set from all units.'},
+
+  {id:40, type:'full', mockNum:40, locked:false, duration:7200,
+   title:'Full Syllabus Mock 40',
+   subtitle:'All 10 Units · 100 Questions · 200 Marks',
+   description:'Fortieth batch. Final grand revision mock covering all 10 units.'},
   // ── UNIT-WISE MOCKS ──────────────────────────────────────────────
   // qCount: questions per test (30 or 50) — change per test as needed
   // mockNum: 1=Q[0 to qCount-1], 2=Q[qCount to 2*qCount-1], etc.
@@ -1129,26 +1310,17 @@ document.addEventListener('keydown',e=>{if(e.key==='Enter'&&document.getElementB
 
 // ── External Question Bank Files ──
 </script>
+
 <script src="qb_u1.js"></script>
-</script>
 <script src="qb_u2.js"></script>
-</script>
 <script src="qb_u3.js"></script>
-</script>
 <script src="qb_u4.js"></script>
-</script>
 <script src="qb_u5.js"></script>
-</script>
 <script src="qb_u6.js"></script>
-</script>
 <script src="qb_u7.js"></script>
-</script>
 <script src="qb_u8.js"></script>
-</script>
 <script src="qb_u9.js"></script>
-</script>
 <script src="qb_u10.js"></script>
-<script>
-</script>
+
 </body>
 </html>
