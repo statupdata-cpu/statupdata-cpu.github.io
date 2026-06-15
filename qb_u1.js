@@ -513,10 +513,4 @@ MASTER_QB.push(
 {unit:'u1',q:'X₁,X₂,… i.i.d.~Bernoulli(p). By SLLN, p̂ₙ=X̄ₙ→ᵃ·ˢ·p. Therefore p̂ₙ(1−p̂ₙ)→ᵃ·ˢ·?',opts:['A) p(1−p)²','B) p(1−p)','C) p̂(1−p̂) (random, no limit)','D) p'],ans:1,exp:'By SLLN: p̂ₙ→ᵃ·ˢ·p. By CMT (g(x)=x(1−x) is continuous): g(p̂ₙ)→ᵃ·ˢ·g(p)=p(1−p).'},
 {unit:'u1',q:'For an irreducible, aperiodic, positive recurrent Markov chain, the distribution at time n satisfies:',opts:['A) ‖Pⁿ(i,·)−π‖_{TV}→0 as n→∞ for all starting states i','B) Pⁿ(i,j)→0 for all i,j','C) The chain converges to stationarity only if started from π','D) Convergence rate is always 1/n'],ans:0,exp:'Ergodic theorem: ‖Pⁿ(i,·)−π‖_{TV}→0 for all initial states i. Convergence is geometric for finite state chains: ‖Pⁿ(i,·)−π‖_{TV}≤Cρⁿ where ρ<1.'},
 {unit:'u1',q:'In a Poisson process, given N(T)=n events in [0,T], the joint distribution of arrival times S₁<⋯<Sₙ is:',opts:['A) Each Sₖ is uniform on (0,T) and they are independent','B) (S₁,…,Sₙ)|N(T)=n has the same distribution as the order statistics of n i.i.d. U(0,T) RVs','C) Sₖ−S_{k−1}~Exp(λ) independent, given N(T)=n','D) All arrival times equal T/2 on average'],ans:1,exp:'Given the count N(T)=n, arrival times are the order statistics of n i.i.d. U(0,T) random variables. Given the count, times are sprinkled uniformly in [0,T].'},
-
-
-
-  //390
-
-  // ── ADD MORE UNIT I QUESTIONS HERE (keep unit:'u1') ──────────────
 );
