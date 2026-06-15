@@ -1458,13 +1458,22 @@ function mockCard(t,c1,c2){
   const dur=Math.floor(t.duration/60)+' Min';
   const qs=t.type==='surprise'?'50':t.type==='full'?(FULL_MOCK_Q_PER_UNIT*10)+'':(t.qCount||10)+'';
   const marks=parseInt(qs)*2;
-  return `<div class="mock-test-card"><div class="mock-test-card-header" style="background:linear-gradient(135deg,${c1},${c2});"><div class="mtc-num">${t.type==='surprise'?'⚡':t.id}</div><div><div class="mtc-title">${t.title}</div><div class="mtc-sub">${t.subtitle}</div></div></div><div class="mock-test-card-body"><div class="mtc-desc">${t.description}</div><div class="mtc-info"><span class="mtc-badge mtc-badge-green">📝 ${qs} Qs</span><span class="mtc-badge mtc-badge-blue">⏱ ${dur}</span><span class="mtc-badge mtc-badge-orange">🏆 ${marks} Marks</span>${t.locked?'<span class="mtc-badge mtc-badge-locked">🔒 Locked</span>':'<span class="mtc-badge mtc-badge-open">🔓 Open</span>'}</div><button class="btn-start-mock" onclick="startMock(${t.id})" ${t.locked?'disabled':''}>${t.locked?'🔒 Coming Soon':'▶ Start Test'}</button></div></div>`;
+  // Use composite key (type + unit + mockNum) to uniquely identify any test
+  const startCall=t.type==='surprise'
+    ?`startMock('surprise','',999)`
+    :`startMock('${t.type}','${t.unit||''}',${t.mockNum})`;
+  const displayNum=t.type==='surprise'?'⚡':t.mockNum;
+  return `<div class="mock-test-card"><div class="mock-test-card-header" style="background:linear-gradient(135deg,${c1},${c2});"><div class="mtc-num">${displayNum}</div><div><div class="mtc-title">${t.title}</div><div class="mtc-sub">${t.subtitle}</div></div></div><div class="mock-test-card-body"><div class="mtc-desc">${t.description}</div><div class="mtc-info"><span class="mtc-badge mtc-badge-green">📝 ${qs} Qs</span><span class="mtc-badge mtc-badge-blue">⏱ ${dur}</span><span class="mtc-badge mtc-badge-orange">🏆 ${marks} Marks</span>${t.locked?'<span class="mtc-badge mtc-badge-locked">🔒 Locked</span>':'<span class="mtc-badge mtc-badge-open">🔓 Open</span>'}</div><button class="btn-start-mock" onclick="${startCall}" ${t.locked?'disabled':''}>${t.locked?'🔒 Coming Soon':'▶ Start Test'}</button></div></div>`;
 }
 
 let currentTest=null,currentQIdx=0,answers=[],skipped=[],timerInterval=null,timeLeft=0,currentDef=null;
 
-function startMock(testId){
-  const def=testId===999?SURPRISE_DEF:MOCK_DEFS.find(t=>t.id===testId);
+function startMock(type, unit, mockNum){
+  // Use composite key so duplicate numeric IDs across units don't cause wrong test to load
+  let def;
+  if(type==='surprise'){def=SURPRISE_DEF;}
+  else if(type==='full'){def=MOCK_DEFS.find(t=>t.type==='full'&&t.mockNum===mockNum);}
+  else{def=MOCK_DEFS.find(t=>t.type==='unit'&&t.unit===unit&&t.mockNum===mockNum);}
   if(!def)return;
   const qs=getQuestions(def);
   if(!qs.length){alert('No questions available for this test yet!\n\nAdd questions to MASTER_QB with the correct unit tag to enable this test.');return;}
@@ -1555,14 +1564,14 @@ function submitTest(){
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function retakeTest(){document.getElementById('mock-result-screen').style.display='none';startMock(currentDef.id);}
+function retakeTest(){document.getElementById('mock-result-screen').style.display='none';startMock(currentDef.type,currentDef.unit||'',currentDef.mockNum||999);}
 function backToList(){clearInterval(timerInterval);document.getElementById('mock-result-screen').style.display='none';document.getElementById('mock-exam-screen').style.display='none';document.getElementById('mock-list-screen').style.display='block';}
 document.addEventListener('keydown',e=>{if(e.key==='Enter'&&document.getElementById('tab-mocktest').classList.contains('active')&&document.getElementById('mock-login-screen').style.display!=='none')doLogin();});
 
 
 // ── External Question Bank Files ──
 </script>
-<script src="fix_ids.js"></script>
+<!-- fix_ids.js no longer needed: startMock now uses composite key (type+unit+mockNum) -->
 <script src="qb_u1.js"></script>
 <script src="qb_u2.js"></script>
 <script src="qb_u3.js"></script>
