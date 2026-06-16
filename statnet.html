@@ -1150,7 +1150,16 @@ const MOCK_DEFS = [
   {id:38, type:'unit', unit:'u5', mockNum:38, locked:false, qCount:30, duration:1800, title:'Unit V Mock 38 — Testing of Hypotheses', subtitle:'Unit V Only · 30 Questions · 60 Marks', description:'Unit V: Testing of Hypotheses'},
   {id:39, type:'unit', unit:'u5', mockNum:39, locked:false, qCount:30, duration:1800, title:'Unit V Mock 39 — Testing of Hypotheses', subtitle:'Unit V Only · 30 Questions · 60 Marks', description:'Unit V: Testing of Hypotheses'},
   {id:40, type:'unit', unit:'u5', mockNum:40, locked:false, qCount:30, duration:1800, title:'Unit V Mock 40 — Testing of Hypotheses', subtitle:'Unit V Only · 30 Questions · 60 Marks', description:'Unit V: Testing of Hypotheses'},
-
+  {id:41, type:'unit', unit:'u5', mockNum:41, locked:false, qCount:30, duration:1800, title:'Unit V Mock 41 — Testing of Hypotheses', subtitle:'Unit V Only · 30 Questions · 60 Marks', description:'Unit V: Testing of Hypotheses'},
+{id:42, type:'unit', unit:'u5', mockNum:42, locked:false, qCount:30, duration:1800, title:'Unit V Mock 42 — Testing of Hypotheses', subtitle:'Unit V Only · 30 Questions · 60 Marks', description:'Unit V: Testing of Hypotheses'},
+{id:43, type:'unit', unit:'u5', mockNum:43, locked:false, qCount:30, duration:1800, title:'Unit V Mock 43 — Testing of Hypotheses', subtitle:'Unit V Only · 30 Questions · 60 Marks', description:'Unit V: Testing of Hypotheses'},
+{id:44, type:'unit', unit:'u5', mockNum:44, locked:false, qCount:30, duration:1800, title:'Unit V Mock 44 — Testing of Hypotheses', subtitle:'Unit V Only · 30 Questions · 60 Marks', description:'Unit V: Testing of Hypotheses'},
+{id:45, type:'unit', unit:'u5', mockNum:45, locked:false, qCount:30, duration:1800, title:'Unit V Mock 45 — Testing of Hypotheses', subtitle:'Unit V Only · 30 Questions · 60 Marks', description:'Unit V: Testing of Hypotheses'},
+{id:46, type:'unit', unit:'u5', mockNum:46, locked:false, qCount:30, duration:1800, title:'Unit V Mock 46 — Testing of Hypotheses', subtitle:'Unit V Only · 30 Questions · 60 Marks', description:'Unit V: Testing of Hypotheses'},
+{id:47, type:'unit', unit:'u5', mockNum:47, locked:false, qCount:30, duration:1800, title:'Unit V Mock 47 — Testing of Hypotheses', subtitle:'Unit V Only · 30 Questions · 60 Marks', description:'Unit V: Testing of Hypotheses'},
+{id:48, type:'unit', unit:'u5', mockNum:48, locked:false, qCount:30, duration:1800, title:'Unit V Mock 48 — Testing of Hypotheses', subtitle:'Unit V Only · 30 Questions · 60 Marks', description:'Unit V: Testing of Hypotheses'},
+{id:49, type:'unit', unit:'u5', mockNum:49, locked:false, qCount:30, duration:1800, title:'Unit V Mock 49 — Testing of Hypotheses', subtitle:'Unit V Only · 30 Questions · 60 Marks', description:'Unit V: Testing of Hypotheses'},
+{id:50, type:'unit', unit:'u5', mockNum:50, locked:false, qCount:30, duration:1800, title:'Unit V Mock 50 — Testing of Hypotheses', subtitle:'Unit V Only · 30 Questions · 60 Marks', description:'Unit V: Testing of Hypotheses'},
 // UNIT VI: Linear Estimation, Regression Analysis and Econometrics
   {id:1,  type:'unit', unit:'u6', mockNum:1,  locked:false, qCount:30, duration:1800, title:'Unit VI Mock 1 — Linear Estimation, Regression Analysis and Econometrics',  subtitle:'Unit VI Only · 30 Questions · 60 Marks', description:'Unit VI: Linear Estimation, Regression Analysis and Econometrics'},
   {id:2,  type:'unit', unit:'u6', mockNum:2,  locked:false, qCount:30, duration:1800, title:'Unit VI Mock 2 — Linear Estimation, Regression Analysis and Econometrics',  subtitle:'Unit VI Only · 30 Questions · 60 Marks', description:'Unit VI: Linear Estimation, Regression Analysis and Econometrics'},
@@ -1369,7 +1378,40 @@ const SURPRISE_DEF = {
   subtitle:'Random 50 Questions · 100 Marks',
   description:'Fresh random mix every attempt! 50 questions randomly picked from the full master question bank across all units.'
 };
+// ── Surprise Tests ──
+const SURPRISE_DEF = {
+  id:999, type:'surprise', locked:false, duration:3600,
+  title:'⚡ Surprise Test',
+  subtitle:'Random 50 Questions · 100 Marks',
+  description:'Fresh random mix every attempt! 50 questions randomly picked from the full master question bank across all units.'
+};
 
+const SURPRISE_DEFS = [
+  {id:991, type:'surprise', mockNum:1, locked:false, duration:600,
+   title:'⚡ Surprise Test — Quick Fire',
+   subtitle:'Random 5 Questions · 10 Marks',
+   description:'Quick 5-question surprise! Random questions from all units. Great for a rapid warm-up.'},
+
+  {id:992, type:'surprise', mockNum:2, locked:false, duration:1200,
+   title:'⚡ Surprise Test — Mini',
+   subtitle:'Random 10 Questions · 20 Marks',
+   description:'10-question random surprise from all units. Good for a quick daily practice round.'},
+
+  {id:993, type:'surprise', mockNum:3, locked:false, duration:2400,
+   title:'⚡ Surprise Test — Standard',
+   subtitle:'Random 20 Questions · 40 Marks',
+   description:'20-question random mix across all 10 units. A solid mid-length surprise challenge.'},
+
+  {id:994, type:'surprise', mockNum:4, locked:false, duration:3600,
+   title:'⚡ Surprise Test — Extended',
+   subtitle:'Random 30 Questions · 60 Marks',
+   description:'30-question random surprise spanning the full syllabus. Ideal for serious practice.'},
+
+  {id:995, type:'surprise', mockNum:5, locked:false, duration:4200,
+   title:'⚡ Surprise Test — Full',
+   subtitle:'Random 50 Questions · 100 Marks',
+   description:'Full 50-question random surprise from the entire question bank. The ultimate mixed challenge!'},
+];
 // ════════════════════════════════════════════════════════════════════
 //  ENGINE — getQuestions uses MASTER_QB for all 3 test types
 // ════════════════════════════════════════════════════════════════════
