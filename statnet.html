@@ -386,6 +386,8 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
   <button class="tab-btn" onclick="switchTab(event,'tab-books')">📚 Books</button>
   <button class="tab-btn" onclick="switchTab(event,'tab-important')">🔴 Important Sets</button>
   <button class="tab-btn" onclick="switchTab(event,'tab-paper1')">📄 Paper 1</button>
+  <button class="tab-btn" onclick="switchTab(event,'tab-paper1pyq')">📅 Paper 1 PYQ</button>
+  <button class="tab-btn" onclick="switchTab(event,'tab-pyq')">📄 Stat PYQ</button>
   <button class="tab-btn" onclick="switchTab(event,'tab-schedule')">📅 Schedule</button>
   <button class="tab-btn" onclick="switchTab(event,'tab-misc')">📦 Miscellaneous</button>
   <button class="tab-btn" onclick="switchTab(event,'tab-mocktest')">🧩 Mock Tests</button>
@@ -504,7 +506,7 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
     <span class="imp-banner-icon">📄</span>
     <div>
       <h2>UGC NET Paper 1 — Teaching &amp; Research Aptitude</h2>
-      <p>Common paper for all UGC NET subjects. 10 units, unit-wise MCQ sets with detailed solutions.</p>
+      <p>Common paper for all UGC NET subjects. Unit-wise notes — one downloadable note set per unit.</p>
     </div>
   </div>
   <div class="filter-bar" id="paper1-filter-bar">
@@ -522,6 +524,30 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
     <button class="filter-btn" onclick="filterPaper1(event,'p10')">Unit X</button>
   </div>
   <div id="paper1-grid"></div>
+</div>
+
+<!-- TAB: PAPER 1 PYQ (year-wise, per exam schedule) -->
+<div class="tab-pane" id="tab-paper1pyq">
+  <div class="imp-banner" style="background:linear-gradient(135deg,#1e3a5f,#2d5a8a);">
+    <span class="imp-banner-icon">📅</span>
+    <div>
+      <h2>Paper 1 — Previous Year Question Papers</h2>
+      <p>Teaching &amp; Research Aptitude PYQs, listed year-wise by exam session, newest first.</p>
+    </div>
+  </div>
+  <div class="misc-grid" id="paper1pyq-grid"></div>
+</div>
+
+<!-- TAB: STATISTICS PYQ (moved out of Miscellaneous, own tab) -->
+<div class="tab-pane" id="tab-pyq">
+  <div class="imp-banner" style="background:linear-gradient(135deg,#2d5a1a,#4a8a2a);">
+    <span class="imp-banner-icon">📄</span>
+    <div>
+      <h2>Statistics — Previous Year Question Papers</h2>
+      <p>UGC NET, CSIR NET, IIT JAM and GATE Statistics papers with answer keys, newest first.</p>
+    </div>
+  </div>
+  <div class="misc-grid" id="pyq-grid"></div>
 </div>
 
 <!-- TAB 7: SCHEDULE -->
@@ -546,10 +572,9 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
 
 <!-- TAB 8: MISC -->
 <div class="tab-pane" id="tab-misc">
-  <div class="misc-banner"><span class="misc-banner-icon">📦</span><div><h2>Miscellaneous Resources</h2><p>Reference books, notes, previous year papers, and YouTube playlists for complete UGC NET preparation.</p></div></div>
+  <div class="misc-banner"><span class="misc-banner-icon">📦</span><div><h2>Miscellaneous Resources</h2><p>Reference books, notes, and YouTube playlists for complete UGC NET preparation. (Previous year papers now have their own tabs.)</p></div></div>
   <div class="misc-section"><div class="misc-section-header"><span class="misc-section-icon">📚</span><span class="misc-section-title">Reference Books</span><span class="misc-section-count">Recommended Textbooks</span></div><div class="misc-grid" id="books-grid"></div></div>
   <div class="misc-section"><div class="misc-section-header"><span class="misc-section-icon">📝</span><span class="misc-section-title">Notes &amp; Formula Sheets</span><span class="misc-section-count">Unit-wise Summary Notes</span></div><div class="misc-grid" id="notes-grid"></div></div>
-  <div class="misc-section"><div class="misc-section-header"><span class="misc-section-icon">📄</span><span class="misc-section-title">Previous Year Question Papers</span><span class="misc-section-count">UGC NET Past Papers with Answer Keys</span></div><div class="misc-grid" id="pyq-grid"></div></div>
   <div class="misc-section"><div class="misc-section-header"><span class="misc-section-icon">▶️</span><span class="misc-section-title">YouTube Playlists</span><span class="misc-section-count">Video Lecture Series</span></div><div class="misc-grid" id="yt-grid"></div></div>
 </div>
 
@@ -3784,7 +3809,32 @@ const YT_PLAYLISTS=[
 function buildGrid(){let h='';UNITS.forEach(u=>{h+=`<div class="unit-section" data-unit="${u.id}"><div class="unit-header"><span class="unit-badge">Unit ${u.num}</span><span class="unit-title">${u.title}</span><span class="unit-count">${u.sets.length} Sets · 50–100 MCQs each</span></div><div class="card-grid">${u.sets.map((s,i)=>makeCard(u,s,i+1)).join('')}</div></div>`;});document.getElementById('material-grid').innerHTML=h;}
 function makeCard(u,s,n){const hp=s.pdfLink&&s.pdfLink.trim()!=='';const pb=hp?`<a class="btn-pdf" href="${s.pdfLink}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14,2H6C4.9,2,4,2.9,4,4v16c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V8L14,2z M18,20H6V4h7v5h5V20z"/></svg>Download PDF</a>`:`<button class="btn-pdf disabled">⏳ Coming Soon</button>`;return `<div class="card"><div class="card-header" style="background:linear-gradient(135deg,${u.color},#3a7a3a);"><div class="card-icon">${u.icon}</div><div><div class="card-set-num">Set ${n}</div><div class="card-set-label">Unit ${u.num} · ${u.title}</div></div></div><div class="card-body"><div class="card-tags"><span class="tag tag-green">📝 50–100 MCQs</span><span class="tag tag-green">✅ With Solutions</span>${!hp?'<span class="tag tag-orange">⏳ Uploading</span>':''}</div>${pb}</div></div>`;}
 function buildImportant(){document.getElementById('important-grid').innerHTML=IMPORTANT_SETS.map(s=>{const hp=s.pdfLink&&s.pdfLink.trim()!=='';const pb=hp?`<a class="btn-imp" href="${s.pdfLink}" target="_blank" rel="noopener"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M14,2H6C4.9,2,4,2.9,4,4v16c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V8L14,2z"/></svg>Download PDF (100 Qs)</a>`:`<button class="btn-imp disabled">⏳ Coming Soon</button>`;return `<div class="imp-card"><div class="imp-card-header"><div class="imp-num">${s.num}</div><div><div class="imp-set-num">Important Set ${s.num}</div><div class="imp-set-label">All Units · 100 Questions</div></div></div><div class="imp-card-body"><div class="imp-tags"><span class="imp-tag">🔴 100 MCQs</span><span class="imp-tag">📋 All Units</span><span class="imp-tag">✅ With Solutions</span></div>${pb}</div></div>`;}).join('');}
-function buildMisc(){document.getElementById('books-grid').innerHTML=BOOKS.map(b=>`<div class="misc-card"><div class="misc-card-header"><div class="misc-card-cover" style="background:${b.color};">${b.emoji}</div><div><div class="misc-card-title">${b.title}</div><div class="misc-card-sub">${b.author}</div></div></div><div class="misc-card-body"><div class="misc-card-desc">${b.desc}</div><div class="misc-tags">${b.tags.map(t=>`<span class="misc-tag-blue">${t}</span>`).join('')}</div><a class="btn-misc-dl${b.link==='#'?' coming':''}" href="${b.link}" target="_blank">📥 ${b.link==='#'?'Coming Soon':'Download / View'}</a></div></div>`).join('');document.getElementById('notes-grid').innerHTML=NOTES.map(n=>`<div class="misc-card"><div class="misc-card-header"><div class="misc-card-cover" style="background:${n.color};">${n.emoji}</div><div><div class="misc-card-title">${n.title}</div><div class="misc-card-sub">${n.sub}</div></div></div><div class="misc-card-body"><div class="misc-card-desc">${n.desc}</div><div class="misc-tags">${n.tags.map(t=>`<span class="misc-tag-purple">${t}</span>`).join('')}</div><a class="btn-misc-dl${n.link===''||n.link==='#'?' coming':''}" href="${n.link||'#'}" target="_blank">📥 ${n.link===''||n.link==='#'?'Coming Soon':'Download Notes'}</a></div></div>`).join('');document.getElementById('pyq-grid').innerHTML=[...PYQS].sort((a,b)=>b.year.localeCompare(a.year)).map(p=>`<div class="pyq-card"><div class="pyq-card-header"><div class="pyq-year">${p.year}</div><div><div class="pyq-title">${p.exam}</div><div class="pyq-sub">${p.sessions}</div></div></div><div class="pyq-card-body"><div class="pyq-desc">${p.desc}</div><div class="misc-tags"><span class="misc-tag-teal">📄 PDF + Answer Key</span></div><a class="btn-pyq${p.link==='#'?' coming':''}" href="${p.link}" target="_blank">📥 ${p.link==='#'?'Coming Soon':'Download Paper'}</a></div></div>`).join('');document.getElementById('yt-grid').innerHTML=YT_PLAYLISTS.map(y=>`<div class="yt-card"><div class="yt-card-thumb"><div class="yt-thumb-icon">${y.icon}</div><div><div class="yt-card-title">${y.title}</div><div class="yt-card-sub">📺 ${y.channel}</div></div></div><div class="yt-card-body"><div class="yt-card-desc">${y.desc}</div><div class="misc-tags">${y.tags.map(t=>`<span class="misc-tag-blue">${t}</span>`).join('')}</div><a class="btn-misc-yt${y.link==='#'?' coming':''}" href="${y.link}" target="_blank">▶ ${y.link==='#'?'Coming Soon':'Open Playlist'}</a></div></div>`).join('');}
+function buildMisc(){document.getElementById('books-grid').innerHTML=BOOKS.map(b=>`<div class="misc-card"><div class="misc-card-header"><div class="misc-card-cover" style="background:${b.color};">${b.emoji}</div><div><div class="misc-card-title">${b.title}</div><div class="misc-card-sub">${b.author}</div></div></div><div class="misc-card-body"><div class="misc-card-desc">${b.desc}</div><div class="misc-tags">${b.tags.map(t=>`<span class="misc-tag-blue">${t}</span>`).join('')}</div><a class="btn-misc-dl${b.link==='#'?' coming':''}" href="${b.link}" target="_blank">📥 ${b.link==='#'?'Coming Soon':'Download / View'}</a></div></div>`).join('');document.getElementById('notes-grid').innerHTML=NOTES.map(n=>`<div class="misc-card"><div class="misc-card-header"><div class="misc-card-cover" style="background:${n.color};">${n.emoji}</div><div><div class="misc-card-title">${n.title}</div><div class="misc-card-sub">${n.sub}</div></div></div><div class="misc-card-body"><div class="misc-card-desc">${n.desc}</div><div class="misc-tags">${n.tags.map(t=>`<span class="misc-tag-purple">${t}</span>`).join('')}</div><a class="btn-misc-dl${n.link===''||n.link==='#'?' coming':''}" href="${n.link||'#'}" target="_blank">📥 ${n.link===''||n.link==='#'?'Coming Soon':'Download Notes'}</a></div></div>`).join('');document.getElementById('yt-grid').innerHTML=YT_PLAYLISTS.map(y=>`<div class="yt-card"><div class="yt-card-thumb"><div class="yt-thumb-icon">${y.icon}</div><div><div class="yt-card-title">${y.title}</div><div class="yt-card-sub">📺 ${y.channel}</div></div></div><div class="yt-card-body"><div class="yt-card-desc">${y.desc}</div><div class="misc-tags">${y.tags.map(t=>`<span class="misc-tag-blue">${t}</span>`).join('')}</div><a class="btn-misc-yt${y.link==='#'?' coming':''}" href="${y.link}" target="_blank">▶ ${y.link==='#'?'Coming Soon':'Open Playlist'}</a></div></div>`).join('');}
+
+function pyqCard(p){return `<div class="pyq-card"><div class="pyq-card-header"><div class="pyq-year">${p.year}</div><div><div class="pyq-title">${p.exam}</div><div class="pyq-sub">${p.sessions}</div></div></div><div class="pyq-card-body"><div class="pyq-desc">${p.desc}</div><div class="misc-tags"><span class="misc-tag-teal">📄 PDF + Answer Key</span></div><a class="btn-pyq${p.link==='#'?' coming':''}" href="${p.link}" target="_blank">📥 ${p.link==='#'?'Coming Soon':'Download Paper'}</a></div></div>`;}
+
+// Statistics PYQ — own tab, newest year first
+function buildPYQ(){
+  document.getElementById('pyq-grid').innerHTML=[...PYQS].sort((a,b)=>b.year.localeCompare(a.year)).map(pyqCard).join('');
+}
+
+// Paper 1 PYQ — own tab, ordered by exam schedule (newest session first, as listed)
+const PAPER1_PYQS=[
+  {year:'JUN\n2026',exam:'UGC NET Paper 1 2026',sessions:'June Examination',desc:'Latest UGC NET Paper 1 (Teaching & Research Aptitude) with answer key and detailed solutions.',link:'#'},
+  {year:'DEC\n2025',exam:'UGC NET Paper 1 2025',sessions:'December Examination',desc:'Teaching aptitude, research aptitude, reasoning and comprehension questions with solutions.',link:'#'},
+  {year:'JUN\n2025',exam:'UGC NET Paper 1 2025',sessions:'June Examination',desc:'Full Paper 1 set covering all 10 units with detailed answer key.',link:'#'},
+  {year:'DEC\n2024',exam:'UGC NET Paper 1 2024',sessions:'December Examination',desc:'Higher education system, ICT and data interpretation focused questions.',link:'#'},
+  {year:'JUN\n2024',exam:'UGC NET Paper 1 2024',sessions:'June Examination',desc:'Comprehensive Paper 1 practice set with explanations.',link:'#'},
+  {year:'DEC\n2023',exam:'UGC NET Paper 1 2023',sessions:'December Examination',desc:'Research aptitude and mathematical reasoning heavy paper.',link:'#'},
+  {year:'JUN\n2023',exam:'UGC NET Paper 1 2023',sessions:'June Examination',desc:'Balanced coverage across all Paper 1 units.',link:'#'},
+  {year:'DEC\n2022',exam:'UGC NET Paper 1 2022',sessions:'December Examination',desc:'Useful for revising communication and people-development-environment topics.',link:'#'},
+  {year:'JUN\n2022',exam:'UGC NET Paper 1 2022',sessions:'June Examination',desc:'Foundational paper covering teaching and research aptitude basics.',link:'#'},
+  {year:'DEC\n2021',exam:'UGC NET Paper 1 2021',sessions:'December Examination',desc:'Good source of previous-pattern reasoning and comprehension questions.',link:'#'},
+  {year:'JUN\n2021',exam:'UGC NET Paper 1 2021',sessions:'June Examination',desc:'Complete Paper 1 paper for additional practice.',link:'#'}
+];
+function buildPaper1PYQ(){
+  document.getElementById('paper1pyq-grid').innerHTML=PAPER1_PYQS.map(pyqCard).join('');
+}
 function filterUnit(e,unit){document.querySelectorAll('#tab-materials .filter-btn').forEach(b=>b.classList.remove('active'));e.target.classList.add('active');document.querySelectorAll('.unit-section').forEach(sec=>{sec.classList.toggle('hidden',unit!=='all'&&sec.dataset.unit!==unit);});}
 function switchTab(e,id){document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));e.target.classList.add('active');document.getElementById(id).classList.add('active');}
 
@@ -5530,34 +5580,54 @@ function buildBooks(){
   document.getElementById('books-content-grid').innerHTML=html;
 }
 
-// ── Paper 1 (Teaching & Research Aptitude) — mirrors Unit-wise Sets tab pattern ──
-const PAPER1_UNITS=[
-  {id:'p1',num:'I',title:'Teaching Aptitude',icon:'📖',color:'#1e3a5f',sets:[]},
-  {id:'p2',num:'II',title:'Research Aptitude',icon:'🔬',color:'#2d5a8a',sets:[]},
-  {id:'p3',num:'III',title:'Comprehension',icon:'📄',color:'#1e4a6f',sets:[]},
-  {id:'p4',num:'IV',title:'Communication',icon:'🗣️',color:'#2d5a2d',sets:[]},
-  {id:'p5',num:'V',title:'Mathematical & Logical Reasoning',icon:'🧮',color:'#5a3a2d',sets:[]},
-  {id:'p6',num:'VI',title:'Data Interpretation',icon:'📊',color:'#3a2d5a',sets:[]},
-  {id:'p7',num:'VII',title:'Information & Communication Technology (ICT)',icon:'💻',color:'#2d3a5a',sets:[]},
-  {id:'p8',num:'VIII',title:'People, Development & Environment',icon:'🌍',color:'#2d4a3a',sets:[]},
-  {id:'p9',num:'IX',title:'Higher Education System',icon:'🎓',color:'#4a2d5a',sets:[]},
-  {id:'p10',num:'X',title:'Higher Education Governance, Polity & Administration',icon:'🏛️',color:'#5a2d3a',sets:[]}
+// ── Paper 1 (Teaching & Research Aptitude) — unit-wise downloadable notes, mirrors Notes tab pattern ──
+const PAPER1_NOTES=[
+  {id:'p1',num:'I',title:'Teaching Aptitude',icon:'📖',color:'#1e3a5f',desc:'Concept, objectives, teacher effectiveness, characteristics of good teachers, methods of teaching, teaching aids and evaluation systems.',link:'#'},
+  {id:'p2',num:'II',title:'Research Aptitude',icon:'🔬',color:'#2d5a8a',desc:'Meaning, types and characteristics of research, steps of research, research methods, thesis writing and citation formats.',link:'#'},
+  {id:'p3',num:'III',title:'Comprehension',icon:'📄',color:'#1e4a6f',desc:'Passage-based comprehension practice with strategy notes for tackling reading comprehension questions quickly.',link:'#'},
+  {id:'p4',num:'IV',title:'Communication',icon:'🗣️',color:'#2d5a2d',desc:'Meaning, types and characteristics of communication, effective communication, barriers and classroom communication.',link:'#'},
+  {id:'p5',num:'V',title:'Mathematical & Logical Reasoning',icon:'🧮',color:'#5a3a2d',desc:'Number series, letter series, codes, relationships, classification, analogies, statement-conclusion and syllogisms.',link:'#'},
+  {id:'p6',num:'VI',title:'Data Interpretation',icon:'📊',color:'#3a2d5a',desc:'Sources, acquisition and classification of data, tabulation, graphical representation and data interpretation techniques.',link:'#'},
+  {id:'p7',num:'VII',title:'Information & Communication Technology (ICT)',icon:'💻',color:'#2d3a5a',desc:'General abbreviations, ICT basics, internet, digital initiatives in education and ICT teaching-learning applications.',link:'#'},
+  {id:'p8',num:'VIII',title:'People, Development & Environment',icon:'🌍',color:'#2d4a3a',desc:'Development and environment issues, natural resources, pollution, climate change, disaster management and sustainability.',link:'#'},
+  {id:'p9',num:'IX',title:'Higher Education System',icon:'🎓',color:'#4a2d5a',desc:'Institutions of higher learning in India, evolution, structure, growth and development of higher education in India.',link:'#'},
+  {id:'p10',num:'X',title:'Higher Education Governance, Polity & Administration',icon:'🏛️',color:'#5a2d3a',desc:'Governance and administration structures, policies, regulatory bodies and formal/distance education systems.',link:'#'}
 ];
 function buildPaper1(){
-  let h='';
-  PAPER1_UNITS.forEach(u=>{
-    h+=`<div class="unit-section" data-unit="${u.id}"><div class="unit-header"><span class="unit-badge">Unit ${u.num}</span><span class="unit-title">${u.title}</span><span class="unit-count">${u.sets.length} Set${u.sets.length!==1?'s':''} · 50–100 MCQs each</span></div><div class="card-grid">${u.sets.length?u.sets.map((s,i)=>makeCard(u,s,i+1)).join(''):'<div style="grid-column:1/-1;padding:24px;text-align:center;color:#6b8c6b;background:#fff;border-radius:12px;">⏳ Sets for this unit are being uploaded — check back soon.</div>'}</div></div>`;
-  });
-  document.getElementById('paper1-grid').innerHTML=h;
+  const html=PAPER1_NOTES.map(u=>{
+    const hasLink=u.link&&u.link!=='#';
+    return `<div class="notes-topic-group" data-unit="${u.id}">
+      <div class="notes-topic-header" style="border-left-color:${u.color};">
+        <span class="notes-topic-label">Unit ${u.num} — ${u.title}</span>
+        <span class="notes-topic-count">1 note set</span>
+      </div>
+      <div class="notes-trio">
+        <div class="note-card">
+          <div class="note-card-header">
+            <div class="note-card-icon" style="background:${u.color};">${u.icon}</div>
+            <div>
+              <div class="note-card-type-badge badge-detailed">📘 Unit Notes</div>
+              <div class="note-card-title">Unit ${u.num} — ${u.title}</div>
+            </div>
+          </div>
+          <div class="note-card-desc">${u.desc}</div>
+          <div class="note-card-footer">
+            <a class="btn-note-dl type-d${!hasLink?' coming':''}" href="${u.link}" target="_blank">📥 ${hasLink?'Download Notes':'Coming Soon'}</a>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('paper1-grid').innerHTML=html;
 }
 function filterPaper1(e,unit){
   document.querySelectorAll('#paper1-filter-bar .filter-btn').forEach(b=>b.classList.remove('active'));
   e.target.classList.add('active');
-  document.querySelectorAll('#paper1-grid .unit-section').forEach(sec=>{
+  document.querySelectorAll('#paper1-grid .notes-topic-group').forEach(sec=>{
     sec.classList.toggle('hidden', unit!=='all' && sec.dataset.unit!==unit);
   });
 }
-buildGrid(); buildImportant(); buildMisc(); buildNotes(); buildVideos(); buildBooks(); buildPaper1();
+buildGrid(); buildImportant(); buildMisc(); buildNotes(); buildVideos(); buildBooks(); buildPaper1(); buildPYQ(); buildPaper1PYQ();
 
 const STUDENTS = {
   'STAT3708': {name:'Student 1',  password:'stat@08'},
