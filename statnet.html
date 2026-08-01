@@ -382,7 +382,7 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
 <div class="tab-bar">
   <button class="tab-btn active" onclick="switchTab(event,'tab-materials')">📖 Unit-wise Sets</button>
   <button class="tab-btn" onclick="switchTab(event,'tab-notes')">📝 Notes</button>
-  <button class="tab-btn" onclick="switchTab(event,'tab-videos')">🎬 Videos</button>
+  <button class="tab-btn" onclick="switchTab(event,'tab-videos');checkVideoAuth();">🎬 Videos</button>
   <button class="tab-btn" onclick="switchTab(event,'tab-books')">📚 Books</button>
   <button class="tab-btn" onclick="switchTab(event,'tab-important')">🔴 Important Sets</button>
   <button class="tab-btn" onclick="switchTab(event,'tab-paper1')">📄 Paper 1</button>
@@ -442,30 +442,48 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
 
 <!-- TAB 3: VIDEOS (embedded in-platform preview — YouTube or Drive, viewed on our site) -->
 <div class="tab-pane" id="tab-videos">
-  <div class="vid-hero">
-    <span class="vid-hero-icon">🎬</span>
-    <div>
-      <h2>Video Lectures — All 10 Units</h2>
-      <p>recorded video lectures  Covers theory, solved examples and exam strategy.</p>
+  <div class="mock-login-screen" id="video-login-screen">
+    <div class="mock-login-card">
+      <div class="mock-login-header"><div class="mlh-icon">🎬</div><h2>Video Lectures Portal</h2><p>Login with your Roll Number and Password</p></div>
+      <div class="mock-login-body">
+        <label>Roll Number</label><input type="text" id="video-login-roll" placeholder="e.g. STAT6708892" autocomplete="off"/>
+        <label>Password</label><input type="password" id="video-login-pass" placeholder="e.g. stat@04835"/>
+        <div class="mock-login-error" id="video-login-error">❌ Invalid Roll Number or Password. Please try again.</div>
+        <button class="btn-mock-login" onclick="doVideoLogin()">Login &amp; Watch Videos →</button>
+        <div class="mock-login-info">
+          <strong>📌 Your Login Details:</strong><br/>
+          Same Roll Number &amp; Password as Mock Test. Contact instructor on WhatsApp if you face any issue.
+        </div>
+      </div>
     </div>
   </div>
-  <div class="dual-filter-bar">
-    <div class="dual-filter-row">
-      <span class="filter-label">Unit:</span>
-      <button class="filter-btn active" onclick="filterVideos(event,'all')">All</button>
-      <button class="filter-btn" onclick="filterVideos(event,'u1')">Unit I</button>
-      <button class="filter-btn" onclick="filterVideos(event,'u2')">Unit II</button>
-      <button class="filter-btn" onclick="filterVideos(event,'u3')">Unit III</button>
-      <button class="filter-btn" onclick="filterVideos(event,'u4')">Unit IV</button>
-      <button class="filter-btn" onclick="filterVideos(event,'u5')">Unit V</button>
-      <button class="filter-btn" onclick="filterVideos(event,'u6')">Unit VI</button>
-      <button class="filter-btn" onclick="filterVideos(event,'u7')">Unit VII</button>
-      <button class="filter-btn" onclick="filterVideos(event,'u8')">Unit VIII</button>
-      <button class="filter-btn" onclick="filterVideos(event,'u9')">Unit IX</button>
-      <button class="filter-btn" onclick="filterVideos(event,'u10')">Unit X</button>
+  <div class="video-content-screen" id="video-content-screen" style="display:none;">
+    <div class="mock-welcome-bar"><div class="mwb-left"><h3 id="video-welcome-name">Welcome!</h3><p id="video-welcome-roll">Roll Number: —</p></div><button class="btn-mock-logout" onclick="doVideoLogout()">Logout</button></div>
+    <div class="vid-hero">
+      <span class="vid-hero-icon">🎬</span>
+      <div>
+        <h2>Video Lectures — All 10 Units</h2>
+        <p>recorded video lectures  Covers theory, solved examples and exam strategy.</p>
+      </div>
     </div>
+    <div class="dual-filter-bar">
+      <div class="dual-filter-row">
+        <span class="filter-label">Unit:</span>
+        <button class="filter-btn active" onclick="filterVideos(event,'all')">All</button>
+        <button class="filter-btn" onclick="filterVideos(event,'u1')">Unit I</button>
+        <button class="filter-btn" onclick="filterVideos(event,'u2')">Unit II</button>
+        <button class="filter-btn" onclick="filterVideos(event,'u3')">Unit III</button>
+        <button class="filter-btn" onclick="filterVideos(event,'u4')">Unit IV</button>
+        <button class="filter-btn" onclick="filterVideos(event,'u5')">Unit V</button>
+        <button class="filter-btn" onclick="filterVideos(event,'u6')">Unit VI</button>
+        <button class="filter-btn" onclick="filterVideos(event,'u7')">Unit VII</button>
+        <button class="filter-btn" onclick="filterVideos(event,'u8')">Unit VIII</button>
+        <button class="filter-btn" onclick="filterVideos(event,'u9')">Unit IX</button>
+        <button class="filter-btn" onclick="filterVideos(event,'u10')">Unit X</button>
+      </div>
+    </div>
+    <div id="videos-grid"></div>
   </div>
-  <div id="videos-grid"></div>
 </div>
 
 <!-- TAB 4: BOOKS (NEW: unit filter added) -->
@@ -6432,6 +6450,7 @@ function doLogin(){
     document.getElementById('welcome-roll').textContent='Roll Number: '+currentStudent.roll;
     document.getElementById('mock-list-screen').style.display='block';
     buildMockList();
+    showVideoContent();
   } else { err.style.display='block'; }
 }
 function doLogout(){
@@ -6440,6 +6459,35 @@ function doLogout(){
   document.getElementById('mock-login-screen').style.display='block';
   document.getElementById('login-roll').value='';
   document.getElementById('login-pass').value='';
+  document.getElementById('video-content-screen').style.display='none';
+  document.getElementById('video-login-screen').style.display='block';
+}
+
+// ── Video tab login (shares the same STUDENTS credentials & session as Mock Test) ──
+function doVideoLogin(){
+  const roll=document.getElementById('video-login-roll').value.trim().toUpperCase();
+  const pass=document.getElementById('video-login-pass').value.trim();
+  const err=document.getElementById('video-login-error');
+  if(STUDENTS[roll]&&STUDENTS[roll].password===pass){
+    currentStudent={roll,name:STUDENTS[roll].name};
+    err.style.display='none';
+    showVideoContent();
+  } else { err.style.display='block'; }
+}
+function doVideoLogout(){ doLogout(); }
+function showVideoContent(){
+  if(!currentStudent)return;
+  document.getElementById('video-login-screen').style.display='none';
+  document.getElementById('video-content-screen').style.display='block';
+  document.getElementById('video-welcome-name').textContent='Welcome, '+currentStudent.name+'!';
+  document.getElementById('video-welcome-roll').textContent='Roll Number: '+currentStudent.roll;
+}
+function checkVideoAuth(){
+  if(currentStudent){ showVideoContent(); }
+  else{
+    document.getElementById('video-content-screen').style.display='none';
+    document.getElementById('video-login-screen').style.display='block';
+  }
 }
 
 function buildMockList(){
@@ -6617,7 +6665,11 @@ function submitTest(){
 
 function retakeTest(){document.getElementById('mock-result-screen').style.display='none';startMock(currentDef.type,currentDef.unit||'',currentDef.mockNum||999);}
 function backToList(){stopTimer();document.getElementById('mock-result-screen').style.display='none';document.getElementById('mock-exam-screen').style.display='none';document.getElementById('mock-list-screen').style.display='block';}
-document.addEventListener('keydown',e=>{if(e.key==='Enter'&&document.getElementById('tab-mocktest').classList.contains('active')&&document.getElementById('mock-login-screen').style.display!=='none')doLogin();});
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Enter')return;
+  if(document.getElementById('tab-mocktest').classList.contains('active')&&document.getElementById('mock-login-screen').style.display!=='none')doLogin();
+  else if(document.getElementById('tab-videos').classList.contains('active')&&document.getElementById('video-login-screen').style.display!=='none')doVideoLogin();
+});
 </script>
 <!-- External Question Bank Files — add your real MCQs here, tagged with the matching unit -->
 <script src="qb_u1.js"></script>
