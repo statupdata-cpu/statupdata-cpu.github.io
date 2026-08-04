@@ -5372,104 +5372,249 @@ const NOTES_DATA = [
 
 ];
 const VIDEOS_DATA = [
-  // ── UNIT I (Probability Theory) ──
-  {unit:'u1',num:1,title:'Probability Theory — Introduction & Axioms',desc:'Classical probability, axiomatic approach, sample space and event algebra.',videoId:'Afg9cA432L0',source:'youtube',tags:['Unit I','Part 1']},
-  {unit:'u1',num:2,title:'Conditional Probability & Bayes Theorem',desc:'Multiplication rule, Bayes theorem — solved examples.',videoId:'',source:'youtube',tags:['Unit I','Part 2']},
-  {unit:'u1',num:3,title:'Random Variables & Distribution Functions',desc:'Discrete and continuous RVs, CDF properties and key results.',videoId:'',source:'youtube',tags:['Unit I','Part 3']},
-  {unit:'u1',num:4,title:'Expectation, Variance & Moments',desc:'Mean, variance, higher moments, MGF and characteristic functions.',videoId:'',source:'youtube',tags:['Unit I','Part 4']},
-  {unit:'u1',num:5,title:'Standard Discrete Distributions',desc:'Binomial, Poisson, Geometric, NegBin — all properties and PGF.',videoId:'',source:'youtube',tags:['Unit I','Part 5']},
-  {unit:'u1',num:6,title:'Standard Continuous Distributions',desc:'Normal, Exponential, Gamma, Beta, Cauchy — full coverage.',videoId:'',source:'youtube',tags:['Unit I','Part 6']},
-  {unit:'u1',num:7,title:'Jointly Distributed Random Variables',desc:'Joint PDF/PMF, marginal and conditional distributions, independence.',videoId:'',source:'youtube',tags:['Unit I','Part 7']},
-  {unit:'u1',num:8,title:'Sampling Distributions — Chi-sq, t and F',desc:'Derivations and applications of Chi-sq, t and F distributions.',videoId:'',source:'youtube',tags:['Unit I','Part 8']},
-  {unit:'u1',num:9,title:'Transformation of Random Variables',desc:'CDF method, Jacobian method — worked examples.',videoId:'',source:'youtube',tags:['Unit I','Part 9']},
-  {unit:'u1',num:10,title:'Convergence of Random Variables',desc:'Convergence in probability, distribution and almost sure convergence.',videoId:'',source:'youtube',tags:['Unit I','Part 10']},
-  {unit:'u1',num:11,title:'Laws of Large Numbers',desc:'Weak LLN, Strong LLN — statements, conditions and applications.',videoId:'',source:'youtube',tags:['Unit I','Part 11']},
-  {unit:'u1',num:12,title:'Central Limit Theorem',desc:'CLT statement, proof sketch and exam applications.',videoId:'',source:'youtube',tags:['Unit I','Part 12']},
-  {unit:'u1',num:13,title:'Unit I — Revision & PYQ Session',desc:'Complete Unit I revision with previous year questions.',videoId:'',source:'youtube',tags:['Unit I','Revision']},
-  // ── UNIT II (Real Analysis & Matrix Algebra) ──
-  {unit:'u2',num:1,title:'Sequences and Series of Real Numbers',desc:'Convergence, Cauchy criterion, series tests — full coverage.',videoId:'WFw-Hxg8Kgs',source:'youtube',tags:['Unit II','Part 1']},
-  {unit:'u2',num:2,title:'Power Series & Taylor Expansion',desc:'Radius of convergence, Taylor and Maclaurin series.',videoId:'',source:'youtube',tags:['Unit II','Part 2']},
-  {unit:'u2',num:3,title:'Continuity & Differentiability',desc:'Uniform continuity, differentiability, mean value theorems.',videoId:'',source:'youtube',tags:['Unit II','Part 3']},
-  {unit:'u2',num:4,title:'Riemann Integration',desc:'Riemann integral definition, properties and applications.',videoId:'',source:'youtube',tags:['Unit II','Part 4']},
-  {unit:'u2',num:5,title:'Multivariable Calculus',desc:'Partial derivatives, total derivative, maxima/minima, Jacobians.',videoId:'',source:'youtube',tags:['Unit II','Part 5']},
-  {unit:'u2',num:6,title:'Vector Spaces & Linear Independence',desc:'Subspaces, span, basis, dimension and rank.',videoId:'',source:'youtube',tags:['Unit II','Part 6']},
-  {unit:'u2',num:7,title:'Matrix Operations & Determinants',desc:'Matrix algebra, RREF, determinants, trace and inverse.',videoId:'',source:'youtube',tags:['Unit II','Part 7']},
-  {unit:'u2',num:8,title:'Eigenvalues & Eigenvectors',desc:'Characteristic polynomial, diagonalisation and spectral theorem.',videoId:'',source:'youtube',tags:['Unit II','Part 8']},
-  {unit:'u2',num:9,title:'Quadratic Forms & Positive Definite Matrices',desc:'Positive definite, semi-definite matrices and quadratic forms.',videoId:'',source:'youtube',tags:['Unit II','Part 9']},
-  {unit:'u2',num:10,title:'Cayley-Hamilton & Gram-Schmidt',desc:'CH theorem, Gram-Schmidt orthogonalisation — applications.',videoId:'',source:'youtube',tags:['Unit II','Part 10']},
-  {unit:'u2',num:11,title:'Inner Product Spaces & Orthogonality',desc:'Inner products, orthonormal bases and projection matrices.',videoId:'',source:'youtube',tags:['Unit II','Part 11']},
-  {unit:'u2',num:12,title:'Unit II — Revision & PYQ Session',desc:'Complete Unit II revision — selected previous year questions.',videoId:'',source:'youtube',tags:['Unit II','Revision']},
-  // ── UNIT III (Sampling & DOE) ──
-  {unit:'u3',num:1,title:'Simple Random Sampling — Theory & Problems',desc:'SRSWR, SRSWOR, FPC factor — derivations and solved numericals.',videoId:'',source:'youtube',tags:['Unit III','Part 1']},
-  {unit:'u3',num:2,title:'Stratified Sampling — Allocations',desc:'Proportional, Neyman and optimum allocation — solved examples.',videoId:'',source:'youtube',tags:['Unit III','Part 2']},
-  {unit:'u3',num:3,title:'Systematic Sampling',desc:'Linear and circular systematic sampling — variance and comparison.',videoId:'',source:'youtube',tags:['Unit III','Part 3']},
-  {unit:'u3',num:4,title:'Ratio & Regression Estimation',desc:'Ratio estimator bias, MSE and regression estimator — numericals.',videoId:'',source:'youtube',tags:['Unit III','Part 4']},
-  {unit:'u3',num:5,title:'Cluster & Double Sampling',desc:'Equal/unequal clusters and two-phase sampling designs.',videoId:'',source:'youtube',tags:['Unit III','Part 5']},
-  {unit:'u3',num:6,title:'PPS Sampling & HH/HT Estimators',desc:'Sampling with PPS, HH estimator, HT estimator and SYG variance.',videoId:'',source:'youtube',tags:['Unit III','Part 6']},
-  {unit:'u3',num:7,title:'Principles of Design of Experiments',desc:'Randomization, replication, local control — ANOVA theory.',videoId:'',source:'youtube',tags:['Unit III','Part 7']},
-  {unit:'u3',num:8,title:'CRD, RBD and Latin Square Design',desc:'Analysis, ANOVA tables and efficiency comparisons.',videoId:'',source:'youtube',tags:['Unit III','Part 8']},
-  {unit:'u3',num:9,title:'Factorial Experiments & Confounding',desc:'2^n factorials, main effects, interaction, confounding schemes.',videoId:'',source:'youtube',tags:['Unit III','Part 9']},
-  {unit:'u3',num:10,title:'Incomplete Block Designs & BIBD',desc:'BIBD parameters, analysis, recovery of inter-block information.',videoId:'',source:'youtube',tags:['Unit III','Part 10']},
-  {unit:'u3',num:11,title:'Unit III — Revision & PYQ Session',desc:'Complete Unit III revision with previous year questions.',videoId:'',source:'youtube',tags:['Unit III','Revision']},
-  // ── UNIT IV (Estimation Theory) ──
-  {unit:'u4',num:1,title:'Properties of Estimators',desc:'Bias, MSE, consistency, efficiency — full theory with examples.',videoId:'zxFt1O4ucdM',source:'youtube',tags:['Unit IV','Part 1']},
-  {unit:'u4',num:2,title:'Method of Moments',desc:'MOM estimation — theory, properties and solved examples.',videoId:'',source:'youtube',tags:['Unit IV','Part 2']},
-  {unit:'u4',num:3,title:'Maximum Likelihood Estimation',desc:'Likelihood equations, MLE properties and invariance.',videoId:'',source:'youtube',tags:['Unit IV','Part 3']},
-  {unit:'u4',num:4,title:'Fisher Information & CRLB',desc:'Fisher information matrix, Rao–Cramér bound and efficiency.',videoId:'',source:'youtube',tags:['Unit IV','Part 4']},
-  {unit:'u4',num:5,title:'Sufficient Statistics',desc:'Neyman factorization theorem, minimal sufficiency and ancillarity.',videoId:'',source:'youtube',tags:['Unit IV','Part 5']},
-  {unit:'u4',num:6,title:'Complete Statistics & UMVUE',desc:'Completeness, Rao–Blackwell and Lehmann–Scheffé theorems.',videoId:'',source:'youtube',tags:['Unit IV','Part 6']},
-  {unit:'u4',num:7,title:'Interval Estimation',desc:'Confidence intervals — pivoting method and key examples.',videoId:'',source:'youtube',tags:['Unit IV','Part 7']},
-  {unit:'u4',num:8,title:'Order Statistics',desc:'Distributions of min, max, range and r-th order statistic.',videoId:'',source:'youtube',tags:['Unit IV','Part 8']},
-  {unit:'u4',num:9,title:'Unit IV — Revision & PYQ Session',desc:'Complete Unit IV revision with selected previous year questions.',videoId:'',source:'youtube',tags:['Unit IV','Revision']},
-  // ── UNIT V (Testing of Hypotheses) ──
-  {unit:'u5',num:1,title:'Hypothesis Testing — Basic Concepts',desc:'H0, H1, Type I/II errors, power function, critical regions.',videoId:'',source:'youtube',tags:['Unit V','Part 1']},
-  {unit:'u5',num:2,title:'Neyman–Pearson Lemma',desc:'NP lemma proof and application to most powerful tests.',videoId:'',source:'youtube',tags:['Unit V','Part 2']},
-  {unit:'u5',num:3,title:'UMP and UMPU Tests',desc:'MLR property, UMP one-sided tests and two-sided UMPU tests.',videoId:'',source:'youtube',tags:['Unit V','Part 3']},
-  {unit:'u5',num:4,title:'Likelihood Ratio Tests',desc:'LRT statistic, Wilks theorem and chi-square approximation.',videoId:'',source:'youtube',tags:['Unit V','Part 4']},
-  {unit:'u5',num:5,title:'Sequential Probability Ratio Test',desc:'SPRT, Wald boundaries, OC function and ASN.',videoId:'',source:'youtube',tags:['Unit V','Part 5']},
-  {unit:'u5',num:6,title:'Non-parametric Tests I',desc:'Sign test, Wilcoxon signed-rank test, Mann-Whitney U test.',videoId:'',source:'youtube',tags:['Unit V','Part 6']},
-  {unit:'u5',num:7,title:'Non-parametric Tests II',desc:'Kruskal-Wallis, chi-square goodness of fit, Kolmogorov-Smirnov.',videoId:'',source:'youtube',tags:['Unit V','Part 7']},
-  {unit:'u5',num:8,title:'Unit V — Revision & PYQ Session',desc:'Complete Unit V revision with previous year questions.',videoId:'',source:'youtube',tags:['Unit V','Revision']},
-  // ── UNIT VI (Regression & Econometrics) ──
-  {unit:'u6',num:1,title:'Simple Linear Regression — OLS',desc:'Least squares, normal equations, properties of OLS estimators.',videoId:'',source:'youtube',tags:['Unit VI','Part 1']},
-  {unit:'u6',num:2,title:'Multiple Regression — Matrix Approach',desc:'Matrix formulation, normal equations and fitted values.',videoId:'',source:'youtube',tags:['Unit VI','Part 2']},
-  {unit:'u6',num:3,title:'Gauss–Markov Theorem',desc:'BLUE, hat matrix, projection matrices and geometry of regression.',videoId:'',source:'youtube',tags:['Unit VI','Part 3']},
-  {unit:'u6',num:4,title:'Regression Testing & ANOVA',desc:'t-tests, F-test, ANOVA decomposition, R² and adjusted R².',videoId:'',source:'youtube',tags:['Unit VI','Part 4']},
-  {unit:'u6',num:5,title:'GLS, WLS & Diagnostics',desc:'GLS, WLS, multicollinearity, VIF, heteroscedasticity.',videoId:'',source:'youtube',tags:['Unit VI','Part 5']},
-  {unit:'u6',num:6,title:'Simultaneous Equations',desc:'Structural and reduced forms, identification, 2SLS.',videoId:'',source:'youtube',tags:['Unit VI','Part 6']},
-  {unit:'u6',num:7,title:'Unit VI — Revision & PYQ Session',desc:'Complete Unit VI revision with previous year questions.',videoId:'',source:'youtube',tags:['Unit VI','Revision']},
+ // ─────────────────────────────────────────────
+// UNIT I — Probability and Distributions
+// ─────────────────────────────────────────────
+{unit:'u1',num:1,title:'Basic Concepts of Probability',desc:'Random experiments, sample space, events, algebra of events, probability axioms, classical probability, addition and multiplication laws, complementary events and total probability theorem.',videoId:'Afg9cA432L0',source:'youtube',tags:['Unit I','Part 1']},
+
+{unit:'u1',num:2,title:'Conditional Probability, Bayes Theorem and Independence',desc:'Conditional probability, multiplication theorem, Bayes theorem, posterior and prior probability, pairwise, mutual and conditional independence with applications.',videoId:'',source:'youtube',tags:['Unit I','Part 2']},
+
+{unit:'u1',num:3,title:'Random Variables and Distribution Functions',desc:'Discrete, continuous and mixed random variables, PMF, PDF, CDF, quantile function and survival function.',videoId:'',source:'youtube',tags:['Unit I','Part 3']},
+
+{unit:'u1',num:4,title:'Expectation, Moments and Moment Generating Functions',desc:'Expectation, variance, higher moments, skewness, kurtosis, MGF, uniqueness theorem and computation of moments.',videoId:'',source:'youtube',tags:['Unit I','Part 4']},
+
+{unit:'u1',num:5,title:'Standard Discrete and Continuous Distributions',desc:'Bernoulli, Binomial, Geometric, Negative Binomial, Hypergeometric, Poisson, Uniform, Exponential, Gamma, Beta, Normal, Weibull and Cauchy distributions with properties.',videoId:'',source:'youtube',tags:['Unit I','Part 5']},
+
+{unit:'u1',num:6,title:'Jointly Distributed Random Variables',desc:'Joint PMF/PDF/CDF, marginal and conditional distributions, conditional expectation, covariance, correlation and independence.',videoId:'',source:'youtube',tags:['Unit I','Part 6']},
+
+{unit:'u1',num:7,title:'Chebyshev Inequality and Sampling Distributions',desc:'Chebyshev inequality, sample mean, sample variance, sample proportion, Chi-square, t and F distributions with relationships.',videoId:'',source:'youtube',tags:['Unit I','Part 7']},
+
+{unit:'u1',num:8,title:'Transformation of Random Variables and Characteristic Functions',desc:'Transformation of variables, Jacobian method, characteristic functions, uniqueness property, inversion theorem and applications.',videoId:'',source:'youtube',tags:['Unit I','Part 8']},
+
+{unit:'u1',num:9,title:'Modes of Convergence of Random Variables',desc:'Convergence in probability, almost sure convergence, convergence in distribution, mean square convergence, Slutsky theorem and continuous mapping principle.',videoId:'',source:'youtube',tags:['Unit I','Part 9']},
+
+{unit:'u1',num:10,title:'Laws of Large Numbers and Central Limit Theorem',desc:'Weak and Strong Laws of Large Numbers, Central Limit Theorem, normal approximation and comparison of LLN and CLT.',videoId:'',source:'youtube',tags:['Unit I','Part 10']},
+
+{unit:'u1',num:11,title:'Unit I — Final Revision & PYQ Session',desc:'Complete Unit I revision including formula sheet, theorem summary, distribution tables, MGF and characteristic function tables with NET/JRF previous year questions.',videoId:'',source:'youtube',tags:['Unit I','Revision']},
+
+
+// ─────────────────────────────────────────────
+// UNIT II — Mathematical Analysis and Matrix Algebra
+// ─────────────────────────────────────────────
+{unit:'u2',num:1,title:'Monotone Functions and Continuity',desc:'Real-valued functions, monotone functions, bounded functions, continuity, uniform continuity and fundamental theorems.',videoId:'WFw-Hxg8Kgs',source:'youtube',tags:['Unit II','Part 1']},
+
+{unit:'u2',num:2,title:'Differentiability and Mean Value Theorems',desc:'Differentiability, Rolle theorem, Lagrange MVT, Cauchy MVT, increasing/decreasing functions and extrema.',videoId:'',source:'youtube',tags:['Unit II','Part 2']},
+
+{unit:'u2',num:3,title:"Taylor's Theorem and L'Hospital's Rule",desc:"Taylor and Maclaurin expansions, remainder terms, L'Hospital's rule and examination problems.",videoId:'',source:'youtube',tags:['Unit II','Part 3']},
+
+{unit:'u2',num:4,title:'Riemann Integration and Improper Integrals',desc:'Riemann integrals, upper/lower sums, FTC, improper integrals, convergence tests and applications.',videoId:'',source:'youtube',tags:['Unit II','Part 4']},
+
+{unit:'u2',num:5,title:'Functions of Two Variables: Limits and Continuity',desc:'Functions of two variables, limits, continuity, path dependence and counterexamples.',videoId:'',source:'youtube',tags:['Unit II','Part 5']},
+
+{unit:'u2',num:6,title:'Partial Derivatives and Total Derivatives',desc:'Partial derivatives, higher-order derivatives, total derivative, chain rule, Jacobian and applications.',videoId:'',source:'youtube',tags:['Unit II','Part 6']},
+
+{unit:'u2',num:7,title:'Maxima, Minima and Lagrange Multipliers',desc:'Optimization, Hessian matrix, saddle points, constrained optimization and Lagrange multipliers.',videoId:'',source:'youtube',tags:['Unit II','Part 7']},
+
+{unit:'u2',num:8,title:'Double and Triple Integrals',desc:'Double and triple integration, Jacobian transformation, area, volume, moments and probability applications.',videoId:'',source:'youtube',tags:['Unit II','Part 8']},
+
+{unit:'u2',num:9,title:'Vector Spaces and Linear Transformations',desc:'Vector spaces, subspaces, basis, dimension, span, linear independence and linear transformations.',videoId:'',source:'youtube',tags:['Unit II','Part 9']},
+
+{unit:'u2',num:10,title:'Matrix Algebra and Systems of Linear Equations',desc:'Rank, nullity, RREF, determinants, inverse, trace and systems of linear equations.',videoId:'',source:'youtube',tags:['Unit II','Part 10']},
+
+{unit:'u2',num:11,title:'Orthogonality, Eigenvalues and Cayley-Hamilton Theorem',desc:'Gram-Schmidt orthogonalization, eigenvalues, eigenvectors, diagonalization and Cayley-Hamilton theorem.',videoId:'',source:'youtube',tags:['Unit II','Part 11']},
+
+{unit:'u2',num:12,title:'Special Matrices and Quadratic Forms',desc:'Symmetric, skew-symmetric, orthogonal, positive definite matrices and quadratic forms.',videoId:'',source:'youtube',tags:['Unit II','Part 12']},
+
+{unit:'u2',num:13,title:'Unit II — Final Revision & PYQ Session',desc:'Complete Unit II revision including formula sheet, theorem summary, matrix identities and previous year questions.',videoId:'',source:'youtube',tags:['Unit II','Revision']},
+
+
+// ─────────────────────────────────────────────
+// UNIT III — Sampling Methods and Design of Experiments
+// ─────────────────────────────────────────────
+{unit:'u3',num:1,title:'Introduction to Sampling Theory and Simple Random Sampling',desc:'Population, sample, sampling frame, sampling errors, SRSWR, SRSWOR, estimation of mean and total, variance and FPC.',videoId:'',source:'youtube',tags:['Unit III','Part 1']},
+
+{unit:'u3',num:2,title:'Stratified Random Sampling',desc:'Stratified estimators, proportional, Neyman and optimum allocation, variance derivations and efficiency.',videoId:'',source:'youtube',tags:['Unit III','Part 2']},
+
+{unit:'u3',num:3,title:'Systematic Sampling',desc:'Linear and circular systematic sampling, estimation procedures, variance properties and comparison with SRS.',videoId:'',source:'youtube',tags:['Unit III','Part 3']},
+
+{unit:'u3',num:4,title:'Ratio and Regression Methods of Estimation',desc:'Ratio and regression estimators, bias, variance, MSE, efficiency and practical applications.',videoId:'',source:'youtube',tags:['Unit III','Part 4']},
+
+{unit:'u3',num:5,title:'Cluster Sampling and Double Sampling',desc:'Equal and unequal cluster sampling, two-phase sampling, estimation procedures and comparisons.',videoId:'',source:'youtube',tags:['Unit III','Part 5']},
+
+{unit:'u3',num:6,title:'Sampling with Varying Probabilities',desc:'PPS sampling, Hansen-Hurwitz estimator, Horvitz-Thompson estimator and inclusion probabilities.',videoId:'',source:'youtube',tags:['Unit III','Part 6']},
+
+{unit:'u3',num:7,title:'Nonnegative Variance Estimation and Ordered/Unordered Estimators',desc:'Nonnegative variance estimation, ordered and unordered estimators, Sen-Yates-Grundy estimator and HT framework.',videoId:'',source:'youtube',tags:['Unit III','Part 7']},
+
+{unit:'u3',num:8,title:'Principles of Design of Experiments and ANOVA',desc:'Randomization, replication, local control, one-way and two-way ANOVA with F tests.',videoId:'',source:'youtube',tags:['Unit III','Part 8']},
+
+{unit:'u3',num:9,title:'CRD, RBD and Latin Square Design',desc:'Layout, statistical models, ANOVA, efficiency and comparison of CRD, RBD and LSD.',videoId:'',source:'youtube',tags:['Unit III','Part 9']},
+
+{unit:'u3',num:10,title:'Missing Plot Techniques and Factorial Experiments',desc:'Missing observations, 2², 2³ and 2ⁿ factorial experiments, interaction effects and ANOVA.',videoId:'',source:'youtube',tags:['Unit III','Part 10']},
+
+{unit:'u3',num:11,title:'Confounding and Incomplete Block Designs',desc:'Complete and partial confounding, incidence matrix, concurrence matrix, intra-block and inter-block analysis.',videoId:'',source:'youtube',tags:['Unit III','Part 11']},
+
+{unit:'u3',num:12,title:'Connectedness, Orthogonality and BIBD',desc:'Connectedness, orthogonality, Balanced Incomplete Block Designs, efficiency factors and recovery of information.',videoId:'',source:'youtube',tags:['Unit III','Part 12']},
+
+{unit:'u3',num:13,title:'Unit III — Final Revision & PYQ Session',desc:'Complete Unit III revision covering sampling theory, DOE, formula sheet, theorem summary and previous year questions.',videoId:'',source:'youtube',tags:['Unit III','Revision']},
+
+
+// ─────────────────────────────────────────────
+// UNIT IV — Estimation Theory
+// ─────────────────────────────────────────────
+{unit:'u4',num:1,title:'Fundamentals of Point Estimation',desc:'Statistical estimation framework, estimators, sampling distributions, unbiasedness, bias, MSE, consistency and efficiency.',videoId:'zxFt1O4ucdM',source:'youtube',tags:['Unit IV','Part 1']},
+
+{unit:'u4',num:2,title:'Method of Moments Estimation',desc:'Population and sample moments, Method of Moments estimation for standard distributions and estimator properties.',videoId:'',source:'youtube',tags:['Unit IV','Part 2']},
+
+{unit:'u4',num:3,title:'Maximum Likelihood Estimation',desc:'Likelihood, score function, MLE, likelihood equations, invariance, consistency, asymptotic normality and efficiency.',videoId:'',source:'youtube',tags:['Unit IV','Part 3']},
+
+{unit:'u4',num:4,title:'Efficiency, Fisher Information and Rao-Cramér Lower Bound',desc:'Fisher information, CRLB, information inequality, efficient estimators and regularity conditions.',videoId:'',source:'youtube',tags:['Unit IV','Part 4']},
+
+{unit:'u4',num:5,title:'Sufficiency and Factorization Theorem',desc:'Sufficient statistics, Neyman factorization theorem, exponential family and minimal sufficiency.',videoId:'',source:'youtube',tags:['Unit IV','Part 5']},
+
+{unit:'u4',num:6,title:'Completeness, UMVUE and Fundamental Estimation Theorems',desc:'Complete statistics, Rao-Blackwell theorem, Lehmann-Scheffé theorem, Basu theorem, ancillary statistics and UMVUE.',videoId:'',source:'youtube',tags:['Unit IV','Part 6']},
+
+{unit:'u4',num:7,title:'Interval Estimation and Confidence Intervals',desc:'Confidence intervals, pivoting method, one-sample, two-sample and large-sample confidence intervals.',videoId:'',source:'youtube',tags:['Unit IV','Part 7']},
+
+{unit:'u4',num:8,title:'Order Statistics',desc:'Joint and marginal distributions of order statistics, minimum, maximum, median, range and applications.',videoId:'',source:'youtube',tags:['Unit IV','Part 8']},
+
+{unit:'u4',num:9,title:'Empirical Distribution Function',desc:'Construction, properties, consistency, convergence, Glivenko-Cantelli theorem and applications.',videoId:'',source:'youtube',tags:['Unit IV','Part 9']},
+
+{unit:'u4',num:10,title:'Rank Correlation and Nonparametric Inference',desc:'Spearman and Kendall rank correlation, comparison, ordinal association and introduction to nonparametric inference.',videoId:'',source:'youtube',tags:['Unit IV','Part 10']},
+
+{unit:'u4',num:11,title:'Unit IV — Final Revision & PYQ Session',desc:'Complete Unit IV revision covering estimation theory, theorem summary, formula sheet and previous year NET/JRF questions.',videoId:'',source:'youtube',tags:['Unit IV','Revision']},
+// ─────────────────────────────────────────────
+// UNIT V — Testing of Hypotheses
+// ─────────────────────────────────────────────
+{unit:'u5',num:1,title:'Fundamentals of Hypothesis Testing',desc:'Statistical decision framework, null and alternative hypotheses, simple and composite hypotheses, one-sided and two-sided tests, test statistic, critical region, Type I and Type II errors, level of significance, power function, size and consistency of tests, p-value.',videoId:'',source:'youtube',tags:['Unit V','Part 1']},
+
+{unit:'u5',num:2,title:'Neyman-Pearson Lemma and Most Powerful Tests',desc:'Neyman-Pearson lemma, proof, construction of most powerful tests for Bernoulli, Binomial, Poisson, Exponential and Normal distributions with power comparisons.',videoId:'',source:'youtube',tags:['Unit V','Part 2']},
+
+{unit:'u5',num:3,title:'Monotone Likelihood Ratio and Uniformly Most Powerful Tests',desc:'Monotone likelihood ratio, Karlin-Rubin theorem, exponential family, uniformly most powerful tests, one-sided testing problems and power properties.',videoId:'',source:'youtube',tags:['Unit V','Part 3']},
+
+{unit:'u5',num:4,title:'UMPU Tests and Invariant Tests',desc:'Uniformly most powerful unbiased tests, invariant tests, group transformations, maximal invariant statistics and comparison among MP, UMP, UMPU and invariant tests.',videoId:'',source:'youtube',tags:['Unit V','Part 4']},
+
+{unit:'u5',num:5,title:'Likelihood Ratio Tests',desc:'Likelihood ratio principle, generalized likelihood ratio tests, one-sample and two-sample problems, normal, exponential and binomial models, comparison with Neyman-Pearson tests.',videoId:'',source:'youtube',tags:['Unit V','Part 5']},
+
+{unit:'u5',num:6,title:'Sequential Probability Ratio Test (SPRT)',desc:'Sequential testing procedures, Wald SPRT, likelihood ratio boundaries, operating characteristic function, average sample number and comparison with fixed sample tests.',videoId:'',source:'youtube',tags:['Unit V','Part 6']},
+
+{unit:'u5',num:7,title:'Chi-Square Tests',desc:'Chi-square distribution review, goodness-of-fit test, test of independence, test of homogeneity, contingency tables, expected frequencies and interpretation.',videoId:'',source:'youtube',tags:['Unit V','Part 7']},
+
+{unit:'u5',num:8,title:'Nonparametric Tests',desc:'Sign test, Wilcoxon signed-rank test, Mann-Whitney U test, linear rank tests, Kruskal-Wallis test, assumptions, procedures, applications and comparisons.',videoId:'',source:'youtube',tags:['Unit V','Part 8']},
+
+{unit:'u5',num:9,title:'Unit V — Final Revision & PYQ Session',desc:'Complete Unit V revision including formula sheet, theorem summary, hypothesis testing procedures, nonparametric methods and previous year NET/JRF questions.',videoId:'',source:'youtube',tags:['Unit V','Revision']},
+// ─────────────────────────────────────────────
+// UNIT VI — Linear Estimation, Regression Analysis and Econometrics
+// ─────────────────────────────────────────────
+{unit:'u6',num:1,title:'Simple Linear Regression Model',desc:'Regression concept, scatter diagram, simple linear regression model, assumptions, least squares estimation, regression coefficients, residual analysis, fitted values, prediction and confidence intervals.',videoId:'',source:'youtube',tags:['Unit VI','Part 1']},
+
+{unit:'u6',num:2,title:'Multiple Linear Regression Model and Gauss-Markov Theory',desc:'Multiple linear regression, matrix formulation, Gauss-Markov model, BLUE property, Gauss-Markov theorem, projection matrices, hat matrix, residual maker matrix and geometric interpretation.',videoId:'',source:'youtube',tags:['Unit VI','Part 2']},
+
+{unit:'u6',num:3,title:'Least Squares Estimation and Maximum Likelihood Estimation',desc:'Normal equations, matrix derivation of least squares estimators, maximum likelihood estimation under normality, relationship between LSE and MLE, sampling distributions and estimator properties.',videoId:'',source:'youtube',tags:['Unit VI','Part 3']},
+
+{unit:'u6',num:4,title:'Testing of Regression Parameters and Analysis of Variance',desc:'Testing regression coefficients, t-tests, F-tests, confidence intervals, ANOVA for linear models, sums of squares decomposition, coefficient of determination (R²), adjusted R², partial F-tests and nested models.',videoId:'',source:'youtube',tags:['Unit VI','Part 4']},
+
+{unit:'u6',num:5,title:'General Linear Hypothesis and Tests of Linear Hypothesis',desc:'General linear hypothesis, hypotheses of the form Cβ=d, confidence regions, simultaneous inference, test statistics, matrix formulation and applications in regression models.',videoId:'',source:'youtube',tags:['Unit VI','Part 5']},
+
+{unit:'u6',num:6,title:'Generalized Least Squares, Weighted Least Squares and Indicator Variables',desc:'Generalized least squares (GLS), weighted least squares (WLS), properties and applications, indicator variables, dummy variables, interpretation of dummy coefficients and ANCOVA-type models.',videoId:'',source:'youtube',tags:['Unit VI','Part 6']},
+
+{unit:'u6',num:7,title:'Multicollinearity, Heteroscedasticity, Autocorrelation and Durbin-Watson Test',desc:'Multicollinearity, variance inflation factor (VIF), heteroscedasticity, autocorrelation, detection methods, consequences, remedies and Durbin-Watson test.',videoId:'',source:'youtube',tags:['Unit VI','Part 7']},
+
+{unit:'u6',num:8,title:'Logistic Regression and Restricted Regression Estimation',desc:'Logistic regression model, logit transformation, odds ratio, maximum likelihood estimation, interpretation of coefficients, exact, stochastic and mixed restrictions, restricted least squares estimation.',videoId:'',source:'youtube',tags:['Unit VI','Part 8']},
+
+{unit:'u6',num:9,title:'Models with Stochastic Regressors, Errors-in-Variables and Instrumental Variables',desc:'Stochastic regressors, errors-in-variables models, attenuation bias, instrumental variable estimation, consistency of IV estimators and practical applications.',videoId:'',source:'youtube',tags:['Unit VI','Part 9']},
+
+{unit:'u6',num:10,title:'Simultaneous Equation Models, Identification Problem, Two-Stage Least Squares and k-Class Estimators',desc:'Structural and reduced form equations, endogeneity, identification problem, order and rank conditions, two-stage least squares (2SLS), k-class estimators and comparison of OLS, IV, 2SLS and k-class methods.',videoId:'',source:'youtube',tags:['Unit VI','Part 10']},
+
+{unit:'u6',num:11,title:'Unit VI — Final Revision & PYQ Session',desc:'Complete Unit VI revision including formula sheet, Gauss-Markov results, regression assumptions, ANOVA, GLS vs WLS, multicollinearity, heteroscedasticity, autocorrelation, logistic regression, IV methods, simultaneous equation models, 2SLS and previous year NET/JRF questions.',videoId:'',source:'youtube',tags:['Unit VI','Revision']},
   // ── UNIT VII (Time Series) ──
-  {unit:'u7',num:1,title:'Time Series Components',desc:'Trend, seasonality, irregular components — decomposition methods.',videoId:'',source:'youtube',tags:['Unit VII','Part 1']},
-  {unit:'u7',num:2,title:'Stationarity, ACF and PACF',desc:'Strict/weak stationarity, ACF/PACF plots and their interpretation.',videoId:'',source:'youtube',tags:['Unit VII','Part 2']},
-  {unit:'u7',num:3,title:'AR and MA Models',desc:'AR(p), MA(q) — stationarity, invertibility, Yule-Walker equations.',videoId:'',source:'youtube',tags:['Unit VII','Part 3']},
-  {unit:'u7',num:4,title:'ARMA and ARIMA Models',desc:'ARMA(p,q), ARIMA(p,d,q) — identification and Box-Jenkins.',videoId:'',source:'youtube',tags:['Unit VII','Part 4']},
-  {unit:'u7',num:5,title:'Spectral Analysis & Forecasting',desc:'Periodogram, spectral density, forecasting and exponential smoothing.',videoId:'',source:'youtube',tags:['Unit VII','Part 5']},
-  {unit:'u7',num:6,title:'Unit VII — Revision & PYQ Session',desc:'Complete Unit VII revision with previous year questions.',videoId:'',source:'youtube',tags:['Unit VII','Revision']},
-  // ── UNIT VIII (Multivariate Analysis) ──
-  {unit:'u8',num:1,title:'Multivariate Normal Distribution',desc:'MVN definition, properties, marginals, conditionals and Wishart.',videoId:'',source:'youtube',tags:['Unit VIII','Part 1']},
-  {unit:'u8',num:2,title:'Hotelling T² Test',desc:'One-sample and two-sample Hotelling T² — theory and examples.',videoId:'',source:'youtube',tags:['Unit VIII','Part 2']},
-  {unit:'u8',num:3,title:'MANOVA & Discriminant Analysis',desc:'Wilks lambda, MANOVA, linear discriminant analysis.',videoId:'',source:'youtube',tags:['Unit VIII','Part 3']},
-  {unit:'u8',num:4,title:'Principal Component Analysis',desc:'PCA — eigenvalue approach, variance explained and biplots.',videoId:'',source:'youtube',tags:['Unit VIII','Part 4']},
-  {unit:'u8',num:5,title:'Factor Analysis & Cluster Methods',desc:'Factor model, loadings, communality and clustering techniques.',videoId:'',source:'youtube',tags:['Unit VIII','Part 5']},
-  {unit:'u8',num:6,title:'Unit VIII — Revision & PYQ Session',desc:'Complete Unit VIII revision with previous year questions.',videoId:'',source:'youtube',tags:['Unit VIII','Revision']},
-  // ── UNIT IX (Stochastic Processes) ──
-  {unit:'u9',num:1,title:'Introduction to Stochastic Processes',desc:'State space, index set, Markov property and transition matrices.',videoId:'',source:'youtube',tags:['Unit IX','Part 1']},
-  {unit:'u9',num:2,title:'Classification of States',desc:'Recurrent/transient states, communication classes, period and ergodicity.',videoId:'',source:'youtube',tags:['Unit IX','Part 2']},
-  {unit:'u9',num:3,title:'Limiting & Stationary Distributions',desc:'Chapman-Kolmogorov, limiting probabilities and stationary distributions.',videoId:'',source:'youtube',tags:['Unit IX','Part 3']},
-  {unit:'u9',num:4,title:"Gambler's Ruin & Random Walk",desc:'Probability of ruin, expected duration, symmetric/asymmetric walks, recurrence.',videoId:'',source:'youtube',tags:['Unit IX','Part 4']},
-  {unit:'u9',num:5,title:'Poisson Process',desc:'Properties, inter-arrival times, superposition and thinning.',videoId:'',source:'youtube',tags:['Unit IX','Part 5']},
-  {unit:'u9',num:6,title:'Birth-Death Processes & Queueing',desc:'Birth-death equations, M/M/1 queue, Little\'s formula.',videoId:'',source:'youtube',tags:['Unit IX','Part 6']},
-  {unit:'u9',num:7,title:'Renewal Theory',desc:'Renewal process, elementary renewal theorem and reward processes.',videoId:'',source:'youtube',tags:['Unit IX','Part 7']},
-  {unit:'u9',num:8,title:'Unit IX — Revision & PYQ Session',desc:'Complete Unit IX revision with previous year questions.',videoId:'',source:'youtube',tags:['Unit IX','Revision']},
-  // ── UNIT X (Indian Stats System & R) ──
-  {unit:'u10',num:1,title:'Indian Statistical System — MoSPI & NSC',desc:'Structure, functions of MoSPI, NSC and NSO.',videoId:'',source:'youtube',tags:['Unit X','Part 1']},
-  {unit:'u10',num:2,title:'NSO, Census & Surveys',desc:'National accounts, NSS surveys, census methodology.',videoId:'',source:'youtube',tags:['Unit X','Part 2']},
-  {unit:'u10',num:3,title:'Eminent Indian Statisticians',desc:'P.C. Mahalanobis, C.R. Rao, R.C. Bose — key contributions.',videoId:'',source:'youtube',tags:['Unit X','Part 3']},
-  {unit:'u10',num:4,title:'Introduction to R — Basics',desc:'R environment, data types, vectors, matrices and operations.',videoId:'',source:'youtube',tags:['Unit X','Part 4']},
-  {unit:'u10',num:5,title:'R Data Structures & Functions',desc:'Lists, factors, data frames, user-defined functions in R.',videoId:'',source:'youtube',tags:['Unit X','Part 5']},
-  {unit:'u10',num:6,title:'R Programming — Loops & Control',desc:'if-else, for, while loops, apply family and string operations.',videoId:'',source:'youtube',tags:['Unit X','Part 6']},
-  {unit:'u10',num:7,title:'Data Management & Graphics in R',desc:'Data frames, plots, ggplot basics and report generation.',videoId:'',source:'youtube',tags:['Unit X','Part 7']},
-  {unit:'u10',num:8,title:'Unit X — Revision & PYQ Session',desc:'Complete Unit X revision with previous year questions.',videoId:'',source:'youtube',tags:['Unit X','Revision']},
+  // ─────────────────────────────────────────────
+// UNIT VII — Time Series
+// ─────────────────────────────────────────────
+{unit:'u7',num:1,title:'Introduction to Time Series and Descriptive Analysis',desc:'Definition of time series, types of time series, components (trend, seasonal, cyclical and irregular), time plots, descriptive measures, mean, variance and covariance functions, interpretation of time series data.',videoId:'',source:'youtube',tags:['Unit VII','Part 1']},
+
+{unit:'u7',num:2,title:'Autocovariance, Autocorrelation and Partial Autocorrelation',desc:'Autocovariance function (ACVF), autocorrelation function (ACF), partial autocorrelation function (PACF), sample ACVF, sample ACF, sample PACF, correlograms and model identification.',videoId:'',source:'youtube',tags:['Unit VII','Part 2']},
+
+{unit:'u7',num:3,title:'Stationarity and Ergodicity',desc:'Strict, strong and weak stationarity, covariance stationarity, mean and variance stationarity, ergodicity, mean and covariance ergodicity, comparison of stationarity and ergodicity with examples.',videoId:'',source:'youtube',tags:['Unit VII','Part 3']},
+
+{unit:'u7',num:4,title:'General Linear Process and Wold Decomposition',desc:'White noise process, general linear process, infinite moving average representation, Wold decomposition theorem, deterministic and non-deterministic components, innovations process and applications.',videoId:'',source:'youtube',tags:['Unit VII','Part 4']},
+
+{unit:'u7',num:5,title:'Moving Average Processes',desc:'MA(1), MA(2) and MA(q) processes, mean, variance, ACVF, ACF, invertibility conditions, identification using ACF and PACF, forecasting with MA models.',videoId:'',source:'youtube',tags:['Unit VII','Part 5']},
+
+{unit:'u7',num:6,title:'Autoregressive Processes',desc:'AR(1), AR(2) and AR(p) processes, mean, variance, ACVF, ACF, PACF, stationarity conditions, characteristic equation, root method, forecasting and model identification.',videoId:'',source:'youtube',tags:['Unit VII','Part 6']},
+
+{unit:'u7',num:7,title:'ARMA Models and Yule-Walker Equations',desc:'ARMA(p,q) models, stationarity, invertibility, ACVF, ACF, Yule-Walker equations, estimation of AR parameters and comparison of AR, MA and ARMA models.',videoId:'',source:'youtube',tags:['Unit VII','Part 7']},
+
+{unit:'u7',num:8,title:'Model Identification, Estimation, Order Selection and Forecasting',desc:'Identification using ACF and PACF, parameter estimation, method of moments, maximum likelihood estimation, AIC, BIC, HQC, forecasting with AR, MA and ARMA models and forecast error variance.',videoId:'',source:'youtube',tags:['Unit VII','Part 8']},
+
+{unit:'u7',num:9,title:'Non-Stationary Time Series and ARIMA Models',desc:'Non-stationary processes, random walk, random walk with drift, unit roots, differencing, integrated processes, ARIMA(p,d,q) models, Box-Jenkins methodology, diagnostics and forecasting.',videoId:'',source:'youtube',tags:['Unit VII','Part 9']},
+
+{unit:'u7',num:10,title:'Frequency Domain Analysis and Spectral Theory',desc:'Spectral representation theorem, spectral distribution and density functions, relationship between ACVF and spectral density, periodogram, spectral density estimation, smoothing methods and applications.',videoId:'',source:'youtube',tags:['Unit VII','Part 10']},
+
+{unit:'u7',num:11,title:'Unit VII — Final Revision & PYQ Session',desc:'Complete Unit VII revision including formula sheet, theorem summary, stationarity and invertibility conditions, AR, MA, ARMA and ARIMA models, Yule-Walker equations, forecasting, spectral analysis and previous year NET/JRF questions.',videoId:'',source:'youtube',tags:['Unit VII','Revision']},
+ // ─────────────────────────────────────────────
+// UNIT VIII — Multivariate Analysis
+// ─────────────────────────────────────────────
+{unit:'u8',num:1,title:'Introduction to Multivariate Analysis and Multivariate Normal Distribution',desc:'Multivariate data, random vectors, mean vector, covariance matrix, correlation matrix, joint distributions, multivariate normal distribution, marginal and conditional distributions, linear transformations, independence properties and characteristic function.',videoId:'',source:'youtube',tags:['Unit VIII','Part 1']},
+
+{unit:'u8',num:2,title:'Properties and Estimation in Multivariate Normal Distribution',desc:'Properties of multivariate normal distribution, marginal and conditional distributions, affine transformations, estimation of mean vector, estimation of covariance matrix, maximum likelihood estimation, sampling properties and likelihood function.',videoId:'',source:'youtube',tags:['Unit VIII','Part 2']},
+
+{unit:'u8',num:3,title:'Distribution of Sample Mean Vector',desc:'Random samples from multivariate normal populations, sample mean vector, covariance structure, linear combinations of sample means, sampling distributions and applications in multivariate inference.',videoId:'',source:'youtube',tags:['Unit VIII','Part 3']},
+
+{unit:'u8',num:4,title:'Wishart Distribution',desc:'Definition and construction of Wishart distribution, probability density function, mean, variance, additivity property, independence results, relationship with chi-square distribution and sample covariance matrix, applications in multivariate inference.',videoId:'',source:'youtube',tags:['Unit VIII','Part 4']},
+
+{unit:'u8',num:5,title:'Correlation Analysis in Multivariate Data',desc:'Simple, partial and multiple correlation coefficients, distributions, hypothesis testing, interpretation and comparison of correlation measures.',videoId:'',source:'youtube',tags:['Unit VIII','Part 5']},
+
+{unit:'u8',num:6,title:'Inference for Multivariate Parameters',desc:'Inference for mean vectors and covariance matrices, confidence regions, hypothesis testing, likelihood ratio approach, matrix formulation and applications in multivariate normal populations.',videoId:'',source:'youtube',tags:['Unit VIII','Part 6']},
+
+{unit:'u8',num:7,title:"Hotelling's T² Statistic and Related Tests",desc:"Hotelling's T² statistic, derivation, distribution, relationship with t and F distributions, one-sample and two-sample Hotelling's T² tests, confidence regions and simultaneous inference.",videoId:'',source:'youtube',tags:['Unit VIII','Part 7']},
+
+{unit:'u8',num:8,title:'Discriminant Analysis and Canonical Correlation Analysis',desc:"Fisher's linear discriminant function, classification rules, misclassification probabilities, canonical variables, canonical correlations, estimation, interpretation and comparison with multiple correlation.",videoId:'',source:'youtube',tags:['Unit VIII','Part 8']},
+
+{unit:'u8',num:9,title:'Unit VIII — Final Revision & PYQ Session',desc:"Complete Unit VIII revision including multivariate normal distribution, Wishart distribution, estimation, correlation analysis, multivariate inference, Hotelling's T² statistic, discriminant analysis, canonical correlation analysis, formula sheet, theorem summary and previous year NET/JRF questions.",videoId:'',source:'youtube',tags:['Unit VIII','Revision']},
+  // ─────────────────────────────────────────────
+// UNIT IX — Stochastic Processes
+// ─────────────────────────────────────────────
+{unit:'u9',num:1,title:'Introduction to Stochastic Processes and Markov Chains',desc:'Definition of stochastic processes, state space, parameter space, classification of stochastic processes, discrete-time and continuous-time processes, Markov property, transition probabilities, transition probability matrix, homogeneous Markov chains and examples.',videoId:'',source:'youtube',tags:['Unit IX','Part 1']},
+
+{unit:'u9',num:2,title:'Classification of States in Markov Chains',desc:'Accessibility, communication, communication classes, irreducible Markov chains, periodicity, aperiodicity, transient states, recurrent states, positive recurrent states, null recurrent states, absorbing states, closed classes and state classification techniques.',videoId:'',source:'youtube',tags:['Unit IX','Part 2']},
+
+{unit:'u9',num:3,title:'Chapman-Kolmogorov Equations and n-Step Transition Probabilities',desc:'Chapman-Kolmogorov equations, derivation, matrix representation, n-step transition probabilities, powers of transition matrices, computation methods and long-run transition behaviour.',videoId:'',source:'youtube',tags:['Unit IX','Part 3']},
+
+{unit:'u9',num:4,title:'Limiting Behaviour and Stationary Distributions',desc:'Limiting probabilities, limiting behaviour of n-step transition probabilities, stationary and equilibrium distributions, existence and uniqueness conditions, ergodic Markov chains and long-run behaviour.',videoId:'',source:'youtube',tags:['Unit IX','Part 4']},
+
+{unit:'u9',num:5,title:"Gambler's Ruin Problem and Simple Random Walk",desc:"Gambler's ruin model, probability of ruin, probability of winning, expected duration, simple random walk, symmetric and asymmetric random walks, recurrence, transience and applications.",videoId:'',source:'youtube',tags:['Unit IX','Part 5']},
+
+{unit:'u9',num:6,title:'Poisson Process',desc:'Counting processes, definition and properties of Poisson process, independent and stationary increments, distribution of N(t), conditional distributions, superposition, decomposition and applications.',videoId:'',source:'youtube',tags:['Unit IX','Part 6']},
+
+{unit:'u9',num:7,title:'Inter-Arrival and Waiting Time Distributions',desc:'Arrival process, inter-arrival times, exponential distribution, waiting time distribution, gamma distribution relationship, memoryless property, distribution of nth arrival time, conditional arrival distributions and queueing applications.',videoId:'',source:'youtube',tags:['Unit IX','Part 7']},
+
+{unit:'u9',num:8,title:'Birth-Death Processes and M/M/1 Queue',desc:'Birth-death processes, birth and death rates, transition probabilities, Kolmogorov differential equations, stationary distribution, M/M/1 queue, steady-state probabilities, queue characteristics, average queue length, waiting time, Little\'s formula and performance measures.',videoId:'',source:'youtube',tags:['Unit IX','Part 8']},
+
+{unit:'u9',num:9,title:'Unit IX — Final Revision & PYQ Session',desc:'Complete Unit IX revision including Markov chains, state classification, Chapman-Kolmogorov equations, stationary distributions, gambler\'s ruin, random walks, Poisson process, inter-arrival and waiting time distributions, birth-death processes, M/M/1 queue, formula sheet, theorem summary and previous year NET/JRF questions.',videoId:'',source:'youtube',tags:['Unit IX','Revision']},
+ // ─────────────────────────────────────────────
+// UNIT X — Indian Statistical System and Research Methodology
+// ─────────────────────────────────────────────
+{unit:'u10',num:1,title:'Indian Statistical System — Overview',desc:'Evolution of the Indian Statistical System, role of official statistics, centralized and decentralized statistical systems, statistical organizations in India, importance of statistical data in governance and official statistical framework.',videoId:'',source:'youtube',tags:['Unit X','Part 1']},
+
+{unit:'u10',num:2,title:'Ministry of Statistics and Programme Implementation (MoSPI)',desc:'Structure and functions of MoSPI, major responsibilities, statistical activities, Statistics Wing, Programme Implementation Wing, coordination functions, data dissemination activities and official publications.',videoId:'',source:'youtube',tags:['Unit X','Part 2']},
+
+{unit:'u10',num:3,title:'National Statistical Commission and National Statistical Office',desc:'Formation, objectives and functions of the National Statistical Commission (NSC), National Statistical Office (NSO), organizational structure, statistical surveys, national accounts activities and relationship among MoSPI, NSC and NSO.',videoId:'',source:'youtube',tags:['Unit X','Part 3']},
+
+{unit:'u10',num:4,title:'Census and Large Sample Surveys',desc:'Population Census, objectives, methodology, census operations in India, National Sample Survey (NSS), household surveys, employment surveys, consumption expenditure surveys, agricultural surveys and comparison of census versus sample survey.',videoId:'',source:'youtube',tags:['Unit X','Part 4']},
+
+{unit:'u10',num:5,title:'Contributions of Indian Statisticians — Part I',desc:'Life and contributions of P. C. Mahalanobis and P. V. Sukhatme, Mahalanobis distance, National Sample Survey, Indian Statistical Institute, sampling theory, agricultural statistics and important NET/JRF facts.',videoId:'',source:'youtube',tags:['Unit X','Part 5']},
+
+{unit:'u10',num:6,title:'Contributions of Indian Statisticians — Part II',desc:'Contributions of R. C. Bose, S. N. Roy and C. R. Rao including design of experiments, coding theory, finite geometry, multivariate analysis, Roy\'s largest root test, Rao-Blackwell theorem, Cramér-Rao lower bound, orthogonal arrays and other eminent Indian statisticians.',videoId:'',source:'youtube',tags:['Unit X','Part 6']},
+
+{unit:'u10',num:7,title:'Introduction to R Programming',desc:'R environment, installation, interface, R as a calculator, arithmetic operations, assignment operators, built-in mathematical functions, variables, objects, workspace management, help system, packages and libraries.',videoId:'',source:'youtube',tags:['Unit X','Part 7']},
+
+{unit:'u10',num:8,title:'R Data Structures and Matrix Operations',desc:'Vectors, matrices, matrix operations, lists, factors, missing data handling, logical operators, comparison operators and applications of data structures in R.',videoId:'',source:'youtube',tags:['Unit X','Part 8']},
+
+{unit:'u10',num:9,title:'Programming Concepts in R',desc:'Conditional execution using if and if-else, loops (for, while, repeat), seq(), rep(), sorting, ordering, string manipulation, scripts, user-defined functions, function arguments and return values.',videoId:'',source:'youtube',tags:['Unit X','Part 9']},
+
+{unit:'u10',num:10,title:'Data Management, Graphics and Reporting in R',desc:'Data frames, data input/output, importing and exporting datasets, histogram, boxplot, bar chart, scatter plot, line plot, summary functions, formatting output, statistical reporting, research documentation and integration of R output into reports.',videoId:'',source:'youtube',tags:['Unit X','Part 10']},
+
+{unit:'u10',num:11,title:'Unit X — Final Revision & PYQ Session',desc:'Complete Unit X revision covering Indian Statistical System, MoSPI, NSC, NSO, Census, NSS, Indian statisticians, R programming, data structures, programming concepts, graphics, research methodology, formula sheet, important R commands and previous year NET/JRF questions.',videoId:'',source:'youtube',tags:['Unit X','Revision']},
 ];
 const BOOKS_DATA = [
   {unit:'u1',emoji:'🎲',color:'#2d6a2d',spine:'#1a4a1a',title:'Unit I — Probability Theory',sub:'Complete Study Book',desc:'Full coverage of probability theory, distributions, convergence and limit theorems. Theory + solved examples + MCQ bank.',tags:['Unit I','All Topics'],link:'#'},
