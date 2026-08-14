@@ -8,13 +8,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23101F14'/%3E%3Crect x='12' y='3' width='9' height='18' rx='4' fill='%238BC24A'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <style>
     .services-hero{padding:44px 0 8px;}
     .service-intro{display:grid;grid-template-columns:1.2fr 0.8fr;gap:24px;align-items:center;}
     .service-right{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow);}
     .chip-row{display:flex;gap:8px;flex-wrap:wrap;}
-    .service-grid{display:grid;gap:14px;grid-template-columns:repeat(4,1fr);margin-top:16px;}
+    .service-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin-top:16px;}
     .small-meta{font-size:13.5px;color:var(--muted);}
     .badge-active{display:inline-block;padding:4px 9px;border-radius:999px;background:var(--brand-light);color:var(--forest);font-weight:800;font-size:11px;letter-spacing:.02em;}
     .section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px;}
@@ -80,6 +82,7 @@
         <h2 style="margin:0;">Featured offerings</h2>
         <div class="chip-row">
           <span class="chip">UGC</span>
+          <span class="chip">UGC NET Statistics</span>
           <span class="chip">Workshops</span>
           <span class="chip">Software</span>
           <span class="chip">Projects</span>
@@ -93,6 +96,15 @@
           <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;">
             <a class="btn primary small" href="#ugc-full">Register</a>
             <a class="btn ghost small" href="ugcmaterials.html">Details</a>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <h3 style="font-size:17px;">UGC NET Statistics <span class="badge" style="vertical-align:middle;margin-left:4px;">New</span></h3>
+          <p class="small-meta">Full syllabus coaching for UGC NET Statistics — 10 units, 5000+ MCQs, unit-wise practice sets and mock tests.</p>
+          <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;">
+            <a class="btn primary small" href="#ugc-statistics">Register</a>
+            <a class="btn ghost small" href="statnet.html" target="_blank" rel="noopener">Details</a>
           </div>
         </article>
 
