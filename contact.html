@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact Us — STATUP</title>
+  <meta name="description" content="Contact STATUP — questions, registrations and project help.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23101F14'/%3E%3Crect x='12' y='3' width='9' height='18' rx='4' fill='%238BC24A'/%3E%3C/svg%3E">
+  <style>
+    .contact-hero{padding:44px 0 8px;}
+    .contact-grid{grid-template-columns:repeat(3,1fr);align-items:stretch;margin-top:22px;}
+    .contact-card h3{font-family:var(--font-display);font-size:18px;margin:0 0 14px 0;color:var(--ink);}
+    .icon-row{display:flex;align-items:flex-start;gap:10px;margin:0 0 10px 0;}
+    .icon-row .ico{width:30px;height:30px;border-radius:9px;background:var(--paper);border:1px solid var(--line);display:grid;place-items:center;flex:none;font-size:14px;}
+    .icon-row a, .icon-row span{font-size:14.5px;color:var(--ink);text-decoration:none;}
+    .icon-row a:hover{color:var(--brand-dark)}
+    .divider-line{border:0;border-top:1px dashed var(--line);margin:16px 0;}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+    .map-card iframe{border-radius:12px;width:100%;height:220px;border:0;filter:grayscale(15%);margin-top:12px;}
+    .office-hours{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-top:16px;font-size:14px;}
+    @media (max-width:1000px){ .contact-grid{grid-template-columns:1fr 1fr;} }
+    @media (max-width:640px){ .contact-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html">
+      <img src="images/logo.png" alt="STATUP logo" class="logo-img" onerror="this.style.display='none'">
+      <div class="logo-text"><strong>STATUP</strong><small>Streamline Your Analysis, Elevate Your Decision</small></div>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+      <a href="register.html" class="nav-link cta">Register</a>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+
+  <section class="wrap contact-hero">
+    <div class="eyebrow">Get in touch</div>
+    <h1 class="page-title">Let's talk about your next step</h1>
+    <p class="lead">Questions, registrations or project help — reach out through any of the options below and we'll get back to you within a day.</p>
+  </section>
+
+  <section class="wrap contact-grid">
+
+    <div class="contact-card">
+      <h3>Primary Contact</h3>
+      <div class="icon-row"><span class="ico">📧</span> <a href="mailto:statup.data@gmail.com">statup.data@gmail.com</a></div>
+      <div class="icon-row"><span class="ico">📞</span> <a href="https://wa.me/919385362051" target="_blank" rel="noopener">+91 93853 62051</a></div>
+      <div class="icon-row"><span class="ico">📍</span> <span>Statup, Calicut, Kerala, India</span></div>
+
+      <hr class="divider-line">
+
+      <h3 style="font-size:15px;">WhatsApp</h3>
+      <div class="icon-row"><span class="ico">💬</span> <a href="https://wa.me/919385362051" target="_blank" rel="noopener">Direct chat</a></div>
+      <div class="icon-row"><span class="ico">👥</span> <a href="https://chat.whatsapp.com/Ku1Aeu6RmLUBNmsoy2dYRy" target="_blank" rel="noopener">WhatsApp group</a></div>
+      <div class="icon-row"><span class="ico">📢</span> <a href="https://whatsapp.com/channel/0029VbBAltU29755yuDpou1U/102" target="_blank" rel="noopener">WhatsApp channel</a></div>
+    </div>
+
+    <div class="contact-card">
+      <h3>Social &amp; Updates</h3>
+      <div class="icon-row"><span class="ico">📸</span> <a href="https://www.instagram.com/statupdata" target="_blank" rel="noopener">Instagram</a></div>
+      <p class="muted" style="margin-top:4px;">Join our channel &amp; group for schedules, updates, tests, workshops and announcements.</p>
+
+      <div class="office-hours">
+        <strong style="font-size:13px;">Office hours</strong>
+        <div class="muted" style="margin-top:4px;">Mon — Sat: 9:00 AM – 7:00 PM (IST)</div>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn primary" href="https://chat.whatsapp.com/Ku1Aeu6RmLUBNmsoy2dYRy" target="_blank" rel="noopener">Join WhatsApp Group</a>
+        <a class="btn ghost" href="mailto:statup.data@gmail.com">Email Us</a>
+      </div>
+    </div>
+
+    <div class="contact-card map-card">
+      <h3>Find Us</h3>
+      <p class="muted">Calicut, Kerala</p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.1448894275444!2d75.7804!3d11.2588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65b9fc1cba907%3A0x8b7a8a1f6ce3f96c!2sCalicut%2C%20Kerala!5e0!3m2!1sen!2sin!4v1696426950000"
+        loading="lazy" allowfullscreen></iframe>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="logo" href="index.html">
+        <img src="images/logo-white.png" alt="STATUP logo" class="logo-img" style="height:30px" onerror="this.style.display='none'">
+        <div class="logo-text"><strong>STATUP</strong><small></small></div>
+      </a>
+      <p class="muted" style="margin-top:10px;max-width:320px;">Streamline Your Analysis, Elevate Your Decision.</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <p><a href="services.html">Services</a></p>
+      <p><a href="register.html">Register</a></p>
+      <p><a href="about.html">About Us</a></p>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p>Calicut, Kerala, India</p>
+      <p><a href="mailto:statup.data@gmail.com">statup.data@gmail.com</a></p>
+      <p><a href="https://wa.me/919385362051">+91 93853 62051</a></p>
+    </div>
+  </div>
+
+  <div class="wrap copyright">
+    <small>© <span id="year"></span> STATUP — Streamline Your Analysis, Elevate Your Decision.</small>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>STATUP — Streamline Your Analysis, Elevate Your Decision</title>
+  <meta name="description" content="STATUP — learning & analytics support: statistics, data analysis, projects, workshops, test series and software training." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23101F14'/%3E%3Crect x='12' y='3' width='9' height='18' rx='4' fill='%238BC24A'/%3E%3C/svg%3E">
+
+  <style>
+    .home-hero{padding:56px 0 40px;}
+    .home-hero-inner{display:grid;grid-template-columns:1.15fr 0.85fr;gap:40px;align-items:center;}
+    .home-hero h1{font-size:44px;letter-spacing:-0.02em;}
+    .home-hero h1 .accent{color:var(--brand-dark);position:relative;white-space:nowrap;}
+    .home-hero h1 .accent::after{content:'';position:absolute;left:0;right:0;bottom:6px;height:10px;background:var(--brand-light);opacity:.35;z-index:-1;border-radius:3px;}
+    .focus-panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow);}
+    .focus-panel .panel-eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-bottom:14px;}
+    .chart-row{display:flex;align-items:flex-end;gap:10px;height:96px;margin:8px 0 6px;}
+    .chart-row .bar{flex:1;border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,var(--brand-light),var(--brand));position:relative;}
+    .chart-row .bar span{position:absolute;top:-20px;left:0;right:0;text-align:center;font-family:var(--font-mono);font-size:11px;color:var(--muted);}
+    .chart-caption{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px;margin-top:4px;}
+    .focus-list{list-style:none;padding:0;margin:18px 0 0 0;display:grid;gap:10px;}
+    .focus-list li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink);font-weight:500;}
+    .focus-list li::before{content:'';width:7px;height:7px;border-radius:2px;background:var(--brand-light);margin-top:7px;flex:none;}
+
+    .spark-wrap{display:flex;justify-content:center;padding:6px 0 36px;}
+
+    .services-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px;}
+    .fc-index{font-family:var(--font-mono);font-size:12px;color:var(--brand-dark);margin-bottom:10px;}
+    .fc-title{font-family:var(--font-display);font-size:18px;font-weight:600;margin:0 0 8px 0;}
+
+    .home-cta{background:var(--forest);border-radius:20px;padding:34px 32px;margin:36px 0 8px;position:relative;overflow:hidden;}
+    .home-cta::before{content:'';position:absolute;right:-40px;top:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(139,194,74,0.22),transparent 70%);}
+    .home-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;position:relative;z-index:1;}
+    .home-cta h3{color:#fff;margin:0 0 6px 0;font-size:22px;}
+    .home-cta p{color:#BFD4B8;margin:0;max-width:520px;}
+
+    @media (max-width:960px){
+      .home-hero-inner{grid-template-columns:1fr;}
+      .home-hero h1{font-size:34px;}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html">
+        <img src="images/logo.png" alt="STATUP logo" class="logo-img" onerror="this.style.display='none'">
+        <div class="logo-text">
+          <strong>STATUP</strong>
+          <small>Streamline Your Analysis, Elevate Your Decision</small>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="register.html" class="nav-link cta">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Hero -->
+    <section class="wrap home-hero">
+      <div class="home-hero-inner">
+        <div>
+          <div class="eyebrow">Statistics · Research · Software Training</div>
+          <h1>Streamline your analysis.<br><span class="accent">Elevate your decision.</span></h1>
+          <p class="lead" style="margin-top:16px;">
+            STATUP provides clear, practical learning and trusted analytical support — from UGC NET preparation to research projects and software training.
+          </p>
+
+          <div class="hero-ctas">
+            <a class="btn primary" href="services.html#ugc-full">UGC Test Series</a>
+            <a class="btn ghost" href="register.html">Register</a>
+          </div>
+
+          <div style="margin-top:6px;">
+            <a class="contact-pill" href="mailto:statup.data@gmail.com">✉ statup.data@gmail.com</a>
+            <a class="contact-pill" href="https://wa.me/919385362051" target="_blank" rel="noopener">💬 WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="focus-panel">
+          <div class="panel-eyebrow">Where students land, on average</div>
+          <div class="chart-row" aria-hidden="true">
+            <div class="bar" style="height:34%"><span>Before</span></div>
+            <div class="bar" style="height:48%"></div>
+            <div class="bar" style="height:62%"></div>
+            <div class="bar" style="height:80%"></div>
+            <div class="bar" style="height:95%"><span>After</span></div>
+          </div>
+          <div class="chart-caption"><span>Diagnostic</span><span>4–6 weeks with STATUP</span></div>
+
+          <ul class="focus-list">
+            <li>UGC NET test series &amp; study materials</li>
+            <li>Workshops &amp; masterclasses</li>
+            <li>Software training (SPSS, R, Python)</li>
+            <li>Project &amp; dissertation support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap spark-wrap">
+      <div class="spark-divider" aria-hidden="true">
+        <span style="height:6px"></span><span style="height:10px"></span><span style="height:15px"></span>
+        <span style="height:9px"></span><span style="height:18px"></span><span style="height:12px"></span>
+        <span style="height:7px"></span>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <section class="wrap" style="padding:0 20px 8px;">
+      <div class="services-head">
+        <h2 style="margin:0;">Our services — at a glance</h2>
+        <a class="link" href="services.html">View all services →</a>
+      </div>
+      <div class="grid cards-4" style="margin-top:18px;">
+        <article class="feature-card">
+          <div class="fc-index">01</div>
+          <h4 class="fc-title">UGC Test Series</h4>
+          <p class="muted" style="margin:0 0 10px 0;">Mock tests, PYQs &amp; solutions to improve speed and accuracy.</p>
+          <a class="link" href="services.html#ugc-full">Learn more →</a>
+        </article>
+
+        <article class="feature-card">
+          <div class="fc-index">02</div>
+          <h4 class="fc-title">Workshops</h4>
+          <p class="muted" style="margin:0 0 10px 0;">Short practical sessions — free &amp; paid options.</p>
+          <a class="link" href="services.html#workshops-full">Learn more →</a>
+        </article>
+
+        <article class="feature-card">
+          <div class="fc-index">03</div>
+          <h4 class="fc-title">Software Training</h4>
+          <p class="muted" style="margin:0 0 10px 0;">SPSS, R, Python, Excel, Jamovi &amp; JASP.</p>
+          <a class="link" href="services.html#software-full">Learn more →</a>
+        </article>
+
+        <article class="feature-card">
+          <div class="fc-index">04</div>
+          <h4 class="fc-title">Project Support</h4>
+          <p class="muted" style="margin:0 0 10px 0;">Proposal, analysis, interpretation and report writing.</p>
+          <a class="link" href="services.html#misc-full">Learn more →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="wrap">
+      <div class="home-cta">
+        <div class="home-cta-inner">
+          <div>
+            <h3>Want a consultation?</h3>
+            <p>Book a short free call to discuss your project or preparation plan.</p>
+          </div>
+          <a class="btn on-dark" href="contact.html">Contact Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="logo" href="index.html">
+          <img src="images/logo-white.png" alt="STATUP logo" class="logo-img" style="height:30px" onerror="this.style.display='none'">
+          <div class="logo-text"><strong>STATUP</strong><small></small></div>
+        </a>
+        <p class="muted" style="margin-top:10px;max-width:320px;">Streamline Your Analysis, Elevate Your Decision.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="about.html">About</a></p>
+        <p><a href="services.html">Services</a></p>
+        <p><a href="register.html">Register</a></p>
+        <p><a href="contact.html">Contact</a></p>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>Statup, Calicut, Kerala, India</p>
+        <p><a href="mailto:statup.data@gmail.com">statup.data@gmail.com</a></p>
+        <p><a href="https://wa.me/919385362051">+91 93853 62051</a></p>
+      </div>
+    </div>
+
+    <div class="wrap copyright">
+      <small>© <span id="year"></span> STATUP. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

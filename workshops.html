@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Workshops &amp; Masterclasses — STATUP</title>
+  <meta name="description" content="STATUP workshops — R Programming, SPSS and Python. Overview, registration, meeting links and materials." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23101F14'/%3E%3Crect x='12' y='3' width='9' height='18' rx='4' fill='%238BC24A'/%3E%3C/svg%3E">
+  <style>
+    .ws-hero{padding:40px 0 6px;}
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 16px;}
+    .tab-btn{padding:11px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;cursor:pointer;font-weight:700;font-size:13.5px;color:var(--ink);font-family:var(--font-body);transition:all .15s ease;}
+    .tab-btn:hover{border-color:var(--brand)}
+    .tab-btn.active{background:var(--ink);border-color:var(--ink);color:#fff;}
+    .panel{display:none;background:#fff;padding:22px;border-radius:16px;border:1px solid var(--line);}
+    .panel.active{display:block;}
+    .grid-2{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start;}
+    .subtabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0;}
+    .subbtn{padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--paper);cursor:pointer;font-weight:600;font-size:13px;color:var(--ink);font-family:var(--font-body);}
+    .subbtn.active{background:var(--brand);border-color:var(--brand);color:#fff;}
+    .subpanel{display:none;}
+    .subpanel.active{display:block;}
+    .ws-aside{padding:18px;border-radius:12px;background:var(--paper);border:1px solid var(--line);}
+    .ws-aside h4{margin-top:0;}
+    .ws-title{margin-top:0;font-size:22px;}
+    @media (max-width:900px){ .grid-2{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html">
+        <img src="images/logo.png" alt="STATUP logo" class="logo-img" onerror="this.style.display='none'">
+        <div class="logo-text"><strong>STATUP</strong><small>Streamline Your Analysis, Elevate Your Decision</small></div>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="register.html" class="nav-link cta">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="wrap">
+      <section class="ws-hero">
+        <div class="eyebrow">Workshops</div>
+        <h1 class="page-title">Workshops &amp; Masterclasses</h1>
+        <p class="lead">Short, practical sessions — both free and paid. Pick a workshop to see details, register, join meeting links, and access materials.</p>
+      </section>
+
+      <div class="tabs" role="tablist" aria-label="Workshops list">
+        <button class="tab-btn" data-target="ws1" role="tab" id="ws1-tab">Workshop 1 · R Programming</button>
+        <button class="tab-btn" data-target="ws2" role="tab" id="ws2-tab">Workshop 2 · SPSS</button>
+        <button class="tab-btn" data-target="ws3" role="tab" id="ws3-tab">Workshop 3 · Python for Data Analysis</button>
+      </div>
+
+      <!-- Workshop 1 -->
+      <div id="ws1" class="panel" role="tabpanel" aria-labelledby="ws1-tab">
+        <div class="grid-2">
+          <div>
+            <h2 class="ws-title">R Programming Workshop (Beginner to Advanced)</h2>
+            <p class="muted">A 3-day structured, hands-on workshop designed to take participants from basic R programming to applied data analysis. The program focuses on practical learning, including data handling, visualization, and statistical techniques.</p>
+
+            <div class="subtabs" role="tablist" aria-label="Workshop 1 tabs">
+              <button class="subbtn" data-target="ws1-overview">Overview</button>
+              <button class="subbtn" data-target="ws1-register">Register</button>
+              <button class="subbtn" data-target="ws1-meet">Meeting Link</button>
+              <button class="subbtn" data-target="ws1-materials">Materials</button>
+              <button class="subbtn" data-target="ws1-instructions">Instructions</button>
+            </div>
+
+            <div id="ws1-overview" class="subpanel">
+              <h4>What you will learn</h4>
+              <ul class="muted" style="margin-left:1em;line-height:1.7;">
+                <li>Day 1: R &amp; RStudio fundamentals, data types, and structures</li>
+                <li>Day 2: Data handling, cleaning, and visualization (Base R &amp; ggplot2)</li>
+                <li>Day 3: Statistical analysis (t-test, correlation, regression)</li>
+                <li>Working with real datasets and interpretation of results</li>
+                <li>Mini project using a real-world dataset</li>
+              </ul>
+            </div>
+
+            <div id="ws1-register" class="subpanel">
+              <h4>Register</h4>
+              <p class="muted">Complete the registration form to reserve your seat. Certificate will be issued based on the submitted details.</p>
+              <p class="muted"><strong>Workshop Fee:</strong><br>PG &amp; UG Students — ₹399<br>Research Scholars — ₹699<br>Faculty / Working Professionals — ₹1199</p>
+              <a class="btn primary" href="https://forms.gle/LtQoXyTuEkyiPMAB6" target="_blank" rel="noopener">Register Now</a>
+            </div>
+
+            <div id="ws1-meet" class="subpanel">
+              <h4>Meeting Link</h4>
+              <p class="muted">The Google Meet link will be shared with registered participants via WhatsApp and email before the session.</p>
+              <a class="btn ghost" href="https://meet.google.com/zzc-nqyd-jqi" target="_blank" rel="noopener">Join Meeting</a>
+            </div>
+
+            <div id="ws1-materials" class="subpanel">
+              <h4>Materials Provided</h4>
+              <ul class="muted" style="margin-left:1em;line-height:1.7;">
+                <li><a class="link" href="https://docs.google.com/document/d/1sFJ4hwUaACpv8ODIjb3qPMJSctLyPqAJXHKjI39J4OE/edit?usp=sharing" target="_blank" rel="noopener">Workshop Materials</a></li>
+                <li>Day-wise datasets and practice examples</li>
+                <li>Mini project dataset and guidelines</li>
+              </ul>
+            </div>
+
+            <div id="ws1-instructions" class="subpanel">
+              <h4>Instructions for Participants</h4>
+              <ol class="muted" style="margin-left:1.1em;line-height:1.7;">
+                <li>Join 5–10 minutes early with a stable internet connection.</li>
+                <li>Ensure R and RStudio are installed before the session.</li>
+                <li>Download materials and datasets for hands-on practice.</li>
+                <li>Actively participate and practice during the session.</li>
+                <li>Complete the mini project after the workshop for better learning.</li>
+              </ol>
+            </div>
+          </div>
+
+          <aside class="ws-aside">
+            <h4>Quick Info</h4>
+            <p class="muted">Duration: 3 Days<br>Dates: May 3, 4 &amp; 5, 2026<br>Time: 7:00 PM – 9:00 PM (IST)<br>Mode: Online (Google Meet)<br>Certificate: Yes</p>
+            <p class="muted" style="margin-top:10px;"><strong style="color:var(--ink);">Contact:</strong> <a class="link" href="mailto:statup.data@gmail.com">statup.data@gmail.com</a></p>
+            <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;">
+              <a class="btn primary small" href="https://forms.gle/LtQoXyTuEkyiPMAB6" target="_blank" rel="noopener">Register</a>
+              <a class="btn ghost small" href="contact.html">Ask a Question</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Workshop 2 -->
+      <div id="ws2" class="panel" role="tabpanel" aria-labelledby="ws2-tab">
+        <div class="grid-2">
+          <div>
+            <h2 class="ws-title">Workshop 2 — SPSS Hands-on: Basics → Intermediate</h2>
+            <p class="muted"><strong>Overview:</strong> A 3-day hands-on workshop introducing SPSS for statistical analysis. Topics include data import, cleaning, descriptive statistics, hypothesis testing, regression, and reporting. Sessions are practical, using real datasets and step-by-step demonstrations for beginners and intermediate learners. <strong>(21–23 May 2026, 7:00–9:00 PM)</strong>. By the end, participants will confidently prepare data, run essential tests, interpret results, and generate research-ready reports.</p>
+
+            <div class="subtabs" role="tablist" aria-label="Workshop 2 tabs">
+              <button class="subbtn" data-target="ws2-overview">Overview</button>
+              <button class="subbtn" data-target="ws2-register">Register</button>
+              <button class="subbtn" data-target="ws2-meet">Meeting Link</button>
+              <button class="subbtn" data-target="ws2-materials">Materials</button>
+              <button class="subbtn" data-target="ws2-instructions">Instructions</button>
+            </div>
+
+            <div id="ws2-overview" class="subpanel">
+              <h4>Course structure</h4>
+              <ul class="muted" style="margin-left:1em;line-height:1.7;">
+                <li><strong>Day 1 (Basic):</strong> Data handling, import, cleaning, descriptive statistics and basic charts.</li>
+                <li><strong>Day 2 (Intermediate):</strong> Hypothesis testing (t-tests, chi-square, correlation) and interpretation.</li>
+                <li><strong>Day 3 (Advanced):</strong> Regression (linear, logistic basics), reporting outputs and export of results.</li>
+              </ul>
+            </div>
+
+            <div id="ws2-register" class="subpanel">
+              <h4>Registration</h4>
+              <p class="muted">Register now to secure your seat for the 3-Day Online SPSS Workshop <strong>(21–23 May 2026, 7:00–9:00 PM)</strong>. After registering you will receive a confirmation email with the meeting link and pre-workshop materials.</p>
+              <a class="btn primary" href="https://forms.gle/BSEpQ4ykPzGcWpHj7" target="_blank" rel="noopener">Register</a>
+            </div>
+
+            <div id="ws2-meet" class="subpanel">
+              <h4>Meeting link &amp; platform</h4>
+              <p class="muted">The online sessions use <strong>Google Meet</strong>. The meeting link is shared to registered participants via email and WhatsApp, and will become active ≈10 minutes before each session.</p>
+              <p class="muted" style="margin-bottom:8px;"><em>Note:</em> The meeting link will be published here closer to the workshop start date.</p>
+              <a class="btn ghost" href="https://meet.google.com/nyw-dcef-vdr" target="_blank" rel="noopener">Open Meeting Link</a>
+            </div>
+
+            <div id="ws2-materials" class="subpanel">
+              <h4>Materials (provided)</h4>
+              <p class="muted" style="margin-bottom:8px;">All materials (datasets, slides, syntax &amp; exercises) will be made available here before or during the workshop.</p>
+              <ul class="muted" style="margin-left:1em;">
+                <li><a class="link" href="https://docs.google.com/document/d/1XKwwXsAKVE1UzoFm9oXCHs0R-i7XXmC6HyOp-m3djnc/edit?usp=sharing" target="_blank" rel="noopener">Materials</a></li>
+              </ul>
+            </div>
+
+            <div id="ws2-instructions" class="subpanel">
+              <h4>Pre-workshop instructions</h4>
+              <ul class="muted" style="margin-left:1em;line-height:1.7;">
+                <li>Install SPSS (any recent version, e.g., 20–29). Test by opening a sample dataset.</li>
+                <li>Ensure a stable internet connection; use Chrome or Edge for best Meet performance.</li>
+                <li>Have headphones and a microphone available for Q&amp;A and hands-on practice.</li>
+                <li>Join the meeting 10 minutes early to confirm audio/video and reduce delays.</li>
+                <li>All materials and recordings (if provided) will be shared after the sessions.</li>
+                <li>Certificates are issued to participants who complete the full workshop (attendance may be tracked).</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="ws-aside">
+            <h4>Quick info</h4>
+            <p class="muted"><strong style="color:var(--ink);">Duration:</strong> 3 days · <strong style="color:var(--ink);">Mode:</strong> Online (Live) · <strong style="color:var(--ink);">Level:</strong> Beginner → Intermediate<br><strong style="color:var(--ink);">Dates:</strong> 21–23 May 2026 · <strong style="color:var(--ink);">Time:</strong> 7:00 PM – 9:00 PM</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
+              <a class="btn primary small" href="https://forms.gle/BSEpQ4ykPzGcWpHj7" target="_blank" rel="noopener">Register</a>
+              <a class="btn ghost small" href="contact.html">Contact</a>
+            </div>
+            <div style="margin-top:14px;font-size:13px;color:var(--muted);">
+              <strong style="color:var(--ink);">What to bring:</strong>
+              <ul style="margin:8px 0 0 18px;padding:0;line-height:1.6;">
+                <li>Laptop with SPSS installed</li>
+                <li>Sufficient disk space for practice datasets</li>
+                <li>Notebook / digital notes</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Workshop 3 -->
+      <div id="ws3" class="panel" role="tabpanel" aria-labelledby="ws3-tab">
+        <div class="grid-2">
+          <div>
+            <h2 class="ws-title">Workshop 3 — Python for Data Analysis, Visualization &amp; Statistical Modeling</h2>
+            <p class="muted"><strong>Overview:</strong> A 4-day intensive online workshop designed to provide structured, hands-on training in Python for data analysis, statistical inference, visualization, regression modeling, classification, and time series forecasting. Participants will work with real datasets and develop practical analytical skills applicable to research and industry workflows.</p>
+
+            <div class="subtabs" role="tablist" aria-label="Workshop 3 tabs">
+              <button class="subbtn" data-target="ws3-overview">Overview</button>
+              <button class="subbtn" data-target="ws3-register">Register</button>
+              <button class="subbtn" data-target="ws3-meet">Meeting Link</button>
+              <button class="subbtn" data-target="ws3-materials">Materials</button>
+              <button class="subbtn" data-target="ws3-instructions">Instructions</button>
+            </div>
+
+            <div id="ws3-overview" class="subpanel">
+              <h4>Course structure (27 April – 30 April)</h4>
+              <ul class="muted" style="margin-left:1em;line-height:1.7;">
+                <li><strong>Day 1:</strong> Python basics, NumPy &amp; Pandas, data cleaning &amp; exploratory data analysis.</li>
+                <li><strong>Day 2:</strong> Statistical inference — probability distributions, confidence intervals, hypothesis testing &amp; data visualization.</li>
+                <li><strong>Day 3:</strong> Regression modeling (linear &amp; multiple), classification techniques &amp; model evaluation.</li>
+                <li><strong>Day 4:</strong> Time series analysis &amp; forecasting (ARIMA basics) with mini project.</li>
+              </ul>
+            </div>
+
+            <div id="ws3-register" class="subpanel">
+              <h4>Registration</h4>
+              <p class="muted">Secure your seat for the 4-Day Python Workshop.<br><strong>Registration Fee:</strong><br>PG &amp; UG Students — <strong>₹499</strong><br>Research Scholars — <strong>₹899</strong><br>Faculty / Working Professionals — <strong>₹1599</strong><br>After registration, you will receive confirmation and joining details via email and WhatsApp.</p>
+              <a class="btn primary" href="https://forms.gle/jSExWyRFpXmQeFTf8" target="_blank" rel="noopener">Register Now</a>
+            </div>
+
+            <div id="ws3-meet" class="subpanel">
+              <h4>Meeting link &amp; platform</h4>
+              <p class="muted">Sessions will be conducted via <strong>Google Meet</strong>. The meeting link will be shared with registered participants before the workshop begins.</p>
+              <p class="muted"><em>Note:</em> Meeting link will be activated 10 minutes before each session.</p>
+            </div>
+
+            <div id="ws3-materials" class="subpanel">
+              <h4>Materials &amp; Syllabus</h4>
+              <ul class="muted" style="margin-left:1em;line-height:1.6;">
+                <li><a class="link" href="https://docs.google.com/document/d/1MaTV1nM_r53JF4jsrAVgZZ3QuhFJE9XF_gRXVPLhNM4/edit?usp=sharing" target="_blank" rel="noopener">Detailed Syllabus &amp; Materials</a></li>
+              </ul>
+              <p class="muted">All notebooks, datasets, and practice exercises will be shared before or during the sessions.</p>
+            </div>
+
+            <div id="ws3-instructions" class="subpanel">
+              <h4>Pre-workshop instructions</h4>
+              <ul class="muted" style="margin-left:1em;line-height:1.6;">
+                <li>Install Python 3.8+ (Anaconda recommended).</li>
+                <li>Install required packages: numpy, pandas, matplotlib, seaborn, statsmodels, scikit-learn.</li>
+                <li>Ensure stable internet connection and working microphone.</li>
+                <li>Join sessions 10 minutes early to avoid delays.</li>
+                <li>Certificates will be issued to participants completing all sessions.</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="ws-aside">
+            <h4>Quick info</h4>
+            <p class="muted"><strong style="color:var(--ink);">Dates:</strong> 27 April – 30 April<br><strong style="color:var(--ink);">Duration:</strong> 4 Days (Live Online)<br><strong style="color:var(--ink);">Registration Fee:</strong><br>PG &amp; UG Students — <strong>₹599</strong><br>Research Scholars — <strong>₹999</strong><br>Faculty / Working Professionals — <strong>₹1599</strong><br><strong style="color:var(--ink);">Level:</strong> Beginner → Intermediate</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
+              <a class="btn primary small" href="https://forms.gle/jSExWyRFpXmQeFTf8" target="_blank" rel="noopener">Register</a>
+              <a class="btn ghost small" href="contact.html">Contact</a>
+            </div>
+            <div style="margin-top:14px;font-size:13px;color:var(--muted);">
+              <strong style="color:var(--ink);">What to bring:</strong>
+              <ul style="margin:8px 0 0 18px;padding:0;line-height:1.6;">
+                <li>Laptop with Python installed</li>
+                <li>Basic knowledge of statistics (helpful)</li>
+                <li>Notebook for notes</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="logo" href="index.html">
+          <img src="images/logo-white.png" alt="STATUP logo" class="logo-img" style="height:30px" onerror="this.style.display='none'">
+          <div class="logo-text"><strong>STATUP</strong><small></small></div>
+        </a>
+        <p class="muted" style="margin-top:10px;max-width:320px;">Streamline Your Analysis, Elevate Your Decision.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="index.html">Home</a></p>
+        <p><a href="services.html">Services</a></p>
+        <p><a href="register.html">Register</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Statup, Calicut, Kerala, India</p>
+        <p><a href="mailto:statup.data@gmail.com">statup.data@gmail.com</a></p>
+        <p><a href="https://wa.me/919385362051">+91 93853 62051</a></p>
+      </div>
+    </div>
+    <div class="wrap copyright">
+      <small>© <span id="year"></span> STATUP — Streamline Your Analysis, Elevate Your Decision.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Tab & subtab logic + deep linking (shared mechanism for all 3 workshops)
+    (function(){
+      const tabBtns = Array.from(document.querySelectorAll('.tab-btn'));
+      const panels = Array.from(document.querySelectorAll('.panel'));
+
+      const setActiveTab = (id, pushState=true) => {
+        tabBtns.forEach(b => b.classList.toggle('active', b.dataset.target === id));
+        panels.forEach(p => p.classList.toggle('active', p.id === id));
+        if (pushState) location.hash = id;
+        const panel = document.getElementById(id);
+        if (panel) {
+          const firstSub = panel.querySelector('.subbtn');
+          if (firstSub) activateSubtab(firstSub.dataset.target, panel);
+        }
+      };
+
+      tabBtns.forEach(b => b.addEventListener('click', () => setActiveTab(b.dataset.target)));
+
+      document.addEventListener('click', (e) => {
+        const sb = e.target.closest('.subbtn');
+        if (!sb) return;
+        const panel = e.target.closest('.panel');
+        activateSubtab(sb.dataset.target, panel);
+      });
+
+      function activateSubtab(subId, panelEl){
+        if (!panelEl) return;
+        const btns = Array.from(panelEl.querySelectorAll('.subbtn'));
+        const subs = Array.from(panelEl.querySelectorAll('.subpanel'));
+        btns.forEach(b => b.classList.toggle('active', b.dataset.target === subId));
+        subs.forEach(s => s.classList.toggle('active', s.id === subId));
+        const parentId = panelEl.id;
+        location.hash = parentId + (subId ? '-' + subId.split('-').slice(-1)[0] : '');
+      }
+
+      const h = location.hash ? location.hash.slice(1) : '';
+      if (h) {
+        const [main, sub] = h.split('-',2);
+        if (document.getElementById(main)) {
+          setActiveTab(main, false);
+          const panel = document.getElementById(main);
+          if (sub) {
+            const subTarget = Array.from(panel.querySelectorAll('.subpanel')).find(sp => sp.id.endsWith(sub));
+            if (subTarget) {
+              const btn = Array.from(panel.querySelectorAll('.subbtn')).find(b => b.dataset.target.includes(sub));
+              if (btn) activateSubtab(btn.dataset.target, panel);
+            }
+          }
+        } else {
+          setActiveTab('ws1', false);
+        }
+      } else {
+        setActiveTab('ws1', false);
+      }
+
+      tabBtns.forEach((btn,i) => {
+        btn.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowRight') tabBtns[(i+1)%tabBtns.length].focus();
+          if (e.key === 'ArrowLeft') tabBtns[(i-1+tabBtns.length)%tabBtns.length].focus();
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

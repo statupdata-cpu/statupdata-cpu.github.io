@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — STATUP</title>
+  <meta name="description" content="About STATUP — mission, vision, what we do and why choose us." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23101F14'/%3E%3Crect x='12' y='3' width='9' height='18' rx='4' fill='%238BC24A'/%3E%3C/svg%3E">
+  <style>
+    .hero-about{padding:44px 0 8px;}
+    .about-inner{display:grid;grid-template-columns:1.15fr 0.85fr;gap:28px;align-items:start;}
+    .about-left{min-width:0}
+    .mission-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:14px 0 18px;}
+    .mission-box p{margin:0;font-size:14.5px;color:var(--ink)}
+    .mission-box p + p{margin-top:8px;border-top:1px dashed var(--line);padding-top:8px;}
+    .mission-box b{color:var(--brand-dark)}
+
+    .quick-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow);}
+    .kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;}
+    .kpi{background:var(--paper);padding:14px 10px;border-radius:11px;text-align:center;border:1px solid var(--line);}
+    .kpi .num{font-family:var(--font-mono);font-size:21px;font-weight:600;color:var(--brand-dark);}
+    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;}
+    .value{background:var(--paper);padding:13px;border-radius:11px;border:1px solid var(--line);}
+
+    .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px;}
+    .team-card{background:#fff;border:1px solid var(--line);padding:18px;border-radius:14px;text-align:center;transition:box-shadow .18s ease, transform .18s ease;}
+    .team-card:hover{box-shadow:var(--shadow-sm);transform:translateY(-3px);}
+    .team-avatar{width:76px;height:76px;border-radius:14px;overflow:hidden;margin:0 auto 12px;background:linear-gradient(160deg,var(--brand-light),var(--brand));display:inline-grid;place-items:center;}
+    .team-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+
+    .testimonials{margin-top:16px;display:grid;gap:12px;grid-template-columns:1fr 1fr;}
+    .testimonial{background:#fff;border:1px solid var(--line);border-left:3px solid var(--brand-light);padding:16px;border-radius:10px;}
+    .testimonial strong{font-family:var(--font-display);font-weight:600;font-size:15px;}
+
+    .about-cta{background:var(--forest);border-radius:20px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+    .about-cta h3{color:#fff;margin:0 0 4px 0;}
+    .about-cta p{color:#BFD4B8;margin:0;}
+
+    .reveal{opacity:0;transform:translateY(10px);transition:opacity .45s ease, transform .45s ease;}
+    .reveal.visible{opacity:1;transform:none;}
+
+    @media (max-width:1000px){
+      .about-inner{grid-template-columns:1fr;}
+      .kpi-grid{grid-template-columns:repeat(3,1fr)}
+      .values{grid-template-columns:1fr 1fr}
+      .team-grid{grid-template-columns:1fr 1fr}
+      .testimonials{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      .values{grid-template-columns:1fr}
+      .team-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:480px){
+      .kpi-grid{grid-template-columns:1fr;gap:8px;}
+      .kpi{display:flex;align-items:center;justify-content:space-between;text-align:left;padding:12px 14px;}
+      .kpi .num{font-size:19px;}
+      .kpi .muted{margin-top:0 !important;text-align:right;max-width:60%;}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html">
+        <img src="images/logo.png" alt="STATUP logo" class="logo-img" onerror="this.style.display='none'">
+        <div class="logo-text"><strong>STATUP</strong><small>Streamline Your Analysis, Elevate Your Decision</small></div>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="register.html" class="nav-link cta">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Hero -->
+    <section class="wrap hero-about" aria-labelledby="aboutTitle">
+      <div class="about-inner">
+        <div class="about-left reveal" id="leftCol">
+          <div class="eyebrow">About Statup</div>
+          <h1 id="aboutTitle" class="page-title" style="margin:0;">Clarity, mentorship and practical training for every dataset you'll ever face.</h1>
+          <p class="lead" style="margin-top:14px;">
+            STATUP empowers students, researchers and professionals to master statistics, data analysis and academic projects with clarity and confidence. We combine expert mentorship, practical training and tailored analytical services so you can focus on learning and decision-making.
+          </p>
+
+          <div class="mission-box">
+            <p><b>Mission —</b> To streamline your analysis and elevate your decision-making.</p>
+            <p><b>Vision —</b> To be a trusted hub for data education and analytical excellence.</p>
+          </div>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+            <a class="btn primary" href="services.html">Our Services</a>
+            <a class="btn ghost" href="register.html">Register</a>
+            <a class="btn ghost" href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <aside class="reveal" id="rightCol">
+          <div class="quick-card">
+            <h3 style="margin:0 0 4px 0;font-size:17px;">Quick facts</h3>
+            <p class="muted" style="margin-bottom:0;">Trusted support across exams, research and software training.</p>
+
+            <div class="kpi-grid">
+              <div class="kpi">
+                <div class="num">95%</div>
+                <div class="muted" style="margin-top:6px;">Avg. test accuracy improvement</div>
+              </div>
+              <div class="kpi">
+                <div class="num">500+</div>
+                <div class="muted" style="margin-top:6px;">Students trained</div>
+              </div>
+              <div class="kpi">
+                <div class="num">1200+</div>
+                <div class="muted" style="margin-top:6px;">Project hours delivered</div>
+              </div>
+            </div>
+
+            <div class="values">
+              <div class="value">
+                <strong style="font-size:13.5px;">Expert Mentorship</strong>
+                <div class="muted" style="margin-top:6px;">Guidance from experienced statisticians.</div>
+              </div>
+              <div class="value">
+                <strong style="font-size:13.5px;">Practical Learning</strong>
+                <div class="muted" style="margin-top:6px;">Hands-on exercises &amp; real datasets.</div>
+              </div>
+              <div class="value">
+                <strong style="font-size:13.5px;">Personalized Plans</strong>
+                <div class="muted" style="margin-top:6px;">Programs tailored to your goals.</div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Detailed services highlight -->
+    <section class="wrap content reveal" id="servicesHighlight">
+      <div class="eyebrow">What we do</div>
+      <h2 style="margin:0 0 6px 0;">A single place for exams, research and analytics training</h2>
+      <p class="muted" style="font-size:14.5px;">Test preparation, research support and practical analytics — under one roof.</p>
+
+      <div class="grid cards-4" style="margin-top:16px;">
+        <article class="feature-card">
+          <h4 style="margin:0 0 6px 0;">UGC Test Series</h4>
+          <p class="muted" style="margin:0;">Mock tests, model answers &amp; performance feedback.</p>
+        </article>
+        <article class="feature-card">
+          <h4 style="margin:0 0 6px 0;">Workshops</h4>
+          <p class="muted" style="margin:0;">Live hands-on sessions, free &amp; paid.</p>
+        </article>
+        <article class="feature-card">
+          <h4 style="margin:0 0 6px 0;">Software Training</h4>
+          <p class="muted" style="margin:0;">SPSS · R · Python · Excel · Jamovi · JASP.</p>
+        </article>
+        <article class="feature-card">
+          <h4 style="margin:0 0 6px 0;">Project Support</h4>
+          <p class="muted" style="margin:0;">End-to-end thesis &amp; dissertation assistance.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="wrap content reveal" id="team">
+      <div class="eyebrow">Who we are</div>
+      <h2 style="margin:0 0 6px 0;">A small team of statisticians and educators</h2>
+      <p class="muted" style="font-size:14.5px;">Focused on clear, practical learning — not jargon.</p>
+
+      <div class="team-grid" aria-label="Team members">
+        <div class="team-card">
+          <div class="team-avatar">
+            <img src="images/Screenshot 2025-12-07 141029.png" alt="Dr. S. Ramesh" onerror="this.parentElement.innerHTML='RS'">
+          </div>
+          <strong>Dr. S. Ramesh</strong>
+          <div class="muted" style="margin-top:6px;">Lead Statistician — Research &amp; Methodology</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">
+            <img src="images/Screenshot 2025-12-07 141045.png" alt="A. Meera" onerror="this.parentElement.innerHTML='AM'">
+          </div>
+          <strong>A. Meera</strong>
+          <div class="muted" style="margin-top:6px;">Data Analyst &amp; Workshop Lead</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">
+            <img src="images/Screenshot 2025-12-07 141100.png" alt="K. Paul" onerror="this.parentElement.innerHTML='KP'">
+          </div>
+          <strong>K. Paul</strong>
+          <div class="muted" style="margin-top:6px;">Course Designer &amp; Tutor</div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;display:flex;gap:10px;">
+        <a class="btn ghost" href="contact.html">Work with us</a>
+        <a class="btn primary" href="register.html">Join a program</a>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="wrap content reveal" id="testimonials">
+      <div class="eyebrow">Student feedback</div>
+      <h2 style="margin:0 0 12px 0;">What learners say</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <strong>“Highly practical and well-structured. Helped me clear UGC NET.”</strong>
+          <div class="muted" style="margin-top:8px;">— Asha, NET aspirant</div>
+        </div>
+        <div class="testimonial">
+          <strong>“Their SPSS workshop made my thesis analysis straightforward.”</strong>
+          <div class="muted" style="margin-top:8px;">— Rohit, MPhil</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="wrap content reveal" id="aboutCTA" style="margin-bottom:36px;">
+      <div class="about-cta">
+        <div>
+          <h3>Ready to improve your analysis?</h3>
+          <p>Book a free 15-minute consultation or join our upcoming workshop.</p>
+        </div>
+        <div style="display:flex;gap:10px;">
+          <a class="btn on-dark" href="register.html">Register</a>
+          <a class="btn ghost" style="border-color:rgba(255,255,255,0.35);color:#fff;" href="contact.html">Contact</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid cols-4">
+      <div>
+        <a class="logo" href="index.html">
+          <img src="images/logo-white.png" alt="STATUP logo" class="logo-img" style="height:30px" onerror="this.style.display='none'">
+          <div class="logo-text"><strong>STATUP</strong><small></small></div>
+        </a>
+        <p class="muted" style="margin-top:10px;max-width:320px;">Streamline Your Analysis, Elevate Your Decision.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="index.html">Home</a></p>
+        <p><a href="services.html">Services</a></p>
+        <p><a href="register.html">Register</a></p>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>Statup, Calicut, Kerala, India</p>
+        <p><a href="mailto:statup.data@gmail.com">statup.data@gmail.com</a></p>
+        <p><a href="https://wa.me/919385362051">+91 93853 62051</a></p>
+      </div>
+
+      <div>
+        <h4>Social</h4>
+        <p><a href="https://chat.whatsapp.com/Ku1Aeu6RmLUBNmsoy2dYRy?mode=hqrt1" target="_blank" rel="noopener">WhatsApp Group</a></p>
+        <p><a href="https://whatsapp.com/channel/0029VbBAltU29755yuDpou1U/102" target="_blank" rel="noopener">WhatsApp Channel</a></p>
+        <p><a href="https://www.instagram.com/statupdata" target="_blank" rel="noopener">Instagram</a></p>
+      </div>
+    </div>
+
+    <div class="wrap copyright">
+      <small>© <span id="year"></span> STATUP — Streamline Your Analysis, Elevate Your Decision.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (function(){
+      const reveals = document.querySelectorAll('.reveal');
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+        });
+      }, {threshold:0.12});
+      reveals.forEach(r => obs.observe(r));
+    })();
+  </script>
+</body>
+</html>

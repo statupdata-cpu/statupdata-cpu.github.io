@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UGC NET Test Series — Materials | STATUP</title>
+  <meta name="description" content="UGC NET Paper 2 (Population Studies) — PYQs, Mock Tests, Important Questions, Books & PDFs." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23101F14'/%3E%3Crect x='12' y='3' width='9' height='18' rx='4' fill='%238BC24A'/%3E%3C/svg%3E">
+  <style>
+    .ugc-hero{padding:40px 0 6px;}
+    .controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:18px 0 6px;}
+    .search{flex:1;min-width:240px;display:flex;gap:8px;align-items:center;}
+    .search input{width:100%;padding:11px 14px;border-radius:10px;border:1px solid var(--line);font-family:var(--font-body);font-size:14px;background:#fff;}
+    .search input:focus{outline:none;border-color:var(--brand);}
+    .filters{display:flex;gap:8px;flex-wrap:wrap;}
+    .filter-btn{padding:9px 15px;border-radius:999px;background:#fff;border:1.5px solid var(--line);cursor:pointer;font-weight:700;font-size:13px;color:var(--ink);font-family:var(--font-body);}
+    .filter-btn.active{background:var(--ink);border-color:var(--ink);color:#fff;}
+    .counts{margin-top:12px;color:var(--muted);font-size:13.5px;font-family:var(--font-mono);}
+    .ugc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin-top:14px;}
+    .ugc-grid .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:none;display:flex;flex-direction:column;justify-content:space-between;min-height:150px;transition:box-shadow .18s ease,transform .18s ease;}
+    .ugc-grid .card:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);}
+    .ugc-grid .card h3{margin:0 0 6px 0;font-family:var(--font-display);font-size:16px;font-weight:600;color:var(--ink);}
+    .ugc-grid .card .small{color:var(--muted);font-size:12.5px;margin-bottom:6px;display:block;}
+    .ugc-grid .card .muted{color:var(--muted);font-size:13px;}
+    .ugc-grid .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;}
+    .ugc-grid .tag{background:var(--paper);border:1px solid var(--line);padding:5px 9px;border-radius:999px;font-size:11.5px;color:var(--brand-dark);font-weight:600;}
+    .card-actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;}
+    .card-actions .btn{padding:9px 13px;font-size:12.5px;}
+    .modal-backdrop{position:fixed;inset:0;background:rgba(16,31,20,0.55);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px;}
+    .modal{background:#fff;max-width:620px;width:100%;border-radius:16px;padding:22px;box-shadow:0 30px 70px rgba(0,0,0,0.3);}
+    .modal h3{margin:0 0 8px 0;font-family:var(--font-display);}
+    .modal .meta{margin-bottom:10px;color:var(--muted);font-size:13px;}
+    @media (max-width:700px){ .controls{flex-direction:column;align-items:stretch;} }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html">
+        <img src="images/logo.png" alt="STATUP logo" class="logo-img" onerror="this.style.display='none'">
+        <div class="logo-text"><strong>STATUP</strong><small>Streamline Your Analysis, Elevate Your Decision</small></div>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="register.html" class="nav-link cta">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="wrap">
+      <section class="ugc-hero">
+        <div class="eyebrow">UGC NET · Paper 2</div>
+        <h1 class="page-title">Population Studies — Materials</h1>
+        <p class="lead">A centralised hub for past year questions, mocks, important questions and public resources. Use search and filters to find what you need quickly.</p>
+
+        <div class="controls">
+          <div class="search">
+            <input id="searchInput" placeholder="Search by title, year, tag (e.g., '2019', 'sampling', 'demography')">
+            <button class="btn ghost small" id="clearSearch">Clear</button>
+          </div>
+          <div class="filters" role="toolbar" aria-label="Filter categories">
+            <button class="filter-btn active" data-cat="all">All</button>
+            <button class="filter-btn" data-cat="pyq">PYQ</button>
+            <button class="filter-btn" data-cat="mock">Mock Tests</button>
+            <button class="filter-btn" data-cat="imp">Important Qns</button>
+            <button class="filter-btn" data-cat="book">Books / PDFs</button>
+          </div>
+        </div>
+        <div class="counts" id="counts">Loading items…</div>
+      </section>
+
+      <section>
+        <div id="listGrid" class="ugc-grid" aria-live="polite"></div>
+      </section>
+    </div>
+  </main>
+
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <button id="modalClose" class="btn ghost small" style="float:right">Close</button>
+      <h3 id="modalTitle"></h3>
+      <div class="meta" id="modalMeta"></div>
+      <p id="modalDesc" class="muted"></p>
+      <div id="modalLinks" style="margin-top:12px"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="logo" href="index.html">
+          <img src="images/logo-white.png" alt="STATUP logo" class="logo-img" style="height:30px" onerror="this.style.display='none'">
+          <div class="logo-text"><strong>STATUP</strong><small></small></div>
+        </a>
+        <p class="muted" style="margin-top:10px;max-width:320px;">Streamline Your Analysis, Elevate Your Decision.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="index.html">Home</a></p>
+        <p><a href="services.html">Services</a></p>
+        <p><a href="register.html">Register</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Statup, Calicut, Kerala, India</p>
+        <p><a href="mailto:statup.data@gmail.com">statup.data@gmail.com</a></p>
+        <p><a href="https://wa.me/919385362051">+91 93853 62051</a></p>
+      </div>
+    </div>
+    <div class="wrap copyright">
+      <small>© <span id="year"></span> STATUP — Streamline Your Analysis, Elevate Your Decision.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    /*************************************************************************
+     * Replace or extend the arrays below with your real links.
+     * Each item: { id, title, year, tags:[], type:'pyq'|'mock'|'imp'|'book', link, extra (optional), desc (optional) }
+     *************************************************************************/
+    const items = [
+      // --- PYQs (past-year questions)
+      { id: 'pyq-2025-dec', title: 'UGC NET Paper 2 — PYQ 2025 December(New)', year: 2025, tags:['pyq','2025'], type: 'pyq', link: 'https://forms.gle/5XjHwgXT71mswsG16', desc: 'Complete paper for 2025 December (Population Studies).' },
+      { id: 'pyq-2025-jun', title: 'UGC NET Paper 2 — PYQ 2025 June', year: 2025, tags:['pyq','2025'], type: 'pyq', link: 'https://forms.gle/1z3Z1aUfvfBZ9LxN9', desc: 'Complete paper for 2025 June (Population Studies).' },
+      { id: 'pyq-2024-dec', title: 'UGC NET Paper 2 — PYQ 2024 December', year: 2024, tags:['pyq','2024'], type: 'pyq', link: 'https://forms.gle/7aQD8FCuGMyEDNjaA', desc: 'Complete paper for 2024 December (Population Studies).' },
+      { id: 'pyq-2024-jun', title: 'UGC NET Paper 2 — PYQ 2024 June', year: 2024, tags:['pyq','2024'], type: 'pyq', link: 'https://forms.gle/oydEbTzupSey1hMt5', desc: 'Complete paper for 2024 June (Population Studies).' },
+      { id: 'pyq-2023-dec', title: 'UGC NET Paper 2 — PYQ 2023 December', year: 2023, tags:['pyq','2023'], type: 'pyq', link: 'https://forms.gle/ucEhzk1oYb724hua9', desc: 'Complete paper for 2023 December (Population Studies).' },
+      { id: 'pyq-2023-feb', title: 'UGC NET Paper 2 — PYQ 2023 February', year: 2023, tags:['pyq','2023'], type: 'pyq', link: 'https://forms.gle/rTBJfoAd753on7iS9', desc: 'Complete paper for 2023 February (Population Studies).' },
+      { id: 'pyq-2022', title: 'UGC NET Paper 2 — PYQ 2022 December', year: 2022, tags:['pyq','2022'], type: 'pyq', link: 'https://forms.gle/8kA64w5oEkAMaCr47', desc: 'Complete paper for 2022 December (Population Studies).' },
+      { id: 'pyq-2021', title: 'UGC NET Paper 2 — PYQ 2021 December', year: 2021, tags:['pyq','2021'], type: 'pyq', link: 'https://forms.gle/SAwKnFHfHVetEAkF6', desc: 'Complete paper for 2021 December (Population Studies).' },
+      { id: 'pyq-2020', title: 'UGC NET Paper 2 — PYQ 2020 December', year: 2020, tags:['pyq','2020'], type: 'pyq', link: 'https://forms.gle/1z3Z1aUfvfBZ9LxN9', desc: 'Complete paper for 2020 December (Population Studies).' },
+      { id: 'pyq-2019-dec', title: 'UGC NET Paper 2 — PYQ 2019 December', year: 2019, tags:['pyq','2019'], type: 'pyq', link: 'https://forms.gle/pH7JGyrRLYUM7cjU8', desc: 'Complete paper for 2019 December (Population Studies).' },
+      { id: 'pyq-2019-jun', title: 'UGC NET Paper 2 — PYQ 2019 June', year: 2019, tags:['pyq','2019'], type: 'pyq', link: 'https://forms.gle/m4ixuuMFbMZxwk9D7', desc: 'Complete paper for 2019 June (Population Studies).' },
+      { id: 'pyq-2018-dec', title: 'UGC NET Paper 2 — PYQ 2018 December', year: 2018, tags:['pyq','2018'], type: 'pyq', link: 'https://forms.gle/auhitKpDhvLantQr8', desc: 'Complete paper for 2018 December (Population Studies).' },
+      { id: 'pyq-2018-jun', title: 'UGC NET Paper 2 — PYQ 2018 June', year: 2018, tags:['pyq','2018'], type: 'pyq', link: 'https://forms.gle/rMyLyEethg86CmDa9', desc: 'Complete paper for 2018 June (Population Studies).' },
+      { id: 'pyq-2017-nov', title: 'UGC NET Paper 2 — PYQ 2017 November', year: 2017, tags:['pyq','2017'], type: 'pyq', link: 'https://forms.gle/c7iaicLRMhZQaTE88', desc: 'Complete paper for 2017 November (Population Studies).' },
+      { id: 'pyq-2017-jan', title: 'UGC NET Paper 2 — PYQ 2017 January', year: 2017, tags:['pyq','2017'], type: 'pyq', link: 'https://forms.gle/W69bFEaboSwddgHF8', desc: 'Complete paper for 2017 January (Population Studies).' },
+      { id: 'pyq-2016', title: 'UGC NET Paper 2 — PYQ 2016 June', year: 2016, tags:['pyq','2016'], type: 'pyq', link: 'https://forms.gle/L3xDccEzBPmVYT1a8', desc: 'Complete paper for 2016 June (Population Studies).' },
+      { id: 'pyq-2015-dec', title: 'UGC NET Paper 2 — PYQ 2015 December', year: 2015, tags:['pyq','2015'], type: 'pyq', link: 'https://forms.gle/CyoLwiXUUeLM2zWc8', desc: 'Complete paper for 2015 December (Population Studies).' },
+      { id: 'pyq-2015-jun', title: 'UGC NET Paper 2 — PYQ 2015 June', year: 2015, tags:['pyq','2015'], type: 'pyq', link: 'https://forms.gle/GyBdX8zCALsBdY5s8', desc: 'Complete paper for 2015 June (Population Studies).' },
+      { id: 'pyq-2014-dec', title: 'UGC NET Paper 2 — PYQ 2014 December', year: 2014, tags:['pyq','2014'], type: 'pyq', link: 'https://forms.gle/t9vyxPsZCpQ8YF499', desc: 'Complete paper for 2014 December (Population Studies).' },
+      { id: 'pyq-2014-jun', title: 'UGC NET Paper 2 — PYQ 2014 June', year: 2014, tags:['pyq','2014'], type: 'pyq', link: 'https://forms.gle/eb31KToBaa6mSq9E8', desc: 'Complete paper for 2014 June (Population Studies).' },
+
+      // --- Mock tests
+      { id: 'mock-01', title: 'Mock Test 01 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/QrXVQ5KkuUKpuRSa6', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-02', title: 'Mock Test 02 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/GEypWRRqqpt55UHP7', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-03', title: 'Mock Test 03 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/Qqv2vgRCwUqWoNJr7', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-04', title: 'Mock Test 04 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/qgmpEKpScWjyNCpP9', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-05', title: 'Mock Test 05 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/e4FftQdPdQdDCsJ69', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-06', title: 'Mock Test 06 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/vTMJi7bBGukNgVdD6', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-07', title: 'Mock Test 07 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/5JtF9uoKAc7LhtS99', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-08', title: 'Mock Test 08 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/waHm4UKfxaShn9VZ9', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-09', title: 'Mock Test 09 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/ET4egN9ULpRHu1qw7', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-10', title: 'Mock Test 10 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/cJKn8JcoRbSLXjod7', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-11', title: 'Mock Test 11 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/458yzuZyNkVnJTLN8', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-12', title: 'Mock Test 12 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/Mq5pa6ea7hTneER89', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-13', title: 'Mock Test 13 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/v63Ew4poKQNMUaG68', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-14', title: 'Mock Test 14 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/gHjLYzhe7joR4cpe8', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-15', title: 'Mock Test 15 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/FqVXhorgpBfaPWyW6', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-16', title: 'Mock Test 16 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/hMQhShftD5fyrZBG6', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-17', title: 'Mock Test 17 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/22F2oY9XJgj6jhLbA', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-18', title: 'Mock Test 18 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/5MLo2qqmf1b2A4tm9', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-19', title: 'Mock Test 19 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/e8oE2vQ8g9cYiJocA', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+      { id: 'mock-20', title: 'Mock Test 20 — Population Studies', year: 2025, tags:['mcq','timed'], type: 'mock', link: 'https://forms.gle/4QGfP9SCSXkfD27m9', desc: '100 MCQs; 120 minutes. Solutions published after window.' },
+
+      // --- Important Questions
+      { id: 'imp-01', title: 'Important Questions Set 1', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/LvmiZRg81DRj67gXA', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+      { id: 'imp-02', title: 'Important Questions Set 2', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/Lw9zcNEQunZUJAwY7', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+      { id: 'imp-03', title: 'Important Questions Set 3', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/6GLpPziXc4Pkw6R57', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+      { id: 'imp-04', title: 'Important Questions Set 4', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/1JtKoqBXUN5FpnRZ6', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+      { id: 'imp-05', title: 'Important Questions Set 5', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/x8aY9Gk5MNpg52GCA', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+      { id: 'imp-06', title: 'Important Questions Set 6', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/espKuxC4WdvYVP7E6', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+      { id: 'imp-07', title: 'Important Questions Set 7(NEW)', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/WGr78LXaaQ4RojSw6', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+      { id: 'imp-08', title: 'Important Questions Set 8(NEW)', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/NhzCe5V1N9JNdBzq5', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+      { id: 'imp-09', title: 'Important Questions Set 9(NEW)', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/zadEiwttjMnxUueS8', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+      { id: 'imp-10', title: 'Important Questions Set 10(NEW)', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/z9cvjthPKvYtmbNL9', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+       { id: 'imp-11', title: 'Important Questions Set 11(NEW)', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/QS1XzWU6aG2SUWWQ6', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+      { id: 'imp-12', title: 'Important Questions Set 12(NEW)', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/f1G7UEUFkrysBjSu9', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+      
+       { id: 'imp-13', title: 'Important Questions Set 13(NEW)', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/5KPGvGbDygjDGnzv8', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+       { id: 'imp-14', title: 'Important Questions Set 14(NEW)', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/e3zmQqYssW1y4iaF8', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+      { id: 'imp-15', title: 'Important Questions Set 15(NEW)', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/X7npheZQvWhNsdR78', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+       { id: 'imp-16', title: 'Important Questions Set 16(NEW)', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/3oXN31FumzhgYEH29', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+{ id: 'imp-17', title: 'Important Questions Set 17(NEW)', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/66L7kfSuDVwVDvpy9', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+{ id: 'imp-18', title: 'Important Questions Set 18(NEW)', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/u8gRecnWusaG7sw29', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+{ id: 'imp-19', title: 'Important Questions Set 19(NEW)', year: null, tags:['imp','repeated'], type: 'imp', link: 'https://forms.gle/8TfeXgpK6KbBLSxK6', desc: 'Most Important Questions (learn by repetition). Important/related questions for practice.' },
+
+      // --- Books & Public Materials
+      
+      { id: 'book-1', title: 'Population Studies — Intro', year: 2017, tags:['book','pdf'], type: 'book', link: 'pdfmaterial-detail.html#book-1', desc:'A public-domain book covering basic demographic methods.' },
+      { id: 'book-2', title: 'Population Studies — Intro', year: 2017, tags:['book','pdf','video'], type: 'video', link: 'videos.html#book-1', desc:'A public-domain book covering basic demographic methods.' },
+    
+    ];
+
+    /*************************************************************************
+     * DO NOT CHANGE BELOW unless you know JS.
+     * This will render the UI, filter, search and do modal operations.
+     *************************************************************************/
+    const listGrid = document.getElementById('listGrid');
+    const countsEl = document.getElementById('counts');
+    const searchInput = document.getElementById('searchInput');
+    const clearSearchBtn = document.getElementById('clearSearch');
+    const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
+    const modal = document.getElementById('modalBackdrop');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalMeta = document.getElementById('modalMeta');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalLinks = document.getElementById('modalLinks');
+    const modalClose = document.getElementById('modalClose');
+
+    let activeCategory = 'all';
+    let query = '';
+
+    // helper: create link element with open + copy
+    function createActionButtons(item) {
+      const container = document.createElement('div');
+      container.className = 'card-actions';
+
+      const openBtn = document.createElement('a');
+      openBtn.className = 'btn primary';
+      openBtn.textContent = item.type === 'mock' ? 'Open Test' : 'Open';
+      openBtn.href = item.link;
+      openBtn.target = '_blank';
+      openBtn.rel = 'noopener';
+
+      const copyBtn = document.createElement('button');
+      copyBtn.className = 'btn ghost';
+      copyBtn.textContent = 'Copy link';
+      copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(item.link).then(() => {
+          copyBtn.textContent = 'Copied ✓';
+          setTimeout(()=> copyBtn.textContent = 'Copy link', 2000);
+        }).catch(()=> {
+          alert('Copy failed. Use your browser to copy the link.');
+        });
+      });
+
+      const detailsBtn = document.createElement('button');
+      detailsBtn.className = 'btn ghost';
+      detailsBtn.textContent = 'Details';
+      detailsBtn.addEventListener('click', () => openModal(item));
+
+      container.appendChild(openBtn);
+      container.appendChild(copyBtn);
+      container.appendChild(detailsBtn);
+      return container;
+    }
+
+    function renderCards(list) {
+      listGrid.innerHTML = '';
+      if (!list.length) {
+        listGrid.innerHTML = '<div class="muted">No items found.</div>';
+        countsEl.textContent = `0 items`;
+        return;
+      }
+
+      list.forEach(item => {
+        const c = document.createElement('article');
+        c.className = 'card';
+        c.id = item.id;
+
+        const h = document.createElement('h3');
+        h.textContent = item.title;
+
+        const small = document.createElement('div');
+        small.className = 'small';
+        small.textContent = (item.year ? item.year + ' · ' : '') + (item.tags ? item.tags.join(', ') : '');
+
+        const desc = document.createElement('p');
+        desc.className = 'muted';
+        desc.textContent = item.desc || '';
+
+        const tags = document.createElement('div');
+        tags.className = 'tags';
+        (item.tags || []).slice(0,5).forEach(t => {
+          const tk = document.createElement('span');
+          tk.className = 'tag';
+          tk.textContent = t;
+          tags.appendChild(tk);
+        });
+
+        c.appendChild(h);
+        c.appendChild(small);
+        if (item.desc) c.appendChild(desc);
+        c.appendChild(tags);
+        c.appendChild(createActionButtons(item));
+
+        listGrid.appendChild(c);
+      });
+
+      countsEl.textContent = `${list.length} item(s) — showing ${activeCategory === 'all' ? 'all categories' : activeCategory.toUpperCase()}.`;
+    }
+
+    // filter & search
+    function applyFilters() {
+      query = searchInput.value.trim().toLowerCase();
+      let filtered = items.slice();
+
+      if (activeCategory !== 'all') {
+        filtered = filtered.filter(i => i.type === activeCategory);
+      }
+      if (query) {
+        filtered = filtered.filter(i => {
+          return (i.title && i.title.toLowerCase().includes(query)) ||
+                 (i.desc && i.desc.toLowerCase().includes(query)) ||
+                 (i.tags && i.tags.join(' ').toLowerCase().includes(query)) ||
+                 (i.year && String(i.year).includes(query));
+        });
+      }
+      renderCards(filtered);
+    }
+
+    // activate filter buttons
+    filterBtns.forEach(b => {
+      b.addEventListener('click', () => {
+        filterBtns.forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        activeCategory = b.dataset.cat;
+        // update hash for deep links
+        if (activeCategory === 'all') history.replaceState(null, '', location.pathname);
+        else location.hash = activeCategory;
+        applyFilters();
+      });
+    });
+
+    // search events
+    searchInput.addEventListener('input', () => applyFilters());
+    clearSearchBtn.addEventListener('click', () => { searchInput.value=''; applyFilters(); });
+
+    // modal handling
+    function openModal(item) {
+      modalTitle.textContent = item.title;
+      modalMeta.textContent = (item.year ? item.year + ' · ' : '') + item.type.toUpperCase();
+      modalDesc.textContent = item.desc || '';
+      modalLinks.innerHTML = '';
+
+      const open = document.createElement('a');
+      open.href = item.link;
+      open.target = '_blank';
+      open.rel = 'noopener';
+      open.className = 'btn primary';
+      open.textContent = 'Open Resource';
+      modalLinks.appendChild(open);
+
+      const copy = document.createElement('button');
+      copy.className = 'btn ghost';
+      copy.textContent = 'Copy link';
+      copy.style.marginLeft = '8px';
+      copy.addEventListener('click', ()=>{
+        navigator.clipboard.writeText(item.link).then(()=> {
+          copy.textContent = 'Copied ✓';
+          setTimeout(()=> copy.textContent = 'Copy link', 1800);
+        });
+      });
+      modalLinks.appendChild(copy);
+
+      // optional: show tags & extra data
+      if (item.tags && item.tags.length) {
+        const p = document.createElement('p');
+        p.className = 'muted';
+        p.style.marginTop = '12px';
+        p.textContent = 'Tags: ' + item.tags.join(', ');
+        modalLinks.appendChild(p);
+      }
+
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden','false');
+    }
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    function closeModal() {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden','true');
+    }
+
+    // init
+    (function init(){
+      // apply initial hash category if present
+      const h = location.hash ? location.hash.slice(1) : '';
+      if (['pyq','mock','imp','book'].includes(h)) {
+        activeCategory = h;
+        filterBtns.forEach(b => b.classList.toggle('active', b.dataset.cat === h));
+      }
+      applyFilters();
+
+      // if hash points to item id, open it
+      const hash = location.hash ? location.hash.slice(1) : '';
+      if (hash && items.some(it => it.id === hash)) {
+        const it = items.find(x => x.id === hash);
+        setTimeout(()=> openModal(it), 300);
+      }
+    })();
+  </script>
+</body>
+</html>

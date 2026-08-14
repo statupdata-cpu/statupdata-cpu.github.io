@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Software Training — STATUP</title>
+  <meta name="description" content="STATUP software training — SPSS, Python, R and Excel. Curriculum, materials and registration." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23101F14'/%3E%3Crect x='12' y='3' width='9' height='18' rx='4' fill='%238BC24A'/%3E%3C/svg%3E">
+  <style>
+    .sw-hero{padding:40px 0 6px;}
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 16px;}
+    .tab-btn{padding:11px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;cursor:pointer;font-weight:700;font-size:13.5px;color:var(--ink);font-family:var(--font-body);transition:all .15s ease;}
+    .tab-btn:hover{border-color:var(--brand)}
+    .tab-btn.active{background:var(--ink);border-color:var(--ink);color:#fff;}
+    .panel{display:none;background:#fff;padding:22px;border-radius:16px;border:1px solid var(--line);}
+    .panel.active{display:block;}
+    .grid-2{display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:start;}
+    .subtabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0;}
+    .subbtn{padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--paper);cursor:pointer;font-weight:600;font-size:13px;color:var(--ink);font-family:var(--font-body);}
+    .subbtn.active{background:var(--brand);border-color:var(--brand);color:#fff;}
+    .subpanel{display:none;margin-top:12px;}
+    .subpanel.active{display:block;}
+    .sw-aside{padding:18px;border-radius:12px;background:var(--paper);border:1px solid var(--line);}
+    @media (max-width:900px){ .grid-2{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html">
+        <img src="images/logo.png" alt="STATUP logo" class="logo-img" onerror="this.style.display='none'">
+        <div class="logo-text"><strong>STATUP</strong><small>Streamline Your Analysis, Elevate Your Decision</small></div>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="register.html" class="nav-link cta">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="wrap">
+      <section class="sw-hero">
+        <div class="eyebrow">Software Training</div>
+        <h1 class="page-title">Software Training</h1>
+        <p class="lead">Project-focused training in SPSS, R, Python, Excel, Jamovi &amp; JASP. Each course includes curriculum, materials and a registration link.</p>
+      </section>
+
+      <div class="tabs" role="tablist" aria-label="Software courses">
+        <button class="tab-btn" data-target="spss">SPSS</button>
+        <button class="tab-btn" data-target="python">Python</button>
+        <button class="tab-btn" data-target="r">R</button>
+        <button class="tab-btn" data-target="excel">Excel</button>
+      </div>
+
+      <!-- SPSS -->
+      <div id="spss" class="panel" role="tabpanel">
+        <div class="grid-2">
+          <div>
+            <h2 style="margin-top:0;font-size:22px;">SPSS Course — Beginner → Advanced</h2>
+            <p class="muted">Practical training: import, cleaning, tests, regression, syntax and reporting.</p>
+
+            <div class="subtabs" role="tablist" aria-label="SPSS tabs">
+              <button class="subbtn" data-target="spss-curr">Curriculum</button>
+              <button class="subbtn" data-target="spss-materials">Materials</button>
+              <button class="subbtn" data-target="spss-register">Register</button>
+              <button class="subbtn" data-target="spss-examples">Example files</button>
+            </div>
+
+            <div id="spss-curr" class="subpanel">
+              <h4>Curriculum</h4>
+              <ul class="muted" style="margin-left:1em;line-height:1.7;">
+                <li>Data import &amp; cleaning</li>
+                <li>Descriptive &amp; inferential tests</li>
+                <li>Regression &amp; reporting</li>
+                <li>Syntax &amp; automation</li>
+              </ul>
+            </div>
+
+            <div id="spss-materials" class="subpanel">
+              <h4>Materials</h4>
+              <ul class="muted" style="margin-left:1em;line-height:1.7;">
+                <li><a class="link" href="files/spss-notes.pdf">SPSS Notes (PDF)</a></li>
+                <li><a class="link" href="files/spss-dataset.sav">Sample dataset</a></li>
+              </ul>
+            </div>
+
+            <div id="spss-register" class="subpanel">
+              <a class="btn primary" href="https://forms.gle/9QVBZMjkR7R5BF7bA" target="_blank" rel="noopener">Register (Google Form)</a>
+            </div>
+
+            <div id="spss-examples" class="subpanel">
+              <p class="muted">Download example syntaxes and demonstration files.</p>
+              <a class="link" href="files/spss-syntax.zip">Download examples (zip)</a>
+            </div>
+          </div>
+
+          <aside class="sw-aside">
+            <h4 style="margin-top:0;">Quick info</h4>
+            <p class="muted">Duration: Variable · Mode: Project-based</p>
+            <div style="margin-top:10px;"><a class="btn primary small" href="https://forms.gle/9QVBZMjkR7R5BF7bA" target="_blank" rel="noopener">Enroll</a></div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Python -->
+      <div id="python" class="panel" role="tabpanel">
+        <div class="grid-2">
+          <div>
+            <h2 style="margin-top:0;font-size:22px;">Python for Statistics</h2>
+            <p class="muted">Pandas, statsmodels, visualization, reproducible notebooks and deployment basics.</p>
+
+            <div class="subtabs" role="tablist" aria-label="Python tabs">
+              <button class="subbtn" data-target="py-curr">Curriculum</button>
+              <button class="subbtn" data-target="py-materials">Materials</button>
+              <button class="subbtn" data-target="py-register">Register</button>
+              <button class="subbtn" data-target="py-notebooks">Notebooks</button>
+            </div>
+
+            <div id="py-curr" class="subpanel">
+              <h4>Curriculum</h4>
+              <ul class="muted" style="margin-left:1em;line-height:1.7;">
+                <li>Pandas &amp; data wrangling</li>
+                <li>Hypothesis testing &amp; regression (statsmodels)</li>
+                <li>Plots with matplotlib &amp; seaborn</li>
+              </ul>
+            </div>
+
+            <div id="py-materials" class="subpanel">
+              <h4>Materials</h4>
+              <ul class="muted" style="margin-left:1em;line-height:1.7;">
+                <li><a class="link" href="files/py-notes.pdf">Python course notes</a></li>
+                <li><a class="link" href="files/py-requirements.txt">requirements.txt</a></li>
+              </ul>
+            </div>
+
+            <div id="py-register" class="subpanel">
+              <a class="btn primary" href="https://forms.gle/9QVBZMjkR7R5BF7bA" target="_blank" rel="noopener">Register</a>
+            </div>
+
+            <div id="py-notebooks" class="subpanel">
+              <a class="link" href="files/py-notebooks.zip">Download notebooks (zip)</a>
+            </div>
+          </div>
+
+          <aside class="sw-aside">
+            <h4 style="margin-top:0;">Quick info</h4>
+            <p class="muted">Prerequisite: Basic programming knowledge recommended</p>
+            <div style="margin-top:10px;"><a class="btn primary small" href="https://forms.gle/9QVBZMjkR7R5BF7bA" target="_blank" rel="noopener">Enroll</a></div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- R -->
+      <div id="r" class="panel" role="tabpanel">
+        <div class="grid-2">
+          <div>
+            <h2 style="margin-top:0;font-size:22px;">R for Statistics</h2>
+            <p class="muted">Tidyverse, modeling, hypothesis testing and reproducible workflows with R Markdown.</p>
+
+            <div class="subtabs" role="tablist">
+              <button class="subbtn" data-target="r-curr">Curriculum</button>
+              <button class="subbtn" data-target="r-materials">Materials</button>
+              <button class="subbtn" data-target="r-register">Register</button>
+            </div>
+
+            <div id="r-curr" class="subpanel">
+              <h4>Curriculum</h4>
+              <ul class="muted" style="margin-left:1em;line-height:1.7;">
+                <li>Data wrangling (dplyr)</li>
+                <li>Visualization (ggplot2)</li>
+                <li>Modeling &amp; reporting</li>
+              </ul>
+            </div>
+
+            <div id="r-materials" class="subpanel">
+              <a class="link" href="files/r-resources.zip">Download resources</a>
+            </div>
+
+            <div id="r-register" class="subpanel">
+              <a class="btn primary" href="https://forms.gle/LtQoXyTuEkyiPMAB6" target="_blank" rel="noopener">Register</a>
+            </div>
+          </div>
+
+          <aside class="sw-aside">
+            <h4 style="margin-top:0;">Quick info</h4>
+            <p class="muted">Great for reproducible research and reporting</p>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Excel -->
+      <div id="excel" class="panel" role="tabpanel">
+        <div class="grid-2">
+          <div>
+            <h2 style="margin-top:0;font-size:22px;">Excel for Data Analysis</h2>
+            <p class="muted">Data cleaning, pivot tables, charts, and basic statistical functions for quick analysis.</p>
+
+            <div class="subtabs">
+              <button class="subbtn" data-target="ex-curr">Curriculum</button>
+              <button class="subbtn" data-target="ex-materials">Materials</button>
+              <button class="subbtn" data-target="ex-register">Register</button>
+            </div>
+
+            <div id="ex-curr" class="subpanel">
+              <h4>Curriculum</h4>
+              <ul class="muted" style="margin-left:1em;line-height:1.7;">
+                <li>Cleaning with formulas</li>
+                <li>Pivot tables &amp; dashboards</li>
+                <li>Basic statistical testing</li>
+              </ul>
+            </div>
+
+            <div id="ex-materials" class="subpanel">
+              <a class="link" href="files/excel-sheets.zip">Download example sheets</a>
+            </div>
+
+            <div id="ex-register" class="subpanel">
+              <a class="btn primary" href="https://forms.gle/9QVBZMjkR7R5BF7bA" target="_blank" rel="noopener">Register</a>
+            </div>
+          </div>
+
+          <aside class="sw-aside">
+            <h4 style="margin-top:0;">Quick info</h4>
+            <p class="muted">Suitable for non-programmers and analysts</p>
+          </aside>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="logo" href="index.html">
+          <img src="images/logo-white.png" alt="STATUP logo" class="logo-img" style="height:30px" onerror="this.style.display='none'">
+          <div class="logo-text"><strong>STATUP</strong><small></small></div>
+        </a>
+        <p class="muted" style="margin-top:10px;max-width:320px;">Streamline Your Analysis, Elevate Your Decision.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="index.html">Home</a></p>
+        <p><a href="services.html">Services</a></p>
+        <p><a href="register.html">Register</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Statup, Calicut, Kerala, India</p>
+        <p><a href="mailto:statup.data@gmail.com">statup.data@gmail.com</a></p>
+        <p><a href="https://wa.me/919385362051">+91 93853 62051</a></p>
+      </div>
+    </div>
+    <div class="wrap copyright">
+      <small>© <span id="year"></span> STATUP — Streamline Your Analysis, Elevate Your Decision.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (function(){
+      const tabBtns = Array.from(document.querySelectorAll('.tab-btn'));
+      const panels = Array.from(document.querySelectorAll('.panel'));
+      const setActive = (id, push=true) => {
+        tabBtns.forEach(b => b.classList.toggle('active', b.dataset.target === id));
+        panels.forEach(p => p.classList.toggle('active', p.id === id));
+        if (push) location.hash = id;
+        const panel = document.getElementById(id);
+        if (panel) {
+          const first = panel.querySelector('.subbtn');
+          if (first) activateSub(first.dataset.target, panel);
+        }
+      };
+      tabBtns.forEach(b => b.addEventListener('click', ()=> setActive(b.dataset.target)));
+      document.addEventListener('click', (e)=>{
+        const s = e.target.closest('.subbtn');
+        if (!s) return;
+        const p = e.target.closest('.panel');
+        activateSub(s.dataset.target, p);
+      });
+      function activateSub(subId, panel){
+        if (!panel) return;
+        const btns = Array.from(panel.querySelectorAll('.subbtn'));
+        const subs = Array.from(panel.querySelectorAll('.subpanel'));
+        btns.forEach(b => b.classList.toggle('active', b.dataset.target === subId));
+        subs.forEach(s => s.classList.toggle('active', s.id === subId));
+        location.hash = panel.id + (subId ? '-' + subId.split('-').slice(-1)[0] : '');
+      }
+      const h = location.hash ? location.hash.slice(1) : '';
+      if (h) {
+        const [main, sub] = h.split('-',2);
+        if (document.getElementById(main)) {
+          setActive(main, false);
+          if (sub) {
+            const p = document.getElementById(main);
+            const btn = Array.from(p.querySelectorAll('.subbtn')).find(b => b.dataset.target.includes(sub));
+            if (btn) activateSub(btn.dataset.target, p);
+          }
+        } else {
+          setActive('spss', false);
+        }
+      } else setActive('spss', false);
+    })();
+  </script>
+</body>
+</html>
