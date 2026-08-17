@@ -3935,26 +3935,47 @@ function buildPYQ(){
 
 // Paper 1 PYQ — own tab, ordered by exam schedule (newest session first, as listed)
 const PAPER1_PYQS=[
- {year:'JUN\n2026',exam:'UGC NET Paper 1 2026 ',sessions:'JUNE Examination set 1',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'https://drive.google.com/file/d/1nzOj4ipZGVcldRsbjuiynL8PyWOuNX92/view?usp=drive_link'},
-  {year:'DEC\n2025',exam:'UGC NET Paper 1 2025 ',sessions:'December Examination set 1',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'https://drive.google.com/file/d/1ZzLv0nexSTEbylYncZPngLolZCno1NQR/view?usp=sharing'},
- {year:'DEC\n2025',exam:'UGC NET Paper 1 2025 ',sessions:'December Examination set 2',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'https://drive.google.com/file/d/1-6Fj_xJ9v7EMy4ZyE8JwqRAYlBN8HaX3/view?usp=sharing'},
-  
- {year:'DEC\n2025',exam:'UGC NET Paper 1 2025 ',sessions:'December Examination set 3',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:''},
-  
- {year:'DEC\n2025',exam:'UGC NET Paper 1 2025 ',sessions:'December Examination set 4',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:''},
-  
- {year:'DEC\n2025',exam:'UGC NET Paper 1 2025 ',sessions:'December Examination set 5',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:''},
-  
- {year:'DEC\n2025',exam:'UGC NET Paper 1 2025 ',sessions:'December Examination set 1',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:''},
-  {year:'JUN\n2025',exam:'UGC NET Paper 1 2025',sessions:'June Examination',desc:'Full Paper 1 set covering all 10 units with detailed answer key.',link:'#'},
-  {year:'DEC\n2024',exam:'UGC NET Paper 1 2024',sessions:'December Examination',desc:'Higher education system, ICT and data interpretation focused questions.',link:'#'},
-  {year:'JUN\n2024',exam:'UGC NET Paper 1 2024',sessions:'June Examination',desc:'Comprehensive Paper 1 practice set with explanations.',link:'#'},
-  {year:'DEC\n2023',exam:'UGC NET Paper 1 2023',sessions:'December Examination',desc:'Research aptitude and mathematical reasoning heavy paper.',link:'#'},
-  {year:'JUN\n2023',exam:'UGC NET Paper 1 2023',sessions:'June Examination',desc:'Balanced coverage across all Paper 1 units.',link:'#'},
-  {year:'DEC\n2022',exam:'UGC NET Paper 1 2022',sessions:'December Examination',desc:'Useful for revising communication and people-development-environment topics.',link:'#'},
-  {year:'JUN\n2022',exam:'UGC NET Paper 1 2022',sessions:'June Examination',desc:'Foundational paper covering teaching and research aptitude basics.',link:'#'},
-  {year:'DEC\n2021',exam:'UGC NET Paper 1 2021',sessions:'December Examination',desc:'Good source of previous-pattern reasoning and comprehension questions.',link:'#'},
-  {year:'JUN\n2021',exam:'UGC NET Paper 1 2021',sessions:'June Examination',desc:'Complete Paper 1 paper for additional practice.',link:'#'}
+{year:'JUN\n2026',exam:'UGC NET Paper 1 2026 ',sessions:'June Examination set 1',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'https://drive.google.com/file/d/1nzOj4ipZGVcldRsbjuiynL8PyWOuNX92/view?usp=drive_link'},
+{year:'JUN\n2026',exam:'UGC NET Paper 1 2026 ',sessions:'June Examination set 2',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:''},
+{year:'JUN\n2026',exam:'UGC NET Paper 1 2026 ',sessions:'June Examination set 3',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:''},
+{year:'JUN\n2026',exam:'UGC NET Paper 1 2026 ',sessions:'June Examination set 4',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:''},
+{year:'JUN\n2026',exam:'UGC NET Paper 1 2026 ',sessions:'June Examination set 5',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:''},
+
+{year:'DEC\n2025',exam:'UGC NET Paper 1 2025 ',sessions:'December Examination set 1',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'https://drive.google.com/file/d/1ZzLv0nexSTEbylYncZPngLolZCno1NQR/view?usp=sharing'},
+{year:'DEC\n2025',exam:'UGC NET Paper 1 2025 ',sessions:'December Examination set 2',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'https://drive.google.com/file/d/1-6Fj_xJ9v7EMy4ZyE8JwqRAYlBN8HaX3/view?usp=sharing'},
+{year:'DEC\n2025',exam:'UGC NET Paper 1 2025 ',sessions:'December Examination set 3',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:''},
+{year:'DEC\n2025',exam:'UGC NET Paper 1 2025 ',sessions:'December Examination set 4',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:''},
+{year:'DEC\n2025',exam:'UGC NET Paper 1 2025 ',sessions:'December Examination set 5',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:''},
+
+{year:'JUN\n2025',exam:'UGC NET Paper 1 2025',sessions:'June Examination set 1',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'JUN\n2025',exam:'UGC NET Paper 1 2025',sessions:'June Examination set 2',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'JUN\n2025',exam:'UGC NET Paper 1 2025',sessions:'June Examination set 3',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'JUN\n2025',exam:'UGC NET Paper 1 2025',sessions:'June Examination set 4',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'JUN\n2025',exam:'UGC NET Paper 1 2025',sessions:'June Examination set 5',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+
+{year:'DEC\n2024',exam:'UGC NET Paper 1 2024',sessions:'December Examination set 1',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'DEC\n2024',exam:'UGC NET Paper 1 2024',sessions:'December Examination set 2',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'DEC\n2024',exam:'UGC NET Paper 1 2024',sessions:'December Examination set 3',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'DEC\n2024',exam:'UGC NET Paper 1 2024',sessions:'December Examination set 4',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'DEC\n2024',exam:'UGC NET Paper 1 2024',sessions:'December Examination set 5',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+
+{year:'JUN\n2024',exam:'UGC NET Paper 1 2024',sessions:'June Examination set 1',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'JUN\n2024',exam:'UGC NET Paper 1 2024',sessions:'June Examination set 2',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'JUN\n2024',exam:'UGC NET Paper 1 2024',sessions:'June Examination set 3',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'JUN\n2024',exam:'UGC NET Paper 1 2024',sessions:'June Examination set 4',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'JUN\n2024',exam:'UGC NET Paper 1 2024',sessions:'June Examination set 5',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+
+{year:'DEC\n2023',exam:'UGC NET Paper 1 2023',sessions:'December Examination set 1',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'DEC\n2023',exam:'UGC NET Paper 1 2023',sessions:'December Examination set 2',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'DEC\n2023',exam:'UGC NET Paper 1 2023',sessions:'December Examination set 3',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'DEC\n2023',exam:'UGC NET Paper 1 2023',sessions:'December Examination set 4',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'DEC\n2023',exam:'UGC NET Paper 1 2023',sessions:'December Examination set 5',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+
+{year:'JUN\n2023',exam:'UGC NET Paper 1 2023',sessions:'June Examination set 1',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'JUN\n2023',exam:'UGC NET Paper 1 2023',sessions:'June Examination set 2',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'JUN\n2023',exam:'UGC NET Paper 1 2023',sessions:'June Examination set 3',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'JUN\n2023',exam:'UGC NET Paper 1 2023',sessions:'June Examination set 4',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'},
+{year:'JUN\n2023',exam:'UGC NET Paper 1 2023',sessions:'June Examination set 5',desc:'Teaching aptitude, research aptitude, reasoning and comprehension etc questions with solutions.',link:'#'}
 ];
 function buildPaper1PYQ(){
   document.getElementById('paper1pyq-grid').innerHTML=PAPER1_PYQS.map(pyqCard).join('');
