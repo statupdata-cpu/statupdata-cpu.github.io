@@ -5864,17 +5864,29 @@ function buildBooks(){
 }
 
 // ── Paper 1 (Teaching & Research Aptitude) — unit-wise downloadable notes, mirrors Notes tab pattern ──
+
 const PAPER1_NOTES=[
-  {id:'p1',num:'I',title:'Teaching Aptitude',icon:'📖',color:'#1e3a5f',desc:'Concept, objectives, teacher effectiveness, characteristics of good teachers, methods of teaching, teaching aids and evaluation systems.',link:'https://drive.google.com/file/d/1g6Zi2UYKVR7l72ZiAnNVdKfeghvI05q_/view?usp=sharing'},
-  {id:'p2',num:'II',title:'Research Aptitude',icon:'🔬',color:'#2d5a8a',desc:'Meaning, types and characteristics of research, steps of research, research methods, thesis writing and citation formats.',link:'https://drive.google.com/file/d/1Io8GxZ5xDRk-BImcjwPfySICBurMpWvW/view?usp=sharing'},
-  {id:'p3',num:'III',title:'Comprehension',icon:'📄',color:'#1e4a6f',desc:'Passage-based comprehension practice with strategy notes for tackling reading comprehension questions quickly.',link:''},
-  {id:'p4',num:'IV',title:'Communication',icon:'🗣️',color:'#1B3B22',desc:'Meaning, types and characteristics of communication, effective communication, barriers and classroom communication.',link:'https://drive.google.com/file/d/1fL6LbC0HDPBEPBPwCPvYcc9rSRRKA7jP/view?usp=sharing'},
-  {id:'p5',num:'V',title:'Mathematical Reasoning',icon:'🧮',color:'#5a3a2d',desc:'Number series, letter series, codes, relationships, classification, analogies, statement-conclusion and syllogisms.',link:'https://drive.google.com/file/d/1s8_Xgm0KcRk-rUEKSkv6rPZMieaaIPP7/view?usp=sharing'},
-  {id:'p6',num:'VI',title:'Logical Reasoning',icon:'📊',color:'#3a2d5a',desc:'Structure of Arguments Categorical Propositions Square of Opposition  Mood & Figure  FallaciesUses of Language Deductive  Inductive Reasoning AnalogiesVenn Diagrams Indian Logic Pramanas.',link:'https://drive.google.com/file/d/1Pa1yuv9_LzSMwWDK38rYxLpHuWbF28nx/view?usp=sharing'},
-  {id:'p7',num:'VII',title:'Information & Communication Technology (ICT)',icon:'💻',color:'#2d3a5a',desc:'General abbreviations, ICT basics, internet, digital initiatives in education and ICT teaching-learning applications.',link:'https://drive.google.com/file/d/1fL6LbC0HDPBEPBPwCPvYcc9rSRRKA7jP/view?usp=sharing'},
-  {id:'p8',num:'VIII',title:'People, Development & Environment',icon:'🌍',color:'#2d4a3a',desc:'Development and environment issues, natural resources, pollution, climate change, disaster management and sustainability.',link:'#'},
-  {id:'p9',num:'IX',title:'Higher Education System',icon:'🎓',color:'#4a2d5a',desc:'Institutions of higher learning in India, evolution, structure, growth and development of higher education in India.',link:'#'},
-  {id:'p10',num:'X',title:'Higher Education Governance, Polity & Administration',icon:'🏛️',color:'#5a2d3a',desc:'Governance and administration structures, policies, regulatory bodies and formal/distance education systems.',link:'#'}
+
+{id:'p1',num:'I',title:'Teaching Aptitude',icon:'📖',color:'#1e3a5f',desc:'Concept, objectives, teacher effectiveness, characteristics of good teachers, methods of teaching, teaching aids and evaluation systems.',link:'https://drive.google.com/file/d/1g6Zi2UYKVR7l72ZiAnNVdKfeghvI05q_/view?usp=sharing'},
+
+{id:'p2',num:'II',title:'Research Aptitude',icon:'🔬',color:'#2d5a8a',desc:'Meaning, types and characteristics of research, steps of research, research methods, thesis writing and citation formats.',link:'https://drive.google.com/file/d/1Io8GxZ5xDRk-BImcjwPfySICBurMpWvW/view?usp=sharing'},
+
+{id:'p3',num:'III',title:'Comprehension',icon:'📄',color:'#1e4a6f',desc:'Passage-based comprehension practice with strategy notes for tackling reading comprehension questions quickly.',link:''},
+
+{id:'p4',num:'IV',title:'Communication',icon:'🗣️',color:'#1B3B22',desc:'Meaning, types and characteristics of communication, effective communication, barriers and classroom communication.',link:'https://drive.google.com/file/d/1fL6LbC0HDPBEPBPwCPvYcc9rSRRKA7jP/view?usp=sharing'},
+
+{id:'p5',num:'V',title:'Mathematical Reasoning and Aptitude',icon:'🧮',color:'#5a3a2d',desc:'Number series, letter series, codes, relationships, classification, analogies, mathematical reasoning, statement-conclusion and syllogisms.',link:'https://drive.google.com/file/d/1s8_Xgm0KcRk-rUEKSkv6rPZMieaaIPP7/view?usp=sharing'},
+
+{id:'p6',num:'VI',title:'Logical Reasoning',icon:'📊',color:'#3a2d5a',desc:'Structure of arguments, categorical propositions, square of opposition, mood and figure, fallacies, uses of language, deductive and inductive reasoning, analogies, Venn diagrams and Indian logic including Pramanas.',link:'https://drive.google.com/file/d/1Pa1yuv9_LzSMwWDK38rYxLpHuWbF28nx/view?usp=sharing'},
+
+{id:'p7',num:'VII',title:'Data Interpretation',icon:'📈',color:'#2d3a5a',desc:'Sources, acquisition and classification of data, quantitative and qualitative data, graphical representation, interpretation of data and basic concepts of data analysis.',link:'https://drive.google.com/file/d/1fL6LbC0HDPBEPBPwCPvYcc9rSRRKA7jP/view?usp=sharing'},
+
+{id:'p8',num:'VIII',title:'People, Development & Environment',icon:'🌍',color:'#2d4a3a',desc:'Development and environment, human-environment interaction, sustainable development, pollution including air, water, soil, noise, hazardous, biomedical and electronic waste, climate change and its socio-economic and political dimensions, impacts of pollutants on human health, natural and energy resources including solar, wind, soil, hydro, geothermal, biomass, nuclear and forests, natural hazards and disasters with mitigation strategies, Environmental Protection Act (1986), National Action Plan on Climate Change, and international agreements and efforts including Montreal Protocol, Rio Summit, Convention on Biodiversity, Kyoto Protocol, Paris Agreement and International Solar Alliance.',link:'#'},
+
+{id:'p9',num:'IX',title:'Information & Communication Technology (ICT)',icon:'💻',color:'#2d3a5a',desc:'General abbreviations and terminology, basics of the Internet and Intranet, e-mail, audio and video-conferencing, digital initiatives in higher education and ICT applications in teaching and learning.',link:'#'},
+
+{id:'p10',num:'X',title:'Higher Education System',icon:'🎓',color:'#4a2d5a',desc:'Institutions of higher learning and education in ancient India, evolution of higher learning and research in post-independence India, Oriental, Conventional and Non-conventional learning programmes in India, professional, technical and skill-based education, value education and environmental education, policies, governance and administration.',link:'#'}
+
 ];
 function buildPaper1(){
   const html=PAPER1_NOTES.map(u=>{
