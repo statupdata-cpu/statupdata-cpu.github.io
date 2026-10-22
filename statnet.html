@@ -392,6 +392,33 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
 #exam-title{font-family:var(--font-display);letter-spacing:-0.01em;}
 .stat-num,.exam-timer-val,.result-score-num,.rsb-num,.mtc-num,.imp-num,
 .pyq-year,#exam-progress-text,.score-num{font-family:var(--font-mono);font-variant-numeric:tabular-nums;}
+
+/* ── Paper 1 mock tests (additive) ── */
+.p1-switch{display:flex;gap:10px;margin:0 0 20px;flex-wrap:wrap;}
+.p1-sw-btn{padding:10px 20px;border-radius:10px;border:1.5px solid #d4e6d4;background:#fff;color:#35630F;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;}
+.p1-sw-btn:hover{border-color:#8BC24A;background:#f8fdf5;}
+.p1-sw-btn.active{background:linear-gradient(90deg,#457C17,#8BC24A);color:#fff;border-color:#457C17;}
+.p1-cycle{font-size:13px;font-weight:700;color:#8a4a1a;margin:14px 2px 8px;letter-spacing:.02em;}
+.p1-empty{background:#fff;border-radius:12px;padding:24px;text-align:center;color:#6b8c6b;}
+.p1-passage,.p1-data{font-weight:400;font-size:13.5px;line-height:1.75;color:#1a2e1a;background:#f8fdf5;border:1px solid #d4e6d4;border-left:4px solid #8BC24A;border-radius:8px;padding:12px 14px;margin-bottom:14px;}
+.p1-passage{max-height:360px;overflow:auto;}
+.p1-data{overflow-x:auto;}
+.sc-q-text .p1-passage{max-height:110px;font-size:12px;}
+.sc-q-text .p1-data{font-size:12px;}
+.p1-tw{overflow-x:auto;margin:6px 0;}
+.p1-table{border-collapse:collapse;font-size:12.5px;font-weight:500;}
+.p1-table th,.p1-table td{border:1px solid #b9d3a3;padding:5px 10px;text-align:center;}
+.p1-table th{background:#1B3B22;color:#fff;font-weight:700;}
+.p1-ul,.p1-ol{margin:6px 0;padding-left:20px;}
+.p1-ol{list-style:none;padding-left:4px;}
+.p1-ol li,.p1-ul li{margin:3px 0;}
+.p1-lab{font-weight:700;margin-right:5px;}
+.p1-quote{margin:8px 0;padding:6px 12px;border-left:3px solid #b9d3a3;}
+.p1-red{color:#b91c1c;} .p1-green{color:#15803d;}
+.p1x{margin:0 0 9px;}
+.p1x-h{font-weight:800;color:#1e3a8a;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px;}
+.p1x-b{font-weight:400;}
+.p1-note{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;padding:6px 10px;border-radius:6px;margin-bottom:8px;font-weight:600;}
 </style>
 </head>
 <body>
@@ -662,7 +689,12 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
   </div>
   <div class="mock-list-screen" id="mock-list-screen">
     <div class="mock-welcome-bar"><div class="mwb-left"><h3 id="welcome-name">Welcome!</h3><p id="welcome-roll">Roll Number: —</p></div><button class="btn-mock-logout" onclick="doLogout()">Logout</button></div>
+    <div class="p1-switch">
+      <button class="p1-sw-btn active" id="sw-p2" onclick="setMockPaper('p2')">📊 Paper 2 — Statistics</button>
+      <button class="p1-sw-btn" id="sw-p1" onclick="setMockPaper('p1')">📄 Paper 1 — General Paper</button>
+    </div>
     <div id="mock-tests-grid"></div>
+    <div id="mock-tests-grid-p1" style="display:none"></div>
   </div>
   <div class="mock-exam-screen" id="mock-exam-screen">
     <div class="exam-header">
@@ -5628,7 +5660,7 @@ const VIDEOS_DATA = [
 
 {unit:'u5',num:7,title:'Chi-Square Tests',desc:'Chi-square distribution review, goodness-of-fit test, test of independence, test of homogeneity, contingency tables, expected frequencies and interpretation.',videoId:'Md3F_TZZyh0',source:'youtube',tags:['Unit V','Part 7']},
 
-{unit:'u5',num:8,title:'Nonparametric Tests',desc:'Sign test, Wilcoxon signed-rank test, Mann-Whitney U test, linear rank tests, Kruskal-Wallis test, assumptions, procedures, applications and comparisons.',videoId:'eO6gQxz8dXo',source:'youtube',tags:['Unit V','Part 8']},
+{unit:'u5',num:8,title:'Nonparametric Tests',desc:'Sign test, Wilcoxon signed-rank test, Mann-Whitney U test, linear rank tests, Kruskal-Wallis test, assumptions, procedures, applications and comparisons.',videoId:'',source:'youtube',tags:['Unit V','Part 8']},
 
 {unit:'u5',num:9,title:'Unit V — Final Revision & PYQ Session',desc:'Complete Unit V revision including formula sheet, theorem summary, hypothesis testing procedures, nonparametric methods and previous year NET/JRF questions.',videoId:'',source:'youtube',tags:['Unit V','Revision']},
 // ─────────────────────────────────────────────
@@ -6075,6 +6107,39 @@ const STUDENTS = {
 //  Format per question: {unit,q,opts:[4 strings],ans:0-3,exp}
 // ════════════════════════════════════════════════════════════════════
 const MASTER_QB = [];
+// Paper 1 (General Paper) question bank — separate from MASTER_QB so Paper 2 tests never mix with Paper 1.
+const PAPER1_QB = [];
+const PAPER1_PAPERS=[
+  {key:'jun26_a',title:'June 2026 · Set 1',cycle:'June 2026 Session',src:'file2'},
+  {key:'jan26_c',title:'06 Jan 2026 · Evening Shift',cycle:'December 2025 Session',src:'file1'},
+  {key:'jan26_a',title:'05 Jan 2026 · Morning Shift 1',cycle:'December 2025 Session',src:'file1'},
+  {key:'jan26_b',title:'02 Jan 2026 · Morning Shift',cycle:'December 2025 Session',src:'file1'},
+  {key:'dec25_a',title:'31 Dec 2025 · Morning Shift',cycle:'December 2025 Session',src:'file1'},
+  {key:'jun25_b',title:'27 Jun 2025 · Morning Shift 1',cycle:'June 2025 Session',src:'file2'},
+  {key:'jun25_d',title:'26 Jun 2025 · Evening Shift',cycle:'June 2025 Session',src:'file2'},
+  {key:'jun25_c',title:'26 Jun 2025 · Morning Shift',cycle:'June 2025 Session',src:'file2'},
+  {key:'jun25_e',title:'25 Jun 2025 · Shift 2',cycle:'June 2025 Session',src:'file1'},
+  {key:'jun25_a',title:'25 Jun 2025 · Morning Shift',cycle:'June 2025 Session',src:'file2'},
+  {key:'dec24_a',title:'Dec 2024 · Set 1',cycle:'December 2024 Session',src:'file1'},
+  {key:'aug24_g',title:'29 Aug 2024 · Morning Shift',cycle:'June 2024 Session',src:'file1'},
+  {key:'aug24_f',title:'28 Aug 2024 · Morning Shift',cycle:'June 2024 Session',src:'file1'},
+  {key:'aug24_d',title:'23 Aug 2024 · Evening Shift',cycle:'June 2024 Session',src:'file1'},
+  {key:'aug24_c',title:'23 Aug 2024 · Morning Shift',cycle:'June 2024 Session',src:'file1'},
+  {key:'aug24_e',title:'22 Aug 2024 · Morning Shift',cycle:'June 2024 Session',src:'file1'},
+  {key:'aug24_b',title:'21 Aug 2024 · Evening Shift',cycle:'June 2024 Session',src:'file1'},
+  {key:'aug24_a',title:'21 Aug 2024 · Morning Shift',cycle:'June 2024 Session',src:'file1'},
+  {key:'dec23_e',title:'11 Dec 2023 · Morning Shift',cycle:'December 2023 Session',src:'tex'},
+  {key:'dec23_d',title:'08 Dec 2023 · Evening Shift',cycle:'December 2023 Session',src:'tex'},
+  {key:'dec23_c',title:'08 Dec 2023 · Morning Shift',cycle:'December 2023 Session',src:'tex'},
+  {key:'dec23_b',title:'07 Dec 2023 · Morning Shift',cycle:'December 2023 Session',src:'tex'},
+  {key:'dec23_a',title:'06 Dec 2023 · Morning Shift',cycle:'December 2023 Session',src:'tex'},
+  {key:'jun23_e',title:'19 Jun 2023 · Evening Shift',cycle:'June 2023 Session',src:'tex'},
+  {key:'jun23_a',title:'16 Jun 2023 · Morning Shift',cycle:'June 2023 Session',src:'tex'},
+  {key:'jun23_b',title:'15 Jun 2023 · Morning Shift',cycle:'June 2023 Session',src:'tex'},
+  {key:'jun23_c',title:'13 Jun 2023 · Evening Shift',cycle:'June 2023 Session',src:'tex'},
+  {key:'jun23_d',title:'13 Jun 2023 · Morning Shift',cycle:'June 2023 Session',src:'tex'},
+];
+
 
 const FULL_MOCK_Q_PER_UNIT = 10; // 10 units × this number = questions per full mock
 
@@ -7003,7 +7068,7 @@ function confirmSubmit(){
 function submitTest(){
   stopTimer();
   const qs=currentTest.questions; let correct=0,wrong=0,skippedCount=0;
-  qs.forEach((q,i)=>{if(answers[i]===null)skippedCount++;else if(answers[i]===q.ans)correct++;else wrong++;});
+  qs.forEach((q,i)=>{if(q.bonus||(answers[i]!==null&&qOk(q,answers[i])))correct++;else if(answers[i]===null)skippedCount++;else wrong++;});
   const scored=correct*2,total=qs.length*2,pct=total?Math.round((scored/total)*100):0;
   document.getElementById('result-score-num').textContent=scored+'/'+total;
   document.getElementById('result-score-sub').textContent=correct+' correct × 2 marks';
@@ -7015,14 +7080,14 @@ function submitTest(){
   document.getElementById('result-test-name').textContent=currentTest.title;
   const keys=['A','B','C','D'];
   document.getElementById('solutions-list').innerHTML=qs.map((q,i)=>{
-    const ua=answers[i],isSk=ua===null,isOk=ua===q.ans;
+    const ua=answers[i],isSk=ua===null&&!q.bonus,isOk=qOk(q,ua);
     const st=isSk?'skipped':isOk?'correct':'wrong';
-    const badge=isSk?'⬜ Skipped':isOk?'✅ Correct +2':'❌ Wrong';
+    const badge=q.bonus?'🎁 Bonus +2 (dropped by NTA)':isSk?'⬜ Skipped':isOk?'✅ Correct +2':'❌ Wrong';
     const opts=q.opts.map((opt,oi)=>{
       let cls='normal';
-      if(oi===q.ans)cls='correct-ans';
+      if(oi===q.ans||(q.alt&&q.alt.indexOf(oi)>-1))cls='correct-ans';
       else if(oi===ua&&!isOk)cls='user-wrong';
-      return `<div class="sc-opt ${cls}"><span style="font-weight:700;min-width:20px;">${keys[oi]})</span>${opt.replace(/^[A-D]\)\s*/,'')}${oi===q.ans?' ✓':''}${oi===ua&&!isOk?' ✗':''}</div>`;
+      return `<div class="sc-opt ${cls}"><span style="font-weight:700;min-width:20px;">${keys[oi]})</span>${opt.replace(/^[A-D]\)\s*/,'')}${(oi===q.ans||(q.alt&&q.alt.indexOf(oi)>-1))?' ✓':''}${oi===ua&&!isOk?' ✗':''}</div>`;
     }).join('');
     return `<div class="solution-card"><div class="sc-header"><div class="sc-num ${st}">${i+1}</div><div class="sc-q-text">${q.q}</div><span class="sc-badge ${st}">${badge}</span></div><div class="sc-body"><div class="sc-options">${opts}</div><div class="sc-explanation"><strong>💡 Explanation:</strong> ${q.exp}</div></div></div>`;
   }).join('');
@@ -7032,13 +7097,170 @@ function submitTest(){
   tryRenderMath(document.getElementById('mock-result-screen'));
 }
 
-function retakeTest(){document.getElementById('mock-result-screen').style.display='none';startMock(currentDef.type,currentDef.unit||'',currentDef.mockNum||999);}
+function retakeTest(){document.getElementById('mock-result-screen').style.display='none';if(currentDef&&currentDef.p1){startP1Mock(currentDef.id);return;}startMock(currentDef.type,currentDef.unit||'',currentDef.mockNum||999);}
 function backToList(){stopTimer();document.getElementById('mock-result-screen').style.display='none';document.getElementById('mock-exam-screen').style.display='none';document.getElementById('mock-list-screen').style.display='block';}
 document.addEventListener('keydown',e=>{
   if(e.key!=='Enter')return;
   if(document.getElementById('tab-mocktest').classList.contains('active')&&document.getElementById('mock-login-screen').style.display!=='none')doLogin();
   else if(document.getElementById('tab-videos').classList.contains('active')&&document.getElementById('video-login-screen').style.display!=='none')doVideoLogin();
 });
+
+// ════════════════════════════════════════════════════════════════════
+//  PAPER 1 (General Paper) MOCK TESTS — kept completely separate from Paper 2.
+//  Questions live in PAPER1_QB (qb_p1_u1.js … qb_p1_u10.js, qb_p1_ga.js).
+//  Question format: {unit:'p1_u1'…'p1_u10', paper:<PYQ paper key>, no:<order in that paper>,
+//                    q, opts:[4], ans:0-3, exp, alt:[extra accepted options], bonus:1 (dropped by NTA)}
+//  Tests built here:  1) every PYQ paper as its own timed 50-Q test (original order)
+//                     2) Full Paper 1 mocks (5 Qs per unit, mixed from different papers)
+//                     3) Unit-wise Paper 1 mocks
+// ════════════════════════════════════════════════════════════════════
+const P1_UNITS = [
+  {id:'p1_u1', num:'I',    title:'Teaching Aptitude'},
+  {id:'p1_u2', num:'II',   title:'Research Aptitude'},
+  {id:'p1_u3', num:'III',  title:'Comprehension'},
+  {id:'p1_u4', num:'IV',   title:'Communication'},
+  {id:'p1_u5', num:'V',    title:'Mathematical Reasoning & Aptitude'},
+  {id:'p1_u6', num:'VI',   title:'Logical Reasoning'},
+  {id:'p1_u7', num:'VII',  title:'Data Interpretation'},
+  {id:'p1_u8', num:'VIII', title:'Information & Communication Technology (ICT)'},
+  {id:'p1_u9', num:'IX',   title:'People, Development & Environment'},
+  {id:'p1_u10',num:'X',    title:'Higher Education System'}
+];
+// order of units inside a Paper 1 full mock — same sequence NTA uses (DI first, Comprehension last)
+const P1_FULL_ORDER = ['p1_u7','p1_u1','p1_u2','p1_u4','p1_u5','p1_u6','p1_u8','p1_u9','p1_u10','p1_u3'];
+const P1_SET_UNITS = {p1_u3:1, p1_u7:1};   // passage / data-table units are kept together as 5-question sets
+const P1_UNIT_MOCK_Q = 15;                // questions per unit-wise mock
+
+function p1Papers(){
+  const known = PAPER1_PAPERS.map(p=>p.key);
+  const extra = [...new Set(PAPER1_QB.map(q=>q.paper).filter(k=>k&&known.indexOf(k)<0))];
+  return PAPER1_PAPERS.concat(extra.map(k=>({key:k,title:k,cycle:'Other Papers'})));
+}
+function p1ByNo(a,b){return (a.no||0)-(b.no||0);}
+
+let _p1Cache=null;
+function p1Build(){
+  if(_p1Cache) return _p1Cache;
+  const papers=p1Papers();
+  const pools={};
+  P1_UNITS.forEach(u=>{
+    const qs=PAPER1_QB.filter(q=>q.unit===u.id && !q.bonus);
+    const byPaper={};
+    qs.forEach(q=>{(byPaper[q.paper||'misc']=byPaper[q.paper||'misc']||[]).push(q);});
+    const keys=papers.map(p=>p.key).concat(Object.keys(byPaper).filter(k=>papers.every(p=>p.key!==k)));
+    if(P1_SET_UNITS[u.id]){
+      pools[u.id]=keys.filter(k=>byPaper[k]&&byPaper[k].length).map(k=>byPaper[k].sort(p1ByNo));
+    } else {
+      // interleave papers so neighbouring questions come from different papers
+      Object.keys(byPaper).forEach(k=>byPaper[k].sort(p1ByNo));
+      const out=[]; let j=0, more=true;
+      while(more){ more=false; keys.forEach(k=>{const a=byPaper[k]; if(a&&a[j]){out.push(a[j]); more=true;}}); j++; }
+      pools[u.id]=out;
+    }
+  });
+  const defs={paper:[],full:[],unit:[]};
+  // 1) PYQ paper tests
+  papers.forEach(p=>{
+    const n=PAPER1_QB.filter(q=>q.paper===p.key).length;
+    if(!n) return;
+    defs.paper.push({id:'p1paper:'+p.key,p1:true,type:'p1paper',paper:p.key,cycle:p.cycle,title:'Paper 1 · '+p.title,duration:3600,qCount:n,
+      subtitle:n+' Questions · '+(n*2)+' Marks · 60 Min',description:'Original UGC NET Paper 1 ('+p.title+') — same questions, same order, with full solutions.'});
+  });
+  // 2) full mocks (5 per unit; sets of exactly 5 for the passage / data units)
+  const avail=P1_FULL_ORDER.map(id=>P1_SET_UNITS[id]?pools[id].filter(s=>s.length===5).length:Math.floor(pools[id].length/5));
+  const nFull=Math.min.apply(null,avail.concat([40]));
+  for(let m=1;m<=nFull;m++){
+    const qs=[];
+    P1_FULL_ORDER.forEach(id=>{
+      if(P1_SET_UNITS[id]){ qs.push(...pools[id].filter(s=>s.length===5)[m-1]); }
+      else qs.push(...pools[id].slice((m-1)*5,m*5));
+    });
+    defs.full.push({id:'p1full:'+m,p1:true,type:'p1full',mockNum:m,title:'Paper 1 · Full Mock '+m,duration:3600,qs:qs,qCount:qs.length,
+      subtitle:'All 10 Units · '+qs.length+' Questions · '+(qs.length*2)+' Marks',description:'Full-length Paper 1 mock #'+m+' built from previous-year questions of different papers — all 10 units.'});
+  }
+  // 3) unit-wise mocks
+  P1_UNITS.forEach(u=>{
+    const pool=pools[u.id]; const chunks=[];
+    if(P1_SET_UNITS[u.id]){
+      let cur=[]; pool.forEach(s=>{cur.push(...s); if(cur.length>=P1_UNIT_MOCK_Q){chunks.push(cur);cur=[];}});
+      if(cur.length>=8) chunks.push(cur);
+    } else {
+      for(let i=0;i<pool.length;i+=P1_UNIT_MOCK_Q){const c=pool.slice(i,i+P1_UNIT_MOCK_Q); if(c.length>=P1_UNIT_MOCK_Q||c.length>=8) chunks.push(c);}
+    }
+    chunks.forEach((c,i)=>{
+      defs.unit.push({id:'p1unit:'+u.id+':'+(i+1),p1:true,type:'p1unit',unit:u.id,mockNum:i+1,qs:c,qCount:c.length,
+        duration:Math.round(c.length*72/60)*60,
+        title:'Paper 1 · Unit '+u.num+' Mock '+(i+1)+' — '+u.title,subtitle:'Unit '+u.num+' Only · '+c.length+' Questions · '+(c.length*2)+' Marks',
+        description:'Paper 1 Unit '+u.num+': '+u.title});
+    });
+  });
+  _p1Cache=defs;
+  return defs;
+}
+function p1FindDef(id){const d=p1Build(); return [].concat(d.paper,d.full,d.unit).find(x=>x.id===id);}
+function p1Questions(def){
+  if(def.qs) return def.qs;
+  return PAPER1_QB.filter(q=>q.paper===def.paper).sort(p1ByNo);
+}
+
+function p1Card(t,c1,c2,num){
+  const dur=Math.floor(t.duration/60)+' Min';
+  return `<div class="mock-test-card"><div class="mock-test-card-header" style="background:linear-gradient(135deg,${c1},${c2});"><div class="mtc-num">${num}</div><div><div class="mtc-title">${t.title}</div><div class="mtc-sub">${t.subtitle}</div></div></div><div class="mock-test-card-body"><div class="mtc-desc">${t.description}</div><div class="mtc-info"><span class="mtc-badge mtc-badge-green">📝 ${t.qCount} Qs</span><span class="mtc-badge mtc-badge-blue">⏱ ${dur}</span><span class="mtc-badge mtc-badge-orange">🏆 ${t.qCount*2} Marks</span><span class="mtc-badge mtc-badge-open">🔓 Open</span></div><button class="btn-start-mock" onclick="startP1Mock('${t.id}')">▶ Start Test</button></div></div>`;
+}
+function buildPaper1MockList(){
+  const el=document.getElementById('mock-tests-grid-p1'); if(!el) return;
+  const d=p1Build();
+  if(!d.paper.length){el.innerHTML='<div class="p1-empty">No Paper 1 questions loaded yet. Add them to qb_p1_u1.js … qb_p1_u10.js.</div>';return;}
+  let html='';
+  html+=`<div class="mock-section-header" style="background:#8a4a1a;">📄 Paper 1 — Previous Year Papers (full 50-question timed tests)</div>`;
+  const cycles=[...new Set(d.paper.map(t=>t.cycle))];
+  cycles.forEach(cy=>{
+    html+=`<div class="p1-cycle">${cy}</div><div class="mock-tests-grid">`;
+    d.paper.filter(t=>t.cycle===cy).forEach(t=>{html+=p1Card(t,'#8a4a1a','#c0722c','📄');});
+    html+=`</div>`;
+  });
+  if(d.full.length){
+    html+=`<div class="mock-section-header" style="background:#1a4a2a;">📋 Paper 1 — Full Syllabus Mock Tests</div><div class="mock-tests-grid">`;
+    d.full.forEach(t=>{html+=p1Card(t,'#1a4a2a','#2d8a3a',t.mockNum);});
+    html+=`</div>`;
+  }
+  P1_UNITS.forEach(u=>{
+    const list=d.unit.filter(t=>t.unit===u.id); if(!list.length) return;
+    html+=`<div class="mock-section-header" style="background:#2a3a6a;">📘 Paper 1 · Unit ${u.num} — ${u.title} (Unit-wise Mocks)</div><div class="mock-tests-grid">`;
+    list.forEach(t=>{html+=p1Card(t,'#2a3a6a','#3b5bdb',t.mockNum);});
+    html+=`</div>`;
+  });
+  el.innerHTML=html;
+}
+function startP1Mock(id){
+  const def=p1FindDef(id); if(!def) return;
+  const qs=p1Questions(def);
+  if(!qs.length){alert('No questions available for this test yet!');return;}
+  currentDef=def; currentTest={id:def.id,title:def.title,subtitle:def.subtitle,questions:qs};
+  currentQIdx=0; answers=Array(qs.length).fill(null); skipped=Array(qs.length).fill(false); timeLeft=def.duration;
+  document.getElementById('mock-list-screen').style.display='none';
+  document.getElementById('mock-exam-screen').style.display='block';
+  document.getElementById('exam-title').textContent=def.title;
+  document.getElementById('exam-subtitle').textContent=def.subtitle;
+  document.getElementById('exam-max-marks').textContent='Max Marks: '+(qs.length*2);
+  buildNavGrid(); renderQuestion(); startTimer();
+  window.scrollTo({top:0});
+}
+// correct-answer check shared by the result screen: supports dual-key (alt) and NTA-dropped (bonus) questions
+function qOk(q,a){
+  if(q.bonus) return true;
+  if(a===null||a===undefined) return false;
+  return a===q.ans || (q.alt && q.alt.indexOf(a)>-1);
+}
+// Paper 2 / Paper 1 switcher inside the Mock Test tab
+function setMockPaper(p){
+  const g2=document.getElementById('mock-tests-grid'), g1=document.getElementById('mock-tests-grid-p1');
+  document.getElementById('sw-p2').classList.toggle('active',p==='p2');
+  document.getElementById('sw-p1').classList.toggle('active',p==='p1');
+  if(p==='p1'){ buildPaper1MockList(); g2.style.display='none'; g1.style.display='block'; }
+  else { g1.style.display='none'; g2.style.display='block'; }
+}
+
 </script>
 <!-- External Question Bank Files — add your real MCQs here, tagged with the matching unit -->
 <script src="qb_u1.js"></script>
@@ -7051,5 +7273,26 @@ document.addEventListener('keydown',e=>{
 <script src="qb_u8.js"></script>
 <script src="qb_u9.js"></script>
 <script src="qb_u10.js"></script>
+<!-- Paper 1 (General Paper) question banks — loaded into PAPER1_QB, never into Paper 2 MASTER_QB -->
+<script src="qb_p1_u1.js"></script>
+<script src="qb_p1_u2.js"></script>
+<script src="qb_p1_u3.js"></script>
+<script src="qb_p1_u4.js"></script>
+<script src="qb_p1_u5.js"></script>
+<script src="qb_p1_u6.js"></script>
+<script src="qb_p1_u7.js"></script>
+<script src="qb_p1_u8.js"></script>
+<script src="qb_p1_u9.js"></script>
+<script src="qb_p1_u10.js"></script>
+<script src="qb_p1_ga.js"></script>
+<script>
+// Safety net: any question tagged unit:'p1_…' that is pushed into MASTER_QB (e.g. a question file written
+// in the old MASTER_QB.push style) is moved into PAPER1_QB so it can never leak into Paper 2 tests.
+(function(){
+  const keep=[],moved=[];
+  MASTER_QB.forEach(q=>{ (q&&/^p1_/.test(q.unit||'')?moved:keep).push(q); });
+  if(moved.length){ MASTER_QB.length=0; keep.forEach(q=>MASTER_QB.push(q)); moved.forEach(q=>PAPER1_QB.push(q)); }
+})();
+</script>
 </body>
 </html>
