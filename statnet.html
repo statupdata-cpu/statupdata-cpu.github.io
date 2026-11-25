@@ -419,6 +419,14 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
 .p1x-h{font-weight:800;color:#1e3a8a;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px;}
 .p1x-b{font-weight:400;}
 .p1-note{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;padding:6px 10px;border-radius:6px;margin-bottom:8px;font-weight:600;}
+/* ── Site login gate (added) — tabs stay hidden until the student logs in ── */
+body:not(.sn-in) .tab-bar,body:not(.sn-in) .tab-pane{display:none!important;}
+body.sn-in #sn-login-screen{display:none!important;}
+body:not(.sn-in) #sn-userbar{display:none!important;}
+#sn-login-screen{margin-bottom:10px;}
+.sn-reg-btn{display:block;text-align:center;margin-top:12px;padding:11px;border-radius:10px;border:1.5px solid #457C17;color:#35630F;font-weight:700;font-size:14px;text-decoration:none;}
+.sn-reg-btn:hover{background:#f0fae6;}
+.mock-login-info a{color:#35630F;font-weight:700;}
 </style>
 </head>
 <body>
@@ -453,6 +461,24 @@ body{font-family:'Inter',Arial,sans-serif;background:#f0f4f3;color:#1a2e1a;min-h
   </div>
 </div>
 <div class="wrap">
+<!-- SITE LOGIN GATE (added) -->
+<div class="mock-login-screen" id="sn-login-screen">
+  <div class="mock-login-card">
+    <div class="mock-login-header"><div class="mlh-icon">📚</div><h2>UGC NET Statistics — Student Login</h2><p>Login with your Roll Number and Password</p></div>
+    <div class="mock-login-body">
+      <label for="sn-login-roll">Roll Number</label><input type="text" id="sn-login-roll" placeholder="e.g. STAT6708892" autocomplete="off"/>
+      <label for="sn-login-pass">Password</label><input type="password" id="sn-login-pass" placeholder="e.g. stat@04835"/>
+      <div class="mock-login-error" id="sn-login-error">❌ Invalid Roll Number or Password. Please try again.</div>
+      <button class="btn-mock-login" onclick="snLogin()">Login &amp; Open Study Materials →</button>
+      <div class="mock-login-info">
+        <strong>📌 Your Login Details:</strong><br/>
+        One login opens everything — sets, notes, videos, books, PYQ and mock tests. Contact the instructor on <a href="https://wa.me/919385362051" target="_blank" rel="noopener">WhatsApp</a> if you face any issue.
+      </div>
+      <a class="sn-reg-btn" href="https://forms.gle/zMZjfLmoVphTmtia6" target="_blank" rel="noopener">Not registered yet? Register here →</a>
+    </div>
+  </div>
+</div>
+<div class="mock-welcome-bar" id="sn-userbar"><div class="mwb-left"><h3 id="sn-user-name">Welcome!</h3><p id="sn-user-roll">Roll Number: —</p></div><button class="btn-mock-logout" onclick="doLogout()">Logout</button></div>
 <div class="tab-bar">
   <button class="tab-btn active" onclick="switchTab(event,'tab-materials')">📖 Unit-wise Sets</button>
   <button class="tab-btn" onclick="switchTab(event,'tab-notes')">📝 Notes</button>
@@ -7297,6 +7323,52 @@ function setMockPaper(p){
   const keep=[],moved=[];
   MASTER_QB.forEach(q=>{ (q&&/^p1_/.test(q.unit||'')?moved:keep).push(q); });
   if(moved.length){ MASTER_QB.length=0; keep.forEach(q=>MASTER_QB.push(q)); moved.forEach(q=>PAPER1_QB.push(q)); }
+})();
+</script>
+<script>
+// ════════════════════════════════════════════════════════════════════
+//  SITE LOGIN GATE (added) — uses the same STUDENTS list as the Mock Test
+//  and Video tabs. One login opens all tabs; Logout locks the page again.
+// ════════════════════════════════════════════════════════════════════
+function snOpen(roll){
+  currentStudent={roll:roll,name:STUDENTS[roll].name};
+  try{ sessionStorage.setItem('statnet_roll',roll); }catch(e){}
+  document.body.classList.add('sn-in');
+  document.getElementById('sn-login-error').style.display='none';
+  document.getElementById('sn-user-name').textContent='Welcome, '+currentStudent.name+'!';
+  document.getElementById('sn-user-roll').textContent='Roll Number: '+roll;
+  // same steps as the Mock Test login, so the Mock Test and Video tabs open directly
+  document.getElementById('mock-login-screen').style.display='none';
+  document.getElementById('welcome-name').textContent='Welcome, '+currentStudent.name+'!';
+  document.getElementById('welcome-roll').textContent='Roll Number: '+roll;
+  document.getElementById('mock-list-screen').style.display='block';
+  buildMockList();
+  showVideoContent();
+}
+function snLogin(){
+  const roll=document.getElementById('sn-login-roll').value.trim().toUpperCase();
+  const pass=document.getElementById('sn-login-pass').value.trim();
+  if(STUDENTS[roll]&&STUDENTS[roll].password===pass){ snOpen(roll); window.scrollTo({top:0}); }
+  else document.getElementById('sn-login-error').style.display='block';
+}
+// every Logout button now also locks the whole page
+const _snOrigLogout=doLogout;
+doLogout=function(){
+  _snOrigLogout();
+  try{ sessionStorage.removeItem('statnet_roll'); }catch(e){}
+  document.body.classList.remove('sn-in');
+  document.getElementById('sn-login-roll').value='';
+  document.getElementById('sn-login-pass').value='';
+  document.getElementById('sn-login-error').style.display='none';
+  window.scrollTo({top:0});
+};
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter'&&!document.body.classList.contains('sn-in')) snLogin();
+});
+// stay logged in after a page refresh (same browser tab only)
+(function(){
+  let roll=null; try{ roll=sessionStorage.getItem('statnet_roll'); }catch(e){}
+  if(roll&&STUDENTS[roll]) snOpen(roll);
 })();
 </script>
 </body>
