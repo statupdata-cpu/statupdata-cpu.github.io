@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>UGC NET Paper 1 Crash Course — Notes, PYQ &amp; Mock Tests | STATUP</title>
+<meta name="description" content="STATUP UGC NET Paper 1 Crash Course: unit-wise notes, previous year papers and timed mock tests in one place. Access 2–24 December 2026."/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css"/>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23101F14'/%3E%3Crect x='12' y='3' width='9' height='18' rx='4' fill='%238BC24A'/%3E%3C/svg%3E">
+<style>
+/* ── Page layout (prefixed pc- so nothing clashes with styles.css) ── */
+body{background:#f0f4f3;}
+.pc-wrap{max-width:1200px;margin:auto;padding:32px 24px;}
+.pc-hero{background:linear-gradient(135deg,#122A19 0%,#1B3B22 60%,#457C17 100%);padding:48px 40px 40px;position:relative;overflow:hidden;}
+.pc-hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238dc63f' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+.pc-hero-inner{max-width:1200px;margin:auto;position:relative;z-index:1;}
+.pc-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(139,194,74,0.15);border:1px solid rgba(139,194,74,0.3);color:#8BC24A;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;margin-bottom:14px;letter-spacing:.04em;}
+.pc-fee{background:linear-gradient(90deg,#fbbf24,#f59e0b);color:#3a2a00;font-size:11px;font-weight:800;padding:3px 10px;border-radius:20px;}
+.pc-hero h1{font-size:34px;font-weight:800;color:#fff;line-height:1.2;margin-bottom:10px;}
+.pc-hero h1 span{color:#8BC24A;}
+.pc-hero p{color:#CFE6B5;font-size:15px;max-width:640px;line-height:1.6;margin:0;}
+.pc-access{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:18px;}
+.pc-dates{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);color:#fff;padding:8px 14px;border-radius:10px;font-size:13.5px;font-weight:600;}
+.pc-status{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;font-size:13px;font-weight:700;}
+.pc-status.before{background:#fff4e6;color:#9a3412;}
+.pc-status.open{background:#dcfce7;color:#166534;}
+.pc-status.after{background:#fee2e2;color:#991b1b;}
+.pc-stats{display:flex;gap:32px;margin-top:24px;flex-wrap:wrap;}
+.pc-stat{text-align:center;}
+.pc-stat-num{font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-size:28px;font-weight:700;color:#8BC24A;display:block;}
+.pc-stat-label{font-size:12px;color:#B7D98F;text-transform:uppercase;letter-spacing:.06em;}
+
+/* login */
+.mock-login-screen{max-width:460px;margin:0 auto;padding:10px 0;}
+.mock-login-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.12);}
+.mock-login-header{background:linear-gradient(135deg,#122A19,#1B3B22);padding:32px 28px;text-align:center;}
+.mlh-icon{font-size:48px;margin-bottom:12px;}
+.mock-login-header h2{color:#fff;font-size:22px;font-weight:800;margin-bottom:6px;}
+.mock-login-header p{color:#B7D98F;font-size:13px;margin:0;}
+.mock-login-body{padding:28px;}
+.mock-login-body label{display:block;font-size:13px;font-weight:600;color:#1B3B22;margin-bottom:6px;margin-top:16px;}
+.mock-login-body label:first-of-type{margin-top:0;}
+.mock-login-body input{width:100%;padding:12px 14px;border:1.5px solid #d4e6d4;border-radius:10px;font-size:14px;font-family:inherit;outline:none;transition:border-color .2s;background:#f8fdf5;}
+.mock-login-body input:focus{border-color:#8BC24A;background:#fff;}
+.btn-mock-login{width:100%;padding:14px;margin-top:22px;background:linear-gradient(90deg,#457C17,#8BC24A);color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;transition:opacity .2s;}
+.btn-mock-login:hover{opacity:.88;}
+.mock-login-error{background:#fff0f0;border:1px solid #fca5a5;border-radius:8px;padding:10px 14px;font-size:13px;color:#b91c1c;margin-top:14px;display:none;text-align:center;line-height:1.5;}
+.mock-login-info{background:#f0f7f0;border:1px solid #c4e0b0;border-radius:8px;padding:12px 14px;font-size:12.5px;color:#35630F;margin-top:14px;line-height:1.7;}
+.mock-login-info strong{color:#1B3B22;}
+.mock-login-info a{color:#35630F;font-weight:700;}
+.pc-reg-btn{display:block;text-align:center;margin-top:12px;padding:11px;border-radius:10px;border:1.5px solid #457C17;color:#35630F;font-weight:700;font-size:14px;text-decoration:none;}
+.pc-reg-btn:hover{background:#f0fae6;}
+
+/* course shell */
+.mock-welcome-bar{background:linear-gradient(135deg,#122A19,#1B3B22);border-radius:12px;padding:18px 24px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.mwb-left h3{color:#8BC24A;font-size:16px;font-weight:700;margin:0;}
+.mwb-left p{color:#CFE6B5;font-size:13px;margin:3px 0 0;}
+.btn-mock-logout{padding:8px 18px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;}
+.btn-mock-logout:hover{background:rgba(255,255,255,0.25);}
+.pc-tab-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:24px;background:#fff;padding:10px 14px;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.07);}
+.pc-tab-btn{padding:9px 20px;border:1.5px solid #d4e6d4;border-radius:8px;cursor:pointer;background:#fff;color:#4a6a4a;font-size:13px;font-weight:600;transition:all .2s;font-family:inherit;}
+.pc-tab-btn:hover{border-color:#8BC24A;color:#1B3B22;}
+.pc-tab-btn.active{background:#8BC24A;border-color:#8BC24A;color:#fff;}
+.pc-pane{display:none;}
+.pc-pane.active{display:block;}
+.pc-banner{border-radius:12px;padding:22px 26px;margin-bottom:22px;display:flex;align-items:center;gap:18px;}
+.pc-banner-icon{font-size:40px;flex-shrink:0;}
+.pc-banner h2{color:#fff;font-size:20px;font-weight:800;margin-bottom:5px;}
+.pc-banner p{font-size:13px;line-height:1.65;margin:0;}
+.filter-bar{background:#fff;border-radius:12px;padding:14px 18px;margin-bottom:24px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;box-shadow:0 2px 12px rgba(0,0,0,0.07);}
+.filter-label{font-size:12px;font-weight:700;color:#6b8c6b;margin-right:4px;text-transform:uppercase;letter-spacing:.04em;}
+.filter-btn{padding:7px 13px;border:1.5px solid #d4e6d4;border-radius:8px;cursor:pointer;background:#fff;color:#4a6a4a;font-size:12px;font-weight:500;transition:all .2s;font-family:inherit;}
+.filter-btn:hover{border-color:#8BC24A;color:#1B3B22;}
+.filter-btn.active{background:#8BC24A;border-color:#8BC24A;color:#fff;font-weight:700;}
+.pc-hidden{display:none!important;}
+
+/* notes */
+.pc-notes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
+.note-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,0.08);border:1px solid #e0eaf4;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;}
+.note-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.12);}
+.note-card-header{padding:14px 16px;display:flex;align-items:center;gap:12px;}
+.note-card-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;}
+.note-unit{font-size:10.5px;font-weight:800;padding:3px 8px;border-radius:5px;letter-spacing:.05em;text-transform:uppercase;background:#f0fae6;color:#35630F;display:inline-block;}
+.note-card-title{font-family:var(--font-display);font-size:15px;font-weight:700;color:#122A19;line-height:1.3;margin-top:4px;}
+.note-card-desc{font-size:12.5px;color:#5a6a5a;line-height:1.6;padding:0 16px 12px;flex:1;}
+.note-card-footer{padding:0 16px 16px;}
+.btn-dl{display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 14px;border-radius:9px;background:linear-gradient(90deg,#35630F,#8BC24A);color:#fff;text-decoration:none;font-weight:700;font-size:13px;transition:opacity .2s;width:100%;}
+.btn-dl:hover{opacity:.88;}
+.btn-dl.coming{background:#e0e0e0;color:#999;pointer-events:none;}
+
+/* PYQ */
+.pc-session{font-family:var(--font-display);font-size:15px;font-weight:700;color:#122A19;margin:22px 0 12px;padding:10px 16px;background:#fff;border-radius:10px;border-left:4px solid #8BC24A;box-shadow:0 2px 8px rgba(0,0,0,0.06);display:flex;justify-content:space-between;align-items:center;gap:10px;}
+.pc-session:first-child{margin-top:0;}
+.pc-session small{font-family:var(--font-body);font-size:12px;color:#6b8c6b;font-weight:500;}
+.pc-pyq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;}
+.pyq-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,0.08);border:1px solid #e8f0e0;transition:transform .25s;}
+.pyq-card:hover{transform:translateY(-4px);}
+.pyq-card-header{padding:14px 16px;background:linear-gradient(135deg,#1B3B22,#457C17);display:flex;align-items:center;gap:12px;}
+.pyq-year{width:50px;height:50px;background:rgba(255,255,255,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;white-space:pre-line;line-height:1.3;font-family:var(--font-mono);}
+.pyq-title{color:#fff;font-size:14px;font-weight:700;}
+.pyq-sub{color:rgba(255,255,255,0.8);font-size:11.5px;margin-top:3px;}
+.pyq-card-body{padding:14px 16px;}
+.pyq-desc{font-size:12px;color:#4a6a3a;line-height:1.6;margin-bottom:12px;}
+
+/* mock list */
+.p1-switch{display:flex;gap:10px;margin:0 0 18px;flex-wrap:wrap;}
+.p1-sw-btn{padding:10px 18px;border-radius:10px;border:1.5px solid #d4e6d4;background:#fff;color:#35630F;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;}
+.p1-sw-btn:hover{border-color:#8BC24A;background:#f8fdf5;}
+.p1-sw-btn.active{background:linear-gradient(90deg,#457C17,#8BC24A);color:#fff;border-color:#457C17;}
+.p1-cycle{font-size:13px;font-weight:700;color:#8a4a1a;margin:14px 2px 8px;letter-spacing:.02em;}
+.p1-empty{background:#fff;border-radius:12px;padding:24px;text-align:center;color:#6b8c6b;}
+.mock-section-header{padding:12px 18px;border-radius:10px;color:#fff;font-size:14px;font-weight:700;margin:20px 0 12px;letter-spacing:.02em;}
+.mock-section-header:first-child{margin-top:0;}
+.mock-tests-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:10px;}
+.mock-test-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,0.08);border:1px solid #e8f0e8;transition:transform .25s;}
+.mock-test-card:hover{transform:translateY(-4px);}
+.mock-test-card-header{padding:16px;display:flex;align-items:center;gap:12px;}
+.mtc-num{width:44px;height:44px;background:rgba(255,255,255,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px;flex-shrink:0;font-family:var(--font-mono);}
+.mtc-title{color:#fff;font-size:14px;font-weight:700;line-height:1.3;}
+.mtc-sub{color:rgba(255,255,255,0.8);font-size:11px;margin-top:3px;}
+.mock-test-card-body{padding:14px 16px;}
+.mtc-desc{font-size:12px;color:#5a6a5a;line-height:1.6;margin-bottom:12px;min-height:36px;}
+.mtc-info{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
+.mtc-badge{font-size:11px;padding:4px 9px;border-radius:6px;font-weight:600;}
+.mtc-badge-green{background:#f0f7f0;color:#35630F;}
+.mtc-badge-blue{background:#eff6ff;color:#2563eb;}
+.mtc-badge-orange{background:#fff4e6;color:#b85c00;}
+.btn-start-mock{width:100%;padding:11px 14px;background:linear-gradient(90deg,#457C17,#8BC24A);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:opacity .2s;}
+.btn-start-mock:hover{opacity:.88;}
+
+/* exam */
+.mock-exam-screen,.mock-result-screen{display:none;}
+.exam-header{background:#122A19;border-radius:12px;padding:16px 20px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.exam-header-left h3{color:#8BC24A;font-size:15px;font-weight:700;margin:0;}
+.exam-header-left p{color:#B7D98F;font-size:12px;margin:3px 0 0;}
+.exam-max-marks{color:#8BC24A;font-size:11px;font-weight:600;margin-top:2px;}
+.exam-timer{background:rgba(139,194,74,0.15);border:2px solid #8BC24A;border-radius:10px;padding:8px 16px;text-align:center;}
+.exam-timer-label{font-size:10px;color:#B7D98F;text-transform:uppercase;letter-spacing:.06em;}
+.exam-timer-val{font-size:22px;font-weight:700;color:#8BC24A;font-family:var(--font-mono);font-variant-numeric:tabular-nums;}
+.exam-timer-val.warning{color:#f87171;}
+.exam-progress-bar-wrap{background:#e8f0e8;border-radius:4px;height:6px;margin-bottom:20px;overflow:hidden;}
+.exam-progress-bar{height:100%;background:linear-gradient(90deg,#35630F,#8BC24A);border-radius:4px;transition:width .3s;}
+.exam-progress-text{font-size:12px;color:#6b8c6b;margin-bottom:6px;font-weight:500;font-family:var(--font-mono);}
+.exam-layout{display:grid;grid-template-columns:1fr 220px;gap:20px;}
+.exam-qpanel{background:#fff;border-radius:14px;padding:22px;box-shadow:0 3px 14px rgba(0,0,0,0.08);min-width:0;}
+.q-number{font-size:12px;font-weight:600;color:#6b8c6b;margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em;}
+.q-text{font-size:15px;font-weight:600;color:#1a2e1a;line-height:1.7;margin-bottom:20px;}
+.q-options{display:flex;flex-direction:column;gap:10px;}
+.q-option{padding:13px 16px;border:1.5px solid #d4e6d4;border-radius:10px;cursor:pointer;font-size:14px;color:#1B3B22;transition:all .2s;display:flex;align-items:center;gap:12px;background:#fff;font-family:inherit;text-align:left;width:100%;}
+.q-option:hover{border-color:#8BC24A;background:#f8fdf5;}
+.q-option.selected{border-color:#8BC24A;background:#f0fae6;color:#122A19;font-weight:600;}
+.q-option-key{width:28px;height:28px;border-radius:50%;border:1.5px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.q-nav-btns{display:flex;gap:10px;margin-top:20px;justify-content:space-between;flex-wrap:wrap;}
+.btn-q-prev,.btn-q-next,.btn-q-skip,.btn-q-submit{padding:10px 20px;border-radius:9px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;border:none;transition:all .2s;}
+.btn-q-prev{background:#f0f4f0;color:#4a6a4a;border:1.5px solid #d4e6d4;}
+.btn-q-next{background:linear-gradient(90deg,#457C17,#8BC24A);color:#fff;}
+.btn-q-skip{background:#fff4e6;color:#b85c00;border:1.5px solid #fcd9a0;}
+.btn-q-submit{background:linear-gradient(90deg,#9b2c2c,#c0392b);color:#fff;}
+.exam-nav-panel{background:#fff;border-radius:14px;padding:16px;box-shadow:0 3px 14px rgba(0,0,0,0.08);height:fit-content;position:sticky;top:90px;}
+.nav-panel-title{font-size:13px;font-weight:700;color:#1B3B22;margin-bottom:12px;padding-bottom:10px;border-bottom:1.5px solid #e8f0e8;}
+.q-nav-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:14px;max-height:320px;overflow-y:auto;}
+.q-nav-btn{width:100%;aspect-ratio:1;border-radius:7px;font-size:10px;font-weight:700;cursor:pointer;border:1.5px solid #d4e6d4;background:#fff;color:#4a6a4a;transition:all .2s;font-family:inherit;}
+.q-nav-btn.current{border-color:#8BC24A;background:#8BC24A;color:#fff;}
+.q-nav-btn.answered{border-color:#457C17;background:#f0fae6;color:#1B3B22;}
+.q-nav-btn.skipped{border-color:#f59e0b;background:#fff9e6;color:#b85c00;}
+.nav-legend{display:flex;flex-direction:column;gap:6px;font-size:11px;color:#6b8c6b;}
+.nav-legend-item{display:flex;align-items:center;gap:7px;}
+.nav-legend-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0;}
+
+/* results */
+.result-header{background:linear-gradient(135deg,#122A19,#1B3B22);border-radius:16px;padding:28px;text-align:center;margin-bottom:24px;}
+.result-header h2{color:#8BC24A;font-size:26px;font-weight:800;margin-bottom:6px;}
+.result-header p{color:#CFE6B5;font-size:14px;margin:0;}
+.result-score-circle{width:130px;height:130px;border-radius:50%;background:rgba(139,194,74,0.15);border:4px solid #8BC24A;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:16px auto;}
+.result-score-num{font-size:26px;font-weight:700;color:#8BC24A;font-family:var(--font-mono);}
+.result-score-sub{font-size:11px;color:#B7D98F;margin-top:4px;}
+.result-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:24px;}
+.result-stat-box{background:#fff;border-radius:12px;padding:14px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+.rsb-num{font-size:22px;font-weight:700;margin-bottom:4px;font-family:var(--font-mono);}
+.rsb-label{font-size:10px;color:#6b8c6b;text-transform:uppercase;letter-spacing:.06em;}
+.rsb-correct .rsb-num{color:#16a34a;} .rsb-wrong .rsb-num{color:#dc2626;} .rsb-skipped .rsb-num{color:#d97706;}
+.rsb-pct .rsb-num{color:#2563eb;} .rsb-scored .rsb-num{color:#7c3aed;}
+.result-review-title{font-size:17px;font-weight:700;color:#122A19;margin-bottom:16px;padding:0 0 10px;border-bottom:2px solid #e8f0e8;}
+.solution-card{background:#fff;border-radius:12px;margin-bottom:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+.sc-header{padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #f0f4f0;}
+.sc-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;}
+.sc-num.correct,.sc-badge.correct{background:#dcfce7;color:#16a34a;}
+.sc-num.wrong,.sc-badge.wrong{background:#fee2e2;color:#dc2626;}
+.sc-num.skipped,.sc-badge.skipped{background:#fef9c3;color:#d97706;}
+.sc-q-text{font-size:13px;font-weight:600;color:#1a2e1a;line-height:1.5;flex:1;min-width:0;}
+.sc-badge{font-size:11px;padding:3px 9px;border-radius:6px;font-weight:600;white-space:nowrap;}
+.sc-body{padding:14px 16px;}
+.sc-options{display:flex;flex-direction:column;gap:6px;margin-bottom:12px;}
+.sc-opt{padding:9px 13px;border-radius:8px;font-size:13px;display:flex;align-items:center;gap:10px;border:1.5px solid transparent;}
+.sc-opt.correct-ans{background:#dcfce7;border-color:#16a34a;color:#166534;font-weight:600;}
+.sc-opt.user-wrong{background:#fee2e2;border-color:#dc2626;color:#7f1d1d;}
+.sc-opt.normal{background:#f8f8f8;color:#4a5a4a;}
+.sc-explanation{background:#f0f7ff;border-left:3px solid #3b82f6;padding:10px 14px;border-radius:0 8px 8px 0;font-size:12px;color:#1e40af;line-height:1.7;}
+.sc-explanation strong{color:#1e3a8a;}
+.result-actions{text-align:center;margin-bottom:30px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.btn-mock-retake{padding:12px 28px;background:linear-gradient(90deg,#457C17,#8BC24A);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;}
+.btn-mock-list{padding:12px 28px;background:#f0f4f0;color:#4a6a4a;border:1.5px solid #d4e6d4;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;}
+
+/* Paper 1 question formatting (same classes the qb_p1_*.js files use) */
+.p1-passage,.p1-data{font-weight:400;font-size:13.5px;line-height:1.75;color:#1a2e1a;background:#f8fdf5;border:1px solid #d4e6d4;border-left:4px solid #8BC24A;border-radius:8px;padding:12px 14px;margin-bottom:14px;}
+.p1-passage{max-height:360px;overflow:auto;}
+.p1-data{overflow-x:auto;}
+.sc-q-text .p1-passage{max-height:110px;font-size:12px;}
+.sc-q-text .p1-data{font-size:12px;}
+.p1-tw{overflow-x:auto;margin:6px 0;}
+.p1-table{border-collapse:collapse;font-size:12.5px;font-weight:500;}
+.p1-table th,.p1-table td{border:1px solid #b9d3a3;padding:5px 10px;text-align:center;}
+.p1-table th{background:#1B3B22;color:#fff;font-weight:700;}
+.p1-ul,.p1-ol{margin:6px 0;padding-left:20px;}
+.p1-ol{list-style:none;padding-left:4px;}
+.p1-ol li,.p1-ul li{margin:3px 0;}
+.p1-lab{font-weight:700;margin-right:5px;}
+.p1-quote{margin:8px 0;padding:6px 12px;border-left:3px solid #b9d3a3;}
+.p1-red{color:#b91c1c;} .p1-green{color:#15803d;}
+.p1x{margin:0 0 9px;}
+.p1x-h{font-weight:800;color:#1e3a8a;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px;}
+.p1x-b{font-weight:400;}
+.p1-note{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;padding:6px 10px;border-radius:6px;margin-bottom:8px;font-weight:600;}
+
+.pc-hero h1,.pc-banner h2,.mock-login-header h2,.result-header h2,.result-review-title,.exam-header-left h3{font-family:var(--font-display);letter-spacing:-0.01em;}
+
+@media(max-width:768px){
+  .pc-hero{padding:30px 16px;} .pc-hero h1{font-size:24px;} .pc-stats{gap:20px;}
+  .pc-wrap{padding:18px 12px;}
+  .pc-tab-btn{padding:8px 13px;font-size:12px;}
+  .exam-layout{grid-template-columns:1fr;}
+  .exam-nav-panel{position:static;}
+  .result-stats{grid-template-columns:repeat(3,1fr);}
+  .pc-banner{padding:18px;}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html">
+      <img src="images/logo.png" alt="STATUP logo" class="logo-img" onerror="this.style.display='none'">
+      <div class="logo-text"><strong>STATUP</strong><small>Streamline Your Analysis, Elevate Your Decision</small></div>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link active">Services</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="register.html" class="nav-link cta">Register</a>
+    </nav>
+  </div>
+</header>
+
+<div class="pc-hero">
+  <div class="pc-hero-inner">
+    <div class="pc-badge">📄 UGC NET Paper 1 · Crash Course <span class="pc-fee">₹59</span></div>
+    <h1>Paper 1 Crash Course — <span>Notes, PYQ &amp; Mock Tests</span></h1>
+    <p>Everything for UGC NET Paper 1 (Teaching &amp; Research Aptitude) on one page: unit-wise notes for all 10 units, previous year question papers with solutions, and timed mock tests built from real PYQs.</p>
+    <div class="pc-access">
+      <span class="pc-dates">🗓 Access: 2 Dec 2026 – 24 Dec 2026</span>
+      <span class="pc-status" id="pc-status">…</span>
+    </div>
+    <div class="pc-stats">
+      <div class="pc-stat"><span class="pc-stat-num">10</span><span class="pc-stat-label">Units</span></div>
+      <div class="pc-stat"><span class="pc-stat-num" id="st-notes">—</span><span class="pc-stat-label">Note Sets</span></div>
+      <div class="pc-stat"><span class="pc-stat-num" id="st-pyq">—</span><span class="pc-stat-label">PYQ Papers</span></div>
+      <div class="pc-stat"><span class="pc-stat-num" id="st-mocks">—</span><span class="pc-stat-label">Mock Tests</span></div>
+      <div class="pc-stat"><span class="pc-stat-num" id="st-qs">—</span><span class="pc-stat-label">PYQ Questions</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="pc-wrap">
+
+  <!-- LOGIN -->
+  <div class="mock-login-screen" id="login-screen">
+    <div class="mock-login-card">
+      <div class="mock-login-header"><div class="mlh-icon">📄</div><h2>Paper 1 Crash Course</h2><p>Login with your Roll Number and Password</p></div>
+      <div class="mock-login-body">
+        <label for="login-roll">Roll Number</label><input type="text" id="login-roll" placeholder="Your roll number" autocomplete="off"/>
+        <label for="login-pass">Password</label><input type="password" id="login-pass" placeholder="Your password"/>
+        <div class="mock-login-error" id="login-error"></div>
+        <button class="btn-mock-login" onclick="doLogin()">Login &amp; Open Course →</button>
+        <div class="mock-login-info">
+          <strong>📌 Access period:</strong> 2 December 2026 to 24 December 2026 (till 11:59 PM IST).<br/>
+          Notes, PYQ papers and mock tests open only during these dates. Contact the instructor on <a href="https://wa.me/919385362051" target="_blank" rel="noopener">WhatsApp</a> if you face any issue.
+        </div>
+        <a class="pc-reg-btn" href="https://forms.gle/24V4jSL3A9AoYHmU9" target="_blank" rel="noopener">Not registered yet? Register for ₹59 →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- COURSE (after login) -->
+  <div id="course-screen" style="display:none;">
+    <div class="mock-welcome-bar">
+      <div class="mwb-left"><h3 id="welcome-name">Welcome!</h3><p id="welcome-roll">Roll Number: —</p></div>
+      <button class="btn-mock-logout" onclick="doLogout()">Logout</button>
+    </div>
+
+    <div class="pc-tab-bar" id="tab-bar">
+      <button class="pc-tab-btn active" data-tab="tab-notes" onclick="switchTab(this)">📝 Notes</button>
+      <button class="pc-tab-btn" data-tab="tab-pyq" onclick="switchTab(this)">📅 PYQ Papers</button>
+      <button class="pc-tab-btn" data-tab="tab-mock" onclick="switchTab(this)">🧩 Mock Tests</button>
+    </div>
+
+    <!-- NOTES -->
+    <div class="pc-pane active" id="tab-notes">
+      <div class="pc-banner" style="background:linear-gradient(135deg,#1e3a5f,#2d5a8a);">
+        <span class="pc-banner-icon">📝</span>
+        <div><h2>Unit-wise Notes — All 10 Units</h2><p style="color:#b8d8f0;">One complete note set per unit of the UGC NET Paper 1 syllabus.</p></div>
+      </div>
+      <div class="filter-bar" id="notes-filter">
+        <span class="filter-label">Unit:</span>
+        <button class="filter-btn active" data-u="all" onclick="filterNotes(this)">All</button>
+      </div>
+      <div class="pc-notes-grid" id="notes-grid"></div>
+    </div>
+
+    <!-- PYQ -->
+    <div class="pc-pane" id="tab-pyq">
+      <div class="pc-banner" style="background:linear-gradient(135deg,#1B3B22,#457C17);">
+        <span class="pc-banner-icon">📅</span>
+        <div><h2>Previous Year Question Papers</h2><p style="color:#CFE6B5;">UGC NET Paper 1 papers with solutions, listed session-wise, newest first.</p></div>
+      </div>
+      <div id="pyq-list"></div>
+    </div>
+
+    <!-- MOCK TESTS -->
+    <div class="pc-pane" id="tab-mock">
+      <div id="mock-list-screen">
+        <div class="p1-switch">
+          <button class="p1-sw-btn active" data-v="paper" onclick="setMockView(this)">📄 Previous Year Papers</button>
+          <button class="p1-sw-btn" data-v="full" onclick="setMockView(this)">📋 Full Mocks</button>
+          <button class="p1-sw-btn" data-v="unit" onclick="setMockView(this)">📘 Unit-wise Mocks</button>
+        </div>
+        <div class="filter-bar pc-hidden" id="mock-unit-filter">
+          <span class="filter-label">Unit:</span>
+          <button class="filter-btn active" data-u="all" onclick="filterMockUnit(this)">All</button>
+        </div>
+        <div id="mock-list"></div>
+      </div>
+
+      <div class="mock-exam-screen" id="mock-exam-screen">
+        <div class="exam-header">
+          <div class="exam-header-left"><h3 id="exam-title">Mock Test</h3><p id="exam-subtitle"></p><div class="exam-max-marks" id="exam-max-marks"></div></div>
+          <div class="exam-timer"><div class="exam-timer-label">Time Remaining</div><div class="exam-timer-val" id="exam-timer-val">01:00:00</div></div>
+        </div>
+        <div class="exam-progress-text" id="exam-progress-text">Answered: 0 / 50</div>
+        <div class="exam-progress-bar-wrap"><div class="exam-progress-bar" id="exam-progress-bar" style="width:1%"></div></div>
+        <div class="exam-layout" id="exam-layout">
+          <div class="exam-qpanel">
+            <div class="q-number" id="q-number">Question 1</div>
+            <div class="q-text" id="q-text">Loading...</div>
+            <div class="q-options" id="q-options"></div>
+            <div class="q-nav-btns">
+              <button class="btn-q-prev" onclick="prevQ()">◀ Previous</button>
+              <div style="display:flex;gap:8px;"><button class="btn-q-skip" onclick="skipQ()">Skip ▷</button><button class="btn-q-submit" onclick="confirmSubmit()">Submit Test</button></div>
+              <button class="btn-q-next" onclick="nextQ()">Next ▶</button>
+            </div>
+          </div>
+          <div class="exam-nav-panel">
+            <div class="nav-panel-title">Question Navigator</div>
+            <div class="q-nav-grid" id="q-nav-grid"></div>
+            <div class="nav-legend">
+              <div class="nav-legend-item"><div class="nav-legend-dot" style="background:#8BC24A;border:1.5px solid #457C17;"></div> Current</div>
+              <div class="nav-legend-item"><div class="nav-legend-dot" style="background:#f0fae6;border:1.5px solid #457C17;"></div> Answered</div>
+              <div class="nav-legend-item"><div class="nav-legend-dot" style="background:#fff9e6;border:1.5px solid #f59e0b;"></div> Skipped</div>
+              <div class="nav-legend-item"><div class="nav-legend-dot" style="background:#fff;border:1.5px solid #d4e6d4;"></div> Not Visited</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mock-result-screen" id="mock-result-screen">
+        <div class="result-header"><h2>🎉 Test Completed!</h2><p id="result-test-name">Mock Test</p>
+          <div class="result-score-circle"><div class="result-score-num" id="result-score-num">—</div><div class="result-score-sub" id="result-score-sub">marks scored</div></div>
+        </div>
+        <div class="result-stats">
+          <div class="result-stat-box rsb-correct"><div class="rsb-num" id="rs-correct">0</div><div class="rsb-label">Correct</div></div>
+          <div class="result-stat-box rsb-wrong"><div class="rsb-num" id="rs-wrong">0</div><div class="rsb-label">Wrong</div></div>
+          <div class="result-stat-box rsb-skipped"><div class="rsb-num" id="rs-skipped">0</div><div class="rsb-label">Skipped</div></div>
+          <div class="result-stat-box rsb-pct"><div class="rsb-num" id="rs-pct">0%</div><div class="rsb-label">Accuracy</div></div>
+          <div class="result-stat-box rsb-scored"><div class="rsb-num" id="rs-scored">0</div><div class="rsb-label">Marks Scored</div></div>
+        </div>
+        <div class="result-actions"><button class="btn-mock-retake" onclick="retakeTest()">🔄 Retake Test</button><button class="btn-mock-list" onclick="backToList()">← Back to Tests</button></div>
+        <div class="result-review-title">📋 Detailed Solutions &amp; Review (2 marks per correct answer)</div>
+        <div id="solutions-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid cols-4">
+    <div>
+      <a class="logo" href="index.html">
+        <img src="images/logo-white.png" alt="STATUP logo" class="logo-img" style="height:30px" onerror="this.style.display='none'">
+        <div class="logo-text"><strong>STATUP</strong><small></small></div>
+      </a>
+      <p class="muted" style="margin-top:10px;max-width:320px;">Streamline Your Analysis, Elevate Your Decision.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <p><a href="index.html">Home</a></p>
+      <p><a href="services.html">Services</a></p>
+      <p><a href="register.html">Register</a></p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>Statup, Calicut, Kerala, India</p>
+      <p><a href="mailto:statup.data@gmail.com">statup.data@gmail.com</a></p>
+      <p><a href="https://wa.me/919385362051">+91 93853 62051</a></p>
+    </div>
+    <div>
+      <h4>Social</h4>
+      <p><a href="https://chat.whatsapp.com/Ku1Aeu6RmLUBNmsoy2dYRy?mode=hqrt1" target="_blank" rel="noopener">WhatsApp Group</a></p>
+      <p><a href="https://whatsapp.com/channel/0029VbBAltU29755yuDpou1U/102" target="_blank" rel="noopener">WhatsApp Channel</a></p>
+      <p><a href="https://www.instagram.com/statupdata" target="_blank" rel="noopener">Instagram</a></p>
+    </div>
+  </div>
+  <div class="wrap copyright">
+    <small>© <span id="year"></span> STATUP — Streamline Your Analysis, Elevate Your Decision.</small>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+// ════════════════════════════════════════════════════════════════════
+//  ACCESS WINDOW — 2 Dec 2026 00:00 IST to 24 Dec 2026 23:59:59 IST
+//  (Change these two lines to run another batch.)
+// ════════════════════════════════════════════════════════════════════
+const ACCESS_START = Date.parse('2026-12-02T00:00:00+05:30');
+const ACCESS_END   = Date.parse('2026-12-24T23:59:59+05:30');
+
+// ════════════════════════════════════════════════════════════════════
+//  CRASH COURSE STUDENTS — separate from the statnet.html student list.
+//  ADMIN can log in at any time (to check the page before 2 Dec);
+//  everyone else only inside the access window above.
+// ════════════════════════════════════════════════════════════════════
+const P1_STUDENTS = {
+  // ── ADD CRASH COURSE STUDENTS BELOW THIS LINE ─────────────────────
+  // Format: 'ROLLNUMBER': {name:'Student Name', password:'yourpassword'},
+
+  'ADMIN': {name:'Administrator', password:'admin@statup', admin:true}
+};
+
+// ── Paper 1 notes (links taken from statnet.html; units in official UGC NET syllabus order) ──
+const PAPER1_NOTES=[
+{id:'p1_u1',num:'I',title:'Teaching Aptitude',icon:'📖',color:'#1e3a5f',desc:'Concept, objectives, teacher effectiveness, characteristics of good teachers, methods of teaching, teaching aids and evaluation systems.',link:'https://drive.google.com/file/d/1g6Zi2UYKVR7l72ZiAnNVdKfeghvI05q_/view?usp=sharing'},
+{id:'p1_u2',num:'II',title:'Research Aptitude',icon:'🔬',color:'#2d5a8a',desc:'Meaning, types and characteristics of research, steps of research, research methods, thesis writing and citation formats.',link:'https://drive.google.com/file/d/1Io8GxZ5xDRk-BImcjwPfySICBurMpWvW/view?usp=sharing'},
+{id:'p1_u3',num:'III',title:'Comprehension',icon:'📄',color:'#1e4a6f',desc:'Passage-based comprehension practice with strategy notes for tackling reading comprehension questions quickly.',link:'https://drive.google.com/file/d/1dCeR2ev09gBl5sjLlTBZEe8M3P_V_dle/view?usp=sharing'},
+{id:'p1_u4',num:'IV',title:'Communication',icon:'🗣️',color:'#1B3B22',desc:'Meaning, types and characteristics of communication, effective communication, barriers and classroom communication.',link:'https://drive.google.com/file/d/1b9VrRWPeX9bq_sswpSfkGVh0YhsLlWTg/view?usp=drive_link'},
+{id:'p1_u5',num:'V',title:'Mathematical Reasoning and Aptitude',icon:'🧮',color:'#5a3a2d',desc:'Number series, letter series, codes, relationships, classification, analogies, mathematical reasoning, statement-conclusion and syllogisms.',link:'https://drive.google.com/file/d/1s8_Xgm0KcRk-rUEKSkv6rPZMieaaIPP7/view?usp=sharing'},
+{id:'p1_u6',num:'VI',title:'Logical Reasoning',icon:'📊',color:'#3a2d5a',desc:'Structure of arguments, categorical propositions, square of opposition, mood and figure, fallacies, uses of language, deductive and inductive reasoning, analogies, Venn diagrams and Indian logic including Pramanas.',link:'https://drive.google.com/file/d/1Pa1yuv9_LzSMwWDK38rYxLpHuWbF28nx/view?usp=sharing'},
+{id:'p1_u7',num:'VII',title:'Data Interpretation',icon:'📈',color:'#2d3a5a',desc:'Sources, acquisition and classification of data, quantitative and qualitative data, graphical representation, interpretation of data and basic concepts of data analysis.',link:'https://drive.google.com/file/d/1oxk4S1o3jJf39_WCjkKwuszrLJp9_0YC/view?usp=drive_link'},
+{id:'p1_u8',num:'VIII',title:'Information & Communication Technology (ICT)',icon:'💻',color:'#2d3a5a',desc:'General abbreviations and terminology, basics of the Internet and Intranet, e-mail, audio and video-conferencing, digital initiatives in higher education and ICT applications in teaching and learning.',link:'https://drive.google.com/file/d/1fL6LbC0HDPBEPBPwCPvYcc9rSRRKA7jP/view?usp=sharing'},
+{id:'p1_u9',num:'IX',title:'People, Development & Environment',icon:'🌍',color:'#2d4a3a',desc:'Development and environment, human-environment interaction, sustainable development, pollution, climate change, natural and energy resources, natural hazards and disasters, Environmental Protection Act (1986), NAPCC and international agreements (Montreal, Rio, CBD, Kyoto, Paris, ISA).',link:'https://drive.google.com/file/d/1H0MMnFk_q2JKTJpl8EHk1l8KpMfWzSCV/view?usp=drive_link'},
+{id:'p1_u10',num:'X',title:'Higher Education System',icon:'🎓',color:'#4a2d5a',desc:'Institutions of higher learning in ancient India, evolution of higher learning and research in post-independence India, oriental, conventional and non-conventional programmes, professional, technical and skill-based education, value and environmental education, policies, governance and administration.',link:'https://drive.google.com/file/d/1KNpHW6HMoWZyOjN3eQjx1jsO7J3UZYsg/view?usp=drive_link'}
+];
+
+// ── Paper 1 PYQ PDFs (same list as statnet.html, newest session first) ──
+const PAPER1_PYQS=[
+{year:'JUN\n2026',exam:'UGC NET Paper 1 2026',sessions:'June Examination set 1',link:'https://drive.google.com/file/d/1x5eXyE7I2WyRYjuV5ZGyhQp0URiMwlRS/view?usp=drive_link'},
+{year:'JUN\n2026',exam:'UGC NET Paper 1 2026',sessions:'June Examination set 2',link:'https://drive.google.com/file/d/1OJX28BePzJ22LuAwdvjtkjCYWoBV4ahn/view?usp=drive_link'},
+{year:'JUN\n2026',exam:'UGC NET Paper 1 2026',sessions:'June Examination set 3',link:'https://drive.google.com/file/d/1GxYhbNaQHWtXJ3GfTyu0ZdLZYy6q_nJ2/view?usp=drive_link'},
+{year:'JUN\n2026',exam:'UGC NET Paper 1 2026',sessions:'June Examination set 4',link:'https://drive.google.com/file/d/1p8H_fdJm2s4_lHcSyA4KEw_ktwqvkxjy/view?usp=drive_link'},
+{year:'JUN\n2026',exam:'UGC NET Paper 1 2026',sessions:'June Examination set 5',link:'https://drive.google.com/file/d/1nhwxVgRT2zsY3r2DP_Lnj9qBbejInyKb/view?usp=drive_link'},
+{year:'DEC\n2025',exam:'UGC NET Paper 1 2025',sessions:'December Examination set 1',link:'https://drive.google.com/file/d/1ZzLv0nexSTEbylYncZPngLolZCno1NQR/view?usp=sharing'},
+{year:'DEC\n2025',exam:'UGC NET Paper 1 2025',sessions:'December Examination set 2',link:'https://drive.google.com/file/d/1_JldpwOWlM8EAcve_rhtGK8eu1CVSvnk/view?usp=sharing'},
+{year:'DEC\n2025',exam:'UGC NET Paper 1 2025',sessions:'December Examination set 3',link:'https://drive.google.com/file/d/1-6Fj_xJ9v7EMy4ZyE8JwqRAYlBN8HaX3/view?usp=sharing'},
+{year:'DEC\n2025',exam:'UGC NET Paper 1 2025',sessions:'December Examination set 4',link:'https://drive.google.com/file/d/1o3OMPIOxa_qD7k7JuLVm981D2t0rphIG/view?usp=sharing'},
+{year:'DEC\n2025',exam:'UGC NET Paper 1 2025',sessions:'December Examination set 5',link:'https://drive.google.com/file/d/1je86Y2mXGv5nUYcQOpW5ThN4KPbRTAL5/view?usp=sharing'},
+{year:'JUN\n2025',exam:'UGC NET Paper 1 2025',sessions:'June Examination set 1',link:'https://drive.google.com/file/d/1dEevLUcVbxX9-yxDVkwbnxhmDAajEBFI/view?usp=sharing'},
+{year:'JUN\n2025',exam:'UGC NET Paper 1 2025',sessions:'June Examination set 2',link:'https://drive.google.com/file/d/1dEevLUcVbxX9-yxDVkwbnxhmDAajEBFI/view?usp=sharing'},
+{year:'JUN\n2025',exam:'UGC NET Paper 1 2025',sessions:'June Examination set 3',link:'https://drive.google.com/file/d/1qqARX9bDS8fUi1gPCSFnfKCbC3QW2e8x/view?usp=sharing'},
+{year:'JUN\n2025',exam:'UGC NET Paper 1 2025',sessions:'June Examination set 4',link:'https://drive.google.com/file/d/1aNsiTmaqPMaP-Lr0zxKPUg6XLl5HnVyh/view?usp=sharing'},
+{year:'DEC\n2024',exam:'UGC NET Paper 1 2024',sessions:'December Examination set 1',link:'https://drive.google.com/file/d/1zBPyEl35unay9pJasiZTpZACQQw9fw_r/view?usp=sharing'},
+{year:'DEC\n2024',exam:'UGC NET Paper 1 2024',sessions:'December Examination set 2',link:'https://drive.google.com/file/d/199yqxr-1WJhhct5jiLH0zXnYZMqA8vxv/view?usp=sharing'},
+{year:'DEC\n2024',exam:'UGC NET Paper 1 2024',sessions:'December Examination set 4',link:'https://drive.google.com/file/d/1oNyMnTa4PTNtLAXbNWYShoxf00yzSbTx/view?usp=sharing'},
+{year:'DEC\n2024',exam:'UGC NET Paper 1 2024',sessions:'December Examination set 5',link:'https://drive.google.com/file/d/1PEYzv45xgYlfhTJFoNZlZxXfaLiaZQu7/view?usp=sharing'},
+{year:'JUN\n2024',exam:'UGC NET Paper 1 2024',sessions:'June Examination set 1',link:'https://drive.google.com/file/d/1VqLJtKI1DJBVm11k--npgmAPYZRZ8_6J/view?usp=sharing'},
+{year:'JUN\n2024',exam:'UGC NET Paper 1 2024',sessions:'June Examination set 2',link:'https://drive.google.com/file/d/1pUOj5upx18VT-bJHQB7Z1jPg93AtO4ui/view?usp=sharing'},
+{year:'JUN\n2024',exam:'UGC NET Paper 1 2024',sessions:'June Examination set 3',link:'https://drive.google.com/file/d/10pdh4Xg2TK6-lp8_QEckO8_Zp4ANal_Q/view?usp=sharing'},
+{year:'JUN\n2024',exam:'UGC NET Paper 1 2024',sessions:'June Examination set 4',link:'https://drive.google.com/file/d/104ZleF6uE1wrilh2YJJAj4o_UTu41oAd/view?usp=sharing'},
+{year:'JUN\n2024',exam:'UGC NET Paper 1 2024',sessions:'June Examination set 5',link:'https://drive.google.com/file/d/19BZPt2pGVM4FZrluzEio9WcuMfZrRQGW/view?usp=sharing'},
+{year:'DEC\n2023',exam:'UGC NET Paper 1 2023',sessions:'December Examination set 1',link:'https://drive.google.com/file/d/18cRm6WVp6ilQk7gO5_Vxim7yaHVVWeIz/view?usp=sharing'},
+{year:'DEC\n2023',exam:'UGC NET Paper 1 2023',sessions:'December Examination set 2',link:'https://drive.google.com/file/d/1TBKPH10v_q82w3PnLj0cLySqJgoP9TfM/view?usp=sharing'},
+{year:'DEC\n2023',exam:'UGC NET Paper 1 2023',sessions:'December Examination set 3',link:'https://drive.google.com/file/d/1yAj1gowzSADcpEY4uPlBpnAUr79SGH-L/view?usp=sharing'},
+{year:'DEC\n2023',exam:'UGC NET Paper 1 2023',sessions:'December Examination set 4',link:'https://drive.google.com/file/d/1x6GmKR_f02Re0a0cPv0agS5DVUunHV-u/view?usp=sharing'},
+{year:'DEC\n2023',exam:'UGC NET Paper 1 2023',sessions:'December Examination set 5',link:'https://drive.google.com/file/d/1P-j-maGaDEUxWoDIrUptF0PBlA7NQfZT/view?usp=sharing'},
+{year:'JUN\n2023',exam:'UGC NET Paper 1 2023',sessions:'June Examination set 1',link:'https://drive.google.com/file/d/1WJ3huvwcfhPndIQQnYBIHKC_mYC3EkgR/view?usp=sharing'},
+{year:'JUN\n2023',exam:'UGC NET Paper 1 2023',sessions:'June Examination set 2',link:'https://drive.google.com/file/d/1rD4b-R0mqcjSJNtDHEEw1XZOe6a61mGn/view?usp=sharing'},
+{year:'JUN\n2023',exam:'UGC NET Paper 1 2023',sessions:'June Examination set 3',link:'https://drive.google.com/file/d/1fpYR9N0L1JK4tCK-tsNFN8qgJUcoK5Ww/view?usp=sharing'},
+{year:'JUN\n2023',exam:'UGC NET Paper 1 2023',sessions:'June Examination set 4',link:'https://drive.google.com/file/d/15uDWOqcDHcmb_XCq5O2y3cJmjBWmUd-j/view?usp=sharing'}
+];
+
+// ── Paper 1 question bank (filled by qb_p1_*.js, same files statnet.html uses) ──
+const PAPER1_QB = [];
+const MASTER_QB = [];   // only here so an old-style question file can't break the page
+const PAPER1_PAPERS=[
+  {key:'jun26_a',title:'June 2026 · Set 1',cycle:'June 2026 Session'},
+  {key:'jan26_c',title:'06 Jan 2026 · Evening Shift',cycle:'December 2025 Session'},
+  {key:'jan26_a',title:'05 Jan 2026 · Morning Shift 1',cycle:'December 2025 Session'},
+  {key:'jan26_b',title:'02 Jan 2026 · Morning Shift',cycle:'December 2025 Session'},
+  {key:'dec25_a',title:'31 Dec 2025 · Morning Shift',cycle:'December 2025 Session'},
+  {key:'jun25_b',title:'27 Jun 2025 · Morning Shift 1',cycle:'June 2025 Session'},
+  {key:'jun25_d',title:'26 Jun 2025 · Evening Shift',cycle:'June 2025 Session'},
+  {key:'jun25_c',title:'26 Jun 2025 · Morning Shift',cycle:'June 2025 Session'},
+  {key:'jun25_e',title:'25 Jun 2025 · Shift 2',cycle:'June 2025 Session'},
+  {key:'jun25_a',title:'25 Jun 2025 · Morning Shift',cycle:'June 2025 Session'},
+  {key:'dec24_a',title:'Dec 2024 · Set 1',cycle:'December 2024 Session'},
+  {key:'aug24_g',title:'29 Aug 2024 · Morning Shift',cycle:'June 2024 Session'},
+  {key:'aug24_f',title:'28 Aug 2024 · Morning Shift',cycle:'June 2024 Session'},
+  {key:'aug24_d',title:'23 Aug 2024 · Evening Shift',cycle:'June 2024 Session'},
+  {key:'aug24_c',title:'23 Aug 2024 · Morning Shift',cycle:'June 2024 Session'},
+  {key:'aug24_e',title:'22 Aug 2024 · Morning Shift',cycle:'June 2024 Session'},
+  {key:'aug24_b',title:'21 Aug 2024 · Evening Shift',cycle:'June 2024 Session'},
+  {key:'aug24_a',title:'21 Aug 2024 · Morning Shift',cycle:'June 2024 Session'},
+  {key:'dec23_e',title:'11 Dec 2023 · Morning Shift',cycle:'December 2023 Session'},
+  {key:'dec23_d',title:'08 Dec 2023 · Evening Shift',cycle:'December 2023 Session'},
+  {key:'dec23_c',title:'08 Dec 2023 · Morning Shift',cycle:'December 2023 Session'},
+  {key:'dec23_b',title:'07 Dec 2023 · Morning Shift',cycle:'December 2023 Session'},
+  {key:'dec23_a',title:'06 Dec 2023 · Morning Shift',cycle:'December 2023 Session'},
+  {key:'jun23_e',title:'19 Jun 2023 · Evening Shift',cycle:'June 2023 Session'},
+  {key:'jun23_a',title:'16 Jun 2023 · Morning Shift',cycle:'June 2023 Session'},
+  {key:'jun23_b',title:'15 Jun 2023 · Morning Shift',cycle:'June 2023 Session'},
+  {key:'jun23_c',title:'13 Jun 2023 · Evening Shift',cycle:'June 2023 Session'},
+  {key:'jun23_d',title:'13 Jun 2023 · Morning Shift',cycle:'June 2023 Session'}
+];
+</script>
+
+<!-- Paper 1 question banks (same files as statnet.html) -->
+<script src="qb_p1_u1.js"></script>
+<script src="qb_p1_u2.js"></script>
+<script src="qb_p1_u3.js"></script>
+<script src="qb_p1_u4.js"></script>
+<script src="qb_p1_u5.js"></script>
+<script src="qb_p1_u6.js"></script>
+<script src="qb_p1_u7.js"></script>
+<script src="qb_p1_u8.js"></script>
+<script src="qb_p1_u9.js"></script>
+<script src="qb_p1_u10.js"></script>
+<script src="qb_p1_ga.js"></script>
+
+<script>
+// any Paper 1 question pushed into MASTER_QB by mistake is moved into PAPER1_QB
+MASTER_QB.forEach(q=>{ if(q && /^p1_/.test(q.unit||'')) PAPER1_QB.push(q); });
+
+// ════════════════════════════════════════════════════════════════════
+//  ACCESS STATUS
+// ════════════════════════════════════════════════════════════════════
+function accessState(){ const n=Date.now(); return n<ACCESS_START?'before':(n>ACCESS_END?'after':'open'); }
+function plural(n,w){ return n+' '+w+(n===1?'':'s'); }
+function timeText(ms){
+  const d=Math.floor(ms/86400000), h=Math.floor((ms%86400000)/3600000), m=Math.max(1,Math.ceil((ms%3600000)/60000));
+  if(d>=1) return plural(d,'day')+(h?' '+plural(h,'hour'):'');
+  if(h>=1) return plural(h,'hour');
+  return plural(m,'minute');
+}
+function updateStatus(){
+  const el=document.getElementById('pc-status'), st=accessState(), n=Date.now();
+  el.className='pc-status '+st;
+  if(st==='before') el.textContent='🔒 Opens on 2 Dec 2026 · in '+timeText(ACCESS_START-n);
+  else if(st==='open') el.textContent='🟢 Open now · '+timeText(ACCESS_END-n)+' left';
+  else el.textContent='⛔ Access ended on 24 Dec 2026';
+}
+function lockedMessage(st){
+  return st==='before'
+    ? '🔒 The crash course opens on <b>2 December 2026</b>. Please log in from that date.'
+    : '⛔ The access period (2–24 December 2026) has ended.';
+}
+
+// ════════════════════════════════════════════════════════════════════
+//  LOGIN
+// ════════════════════════════════════════════════════════════════════
+let currentStudent=null;
+function showLoginError(html){ const e=document.getElementById('login-error'); e.innerHTML=html; e.style.display='block'; }
+function doLogin(){
+  const roll=document.getElementById('login-roll').value.trim().toUpperCase();
+  const pass=document.getElementById('login-pass').value.trim();
+  const s=P1_STUDENTS[roll];
+  if(!s || s.password!==pass){ showLoginError('❌ Invalid Roll Number or Password. Please try again.'); return; }
+  const st=accessState();
+  if(!s.admin && st!=='open'){ showLoginError(lockedMessage(st)); return; }
+  currentStudent={roll, name:s.name, admin:!!s.admin};
+  try{ sessionStorage.setItem('p1cc_roll',roll); }catch(e){}
+  openCourse();
+}
+function doLogout(msg){
+  stopTimer(); currentStudent=null;
+  try{ sessionStorage.removeItem('p1cc_roll'); }catch(e){}
+  document.getElementById('course-screen').style.display='none';
+  document.getElementById('login-screen').style.display='block';
+  document.getElementById('login-roll').value='';
+  document.getElementById('login-pass').value='';
+  const e=document.getElementById('login-error');
+  if(msg){ e.innerHTML=msg; e.style.display='block'; } else e.style.display='none';
+  window.scrollTo({top:0});
+}
+let built=false;
+function openCourse(){
+  document.getElementById('login-error').style.display='none';
+  document.getElementById('login-screen').style.display='none';
+  document.getElementById('course-screen').style.display='block';
+  document.getElementById('welcome-name').textContent='Welcome, '+currentStudent.name+'!';
+  const st=accessState();
+  document.getElementById('welcome-roll').textContent='Roll Number: '+currentStudent.roll+
+    (st==='open' ? ' · Access till 24 Dec 2026, 11:59 PM IST' : ' · Admin preview (students: 2–24 Dec 2026)');
+  if(!built){ buildNotes(); buildPYQ(); buildMockList(); built=true; }
+  backToList();
+}
+// re-check every 30 s: close the course when the access period ends (an exam in progress may finish first)
+setInterval(()=>{
+  updateStatus();
+  if(currentStudent && !currentStudent.admin && accessState()!=='open' && !examRunning()) doLogout(lockedMessage(accessState()));
+},30000);
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter' && document.getElementById('login-screen').style.display!=='none') doLogin();
+});
+
+// ════════════════════════════════════════════════════════════════════
+//  TABS
+// ════════════════════════════════════════════════════════════════════
+function switchTab(btn){
+  document.querySelectorAll('.pc-tab-btn').forEach(b=>b.classList.toggle('active',b===btn));
+  document.querySelectorAll('.pc-pane').forEach(p=>p.classList.toggle('active',p.id===btn.dataset.tab));
+}
+
+// ════════════════════════════════════════════════════════════════════
+//  NOTES
+// ════════════════════════════════════════════════════════════════════
+function buildNotes(){
+  const bar=document.getElementById('notes-filter');
+  PAPER1_NOTES.forEach(u=>{ bar.insertAdjacentHTML('beforeend',`<button class="filter-btn" data-u="${u.id}" onclick="filterNotes(this)">Unit ${u.num}</button>`); });
+  document.getElementById('notes-grid').innerHTML=PAPER1_NOTES.map(u=>{
+    const ok=u.link&&u.link!=='#';
+    return `<div class="note-card" data-u="${u.id}">
+      <div class="note-card-header">
+        <div class="note-card-icon" style="background:${u.color};">${u.icon}</div>
+        <div><span class="note-unit">Unit ${u.num}</span><div class="note-card-title">${u.title}</div></div>
+      </div>
+      <div class="note-card-desc">${u.desc}</div>
+      <div class="note-card-footer"><a class="btn-dl${ok?'':' coming'}" href="${ok?u.link:'#'}" target="_blank" rel="noopener">📥 ${ok?'Open Notes':'Coming Soon'}</a></div>
+    </div>`;
+  }).join('');
+}
+function filterNotes(btn){
+  document.querySelectorAll('#notes-filter .filter-btn').forEach(b=>b.classList.toggle('active',b===btn));
+  const u=btn.dataset.u;
+  document.querySelectorAll('#notes-grid .note-card').forEach(c=>c.classList.toggle('pc-hidden',u!=='all'&&c.dataset.u!==u));
+}
+
+// ════════════════════════════════════════════════════════════════════
+//  PYQ PAPERS (grouped by exam session)
+// ════════════════════════════════════════════════════════════════════
+function buildPYQ(){
+  const groups=[];
+  PAPER1_PYQS.forEach(p=>{
+    const label=p.sessions.split(' ')[0]+' '+p.exam.trim().slice(-4);
+    let g=groups.find(x=>x.label===label); if(!g){g={label,items:[]};groups.push(g);} g.items.push(p);
+  });
+  document.getElementById('pyq-list').innerHTML=groups.map(g=>`
+    <div class="pc-session">${g.label} Session <small>${plural(g.items.length,'paper')}</small></div>
+    <div class="pc-pyq-grid">${g.items.map(p=>{
+      const ok=p.link&&p.link!=='#';
+      return `<div class="pyq-card"><div class="pyq-card-header"><div class="pyq-year">${p.year}</div><div><div class="pyq-title">${p.exam.trim()}</div><div class="pyq-sub">${p.sessions}</div></div></div>
+        <div class="pyq-card-body"><div class="pyq-desc">Question paper with answer key and solutions.</div>
+        <a class="btn-dl${ok?'':' coming'}" href="${ok?p.link:'#'}" target="_blank" rel="noopener">📥 ${ok?'Open Paper':'Coming Soon'}</a></div></div>`;
+    }).join('')}</div>`).join('');
+}
+
+// ════════════════════════════════════════════════════════════════════
+//  PAPER 1 MOCK TESTS — same test-building rules as statnet.html
+//  1) every PYQ paper as its own timed test (original order)
+//  2) full mocks: 5 Qs per unit, mixed from different papers
+//  3) unit-wise mocks (15 Qs)
+// ════════════════════════════════════════════════════════════════════
+const P1_UNITS = [
+  {id:'p1_u1', num:'I',    title:'Teaching Aptitude'},
+  {id:'p1_u2', num:'II',   title:'Research Aptitude'},
+  {id:'p1_u3', num:'III',  title:'Comprehension'},
+  {id:'p1_u4', num:'IV',   title:'Communication'},
+  {id:'p1_u5', num:'V',    title:'Mathematical Reasoning & Aptitude'},
+  {id:'p1_u6', num:'VI',   title:'Logical Reasoning'},
+  {id:'p1_u7', num:'VII',  title:'Data Interpretation'},
+  {id:'p1_u8', num:'VIII', title:'Information & Communication Technology (ICT)'},
+  {id:'p1_u9', num:'IX',   title:'People, Development & Environment'},
+  {id:'p1_u10',num:'X',    title:'Higher Education System'}
+];
+const P1_FULL_ORDER = ['p1_u7','p1_u1','p1_u2','p1_u4','p1_u5','p1_u6','p1_u8','p1_u9','p1_u10','p1_u3'];
+const P1_SET_UNITS = {p1_u3:1, p1_u7:1};
+const P1_UNIT_MOCK_Q = 15;
+
+function p1Papers(){
+  const known=PAPER1_PAPERS.map(p=>p.key);
+  const extra=[...new Set(PAPER1_QB.map(q=>q.paper).filter(k=>k&&known.indexOf(k)<0))];
+  return PAPER1_PAPERS.concat(extra.map(k=>({key:k,title:k,cycle:'Other Papers'})));
+}
+function p1ByNo(a,b){return (a.no||0)-(b.no||0);}
+let _p1Cache=null;
+function p1Build(){
+  if(_p1Cache) return _p1Cache;
+  const papers=p1Papers(), pools={};
+  P1_UNITS.forEach(u=>{
+    const qs=PAPER1_QB.filter(q=>q.unit===u.id && !q.bonus);
+    const byPaper={};
+    qs.forEach(q=>{(byPaper[q.paper||'misc']=byPaper[q.paper||'misc']||[]).push(q);});
+    const keys=papers.map(p=>p.key).concat(Object.keys(byPaper).filter(k=>papers.every(p=>p.key!==k)));
+    if(P1_SET_UNITS[u.id]){
+      pools[u.id]=keys.filter(k=>byPaper[k]&&byPaper[k].length).map(k=>byPaper[k].sort(p1ByNo));
+    } else {
+      Object.keys(byPaper).forEach(k=>byPaper[k].sort(p1ByNo));
+      const out=[]; let j=0, more=true;
+      while(more){ more=false; keys.forEach(k=>{const a=byPaper[k]; if(a&&a[j]){out.push(a[j]); more=true;}}); j++; }
+      pools[u.id]=out;
+    }
+  });
+  const defs={paper:[],full:[],unit:[]};
+  papers.forEach(p=>{
+    const n=PAPER1_QB.filter(q=>q.paper===p.key).length; if(!n) return;
+    defs.paper.push({id:'p1paper:'+p.key,type:'p1paper',paper:p.key,cycle:p.cycle,title:'Paper 1 · '+p.title,duration:3600,qCount:n,
+      subtitle:n+' Questions · '+(n*2)+' Marks · 60 Min',description:'Original UGC NET Paper 1 ('+p.title+') — same questions, same order, with full solutions.'});
+  });
+  const avail=P1_FULL_ORDER.map(id=>P1_SET_UNITS[id]?pools[id].filter(s=>s.length===5).length:Math.floor(pools[id].length/5));
+  const nFull=Math.min.apply(null,avail.concat([40]));
+  for(let m=1;m<=nFull;m++){
+    const qs=[];
+    P1_FULL_ORDER.forEach(id=>{
+      if(P1_SET_UNITS[id]) qs.push(...pools[id].filter(s=>s.length===5)[m-1]);
+      else qs.push(...pools[id].slice((m-1)*5,m*5));
+    });
+    defs.full.push({id:'p1full:'+m,type:'p1full',mockNum:m,title:'Paper 1 · Full Mock '+m,duration:3600,qs,qCount:qs.length,
+      subtitle:'All 10 Units · '+qs.length+' Questions · '+(qs.length*2)+' Marks',description:'Full-length Paper 1 mock #'+m+' built from previous-year questions of different papers — all 10 units.'});
+  }
+  P1_UNITS.forEach(u=>{
+    const pool=pools[u.id], chunks=[];
+    if(P1_SET_UNITS[u.id]){
+      let cur=[]; pool.forEach(s=>{cur.push(...s); if(cur.length>=P1_UNIT_MOCK_Q){chunks.push(cur);cur=[];}});
+      if(cur.length>=8) chunks.push(cur);
+    } else {
+      for(let i=0;i<pool.length;i+=P1_UNIT_MOCK_Q){const c=pool.slice(i,i+P1_UNIT_MOCK_Q); if(c.length>=8) chunks.push(c);}
+    }
+    chunks.forEach((c,i)=>{
+      defs.unit.push({id:'p1unit:'+u.id+':'+(i+1),type:'p1unit',unit:u.id,mockNum:i+1,qs:c,qCount:c.length,
+        duration:Math.round(c.length*72/60)*60,
+        title:'Unit '+u.num+' Mock '+(i+1)+' — '+u.title,subtitle:'Unit '+u.num+' Only · '+c.length+' Questions · '+(c.length*2)+' Marks',
+        description:'Paper 1 Unit '+u.num+': '+u.title});
+    });
+  });
+  _p1Cache=defs;
+  return defs;
+}
+function p1FindDef(id){const d=p1Build(); return [].concat(d.paper,d.full,d.unit).find(x=>x.id===id);}
+function p1Questions(def){ return def.qs ? def.qs : PAPER1_QB.filter(q=>q.paper===def.paper).sort(p1ByNo); }
+
+function p1Card(t,c1,c2,num){
+  const dur=Math.floor(t.duration/60)+' Min';
+  return `<div class="mock-test-card" data-u="${t.unit||''}"><div class="mock-test-card-header" style="background:linear-gradient(135deg,${c1},${c2});"><div class="mtc-num">${num}</div><div><div class="mtc-title">${t.title}</div><div class="mtc-sub">${t.subtitle}</div></div></div><div class="mock-test-card-body"><div class="mtc-desc">${t.description}</div><div class="mtc-info"><span class="mtc-badge mtc-badge-green">📝 ${t.qCount} Qs</span><span class="mtc-badge mtc-badge-blue">⏱ ${dur}</span><span class="mtc-badge mtc-badge-orange">🏆 ${t.qCount*2} Marks</span></div><button class="btn-start-mock" onclick="startP1Mock('${t.id}')">▶ Start Test</button></div></div>`;
+}
+let mockView='paper';
+function buildMockList(){
+  const d=p1Build();
+  document.querySelector('.p1-sw-btn[data-v="paper"]').textContent='📄 Previous Year Papers ('+d.paper.length+')';
+  document.querySelector('.p1-sw-btn[data-v="full"]').textContent='📋 Full Mocks ('+d.full.length+')';
+  document.querySelector('.p1-sw-btn[data-v="unit"]').textContent='📘 Unit-wise Mocks ('+d.unit.length+')';
+  const bar=document.getElementById('mock-unit-filter');
+  P1_UNITS.forEach(u=>{ if(d.unit.some(t=>t.unit===u.id)) bar.insertAdjacentHTML('beforeend',`<button class="filter-btn" data-u="${u.id}" onclick="filterMockUnit(this)">Unit ${u.num}</button>`); });
+  renderMockList();
+}
+function renderMockList(){
+  const el=document.getElementById('mock-list'), d=p1Build();
+  document.getElementById('mock-unit-filter').classList.toggle('pc-hidden',mockView!=='unit');
+  if(!PAPER1_QB.length){el.innerHTML='<div class="p1-empty">Mock test questions could not be loaded. Please refresh the page.</div>';return;}
+  let html='';
+  if(mockView==='paper'){
+    html+=`<div class="mock-section-header" style="background:#8a4a1a;">📄 Previous Year Papers — full timed tests, original order</div>`;
+    [...new Set(d.paper.map(t=>t.cycle))].forEach(cy=>{
+      html+=`<div class="p1-cycle">${cy}</div><div class="mock-tests-grid">`;
+      d.paper.filter(t=>t.cycle===cy).forEach(t=>{html+=p1Card(t,'#8a4a1a','#c0722c','📄');});
+      html+=`</div>`;
+    });
+  } else if(mockView==='full'){
+    html+=`<div class="mock-section-header" style="background:#1a4a2a;">📋 Full Syllabus Mock Tests — all 10 units</div><div class="mock-tests-grid">`;
+    d.full.forEach(t=>{html+=p1Card(t,'#1a4a2a','#2d8a3a',t.mockNum);});
+    html+=`</div>`;
+  } else {
+    P1_UNITS.forEach(u=>{
+      const list=d.unit.filter(t=>t.unit===u.id); if(!list.length) return;
+      html+=`<div class="mock-unit-group" data-u="${u.id}"><div class="mock-section-header" style="background:#2a3a6a;">📘 Unit ${u.num} — ${u.title}</div><div class="mock-tests-grid">`;
+      list.forEach(t=>{html+=p1Card(t,'#2a3a6a','#3b5bdb',t.mockNum);});
+      html+=`</div></div>`;
+    });
+  }
+  el.innerHTML=html;
+  if(mockView==='unit'){ const a=document.querySelector('#mock-unit-filter .filter-btn.active'); if(a) filterMockUnit(a); }
+}
+function setMockView(btn){
+  mockView=btn.dataset.v;
+  document.querySelectorAll('.p1-sw-btn').forEach(b=>b.classList.toggle('active',b===btn));
+  renderMockList();
+}
+function filterMockUnit(btn){
+  document.querySelectorAll('#mock-unit-filter .filter-btn').forEach(b=>b.classList.toggle('active',b===btn));
+  const u=btn.dataset.u;
+  document.querySelectorAll('#mock-list .mock-unit-group').forEach(g=>g.classList.toggle('pc-hidden',u!=='all'&&g.dataset.u!==u));
+}
+
+// ════════════════════════════════════════════════════════════════════
+//  EXAM ENGINE
+// ════════════════════════════════════════════════════════════════════
+let currentTest=null,currentQIdx=0,answers=[],skipped=[],timeLeft=0,currentDef=null;
+function examRunning(){ return document.getElementById('mock-exam-screen').style.display==='block'; }
+function showMockScreen(which){
+  document.getElementById('mock-list-screen').style.display=which==='list'?'block':'none';
+  document.getElementById('mock-exam-screen').style.display=which==='exam'?'block':'none';
+  document.getElementById('mock-result-screen').style.display=which==='result'?'block':'none';
+  document.getElementById('tab-bar').style.display=which==='exam'?'none':'flex';
+}
+function startP1Mock(id){
+  if(!currentStudent) return;
+  if(!currentStudent.admin && accessState()!=='open'){ doLogout(lockedMessage(accessState())); return; }
+  const def=p1FindDef(id); if(!def) return;
+  const qs=p1Questions(def);
+  if(!qs.length){alert('No questions available for this test yet!');return;}
+  currentDef=def; currentTest={id:def.id,title:def.title,subtitle:def.subtitle,questions:qs};
+  currentQIdx=0; answers=Array(qs.length).fill(null); skipped=Array(qs.length).fill(false); timeLeft=def.duration;
+  document.getElementById('exam-title').textContent=def.title;
+  document.getElementById('exam-subtitle').textContent=def.subtitle;
+  document.getElementById('exam-max-marks').textContent='Max Marks: '+(qs.length*2);
+  showMockScreen('exam');
+  buildNavGrid(); renderQuestion(); startTimer();
+  window.scrollTo({top:0});
+}
+
+// math rendering (KaTeX, loaded from CDN)
+const KATEX_DELIMITERS=[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}];
+function tryRenderMath(el){
+  if(!el) return;
+  const go=()=>{ try{ renderMathInElement(el,{delimiters:KATEX_DELIMITERS,throwOnError:false}); }catch(e){} };
+  if(window.renderMathInElement){ go(); return; }
+  let tries=0; const w=setInterval(()=>{ if(window.renderMathInElement){clearInterval(w);go();} else if(++tries>40) clearInterval(w); },250);
+}
+
+// timer (performance.now + requestAnimationFrame, does not drift)
+let timerStartTime=null,timerStartLeft=0,timerRAF=null;
+function startTimer(){
+  cancelAnimationFrame(timerRAF);
+  timerStartTime=performance.now(); timerStartLeft=timeLeft;
+  function tick(){
+    timeLeft=Math.max(0,timerStartLeft-Math.floor((performance.now()-timerStartTime)/1000));
+    const h=Math.floor(timeLeft/3600),m=Math.floor((timeLeft%3600)/60),s=timeLeft%60;
+    const v=document.getElementById('exam-timer-val');
+    v.textContent=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    v.className='exam-timer-val'+(timeLeft<=300?' warning':'');
+    if(timeLeft<=0){submitTest();return;}
+    timerRAF=requestAnimationFrame(tick);
+  }
+  timerRAF=requestAnimationFrame(tick);
+}
+function stopTimer(){cancelAnimationFrame(timerRAF);timerRAF=null;}
+
+function renderQuestion(){
+  const qs=currentTest.questions,q=qs[currentQIdx],n=currentQIdx+1,total=qs.length;
+  document.getElementById('q-number').textContent='Question '+n+' of '+total;
+  document.getElementById('q-text').innerHTML=q.q;
+  document.getElementById('exam-progress-text').textContent='Answered: '+answers.filter(a=>a!==null).length+' / '+total;
+  document.getElementById('exam-progress-bar').style.width=(n/total*100)+'%';
+  const keys=['A','B','C','D'];
+  document.getElementById('q-options').innerHTML=q.opts.map((opt,i)=>`<button class="q-option${answers[currentQIdx]===i?' selected':''}" onclick="selectOpt(${i})"><span class="q-option-key">${keys[i]}</span><span>${opt.replace(/^[A-D]\)\s*/,'')}</span></button>`).join('');
+  updateNavGrid();
+  tryRenderMath(document.getElementById('exam-layout'));
+}
+function selectOpt(i){answers[currentQIdx]=i;skipped[currentQIdx]=false;renderQuestion();}
+function nextQ(){if(currentQIdx<currentTest.questions.length-1){currentQIdx++;renderQuestion();}}
+function prevQ(){if(currentQIdx>0){currentQIdx--;renderQuestion();}}
+function skipQ(){skipped[currentQIdx]=true;answers[currentQIdx]=null;nextQ();}
+function goToQ(i){currentQIdx=i;renderQuestion();}
+function buildNavGrid(){
+  document.getElementById('q-nav-grid').innerHTML=currentTest.questions.map((_,i)=>`<button class="q-nav-btn" id="qnb-${i}" onclick="goToQ(${i})">${i+1}</button>`).join('');
+}
+function updateNavGrid(){
+  currentTest.questions.forEach((_,i)=>{
+    const b=document.getElementById('qnb-'+i); if(!b) return;
+    b.className='q-nav-btn'+(i===currentQIdx?' current':answers[i]!==null?' answered':skipped[i]?' skipped':'');
+  });
+}
+function confirmSubmit(){
+  const ua=answers.filter(a=>a===null).length;
+  if(ua>0&&!confirm('⚠️ You have '+ua+' unanswered question(s).\n\nSubmit anyway?'))return;
+  submitTest();
+}
+// correct-answer check: supports dual-key (alt) and NTA-dropped (bonus) questions
+function qOk(q,a){
+  if(q.bonus) return true;
+  if(a===null||a===undefined) return false;
+  return a===q.ans||(q.alt&&q.alt.indexOf(a)>-1);
+}
+function submitTest(){
+  stopTimer();
+  const qs=currentTest.questions; let correct=0,wrong=0,skippedCount=0;
+  qs.forEach((q,i)=>{ if(q.bonus||(answers[i]!==null&&qOk(q,answers[i])))correct++; else if(answers[i]===null)skippedCount++; else wrong++; });
+  const scored=correct*2,total=qs.length*2,pct=total?Math.round(scored/total*100):0;
+  document.getElementById('result-score-num').textContent=scored+'/'+total;
+  document.getElementById('result-score-sub').textContent=correct+' correct × 2 marks';
+  document.getElementById('rs-correct').textContent=correct;
+  document.getElementById('rs-wrong').textContent=wrong;
+  document.getElementById('rs-skipped').textContent=skippedCount;
+  document.getElementById('rs-pct').textContent=pct+'%';
+  document.getElementById('rs-scored').textContent=scored;
+  document.getElementById('result-test-name').textContent=currentTest.title;
+  const keys=['A','B','C','D'];
+  document.getElementById('solutions-list').innerHTML=qs.map((q,i)=>{
+    const ua=answers[i],isSk=ua===null&&!q.bonus,isOk=qOk(q,ua);
+    const st=isSk?'skipped':isOk?'correct':'wrong';
+    const badge=q.bonus?'🎁 Bonus +2 (dropped by NTA)':isSk?'⬜ Skipped':isOk?'✅ Correct +2':'❌ Wrong';
+    const opts=q.opts.map((opt,oi)=>{
+      const right=oi===q.ans||(q.alt&&q.alt.indexOf(oi)>-1);
+      const cls=right?'correct-ans':(oi===ua&&!isOk?'user-wrong':'normal');
+      return `<div class="sc-opt ${cls}"><span style="font-weight:700;min-width:20px;">${keys[oi]})</span><span>${opt.replace(/^[A-D]\)\s*/,'')}${right?' ✓':''}${oi===ua&&!isOk?' ✗':''}</span></div>`;
+    }).join('');
+    return `<div class="solution-card"><div class="sc-header"><div class="sc-num ${st}">${i+1}</div><div class="sc-q-text">${q.q}</div><span class="sc-badge ${st}">${badge}</span></div><div class="sc-body"><div class="sc-options">${opts}</div><div class="sc-explanation"><strong>💡 Explanation:</strong> ${q.exp||''}</div></div></div>`;
+  }).join('');
+  showMockScreen('result');
+  window.scrollTo({top:0,behavior:'smooth'});
+  tryRenderMath(document.getElementById('mock-result-screen'));
+}
+function retakeTest(){ if(currentDef) startP1Mock(currentDef.id); }
+function backToList(){
+  stopTimer(); showMockScreen('list');
+  if(currentStudent && !currentStudent.admin && accessState()!=='open') doLogout(lockedMessage(accessState()));
+}
+
+// ── hero numbers & status ──
+(function(){
+  const d=p1Build();
+  document.getElementById('st-notes').textContent=PAPER1_NOTES.filter(n=>n.link&&n.link!=='#').length;
+  document.getElementById('st-pyq').textContent=PAPER1_PYQS.length;
+  document.getElementById('st-mocks').textContent=d.paper.length+d.full.length+d.unit.length;
+  document.getElementById('st-qs').textContent=PAPER1_QB.length.toLocaleString('en-IN');
+  updateStatus();
+})();
+
+// keep the session after a page refresh (same browser tab only)
+(function(){
+  let roll=null; try{ roll=sessionStorage.getItem('p1cc_roll'); }catch(e){}
+  const s=roll&&P1_STUDENTS[roll];
+  if(s && (s.admin || accessState()==='open')){ currentStudent={roll,name:s.name,admin:!!s.admin}; openCourse(); }
+})();
+</script>
+</body>
+</html>
